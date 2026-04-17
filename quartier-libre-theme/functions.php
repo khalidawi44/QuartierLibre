@@ -174,19 +174,47 @@ add_filter( 'wp_get_attachment_image_attributes', function ( $attr ) {
     return $attr;
 } );
 
-// ── 9b. Sanitizer le_content : neutraliser styles inline casseurs ──
+// ── 9b. Sanitizer le_content : retirer parasites visuels ─────────
 /**
- * Retire les styles inline et attributs qui pourraient casser le layout
- * des articles (hauteur/largeur fixes, clip-path, transforms, float…).
- * S'applique UNIQUEMENT aux articles en affichage single, pas à l'éditeur.
+ * Nettoie le contenu des articles avant rendu :
+ *  - Retire styles inline dangereux (width/height/position/transform/clip-path…)
+ *  - Retire les SVG décoratifs pleins (vagues, formes) embarqués
+ *  - Retire les shortcodes de login/register
+ *  - Retire les widgets de newsletter dans l'article
+ * S'applique aux articles en affichage single, pas à l'éditeur.
  */
 add_filter( 'the_content', function ( $content ) {
     if ( ! is_singular() || is_admin() || wp_doing_ajax() ) { return $content; }
 
-    // Retire width/height en attribut HTML qui forcent des tailles débiles
+    // 1. Retire les SVG décoratifs pleins (vagues noires typiques du vieux thème)
+    //    Critère : SVG avec viewBox et sans <text> à l'intérieur.
+    $content = preg_replace_callback(
+        '#<svg\b[^>]*>(.*?)</svg>#is',
+        function ( $m ) {
+            // Conserver les SVG utiles (petits pictos avec du <text> ou très petits)
+            if ( stripos( $m[1], '<text' ) !== false ) return $m[0];
+            // Si le SVG fait > 200 unités de haut (vague décorative), on vire
+            if ( preg_match( '/viewBox="[^"]*\s(\d+)(?:\s|")/', $m[0], $vb ) && (int) $vb[1] > 100 ) {
+                return '';
+            }
+            if ( preg_match( '/height="(\d+)/', $m[0], $h ) && (int) $h[1] > 80 ) {
+                return '';
+            }
+            return $m[0];
+        },
+        $content
+    );
+
+    // 2. Retire les shortcodes de login/register qui pourraient trainer
+    $content = preg_replace( '/\[(login-form|register-form|loginform|loginpress[^\]]*|user_registration[^\]]*|um_loggedin[^\]]*|um_loggedout[^\]]*)[^\]]*\]/i', '', $content );
+
+    // 3. Retire les blocs HTML <form action="...wp-login..."> embarqués
+    $content = preg_replace( '#<form[^>]*action="[^"]*wp-login[^"]*"[^>]*>.*?</form>#is', '', $content );
+
+    // 4. Retire width/height HTML attributes (forcent tailles rigides)
     $content = preg_replace( '/\s(width|height)="\d+"/i', '', $content );
 
-    // Nettoie les style="..." dangereux (mais laisse ceux utiles type color)
+    // 5. Nettoie les style="..." dangereux
     $content = preg_replace_callback(
         '/style\s*=\s*"([^"]*)"/i',
         function ( $m ) {
@@ -195,12 +223,11 @@ add_filter( 'the_content', function ( $content ) {
             foreach ( $rules as $rule ) {
                 if ( ! $rule ) continue;
                 $prop = strtolower( trim( explode( ':', $rule, 2 )[0] ?? '' ) );
-                // Liste noire : propriétés qui peuvent casser le layout
                 $blacklist = array(
                     'width', 'height', 'min-width', 'min-height', 'max-width', 'max-height',
                     'position', 'top', 'left', 'right', 'bottom',
-                    'transform', 'clip-path', 'float', 'margin', 'margin-left',
-                    'margin-right', 'margin-top', 'margin-bottom',
+                    'transform', 'clip-path', 'float',
+                    'margin', 'margin-left', 'margin-right', 'margin-top', 'margin-bottom',
                     'z-index',
                 );
                 if ( ! in_array( $prop, $blacklist, true ) ) {

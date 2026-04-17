@@ -732,11 +732,71 @@ p  { margin: 0 0 1em; }
   color: var(--ql-muted); letter-spacing: .04em; text-transform: uppercase;
 }
 
-/* ANTI-PARASITES : neutralise Cover/Group/Columns qui déborderaient */
-.ql-post__content .wp-block-cover,
-.ql-post__content .wp-block-group,
+/* ═══ ANTI-PARASITES radicaux ═══ */
+
+/* 1. Tuer les vagues / shape dividers / SVG décoratifs embarqués dans le contenu */
+.ql-post__content > svg,
+.ql-post__content > figure > svg:only-child,
+.ql-post__content .wp-block-separator,
+.ql-post__content .wp-block-separator.is-style-wide,
+.ql-post__content .wp-block-separator.is-style-dots,
+.ql-post__content hr,
+.ql-post__content .wp-block-group > svg:only-child,
+.ql-post__content figure.wp-block-image > svg,
+.ql-post__content .separator,
+.ql-post__content [class*="shape-divider"],
+.ql-post__content [class*="wave-divider"] {
+  display: none !important;
+}
+
+/* 2. Forcer TOUTES les colonnes à stacker verticalement dans un article */
 .ql-post__content .wp-block-columns,
-.ql-post__content .wp-block-column {
+.ql-post__content [class*="wp-container-core-columns"] {
+  display: block !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  margin: 1.5em 0 !important;
+  background: none !important;
+  border: 0 !important;
+}
+.ql-post__content .wp-block-column,
+.ql-post__content [class*="wp-block-column"] {
+  width: 100% !important;
+  flex: 1 1 100% !important;
+  margin: 0 0 1.5em !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+/* 3. Cacher login/register/forms WP-login embarqués dans le contenu d'un article */
+.ql-post__content #loginform,
+.ql-post__content #registerform,
+.ql-post__content .login,
+.ql-post__content [class*="loginpress"],
+.ql-post__content [id*="loginpress"],
+.ql-post__content [class*="um-"],
+.ql-post__content [class*="um_"],
+.ql-post__content [id*="um-"],
+.ql-post__content [id*="um_"],
+.ql-post__content .login-form,
+.ql-post__content .register-form,
+.ql-post__content form[action*="wp-login"],
+.ql-post__content form[action*="register"] {
+  display: none !important;
+}
+
+/* 4. Masquer les colonnes entières qui contiennent uniquement un formulaire de login */
+.ql-post__content .wp-block-column:has(> #loginform),
+.ql-post__content .wp-block-column:has(> .login),
+.ql-post__content .wp-block-column:has([class*="loginpress"]),
+.ql-post__content .wp-block-column:has([class*="um-"]) {
+  display: none !important;
+}
+
+/* 5. Groupes/Cover maîtrisés (pas de 100vw breakout, pas de clip-path) */
+.ql-post__content .wp-block-cover,
+.ql-post__content .wp-block-group {
   margin: 1.75em 0 !important;
   padding: 1.25em !important;
   max-width: 100% !important;
