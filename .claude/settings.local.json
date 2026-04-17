@@ -6,7 +6,8 @@
       "Bash(php -l quartier-libre-theme/ql-sync.php)",
       "Bash(cat _before.tmp _section13.tmp _after.tmp)",
       "Bash(rm _before.tmp _section13.tmp _after.tmp)",
-      "Bash(cd \"C:/Users/Utilisateur/Documents/GitHub/QuartierLibre/quartier-libre-theme\" cat ql-sync.php _append.php.tmp mv _ql-sync.new ql-sync.php rm _append.php.tmp wc -l ql-sync.php echo \"---\" grep -n \"^function ql_\" ql-sync.php)"
+      "Bash(cd \"C:/Users/Utilisateur/Documents/GitHub/QuartierLibre/quartier-libre-theme\" cat ql-sync.php _append.php.tmp mv _ql-sync.new ql-sync.php rm _append.php.tmp wc -l ql-sync.php echo \"---\" grep -n \"^function ql_\" ql-sync.php)",
+      "Bash(cd \"C:/Users/Utilisateur/Documents/GitHub/QuartierLibre/quartier-libre-theme\" cat _ql-sync.new _cleaner.php.tmp rm _ql-sync.new _cleaner.php.tmp wc -l ql-sync.php echo \"---\" grep -n \"^function ql_\" ql-sync.php)"
     ]
   }
 }

@@ -860,6 +860,53 @@ p  { margin: 0 0 1em; }
 
 /* ═══ ANTI-PARASITES radicaux ═══ */
 
+/* 0. Masquer TOUS les widgets Kadence / Blockspare décoratifs
+      (le cleaner PHP ne touche pas aux <div>, on masque en CSS) */
+.ql-post__content [class*="wp-block-kadence-countdown"],
+.ql-post__content [class*="wp-block-kadence-progressbar"],
+.ql-post__content [class*="wp-block-kadence-form"],
+.ql-post__content [class*="wp-block-kadence-spacer"],
+.ql-post__content [class*="wp-block-kadence-googlemaps"],
+.ql-post__content [class*="wp-block-kadence-lottie"],
+.ql-post__content [class*="wp-block-kadence-iconlist"],
+.ql-post__content [class*="wp-block-blockspare-shape-divider"],
+.ql-post__content [class*="wp-block-blockspare-slider"],
+.ql-post__content [class*="blockspare-shape"],
+.ql-post__content [class*="shape-divider"],
+.ql-post__content [class*="shape_divider"] {
+  display: none !important;
+}
+
+/* Les rowlayout/section/column Kadence restent visibles mais sans background/padding agressif */
+.ql-post__content .wp-block-kadence-rowlayout,
+.ql-post__content .wp-block-kadence-column,
+.ql-post__content .wp-block-kadence-section,
+.ql-post__content [class*="wp-block-kadence-row"],
+.ql-post__content [class*="wp-block-kadence-column"] {
+  background: transparent !important;
+  background-image: none !important;
+  padding: 0 !important;
+  margin: 1em 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Kadence advancedheading : strip backgrounds/borders */
+.ql-post__content [class*="wp-block-kadence-advancedheading"],
+.ql-post__content [class*="kb-advanced-heading"] {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 2em 0 .6em !important;
+  text-align: left !important;
+  color: var(--ql-ink) !important;
+  box-shadow: none !important;
+}
+
+
 /* 1. Tuer les vagues / shape dividers / SVG décoratifs embarqués dans le contenu */
 .ql-post__content > svg,
 .ql-post__content > figure > svg:only-child,
