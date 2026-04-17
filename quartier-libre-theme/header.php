@@ -17,6 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 <a class="ql-skip" href="#content">Aller au contenu</a>
 
+<div class="ql-topbar">
+    <div class="ql-container ql-topbar__inner">
+        <span class="ql-topbar__date"><?php echo esc_html( date_i18n( 'l j F Y' ) ); ?></span>
+        <span class="ql-topbar__tagline"><strong>Par nous, pour nous.</strong> Les quartiers prennent la parole.</span>
+    </div>
+</div>
+
 <header class="ql-header" role="banner">
     <div class="ql-header__bar">
         <div class="ql-container ql-header__inner">
