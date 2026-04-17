@@ -18,21 +18,6 @@ get_header(); ?>
 
 <article class="ql-post">
 
-    <?php if ( $has_img ) : ?>
-        <div class="ql-post__banner">
-            <?php the_post_thumbnail( 'ql-hero', array(
-                'loading'       => 'eager',
-                'fetchpriority' => 'high',
-                'decoding'      => 'async',
-                'class'         => 'ql-post__banner-img',
-            ) ); ?>
-            <?php $cap = get_the_post_thumbnail_caption();
-            if ( $cap ) : ?>
-                <div class="ql-post__banner-caption"><?php echo esc_html( $cap ); ?></div>
-            <?php endif; ?>
-        </div>
-    <?php endif; ?>
-
     <header class="ql-post__header">
         <div class="ql-post__header-inner">
             <?php if ( $cat ) : ?>
@@ -40,6 +25,21 @@ get_header(); ?>
             <?php endif; ?>
 
             <h1 class="ql-post__title"><?php the_title(); ?></h1>
+
+            <?php if ( $has_img ) : ?>
+                <div class="ql-post__banner">
+                    <?php the_post_thumbnail( 'ql-hero', array(
+                        'loading'       => 'eager',
+                        'fetchpriority' => 'high',
+                        'decoding'      => 'async',
+                        'class'         => 'ql-post__banner-img',
+                    ) ); ?>
+                    <?php $cap = get_the_post_thumbnail_caption();
+                    if ( $cap ) : ?>
+                        <div class="ql-post__banner-caption"><?php echo esc_html( $cap ); ?></div>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
 
             <?php if ( has_excerpt() ) : ?>
                 <p class="ql-post__lede"><?php echo esc_html( get_the_excerpt() ); ?></p>

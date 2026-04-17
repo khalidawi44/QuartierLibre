@@ -557,13 +557,14 @@ p  { margin: 0 0 1em; }
 }
 .ql-post > * { box-sizing: border-box; }
 
-/* ─── Banner image : proportionnelle, centrée, max 400px de haut ─── */
+/* ─── Banner image : proportionnelle, centrée, max 400px
+      Placée ENTRE le titre et le chapô dans le header ─── */
 .ql-post__banner {
   width: 100% !important;
   background: transparent !important;
   text-align: center !important;
-  padding: 1.5rem 1rem !important;
-  margin: 0 !important;
+  padding: 0 !important;
+  margin: 1.5rem auto !important;
   /* PAS de hauteur fixe → container s'adapte à l'image */
   height: auto !important;
   max-height: none !important;
