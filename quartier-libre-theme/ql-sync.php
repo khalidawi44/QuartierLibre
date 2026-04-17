@@ -150,18 +150,32 @@ function ql_sync_render() {
     $backup_count = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE meta_key = '_ql_content_backup'" );
     ?>
     <div class="ql-sync-card" style="border-color:#0f0f0f;background:linear-gradient(135deg, #fff8e1 0%, #ffe5df 100%);">
-        <h2>Nettoyer les parasites dans les articles (mode SAFE)</h2>
+        <h2>Nettoyer les parasites dans les articles (v3 — DOMDocument)</h2>
         <p>
-            <strong>Version corrigée</strong> : ne touche qu'aux commentaires Gutenberg
-            <code>&lt;!-- wp:kadence/... --&gt;</code> et aux styles inline sur h1-h6.
-            N'altère <strong>jamais</strong> les balises <code>&lt;div&gt;</code>
-            (pour ne pas casser les structures imbriquées).
-            Le masquage visuel des widgets décoratifs (progressbar, countdown, shape-divider)
-            est désormais fait en CSS, pas en retirant le HTML.
+            <strong>Version 3 — parser HTML safe</strong> : utilise
+            <code>DOMDocument</code> de PHP (parsing natif, jamais de regex
+            sur du HTML imbriqué).
+        </p>
+        <p>Nettoie :</p>
+        <ul style="list-style:disc;padding-left:20px;">
+            <li><strong>Supprime</strong> les <code>&lt;div&gt;</code> des widgets décoratifs
+                Kadence (countdown, progressbar, spacer, form, googlemaps, lottie, iconlist)
+                et Blockspare (shape-divider, slider)</li>
+            <li><strong>Supprime</strong> les SVG décoratifs (viewBox ≥ 100 ou height ≥ 80)</li>
+            <li><strong>Supprime</strong> les <code>&lt;form&gt;</code> wp-login / register</li>
+            <li><strong>Strip</strong> les styles inline dangereux sur <strong>tous</strong> les éléments
+                (background, color, padding, margin, width, height, position, transform, border, text-align)</li>
+            <li><strong>Strip</strong> les classes Gutenberg cassantes
+                (has-background, has-text-align, is-style-*, kb-*,
+                wp-block-kadence-*, wp-block-blockspare-*)</li>
+        </ul>
+        <p>
+            Sécurités : backup auto avant modification, retour à l'original
+            si le résultat est vide ou &lt; 30 % de la taille source.
         </p>
         <p>
-            <strong>👉 Conseil</strong> : cliquer d'abord sur <em>Prévisualiser</em> pour voir
-            ce qui serait modifié, AVANT de lancer le nettoyage en base.
+            <strong>👉 Conseil</strong> : cliquer d'abord sur <em>Prévisualiser</em>
+            pour voir le résultat sur 3 articles, puis lancer le clean.
         </p>
 
         <form method="post" style="display:inline-block;">
@@ -772,80 +786,211 @@ function ql_do_restore_articles() {
  * est fait en CSS (plus sûr que regex HTML imbriqué).
  * ═══════════════════════════════════════════════════════════════
  */
-function ql_clean_article_content( $content ) {
-    if ( ! is_string( $content ) || $content === '' ) { return $content; }
-
-    $original = $content;
-
-    // 1. Retirer UNIQUEMENT les commentaires de blocs Kadence/Blockspare
-    //    (garder toutes les <div> et leur contenu intacts)
-    $content = preg_replace(
-        '#<!--\s*/?wp:(?:kadence|blockspare|kb)/[^>]*-->#is',
-        '',
-        $content
-    );
-
-    // 2. Shortcodes orphelins de plugins virés
-    $content = preg_replace(
-        '/\[(login-form|register-form|loginform|loginpress[^\]]*|user_registration[^\]]*|um_loggedin[^\]]*|um_loggedout[^\]]*|kadence[^\]]*|blockspare[^\]]*)[^\]]*\]/i',
-        '',
-        $content
-    );
-
-    // 3. Formulaires wp-login / register embarqués (balises autonomes, pas nested)
-    $content = preg_replace(
-        '#<form[^>]*action="[^"]*wp-login[^"]*"[^>]*>.*?</form>#is',
-        '',
-        $content
-    );
-    $content = preg_replace(
-        '#<form[^>]*id="(?:loginform|registerform)"[^>]*>.*?</form>#is',
-        '',
-        $content
-    );
-
-    // 4. Strip styles inline + classes cassantes sur h1-h6 UNIQUEMENT
-    $content = preg_replace_callback(
-        '#<(h[1-6])([^>]*)>#i',
-        function ( $m ) {
-            $attrs = $m[2];
-            // strip style=""
-            $attrs = preg_replace( '/\s+style\s*=\s*"[^"]*"/i', '', $attrs );
-            // strip classes Kadence / Blockspare / has-background / is-style-*
-            $attrs = preg_replace_callback(
-                '/\sclass="([^"]*)"/i',
-                function ( $cm ) {
-                    $kept = array();
-                    foreach ( preg_split( '/\s+/', trim( $cm[1] ) ) as $c ) {
-                        if ( $c === '' ) continue;
-                        if ( preg_match( '/^(kadence|blockspare|kb-|has-background|has-text-align|is-style-|wp-block-heading$)/i', $c ) ) continue;
-                        $kept[] = $c;
-                    }
-                    return empty( $kept ) ? '' : ' class="' . esc_attr( implode( ' ', $kept ) ) . '"';
-                },
-                $attrs
-            );
-            return '<' . $m[1] . $attrs . '>';
-        },
-        $content
-    );
-
-    // 5. Nettoyer lignes vides multiples
-    $content = preg_replace( "/\n{3,}/", "\n\n", $content );
-
-    // Sécurité : si le résultat est VIDE ou beaucoup plus court que l'original,
-    // on annule et on retourne l'original.
-    if ( trim( $content ) === '' ) { return $original; }
-    if ( mb_strlen( $content ) < ( mb_strlen( $original ) * 0.3 ) ) {
-        return $original;
-    }
-
-    return trim( $content );
-}
 
 /**
- * Preview : compare avant/après sur un article échantillon, sans rien modifier.
+ * ═══════════════════════════════════════════════════════════════
+ * CLEANER v3 — DOMDocument (parsing HTML safe, gère le nesting)
+ *
+ * Stratégie :
+ *  1. Parser le HTML avec DOMDocument (évite les bugs de regex).
+ *  2. Supprimer les <div> des widgets décoratifs
+ *     (shape-divider, countdown, progressbar, spacer, form…).
+ *  3. Strip styles inline dangereux (background, color, padding,
+ *     margin, width, height, position, transform) sur TOUS les
+ *     éléments.
+ *  4. Strip classes Gutenberg problématiques
+ *     (has-background, has-text-align, kb-*, wp-block-kadence-*,
+ *     wp-block-blockspare-*, is-style-*) sur tous les éléments.
+ *  5. Safety guard : retourne l'original si résultat vide ou
+ *     < 30 % de la taille source.
+ * ═══════════════════════════════════════════════════════════════
  */
+function ql_clean_article_content( $content ) {
+    if ( ! is_string( $content ) || trim( $content ) === '' ) return $content;
+    $original = $content;
+
+    // Shortcut : rien à nettoyer, on ne parse pas
+    if ( ! preg_match( '/(wp-block-kadence|wp-block-blockspare|\bkb-|has-background|has-text-align|shape-divider|shape_divider|is-style-|style\s*=\s*"[^"]*(background|color\s*:|transform|clip-path))/i', $content ) ) {
+        return $content;
+    }
+
+    // Classes dont les éléments doivent être SUPPRIMÉS entièrement
+    $kill_classes = array(
+        'wp-block-kadence-countdown',
+        'wp-block-kadence-progressbar',
+        'wp-block-kadence-spacer',
+        'wp-block-kadence-form',
+        'wp-block-kadence-googlemaps',
+        'wp-block-kadence-lottie',
+        'wp-block-kadence-iconlist',
+        'wp-block-blockspare-shape-divider',
+        'wp-block-blockspare-slider',
+        'wp-block-blockspare-form',
+        'blockspare-shape-divider',
+        'shape-divider',
+        'shape_divider',
+        'kb-countdown',
+        'kb-spacer',
+        'kb-progress-bar',
+    );
+
+    // Classes à retirer (mais l'élément est conservé)
+    $strip_class_patterns = array(
+        '/^has-background/',
+        '/^has-text-align/',
+        '/^has-.*-color/',
+        '/^has-.*-background-color/',
+        '/^is-style-/',
+        '/^kb-[a-z0-9_-]+/i',   // tous les kb-*
+        '/^wp-block-kadence-/',
+        '/^wp-block-blockspare-/',
+        '/^wp-block-heading$/',
+    );
+
+    // Propriétés de style inline à retirer
+    $strip_style_props = array(
+        'background', 'background-color', 'background-image',
+        'color',
+        'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
+        'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+        'width', 'min-width', 'max-width',
+        'height', 'min-height', 'max-height',
+        'position', 'top', 'right', 'bottom', 'left',
+        'transform', 'clip-path', 'float',
+        'border', 'border-top', 'border-right', 'border-bottom', 'border-left',
+        'border-radius', 'border-color', 'border-width', 'border-style',
+        'text-align',
+        'box-shadow', 'filter', 'z-index',
+        'display',
+    );
+
+    // Parser HTML — sans implied html/body tags pour préserver la structure
+    libxml_use_internal_errors( true );
+    $dom = new DOMDocument( '1.0', 'UTF-8' );
+    $dom->preserveWhiteSpace = true;
+    $dom->formatOutput = false;
+
+    // Wrap pour avoir un root unique + forcer UTF-8
+    $wrapped = '<?xml encoding="UTF-8"><div id="_ql_wrap">' . $content . '</div>';
+
+    if ( ! @$dom->loadHTML( $wrapped, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD | LIBXML_NOERROR | LIBXML_NOWARNING ) ) {
+        libxml_clear_errors();
+        return $original;
+    }
+    libxml_clear_errors();
+
+    $xpath = new DOMXPath( $dom );
+
+    // ─── 1. Supprimer les divs "à tuer" ──────────────────────────
+    foreach ( $kill_classes as $cls ) {
+        // contient la classe (avec espaces autour pour éviter les faux positifs)
+        $q = "//*[contains(concat(' ', normalize-space(@class), ' '), ' {$cls} ')]";
+        $nodes = $xpath->query( $q );
+        if ( $nodes ) {
+            // Parcourir à l'envers pour éviter les invalidations d'index
+            for ( $i = $nodes->length - 1; $i >= 0; $i-- ) {
+                $node = $nodes->item( $i );
+                if ( $node && $node->parentNode ) {
+                    $node->parentNode->removeChild( $node );
+                }
+            }
+        }
+    }
+
+    // ─── 2. Supprimer SVG décoratifs (viewBox avec hauteur > 100) ─
+    $svgs = $xpath->query( '//svg' );
+    if ( $svgs ) {
+        for ( $i = $svgs->length - 1; $i >= 0; $i-- ) {
+            $svg = $svgs->item( $i );
+            // Garder si contient <text>
+            if ( $xpath->query( './/text', $svg )->length > 0 ) continue;
+            $vb = $svg->getAttribute( 'viewBox' );
+            $h  = $svg->getAttribute( 'height' );
+            $big = false;
+            if ( $vb && preg_match( '/^[\d.\-]+\s+[\d.\-]+\s+[\d.\-]+\s+(\d+)/', $vb, $m ) && (int) $m[1] > 100 ) $big = true;
+            if ( $h && (int) $h > 80 ) $big = true;
+            if ( $big && $svg->parentNode ) {
+                $svg->parentNode->removeChild( $svg );
+            }
+        }
+    }
+
+    // ─── 3. Supprimer formulaires wp-login ───────────────────────
+    $forms = $xpath->query( "//form[contains(@action,'wp-login') or @id='loginform' or @id='registerform']" );
+    if ( $forms ) {
+        for ( $i = $forms->length - 1; $i >= 0; $i-- ) {
+            $f = $forms->item( $i );
+            if ( $f && $f->parentNode ) $f->parentNode->removeChild( $f );
+        }
+    }
+
+    // ─── 4. Strip styles inline dangereux sur tous les éléments ──
+    $styled = $xpath->query( '//*[@style]' );
+    if ( $styled ) {
+        foreach ( $styled as $el ) {
+            $style = $el->getAttribute( 'style' );
+            $rules = array_filter( array_map( 'trim', explode( ';', $style ) ) );
+            $keep  = array();
+            foreach ( $rules as $rule ) {
+                if ( $rule === '' ) continue;
+                $parts = explode( ':', $rule, 2 );
+                $prop = strtolower( trim( $parts[0] ) );
+                if ( in_array( $prop, $strip_style_props, true ) ) continue;
+                $keep[] = $rule;
+            }
+            if ( empty( $keep ) ) {
+                $el->removeAttribute( 'style' );
+            } else {
+                $el->setAttribute( 'style', implode( '; ', $keep ) );
+            }
+        }
+    }
+
+    // ─── 5. Strip classes problématiques sur tous les éléments ──
+    $classed = $xpath->query( '//*[@class]' );
+    if ( $classed ) {
+        foreach ( $classed as $el ) {
+            $classes = preg_split( '/\s+/', trim( $el->getAttribute( 'class' ) ) );
+            $kept = array();
+            foreach ( $classes as $c ) {
+                if ( $c === '' ) continue;
+                $skip = false;
+                foreach ( $strip_class_patterns as $pat ) {
+                    if ( preg_match( $pat, $c ) ) { $skip = true; break; }
+                }
+                if ( ! $skip ) $kept[] = $c;
+            }
+            if ( empty( $kept ) ) {
+                $el->removeAttribute( 'class' );
+            } else {
+                $el->setAttribute( 'class', implode( ' ', $kept ) );
+            }
+        }
+    }
+
+    // ─── 6. Sérialiser le contenu du wrapper ─────────────────────
+    $wrap = $dom->getElementById( '_ql_wrap' );
+    if ( ! $wrap ) return $original;
+
+    $result = '';
+    foreach ( $wrap->childNodes as $child ) {
+        $result .= $dom->saveHTML( $child );
+    }
+
+    // Nettoyer entité XML insérée
+    $result = preg_replace( '/^<\?xml[^>]+\?>\s*/', '', $result );
+
+    // Nettoyer lignes vides multiples
+    $result = preg_replace( "/\n{3,}/", "\n\n", $result );
+    $result = trim( $result );
+
+    // Safety guard : si résultat vide ou trop court, retourner l'original
+    if ( $result === '' ) return $original;
+    if ( mb_strlen( $result ) < mb_strlen( $original ) * 0.3 ) return $original;
+
+    return $result;
+}
+
 function ql_do_preview_clean() {
     global $wpdb;
 
