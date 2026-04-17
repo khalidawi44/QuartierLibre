@@ -571,7 +571,7 @@ p  { margin: 0 0 1em; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 35%;  /* favorise le haut de l'image (textes titre photo) */
   margin: 0;
 }
 .ql-post__banner-caption {
@@ -643,7 +643,15 @@ p  { margin: 0 0 1em; }
   z-index: 1;
 }
 
-/* ═══ NUCLEAR RESET : tue tout positioning/transform/float heritage ═══ */
+/* ═══ NUCLEAR RESET : casse tout CSS hérité (Gutenberg, vieux thème, plugins) ═══ */
+
+/* Nouveau stacking context isolé */
+.ql-post__content {
+  contain: layout style;
+  isolation: isolate;
+}
+
+/* Tue tout positionnement/transform/float sur tous les descendants */
 .ql-post__content * {
   position: static !important;
   transform: none !important;
@@ -653,6 +661,7 @@ p  { margin: 0 0 1em; }
   z-index: auto !important;
   box-shadow: none !important;
   filter: none !important;
+  float: none !important;
 }
 .ql-post__content *::before,
 .ql-post__content *::after {
@@ -660,7 +669,70 @@ p  { margin: 0 0 1em; }
   clip-path: none !important;
   transform: none !important;
 }
-/* Exceptions : floats légitimes pour alignleft/alignright */
+
+/* OVERRIDE TOTAL DES TITRES : strip tout style hérité (background, margin, text-align) */
+.ql-post__content h1,
+.ql-post__content h2,
+.ql-post__content h3,
+.ql-post__content h4,
+.ql-post__content h5,
+.ql-post__content h6,
+.ql-post__content .wp-block-heading {
+  display: block !important;
+  clear: both !important;
+  margin: 2em 0 .6em !important;
+  padding: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.18 !important;
+  color: var(--ql-ink) !important;
+  font-family: var(--ql-font-serif) !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: var(--ql-ink) !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+.ql-post__content h2,
+.ql-post__content .wp-block-heading[id*="h2"] { font-size: 1.7rem !important; }
+.ql-post__content h3 { font-size: 1.35rem !important; }
+.ql-post__content h4 { font-size: 1.15rem !important; }
+
+/* OVERRIDE PARAGRAPHES : flux normal, aucune surprise */
+.ql-post__content p {
+  display: block !important;
+  clear: none !important;
+  margin: 0 0 1.25em !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--ql-ink) !important;
+  font-size: 1.15rem !important;
+  line-height: 1.78 !important;
+  font-weight: 400 !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+/* Tous les enfants directs : flux normal forcé */
+.ql-post__content > * {
+  display: block !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  clear: both !important;
+}
+
+/* Exceptions : floats légitimes pour alignleft/alignright (après nuclear reset) */
 .ql-post__content .alignleft,
 .ql-post__content .wp-block-image.alignleft { float: left !important; }
 .ql-post__content .alignright,

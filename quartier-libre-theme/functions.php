@@ -214,6 +214,51 @@ add_filter( 'the_content', function ( $content ) {
     // 4. Retire width/height HTML attributes (forcent tailles rigides)
     $content = preg_replace( '/\s(width|height)="\d+"/i', '', $content );
 
+    // 4b. Strip TOUS les style="" sur les headings (h1-h6) + groupes — ils cassent le layout
+    $content = preg_replace_callback(
+        '#<(h[1-6]|div|section)(\s+[^>]*?class="[^"]*(?:wp-block-heading|wp-block-group|has-background|has-text-align)[^"]*")[^>]*>#is',
+        function ( $m ) {
+            // Retire style=".." complet sur ces elements
+            return preg_replace( '/\s+style\s*=\s*"[^"]*"/i', '', $m[0] );
+        },
+        $content
+    );
+
+    // 4c. Strip aussi tous les style sur les h1-h6 quoi qu'il arrive
+    $content = preg_replace_callback(
+        '#<(h[1-6])([^>]*)>#i',
+        function ( $m ) {
+            $attrs = preg_replace( '/\s+style\s*=\s*"[^"]*"/i', '', $m[2] );
+            return '<' . $m[1] . $attrs . '>';
+        },
+        $content
+    );
+
+    // 4d. Retire les classes Gutenberg cassantes (has-background-color, has-*-color, etc.)
+    $content = preg_replace_callback(
+        '#class="([^"]*)"#i',
+        function ( $m ) {
+            $classes = preg_split( '/\s+/', $m[1] );
+            $kept    = array();
+            foreach ( $classes as $c ) {
+                // On garde wp-block-image (gère l'image), alignleft/right, aligncenter
+                // On vire tout ce qui touche background/couleur/position
+                $blacklist_patterns = array(
+                    '/^has-.*(background|text-align|color).*/',
+                    '/^is-style-.*/',
+                    '/^wp-block-heading$/',
+                );
+                $skip = false;
+                foreach ( $blacklist_patterns as $pat ) {
+                    if ( preg_match( $pat, $c ) ) { $skip = true; break; }
+                }
+                if ( ! $skip ) $kept[] = $c;
+            }
+            return 'class="' . esc_attr( implode( ' ', $kept ) ) . '"';
+        },
+        $content
+    );
+
     // 5. Nettoie les style="..." dangereux
     $content = preg_replace_callback(
         '/style\s*=\s*"([^"]*)"/i',
