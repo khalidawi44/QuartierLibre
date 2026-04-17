@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:quartierlibre.org)",
-      "Bash(chmod +x \"C:/Users/Utilisateur/Documents/GitHub/QuartierLibre/deploy/deploy.sh\")"
+      "Bash(chmod +x \"C:/Users/Utilisateur/Documents/GitHub/QuartierLibre/deploy/deploy.sh\")",
+      "Bash(php -l quartier-libre-theme/ql-sync.php)"
     ]
   }
 }

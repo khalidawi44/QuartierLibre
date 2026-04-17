@@ -16,7 +16,10 @@ define( 'QL_SYNC_LOADED', true );
 define( 'QL_GH_OWNER',  'khalidawi44' );
 define( 'QL_GH_REPO',   'QuartierLibre' );
 define( 'QL_GH_BRANCH', 'main' );
-define( 'QL_GH_THEME_PATH', 'quartier-libre-theme' );
+define( 'QL_GH_THEME_PATH',    'quartier-libre-theme' );
+define( 'QL_GH_CONTENT_PATH',  'content' );
+define( 'QL_GH_ARTICLES_PATH', 'content/articles' );
+define( 'QL_GH_MEDIA_PATH',    'content/media' );
 
 // ── Menu admin ──────────────────────────────────────────────────
 add_action( 'admin_menu', function () {
@@ -45,6 +48,10 @@ function ql_sync_render() {
             ql_do_github_sync();
             update_option( 'ql_last_sync', time() );
         }
+    }
+
+    if ( isset( $_POST['ql_go_content'] ) && check_admin_referer( 'ql_content_nonce' ) ) {
+        ql_do_content_sync();
     }
 
     // Action : clear logs
@@ -92,9 +99,14 @@ function ql_sync_render() {
             en ligne, pas besoin d'FTP.
         </p>
 
-        <form method="post">
+        <form method="post" style="display:inline-block;">
             <?php wp_nonce_field( 'ql_sync_nonce' ); ?>
-            <input type="submit" name="ql_go" class="button button-primary button-hero ql-sync-btn" value="Synchroniser maintenant">
+            <input type="submit" name="ql_go" class="button button-primary button-hero ql-sync-btn" value="Synchroniser le thème">
+        </form>
+
+        <form method="post" style="display:inline-block;margin-left:12px;">
+            <?php wp_nonce_field( 'ql_content_nonce' ); ?>
+            <input type="submit" name="ql_go_content" class="button button-primary button-hero ql-sync-btn" style="background:#0f0f0f !important;border-color:#0f0f0f !important;" value="Synchroniser les articles (.md)">
         </form>
 
         <div class="ql-sync-meta">
@@ -286,4 +298,314 @@ function ql_do_github_sync() {
         ql_log_msg( 'OPcache vidé' );
     }
     wp_cache_flush();
+}
+
+// ════════════════════════════════════════════════════════════════
+//  SYNC DE CONTENU — articles Markdown → WordPress posts
+// ════════════════════════════════════════════════════════════════
+
+function ql_do_content_sync() {
+    $files = ql_gh_list_content_files( QL_GH_ARTICLES_PATH );
+    if ( ! is_array( $files ) ) {
+        echo '<div class="notice notice-error"><p>Impossible de lister le dossier <code>content/articles/</code> sur GitHub.</p></div>';
+        return;
+    }
+
+    $md_files = array_filter( $files, function ( $f ) {
+        return substr( $f['path'], -3 ) === '.md' && basename( $f['path'] ) !== 'README.md';
+    } );
+
+    if ( empty( $md_files ) ) {
+        echo '<div class="notice notice-warning"><p>Aucun fichier <code>.md</code> trouvé dans <code>content/articles/</code>.</p></div>';
+        return;
+    }
+
+    $created = 0; $updated = 0; $images = 0; $errors = 0;
+
+    foreach ( $md_files as $f ) {
+        $raw = ql_gh_raw( $f['download'] );
+        if ( $raw === false ) { $errors++; continue; }
+
+        $parsed = ql_parse_frontmatter( $raw );
+        if ( empty( $parsed['front']['title'] ) ) {
+            ql_log_msg( 'SKIP: ' . basename( $f['path'] ) . ' — pas de title' );
+            $errors++;
+            continue;
+        }
+
+        $result = ql_upsert_article( $parsed['front'], $parsed['body'], $images );
+        if ( $result === 'created' ) { $created++; }
+        elseif ( $result === 'updated' ) { $updated++; }
+        else { $errors++; }
+    }
+
+    $msg = sprintf(
+        '%d article%s créé · %d mis à jour · %d image%s · %d erreur%s',
+        $created, $created > 1 ? 's' : '',
+        $updated,
+        $images, $images > 1 ? 's' : '',
+        $errors, $errors > 1 ? 's' : ''
+    );
+
+    $class = $errors ? 'notice-warning' : 'notice-success';
+    echo '<div class="notice ' . esc_attr( $class ) . '"><p><strong>Sync contenu.</strong> ' . esc_html( $msg ) . '</p></div>';
+    ql_log_msg( 'Contenu: ' . $msg );
+}
+
+// ── Lister récursivement des fichiers dans un chemin donné ────
+function ql_gh_list_content_files( $path ) {
+    $url = sprintf(
+        'https://api.github.com/repos/%s/%s/contents/%s?ref=%s',
+        QL_GH_OWNER, QL_GH_REPO, rawurlencode( $path ), QL_GH_BRANCH
+    );
+    $url = str_replace( '%2F', '/', $url );
+
+    $resp = wp_remote_get( $url, array(
+        'timeout' => 20, 'sslverify' => true,
+        'headers' => array(
+            'Accept'     => 'application/vnd.github+json',
+            'User-Agent' => 'QuartierLibre-Sync/1.0',
+        ),
+    ) );
+    if ( is_wp_error( $resp ) ) return false;
+    if ( wp_remote_retrieve_response_code( $resp ) !== 200 ) return false;
+
+    $data = json_decode( wp_remote_retrieve_body( $resp ), true );
+    if ( ! is_array( $data ) ) return false;
+
+    $files = array();
+    foreach ( $data as $item ) {
+        if ( $item['type'] === 'file' ) {
+            $files[] = array(
+                'path' => $item['path'], 'name' => $item['name'],
+                'size' => (int) $item['size'], 'download' => $item['download_url'],
+            );
+        } elseif ( $item['type'] === 'dir' ) {
+            $sub = ql_gh_list_content_files( $item['path'] );
+            if ( is_array( $sub ) ) { $files = array_merge( $files, $sub ); }
+        }
+    }
+    return $files;
+}
+
+// ── YAML frontmatter + body ───────────────────────────────────
+function ql_parse_frontmatter( $raw ) {
+    $raw = preg_replace( "/^\xEF\xBB\xBF/", '', $raw );
+    $raw = str_replace( "\r\n", "\n", $raw );
+    $front = array(); $body = $raw;
+    if ( strpos( $raw, "---\n" ) === 0 ) {
+        $end = strpos( $raw, "\n---\n", 4 );
+        if ( $end !== false ) {
+            $yaml = substr( $raw, 4, $end - 4 );
+            $body = substr( $raw, $end + 5 );
+            $front = ql_parse_simple_yaml( $yaml );
+        }
+    }
+    return array( 'front' => $front, 'body' => $body );
+}
+function ql_parse_simple_yaml( $yaml ) {
+    $out = array(); $current = null;
+    foreach ( explode( "\n", $yaml ) as $line ) {
+        if ( trim( $line ) === '' || ( isset( $line[0] ) && $line[0] === '#' ) ) continue;
+        if ( preg_match( '/^\s*-\s+(.+)$/', $line, $m ) && $current ) {
+            if ( ! is_array( $out[ $current ] ?? null ) ) $out[ $current ] = array();
+            $out[ $current ][] = ql_yaml_unquote( trim( $m[1] ) );
+            continue;
+        }
+        if ( preg_match( '/^([a-zA-Z0-9_\-]+)\s*:\s*(.*)$/', $line, $m ) ) {
+            $key = $m[1]; $val = trim( $m[2] );
+            if ( $val === '' ) { $out[ $key ] = array(); $current = $key; }
+            else { $out[ $key ] = ql_yaml_unquote( $val ); $current = $key; }
+        }
+    }
+    return $out;
+}
+function ql_yaml_unquote( $s ) {
+    if ( preg_match( '/^"(.*)"$/', $s, $m ) ) return $m[1];
+    if ( preg_match( "/^'(.*)'$/", $s, $m ) ) return $m[1];
+    return $s;
+}
+
+// ── Créer / mettre à jour un article ──────────────────────────
+function ql_upsert_article( $front, $body_md, &$images_count ) {
+    $slug = ! empty( $front['slug'] ) ? sanitize_title( $front['slug'] ) : sanitize_title( $front['title'] );
+
+    $existing = get_posts( array(
+        'name'           => $slug,
+        'post_type'      => 'post',
+        'post_status'    => array( 'publish', 'draft', 'pending', 'future', 'private' ),
+        'posts_per_page' => 1,
+    ) );
+
+    $thumb_id = 0;
+    if ( ! empty( $front['featured_image'] ) ) {
+        $thumb_id = ql_upload_image_from_repo( $front['featured_image'], $images_count );
+    }
+
+    $body_html = ql_markdown_to_html( $body_md, $images_count );
+
+    $postarr = array(
+        'post_title'   => $front['title'],
+        'post_name'    => $slug,
+        'post_content' => $body_html,
+        'post_excerpt' => isset( $front['excerpt'] ) ? $front['excerpt'] : '',
+        'post_status'  => ( isset( $front['status'] ) && $front['status'] === 'draft' ) ? 'draft' : 'publish',
+        'post_type'    => 'post',
+    );
+
+    if ( ! empty( $front['date'] ) ) {
+        $ts = strtotime( $front['date'] );
+        if ( $ts ) {
+            $postarr['post_date']     = date( 'Y-m-d H:i:s', $ts );
+            $postarr['post_date_gmt'] = gmdate( 'Y-m-d H:i:s', $ts );
+        }
+    }
+
+    if ( ! empty( $front['author'] ) ) {
+        $user = get_user_by( 'login', $front['author'] );
+        if ( $user ) $postarr['post_author'] = $user->ID;
+    }
+
+    if ( ! empty( $existing ) ) {
+        $postarr['ID'] = $existing[0]->ID;
+        $post_id = wp_update_post( $postarr, true );
+        $action = 'updated';
+    } else {
+        $post_id = wp_insert_post( $postarr, true );
+        $action = 'created';
+    }
+    if ( is_wp_error( $post_id ) || ! $post_id ) return false;
+
+    if ( ! empty( $front['category'] ) ) {
+        $slug_c = sanitize_title( $front['category'] );
+        $cat = get_term_by( 'slug', $slug_c, 'category' );
+        if ( ! $cat ) {
+            $r = wp_insert_term( $front['category'], 'category', array( 'slug' => $slug_c ) );
+            $cat_id = ! is_wp_error( $r ) ? $r['term_id'] : 0;
+        } else {
+            $cat_id = $cat->term_id;
+        }
+        if ( ! empty( $cat_id ) ) wp_set_post_categories( $post_id, array( (int) $cat_id ) );
+    }
+
+    if ( ! empty( $front['tags'] ) && is_array( $front['tags'] ) ) {
+        wp_set_post_tags( $post_id, $front['tags'], false );
+    }
+
+    if ( $thumb_id ) set_post_thumbnail( $post_id, $thumb_id );
+
+    update_post_meta( $post_id, '_ql_synced', 1 );
+    update_post_meta( $post_id, '_ql_sync_at', time() );
+
+    return $action;
+}
+
+// ── Upload d'une image depuis le repo (dédupliquée) ───────────
+function ql_upload_image_from_repo( $repo_path, &$count ) {
+    $repo_path = ltrim( str_replace( '\\', '/', $repo_path ), '/' );
+    $hash_key  = '_ql_media_' . md5( $repo_path );
+
+    $existing = get_posts( array(
+        'post_type'      => 'attachment',
+        'meta_key'       => $hash_key,
+        'posts_per_page' => 1,
+    ) );
+    if ( $existing ) return $existing[0]->ID;
+
+    $raw_url = sprintf(
+        'https://raw.githubusercontent.com/%s/%s/%s/%s',
+        QL_GH_OWNER, QL_GH_REPO, QL_GH_BRANCH, $repo_path
+    );
+
+    require_once ABSPATH . 'wp-admin/includes/file.php';
+    require_once ABSPATH . 'wp-admin/includes/media.php';
+    require_once ABSPATH . 'wp-admin/includes/image.php';
+
+    $tmp = download_url( $raw_url, 60 );
+    if ( is_wp_error( $tmp ) ) return 0;
+
+    $file_array = array( 'name' => basename( $repo_path ), 'tmp_name' => $tmp );
+    $attach_id = media_handle_sideload( $file_array, 0 );
+    if ( is_wp_error( $attach_id ) ) { @unlink( $tmp ); return 0; }
+
+    update_post_meta( $attach_id, $hash_key, 1 );
+    update_post_meta( $attach_id, '_ql_media_source', $repo_path );
+    $count++;
+    return $attach_id;
+}
+
+// ── Markdown → HTML (parser minimal) ──────────────────────────
+function ql_markdown_to_html( $md, &$images_count ) {
+    // Images content/media/... → URL médiathèque
+    $md = preg_replace_callback(
+        '/!\[([^\]]*)\]\((content\/media\/[^\)]+)\)/',
+        function ( $m ) use ( &$images_count ) {
+            $id = ql_upload_image_from_repo( $m[2], $images_count );
+            if ( $id ) {
+                $url = wp_get_attachment_url( $id );
+                return '![' . $m[1] . '](' . $url . ')';
+            }
+            return $m[0];
+        }, $md
+    );
+
+    $md = str_replace( "\r\n", "\n", trim( $md ) );
+    $out = array();
+    $in_ul = false; $in_ol = false; $in_quote = false;
+
+    $flush = function() use ( &$out, &$in_ul, &$in_ol, &$in_quote ) {
+        if ( $in_ul ) { $out[] = '</ul>'; $in_ul = false; }
+        if ( $in_ol ) { $out[] = '</ol>'; $in_ol = false; }
+        if ( $in_quote ) { $out[] = '</blockquote>'; $in_quote = false; }
+    };
+
+    $inline = function ( $line ) {
+        $line = preg_replace_callback( '/!\[([^\]]*)\]\(([^\)]+)\)/', function ( $m ) {
+            $caption = $m[1] ? '<figcaption>' . esc_html( $m[1] ) . '</figcaption>' : '';
+            return '<figure><img src="' . esc_url( $m[2] ) . '" alt="' . esc_attr( $m[1] ) . '" loading="lazy" decoding="async">' . $caption . '</figure>';
+        }, $line );
+        $line = preg_replace_callback( '/\[([^\]]+)\]\(([^\)]+)\)/', function ( $m ) {
+            $ext = preg_match( '#^https?://#', $m[2] ) && strpos( $m[2], home_url() ) === false;
+            $attrs = $ext ? ' target="_blank" rel="noopener"' : '';
+            return '<a href="' . esc_url( $m[2] ) . '"' . $attrs . '>' . esc_html( $m[1] ) . '</a>';
+        }, $line );
+        $line = preg_replace( '/\*\*([^\*]+)\*\*/', '<strong>$1</strong>', $line );
+        $line = preg_replace( '/\*([^\*\n]+)\*/', '<em>$1</em>', $line );
+        return $line;
+    };
+
+    foreach ( explode( "\n", $md ) as $line ) {
+        if ( trim( $line ) === '' ) { $flush(); continue; }
+        if ( preg_match( '/^(#{2,6})\s+(.+)$/', $line, $m ) ) {
+            $flush();
+            $lvl = strlen( $m[1] );
+            $out[] = '<h' . $lvl . '>' . $inline( trim( $m[2] ) ) . '</h' . $lvl . '>';
+            continue;
+        }
+        if ( preg_match( '/^-{3,}$/', trim( $line ) ) ) { $flush(); $out[] = '<hr>'; continue; }
+        if ( preg_match( '/^>\s?(.*)$/', $line, $m ) ) {
+            if ( $in_ul ) { $out[] = '</ul>'; $in_ul = false; }
+            if ( $in_ol ) { $out[] = '</ol>'; $in_ol = false; }
+            if ( ! $in_quote ) { $out[] = '<blockquote>'; $in_quote = true; }
+            $out[] = '<p>' . $inline( $m[1] ) . '</p>';
+            continue;
+        }
+        if ( $in_quote ) { $out[] = '</blockquote>'; $in_quote = false; }
+        if ( preg_match( '/^[-*+]\s+(.+)$/', $line, $m ) ) {
+            if ( $in_ol ) { $out[] = '</ol>'; $in_ol = false; }
+            if ( ! $in_ul ) { $out[] = '<ul>'; $in_ul = true; }
+            $out[] = '<li>' . $inline( $m[1] ) . '</li>';
+            continue;
+        }
+        if ( preg_match( '/^\d+\.\s+(.+)$/', $line, $m ) ) {
+            if ( $in_ul ) { $out[] = '</ul>'; $in_ul = false; }
+            if ( ! $in_ol ) { $out[] = '<ol>'; $in_ol = true; }
+            $out[] = '<li>' . $inline( $m[1] ) . '</li>';
+            continue;
+        }
+        $flush();
+        $out[] = '<p>' . $inline( $line ) . '</p>';
+    }
+    $flush();
+    return implode( "\n", $out );
 }
