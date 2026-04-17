@@ -35,6 +35,7 @@ add_action( 'admin_menu', function () {
 // ── Page admin ──────────────────────────────────────────────────
 function ql_sync_render() {
     if ( ! current_user_can( 'manage_options' ) ) wp_die( 'Non.' );
+    global $wpdb;
 
     $last = (int) get_option( 'ql_last_sync', 0 );
 
@@ -52,6 +53,16 @@ function ql_sync_render() {
 
     if ( isset( $_POST['ql_go_content'] ) && check_admin_referer( 'ql_content_nonce' ) ) {
         ql_do_content_sync();
+    }
+
+    // Action : nettoyer les articles (strip Kadence/Blockspare/shape-dividers)
+    if ( isset( $_POST['ql_clean_articles'] ) && check_admin_referer( 'ql_clean_articles_nonce' ) ) {
+        ql_do_clean_articles();
+    }
+
+    // Action : restaurer les articles depuis le backup
+    if ( isset( $_POST['ql_restore_articles'] ) && check_admin_referer( 'ql_restore_articles_nonce' ) ) {
+        ql_do_restore_articles();
     }
 
     // Action : clear logs
@@ -125,6 +136,40 @@ function ql_sync_render() {
                 <a href="https://github.com/<?php echo esc_attr( QL_GH_OWNER . '/' . QL_GH_REPO ); ?>" target="_blank" rel="noopener">
                     Voir le repo sur GitHub →
                 </a>
+            </p>
+        </div>
+    </div>
+
+    <?php
+    // Carte nettoyage articles
+    $backup_count = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE meta_key = '_ql_content_backup'" );
+    ?>
+    <div class="ql-sync-card" style="border-color:#0f0f0f;background:linear-gradient(135deg, #fff8e1 0%, #ffe5df 100%);">
+        <h2>Nettoyer les parasites dans les articles</h2>
+        <p>
+            Retire les <strong>blocs Kadence</strong>, <strong>Blockspare</strong>,
+            <strong>shape-dividers</strong> (vagues noires), <strong>formulaires embarqués</strong>
+            et <strong>styles inline cassants</strong> de TOUS les articles en base.
+            Un backup du contenu original est automatiquement sauvegardé dans
+            <code>_ql_content_backup</code> — réversible via le bouton Restaurer.
+        </p>
+
+        <form method="post" style="display:inline-block;" onsubmit="return confirm('Modifier en base TOUS les articles publiés ? (backup automatique fait)');">
+            <?php wp_nonce_field( 'ql_clean_articles_nonce' ); ?>
+            <input type="submit" name="ql_clean_articles" class="button button-primary button-hero ql-sync-btn" style="background:#0f0f0f !important;border-color:#0f0f0f !important;" value="Nettoyer tous les articles">
+        </form>
+
+        <?php if ( $backup_count > 0 ) : ?>
+            <form method="post" style="display:inline-block;margin-left:12px;" onsubmit="return confirm('Restaurer les <?php echo (int) $backup_count; ?> articles depuis leur backup ?');">
+                <?php wp_nonce_field( 'ql_restore_articles_nonce' ); ?>
+                <input type="submit" name="ql_restore_articles" class="button button-secondary" value="↺ Restaurer depuis backup">
+            </form>
+        <?php endif; ?>
+
+        <div class="ql-sync-meta">
+            <p>
+                Backup présent pour <strong><?php echo (int) $backup_count; ?></strong> article(s).
+                Chaque article n'est sauvegardé qu'une fois (le premier nettoyage).
             </p>
         </div>
     </div>
@@ -620,4 +665,173 @@ function ql_markdown_to_html( $md, &$images_count ) {
     }
     $flush();
     return implode( "\n", $out );
+}
+
+
+// ════════════════════════════════════════════════════════════════
+//  BULK CLEAN ARTICLES — strip Kadence/Blockspare/shape-dividers
+// ════════════════════════════════════════════════════════════════
+
+function ql_do_clean_articles() {
+    $posts = get_posts( array(
+        'post_type'      => 'post',
+        'posts_per_page' => -1,
+        'post_status'    => array( 'publish', 'draft', 'private', 'pending', 'future' ),
+        'fields'         => 'all',
+    ) );
+
+    if ( empty( $posts ) ) {
+        echo '<div class="notice notice-warning"><p>Aucun article trouvé.</p></div>';
+        return;
+    }
+
+    $scanned = 0; $changed = 0; $backed_up = 0;
+    foreach ( $posts as $post ) {
+        $scanned++;
+        $original = $post->post_content;
+
+        // Backup une seule fois (pour pouvoir restaurer)
+        if ( ! get_post_meta( $post->ID, '_ql_content_backup', true ) ) {
+            update_post_meta( $post->ID, '_ql_content_backup', $original );
+            $backed_up++;
+        }
+
+        $cleaned = ql_clean_article_content( $original );
+
+        if ( $cleaned !== $original ) {
+            global $wpdb;
+            $wpdb->update(
+                $wpdb->posts,
+                array( 'post_content' => $cleaned ),
+                array( 'ID' => $post->ID )
+            );
+            clean_post_cache( $post->ID );
+            $changed++;
+        }
+    }
+
+    $msg = sprintf( '%d articles scannés · %d nettoyés · %d backups créés', $scanned, $changed, $backed_up );
+    echo '<div class="notice notice-success"><p><strong>Nettoyage terminé.</strong> ' . esc_html( $msg ) . '</p></div>';
+    ql_log_msg( 'Clean articles: ' . $msg );
+
+    wp_cache_flush();
+    if ( function_exists( 'opcache_reset' ) ) { @opcache_reset(); }
+}
+
+function ql_do_restore_articles() {
+    global $wpdb;
+    $metas = $wpdb->get_results(
+        "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE meta_key = '_ql_content_backup'"
+    );
+
+    $restored = 0;
+    foreach ( $metas as $m ) {
+        $wpdb->update(
+            $wpdb->posts,
+            array( 'post_content' => $m->meta_value ),
+            array( 'ID' => (int) $m->post_id )
+        );
+        clean_post_cache( (int) $m->post_id );
+        $restored++;
+    }
+
+    echo '<div class="notice notice-success"><p><strong>Restauration.</strong> ' . (int) $restored . ' articles restaurés depuis leur backup.</p></div>';
+    ql_log_msg( 'Restore articles: ' . $restored );
+    wp_cache_flush();
+}
+
+/**
+ * Nettoie le contenu d'un article : retire Kadence, Blockspare,
+ * shape-dividers, styles inline casseurs, tout en conservant le texte
+ * et les images.
+ */
+function ql_clean_article_content( $content ) {
+
+    // 1. Blockspare shape-dividers (vagues noires)
+    $content = preg_replace( '#<!--\s*wp:blockspare/shape-divider.*?/-->#is', '', $content );
+    $content = preg_replace( '#<!--\s*wp:blockspare/shape-divider.*?-->.*?<!--\s*/wp:blockspare/shape-divider\s*-->#is', '', $content );
+    $content = preg_replace( '#<div[^>]*class="[^"]*(?:wp-block-blockspare-shape-divider|shape_divider|blockspare-shape)[^"]*"[^>]*>.*?</div>#is', '', $content );
+
+    // 2. SVG décoratifs pleins (vagues, formes > 100px)
+    $content = preg_replace_callback(
+        '#<svg\b[^>]*>(.*?)</svg>#is',
+        function ( $m ) {
+            if ( stripos( $m[1], '<text' ) !== false ) return $m[0];
+            if ( preg_match( '/viewBox="[^"]*\s(\d+)(?:\s|")/i', $m[0], $vb ) && (int) $vb[1] > 100 ) return '';
+            if ( preg_match( '/height="(\d+)/i', $m[0], $h ) && (int) $h[1] > 80 ) return '';
+            return $m[0];
+        },
+        $content
+    );
+
+    // 3. Kadence image : extraire le <img>, virer le wrapper
+    $content = preg_replace_callback(
+        '#<!--\s*wp:kadence/image[^>]*-->(.*?)<!--\s*/wp:kadence/image\s*-->#is',
+        function ( $m ) {
+            if ( preg_match( '#<img[^>]+>#i', $m[1], $img ) ) {
+                return "\n<figure class=\"wp-block-image\">" . $img[0] . "</figure>\n";
+            }
+            return '';
+        },
+        $content
+    );
+
+    // 4. Kadence advancedheading : extraire le h2-h6 brut
+    $content = preg_replace_callback(
+        '#<!--\s*wp:kadence/advancedheading[^>]*-->(.*?)<!--\s*/wp:kadence/advancedheading\s*-->#is',
+        function ( $m ) {
+            if ( preg_match( '#<(h[1-6])[^>]*>(.*?)</\1>#is', $m[1], $h ) ) {
+                $text = wp_kses( $h[2], array(
+                    'strong' => array(), 'em' => array(),
+                    'a' => array( 'href' => array(), 'target' => array(), 'rel' => array() ),
+                    'br' => array(),
+                ) );
+                return "\n<" . $h[1] . ">" . $text . "</" . $h[1] . ">\n";
+            }
+            return '';
+        },
+        $content
+    );
+
+    // 5. Kadence containers (rowlayout, column, section…) — retire juste les wrappers
+    $content = preg_replace( '#<!--\s*wp:kadence/(?:rowlayout|column|section|infobox|iconlist|spacer|tabs|tab|testimonials|accordion)[^>]*-->#is', '', $content );
+    $content = preg_replace( '#<!--\s*/wp:kadence/(?:rowlayout|column|section|infobox|iconlist|spacer|tabs|tab|testimonials|accordion)\s*-->#is', '', $content );
+
+    // 6. Kadence widgets décoratifs (countdown, progressbar…) — retire tout
+    $content = preg_replace( '#<!--\s*wp:kadence/(?:countdown|progressbar|googlemaps|form|lottie)[^>]*-->.*?<!--\s*/wp:kadence/(?:countdown|progressbar|googlemaps|form|lottie)\s*-->#is', '', $content );
+    $content = preg_replace( '#<div[^>]*class="[^"]*wp-block-kadence-(?:countdown|progressbar|rowlayout|section|spacer|googlemaps|form|lottie)[^"]*"[^>]*>.*?</div>#is', '', $content );
+
+    // 7. Formulaires wp-login / register embarqués
+    $content = preg_replace( '#<form[^>]*action="[^"]*wp-login[^"]*"[^>]*>.*?</form>#is', '', $content );
+    $content = preg_replace( '#<form[^>]*id="(?:loginform|registerform)"[^>]*>.*?</form>#is', '', $content );
+
+    // 8. Shortcodes de plugins virés
+    $content = preg_replace( '/\[(login-form|register-form|loginform|loginpress[^\]]*|user_registration[^\]]*|um_loggedin[^\]]*|um_loggedout[^\]]*|blockspare[^\]]*|kadence[^\]]*)[^\]]*\]/i', '', $content );
+
+    // 9. Strip styles inline + classes cassantes sur h1-h6
+    $content = preg_replace_callback(
+        '#<(h[1-6])([^>]*)>#i',
+        function ( $m ) {
+            $attrs = preg_replace( '/\s+style\s*=\s*"[^"]*"/i', '', $m[2] );
+            $attrs = preg_replace_callback(
+                '/class="([^"]*)"/i',
+                function ( $cm ) {
+                    $kept = array();
+                    foreach ( preg_split( '/\s+/', $cm[1] ) as $c ) {
+                        if ( preg_match( '/(kadence|blockspare|has-background|has-text-align|is-style-|wp-block-heading)/i', $c ) ) continue;
+                        if ( $c !== '' ) $kept[] = $c;
+                    }
+                    return empty( $kept ) ? '' : 'class="' . esc_attr( implode( ' ', $kept ) ) . '"';
+                },
+                $attrs
+            );
+            return '<' . $m[1] . $attrs . '>';
+        },
+        $content
+    );
+
+    // 10. Nettoyer lignes vides multiples
+    $content = preg_replace( "/\n{3,}/", "\n\n", $content );
+
+    return trim( $content );
 }
