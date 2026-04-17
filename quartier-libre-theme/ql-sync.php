@@ -55,21 +55,6 @@ function ql_sync_render() {
         ql_do_content_sync();
     }
 
-    // Action : preview du nettoyage (sans modification)
-    if ( isset( $_POST['ql_preview_clean'] ) && check_admin_referer( 'ql_preview_clean_nonce' ) ) {
-        ql_do_preview_clean();
-    }
-
-    // Action : nettoyer les articles (strip Kadence/Blockspare/shape-dividers)
-    if ( isset( $_POST['ql_clean_articles'] ) && check_admin_referer( 'ql_clean_articles_nonce' ) ) {
-        ql_do_clean_articles();
-    }
-
-    // Action : restaurer les articles depuis le backup
-    if ( isset( $_POST['ql_restore_articles'] ) && check_admin_referer( 'ql_restore_articles_nonce' ) ) {
-        ql_do_restore_articles();
-    }
-
     // Action : clear logs
     if ( isset( $_POST['ql_clear'] ) && check_admin_referer( 'ql_clear_nonce' ) ) {
         delete_option( 'ql_sync_log' );
@@ -512,7 +497,11 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
     ) );
 
     $thumb_id = 0;
-    if ( ! empty( $front['featured_image'] ) ) {
+    if ( ! empty( $front['featured_image_url'] ) ) {
+        // URL complète (ex: https://quartierlibre.org/wp-content/uploads/.../image.jpg)
+        $thumb_id = ql_upload_image_from_url( $front['featured_image_url'], $images_count );
+    } elseif ( ! empty( $front['featured_image'] ) ) {
+        // Chemin relatif au repo (content/media/xxx.jpg)
         $thumb_id = ql_upload_image_from_repo( $front['featured_image'], $images_count );
     }
 
@@ -586,10 +575,10 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
     return $action;
 }
 
-// ── Upload d'une image depuis le repo (dédupliquée) ───────────
-function ql_upload_image_from_repo( $repo_path, &$count ) {
-    $repo_path = ltrim( str_replace( '\\', '/', $repo_path ), '/' );
-    $hash_key  = '_ql_media_' . md5( $repo_path );
+// ── Upload d'une image depuis une URL quelconque (dédupliquée) ─
+function ql_upload_image_from_url( $url, &$count ) {
+    if ( empty( $url ) ) return 0;
+    $hash_key = '_ql_media_' . md5( $url );
 
     $existing = get_posts( array(
         'post_type'      => 'attachment',
@@ -598,26 +587,43 @@ function ql_upload_image_from_repo( $repo_path, &$count ) {
     ) );
     if ( $existing ) return $existing[0]->ID;
 
-    $raw_url = sprintf(
-        'https://raw.githubusercontent.com/%s/%s/%s/%s',
-        QL_GH_OWNER, QL_GH_REPO, QL_GH_BRANCH, $repo_path
-    );
+    // Si l'URL pointe déjà sur notre propre médiathèque, on essaie de
+    // retrouver l'attachment existant par URL (pas de re-download).
+    $upload_dir = wp_upload_dir();
+    if ( strpos( $url, $upload_dir['baseurl'] ) === 0 ) {
+        $attach_id = attachment_url_to_postid( $url );
+        if ( $attach_id ) {
+            update_post_meta( $attach_id, $hash_key, 1 );
+            return $attach_id;
+        }
+    }
 
     require_once ABSPATH . 'wp-admin/includes/file.php';
     require_once ABSPATH . 'wp-admin/includes/media.php';
     require_once ABSPATH . 'wp-admin/includes/image.php';
 
-    $tmp = download_url( $raw_url, 60 );
+    $tmp = download_url( $url, 60 );
     if ( is_wp_error( $tmp ) ) return 0;
 
-    $file_array = array( 'name' => basename( $repo_path ), 'tmp_name' => $tmp );
+    $file_array = array( 'name' => basename( wp_parse_url( $url, PHP_URL_PATH ) ), 'tmp_name' => $tmp );
     $attach_id = media_handle_sideload( $file_array, 0 );
     if ( is_wp_error( $attach_id ) ) { @unlink( $tmp ); return 0; }
 
     update_post_meta( $attach_id, $hash_key, 1 );
-    update_post_meta( $attach_id, '_ql_media_source', $repo_path );
+    update_post_meta( $attach_id, '_ql_media_source', $url );
     $count++;
     return $attach_id;
+}
+
+// ── Upload d'une image depuis le repo (dédupliquée) ───────────
+function ql_upload_image_from_repo( $repo_path, &$count ) {
+    $repo_path = ltrim( str_replace( '\\', '/', $repo_path ), '/' );
+    $raw_url = sprintf(
+        'https://raw.githubusercontent.com/%s/%s/%s/%s',
+        QL_GH_OWNER, QL_GH_REPO, QL_GH_BRANCH, $repo_path
+    );
+    // Délègue à l'uploader URL pour dédupe unifiée
+    return ql_upload_image_from_url( $raw_url, $count );
 }
 
 // ── Markdown → HTML (parser minimal) ──────────────────────────
