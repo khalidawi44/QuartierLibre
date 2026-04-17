@@ -54,6 +54,11 @@ function ql_sync_render() {
         ql_do_content_sync();
     }
 
+    // Action : supprimer TOUS les articles de WP (pour repartir de zero via MD sync)
+    if ( isset( $_POST['ql_delete_all_posts'] ) && check_admin_referer( 'ql_delete_all_posts_nonce' ) ) {
+        ql_do_delete_all_posts();
+    }
+
     // Action : clear logs
     if ( isset( $_POST['ql_clear'] ) && check_admin_referer( 'ql_clear_nonce' ) ) {
         delete_option( 'ql_sync_log' );
@@ -107,6 +112,11 @@ function ql_sync_render() {
         <form method="post" style="display:inline-block;margin-left:12px;">
             <?php wp_nonce_field( 'ql_content_nonce' ); ?>
             <input type="submit" name="ql_go_content" class="button button-primary button-hero ql-sync-btn" style="background:#0f0f0f !important;border-color:#0f0f0f !important;" value="Synchroniser les articles (.md)">
+        </form>
+
+        <form method="post" style="display:inline-block;margin-left:12px;" onsubmit="return confirm('⚠️ SUPPRIMER TOUS LES ARTICLES de WordPress ? Action irréversible. Ensuite relancer la sync Markdown pour les recréer proprement.');">
+            <?php wp_nonce_field( 'ql_delete_all_posts_nonce' ); ?>
+            <input type="submit" name="ql_delete_all_posts" class="button" style="background:#a51d08;color:#fff;border-color:#a51d08;padding:10px 16px;height:auto;" value="⚠ Supprimer TOUS les articles">
         </form>
 
         <div class="ql-sync-meta">
@@ -644,3 +654,41 @@ function ql_markdown_to_html( $md, &$images_count ) {
     return implode( "\n", $out );
 }
 
+
+// ════════════════════════════════════════════════════════════════
+// Supprimer TOUS les articles WP (pour repartir de zero via MD sync)
+// ════════════════════════════════════════════════════════════════
+function ql_do_delete_all_posts() {
+    global $wpdb;
+
+    $posts = get_posts( array(
+        'post_type'      => 'post',
+        'posts_per_page' => -1,
+        'post_status'    => array( 'publish', 'draft', 'private', 'pending', 'future', 'trash' ),
+        'fields'         => 'ids',
+    ) );
+
+    if ( empty( $posts ) ) {
+        echo '<div class="notice notice-warning"><p>Aucun article à supprimer.</p></div>';
+        return;
+    }
+
+    $deleted = 0;
+    foreach ( $posts as $post_id ) {
+        // force = true : suppression definitive (pas à la corbeille)
+        $result = wp_delete_post( $post_id, true );
+        if ( $result ) {
+            $deleted++;
+        }
+    }
+
+    // Nettoyer aussi les métadonnées orphelines liées à nos sync
+    $wpdb->query( "DELETE FROM {$wpdb->postmeta} WHERE meta_key IN ('_ql_synced', '_ql_sync_at', '_ql_content_backup', '_ql_source_name', '_ql_source_url')" );
+
+    wp_cache_flush();
+    if ( function_exists( 'opcache_reset' ) ) { @opcache_reset(); }
+
+    $msg = sprintf( '%d article(s) supprimé(s) définitivement. Cliquer maintenant sur "Synchroniser les articles (.md)" pour les recréer proprement.', $deleted );
+    echo '<div class="notice notice-success"><p><strong>Suppression terminée.</strong> ' . esc_html( $msg ) . '</p></div>';
+    ql_log_msg( 'Delete all posts: ' . $deleted );
+}
