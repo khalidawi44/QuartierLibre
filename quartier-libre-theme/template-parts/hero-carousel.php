@@ -37,7 +37,8 @@ $slide_count = count( $slides );
 <section class="ql-carousel" aria-label="À la une" data-total="<?php echo (int) $slide_count; ?>">
     <div class="ql-carousel__track">
         <?php foreach ( $slides as $i => $s ) : ?>
-            <article class="ql-carousel__slide" id="ql-slide-<?php echo $i; ?>">
+            <article class="ql-carousel__slide" id="ql-slide-<?php echo $i; ?>"
+                     <?php if ( $s['img'] ) echo 'style="--slide-bg: url(\'' . esc_url( $s['img'] ) . '\');"'; ?>>
                 <?php if ( $s['img'] ) : ?>
                     <img src="<?php echo esc_url( $s['img'] ); ?>"
                          alt=""
