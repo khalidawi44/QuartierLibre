@@ -7,12 +7,10 @@ tags:
 excerpt: "Constat mondial : un même schéma de domination Du Clos Toreau à Nantes jusqu’aux favelas de Rio, en passant par les cités de Nanterre ou les townships de…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/08/de-la-boetie.jpg"
 status: "publish"
-date: "2025-08-06 11:24:02"
+date: "2025-08-06 09:24:02"
 author: "khalid44"
 original_url: "https://quartierlibre.org/pourquoi-obeit-on-encore-de-la-boetie-a-nos-quartiers-aujourdhui/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/08/de-la-boetie.jpg)
 
 ## Pourquoi obéit-on encore ? De La Boétie à nos quartiers aujourd’hui
 
@@ -48,6 +46,7 @@ Aujourd’hui encore, l’essentiel de la domination repose non pas sur les matr
 Il faut cesser de parler de fatalité. Les quartiers populaires ne sont pas « naturellement en crise ». Ils sont les produits d’un choix rationnel des puissants : contenir, exploiter, invisibiliser.
 
 Quand une ville comme Nantes sous-investit dans ses HLM, laisse pourrir les bâtiments, refuse de financer des centres sociaux et mise tout sur la vidéosurveillance, ce n’est pas une négligence : **c’est une stratégie de gestion de la pauvreté**.
+
 Quand un jeune de quartier n’a accès qu’à un travail précaire, au noir, dans un entrepôt ou sur un chantier, pendant que d’autres enfants, ailleurs, s’épanouissent dans des écoles Montessori, ce n’est pas un hasard : **c’est un système de reproduction sociale**.
 
 > **« Les écoles ne sont pas en crise : elles fonctionnent exactement comme prévu. Elles reproduisent un ordre social, hiérarchique, raciste, sexiste, où les riches restent en haut et les pauvres à leur place. C’est cette reproduction qui crée la vraie insécurité. »**— *Jean-Pierre Garnier*
@@ -129,21 +128,16 @@ Quelques extraits :
 > « pourquoi obéit-on ? »
 >
 >
->
 > – « Quelle que soit la manière dont un tyran s’est hissé au pouvoir (élections, violence, succession), ce n’est jamais son bon gouvernement qui explique sa domination et le fait que celle-ci perdure. »
->
 >
 >
 > – Vient le « secret de toute domination » :
 >
 >
->
 > faire participer les dominés à leur domination. Ainsi, le tyran jette des miettes aux courtisans. Si le peuple est contraint d’obéir, les courtisans ne doivent pas se contenter d’obéir mais doivent aussi devancer les désirs du tyran. Aussi, ils sont encore moins libres que le peuple lui-même, et choisissent volontairement la servitude. Ainsi s’instaure une pyramide du pouvoir : le tyran en domine cinq, qui en dominent cent, qui eux-mêmes en dominent mille… Cette pyramide s’effondre dès lors que les courtisans cessent de se donner corps et âme au tyran. Alors celui-ci perd tout pouvoir acquis.
 >
 >
->
 > – Bien que la violence soit son moyen spécifique, elle seule ne suffit pas à définir l’État. C’est à cause de la légitimité que la société lui accorde que les crimes sont commis. Il suffirait à l’homme de ne plus vouloir servir pour devenir libre ; « Soyez résolus à ne plus servir, et vous voilà libres ».
->
 >
 >
 > – Ce tyran seul, il n’est pas besoin de le combattre, ni de l’abattre. Il est défait de lui-même, pourvu que le pays ne consente point à sa servitude. Il ne s’agit pas de lui ôter quelque chose, mais de ne rien lui donner.

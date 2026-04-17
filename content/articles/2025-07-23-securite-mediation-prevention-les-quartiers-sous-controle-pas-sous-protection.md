@@ -15,12 +15,10 @@ tags:
 excerpt: "Sur son site officiel, Nantes Métropole prétend “travailler avec les communes pour créer des conditions de vie apaisées” dans une “logique de prévention”. Elle y vante les mérites…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/quartier_sous_controle.jpeg"
 status: "publish"
-date: "2025-07-23 23:54:00"
+date: "2025-07-23 21:54:00"
 author: "khalid44"
 original_url: "https://quartierlibre.org/securite-mediation-prevention-les-quartiers-sous-controle-pas-sous-protection/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/07/quartier_sous_controle.jpeg)
 
 ## Ce que dit la Métropole : un discours marketing qui nie la réalité
 
@@ -82,7 +80,9 @@ Mais dans les quartiers populaires ? Rien.
 - Chauffage au maximum pour compenser des fenêtres pourries.
 
 Résultat : **factures élevées, maladies respiratoires, fatigue, honte**.
+
 Mais ça, la Métropole n’en parle pas.
+
 Pas un mot sur la **justice environnementale**.
 
 ### Alors où va l’argent ?

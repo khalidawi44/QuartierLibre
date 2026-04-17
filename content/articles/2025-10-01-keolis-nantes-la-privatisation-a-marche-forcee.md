@@ -11,12 +11,10 @@ tags:
 excerpt: "À Nantes, la grève des conducteurs de Keolis Atlantique En grève chaque vendredi depuis novembre 2024 dans l’indifférence de la direction n’est pas un simple mouvement social. C’est le…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/10/keolis.png"
 status: "publish"
-date: "2025-10-01 08:58:08"
+date: "2025-10-01 06:58:08"
 author: "khalid44"
 original_url: "https://quartierlibre.org/keolis-nantes-la-privatisation-a-marche-forcee/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/10/keolis.png)
 
 ## Une grève , des dividendes et des monstres
 

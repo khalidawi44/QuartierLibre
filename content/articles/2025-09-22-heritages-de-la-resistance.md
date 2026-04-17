@@ -9,12 +9,10 @@ tags:
 excerpt: "À Gaza, le massacre continue. Les bombes tombent sans relâche, les infrastructures civiles sont détruites, l’eau est coupée, les hôpitaux ciblés. La famine est utilisée comme arme. Et…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/mandela_palestine.png"
 status: "publish"
-date: "2025-09-22 10:34:40"
+date: "2025-09-22 08:34:40"
 author: "khalid44"
 original_url: "https://quartierlibre.org/heritages-de-la-resistance/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/09/mandela_palestine-1024x682.png)
 
 ## Héritages de la résistance et leçons des Brigades internationales
 

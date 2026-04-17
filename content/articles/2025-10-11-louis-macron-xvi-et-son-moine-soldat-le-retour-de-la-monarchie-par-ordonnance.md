@@ -9,12 +9,10 @@ tags:
 excerpt: "Louis-Macron XVI a donné un bras d’honneur au peuple. Derrière les apparitions polies, les dîners officiels et les discours calibrés, il orchestre tout avec la précision d’un horloger :…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/10/macronroi.jpg"
 status: "publish"
-date: "2025-10-11 09:05:23"
+date: "2025-10-11 07:05:23"
 author: "khalid44"
 original_url: "https://quartierlibre.org/louis-macron-xvi-et-son-moine-soldat-le-retour-de-la-monarchie-par-ordonnance/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/10/macronroi.jpg)
 
 ## Macron, maître des horloges et cynique calculateur
 

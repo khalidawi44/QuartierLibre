@@ -10,12 +10,10 @@ tags:
 excerpt: "Nouveau premier ministre de la guerre Ce samedi, à Nantes, la place du Commerce s’est transformée en champ de bataille. Les pavés encore mouillés par la pluie reflétaient…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/671F64E7-F55D-49FD-8B9C-5B4CE2D94D0D.png"
 status: "publish"
-date: "2025-09-10 10:23:05"
+date: "2025-09-10 08:23:05"
 author: "khalid44"
 original_url: "https://quartierlibre.org/nantes-sous-les-gaz-la-repression-dun-gouvernement-illegitime/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/09/671F64E7-F55D-49FD-8B9C-5B4CE2D94D0D.png)
 
 ## Nouveau premier ministre de la guerre
 

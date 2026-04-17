@@ -10,12 +10,10 @@ tags:
 excerpt: "À Nantes comme à Paris, la justice ne pèse pas de la même façon selon le compte en banque. D’un côté, des militants qui fabriquent un homard en…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/association.png"
 status: "publish"
-date: "2025-09-27 07:49:00"
+date: "2025-09-27 05:49:00"
 author: "khalid44"
 original_url: "https://quartierlibre.org/homard-en-papier-mache-parapluies-vs-valises-de-kadhafi-prison-pour-les-pauvres-passe-droit-pour-les-puissants/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/09/association-1024x576.png)
 
 ## Puissant ou misérable , la justice de classe
 
@@ -63,8 +61,11 @@ Malgré cette illégalité, le **juge administratif maintient l’interdiction**
 Pendant ce temps, Nicolas Sarkozy est rattrapé par l’affaire du **financement libyen de sa campagne de 2007** : des millions en valises provenant de Kadhafi. Derrière ce financement, l’intervention militaire française en Libye en 2011, qui plonge le pays dans le chaos et conduit à la mort de Kadhafi.
 
 Interrogé en direct par **David Pujadas** :
+
 — *« Avez-vous fait assassiner Kadhafi ? »*
+
 Sarkozy répond, outré :
+
 — *« Vous êtes fou de dire ça ! »*
 
 L’homme bénéficie de l’**immunité présidentielle**, du **secret-défense**, et d’un calendrier judiciaire aménagé. Les soupçons demeurent : pas de Kadhafi, pas de témoin gênant, pas de remboursement.

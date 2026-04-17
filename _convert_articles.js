@@ -229,7 +229,14 @@ function main() {
   let count = 0;
   for (const post of posts) {
     const pid = post.id;
-    const slug = post.slug || `post-${pid}`;
+    let slug = post.slug || `post-${pid}`;
+    // Décode les slugs URL-encodés (emoji, accents, etc.) → ASCII propre
+    try { slug = decodeURIComponent(slug); } catch (e) {}
+    slug = slug
+      .toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
     const title = decodeEntities(stripTags(post.title?.rendered || ''));
     const dateStr = post.date || '';
     const dt = new Date(dateStr);
@@ -266,7 +273,30 @@ function main() {
     }
 
     const primaryCat = categories[0] || 'non-classe';
-    const bodyMd = htmlToMd(contentHtml);
+    let bodyMd = htmlToMd(contentHtml);
+
+    // Strip leading duplicate of the featured image from the body.
+    // (l'hero est déjà rendu depuis featured_image_url — pas besoin du doublon)
+    if (featuredUrl) {
+      // Match ![...](URL) au tout début, avec des espaces/retours possibles
+      const escapedUrl = featuredUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const leadImgRe = new RegExp(
+        `^\\s*!\\[[^\\]]*\\]\\(${escapedUrl}\\)\\s*`,
+        ''
+      );
+      bodyMd = bodyMd.replace(leadImgRe, '').trim();
+
+      // Aussi : toute autre image en tête si son URL contient le stem du
+      // filename de la featured (variante de taille, ex -300x200.jpg)
+      const fname = featuredUrl.split('/').pop().replace(/\.[^.]+$/, '');
+      if (fname) {
+        const stemRe = new RegExp(
+          `^\\s*!\\[[^\\]]*\\]\\([^)]*${fname.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^)]*\\)\\s*`,
+          ''
+        );
+        bodyMd = bodyMd.replace(stemRe, '').trim();
+      }
+    }
 
     // Frontmatter
     const lines = ['---'];

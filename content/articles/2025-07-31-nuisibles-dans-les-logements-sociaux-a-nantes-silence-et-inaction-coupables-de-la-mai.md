@@ -10,7 +10,7 @@ tags:
 excerpt: "Un problème sanitaire majeur ignoré Dans plusieurs quartiers populaires de Nantes, les habitants subissent depuis des années une invasion massive de nuisibles : rats, punaises de lit, blattes……"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/Nantes-Habitat-insalubrite-scaled.jpg"
 status: "publish"
-date: "2025-07-31 14:22:40"
+date: "2025-07-31 12:22:40"
 author: "khalid44"
 original_url: "https://quartierlibre.org/nuisibles-dans-les-logements-sociaux-a-nantes-silence-et-inaction-coupables-de-la-mairie-et-de-nantes-metropole-habitat/"
 ---

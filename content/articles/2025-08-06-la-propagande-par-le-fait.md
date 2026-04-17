@@ -5,12 +5,10 @@ category: "histoire"
 excerpt: "«Les bourgeois nous tuent par la faim ; volons, tuons, dynamitons, tous les moyens sont bons pour nous débarrasser de cette pourriture». Michel Zévaco, cité par Alexandre Bérard,…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/08/Attentat_de_lhotel_Terminus.jpg"
 status: "publish"
-date: "2025-08-06 12:14:05"
+date: "2025-08-06 10:14:05"
 author: "khalid44"
 original_url: "https://quartierlibre.org/la-propagande-par-le-fait/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/08/Attentat_de_lhotel_Terminus.jpg)
 
 ## Une stratégie d’action politique
 

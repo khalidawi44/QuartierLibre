@@ -9,12 +9,10 @@ tags:
 excerpt: "Famine et massacres à Gaza L’ONU a officiellement déclaré ce que tous le monde criait si fort : la famine à Gaza, une première au Moyen-Orient. Selon le…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/08/GENOCIDE8GAZA.webp"
 status: "publish"
-date: "2025-08-22 11:53:30"
+date: "2025-08-22 09:53:30"
 author: "khalid44"
 original_url: "https://quartierlibre.org/gaza-famine-declaree-les-responsables-doivent-rendre-des-comptes/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/08/GENOCIDE8GAZA.webp)
 
 ## Famine et massacres à Gaza
 
@@ -31,7 +29,6 @@ A l’échelle de notre pays , **5,4** **millions** de Français sur 68 millions
 **Quartier Libre** appelle à un cessez le feu immédiat et sans condition,  l’**arrestation de tous les responsables**, directs ou indirects, de cette tragédie : dirigeants israéliens, complices internationaux et responsables français, à commencer par Emmanuel Macron, dont le soutien militaire et diplomatique à Israël contribue à cette situation.
 
 > Comme le disait le poète palestinien Mahmoud Darwich :
->
 >
 >
 >  « *Si je meurs, je veux être enterré dans ma terre, car c’est là que je suis né. » Il est temps de rendre justice à Gaza et de mettre fin à l’impunité.*«

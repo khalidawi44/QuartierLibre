@@ -5,7 +5,7 @@ category: "a-la-une"
 excerpt: "Ne vous méprenez pas : on nous ressert des beaux discours écolos, des spots bien léchés, des hashtags « Nantes s’engage ». Mais ouvrez grand les yeux :…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/08/bal_des_privilegie.webp"
 status: "publish"
-date: "2025-08-12 15:45:54"
+date: "2025-08-12 13:45:54"
 author: "khalid44"
 original_url: "https://quartierlibre.org/nantes-2024-quand-largent-public-danse-au-bal-des-privilegies-et-lombre-lourde-des-banques/"
 ---
@@ -27,6 +27,7 @@ En quelques mots pour résumer :
 - **Total dépenses de fonctionnement** : 491,1 Millons d’ €uros
 
 Masse salariale (personnel) : **251,3 M€**
+
 - Contribution au CCAS (solidarité sociale) : **38 M€** (+16 %)
 - Subventions de fonctionnement aux associations : **38,8 M€**
 - Autres (patrimoine, charges financières, etc.) : poste non détaillé
@@ -36,6 +37,7 @@ Masse salariale (personnel) : **251,3 M€**
 - **Total dépenses d’investissement** : **128,6 Millons d’ €uros**, dont les principaux volets :
 
 Éducation : **37,5 M€**
+
 - Petite enfance : **4 M€**
 - Sports : **15,3 M€**
 - Culture : **14 M€**
@@ -142,6 +144,7 @@ Ces chiffres révèlent un système où les gros acteurs locaux et nationaux tru
 Nantes est endettée à hauteur de **320 M€**, des prêts signés parfois jusqu’en 2049. Chaque année, entre **30 et 50 Millions€** s’envolent vers les intérêts bancaires, avec des taux variables et fixes parfois délirants (3,3 % ou indexés sur l’Euribor). Bref, une ponction indirecte sur les services publics et les projets de quartier.
 
 Bref, Nantes en 2023, c’est : **des grues pour les murs, des miettes pour les humains**.
+
 Et un compte administratif qui, chaque année, confirme que le vrai centre de gravité de la ville… n’est pas sur les places publiques, mais bien dans les bilans des banques.
 
 ### Écologie ? Oui… si t’es déjà à la périphérie du pouvoir

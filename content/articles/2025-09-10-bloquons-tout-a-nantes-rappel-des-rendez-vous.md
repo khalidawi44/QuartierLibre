@@ -9,12 +9,10 @@ tags:
 excerpt: "Blocage du périphérique nantais à 6h. Rendez-vous sur 4 points : Les blocages ailleurs en Loire-Atlantique"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/IMG_1198.jpeg"
 status: "publish"
-date: "2025-09-10 07:21:39"
+date: "2025-09-10 05:21:39"
 author: "khalid44"
 original_url: "https://quartierlibre.org/bloquons-tout-a-nantes-rappel-des-rendez-vous/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/09/IMG_1198.jpeg)
 
 ### Blocage du périphérique nantais à 6h. Rendez-vous sur 4 points :
 

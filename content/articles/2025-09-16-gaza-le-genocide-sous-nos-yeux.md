@@ -9,12 +9,10 @@ tags:
 excerpt: "Les 15 et 16 septembre 2025, Gaza a été frappée avec une intensité inouïe. Les frappes israéliennes ont anéanti des quartiers entiers, tuant femmes, enfants et vieillards. Hier,…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/gaza-un-genocide.jpeg"
 status: "publish"
-date: "2025-09-16 09:05:35"
+date: "2025-09-16 07:05:35"
 author: "khalid44"
-original_url: "https://quartierlibre.org/%f0%9f%87%b5%f0%9f%87%b8-gaza-le-genocide-sous-nos-yeux/"
+original_url: "https://quartierlibre.org/gaza-le-genocide-sous-nos-yeux/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/09/gaza-un-genocide.jpeg)
 
 ## Massacres , horreurs et exode
 

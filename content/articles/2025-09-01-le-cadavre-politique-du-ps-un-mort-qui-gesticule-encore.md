@@ -9,12 +9,10 @@ tags:
 excerpt: "L’actualité brûlante et la stratégie de survie du PS Alors que la dissolution menace dans l’air politique français et que la colère sociale gronde dans les rues, le…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/ps_un_cadavre_qui_bouge_encore.webp"
 status: "publish"
-date: "2025-09-01 19:50:49"
+date: "2025-09-01 17:50:49"
 author: "khalid44"
 original_url: "https://quartierlibre.org/le-cadavre-politique-du-ps-un-mort-qui-gesticule-encore/"
 ---
-
-![](https://quartierlibre.org/wp-content/uploads/2025/09/ps_un_cadavre_qui_bouge_encore.webp)
 
 ### L’actualité brûlante et la stratégie de survie du PS
 
