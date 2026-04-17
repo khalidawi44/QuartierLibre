@@ -148,16 +148,43 @@ p  { margin: 0 0 1em; }
 .ql-nav { display: flex; align-items: center; gap: 1.5rem; }
 .ql-nav__list {
   list-style: none; margin: 0; padding: 0;
-  display: flex; gap: 1.6rem; align-items: center;
+  display: flex; gap: 1.25rem; align-items: center;
+  flex-wrap: nowrap;
 }
-.ql-nav__list > li { position: relative; }
+.ql-nav__list > li { position: relative; white-space: nowrap; }
 .ql-nav__list a {
   text-decoration: none;
-  font-weight: 700; font-size: .92rem;
+  font-weight: 700; font-size: .88rem;
   color: var(--ql-ink); padding: .6rem 0;
   text-transform: uppercase; letter-spacing: .03em;
   position: relative;
   transition: color var(--ql-t);
+  white-space: nowrap;
+}
+
+/* Cache les items de compte utilisateur dans le menu principal
+   (Mon Profil / Log Out / Log In / S'inscrire / Compte) */
+.ql-nav__list > li:has(> a[href*="wp-login.php"]),
+.ql-nav__list > li:has(> a[href*="/wp-login"]),
+.ql-nav__list > li:has(> a[href*="register"]),
+.ql-nav__list > li:has(> a[href*="logout"]),
+.ql-nav__list > li:has(> a[href*="/mon-profil"]),
+.ql-nav__list > li:has(> a[href*="/mon-compte"]),
+.ql-nav__list > li:has(> a[href*="/profil"]),
+.ql-nav__list > li:has(> a[href*="/my-account"]),
+.ql-nav__list > li:has(> a[href*="/connexion"]),
+.ql-nav__list > li:has(> a[href*="/inscription"]),
+.ql-nav__list > li:has(> a[href*="s-inscrire"]),
+.ql-nav__list > li:has(> a[href*="action=logout"]) {
+  display: none !important;
+}
+/* Idem pour le footer */
+.ql-footer__list li:has(> a[href*="wp-login.php"]),
+.ql-footer__list li:has(> a[href*="register"]),
+.ql-footer__list li:has(> a[href*="logout"]),
+.ql-footer__list li:has(> a[href*="/mon-profil"]),
+.ql-footer__list li:has(> a[href*="/mon-compte"]) {
+  display: none !important;
 }
 .ql-nav__list a::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -2px;
@@ -536,13 +563,15 @@ p  { margin: 0 0 1em; }
   background: var(--ql-ink);
   position: relative;
   overflow: hidden;
+  /* Hauteur FIXE pour garantir le crop */
+  height: clamp(260px, 40vw, 440px);
 }
 .ql-post__banner-img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 540px;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   margin: 0;
 }
 .ql-post__banner-caption {
@@ -610,7 +639,32 @@ p  { margin: 0 0 1em; }
   min-width: 0;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  position: relative;
+  z-index: 1;
 }
+
+/* ═══ NUCLEAR RESET : tue tout positioning/transform/float heritage ═══ */
+.ql-post__content * {
+  position: static !important;
+  transform: none !important;
+  clip-path: none !important;
+  inset: auto !important;
+  top: auto !important; right: auto !important; bottom: auto !important; left: auto !important;
+  z-index: auto !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+.ql-post__content *::before,
+.ql-post__content *::after {
+  position: static !important;
+  clip-path: none !important;
+  transform: none !important;
+}
+/* Exceptions : floats légitimes pour alignleft/alignright */
+.ql-post__content .alignleft,
+.ql-post__content .wp-block-image.alignleft { float: left !important; }
+.ql-post__content .alignright,
+.ql-post__content .wp-block-image.alignright { float: right !important; }
 .ql-post__content > * {
   max-width: 100%;
   box-sizing: border-box;
