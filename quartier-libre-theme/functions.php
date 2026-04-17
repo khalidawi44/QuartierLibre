@@ -174,6 +174,47 @@ add_filter( 'wp_get_attachment_image_attributes', function ( $attr ) {
     return $attr;
 } );
 
+// ── 9b. Sanitizer le_content : neutraliser styles inline casseurs ──
+/**
+ * Retire les styles inline et attributs qui pourraient casser le layout
+ * des articles (hauteur/largeur fixes, clip-path, transforms, float…).
+ * S'applique UNIQUEMENT aux articles en affichage single, pas à l'éditeur.
+ */
+add_filter( 'the_content', function ( $content ) {
+    if ( ! is_singular() || is_admin() || wp_doing_ajax() ) { return $content; }
+
+    // Retire width/height en attribut HTML qui forcent des tailles débiles
+    $content = preg_replace( '/\s(width|height)="\d+"/i', '', $content );
+
+    // Nettoie les style="..." dangereux (mais laisse ceux utiles type color)
+    $content = preg_replace_callback(
+        '/style\s*=\s*"([^"]*)"/i',
+        function ( $m ) {
+            $rules = array_filter( array_map( 'trim', explode( ';', $m[1] ) ) );
+            $keep  = array();
+            foreach ( $rules as $rule ) {
+                if ( ! $rule ) continue;
+                $prop = strtolower( trim( explode( ':', $rule, 2 )[0] ?? '' ) );
+                // Liste noire : propriétés qui peuvent casser le layout
+                $blacklist = array(
+                    'width', 'height', 'min-width', 'min-height', 'max-width', 'max-height',
+                    'position', 'top', 'left', 'right', 'bottom',
+                    'transform', 'clip-path', 'float', 'margin', 'margin-left',
+                    'margin-right', 'margin-top', 'margin-bottom',
+                    'z-index',
+                );
+                if ( ! in_array( $prop, $blacklist, true ) ) {
+                    $keep[] = $rule;
+                }
+            }
+            return empty( $keep ) ? '' : 'style="' . esc_attr( implode( '; ', $keep ) ) . '"';
+        },
+        $content
+    );
+
+    return $content;
+}, 99 );
+
 // ── 10. Widget areas ────────────────────────────────────────────
 add_action( 'widgets_init', function () {
     register_sidebar( array(
