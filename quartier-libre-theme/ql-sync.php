@@ -847,45 +847,90 @@ function ql_clean_article_content( $content ) {
  * Preview : compare avant/après sur un article échantillon, sans rien modifier.
  */
 function ql_do_preview_clean() {
-    $posts = get_posts( array(
-        'post_type'      => 'post',
-        'posts_per_page' => 3,
-        'post_status'    => array( 'publish' ),
-        'orderby'        => 'date',
-        'order'          => 'DESC',
-        's'              => 'kadence',  // cible des articles qui contiennent le mot "kadence"
-    ) );
+    global $wpdb;
 
-    if ( empty( $posts ) ) {
-        // Fallback : les 3 derniers articles
-        $posts = get_posts( array(
-            'post_type'      => 'post',
-            'posts_per_page' => 3,
-            'post_status'    => array( 'publish' ),
-        ) );
-    }
+    // ─── 1. Scan global : quels patterns sont présents en base ? ───
+    $patterns = array(
+        'Commentaires Kadence'          => "post_content LIKE '%<!-- wp:kadence/%'",
+        'Commentaires Blockspare'       => "post_content LIKE '%<!-- wp:blockspare/%'",
+        'Classe wp-block-kadence-*'     => "post_content LIKE '%wp-block-kadence-%'",
+        'Classe wp-block-blockspare-*'  => "post_content LIKE '%wp-block-blockspare-%'",
+        'Classe kb-*'                   => "post_content LIKE '%\"kb-%'",
+        'Classe has-background'         => "post_content LIKE '%has-background%'",
+        'Classe has-text-align-center'  => "post_content LIKE '%has-text-align-center%'",
+        'SVG shape-divider'             => "post_content LIKE '%shape-divider%'",
+        'Formulaires wp-login'          => "post_content LIKE '%wp-login.php%'",
+        'Shortcodes loginpress'         => "post_content LIKE '%[loginpress%'",
+        'style=\"background\"'          => "post_content LIKE '%style=%background%'",
+        'style=\"color\"'               => "post_content LIKE '%style=%color:%'",
+    );
 
     echo '<div style="background:#fff;padding:20px;border:2px solid #0f0f0f;border-radius:8px;margin:20px 0;">';
-    echo '<h3 style="margin-top:0;">Prévisualisation du nettoyage (AUCUNE modification en base)</h3>';
+    echo '<h3 style="margin-top:0;">Diagnostic — ce qui est dans vos articles (en base)</h3>';
 
-    foreach ( $posts as $post ) {
+    echo '<table class="widefat striped" style="max-width:720px;margin:15px 0;">';
+    echo '<thead><tr><th>Motif recherché</th><th style="width:100px;text-align:right;">Articles</th></tr></thead><tbody>';
+    foreach ( $patterns as $label => $where ) {
+        $count = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type='post' AND post_status='publish' AND {$where}" );
+        $style = $count > 0 ? 'color:#a51d08;font-weight:700;' : 'color:#2e8a3d;';
+        echo '<tr><td>' . esc_html( $label ) . '</td><td style="text-align:right;' . $style . '">' . $count . '</td></tr>';
+    }
+    echo '</tbody></table>';
+
+    // ─── 2. Preview sur 3 articles représentatifs ───
+    echo '<h3>Prévisualisation cleaner sur 3 articles (AUCUNE modification)</h3>';
+
+    // Articles qui contiennent "kadence" dans leur contenu, en priorité
+    $post_ids = $wpdb->get_col(
+        "SELECT ID FROM {$wpdb->posts}
+         WHERE post_type='post' AND post_status='publish'
+         AND (post_content LIKE '%kadence%' OR post_content LIKE '%blockspare%' OR post_content LIKE '%shape-divider%')
+         ORDER BY post_date DESC LIMIT 3"
+    );
+    if ( empty( $post_ids ) ) {
+        $post_ids = $wpdb->get_col( "SELECT ID FROM {$wpdb->posts} WHERE post_type='post' AND post_status='publish' ORDER BY post_date DESC LIMIT 3" );
+    }
+
+    foreach ( $post_ids as $pid ) {
+        $post = get_post( (int) $pid );
+        if ( ! $post ) continue;
         $before = $post->post_content;
         $after  = ql_clean_article_content( $before );
-        $diff_chars = mb_strlen( $before ) - mb_strlen( $after );
+        $diff = mb_strlen( $before ) - mb_strlen( $after );
         $changed = ( $after !== $before );
 
-        echo '<div style="border-top:1px solid #ddd;margin:15px 0;padding-top:15px;">';
-        echo '<strong>' . esc_html( $post->post_title ) . '</strong> (ID ' . (int) $post->ID . ')<br>';
+        echo '<details style="border:1px solid #ddd;margin:10px 0;padding:10px 15px;border-radius:4px;">';
+        echo '<summary style="cursor:pointer;">';
+        echo '<strong>' . esc_html( $post->post_title ) . '</strong> (ID ' . (int) $pid . ') — ';
         if ( $changed ) {
-            echo '<span style="color:#2e8a3d;font-weight:600;">Serait modifié</span> — ';
+            echo '<span style="color:#2e8a3d;font-weight:700;">serait modifié</span> ';
+            echo '(' . number_format_i18n( mb_strlen( $before ) ) . ' → ' . number_format_i18n( mb_strlen( $after ) ) . ' car., ';
+            echo '-' . number_format_i18n( $diff ) . ')';
         } else {
-            echo '<span style="color:#666;">Aucun changement</span> — ';
+            echo '<span style="color:#666;">aucun changement</span> (' . number_format_i18n( mb_strlen( $before ) ) . ' car.)';
         }
-        echo 'avant : ' . number_format_i18n( mb_strlen( $before ) ) . ' car. · ';
-        echo 'après : ' . number_format_i18n( mb_strlen( $after ) ) . ' car. · ';
-        echo 'delta : ' . ( $diff_chars > 0 ? '-' . number_format_i18n( $diff_chars ) : '+' . number_format_i18n( abs( $diff_chars ) ) ) . ' car.';
+        echo '</summary>';
+
+        // Extrait du contenu brut pour diagnostic (500 premiers chars)
+        echo '<div style="margin-top:10px;">';
+        echo '<strong>Début du contenu brut (pour diagnostic) :</strong>';
+        echo '<pre style="background:#0f0f0f;color:#f0f0f0;padding:12px;border-radius:4px;overflow-x:auto;font-size:12px;line-height:1.5;max-height:300px;">';
+        echo esc_html( mb_substr( $before, 0, 1500 ) );
+        if ( mb_strlen( $before ) > 1500 ) echo "\n\n[... tronqué ...]";
+        echo '</pre>';
+
+        if ( $changed ) {
+            echo '<strong>Après nettoyage :</strong>';
+            echo '<pre style="background:#1a3d1a;color:#d0ffd0;padding:12px;border-radius:4px;overflow-x:auto;font-size:12px;line-height:1.5;max-height:300px;">';
+            echo esc_html( mb_substr( $after, 0, 1500 ) );
+            if ( mb_strlen( $after ) > 1500 ) echo "\n\n[... tronqué ...]";
+            echo '</pre>';
+        }
         echo '</div>';
+        echo '</details>';
     }
+
+    echo '<p style="margin-top:15px;color:#666;font-size:13px;"><em>Si aucun motif n\'a été détecté ci-dessus, ce n\'est pas le contenu HTML qui pose problème — c\'est un bloc dynamique rendu par un plugin ou un widget. Dans ce cas, la CSS gère le masquage (pas de clean PHP nécessaire).</em></p>';
 
     echo '</div>';
 }
