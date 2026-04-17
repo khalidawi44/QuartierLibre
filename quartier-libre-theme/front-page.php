@@ -16,7 +16,7 @@ $has_any = (int) wp_count_posts()->publish > 0;
 
     <?php if ( $has_any ) : ?>
 
-        <?php get_template_part( 'template-parts/hero' ); ?>
+        <?php get_template_part( 'template-parts/hero-carousel' ); ?>
 
         <?php
         // Détection auto des 4 catégories les plus actives (slug dynamique).

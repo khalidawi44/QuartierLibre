@@ -22,7 +22,8 @@
       "Bash(grep -oE '<style[^>]*id[^>]*>[^<]{0,200}' \"C:/Users/Utilisateur/.claude/projects/C--Users-Utilisateur-Documents-GitHub-QuartierLibre/41a05224-598e-4758-8694-2c3a1324d25b/tool-results/byvhxhgzv.txt\")",
       "Bash(grep -oE 'ql-post__banner[^}]{0,200}' \"C:/Users/Utilisateur/.claude/projects/C--Users-Utilisateur-Documents-GitHub-QuartierLibre/41a05224-598e-4758-8694-2c3a1324d25b/tool-results/byvhxhgzv.txt\")",
       "Bash(curl -s \"https://quartierlibre.org/wp-content/themes/quartier-libre-theme/single.php?v=1\")",
-      "Bash(grep -oE 'ql-post__\\(banner|header\\)[^<]{0,300}')"
+      "Bash(grep -oE 'ql-post__\\(banner|header\\)[^<]{0,300}')",
+      "WebFetch(domain:contre-attaque.net)"
     ]
   }
 }

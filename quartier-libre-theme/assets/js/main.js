@@ -34,6 +34,60 @@
     });
   }
 
+  // ── Hero Carousel : navigation prev/next + dots + autoplay ──
+  var carousel = document.querySelector('.ql-carousel');
+  if (carousel) {
+    var track = carousel.querySelector('.ql-carousel__track');
+    var slides = carousel.querySelectorAll('.ql-carousel__slide');
+    var dots = carousel.querySelectorAll('.ql-carousel__dot');
+    var prevBtn = carousel.querySelector('.ql-carousel__nav--prev');
+    var nextBtn = carousel.querySelector('.ql-carousel__nav--next');
+    var total = slides.length;
+    var current = 0;
+    var autoplayId = null;
+
+    function goTo(index) {
+      current = (index + total) % total;
+      if (slides[current]) {
+        track.scrollTo({ left: slides[current].offsetLeft, behavior: 'smooth' });
+      }
+      dots.forEach(function(d, i) { d.classList.toggle('is-active', i === current); });
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function() { resetAutoplay(); goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { resetAutoplay(); goTo(current + 1); });
+    dots.forEach(function(dot, i) {
+      dot.addEventListener('click', function() { resetAutoplay(); goTo(i); });
+    });
+
+    // Sync dots on manual scroll/swipe
+    var scrollTimeout;
+    track.addEventListener('scroll', function() {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function() {
+        var idx = Math.round(track.scrollLeft / track.offsetWidth);
+        if (idx !== current) {
+          current = idx;
+          dots.forEach(function(d, i) { d.classList.toggle('is-active', i === current); });
+        }
+      }, 100);
+    }, { passive: true });
+
+    // Autoplay 6s (pause au hover, respecte reduced-motion)
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function startAutoplay() {
+      if (reduceMotion) return;
+      autoplayId = setInterval(function() { goTo(current + 1); }, 6000);
+    }
+    function resetAutoplay() {
+      clearInterval(autoplayId);
+      startAutoplay();
+    }
+    carousel.addEventListener('mouseenter', function() { clearInterval(autoplayId); });
+    carousel.addEventListener('mouseleave', startAutoplay);
+    startAutoplay();
+  }
+
   // ── Barre de progression de lecture (single.php) ────────────
   var progressBar = document.querySelector('.ql-reading-progress span');
   var articleBody = document.querySelector('.ql-single .ql-article__body');

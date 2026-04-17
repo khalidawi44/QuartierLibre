@@ -127,6 +127,33 @@ add_action( 'after_switch_theme', function () {
     }
 } );
 
+// ── 4b. Tags quartiers HLM de Nantes (auto-création, idempotent) ─
+add_action( 'init', function () {
+    // Check une seule fois par jour pour éviter charge
+    $last = (int) get_option( 'ql_quartiers_init', 0 );
+    if ( $last && ( time() - $last ) < DAY_IN_SECONDS ) return;
+
+    $quartiers = array(
+        'quartier-bellevue'         => 'Quartier Bellevue',
+        'quartier-malakoff'         => 'Quartier Malakoff',
+        'quartier-dervallieres'     => 'Quartier Dervallières',
+        'quartier-clos-toreau'      => 'Quartier Clos Toreau',
+        'quartier-bottiere-pin-sec' => 'Quartier Bottière - Pin Sec',
+        'quartier-breil'            => 'Quartier Breil',
+        'quartier-bout-des-landes'  => 'Quartier Bout des Landes',
+        'quartier-port-boyer'       => 'Quartier Port Boyer',
+        'quartier-halveque'         => 'Quartier Halvêque',
+        'quartier-ranzay'           => 'Quartier Ranzay',
+        'quartier-pilotiere'        => 'Quartier Pilotière',
+    );
+    foreach ( $quartiers as $slug => $name ) {
+        if ( ! term_exists( $slug, 'post_tag' ) ) {
+            wp_insert_term( $name, 'post_tag', array( 'slug' => $slug ) );
+        }
+    }
+    update_option( 'ql_quartiers_init', time(), false );
+}, 20 );
+
 // ── 5. Templates de page déclarés ───────────────────────────────
 add_filter( 'theme_page_templates', function ( $templates ) {
     $templates['templates/page-bureau-plaintes.php'] = 'Bureau des Plaintes';

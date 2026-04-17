@@ -28,6 +28,14 @@ if ( have_posts() ) {
         <p class="ql-cat-header__count"><?php echo esc_html( $count ); ?> article<?php echo $count > 1 ? 's' : ''; ?> publié<?php echo $count > 1 ? 's' : ''; ?></p>
     </header>
 
+    <?php
+    // Sur la rubrique "Infos Locale" : afficher la mosaïque des quartiers HLM
+    $cat_slug = $term ? $term->slug : '';
+    if ( in_array( $cat_slug, array( 'infos-locale', 'info-locale', 'local', 'nantes' ), true ) ) {
+        get_template_part( 'template-parts/quartiers' );
+    }
+    ?>
+
     <?php if ( $have_featured ) : ?>
         <article class="ql-cat-featured">
             <?php if ( has_post_thumbnail() ) : ?>
