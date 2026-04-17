@@ -52,6 +52,24 @@ get_header(); ?>
             <?php wp_link_pages( array( 'before' => '<nav class="ql-pagination">Pages :', 'after' => '</nav>' ) ); ?>
         </div>
 
+        <?php
+        // Encart Source externe (affiché si meta _ql_source_name ou _ql_source_url présentes)
+        $src_name = get_post_meta( get_the_ID(), '_ql_source_name', true );
+        $src_url  = get_post_meta( get_the_ID(), '_ql_source_url',  true );
+        if ( $src_name || $src_url ) : ?>
+            <aside class="ql-source">
+                <span class="ql-source__label">Source</span>
+                <?php if ( $src_url ) : ?>
+                    <a href="<?php echo esc_url( $src_url ); ?>" target="_blank" rel="noopener nofollow">
+                        <?php echo esc_html( $src_name ?: $src_url ); ?>
+                        <span class="ql-source__ext" aria-hidden="true">↗</span>
+                    </a>
+                <?php else : ?>
+                    <span><?php echo esc_html( $src_name ); ?></span>
+                <?php endif; ?>
+            </aside>
+        <?php endif; ?>
+
         <?php $tags = get_the_tags(); if ( $tags ) : ?>
             <div class="ql-article__tags">
                 <?php foreach ( $tags as $t ) : ?>

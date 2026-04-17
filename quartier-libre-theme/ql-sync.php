@@ -494,6 +494,18 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
 
     if ( $thumb_id ) set_post_thumbnail( $post_id, $thumb_id );
 
+    // Source externe (ex. pour republier un article de Contre-Attaque, etc.)
+    if ( ! empty( $front['source_name'] ) ) {
+        update_post_meta( $post_id, '_ql_source_name', sanitize_text_field( $front['source_name'] ) );
+    } else {
+        delete_post_meta( $post_id, '_ql_source_name' );
+    }
+    if ( ! empty( $front['source_url'] ) ) {
+        update_post_meta( $post_id, '_ql_source_url', esc_url_raw( $front['source_url'] ) );
+    } else {
+        delete_post_meta( $post_id, '_ql_source_url' );
+    }
+
     update_post_meta( $post_id, '_ql_synced', 1 );
     update_post_meta( $post_id, '_ql_sync_at', time() );
 

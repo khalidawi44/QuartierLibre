@@ -16,26 +16,22 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
         <div class="ql-footer__col">
             <h3 class="ql-footer__title">Rubriques</h3>
-            <?php
-            if ( has_nav_menu( 'footer' ) ) {
-                wp_nav_menu( array(
-                    'theme_location' => 'footer',
-                    'container'      => false,
-                    'menu_class'     => 'ql-footer__list',
-                    'fallback_cb'    => false,
-                    'depth'          => 1,
+            <ul class="ql-footer__list">
+                <?php
+                $cats = get_categories( array(
+                    'orderby'    => 'count',
+                    'order'      => 'DESC',
+                    'number'     => 8,
+                    'hide_empty' => true,
                 ) );
-            } else {
-                echo '<ul class="ql-footer__list">';
-                wp_list_categories( array(
-                    'title_li' => '',
-                    'number'   => 8,
-                    'orderby'  => 'count',
-                    'order'    => 'DESC',
-                ) );
-                echo '</ul>';
-            }
-            ?>
+                foreach ( $cats as $cat ) {
+                    echo '<li><a href="' . esc_url( get_term_link( $cat ) ) . '">' . esc_html( $cat->name ) . '</a></li>';
+                }
+                if ( empty( $cats ) ) {
+                    echo '<li class="ql-muted">Aucune rubrique pour l\'instant.</li>';
+                }
+                ?>
+            </ul>
         </div>
 
         <div class="ql-footer__col">

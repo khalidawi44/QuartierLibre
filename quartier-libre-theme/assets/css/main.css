@@ -132,19 +132,17 @@ p  { margin: 0 0 1em; }
   display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
 }
 
-.ql-brand { display: inline-flex; align-items: center; gap: .75rem; text-decoration: none; }
-.ql-brand__logo { max-height: 56px; width: auto; }
+.ql-brand {
+  display: inline-flex; align-items: center; gap: .75rem;
+  text-decoration: none; flex: 0 0 auto;
+}
+.ql-brand__logo { max-height: 56px; width: auto; display: block; }
 .ql-brand__wordmark {
   font-family: var(--ql-font-serif); font-weight: 900;
   font-size: clamp(1.35rem, 2.4vw, 1.75rem);
   letter-spacing: -0.02em; color: var(--ql-ink);
-  line-height: 1;
+  line-height: 1; white-space: nowrap;
 }
-.ql-brand__tag {
-  font-size: .78rem; color: var(--ql-muted); font-weight: 600;
-  letter-spacing: .02em; display: none;
-}
-@media (min-width: 1000px) { .ql-brand__tag { display: block; border-left: 2px solid var(--ql-accent); padding-left: .75rem; } }
 
 /* Navigation */
 .ql-nav { display: flex; align-items: center; gap: 1.5rem; }
@@ -564,6 +562,119 @@ p  { margin: 0 0 1em; }
 .ql-article__body a:hover { color: var(--ql-accent-dark); }
 .ql-article__body ul, .ql-article__body ol { padding-left: 1.25em; }
 .ql-article__body mark { background: var(--ql-yellow); padding: 0 .2em; }
+
+/* Drop cap presse */
+.ql-article__body > p:first-of-type::first-letter {
+  font-family: var(--ql-font-serif);
+  font-weight: 900;
+  float: left;
+  font-size: 4.25rem;
+  line-height: .85;
+  padding: .1em .12em 0 0;
+  color: var(--ql-accent);
+}
+
+/* Figures avec légendes */
+.ql-article__body figure {
+  margin: 2em 0;
+}
+.ql-article__body figure img { margin: 0; border-radius: var(--ql-radius); display: block; width: 100%; }
+.ql-article__body figure figcaption,
+.ql-article__body .wp-caption-text {
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--ql-muted);
+  padding: .5rem .25rem 0;
+  border-bottom: 1px solid var(--ql-line);
+  padding-bottom: .75rem;
+  line-height: 1.5;
+}
+.ql-article__body img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Encart SOURCE externe */
+.ql-source {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background: var(--ql-paper-2);
+  border-left: 4px solid var(--ql-accent);
+  border-radius: 0 var(--ql-radius) var(--ql-radius) 0;
+  display: flex; flex-wrap: wrap; gap: .5rem .75rem;
+  align-items: baseline;
+  font-size: .95rem;
+}
+.ql-source__label {
+  font-size: .7rem; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ql-accent);
+  background: #fff; padding: .25rem .55rem; border-radius: 2px;
+}
+.ql-source a {
+  color: var(--ql-ink); text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--ql-accent);
+  padding-bottom: 1px;
+}
+.ql-source a:hover { color: var(--ql-accent); }
+.ql-source__ext { font-size: .85em; opacity: .7; margin-left: .2em; }
+
+/* Alignements Gutenberg / WP dans l'article */
+.ql-article__body .alignleft {
+  float: left; margin: .5em 1.5em 1em 0;
+  max-width: 50%;
+}
+.ql-article__body .alignright {
+  float: right; margin: .5em 0 1em 1.5em;
+  max-width: 50%;
+}
+.ql-article__body .aligncenter {
+  margin-left: auto; margin-right: auto;
+  display: block;
+}
+.ql-article__body .alignwide,
+.ql-article__body .alignfull,
+.ql-article__body .wp-block-image.alignwide,
+.ql-article__body .wp-block-image.alignfull {
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+@media (min-width: 900px) {
+  .ql-article__body .alignwide {
+    margin-left: -6rem;
+    margin-right: -6rem;
+    width: auto;
+  }
+}
+
+/* Embeds responsives (YouTube, Twitter, etc.) */
+.ql-article__body iframe,
+.ql-article__body .wp-block-embed__wrapper {
+  max-width: 100%;
+}
+.ql-article__body .wp-block-embed {
+  margin: 2em 0;
+}
+
+/* Pull-quote (citation marquante) */
+.ql-article__body .wp-block-pullquote {
+  margin: 2.5em 0;
+  padding: 1.5em 1em;
+  border-top: 3px solid var(--ql-accent);
+  border-bottom: 3px solid var(--ql-accent);
+  text-align: center;
+  font-family: var(--ql-font-serif);
+  font-size: 1.5rem; font-weight: 700; font-style: italic;
+  line-height: 1.3;
+}
+.ql-article__body .wp-block-pullquote cite {
+  display: block; margin-top: .75rem;
+  font-size: .85rem; font-style: normal; font-weight: 600;
+  color: var(--ql-muted); letter-spacing: .04em; text-transform: uppercase;
+}
 
 .ql-article__tags {
   margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--ql-line);

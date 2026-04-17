@@ -65,6 +65,30 @@ Autre paragraphe.
 | `status` | non | `publish` (par défaut) ou `draft` |
 | `date` | non | Date de publication. Défaut : maintenant. |
 | `author` | non | Identifiant WP de l'auteur (login). Défaut : auteur de la sync. |
+| `source_name` | non | Nom de la source externe (ex. « Contre-Attaque »). Affiche un encart « Source » en bas d'article. |
+| `source_url` | non | URL de la source originale. Cliquable, s'ouvre dans un nouvel onglet. |
+
+### Exemple avec source externe (republication)
+
+```yaml
+---
+title: "Les alvéoles de Kadhafi : prison pour les pauvres"
+slug: "alveoles-kadhafi-prison-pauvres"
+category: "international"
+tags:
+  - libye
+excerpt: "Un article important republié avec autorisation."
+source_name: "Contre-Attaque"
+source_url: "https://contre-attaque.net/2025/09/22/alveoles-kadhafi/"
+status: "publish"
+---
+
+Corps de l'article en Markdown ici.
+```
+
+Cela affiche en bas d'article :
+
+> **SOURCE** — Contre-Attaque ↗
 
 ## Images
 

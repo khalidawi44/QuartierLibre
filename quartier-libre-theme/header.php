@@ -43,8 +43,6 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                         echo '<img src="' . esc_url( $found ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="ql-brand__logo" width="200" height="60">';
                     } else {
                         echo '<span class="ql-brand__wordmark">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
-                        $tag = get_bloginfo( 'description' );
-                        if ( $tag ) { echo '<span class="ql-brand__tag">' . esc_html( $tag ) . '</span>'; }
                     }
                 }
                 ?>
