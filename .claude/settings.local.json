@@ -16,7 +16,11 @@
       "Bash(node _convert_articles.js)",
       "Bash(mv \"2025-09-16-%f0%9f%87%b5%f0%9f%87%b8-gaza-le-genocide-sous-nos-yeux.md\" \"2025-09-16-gaza-le-genocide-sous-nos-yeux.md\")",
       "Bash(sed -i 's/^slug: \".*%f0%9f%87%b5%f0%9f%87%b8.*\"/slug: \"gaza-le-genocide-sous-nos-yeux\"/' \"2025-09-16-gaza-le-genocide-sous-nos-yeux.md\")",
-      "Bash(curl -s \"https://quartierlibre.org/wp-json/wp/v2/posts/2033\")"
+      "Bash(curl -s \"https://quartierlibre.org/wp-json/wp/v2/posts/2033\")",
+      "Bash(curl -s \"https://quartierlibre.org/keolis-nantes-la-privatisation-a-marche-forcee/\")",
+      "Bash(curl -s \"https://quartierlibre.org/wp-content/themes/quartier-libre-theme/assets/css/main.css\")",
+      "Bash(grep -oE '<style[^>]*id[^>]*>[^<]{0,200}' \"C:/Users/Utilisateur/.claude/projects/C--Users-Utilisateur-Documents-GitHub-QuartierLibre/41a05224-598e-4758-8694-2c3a1324d25b/tool-results/byvhxhgzv.txt\")",
+      "Bash(grep -oE 'ql-post__banner[^}]{0,200}' \"C:/Users/Utilisateur/.claude/projects/C--Users-Utilisateur-Documents-GitHub-QuartierLibre/41a05224-598e-4758-8694-2c3a1324d25b/tool-results/byvhxhgzv.txt\")"
     ]
   }
 }

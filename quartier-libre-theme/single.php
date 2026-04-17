@@ -19,12 +19,13 @@ get_header(); ?>
 <article class="ql-post">
 
     <?php if ( $has_img ) : ?>
-        <div class="ql-post__banner">
+        <div class="ql-post__banner" style="height:clamp(240px,36vw,420px);max-height:420px;overflow:hidden;position:relative;">
             <?php the_post_thumbnail( 'ql-hero', array(
                 'loading'       => 'eager',
                 'fetchpriority' => 'high',
                 'decoding'      => 'async',
                 'class'         => 'ql-post__banner-img',
+                'style'         => 'width:100%;height:100%;max-height:420px;object-fit:cover;object-position:center 35%;display:block;margin:0;',
             ) ); ?>
             <?php $cap = get_the_post_thumbnail_caption();
             if ( $cap ) : ?>
