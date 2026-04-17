@@ -1,0 +1,21 @@
+@echo off
+REM ═══════════════════════════════════════════════════════════════════
+REM  MODELE de config locale — COPIER en deploy.config.local.bat
+REM  et y mettre vos vraies valeurs.
+REM
+REM  Ce modele est versionne sur git, SANS secrets.
+REM  Le vrai fichier .local.bat est ignore par git.
+REM ═══════════════════════════════════════════════════════════════════
+
+set FTP_HOST=ftp.quartierlibre.org
+set FTP_USER=VOTRE_IDENTIFIANT_FTP
+set FTP_PASS=VOTRE_MOT_DE_PASSE_FTP
+set FTP_PORT=21
+set FTP_PATH=/public_html/wp-content/themes
+set THEME_NAME=quartier-libre-theme
+
+REM Chemin vers WinSCP.com (s'il n'est pas dans le PATH)
+set WINSCP_EXE=C:\Users\%USERNAME%\AppData\Local\Programs\WinSCP\WinSCP.com
+
+REM Mode : "push" (sans suppression) ou "mirror" (avec suppression)
+set MODE=push

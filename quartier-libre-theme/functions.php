@@ -1,0 +1,227 @@
+<?php
+/**
+ * Quartier Libre — functions.php
+ * Thème autonome, orienté performance.
+ */
+
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+define( 'QL_THEME_VERSION', '1.0.0' );
+define( 'QL_THEME_DIR', get_stylesheet_directory() );
+define( 'QL_THEME_URI', get_stylesheet_directory_uri() );
+
+// ── 0. Sync GitHub (page admin Outils → Sync QL) ────────────────
+if ( is_admin() ) {
+    $ql_sync_file = QL_THEME_DIR . '/ql-sync.php';
+    if ( file_exists( $ql_sync_file ) ) {
+        require_once $ql_sync_file;
+    }
+}
+
+// ── 1. Enqueue styles & scripts ─────────────────────────────────
+add_action( 'wp_enqueue_scripts', function () {
+
+    // style.css WordPress (obligatoire, sert d'ancre)
+    wp_enqueue_style(
+        'ql-theme-style',
+        get_stylesheet_uri(),
+        array(),
+        QL_THEME_VERSION
+    );
+
+    // Google Fonts — une seule requête, preconnect fait dans header.php
+    wp_enqueue_style(
+        'ql-fonts',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap',
+        array(),
+        null
+    );
+
+    // CSS principal (design system)
+    $main_css = QL_THEME_DIR . '/assets/css/main.css';
+    wp_enqueue_style(
+        'ql-main',
+        QL_THEME_URI . '/assets/css/main.css',
+        array( 'ql-theme-style' ),
+        file_exists( $main_css ) ? filemtime( $main_css ) : QL_THEME_VERSION
+    );
+
+    // JS principal (menu mobile, lazy helpers, etc.)
+    $main_js = QL_THEME_DIR . '/assets/js/main.js';
+    wp_enqueue_script(
+        'ql-main',
+        QL_THEME_URI . '/assets/js/main.js',
+        array(),
+        file_exists( $main_js ) ? filemtime( $main_js ) : QL_THEME_VERSION,
+        true
+    );
+
+    // Commentaires : chargé uniquement si nécessaire
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+
+}, 10 );
+
+// ── 2. Supports thème ───────────────────────────────────────────
+add_action( 'after_setup_theme', function () {
+
+    register_nav_menus( array(
+        'primary' => __( 'Menu principal', 'quartier-libre' ),
+        'footer'  => __( 'Menu pied de page', 'quartier-libre' ),
+    ) );
+
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style' ) );
+    add_theme_support( 'responsive-embeds' );
+    add_theme_support( 'customize-selective-refresh-widgets' );
+
+    // Tailles d'image dédiées
+    add_image_size( 'ql-hero',    1600, 900, true );  // une / hero
+    add_image_size( 'ql-card',     800, 520, true );  // cartes articles
+    add_image_size( 'ql-thumb',    400, 260, true );  // miniatures listes
+
+    // Éditeur : largeur max
+    add_theme_support( 'align-wide' );
+
+}, 5 );
+
+// ── 3. Favicon auto depuis assets/images/logo.{png,svg,webp} ────
+add_action( 'wp_head', function () {
+    $dir = QL_THEME_DIR . '/assets/images/';
+    $uri = QL_THEME_URI . '/assets/images/';
+    foreach ( array( 'svg', 'png', 'webp', 'jpg', 'jpeg', 'ico' ) as $ext ) {
+        $file = $dir . 'favicon.' . $ext;
+        if ( file_exists( $file ) ) {
+            $type = $ext === 'svg' ? 'image/svg+xml' : 'image/' . $ext;
+            echo '<link rel="icon" type="' . esc_attr( $type ) . '" href="' . esc_url( $uri . 'favicon.' . $ext ) . '">' . "\n";
+            echo '<link rel="apple-touch-icon" href="' . esc_url( $uri . 'favicon.' . $ext ) . '">' . "\n";
+            return;
+        }
+    }
+    // Fallback : logo
+    foreach ( array( 'svg', 'png', 'webp' ) as $ext ) {
+        $file = $dir . 'logo.' . $ext;
+        if ( file_exists( $file ) ) {
+            $url = $uri . 'logo.' . $ext;
+            echo '<link rel="icon" href="' . esc_url( $url ) . '">' . "\n";
+            return;
+        }
+    }
+}, 1 );
+
+// ── 4. Catégories par défaut (Local / France / International / Luttes) ─
+add_action( 'after_switch_theme', function () {
+    $cats = array(
+        'local'         => 'Info locale',
+        'france'        => 'France',
+        'international' => 'International',
+        'luttes'        => 'Luttes',
+    );
+    foreach ( $cats as $slug => $name ) {
+        if ( ! term_exists( $slug, 'category' ) ) {
+            wp_insert_term( $name, 'category', array( 'slug' => $slug ) );
+        }
+    }
+} );
+
+// ── 5. Templates de page déclarés ───────────────────────────────
+add_filter( 'theme_page_templates', function ( $templates ) {
+    $templates['templates/page-bureau-plaintes.php'] = 'Bureau des Plaintes';
+    $templates['templates/page-pleine-largeur.php']  = 'Pleine largeur';
+    return $templates;
+} );
+
+// ── 6. Extrait + "Lire la suite" sobres ─────────────────────────
+add_filter( 'excerpt_length', function () { return 28; }, 999 );
+add_filter( 'excerpt_more',  function () { return '…'; } );
+
+// ── 7. Body class (utilitaire pour le CSS) ──────────────────────
+add_filter( 'body_class', function ( $classes ) {
+    if ( is_singular( 'post' ) ) { $classes[] = 'ql-single'; }
+    if ( is_front_page() || is_home() ) { $classes[] = 'ql-home'; }
+    if ( is_archive() || is_category() ) { $classes[] = 'ql-archive'; }
+    return $classes;
+} );
+
+// ── 8. Nettoyage wp_head (perf & propreté) ──────────────────────
+remove_action( 'wp_head', 'wp_generator' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'rsd_link' );
+remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+
+// Supprimer les emojis WP (économise ~15 kB JS sur chaque page)
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+// Préconnexion Google Fonts (gain LCP)
+add_filter( 'wp_resource_hints', function ( $hints, $relation ) {
+    if ( $relation === 'preconnect' ) {
+        $hints[] = 'https://fonts.googleapis.com';
+        $hints[] = array( 'href' => 'https://fonts.gstatic.com', 'crossorigin' );
+    }
+    return $hints;
+}, 10, 2 );
+
+// ── 9. Lazy-loading natif + décodage async des images du contenu ─
+add_filter( 'wp_get_attachment_image_attributes', function ( $attr ) {
+    if ( ! isset( $attr['loading'] ) )  { $attr['loading']  = 'lazy'; }
+    if ( ! isset( $attr['decoding'] ) ) { $attr['decoding'] = 'async'; }
+    return $attr;
+} );
+
+// ── 10. Widget areas ────────────────────────────────────────────
+add_action( 'widgets_init', function () {
+    register_sidebar( array(
+        'name'          => __( 'Colonne latérale article', 'quartier-libre' ),
+        'id'            => 'ql-sidebar',
+        'before_widget' => '<div class="ql-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="ql-widget__title">',
+        'after_title'   => '</h3>',
+    ) );
+} );
+
+// ── 11. Helper : catégorie principale d'un article ──────────────
+function ql_primary_category( $post_id = null ) {
+    $post_id = $post_id ?: get_the_ID();
+    $cats    = get_the_category( $post_id );
+    if ( empty( $cats ) ) { return null; }
+    // On privilégie la catégorie la plus spécifique (celle avec le plus d'articles parent inclus)
+    return $cats[0];
+}
+
+// ── 12. Traitement du formulaire Bureau des Plaintes ───────────
+add_action( 'admin_post_nopriv_ql_plainte', 'ql_handle_plainte' );
+add_action( 'admin_post_ql_plainte',        'ql_handle_plainte' );
+function ql_handle_plainte() {
+    if ( ! isset( $_POST['ql_plainte_nonce'] ) || ! wp_verify_nonce( $_POST['ql_plainte_nonce'], 'ql_plainte' ) ) {
+        wp_die( 'Jeton de sécurité invalide.' );
+    }
+
+    $type    = sanitize_text_field( wp_unslash( $_POST['ql_type']    ?? '' ) );
+    $quartier= sanitize_text_field( wp_unslash( $_POST['ql_quartier']?? '' ) );
+    $nom     = sanitize_text_field( wp_unslash( $_POST['ql_nom']     ?? '' ) );
+    $email   = sanitize_email(     wp_unslash( $_POST['ql_email']    ?? '' ) );
+    $message = sanitize_textarea_field( wp_unslash( $_POST['ql_message'] ?? '' ) );
+
+    if ( empty( $message ) || empty( $type ) ) {
+        wp_safe_redirect( add_query_arg( 'plainte', 'erreur', wp_get_referer() ?: home_url() ) );
+        exit;
+    }
+
+    $to      = get_option( 'admin_email' );
+    $subject = '[Bureau des Plaintes] ' . $type . ' — ' . $quartier;
+    $body    = "Type : {$type}\nQuartier : {$quartier}\nNom : {$nom}\nEmail : {$email}\n\n---\n{$message}\n";
+    $headers = array();
+    if ( $email ) { $headers[] = 'Reply-To: ' . $email; }
+
+    wp_mail( $to, $subject, $body, $headers );
+
+    wp_safe_redirect( add_query_arg( 'plainte', 'envoye', wp_get_referer() ?: home_url() ) );
+    exit;
+}

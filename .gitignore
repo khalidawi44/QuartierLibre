@@ -1,0 +1,24 @@
+# Fichiers systèmes
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Fichiers locaux contenant des secrets (identifiants FTP, etc.)
+# Ne JAMAIS committer — le modèle .example est versionné à la place.
+deploy/*.local.bat
+deploy/*.local.sh
+deploy/*.local
+*.local.bat
+*.local.sh
+*.local.config
+
+# Dump du site en ligne (contenu utilisateur, ne pas committer)
+public_html/
+
+# Logs WordPress éventuels
+debug.log
+error_log
+
+# Dossier contenus de travail (images brutes, PDF…)
+# (déjà sous .claude/article/, ne pas dupliquer dans le repo)

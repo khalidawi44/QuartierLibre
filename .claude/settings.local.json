@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:quartierlibre.org)",
+      "Bash(chmod +x \"C:/Users/Utilisateur/Documents/GitHub/QuartierLibre/deploy/deploy.sh\")"
+    ]
+  }
+}
