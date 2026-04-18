@@ -28,7 +28,8 @@
       "Bash(curl -s \"https://quartierlibre.org/wp-json/wp/v2/categories?per_page=100&hide_empty=false\")",
       "Read(//tmp/**)",
       "Bash(node -e ' *)",
-      "Bash(curl -s \"https://quartierlibre.org/wp-json/wp/v2/tags?slug=quartier-clos-toreau\")"
+      "Bash(curl -s \"https://quartierlibre.org/wp-json/wp/v2/tags?slug=quartier-clos-toreau\")",
+      "Bash(node _generate_banners.js)"
     ]
   }
 }

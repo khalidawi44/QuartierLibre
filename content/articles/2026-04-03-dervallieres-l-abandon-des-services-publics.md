@@ -9,7 +9,7 @@ tags:
   - sante
   - johanna-rolland
 excerpt: "Aux Dervallières, on ferme les guichets, on supprime les postes, on éteint les lumières. La municipalité parle de « rationalisation ». Les habitants parlent d'abandon."
-featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/quartier_sous_controle.jpeg"
+featured_image: "content/media/quartier-dervallieres.svg"
 status: "draft"
 date: "2026-04-03 11:00:00"
 author: "khalid44"

@@ -9,7 +9,7 @@ tags:
   - logement
   - demolition
 excerpt: "Le NPNRU de Bottière-Pin Sec engage la démolition de centaines de logements et le relogement forcé de familles qui ont construit ce quartier. La « rénovation », ici, c'est une expulsion massive déguisée en progrès."
-featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/Nantes-Habitat-insalubrite-scaled.jpg"
+featured_image: "content/media/quartier-bottiere-pin-sec.svg"
 status: "draft"
 date: "2026-04-05 14:00:00"
 author: "khalid44"

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="QUARTIER DERVALLIÈRES — L&apos;ÉTAT SE RETIRE">
+  <title>QUARTIER DERVALLIÈRES — L&apos;ÉTAT SE RETIRE</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0f0f"/>
+      <stop offset="70%" stop-color="#1a0606"/>
+      <stop offset="100%" stop-color="#3d0a0a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="55%" r="60%">
+      <stop offset="0%" stop-color="#a51d08" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#3d0a0a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="hatches" patternUnits="userSpaceOnUse" width="18" height="18" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="18" stroke="#ffcb05" stroke-width="0.8" stroke-opacity="0.06"/>
+    </pattern>
+    <filter id="textshadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#hatches)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- Cadre rouge fin en haut -->
+  <rect x="0" y="0" width="1600" height="8" fill="#e02810"/>
+  <rect x="0" y="892" width="1600" height="8" fill="#e02810"/>
+
+  <!-- Badge catégorie (en haut à gauche) -->
+  <g transform="translate(80, 80)">
+    <rect x="0" y="0" width="260" height="44" fill="#e02810" rx="2"/>
+    <text x="130" y="31"
+          font-family="Inter, system-ui, sans-serif"
+          font-weight="800"
+          font-size="16"
+          letter-spacing="4"
+          fill="#ffffff"
+          text-anchor="middle">INFOS LOCALE</text>
+  </g>
+
+  <!-- Titre principal -->
+  <text x="800" y="410"
+        font-family="Fraunces, Georgia, 'Times New Roman', serif"
+        font-weight="900"
+        font-size="110"
+        letter-spacing="-2"
+        fill="#ffffff"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        filter="url(#textshadow)">QUARTIER DERVALLIÈRES</text>
+
+  <!-- Filet rouge de séparation -->
+  <line x1="720" y1="470" x2="880" y2="470"
+        stroke="#e02810" stroke-width="4"/>
+
+  <!-- Accent en jaune -->
+  <text x="800" y="550"
+        font-family="Fraunces, Georgia, serif"
+        font-weight="900"
+        font-style="italic"
+        font-size="75"
+        letter-spacing="1"
+        fill="#ffcb05"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        filter="url(#textshadow)">L&apos;ÉTAT SE RETIRE</text>
+
+  <!-- Signature en bas -->
+  <text x="800" y="840"
+        font-family="Inter, system-ui, sans-serif"
+        font-weight="600"
+        font-size="20"
+        letter-spacing="6"
+        fill="#a9a595"
+        text-anchor="middle"
+        text-transform="uppercase">— QUARTIERLIBRE.ORG —</text>
+</svg>

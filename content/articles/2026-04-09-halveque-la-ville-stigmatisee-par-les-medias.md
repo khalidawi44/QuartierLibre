@@ -9,7 +9,7 @@ tags:
   - presse-ocean
   - trafic
 excerpt: "La Halvêque ne fait pas la une des grands journaux pour ses associations, ses bénévoles, ses fêtes de quartier. Elle la fait pour chaque fait divers, chaque interpellation. La fabrique médiatique du « quartier difficile » en action."
-featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/quartier_sous_controle.jpeg"
+featured_image: "content/media/quartier-halveque.svg"
 status: "draft"
 date: "2026-04-09 10:00:00"
 author: "khalid44"

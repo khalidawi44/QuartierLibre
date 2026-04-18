@@ -9,7 +9,7 @@ tags:
   - enclavement
   - services-publics
 excerpt: "Au Bout des Landes, il faut 45 minutes en bus pour aller au centre-ville. Le soir, plus rien ne passe après 21h. La mobilité, à Nantes, est un luxe réservé aux quartiers bourgeois."
-featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/quartier_sous_controle.jpeg"
+featured_image: "content/media/quartier-bout-des-landes.svg"
 status: "draft"
 date: "2026-04-07 11:00:00"
 author: "khalid44"

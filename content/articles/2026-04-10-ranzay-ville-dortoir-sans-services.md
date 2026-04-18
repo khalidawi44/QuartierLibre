@@ -9,7 +9,7 @@ tags:
   - isolement
   - ville-dortoir
 excerpt: "Le Ranzay, c'est quelques centaines de logements entassés, une place déserte, un arrêt de tram, et puis plus rien. Le quartier-dortoir que la métropole oublie — sauf quand il faut le faire taire."
-featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/quartier_sous_controle.jpeg"
+featured_image: "content/media/quartier-ranzay.svg"
 status: "draft"
 date: "2026-04-10 11:30:00"
 author: "khalid44"

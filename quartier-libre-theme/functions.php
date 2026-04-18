@@ -262,6 +262,34 @@ add_filter( 'wp_resource_hints', function ( $hints, $relation ) {
     return $hints;
 }, 10, 2 );
 
+// ── 8b. Support upload SVG (réservé aux admins pour raisons de sécurité) ─
+add_filter( 'upload_mimes', function ( $mimes ) {
+    if ( current_user_can( 'manage_options' ) ) {
+        $mimes['svg']  = 'image/svg+xml';
+        $mimes['svgz'] = 'image/svg+xml';
+    }
+    return $mimes;
+} );
+add_filter( 'wp_check_filetype_and_ext', function ( $data, $file, $filename, $mimes ) {
+    if ( ! current_user_can( 'manage_options' ) ) return $data;
+    if ( substr( $filename, -4 ) === '.svg' ) {
+        $data['ext']             = 'svg';
+        $data['type']            = 'image/svg+xml';
+        $data['proper_filename'] = $filename;
+    }
+    return $data;
+}, 10, 4 );
+// Fix affichage SVG dans la médiathèque (calcul de dimensions)
+add_filter( 'wp_get_attachment_image_src', function ( $image, $attachment_id ) {
+    if ( ! $image ) return $image;
+    $mime = get_post_mime_type( $attachment_id );
+    if ( $mime === 'image/svg+xml' && empty( $image[1] ) ) {
+        $image[1] = 1600;
+        $image[2] = 900;
+    }
+    return $image;
+}, 10, 2 );
+
 // ── 9. Lazy-loading natif + décodage async des images du contenu ─
 add_filter( 'wp_get_attachment_image_attributes', function ( $attr ) {
     if ( ! isset( $attr['loading'] ) )  { $attr['loading']  = 'lazy'; }

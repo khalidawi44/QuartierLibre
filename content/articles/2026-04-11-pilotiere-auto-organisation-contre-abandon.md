@@ -9,7 +9,7 @@ tags:
   - collectifs
   - resistance
 excerpt: "À la Pilotière, on n'attend plus la mairie. On a compris. Derrière le silence institutionnel, des habitants bâtissent leurs propres solidarités : aides aux devoirs, frigos partagés, garde collective. La leçon des quartiers qui se prennent en main."
-featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/quartier_sous_controle.jpeg"
+featured_image: "content/media/quartier-pilotiere.svg"
 status: "draft"
 date: "2026-04-11 09:30:00"
 author: "khalid44"
