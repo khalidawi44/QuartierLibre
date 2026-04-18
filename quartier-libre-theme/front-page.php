@@ -66,19 +66,19 @@ $has_any = (int) wp_count_posts()->publish > 0;
     <?php else : ?>
 
         <?php // Site vide : carton d'accueil temporaire ?>
-        <section class="ql-hero" style="grid-template-columns:1fr;">
-            <article class="ql-hero__main" style="min-height:380px;">
-                <div class="ql-hero__main-body" style="max-width:720px;">
-                    <span class="ql-card__cat" style="position:static;display:inline-block;margin-bottom:1rem;background:var(--ql-accent);">Bienvenue</span>
-                    <h2 style="font-size:clamp(2rem,4vw,3rem);">Quartier Libre — la voix des quartiers.</h2>
-                    <p style="color:#ddd;font-size:1.1rem;line-height:1.6;">
+        <section class="ql-hero ql-welcome">
+            <article class="ql-hero__main ql-welcome__main">
+                <div class="ql-hero__main-body ql-welcome__body">
+                    <span class="ql-card__cat ql-card__cat--inline ql-welcome__badge">Bienvenue</span>
+                    <h2 class="ql-welcome__title">Quartier Libre — la voix des quartiers.</h2>
+                    <p class="ql-welcome__blurb">
                         Par nous, pour nous. Les quartiers prennent la parole : violences sociales et policières,
                         logement, luttes, urbanisme, services publics. Information locale et indépendante.
                     </p>
-                    <p style="margin-top:1.5rem;">
+                    <p class="ql-welcome__actions">
                         <a class="ql-btn ql-btn--accent" href="<?php echo esc_url( admin_url( 'post-new.php' ) ); ?>">Publier un premier article</a>
                         &nbsp;
-                        <a class="ql-btn ql-btn--ghost" style="color:#fff;border-color:#fff;" href="<?php echo esc_url( home_url( '/bureau-des-plaintes/' ) ); ?>">Bureau des plaintes</a>
+                        <a class="ql-btn ql-btn--ghost ql-btn--on-dark" href="<?php echo esc_url( home_url( '/bureau-des-plaintes/' ) ); ?>">Bureau des plaintes</a>
                     </p>
                 </div>
             </article>
@@ -93,7 +93,7 @@ $has_any = (int) wp_count_posts()->publish > 0;
                     <div class="ql-card__body">
                         <h3 class="ql-card__title">1. Créer vos catégories</h3>
                         <p class="ql-card__excerpt">
-                            Assurez-vous que les rubriques <em>local</em>, <em>france</em>,
+                            Assurez-vous que les rubriques <em>infos-locale</em>, <em>france</em>,
                             <em>luttes</em> et <em>international</em> existent (slugs exacts).
                             Elles apparaîtront automatiquement en home.
                         </p>

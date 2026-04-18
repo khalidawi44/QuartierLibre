@@ -92,6 +92,7 @@ add_action( 'after_setup_theme', function () {
 add_action( 'wp_head', function () {
     $dir = QL_THEME_DIR . '/assets/images/';
     $uri = QL_THEME_URI . '/assets/images/';
+    if ( ! is_dir( $dir ) ) { return; }
     foreach ( array( 'svg', 'png', 'webp', 'jpg', 'jpeg', 'ico' ) as $ext ) {
         $file = $dir . 'favicon.' . $ext;
         if ( file_exists( $file ) ) {
@@ -183,7 +184,7 @@ add_filter( 'wp_nav_menu_objects', function ( $items, $args ) {
 // ── 4. Catégories par défaut (Local / France / International / Luttes) ─
 add_action( 'after_switch_theme', function () {
     $cats = array(
-        'local'         => 'Info locale',
+        'infos-locale'  => 'Info locale',
         'france'        => 'France',
         'international' => 'International',
         'luttes'        => 'Luttes',

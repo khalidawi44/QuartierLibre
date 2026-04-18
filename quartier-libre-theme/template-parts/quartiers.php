@@ -2,7 +2,7 @@
 /**
  * Mosaïque des quartiers HLM de Nantes.
  * Affiche les tags préfixés `quartier-` en grille cliquable.
- * Affiché par défaut sur la page catégorie « Infos Locale ».
+ * Affiché par défaut sur la page catégorie « Info locale ».
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 

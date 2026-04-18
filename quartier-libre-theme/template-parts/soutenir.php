@@ -38,7 +38,7 @@ if ( empty( $donorbox_url ) ) {
             <a class="ql-btn ql-btn--accent ql-btn--lg" href="<?php echo esc_url( $donorbox_url ); ?>"<?php echo strpos( $donorbox_url, 'donorbox' ) !== false ? ' target="_blank" rel="noopener"' : ''; ?>>
                 Faire un don
             </a>
-            <small class="ql-muted" style="display:block;margin-top:.6rem;">Paiement sécurisé · Déductible 66 % si éligible</small>
+            <small class="ql-muted ql-soutenir__note">Paiement sécurisé · Déductible 66 % si éligible</small>
         </div>
 
     </div>

@@ -1544,6 +1544,89 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 .ql-comments .comment-author { font-weight: 700; }
 .ql-comments .comment-metadata { font-size: .8rem; color: var(--ql-muted); margin-bottom: .5rem; }
 
+/* ── 18b. Pages statiques (about, soutenir, mentions…) ────── */
+.ql-page {
+  max-width: 820px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.25rem;
+}
+.ql-page__header { margin-bottom: 1.75rem; }
+.ql-page__header--centered { text-align: center; }
+.ql-page__title {
+  font-family: var(--ql-font-serif);
+  font-weight: 900;
+  line-height: 1.1;
+  font-size: clamp(1.9rem, 4.8vw, 3rem);
+  letter-spacing: -0.02em;
+  color: var(--ql-ink);
+  margin: 0;
+}
+.ql-page__hero-media { margin: 0 0 1.5rem; }
+.ql-page__hero-media img { width: 100%; height: auto; border-radius: var(--ql-radius); }
+.ql-page__body { font-size: 1.1rem; line-height: 1.7; color: var(--ql-ink); }
+.ql-page__body > * + * { margin-top: 1.2rem; }
+.ql-page--wide { max-width: none; }
+.ql-container--wide { max-width: 1100px; }
+
+/* ── 18c. Sidebar & widgets ──────────────────────────────── */
+.ql-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.ql-widget {
+  background: var(--ql-paper-2);
+  border-radius: var(--ql-radius);
+  padding: 1.25rem 1.3rem;
+}
+.ql-widget__title {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin: 0 0 .8rem;
+  color: var(--ql-ink);
+}
+.ql-widget ul { list-style: none; padding: 0; margin: 0; }
+.ql-widget li + li { margin-top: .5rem; }
+.ql-widget a { color: var(--ql-ink); text-decoration: none; }
+.ql-widget a:hover { color: var(--ql-accent); }
+
+/* ── 18d. Page 404 ────────────────────────────────────────── */
+.ql-404 { text-align: center; padding: 4rem 0; }
+.ql-404__kicker { color: var(--ql-accent); font-weight: 700; letter-spacing: .1em; }
+.ql-404__title { font-size: clamp(2rem, 5vw, 3.5rem); }
+.ql-404__desc {
+  max-width: 540px;
+  margin: 1rem auto 2rem;
+  color: var(--ql-muted);
+  font-size: 1.05rem;
+}
+.ql-404__search { max-width: 480px; margin: 0 auto 2rem; }
+
+/* ── 18e. Accueil vide (welcome) ──────────────────────────── */
+.ql-welcome { grid-template-columns: 1fr; }
+.ql-welcome__main { min-height: 380px; }
+.ql-welcome__body { max-width: 720px; }
+.ql-welcome__badge { margin-bottom: 1rem; }
+.ql-welcome__title { font-size: clamp(2rem, 4vw, 3rem); }
+.ql-welcome__blurb { color: #ddd; font-size: 1.1rem; line-height: 1.6; }
+.ql-welcome__actions { margin-top: 1.5rem; }
+.ql-btn--on-dark { color: #fff; border-color: #fff; }
+
+/* ── 18f. Recherche (entête) ──────────────────────────────── */
+.ql-archive-header__search { max-width: 480px; margin: 1rem auto 0; }
+
+/* ── 18g. Carte : catégorie en ligne (vue compacte) ──────── */
+.ql-card__cat--inline {
+  position: static;
+  display: inline-block;
+  margin-bottom: .4rem;
+}
+
+/* ── 18h. Soutenir : note sous le bouton ─────────────────── */
+.ql-soutenir__note { display: block; margin-top: .6rem; }
+
 /* ── 19. Utilitaires & motion ─────────────────────────────── */
 .ql-muted { color: var(--ql-muted); }
 .ql-accent { color: var(--ql-accent); }
