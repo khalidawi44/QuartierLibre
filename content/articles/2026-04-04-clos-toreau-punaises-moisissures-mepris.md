@@ -10,7 +10,7 @@ tags:
   - thomas-quero
   - logement
 excerpt: "Au Clos Toreau, vivre en logement social c'est cohabiter avec les punaises, les rats et les moisissures. Pendant que Nantes Métropole Habitat répond : « On a mis en place un plan d'action »."
-featured_image: "content/media/quartier-clos-toreau.svg"
+featured_image: "content/media/quartier-clos-toreau.jpg"
 status: "draft"
 date: "2026-04-04 09:30:00"
 author: "khalid44"

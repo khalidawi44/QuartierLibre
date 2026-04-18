@@ -9,7 +9,7 @@ tags:
   - sante
   - johanna-rolland
 excerpt: "Aux Dervallières, on ferme les guichets, on supprime les postes, on éteint les lumières. La municipalité parle de « rationalisation ». Les habitants parlent d'abandon."
-featured_image: "content/media/quartier-dervallieres.svg"
+featured_image: "content/media/quartier-dervallieres.jpg"
 status: "draft"
 date: "2026-04-03 11:00:00"
 author: "khalid44"

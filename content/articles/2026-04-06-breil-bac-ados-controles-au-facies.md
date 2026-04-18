@@ -10,7 +10,7 @@ tags:
   - racisme
   - jeunes
 excerpt: "Au Breil, les contrôles policiers ne visent pas les criminels. Ils visent les ados qui rentrent de l'école. C'est du racisme d'État, pas de la sécurité."
-featured_image: "content/media/quartier-breil.svg"
+featured_image: "content/media/quartier-breil.jpg"
 status: "draft"
 date: "2026-04-06 10:30:00"
 author: "khalid44"

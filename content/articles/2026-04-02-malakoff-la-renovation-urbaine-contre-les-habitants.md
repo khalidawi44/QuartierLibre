@@ -9,7 +9,7 @@ tags:
   - nantes-metropole-habitat
   - logement
 excerpt: "À Malakoff, on ne rénove pas. On déplace. Derrière les brochures de « rénovation urbaine » et les promesses de « mixité sociale », une machine à chasser les pauvres se met en marche."
-featured_image: "content/media/quartier-malakoff.svg"
+featured_image: "content/media/quartier-malakoff.jpg"
 status: "draft"
 date: "2026-04-02 10:00:00"
 author: "khalid44"

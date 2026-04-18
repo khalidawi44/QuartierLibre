@@ -9,7 +9,7 @@ tags:
   - bac
   - johanna-rolland
 excerpt: "Plus grand quartier HLM de Nantes, à cheval sur la ville et Saint-Herblain, Bellevue concentre tous les symptômes de la politique urbaine macroniste : caméras partout, flics partout, services publics nulle part."
-featured_image: "content/media/quartier-bellevue.svg"
+featured_image: "content/media/quartier-bellevue.jpg"
 status: "draft"
 date: "2026-04-01 09:00:00"
 author: "khalid44"
