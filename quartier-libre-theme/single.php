@@ -120,31 +120,48 @@ get_header(); ?>
     </div><!-- /.ql-post__body -->
 
     <?php
-    if ( $cat ) :
-        $related = new WP_Query( array(
-            'post_type'           => 'post',
-            'posts_per_page'      => 3,
-            'category__in'        => array( $cat->term_id ),
-            'post__not_in'        => array( get_the_ID() ),
-            'no_found_rows'       => true,
-            'ignore_sticky_posts' => true,
-        ) );
-        if ( $related->have_posts() ) : ?>
-            <section class="ql-post__related">
-                <div class="ql-container">
-                    <header class="ql-section__head">
-                        <h2 class="ql-section__title">À lire aussi</h2>
-                    </header>
-                    <div class="ql-grid ql-grid--3">
-                        <?php while ( $related->have_posts() ) : $related->the_post();
-                            get_template_part( 'template-parts/card-article' );
-                        endwhile; ?>
-                    </div>
+    // ── Articles liés au sujet : priorité aux tags partagés ─────
+    $current_id = get_the_ID();
+    $tags       = wp_get_post_tags( $current_id, array( 'fields' => 'ids' ) );
+
+    $related_args = array(
+        'post_type'           => 'post',
+        'posts_per_page'      => 3,
+        'post__not_in'        => array( $current_id ),
+        'no_found_rows'       => true,
+        'ignore_sticky_posts' => true,
+        'orderby'             => 'date',
+        'order'               => 'DESC',
+    );
+
+    // 1. D'abord : articles partageant au moins un tag (même sujet)
+    if ( ! empty( $tags ) ) {
+        $related_args['tag__in'] = $tags;
+    }
+    $related = new WP_Query( $related_args );
+
+    // 2. Fallback : articles de la même catégorie
+    if ( ! $related->have_posts() && $cat ) {
+        unset( $related_args['tag__in'] );
+        $related_args['category__in'] = array( $cat->term_id );
+        $related = new WP_Query( $related_args );
+    }
+
+    if ( $related->have_posts() ) : ?>
+        <section class="ql-post__related">
+            <div class="ql-container">
+                <header class="ql-section__head">
+                    <h2 class="ql-section__title">Sur le même sujet</h2>
+                </header>
+                <div class="ql-grid ql-grid--3">
+                    <?php while ( $related->have_posts() ) : $related->the_post();
+                        get_template_part( 'template-parts/card-article' );
+                    endwhile; ?>
                 </div>
-            </section>
-        <?php endif;
-        wp_reset_postdata();
-    endif;
+            </div>
+        </section>
+    <?php endif;
+    wp_reset_postdata();
     ?>
 
     <?php if ( comments_open() || get_comments_number() ) : ?>

@@ -6,6 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
 </main><!-- /#content -->
 
+<?php get_template_part( 'template-parts/plainte-popup' ); ?>
+
 <footer class="ql-footer" role="contentinfo">
     <div class="ql-container ql-footer__grid">
 
@@ -60,7 +62,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
     <div class="ql-footer__meta">
         <div class="ql-container ql-footer__meta-inner">
-            <p>&copy; <?php echo esc_html( date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?> — Tous droits réservés.</p>
+            <p>
+                &copy; <?php echo esc_html( date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?> — Tous droits réservés.
+                <span class="ql-footer__credit">
+                    Fièrement créé par
+                    <a href="https://alliancegroupe-inc.com/" target="_blank" rel="noopener">Alliance Groupe-inc</a>.
+                </span>
+            </p>
             <ul class="ql-footer__legal">
                 <li><a href="<?php echo esc_url( home_url( '/mentions-legales/' ) ); ?>">Mentions légales</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/politique-confidentialite/' ) ); ?>">Confidentialité</a></li>

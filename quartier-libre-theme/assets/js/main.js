@@ -88,6 +88,33 @@
     startAutoplay();
   }
 
+  // ── Modal Bureau des Plaintes ───────────────────────────────
+  var plainteTrigger = document.querySelector('.ql-plainte-trigger');
+  var plainteModal = document.getElementById('ql-plainte-modal');
+  if (plainteTrigger && plainteModal) {
+    var closeEls = plainteModal.querySelectorAll('[data-close]');
+    var firstInput = plainteModal.querySelector('select, input, textarea');
+
+    function openModal() {
+      plainteModal.removeAttribute('hidden');
+      plainteTrigger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      if (firstInput) { setTimeout(function(){ firstInput.focus(); }, 50); }
+    }
+    function closeModal() {
+      plainteModal.setAttribute('hidden', '');
+      plainteTrigger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      plainteTrigger.focus();
+    }
+
+    plainteTrigger.addEventListener('click', openModal);
+    closeEls.forEach(function(el) { el.addEventListener('click', closeModal); });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !plainteModal.hasAttribute('hidden')) { closeModal(); }
+    });
+  }
+
   // ── Barre de progression de lecture (single.php) ────────────
   var progressBar = document.querySelector('.ql-reading-progress span');
   var articleBody = document.querySelector('.ql-single .ql-article__body');
