@@ -1,33 +1,37 @@
 #!/usr/bin/env node
 /**
  * Génère 11 bannières SVG militantes pour les articles HLM de Nantes.
- * Sortie : content/media/quartier-{slug}.svg (1600×900, ~5 kB chacun)
  *
- * Design : affiche militante — fond noir→rouge, hachures 45° légères,
- * serif lourd blanc pour le titre, jaune pour le mot-accent.
+ * DEUX MODES selon que `image` est fourni ou non :
+ *  - Avec image (URL photo)  → style Contre-Attaque : photo de fond
+ *    assombrie + titre blanc et accent jaune en overlay
+ *  - Sans image              → fallback typographique : dégradé
+ *    noir→rouge, hachures, titre blanc + accent jaune
+ *
+ * Pour passer en mode photo sur un quartier : renseigner `image` dans
+ * BANNERS ci-dessous (URL absolue, format JPG/PNG/WEBP), puis relancer
+ * `node _generate_banners.js`.
  */
 const fs = require('fs');
 const path = require('path');
 
 const OUTPUT_DIR = 'content/media';
 
+// image: URL absolue d'une photo (si fournie) — sinon rendu typographique
 const BANNERS = [
-  { slug: 'bellevue',          title: 'QUARTIER BELLEVUE',        accent: 'ZONE SOUS CONTRÔLE' },
-  { slug: 'malakoff',          title: 'QUARTIER MALAKOFF',        accent: 'ON DÉMOLIT POUR CHASSER' },
-  { slug: 'dervallieres',      title: 'QUARTIER DERVALLIÈRES',    accent: 'L\'ÉTAT SE RETIRE' },
-  { slug: 'clos-toreau',       title: 'QUARTIER CLOS TOREAU',     accent: 'PUNAISES, MÉPRIS' },
-  { slug: 'bottiere-pin-sec',  title: 'BOTTIÈRE — PIN SEC',       accent: '240 M€ CONTRE LES HABITANTS' },
-  { slug: 'breil',             title: 'QUARTIER BREIL',           accent: 'LA BAC CHASSE LES ADOS' },
-  { slug: 'bout-des-landes',   title: 'BOUT DES LANDES',          accent: 'ENCLAVÉS, OUBLIÉS' },
-  { slug: 'port-boyer',        title: 'QUARTIER PORT BOYER',      accent: 'MARCHANDS DE SOMMEIL' },
-  { slug: 'halveque',          title: 'QUARTIER HALVÊQUE',        accent: 'CE QU\'ON NE VOUS MONTRE PAS' },
-  { slug: 'ranzay',             title: 'QUARTIER RANZAY',         accent: 'VILLE-DORTOIR' },
-  { slug: 'pilotiere',         title: 'QUARTIER PILOTIÈRE',       accent: 'ON N\'ATTEND PLUS, ON FAIT' },
+  { slug: 'bellevue',         title: 'QUARTIER BELLEVUE',     accent: 'ZONE SOUS CONTRÔLE',          image: null },
+  { slug: 'malakoff',         title: 'QUARTIER MALAKOFF',     accent: 'ON DÉMOLIT POUR CHASSER',     image: null },
+  { slug: 'dervallieres',     title: 'QUARTIER DERVALLIÈRES', accent: 'L\'ÉTAT SE RETIRE',           image: null },
+  { slug: 'clos-toreau',      title: 'QUARTIER CLOS TOREAU',  accent: 'PUNAISES, MÉPRIS',            image: null },
+  { slug: 'bottiere-pin-sec', title: 'BOTTIÈRE — PIN SEC',    accent: '240 M€ CONTRE LES HABITANTS', image: null },
+  { slug: 'breil',            title: 'QUARTIER BREIL',        accent: 'LA BAC CHASSE LES ADOS',      image: null },
+  { slug: 'bout-des-landes',  title: 'BOUT DES LANDES',       accent: 'ENCLAVÉS, OUBLIÉS',           image: null },
+  { slug: 'port-boyer',       title: 'QUARTIER PORT BOYER',   accent: 'MARCHANDS DE SOMMEIL',        image: null },
+  { slug: 'halveque',         title: 'QUARTIER HALVÊQUE',     accent: 'CE QU\'ON NE VOUS MONTRE PAS',image: null },
+  { slug: 'ranzay',           title: 'QUARTIER RANZAY',       accent: 'VILLE-DORTOIR',               image: null },
+  { slug: 'pilotiere',        title: 'QUARTIER PILOTIÈRE',    accent: 'ON N\'ATTEND PLUS, ON FAIT',  image: null },
 ];
 
-/**
- * Échappe les caractères XML critiques.
- */
 function xmlEscape(s) {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -37,27 +41,102 @@ function xmlEscape(s) {
     .replace(/'/g, '&apos;');
 }
 
-/**
- * Calcule une taille de police adaptée à la longueur du texte, pour
- * que ça tienne dans la largeur utile (~1400px).
- */
 function fitFontSize(text, baseSize, maxWidth, avgCharWidthRatio = 0.55) {
   const estimatedWidth = text.length * baseSize * avgCharWidthRatio;
   if (estimatedWidth <= maxWidth) return baseSize;
   return Math.floor(baseSize * (maxWidth / estimatedWidth));
 }
 
-function buildSvg({ title, accent }) {
+/**
+ * Rendu avec photo de fond (style Contre-Attaque).
+ */
+function buildSvgWithPhoto({ title, accent, image }) {
+  const W = 1600, H = 900;
+  const titleSize = fitFontSize(title, 130, 1400);
+  const accentSize = fitFontSize(accent, 80, 1400);
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${xmlEscape(title)} — ${xmlEscape(accent)}">
+  <title>${xmlEscape(title)} — ${xmlEscape(accent)}</title>
+  <defs>
+    <clipPath id="clip"><rect width="${W}" height="${H}"/></clipPath>
+    <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(15,15,15,0.55)"/>
+      <stop offset="50%" stop-color="rgba(15,15,15,0.25)"/>
+      <stop offset="100%" stop-color="rgba(15,15,15,0.95)"/>
+    </linearGradient>
+    <filter id="textshadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Photo de fond (préserve l'aspect via slice) -->
+  <g clip-path="url(#clip)">
+    <image href="${xmlEscape(image)}" xlink:href="${xmlEscape(image)}"
+           x="0" y="0" width="${W}" height="${H}"
+           preserveAspectRatio="xMidYMid slice"/>
+  </g>
+
+  <!-- Dégradé assombrisant pour lisibilité -->
+  <rect width="${W}" height="${H}" fill="url(#overlay)"/>
+
+  <!-- Cadre rouge -->
+  <rect x="0" y="0" width="${W}" height="8" fill="#e02810"/>
+  <rect x="0" y="${H - 8}" width="${W}" height="8" fill="#e02810"/>
+
+  <!-- Badge catégorie -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="260" height="44" fill="#e02810" rx="2"/>
+    <text x="130" y="31" font-family="Inter, system-ui, sans-serif" font-weight="800"
+          font-size="16" letter-spacing="4" fill="#ffffff" text-anchor="middle">INFOS LOCALE</text>
+  </g>
+
+  <!-- Titre principal (bas, plein largeur) -->
+  <text x="${W / 2}" y="${H - 220}"
+        font-family="Fraunces, Georgia, serif"
+        font-weight="900"
+        font-size="${titleSize}"
+        letter-spacing="-2"
+        fill="#ffffff"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        filter="url(#textshadow)">${xmlEscape(title)}</text>
+
+  <!-- Accent jaune -->
+  <text x="${W / 2}" y="${H - 110}"
+        font-family="Fraunces, Georgia, serif"
+        font-weight="900"
+        font-style="italic"
+        font-size="${accentSize}"
+        letter-spacing="1"
+        fill="#ffcb05"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        filter="url(#textshadow)">${xmlEscape(accent)}</text>
+
+  <!-- Signature -->
+  <text x="${W / 2}" y="${H - 40}"
+        font-family="Inter, system-ui, sans-serif"
+        font-weight="600"
+        font-size="18"
+        letter-spacing="6"
+        fill="#a9a595"
+        text-anchor="middle">— QUARTIERLIBRE.ORG —</text>
+</svg>
+`;
+}
+
+/**
+ * Rendu typographique (fallback) — utilisé si pas d'image fournie.
+ */
+function buildSvgTypographic({ title, accent }) {
   const W = 1600, H = 900;
   const titleSize = fitFontSize(title, 110, 1400);
   const accentSize = fitFontSize(accent, 75, 1400);
 
-  const titleEsc = xmlEscape(title);
-  const accentEsc = xmlEscape(accent);
-
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${titleEsc} — ${accentEsc}">
-  <title>${titleEsc} — ${accentEsc}</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${xmlEscape(title)} — ${xmlEscape(accent)}">
+  <title>${xmlEscape(title)} — ${xmlEscape(accent)}</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0f0f0f"/>
@@ -76,87 +155,60 @@ function buildSvg({ title, accent }) {
     </filter>
   </defs>
 
-  <!-- Fond -->
   <rect width="${W}" height="${H}" fill="url(#bg)"/>
   <rect width="${W}" height="${H}" fill="url(#hatches)"/>
   <rect width="${W}" height="${H}" fill="url(#glow)"/>
 
-  <!-- Cadre rouge fin en haut -->
   <rect x="0" y="0" width="${W}" height="8" fill="#e02810"/>
   <rect x="0" y="${H - 8}" width="${W}" height="8" fill="#e02810"/>
 
-  <!-- Badge catégorie (en haut à gauche) -->
   <g transform="translate(80, 80)">
     <rect x="0" y="0" width="260" height="44" fill="#e02810" rx="2"/>
-    <text x="130" y="31"
-          font-family="Inter, system-ui, sans-serif"
-          font-weight="800"
-          font-size="16"
-          letter-spacing="4"
-          fill="#ffffff"
-          text-anchor="middle">INFOS LOCALE</text>
+    <text x="130" y="31" font-family="Inter, system-ui, sans-serif" font-weight="800"
+          font-size="16" letter-spacing="4" fill="#ffffff" text-anchor="middle">INFOS LOCALE</text>
   </g>
 
-  <!-- Titre principal -->
   <text x="${W / 2}" y="${H / 2 - 40}"
-        font-family="Fraunces, Georgia, 'Times New Roman', serif"
-        font-weight="900"
-        font-size="${titleSize}"
-        letter-spacing="-2"
-        fill="#ffffff"
-        text-anchor="middle"
-        dominant-baseline="middle"
-        filter="url(#textshadow)">${titleEsc}</text>
+        font-family="Fraunces, Georgia, serif" font-weight="900" font-size="${titleSize}"
+        letter-spacing="-2" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"
+        filter="url(#textshadow)">${xmlEscape(title)}</text>
 
-  <!-- Filet rouge de séparation -->
   <line x1="${W / 2 - 80}" y1="${H / 2 + 20}" x2="${W / 2 + 80}" y2="${H / 2 + 20}"
         stroke="#e02810" stroke-width="4"/>
 
-  <!-- Accent en jaune -->
   <text x="${W / 2}" y="${H / 2 + 100}"
-        font-family="Fraunces, Georgia, serif"
-        font-weight="900"
-        font-style="italic"
-        font-size="${accentSize}"
-        letter-spacing="1"
-        fill="#ffcb05"
-        text-anchor="middle"
-        dominant-baseline="middle"
-        filter="url(#textshadow)">${accentEsc}</text>
+        font-family="Fraunces, Georgia, serif" font-weight="900" font-style="italic"
+        font-size="${accentSize}" letter-spacing="1" fill="#ffcb05"
+        text-anchor="middle" dominant-baseline="middle"
+        filter="url(#textshadow)">${xmlEscape(accent)}</text>
 
-  <!-- Signature en bas -->
   <text x="${W / 2}" y="${H - 60}"
-        font-family="Inter, system-ui, sans-serif"
-        font-weight="600"
-        font-size="20"
-        letter-spacing="6"
-        fill="#a9a595"
-        text-anchor="middle"
-        text-transform="uppercase">— QUARTIERLIBRE.ORG —</text>
+        font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="20"
+        letter-spacing="6" fill="#a9a595" text-anchor="middle">— QUARTIERLIBRE.ORG —</text>
 </svg>
 `;
 }
 
 function main() {
-  if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-  }
+  if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  let ok = 0;
+  let ok = 0, photo = 0, typo = 0;
   for (const banner of BANNERS) {
-    const svg = buildSvg(banner);
+    const svg = banner.image
+      ? buildSvgWithPhoto(banner)
+      : buildSvgTypographic(banner);
     const filename = `quartier-${banner.slug}.svg`;
     const outPath = path.join(OUTPUT_DIR, filename);
     fs.writeFileSync(outPath, svg, 'utf-8');
-    console.log(`  OK ${filename}  (${svg.length} chars)`);
+    const mode = banner.image ? '📷 photo' : '🎨 typo ';
+    console.log(`  ${mode}  ${filename}  (${svg.length} chars)`);
     ok++;
+    if (banner.image) photo++; else typo++;
   }
-  console.log(`\n${ok} bannières SVG générées dans ${OUTPUT_DIR}/`);
+  console.log(`\n${ok} bannières (${photo} photo, ${typo} typographique) dans ${OUTPUT_DIR}/`);
 }
 
-try {
-  main();
-} catch (e) {
+try { main(); } catch (e) {
   console.error('ERREUR:', e.message);
   process.exit(1);
 }
