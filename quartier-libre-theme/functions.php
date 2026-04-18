@@ -112,6 +112,74 @@ add_action( 'wp_head', function () {
     }
 }, 1 );
 
+// ── 3b. Pages par défaut (Contact / Soutenir / Mentions, etc.) ─
+add_action( 'init', function () {
+    $last = (int) get_option( 'ql_default_pages_init', 0 );
+    if ( $last && ( time() - $last ) < DAY_IN_SECONDS ) return;
+
+    $pages = array(
+        'soutenir' => array(
+            'title'   => 'Soutenir Quartier Libre',
+            'content' => "<p>Quartier Libre vit grâce à vous. Pas de publicité, pas d'actionnaire, pas de subvention conditionnée.</p>\n<p>Chaque don, même modeste, c'est un article en plus, une enquête qui sort.</p>",
+        ),
+        'contact' => array(
+            'title'   => 'Nous contacter',
+            'content' => "<p>La rédaction est joignable par mail : <a href=\"mailto:contact@quartierlibre.org\">contact@quartierlibre.org</a></p>\n<p>Pour un témoignage, une information, une enquête, préférez le <a href=\"/bureau-des-plaintes/\">Bureau des plaintes</a>.</p>",
+        ),
+        'qui-sommes-nous' => array(
+            'title'   => 'Qui sommes-nous',
+            'content' => "<p>Quartier Libre est un média militant, local et indépendant, ancré dans les quartiers populaires de Nantes.</p>\n<p>Par nous, pour nous. Les quartiers prennent la parole.</p>",
+        ),
+        'mentions-legales' => array(
+            'title'   => 'Mentions légales',
+            'content' => "<h2>Éditeur</h2>\n<p>Le site quartierlibre.org est édité par l'association Quartier Libre.</p>\n<h2>Hébergement</h2>\n<p>Hostinger.</p>\n<h2>Contact</h2>\n<p><a href=\"mailto:contact@quartierlibre.org\">contact@quartierlibre.org</a></p>",
+        ),
+        'politique-confidentialite' => array(
+            'title'   => 'Politique de confidentialité',
+            'content' => "<p>Quartier Libre ne vend ni ne transmet vos données personnelles à des tiers.</p>\n<p>Les données collectées via le <a href=\"/bureau-des-plaintes/\">Bureau des plaintes</a> servent uniquement à la rédaction pour enquêter. Une demande de suppression peut être faite à tout moment par mail à contact@quartierlibre.org.</p>",
+        ),
+    );
+
+    foreach ( $pages as $slug => $info ) {
+        $existing = get_page_by_path( $slug );
+        if ( ! $existing ) {
+            wp_insert_post( array(
+                'post_title'   => $info['title'],
+                'post_name'    => $slug,
+                'post_content' => $info['content'],
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+                'post_author'  => 1,
+            ) );
+        }
+    }
+    update_option( 'ql_default_pages_init', time(), false );
+}, 25 );
+
+// ── 3c. Filtre menu : retirer les items de compte utilisateur ───
+add_filter( 'wp_nav_menu_objects', function ( $items, $args ) {
+    if ( empty( $args->theme_location ) || $args->theme_location !== 'primary' ) return $items;
+
+    $patterns = array(
+        '/wp-login\.php/i',
+        '/\?action=logout/i',
+        '/^#loginpress-register#?$/i',
+        '#/account/?$#i',
+        '#/mon-compte/?$#i',
+        '#/mon-profil/?$#i',
+        '#/connexion/?$#i',
+        '#/inscription/?$#i',
+    );
+
+    return array_values( array_filter( $items, function ( $item ) use ( $patterns ) {
+        $url = isset( $item->url ) ? $item->url : '';
+        foreach ( $patterns as $p ) {
+            if ( preg_match( $p, $url ) ) return false;
+        }
+        return true;
+    } ) );
+}, 10, 2 );
+
 // ── 4. Catégories par défaut (Local / France / International / Luttes) ─
 add_action( 'after_switch_theme', function () {
     $cats = array(

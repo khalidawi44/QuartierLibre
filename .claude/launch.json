@@ -1,0 +1,5 @@
+{
+  "version": "0.0.1",
+  "configurations": [],
+  "_comment": "Projet WordPress deploye sur quartierlibre.org (Hostinger). Pas de serveur dev local. Flux : editer code local -> git push -> WP admin > Outils > Sync QL > Synchroniser le theme. Voir SYNC.md pour details."
+}

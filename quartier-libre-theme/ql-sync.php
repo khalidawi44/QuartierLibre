@@ -59,6 +59,11 @@ function ql_sync_render() {
         ql_do_delete_all_posts();
     }
 
+    // Action : supprimer les catégories vides
+    if ( isset( $_POST['ql_clean_empty_cats'] ) && check_admin_referer( 'ql_clean_empty_cats_nonce' ) ) {
+        ql_do_clean_empty_categories();
+    }
+
     // Action : clear logs
     if ( isset( $_POST['ql_clear'] ) && check_admin_referer( 'ql_clear_nonce' ) ) {
         delete_option( 'ql_sync_log' );
@@ -117,6 +122,11 @@ function ql_sync_render() {
         <form method="post" style="display:inline-block;margin-left:12px;" onsubmit="return confirm('⚠️ SUPPRIMER TOUS LES ARTICLES de WordPress ? Action irréversible. Ensuite relancer la sync Markdown pour les recréer proprement.');">
             <?php wp_nonce_field( 'ql_delete_all_posts_nonce' ); ?>
             <input type="submit" name="ql_delete_all_posts" class="button" style="background:#a51d08;color:#fff;border-color:#a51d08;padding:10px 16px;height:auto;" value="⚠ Supprimer TOUS les articles">
+        </form>
+
+        <form method="post" style="display:inline-block;margin-left:12px;" onsubmit="return confirm('Supprimer toutes les catégories vides (0 articles) ? Les catégories protégées (non-classé, a-la-une, infos-locale, en-france, international, luttes, histoire) sont conservées.');">
+            <?php wp_nonce_field( 'ql_clean_empty_cats_nonce' ); ?>
+            <input type="submit" name="ql_clean_empty_cats" class="button" style="background:#666;color:#fff;border-color:#666;padding:10px 16px;height:auto;" value="🧹 Nettoyer catégories vides">
         </form>
 
         <div class="ql-sync-meta">
@@ -691,4 +701,66 @@ function ql_do_delete_all_posts() {
     $msg = sprintf( '%d article(s) supprimé(s) définitivement. Cliquer maintenant sur "Synchroniser les articles (.md)" pour les recréer proprement.', $deleted );
     echo '<div class="notice notice-success"><p><strong>Suppression terminée.</strong> ' . esc_html( $msg ) . '</p></div>';
     ql_log_msg( 'Delete all posts: ' . $deleted );
+}
+
+// ════════════════════════════════════════════════════════════════
+// Nettoyer les catégories vides (count = 0)
+// ════════════════════════════════════════════════════════════════
+function ql_do_clean_empty_categories() {
+    // Slugs à TOUJOURS conserver, même si vides
+    $protected = array(
+        'uncategorized',
+        'non-classe',
+        'non-classifie',
+        'a-la-une',
+        'infos-locale',
+        'en-france',
+        'france',
+        'international',
+        'luttes',
+        'histoire',
+        'local',
+        'nos-quartiers',
+    );
+
+    $default_cat_id = (int) get_option( 'default_category' );
+
+    $terms = get_terms( array(
+        'taxonomy'   => 'category',
+        'hide_empty' => false,
+        'number'     => 0,
+    ) );
+
+    if ( is_wp_error( $terms ) || empty( $terms ) ) {
+        echo '<div class="notice notice-warning"><p>Aucune catégorie trouvée.</p></div>';
+        return;
+    }
+
+    $deleted = 0; $kept = 0; $protected_kept = 0;
+    foreach ( $terms as $t ) {
+        // Skip si protégée
+        if ( in_array( $t->slug, $protected, true ) ) { $protected_kept++; continue; }
+        // Skip catégorie par défaut WP
+        if ( (int) $t->term_id === $default_cat_id ) { $protected_kept++; continue; }
+        // Skip si elle a des articles
+        if ( (int) $t->count > 0 ) { $kept++; continue; }
+        // Skip si elle a des catégories filles
+        $children = get_term_children( $t->term_id, 'category' );
+        if ( ! empty( $children ) ) { $kept++; continue; }
+
+        // Supprimer
+        $res = wp_delete_term( $t->term_id, 'category' );
+        if ( $res && ! is_wp_error( $res ) ) {
+            $deleted++;
+        }
+    }
+
+    wp_cache_flush();
+
+    $msg = sprintf(
+        '%d catégorie(s) vide(s) supprimée(s). %d protégée(s) conservée(s). %d avec articles (intactes).',
+        $deleted, $protected_kept, $kept
+    );
+    echo '<div class="notice notice-success"><p><strong>Nettoyage catégories.</strong> ' . esc_html( $msg ) . '</p></div>';
+    ql_log_msg( 'Clean empty cats: ' . $msg );
 }
