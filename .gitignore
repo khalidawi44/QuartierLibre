@@ -22,3 +22,5 @@ error_log
 
 # Dossier contenus de travail (images brutes, PDF…)
 # (déjà sous .claude/article/, ne pas dupliquer dans le repo)
+
+.claude/
