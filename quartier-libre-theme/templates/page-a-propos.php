@@ -189,15 +189,23 @@ $paypal_client_id = get_option( 'ql_paypal_client_id', '' );
                 <aside class="ql-redac-layout__right ql-founder-card">
                     <figure class="ql-founder-card__portrait">
                         <?php
-                        // Portrait de Khalid : soit un fichier uploadé à
-                        // assets/img/khalid-portrait.jpg, soit un placeholder SVG.
+                        // Portrait de Khalid (ordre de priorité) :
+                        //   1. Fichier assets/img/khalid-portrait.jpg (si uploadé)
+                        //   2. Featured image de la page (définie depuis WP admin)
+                        //   3. Placeholder SVG « K »
                         $khalid_path = QL_THEME_DIR . '/assets/img/khalid-portrait.jpg';
                         $khalid_url  = QL_THEME_URI . '/assets/img/khalid-portrait.jpg';
                         if ( file_exists( $khalid_path ) ) : ?>
                             <img src="<?php echo esc_url( $khalid_url ); ?>"
                                  alt="Khalid — fondateur de Quartier Libre"
                                  loading="lazy" decoding="async">
-                        <?php else : ?>
+                        <?php elseif ( has_post_thumbnail() ) :
+                            the_post_thumbnail( 'ql-card', array(
+                                'alt'      => 'Khalid — fondateur de Quartier Libre',
+                                'loading'  => 'lazy',
+                                'decoding' => 'async',
+                            ) );
+                        else : ?>
                             <svg class="ql-founder-card__avatar" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="Portrait de Khalid">
                                 <rect width="120" height="120" fill="#e02810"/>
                                 <circle cx="60" cy="60" r="55" fill="none" stroke="#ffcb05" stroke-width="3" opacity=".6"/>
@@ -209,26 +217,21 @@ $paypal_client_id = get_option( 'ql_paypal_client_id', '' );
                     <div class="ql-founder-card__body">
                         <span class="ql-founder-card__tag">Le fondateur</span>
                         <h3 class="ql-founder-card__name">Khalid</h3>
-                        <p class="ql-founder-card__role">35 ans · Clos Toreau · Journaliste militant</p>
+                        <p class="ql-founder-card__role">44 ans · Clos Toreau, Nantes sud<br>Journaliste d'investigation &amp; militant de terrain</p>
 
                         <div class="ql-founder-card__story">
                             <p>
-                                Journaliste militant depuis plus de dix ans. D'abord collaborateur de
-                                <strong>Nantes Révoltée</strong> (devenue Contre-Attaque en 2022) —
-                                reportages terrain, documentation de la répression policière,
-                                enquêtes dans les HLM nantais.
+                                <strong>Habitant du Clos Toreau</strong> à Nantes sud, militant de terrain,
+                                père de famille, et fondateur du média <strong>Quartier Libre</strong>.
                             </p>
                             <p>
-                                En <strong>2024</strong>, fonde <strong>Quartier Libre</strong> : un
-                                média exclusivement dédié aux quartiers populaires de Nantes. Parce
-                                qu'aucun titre mainstream ne les couvrait sans caricature. Parce que
-                                les habitant·es méritent mieux que les 30 secondes du 20h quand un
-                                fait divers éclate.
+                                Issu des quartiers populaires, j'ai grandi avec <strong>l'injustice sociale
+                                en ligne de mire</strong>.
                             </p>
                             <p>
-                                Aujourd'hui coordonne la rédaction de <strong>13 journalistes</strong>,
-                                forme les correspondant·es quartier, enquête sur les bailleurs
-                                sociaux et les violences policières.
+                                Depuis <strong>plus de 20 ans</strong>, je documente, dénonce et
+                                organise la riposte collective face à l'abandon institutionnel, aux
+                                violences policières, à l'insalubrité et à la répression administrative.
                             </p>
                             <p class="ql-founder-card__motto">
                                 <em>« Par nous. Pour nous. Les quartiers prennent la parole. »</em>
@@ -370,15 +373,11 @@ $paypal_client_id = get_option( 'ql_paypal_client_id', '' );
         </div>
     </section>
 
-    <!-- Contenu libre de la page (éditable dans WP admin) -->
-    <?php while ( have_posts() ) : the_post();
-        $content = get_the_content();
-        if ( trim( $content ) ) : ?>
-            <section class="ql-container ql-apropos-page__extra">
-                <div class="ql-post__content"><?php the_content(); ?></div>
-            </section>
-        <?php endif;
-    endwhile; ?>
+    <?php
+    // Le contenu libre WP editor n'est PAS affiché : tout est intégré
+    // dans la carte fondateur. La featured_image (portrait Khalid) reste
+    // accessible via les globals WP déjà posés pour la page singulière.
+    ?>
 
 </div>
 
