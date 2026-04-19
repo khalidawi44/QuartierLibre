@@ -2789,22 +2789,28 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 /* ── 18f. Page « À propos » — style Contre-Attaque ───────── */
 .ql-apropos-page { background: var(--ql-paper); }
 
-/* Hero : fond noir + accroche militante */
+/* Hero : photo de manif nantaise (intersyndicale 8 mars 2024)
+   + voile rouge sombre pour lisibilité. */
 .ql-apropos-hero {
   background:
-    linear-gradient(135deg, var(--ql-ink) 0%, #1a0a08 100%);
+    linear-gradient(135deg, rgba(15,15,15,.82) 0%, rgba(224,40,16,.55) 100%),
+    url("../img/hero-apropos.jpg") center center / cover no-repeat;
+  background-attachment: scroll;
   color: #fff;
-  padding: 5rem 0 4rem;
+  padding: 6rem 0 5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
 }
-.ql-apropos-hero::before {
-  content: "";
-  position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M0 30 L30 0' stroke='%23ffffff' stroke-width='.4' opacity='.08'/></svg>");
-  opacity: .6;
-  pointer-events: none;
+.ql-apropos-hero > .ql-container { width: 100%; }
+@media (min-width: 1024px) {
+  .ql-apropos-hero { background-attachment: fixed; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ql-apropos-hero { background-attachment: scroll; }
 }
 .ql-apropos-hero__kicker {
   display: inline-block;
@@ -3061,6 +3067,23 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 .ql-apropos-roster li strong { color: #fff; font-weight: 700; }
 .ql-apropos-roster li small { color: #aaa; font-size: .82rem; }
 
+/* Fondateur (Khalid) — distinction visuelle */
+.ql-apropos-roster__founder {
+  background: rgba(224, 40, 16, .15);
+  border-left: 4px solid var(--ql-accent);
+  padding-left: 1rem !important;
+  padding-right: 1rem;
+  margin-left: -.3rem;
+  margin-bottom: .6rem;
+}
+.ql-apropos-roster__founder strong {
+  color: var(--ql-yellow) !important;
+}
+.ql-apropos-roster__founder small {
+  color: #ddd !important;
+  font-style: italic;
+}
+
 /* Citation */
 .ql-apropos-quote {
   font-family: var(--ql-font-serif, 'Fraunces', serif);
@@ -3120,6 +3143,66 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 }
 .ql-apropos-cta .ql-btn--ghost:hover {
   background: #fff; color: var(--ql-accent);
+}
+
+/* Mini embed don inline (sur fond rouge de la CTA) */
+.ql-apropos-don-embed {
+  margin-top: 2.5rem;
+  background: rgba(255, 255, 255, .97);
+  border-radius: 4px;
+  padding: 2rem clamp(1rem, 3vw, 2rem);
+  color: var(--ql-ink);
+  text-align: left;
+  max-width: 580px;
+  margin-inline: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .25);
+}
+.ql-apropos-don-embed .ql-donation-tiers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .6rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 500px) {
+  .ql-apropos-don-embed .ql-donation-tiers { grid-template-columns: repeat(4, 1fr); }
+}
+.ql-apropos-don-embed .ql-donation-tier {
+  padding: .9rem .3rem;
+  min-height: 95px;
+}
+.ql-apropos-don-embed .ql-donation-tier__amount { font-size: 1.5rem; }
+.ql-apropos-don-embed .ql-donation-tier__desc { font-size: .72rem; line-height: 1.2; }
+.ql-apropos-don-embed .ql-donation-tier__badge { font-size: .6rem; top: -9px; }
+.ql-apropos-don-embed .ql-donation-custom {
+  margin: 0 auto 1rem;
+  max-width: 300px;
+}
+.ql-apropos-don-embed .ql-donation-custom label {
+  text-align: center;
+}
+.ql-apropos-don-embed .ql-paypal-button {
+  margin: 0 0 1rem;
+  max-width: 100%;
+}
+.ql-apropos-don-embed__more {
+  margin: 1rem 0 0 !important;
+  text-align: center;
+  font-size: .82rem;
+  color: var(--ql-muted);
+  line-height: 1.6;
+}
+.ql-apropos-don-embed__more a { color: var(--ql-accent); font-weight: 600; }
+.ql-apropos-don-embed__more .ql-btn {
+  display: inline-flex;
+  border-color: var(--ql-accent);
+  color: var(--ql-accent);
+  padding: .3rem .8rem;
+  font-size: .82rem;
+  margin: 0 .3rem;
+}
+.ql-apropos-don-embed__more .ql-btn:hover {
+  background: var(--ql-accent);
+  color: #fff;
 }
 
 /* 3 colonnes contact/rejoindre/diffuser */
