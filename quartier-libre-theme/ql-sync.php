@@ -464,9 +464,26 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
         'post_name'    => $slug,
         'post_content' => $body_html,
         'post_excerpt' => isset( $front['excerpt'] ) ? $front['excerpt'] : '',
-        'post_status'  => ( isset( $front['status'] ) && $front['status'] === 'draft' ) ? 'draft' : 'publish',
         'post_type'    => 'post',
     );
+
+    // ── Post status : ne JAMAIS retrograder un article déjà publié ──
+    // - Nouvel article : on respecte le frontmatter (draft / publish)
+    // - Article existant en 'draft' : on respecte le frontmatter (permet de promouvoir)
+    // - Article existant publié/programmé/privé : on garde le status actuel
+    //   (pour que le re-sync ne remette pas en brouillon un article que l'admin
+    //    a publié manuellement dans WP)
+    $front_wants_draft = ( isset( $front['status'] ) && $front['status'] === 'draft' );
+    if ( ! empty( $existing ) ) {
+        $current_status = $existing[0]->post_status;
+        if ( $current_status === 'draft' ) {
+            $postarr['post_status'] = $front_wants_draft ? 'draft' : 'publish';
+        } else {
+            $postarr['post_status'] = $current_status; // keep publish/future/private/pending
+        }
+    } else {
+        $postarr['post_status'] = $front_wants_draft ? 'draft' : 'publish';
+    }
 
     if ( ! empty( $front['date'] ) ) {
         $ts = strtotime( $front['date'] );
@@ -567,15 +584,60 @@ function ql_upload_image_from_url( $url, &$count ) {
     return $attach_id;
 }
 
-// ── Upload d'une image depuis le repo (dédupliquée) ───────────
+// ── Upload d'une image depuis le repo (dédupliquée par ETag) ──
+// On ne peut pas dédupliquer par URL seule : l'URL GitHub raw reste
+// identique même quand le contenu du fichier change. On demande
+// donc l'ETag (qui est un hash du contenu côté GitHub) et on crée
+// une nouvelle attachment si l'ETag a changé.
 function ql_upload_image_from_repo( $repo_path, &$count ) {
     $repo_path = ltrim( str_replace( '\\', '/', $repo_path ), '/' );
     $raw_url = sprintf(
         'https://raw.githubusercontent.com/%s/%s/%s/%s',
         QL_GH_OWNER, QL_GH_REPO, QL_GH_BRANCH, $repo_path
     );
-    // Délègue à l'uploader URL pour dédupe unifiée
-    return ql_upload_image_from_url( $raw_url, $count );
+
+    // HEAD pour récupérer l'ETag courant (hash du contenu GitHub)
+    $head = wp_remote_head( $raw_url, array( 'timeout' => 15, 'redirection' => 5 ) );
+    $etag = '';
+    if ( ! is_wp_error( $head ) ) {
+        $etag = (string) wp_remote_retrieve_header( $head, 'etag' );
+        $etag = trim( $etag, '"' );
+    }
+
+    $meta_key = '_ql_repo_etag_' . md5( $raw_url );
+
+    // Si on a un ETag et qu'une attachment avec ce même ETag existe,
+    // on la réutilise (même fichier, déjà importé).
+    if ( $etag ) {
+        $existing = get_posts( array(
+            'post_type'      => 'attachment',
+            'meta_key'       => $meta_key,
+            'meta_value'     => $etag,
+            'posts_per_page' => 1,
+            'fields'         => 'ids',
+        ) );
+        if ( $existing ) return (int) $existing[0];
+    }
+
+    // Download + upload (nouveau fichier ou contenu modifié)
+    require_once ABSPATH . 'wp-admin/includes/file.php';
+    require_once ABSPATH . 'wp-admin/includes/media.php';
+    require_once ABSPATH . 'wp-admin/includes/image.php';
+
+    $tmp = download_url( $raw_url, 60 );
+    if ( is_wp_error( $tmp ) ) return 0;
+
+    $file_array = array(
+        'name'     => basename( wp_parse_url( $raw_url, PHP_URL_PATH ) ),
+        'tmp_name' => $tmp,
+    );
+    $attach_id = media_handle_sideload( $file_array, 0 );
+    if ( is_wp_error( $attach_id ) ) { @unlink( $tmp ); return 0; }
+
+    if ( $etag ) update_post_meta( $attach_id, $meta_key, $etag );
+    update_post_meta( $attach_id, '_ql_media_source', $raw_url );
+    $count++;
+    return (int) $attach_id;
 }
 
 // ── Markdown → HTML (parser minimal) ──────────────────────────
