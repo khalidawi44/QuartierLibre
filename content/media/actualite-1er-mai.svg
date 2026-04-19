@@ -4,10 +4,10 @@
   <defs>
     <clipPath id="clip"><rect width="1600" height="900"/></clipPath>
     <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#0f0f0f" stop-opacity="0.92"/>
-      <stop offset="40%" stop-color="#0f0f0f" stop-opacity="0.70"/>
-      <stop offset="70%" stop-color="#0f0f0f" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#0f0f0f" stop-opacity="0.98"/>
+      <stop offset="0%"  stop-color="#1a0806" stop-opacity="0.86"/>
+      <stop offset="40%" stop-color="#1a0806" stop-opacity="0.63"/>
+      <stop offset="70%" stop-color="#1a0806" stop-opacity="0.76"/>
+      <stop offset="100%" stop-color="#1a0806" stop-opacity="0.91"/>
     </linearGradient>
     <filter id="textshadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.75"/>
@@ -21,18 +21,18 @@
            preserveAspectRatio="xMidYMid slice"/>
   </g>
 
-  <!-- Voile assombrisant -->
+  <!-- Voile teinté selon palette -->
   <rect width="1600" height="900" fill="url(#overlay)"/>
 
-  <!-- Cadre rouge (top + bottom) -->
+  <!-- Cadres rouges (toujours rouges pour identité QL) -->
   <rect x="0" y="0" width="1600" height="8" fill="#e02810"/>
   <rect x="0" y="892" width="1600" height="8" fill="#e02810"/>
 
-  <!-- Tag rouge -->
+  <!-- Tag (couleur palette) -->
   <g transform="translate(80, 60)">
-    <rect x="0" y="0" width="240" height="40" fill="#e02810" rx="2"/>
+    <rect x="0" y="0" width="240" height="40" fill="#ffcb05" rx="2"/>
     <text x="120" y="28" font-family="Inter, system-ui, sans-serif" font-weight="900"
-          font-size="15" letter-spacing="3.5" fill="#ffffff" text-anchor="middle">GRÈVE GÉNÉRALE</text>
+          font-size="15" letter-spacing="3.5" fill="#0f0f0f" text-anchor="middle">GRÈVE GÉNÉRALE</text>
   </g>
 
   <!-- Préambule multi-lignes -->
@@ -42,11 +42,11 @@
   <text x="80" y="299" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600">Retraites. Loi immigration. Gaza. Salaires.</tspan></text>
   <text x="80" y="347" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#ffcb05" font-weight="900">Tout lier. Tout bloquer.</tspan><tspan fill="#ffffff" font-weight="600"></tspan></text>
 
-  <!-- Titre principal (bas, 1 ou 2 lignes) -->
-  <text x="80" y="720" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="95" letter-spacing="-2" fill="#ffffff" filter="url(#textshadow)">1ER MAI 2026 :</text>
-  <text x="80" y="820" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="95" letter-spacing="-2" fill="#ffcb05" filter="url(#textshadow)">ON MARCHE ENSEMBLE</text>
+  <!-- Titre principal (bas, couleurs palette) -->
+  <text x="80" y="720" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="95" letter-spacing="-2" fill="#e63824" filter="url(#textshadow)">1ER MAI 2026 :</text>
+  <text x="80" y="820" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="95" letter-spacing="-2" fill="#ffffff" filter="url(#textshadow)">ON MARCHE ENSEMBLE</text>
 
-  <!-- Signature -->
+  <!-- Signature (toujours discrète) -->
   <text x="1520" y="860"
         font-family="Inter, system-ui, sans-serif"
         font-weight="600"

@@ -33,9 +33,18 @@ const BANNERS = [
   { slug: 'ranzay',           title: 'QUARTIER RANZAY',       accent: 'VILLE-DORTOIR',               image: null },
   { slug: 'pilotiere',        title: 'QUARTIER PILOTIÈRE',    accent: 'ON N\'ATTEND PLUS, ON FAIT',  image: null },
 
-  // 4 actualités — style Contre-Attaque :
-  // préambule multi-lignes en haut (mots entre ** = surlignés en jaune),
-  // photo en fond assombrie, titre impactant en bas.
+  // 4 actualités — style Contre-Attaque avec PALETTES variées
+  // selon le sujet/la photo (jaune fluo, cyan dystopie, ocre désert,
+  // rouge militant). Chaque champ `palette` définit :
+  //   - accent   : couleur des mots **surlignés** dans le préambule
+  //   - title_1  : couleur de la 1ère ligne du titre
+  //   - title_2  : couleur de la 2ème ligne du titre (impact)
+  //   - tag_bg   : fond du badge
+  //   - tag_fg   : texte du badge
+  //   - tint     : teinte du voile overlay (rgba ou hex)
+
+  // SOUDAN — palette désert/sang : ocre sable + rouge-sang sur fond
+  // brûlé. Teinte chaude qui évoque la poussière et la catastrophe.
   { slug: 'actualite-soudan',
     ca_style: true,
     tag: 'GUERRE OUBLIÉE',
@@ -47,8 +56,19 @@ const BANNERS = [
       'La France arme **les complices émiratis**.',
     ],
     title_lines: ['SOUDAN :', 'LE SILENCE COMPLICE'],
-    image_path: 'content/media/soudan-guerre-oubliee.jpg' },
+    image_path: 'content/media/soudan-guerre-oubliee.jpg',
+    palette: {
+      accent:  '#f5a830',   // ocre sable
+      title_1: '#ffffff',
+      title_2: '#e63824',   // rouge-sang
+      tag_bg:  '#c71f05',
+      tag_fg:  '#ffffff',
+      tint:    '#2a1005',   // brun-brûlé
+      tint_opacity: 0.82,
+    } },
 
+  // LOI IMMIGRATION — palette acier/jaune fluo : blocs institutionnels
+  // oppressifs. Jaune criard pour choquer, comme un avertissement routier.
   { slug: 'actualite-loi-immigration',
     ca_style: true,
     tag: 'DÉLIT DE SOLIDARITÉ',
@@ -60,8 +80,19 @@ const BANNERS = [
       'Les associations entrent en résistance.',
     ],
     title_lines: ['LOI 2026 :', 'AIDER DEVIENT UN CRIME'],
-    image_path: 'content/media/loi-immigration-2026.jpg' },
+    image_path: 'content/media/loi-immigration-2026.jpg',
+    palette: {
+      accent:  '#ffcb05',   // jaune fluo avertissement
+      title_1: '#ffffff',
+      title_2: '#ffcb05',
+      tag_bg:  '#0f0f0f',
+      tag_fg:  '#ffcb05',   // tag jaune sur noir
+      tint:    '#0a1628',   // bleu nuit acier
+      tint_opacity: 0.82,
+    } },
 
+  // VIDÉOSURVEILLANCE — palette cyan dystopie : bleu électrique néon
+  // sur fond très sombre. Évoque les écrans, l'IA, le panoptique.
   { slug: 'actualite-videosurveillance',
     ca_style: true,
     tag: 'PANOPTIQUE DE CLASSE',
@@ -73,8 +104,19 @@ const BANNERS = [
       'Bellevue, Malakoff, Breil : **territoires sous surveillance**.',
     ],
     title_lines: ['NANTES :', '150 CAMÉRAS IA DANS LES QUARTIERS'],
-    image_path: 'content/media/nantes-videosurveillance.jpg' },
+    image_path: 'content/media/nantes-videosurveillance.jpg',
+    palette: {
+      accent:  '#00d4ff',   // cyan néon
+      title_1: '#ffffff',
+      title_2: '#00d4ff',
+      tag_bg:  '#e02810',
+      tag_fg:  '#ffffff',
+      tint:    '#050a15',   // noir très profond
+      tint_opacity: 0.88,
+    } },
 
+  // 1ER MAI — palette rouge/jaune classique : drapeaux, syndicats,
+  // solidarité. Rouge chaud + jaune lumineux = tradition ouvrière.
   { slug: 'actualite-1er-mai',
     ca_style: true,
     tag: 'GRÈVE GÉNÉRALE',
@@ -86,7 +128,16 @@ const BANNERS = [
       '**Tout lier. Tout bloquer.**',
     ],
     title_lines: ['1ER MAI 2026 :', 'ON MARCHE ENSEMBLE'],
-    image_path: 'content/media/1er-mai-2026.jpg' },
+    image_path: 'content/media/1er-mai-2026.jpg',
+    palette: {
+      accent:  '#ffcb05',   // jaune solidarité
+      title_1: '#e63824',   // rouge syndical
+      title_2: '#ffffff',
+      tag_bg:  '#ffcb05',
+      tag_fg:  '#0f0f0f',   // tag jaune sur noir
+      tint:    '#1a0806',   // rouge brûlé très sombre
+      tint_opacity: 0.78,
+    } },
 ];
 
 // Helper : lit un fichier local et le convertit en data URI base64
@@ -124,18 +175,27 @@ function fitFontSize(text, baseSize, maxWidth, avgCharWidthRatio = 0.55) {
  * - Titre gros impactant en bas
  * - Tag rouge en haut-gauche
  */
-function buildSvgCAStyle({ tag, preamble, title_lines, image }) {
+function buildSvgCAStyle({ tag, preamble, title_lines, image, palette }) {
   const W = 1600, H = 900;
+  // Palette avec valeurs par défaut (fallback jaune/rouge/noir)
+  const P = Object.assign({
+    accent:  '#ffcb05',
+    title_1: '#ffffff',
+    title_2: '#ffcb05',
+    tag_bg:  '#e02810',
+    tag_fg:  '#ffffff',
+    tint:    '#0f0f0f',
+    tint_opacity: 0.85,
+  }, palette || {});
   const tagWidth = Math.max(240, tag.length * 12 + 50);
 
-  // Rendu du préambule : chaque segment **texte** → tspan jaune
+  // Rendu du préambule : chaque segment **texte** → tspan en accent
   function renderPreambleLine(line, y) {
-    // Split on ** markers
     const parts = line.split(/(\*\*[^*]+\*\*)/);
     const tspans = parts.map(p => {
       if (p.startsWith('**') && p.endsWith('**')) {
         const t = p.slice(2, -2);
-        return `<tspan fill="#ffcb05" font-weight="900">${xmlEscape(t)}</tspan>`;
+        return `<tspan fill="${P.accent}" font-weight="900">${xmlEscape(t)}</tspan>`;
       }
       return `<tspan fill="#ffffff" font-weight="600">${xmlEscape(p)}</tspan>`;
     }).join('');
@@ -144,25 +204,26 @@ function buildSvgCAStyle({ tag, preamble, title_lines, image }) {
 
   const preambleLines = preamble.map((line, i) => renderPreambleLine(line, 155 + i * 48)).join('\n  ');
 
-  // Titre : 1 ou 2 lignes max, taille dynamique
+  // Titre : 1 ou 2 lignes max, couleur par ligne via palette
   const titleSizeBase = title_lines.length > 1 ? 95 : 115;
   const titleY = title_lines.length > 1 ? H - 180 : H - 120;
   const titleSpans = title_lines.map((l, i) => {
     const fit = fitFontSize(l, titleSizeBase, 1400, 0.52);
-    const color = i === title_lines.length - 1 ? '#ffcb05' : '#ffffff';
+    const color = i === 0 ? P.title_1 : P.title_2;
     return `<text x="80" y="${titleY + i * (titleSizeBase + 5)}" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="${fit}" letter-spacing="-2" fill="${color}" filter="url(#textshadow)">${xmlEscape(l)}</text>`;
   }).join('\n  ');
 
+  // Le tint définit la couleur du voile (pas toujours noir)
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${xmlEscape(tag)} — ${xmlEscape(title_lines.join(' '))}">
   <title>${xmlEscape(tag)} — ${xmlEscape(title_lines.join(' '))}</title>
   <defs>
     <clipPath id="clip"><rect width="${W}" height="${H}"/></clipPath>
     <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#0f0f0f" stop-opacity="0.92"/>
-      <stop offset="40%" stop-color="#0f0f0f" stop-opacity="0.70"/>
-      <stop offset="70%" stop-color="#0f0f0f" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#0f0f0f" stop-opacity="0.98"/>
+      <stop offset="0%"  stop-color="${P.tint}" stop-opacity="${Math.min(0.95, P.tint_opacity + 0.08).toFixed(2)}"/>
+      <stop offset="40%" stop-color="${P.tint}" stop-opacity="${(P.tint_opacity - 0.15).toFixed(2)}"/>
+      <stop offset="70%" stop-color="${P.tint}" stop-opacity="${(P.tint_opacity - 0.02).toFixed(2)}"/>
+      <stop offset="100%" stop-color="${P.tint}" stop-opacity="${Math.min(0.98, P.tint_opacity + 0.13).toFixed(2)}"/>
     </linearGradient>
     <filter id="textshadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.75"/>
@@ -176,27 +237,27 @@ function buildSvgCAStyle({ tag, preamble, title_lines, image }) {
            preserveAspectRatio="xMidYMid slice"/>
   </g>
 
-  <!-- Voile assombrisant -->
+  <!-- Voile teinté selon palette -->
   <rect width="${W}" height="${H}" fill="url(#overlay)"/>
 
-  <!-- Cadre rouge (top + bottom) -->
+  <!-- Cadres rouges (toujours rouges pour identité QL) -->
   <rect x="0" y="0" width="${W}" height="8" fill="#e02810"/>
   <rect x="0" y="${H - 8}" width="${W}" height="8" fill="#e02810"/>
 
-  <!-- Tag rouge -->
+  <!-- Tag (couleur palette) -->
   <g transform="translate(80, 60)">
-    <rect x="0" y="0" width="${tagWidth}" height="40" fill="#e02810" rx="2"/>
+    <rect x="0" y="0" width="${tagWidth}" height="40" fill="${P.tag_bg}" rx="2"/>
     <text x="${tagWidth / 2}" y="28" font-family="Inter, system-ui, sans-serif" font-weight="900"
-          font-size="15" letter-spacing="3.5" fill="#ffffff" text-anchor="middle">${xmlEscape(tag)}</text>
+          font-size="15" letter-spacing="3.5" fill="${P.tag_fg}" text-anchor="middle">${xmlEscape(tag)}</text>
   </g>
 
   <!-- Préambule multi-lignes -->
   ${preambleLines}
 
-  <!-- Titre principal (bas, 1 ou 2 lignes) -->
+  <!-- Titre principal (bas, couleurs palette) -->
   ${titleSpans}
 
-  <!-- Signature -->
+  <!-- Signature (toujours discrète) -->
   <text x="${W - 80}" y="${H - 40}"
         font-family="Inter, system-ui, sans-serif"
         font-weight="600"

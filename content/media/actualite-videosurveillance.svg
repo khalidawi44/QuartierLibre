@@ -4,10 +4,10 @@
   <defs>
     <clipPath id="clip"><rect width="1600" height="900"/></clipPath>
     <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#0f0f0f" stop-opacity="0.92"/>
-      <stop offset="40%" stop-color="#0f0f0f" stop-opacity="0.70"/>
-      <stop offset="70%" stop-color="#0f0f0f" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#0f0f0f" stop-opacity="0.98"/>
+      <stop offset="0%"  stop-color="#050a15" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#050a15" stop-opacity="0.73"/>
+      <stop offset="70%" stop-color="#050a15" stop-opacity="0.86"/>
+      <stop offset="100%" stop-color="#050a15" stop-opacity="0.98"/>
     </linearGradient>
     <filter id="textshadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.75"/>
@@ -21,14 +21,14 @@
            preserveAspectRatio="xMidYMid slice"/>
   </g>
 
-  <!-- Voile assombrisant -->
+  <!-- Voile teinté selon palette -->
   <rect width="1600" height="900" fill="url(#overlay)"/>
 
-  <!-- Cadre rouge (top + bottom) -->
+  <!-- Cadres rouges (toujours rouges pour identité QL) -->
   <rect x="0" y="0" width="1600" height="8" fill="#e02810"/>
   <rect x="0" y="892" width="1600" height="8" fill="#e02810"/>
 
-  <!-- Tag rouge -->
+  <!-- Tag (couleur palette) -->
   <g transform="translate(80, 60)">
     <rect x="0" y="0" width="290" height="40" fill="#e02810" rx="2"/>
     <text x="145" y="28" font-family="Inter, system-ui, sans-serif" font-weight="900"
@@ -37,16 +37,16 @@
 
   <!-- Préambule multi-lignes -->
   <text x="80" y="155" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600">Vote discret du conseil municipal, 3 avril.</tspan></text>
-  <text x="80" y="203" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#ffcb05" font-weight="900">3,2 millions d&apos;euros</tspan><tspan fill="#ffffff" font-weight="600"> pour </tspan><tspan fill="#ffcb05" font-weight="900">150 caméras IA</tspan><tspan fill="#ffffff" font-weight="600"></tspan></text>
+  <text x="80" y="203" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#00d4ff" font-weight="900">3,2 millions d&apos;euros</tspan><tspan fill="#ffffff" font-weight="600"> pour </tspan><tspan fill="#00d4ff" font-weight="900">150 caméras IA</tspan><tspan fill="#ffffff" font-weight="600"></tspan></text>
   <text x="80" y="251" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600">installées exclusivement dans les quartiers populaires.</tspan></text>
   <text x="80" y="299" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600">Reconnaissance faciale prête à être activée.</tspan></text>
-  <text x="80" y="347" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600">Bellevue, Malakoff, Breil : </tspan><tspan fill="#ffcb05" font-weight="900">territoires sous surveillance</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
+  <text x="80" y="347" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600">Bellevue, Malakoff, Breil : </tspan><tspan fill="#00d4ff" font-weight="900">territoires sous surveillance</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
 
-  <!-- Titre principal (bas, 1 ou 2 lignes) -->
+  <!-- Titre principal (bas, couleurs palette) -->
   <text x="80" y="720" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="95" letter-spacing="-2" fill="#ffffff" filter="url(#textshadow)">NANTES :</text>
-  <text x="80" y="820" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="81" letter-spacing="-2" fill="#ffcb05" filter="url(#textshadow)">150 CAMÉRAS IA DANS LES QUARTIERS</text>
+  <text x="80" y="820" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="81" letter-spacing="-2" fill="#00d4ff" filter="url(#textshadow)">150 CAMÉRAS IA DANS LES QUARTIERS</text>
 
-  <!-- Signature -->
+  <!-- Signature (toujours discrète) -->
   <text x="1520" y="860"
         font-family="Inter, system-ui, sans-serif"
         font-weight="600"
