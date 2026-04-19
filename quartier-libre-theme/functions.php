@@ -234,9 +234,21 @@ add_action( 'init', function () {
 // ── 5. Templates de page déclarés ───────────────────────────────
 add_filter( 'theme_page_templates', function ( $templates ) {
     $templates['templates/page-bureau-plaintes.php'] = 'Bureau des Plaintes';
+    $templates['templates/page-soutenir.php']        = 'Soutenir (dons)';
     $templates['templates/page-pleine-largeur.php']  = 'Pleine largeur';
     return $templates;
 } );
+
+// Auto-assigne le template Soutenir à la page /soutenir/ si elle existe
+// et n'a pas encore de template défini.
+add_action( 'init', function () {
+    $soutenir = get_page_by_path( 'soutenir' );
+    if ( ! $soutenir ) return;
+    $current = get_page_template_slug( $soutenir->ID );
+    if ( empty( $current ) ) {
+        update_post_meta( $soutenir->ID, '_wp_page_template', 'templates/page-soutenir.php' );
+    }
+}, 25 );
 
 // ── 6. Extrait + "Lire la suite" sobres ─────────────────────────
 add_filter( 'excerpt_length', function () { return 28; }, 999 );
