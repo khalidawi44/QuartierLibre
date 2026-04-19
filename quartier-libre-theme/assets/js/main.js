@@ -115,6 +115,33 @@
     });
   }
 
+  // ── Auto-popup plainte en fin d'article (single.php) ────────
+  // Quand le lecteur atteint le bas de l'article, on ouvre la modal.
+  // Une seule fois par session (sessionStorage) pour ne pas harceler.
+  var singlePostBody = document.querySelector('.ql-post__body');
+  var plainteBtnAuto = document.querySelector('.ql-plainte-trigger');
+  if (singlePostBody && plainteBtnAuto && 'IntersectionObserver' in window) {
+    try {
+      if (!sessionStorage.getItem('ql-plainte-shown')) {
+        var sentinel = document.createElement('div');
+        sentinel.setAttribute('aria-hidden', 'true');
+        sentinel.style.cssText = 'height:1px;width:100%;pointer-events:none;';
+        singlePostBody.appendChild(sentinel);
+
+        var plainteObs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              try { sessionStorage.setItem('ql-plainte-shown', '1'); } catch (e) {}
+              plainteBtnAuto.click();
+              plainteObs.disconnect();
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+        plainteObs.observe(sentinel);
+      }
+    } catch (e) { /* sessionStorage peut être bloqué, on ignore */ }
+  }
+
   // ── Barre de progression de lecture (single.php) ────────────
   var progressBar = document.querySelector('.ql-reading-progress span');
   var articleBody = document.querySelector('.ql-single .ql-article__body');
