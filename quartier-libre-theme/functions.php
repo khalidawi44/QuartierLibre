@@ -245,6 +245,34 @@ add_filter( 'theme_page_templates', function ( $templates ) {
     return $templates;
 } );
 
+// ── Configuration paiements (init une fois, puis éditable admin) ──
+// Les clés sont stockées en wp_options pour être modifiables via
+// l'admin WP → Options → General ou directement en base. Les valeurs
+// ici sont les DÉFAUTS initiaux. L'admin peut les écraser à tout moment.
+//
+// SÉCURITÉ : le Client ID PayPal est public par design (utilisé dans
+// le SDK JS côté frontend). Le client_secret HelloAsso est privé — il
+// ne doit jamais sortir côté front ; on l'utilise uniquement dans des
+// appels serveur→serveur (endpoint OAuth v5).
+add_action( 'init', function () {
+    // PayPal Client ID (frontend — peut être visible dans le HTML)
+    if ( ! get_option( 'ql_paypal_client_id' ) ) {
+        add_option( 'ql_paypal_client_id', 'AVyYRWTPC5wdtmdOCsjSrKp4_Em2kuQumBN2Mh9jBlbR8qcisZQj0yY8294PV0eWowqVS85ZOp1vjoN0', '', 'no' );
+    }
+    // HelloAsso : client_secret (PRIVÉ — utilisé uniquement côté serveur)
+    if ( ! get_option( 'ql_helloasso_client_secret' ) ) {
+        add_option( 'ql_helloasso_client_secret', 'c128914df736404aa609faa9d697afc8', '', 'no' );
+    }
+    // HelloAsso : autres paramètres (à compléter via WP admin quand l'asso
+    // aura fourni ces valeurs depuis son dashboard HelloAsso Développeurs)
+    if ( ! get_option( 'ql_helloasso_client_id' ) ) {
+        add_option( 'ql_helloasso_client_id', '', '', 'no' );
+    }
+    if ( ! get_option( 'ql_helloasso_org_slug' ) ) {
+        add_option( 'ql_helloasso_org_slug', 'quartier-libre-nantes', '', 'yes' );
+    }
+}, 5 );
+
 // Auto-création de la page /a-propos/ avec son template
 add_action( 'init', function () {
     $existing = get_page_by_path( 'a-propos' );
