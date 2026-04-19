@@ -10,12 +10,16 @@ define( 'QL_THEME_VERSION', '1.0.0' );
 define( 'QL_THEME_DIR', get_stylesheet_directory() );
 define( 'QL_THEME_URI', get_stylesheet_directory_uri() );
 
-// ── 0. Sync GitHub (page admin Outils → Sync QL) ────────────────
-if ( is_admin() ) {
-    $ql_sync_file = QL_THEME_DIR . '/ql-sync.php';
-    if ( file_exists( $ql_sync_file ) ) {
-        require_once $ql_sync_file;
-    }
+// ── 0. Sync GitHub + helpers (toujours chargé) ──────────────────
+// ql-sync.php contient :
+//   - La page admin « Outils → Sync QL » (guardée par add_action admin_menu)
+//   - Les helpers ql_categories_tree() / ql_ensure_categories() utilisés
+//     par le frontend (header.php) pour générer le menu
+// Donc on charge TOUJOURS (avant on faisait `if (is_admin())` ce qui
+// cassait le menu sur le frontend car ql_categories_tree() n'existait pas).
+$ql_sync_file = QL_THEME_DIR . '/ql-sync.php';
+if ( file_exists( $ql_sync_file ) ) {
+    require_once $ql_sync_file;
 }
 
 // ── 1. Enqueue styles & scripts ─────────────────────────────────
