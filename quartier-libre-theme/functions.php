@@ -254,9 +254,31 @@ add_filter( 'theme_page_templates', function ( $templates ) {
     $templates['templates/page-connexion.php']       = 'Connexion / Inscription';
     $templates['templates/page-a-propos.php']        = 'À propos';
     $templates['templates/page-tous-articles.php']   = 'Tous les articles';
+    $templates['templates/page-rubriques.php']       = 'Rubriques';
     $templates['templates/page-pleine-largeur.php']  = 'Pleine largeur';
     return $templates;
 } );
+
+// Auto-création de la page /rubriques/ avec son template
+add_action( 'init', function () {
+    $existing = get_page_by_path( 'rubriques' );
+    if ( $existing ) {
+        if ( ! get_page_template_slug( $existing->ID ) ) {
+            update_post_meta( $existing->ID, '_wp_page_template', 'templates/page-rubriques.php' );
+        }
+        return;
+    }
+    $pid = wp_insert_post( array(
+        'post_title'   => 'Rubriques',
+        'post_name'    => 'rubriques',
+        'post_status'  => 'publish',
+        'post_type'    => 'page',
+        'post_content' => '',
+    ) );
+    if ( $pid && ! is_wp_error( $pid ) ) {
+        update_post_meta( $pid, '_wp_page_template', 'templates/page-rubriques.php' );
+    }
+}, 32 );
 
 // Auto-création de la page /tous-les-articles/ avec son template
 add_action( 'init', function () {

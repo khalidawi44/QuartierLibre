@@ -3556,6 +3556,123 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 .ql-ta-page__extra { padding: 1rem 0 2rem; }
 .ql-ta-page__extra .ql-post__content { max-width: 720px; margin: 0 auto; }
 
+/* ── 18h. Page « Nos rubriques » — style Contre-Attaque ──── */
+.ql-rubriques-page { background: var(--ql-paper); }
+
+.ql-rubriques-hero {
+  padding: 3rem 0 2rem;
+  text-align: center;
+  background: var(--ql-paper);
+  border-bottom: 1px solid var(--ql-line);
+}
+.ql-rubriques-hero__title {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 900;
+  color: var(--ql-accent);
+  line-height: 1;
+  margin: 0 0 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: -.02em;
+  /* Effet "3D relief" comme CA */
+  text-shadow:
+    2px 2px 0 rgba(0, 0, 0, .15),
+    4px 4px 0 rgba(0, 0, 0, .08);
+}
+.ql-rubriques-hero__lede {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--ql-ink);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+.ql-rubriques-hero__lede strong { color: var(--ql-accent); font-style: normal; }
+
+/* Liste des rubriques */
+.ql-rubriques-list {
+  padding: 3rem 0 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 720px) {
+  .ql-rubriques-list { grid-template-columns: 1fr 1fr; gap: 2.5rem 3rem; }
+}
+
+/* Chaque rubrique = gros titre coloré + description en dessous */
+.ql-rubrique-block {
+  display: block;
+  text-decoration: none;
+  color: var(--ql-ink);
+  padding: 1.5rem 0;
+  border-top: 2px solid var(--ql-line);
+  border-bottom: 2px solid var(--ql-line);
+  transition: transform var(--ql-t);
+  position: relative;
+}
+.ql-rubrique-block:hover {
+  transform: translateX(6px);
+}
+.ql-rubrique-block__title {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--rubrique-color);
+  margin: 0 0 1rem;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  /* Effet 3D relief style CA */
+  text-shadow:
+    2px 2px 0 rgba(0, 0, 0, .18),
+    4px 4px 0 rgba(0, 0, 0, .08);
+  transition: text-shadow var(--ql-t);
+}
+.ql-rubrique-block:hover .ql-rubrique-block__title {
+  text-shadow:
+    3px 3px 0 rgba(0, 0, 0, .25),
+    6px 6px 0 rgba(0, 0, 0, .12);
+}
+.ql-rubrique-block__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.ql-rubrique-block__desc {
+  flex: 1;
+  min-width: 240px;
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.5;
+  color: #333;
+}
+.ql-rubrique-block__meta {
+  flex: 0 0 auto;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--rubrique-color);
+}
+.ql-rubrique-block__arrow {
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform var(--ql-t);
+}
+.ql-rubrique-block:hover .ql-rubrique-block__arrow {
+  transform: translateX(4px);
+}
+
+.ql-rubriques-page__extra { padding: 1rem 0 3rem; }
+.ql-rubriques-page__extra .ql-post__content { max-width: 720px; margin: 0 auto; }
+
 /* ── 19. Utilitaires & motion ─────────────────────────────── */
 .ql-muted { color: var(--ql-muted); }
 .ql-accent { color: var(--ql-accent); }

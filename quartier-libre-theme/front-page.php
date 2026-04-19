@@ -54,24 +54,8 @@ $has_any = (int) wp_count_posts()->publish > 0;
         get_template_part( 'template-parts/soutenir' );
         ?>
 
-        <section class="ql-section" aria-label="Tous les articles">
-            <header class="ql-section__head">
-                <h2 class="ql-section__title">Tous les articles</h2>
-            </header>
-
-            <div class="ql-grid ql-grid--3">
-                <?php
-                $recent = new WP_Query( array(
-                    'posts_per_page' => 9,
-                    'no_found_rows'  => true,
-                ) );
-                while ( $recent->have_posts() ) : $recent->the_post();
-                    get_template_part( 'template-parts/card-article' );
-                endwhile;
-                wp_reset_postdata();
-                ?>
-            </div>
-        </section>
+        <?php // Bloc 'Tous les articles' retiré de la homepage.
+              // Accès via l'item menu 'Tous les articles' → page /tous-les-articles/ ?>
 
     <?php else : ?>
 

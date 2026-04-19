@@ -59,36 +59,37 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                 // hiérarchie lui-même pour garantir la cohérence avec les articles.
                 echo '<ul class="ql-nav__list">';
                 $tree = function_exists( 'ql_categories_tree' ) ? ql_categories_tree() : array();
-                // URL fallback : si le term n'existe pas encore en BDD (premier
-                // chargement avant Sync QL articles), on utilise l'archive par
-                // slug. Le lien fonctionnera dès que la catégorie sera créée.
                 $cat_url = function ( $slug ) {
                     $t = get_term_by( 'slug', $slug, 'category' );
                     if ( $t && ! is_wp_error( $t ) ) return get_term_link( $t );
                     return home_url( '/category/' . $slug . '/' );
                 };
+
+                // Item ACCUEIL (lien vers la home)
+                echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">Accueil</a></li>';
+
+                // Item RUBRIQUES (dropdown avec les 5 top-level catégories)
+                $rubriques_page = get_page_by_path( 'rubriques' );
+                $rubriques_url  = $rubriques_page ? get_permalink( $rubriques_page ) : home_url( '/rubriques/' );
+                echo '<li class="menu-item-has-children">';
+                echo '<a href="' . esc_url( $rubriques_url ) . '">Rubriques</a>';
+                echo '<ul class="sub-menu">';
                 foreach ( $tree as $parent_slug => $parent_data ) {
-                    $has_children = ! empty( $parent_data['children'] );
-                    $li_class = $has_children ? ' class="menu-item-has-children"' : '';
-                    echo '<li' . $li_class . '>';
-                    echo '<a href="' . esc_url( $cat_url( $parent_slug ) ) . '">' . esc_html( $parent_data['label'] ) . '</a>';
-                    if ( $has_children ) {
-                        echo '<ul class="sub-menu">';
-                        foreach ( $parent_data['children'] as $child_slug => $child_label ) {
-                            echo '<li><a href="' . esc_url( $cat_url( $child_slug ) ) . '">' . esc_html( $child_label ) . '</a></li>';
-                        }
-                        echo '</ul>';
-                    }
-                    echo '</li>';
+                    echo '<li><a href="' . esc_url( $cat_url( $parent_slug ) ) . '">' . esc_html( $parent_data['label'] ) . '</a></li>';
                 }
-                // Items statiques en fin de menu (pages, pas catégories)
+                echo '</ul>';
+                echo '</li>';
+
+                // TOUS LES ARTICLES
                 $ta = get_page_by_path( 'tous-les-articles' );
                 $ta_url = $ta ? get_permalink( $ta ) : home_url( '/tous-les-articles/' );
                 echo '<li><a href="' . esc_url( $ta_url ) . '">Tous les articles</a></li>';
 
+                // À PROPOS
                 $apropos = get_page_by_path( 'a-propos' );
                 $apropos_url = $apropos ? get_permalink( $apropos ) : home_url( '/a-propos/' );
                 echo '<li><a href="' . esc_url( $apropos_url ) . '">À propos</a></li>';
+
                 echo '</ul>';
                 ?>
 
