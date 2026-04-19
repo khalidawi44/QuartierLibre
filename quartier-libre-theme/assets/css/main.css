@@ -1084,6 +1084,20 @@ p  { margin: 0 0 1em; }
 }
 .ql-post__content a:hover { color: var(--ql-accent-dark); }
 
+/* Distinction lien interne / externe dans les articles */
+.ql-post__content a[target="_blank"],
+.ql-post__content a.ql-external {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23e02810' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7'/><polyline points='7 7 17 7 17 17'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right .15em center;
+  padding-right: .85em;
+}
+.ql-post__content a[target="_blank"]:hover,
+.ql-post__content a.ql-external:hover {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23a31b06' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7'/><polyline points='7 7 17 7 17 17'/></svg>");
+}
+/* Les liens internes (même domaine, pas de target) gardent leur style sobre */
+
 .ql-post__content strong, .ql-post__content b { font-weight: 700; color: var(--ql-ink); }
 .ql-post__content em, .ql-post__content i { font-style: italic; }
 

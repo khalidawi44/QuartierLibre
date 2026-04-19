@@ -283,6 +283,52 @@ add_filter( 'wp_resource_hints', function ( $hints, $relation ) {
     return $hints;
 }, 10, 2 );
 
+// ── 8a. Liens externes dans les articles ─────────────────────
+// Distingue automatiquement les liens internes (même domaine) des
+// liens externes : les externes reçoivent target="_blank",
+// rel="noopener" et la classe `ql-external` (utilisée pour
+// l'indicateur visuel ↗ et le JS popup).
+add_filter( 'the_content', function ( $content ) {
+    if ( empty( $content ) || ! is_singular() ) return $content;
+
+    $home = parse_url( home_url(), PHP_URL_HOST );
+    if ( ! $home ) return $content;
+
+    return preg_replace_callback(
+        '#<a\s+([^>]*?)href=(["\'])([^"\']+)\2([^>]*)>#i',
+        function ( $m ) use ( $home ) {
+            $before = $m[1]; $href = $m[3]; $after = $m[4];
+            // Ignore les ancres, mailto, tel:, javascript:
+            if ( preg_match( '#^(#|mailto:|tel:|javascript:)#i', $href ) ) return $m[0];
+            // Relatif → interne, pas touché
+            if ( ! preg_match( '#^https?://#i', $href ) ) return $m[0];
+            $link_host = parse_url( $href, PHP_URL_HOST );
+            if ( $link_host === $home ) return $m[0]; // interne
+
+            // Externe : ajouter target, rel, class si absents
+            $attrs = $before . $after;
+            if ( ! preg_match( '/\btarget=/i', $attrs ) ) {
+                $after .= ' target="_blank"';
+            }
+            if ( ! preg_match( '/\brel=/i', $attrs ) ) {
+                $after .= ' rel="noopener nofollow"';
+            }
+            if ( preg_match( '/\bclass=(["\'])([^"\']*)\1/i', $attrs, $cm ) ) {
+                if ( strpos( $cm[2], 'ql-external' ) === false ) {
+                    $new_class = trim( $cm[2] . ' ql-external' );
+                    $replacement = 'class=' . $cm[1] . $new_class . $cm[1];
+                    $before = preg_replace( '/\bclass=(["\'])[^"\']*\1/i', $replacement, $before, 1 );
+                    $after  = preg_replace( '/\bclass=(["\'])[^"\']*\1/i', $replacement, $after, 1 );
+                }
+            } else {
+                $after .= ' class="ql-external"';
+            }
+            return '<a ' . trim( $before ) . ' href="' . esc_url( $href ) . '"' . $after . '>';
+        },
+        $content
+    );
+}, 20 );
+
 // ── 8b. Support upload SVG (réservé aux admins pour raisons de sécurité) ─
 add_filter( 'upload_mimes', function ( $mimes ) {
     if ( current_user_can( 'manage_options' ) ) {

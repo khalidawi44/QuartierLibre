@@ -157,6 +157,49 @@
     } catch (e) { /* sessionStorage peut être bloqué, on ignore */ }
   }
 
+  // ── Liens externes dans les articles → popup petite taille ──
+  // Convention : tout lien absolu http(s) pointant vers un autre
+  // domaine que quartierlibre.org et situé dans le corps d'un article
+  // s'ouvre dans une fenêtre popup de 680×480px (centrée).
+  // Sur mobile, les navigateurs ignorent les dimensions → ouvre
+  // simplement un nouvel onglet (comportement gracieux).
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+
+    // Uniquement dans le corps d'un article
+    var inArticle = a.closest('.ql-post__content, .ql-article__body, .ql-post__body');
+    if (!inArticle) return;
+
+    var href = a.getAttribute('href') || '';
+    if (!/^https?:\/\//i.test(href)) return; // relatif ou anchor → pas touché
+
+    var linkHost;
+    try { linkHost = new URL(href, window.location.href).host; } catch (err) { return; }
+
+    // Même domaine → lien interne, comportement normal
+    if (linkHost === window.location.host) return;
+
+    // Exclure les boutons de partage sociaux (ils gèrent leur propre ouverture)
+    if (a.closest('.ql-post__share, .ql-share, .ql-social')) return;
+
+    // Externe → popup centrée, petite taille
+    e.preventDefault();
+    var w = 680, h = 480;
+    var left = Math.max(0, (window.screen.availWidth  - w) / 2);
+    var top  = Math.max(0, (window.screen.availHeight - h) / 2);
+    var features = 'width=' + w + ',height=' + h +
+                   ',left=' + left + ',top=' + top +
+                   ',resizable=yes,scrollbars=yes,toolbar=no,menubar=no,status=no,location=yes';
+    var win = window.open(href, 'ql-external-popup', features);
+    if (!win) {
+      // Popup bloquée → fallback nouvel onglet
+      window.open(href, '_blank', 'noopener');
+    } else {
+      try { win.opener = null; } catch (_) {}
+    }
+  });
+
   // ── Barre de progression de lecture (single.php) ────────────
   var progressBar = document.querySelector('.ql-reading-progress span');
   var articleBody = document.querySelector('.ql-single .ql-article__body');

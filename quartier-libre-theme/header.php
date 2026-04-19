@@ -54,39 +54,30 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
             <nav id="ql-menu-primary" class="ql-nav" aria-label="Menu principal">
                 <?php
-                if ( has_nav_menu( 'primary' ) ) {
-                    wp_nav_menu( array(
-                        'theme_location' => 'primary',
-                        'container'      => false,
-                        'menu_class'     => 'ql-nav__list',
-                        'fallback_cb'    => false,
-                        'depth'          => 2,
-                    ) );
-                } else {
-                    // Fallback : menu construit à partir de l'arborescence de
-                    // catégories (parent + sous-menu des enfants).
-                    echo '<ul class="ql-nav__list">';
-                    $tree = function_exists( 'ql_categories_tree' ) ? ql_categories_tree() : array();
-                    foreach ( $tree as $parent_slug => $parent_data ) {
-                        $term = get_term_by( 'slug', $parent_slug, 'category' );
-                        if ( ! $term ) continue;
-                        $has_children = ! empty( $parent_data['children'] );
-                        $li_class = $has_children ? ' class="menu-item-has-children"' : '';
-                        echo '<li' . $li_class . '>';
-                        echo '<a href="' . esc_url( get_term_link( $term ) ) . '">' . esc_html( $parent_data['label'] ) . '</a>';
-                        if ( $has_children ) {
-                            echo '<ul class="sub-menu">';
-                            foreach ( $parent_data['children'] as $child_slug => $child_label ) {
-                                $child = get_term_by( 'slug', $child_slug, 'category' );
-                                if ( ! $child ) continue;
-                                echo '<li><a href="' . esc_url( get_term_link( $child ) ) . '">' . esc_html( $child_label ) . '</a></li>';
-                            }
-                            echo '</ul>';
+                // Menu principal = arbre de catégories (source unique : ql_categories_tree).
+                // On ignore volontairement wp_nav_menu primary : le thème pilote la
+                // hiérarchie lui-même pour garantir la cohérence avec les articles.
+                echo '<ul class="ql-nav__list">';
+                $tree = function_exists( 'ql_categories_tree' ) ? ql_categories_tree() : array();
+                foreach ( $tree as $parent_slug => $parent_data ) {
+                    $term = get_term_by( 'slug', $parent_slug, 'category' );
+                    if ( ! $term ) continue;
+                    $has_children = ! empty( $parent_data['children'] );
+                    $li_class = $has_children ? ' class="menu-item-has-children"' : '';
+                    echo '<li' . $li_class . '>';
+                    echo '<a href="' . esc_url( get_term_link( $term ) ) . '">' . esc_html( $parent_data['label'] ) . '</a>';
+                    if ( $has_children ) {
+                        echo '<ul class="sub-menu">';
+                        foreach ( $parent_data['children'] as $child_slug => $child_label ) {
+                            $child = get_term_by( 'slug', $child_slug, 'category' );
+                            if ( ! $child ) continue;
+                            echo '<li><a href="' . esc_url( get_term_link( $child ) ) . '">' . esc_html( $child_label ) . '</a></li>';
                         }
-                        echo '</li>';
+                        echo '</ul>';
                     }
-                    echo '</ul>';
+                    echo '</li>';
                 }
+                echo '</ul>';
                 ?>
 
                 <div class="ql-nav__actions">
