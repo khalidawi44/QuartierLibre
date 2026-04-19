@@ -11,6 +11,7 @@ featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/gaza-u
 status: "publish"
 date: "2025-09-16 07:05:35"
 author: "rachida-ben-arfa"
+plainte_variant: "international"
 une: true
 original_url: "https://quartierlibre.org/gaza-le-genocide-sous-nos-yeux/"
 ---

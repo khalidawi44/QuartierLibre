@@ -11,6 +11,7 @@ featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/mandel
 status: "publish"
 date: "2025-09-22 08:34:40"
 author: "rachida-ben-arfa"
+plainte_variant: "international"
 original_url: "https://quartierlibre.org/heritages-de-la-resistance/"
 ---
 

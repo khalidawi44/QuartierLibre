@@ -11,6 +11,7 @@ featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/08/GENOCI
 status: "publish"
 date: "2025-08-22 09:53:30"
 author: "rachida-ben-arfa"
+plainte_variant: "international"
 original_url: "https://quartierlibre.org/gaza-famine-declaree-les-responsables-doivent-rendre-des-comptes/"
 ---
 

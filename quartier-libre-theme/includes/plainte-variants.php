@@ -88,6 +88,30 @@ function ql_plainte_variants() {
             ),
         ),
 
+        'international' => array(
+            'label'    => 'Solidarité — international',
+            'kicker'   => 'Solidarité',
+            'subtitle' => 'Famille touchée par la guerre, demande d\'aide, appel au relai médiatique, solidarité concrète. On documente, on publie, on fait réseau. <strong>Anonymat garanti.</strong>',
+            'type_options' => array(
+                'Témoigner famille'         => 'Témoigner (famille/proche concerné·e)',
+                'Relai médiatique'          => 'Demander un relai médiatique',
+                'Urgence humanitaire'       => 'Signaler une urgence humanitaire',
+                'Proposer aide'             => 'Proposer une aide (matérielle, hébergement)',
+                'Demande asile'             => 'Besoin d\'aide juridique (demande d\'asile)',
+                'Mise en contact'           => 'Mise en contact avec une association',
+                'Autre'                     => 'Autre',
+            ),
+            'emergency_notice' => 'Urgence humanitaire ? <a href="https://www.unhcr.org/fr/ou-nous-aidons" class="ql-emergency-link" target="_blank" rel="noopener">HCR — agence ONU</a> · <a href="https://www.msf.fr/urgences" class="ql-emergency-link" target="_blank" rel="noopener">Médecins Sans Frontières</a>',
+            'extra_fields' => array(
+                array(
+                    'name'        => 'ql_country',
+                    'label'       => 'Pays / région concerné·e',
+                    'placeholder' => 'Ex : Soudan, Gaza, Kurdistan',
+                    'type'        => 'text',
+                ),
+            ),
+        ),
+
         'logement' => array(
             'label'    => 'Signaler un problème de logement',
             'kicker'   => 'Habitat',
@@ -150,6 +174,12 @@ function ql_plainte_current_variant_key() {
              || in_array( 'bottiere-pin-sec', $cats, true ) || in_array( 'bout-des-landes', $cats, true )
              || in_array( 'port-boyer', $cats, true ) ) {
             return 'logement';
+        }
+        // Guerre / génocide / famine / résistance → solidarité internationale
+        if ( in_array( 'guerre', $cats, true ) || in_array( 'genocide', $cats, true )
+             || in_array( 'famine', $cats, true ) || in_array( 'resistance', $cats, true )
+             || in_array( 'international', $cats, true ) ) {
+            return 'international';
         }
     }
     return 'default';

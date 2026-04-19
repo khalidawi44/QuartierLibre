@@ -15,6 +15,7 @@ bq_background: "content/media/soudan-guerre-oubliee.jpg"
 status: "draft"
 date: "2026-04-15 09:00:00"
 author: "rachida-ben-arfa"
+plainte_variant: "international"
 une: true
 ---
 

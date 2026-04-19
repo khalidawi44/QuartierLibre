@@ -10,6 +10,7 @@ featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/gaza_f
 status: "publish"
 date: "2025-09-17 03:15:56"
 author: "rachida-ben-arfa"
+plainte_variant: "international"
 original_url: "https://quartierlibre.org/rendez-gaza-visible/"
 ---
 
