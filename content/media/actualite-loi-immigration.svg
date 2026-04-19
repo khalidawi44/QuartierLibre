@@ -3,10 +3,16 @@
   <title>DÉLIT DE SOLIDARITÉ — LOI 2026 : AIDER DEVIENT UN CRIME</title>
   <defs>
     <clipPath id="clip"><rect width="1600" height="900"/></clipPath>
+    <!-- Gradient LETTERBOX : bandes sombres haut (préambule) + bas (titre),
+         photo PLEINEMENT VISIBLE au centre (opacity ~0.22). -->
     <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#0a1628" stop-opacity="0.90"/>
-      <stop offset="40%" stop-color="#0a1628" stop-opacity="0.67"/>
-      <stop offset="70%" stop-color="#0a1628" stop-opacity="0.80"/>
+      <stop offset="0%"   stop-color="#0a1628" stop-opacity="0.93"/>
+      <stop offset="27%"  stop-color="#0a1628" stop-opacity="0.90"/>
+      <stop offset="32%"  stop-color="#0a1628" stop-opacity="0.35"/>
+      <stop offset="45%"  stop-color="#0a1628" stop-opacity="0.20"/>
+      <stop offset="60%"  stop-color="#0a1628" stop-opacity="0.22"/>
+      <stop offset="72%"  stop-color="#0a1628" stop-opacity="0.45"/>
+      <stop offset="78%"  stop-color="#0a1628" stop-opacity="0.85"/>
       <stop offset="100%" stop-color="#0a1628" stop-opacity="0.95"/>
     </linearGradient>
     <filter id="textshadow" x="-5%" y="-5%" width="110%" height="110%">
@@ -36,15 +42,15 @@
   </g>
 
   <!-- Préambule multi-lignes -->
-  <text x="80" y="155" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600">Le 8 avril 2026, l&apos;Assemblée a voté la</tspan></text>
-  <text x="80" y="203" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#ffcb05" font-weight="900">52ème loi immigration depuis 1980</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
-  <text x="80" y="251" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600">Désormais : héberger un sans-papier =</tspan></text>
-  <text x="80" y="299" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#ffcb05" font-weight="900">5 ans de prison. 75 000 € d&apos;amende</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
-  <text x="80" y="347" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3"><tspan fill="#ffffff" font-weight="600">Les associations entrent en résistance.</tspan></text>
+  <text x="80" y="135" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Le 8 avril 2026, l&apos;Assemblée a voté la</tspan></text>
+  <text x="80" y="175" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#ffcb05" font-weight="900">52ème loi immigration depuis 1980</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
+  <text x="80" y="215" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Désormais : héberger un sans-papier =</tspan></text>
+  <text x="80" y="255" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#ffcb05" font-weight="900">5 ans de prison. 75 000 € d&apos;amende</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
+  <text x="80" y="295" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Les associations entrent en résistance.</tspan></text>
 
   <!-- Titre principal (bas, couleurs palette) -->
-  <text x="80" y="720" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="95" letter-spacing="-2" fill="#ffffff" filter="url(#textshadow)">LOI 2026 :</text>
-  <text x="80" y="820" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="95" letter-spacing="-2" fill="#ffcb05" filter="url(#textshadow)">AIDER DEVIENT UN CRIME</text>
+  <text x="80" y="740" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="90" letter-spacing="-2" fill="#ffffff" filter="url(#textshadow)">LOI 2026 :</text>
+  <text x="80" y="835" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="90" letter-spacing="-2" fill="#ffcb05" filter="url(#textshadow)">AIDER DEVIENT UN CRIME</text>
 
   <!-- Signature (toujours discrète) -->
   <text x="1520" y="860"

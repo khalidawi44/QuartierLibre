@@ -189,7 +189,10 @@ function buildSvgCAStyle({ tag, preamble, title_lines, image, palette }) {
   }, palette || {});
   const tagWidth = Math.max(240, tag.length * 12 + 50);
 
-  // Rendu du préambule : chaque segment **texte** → tspan en accent
+  // Rendu du préambule : chaque segment **texte** → tspan en accent.
+  // Font réduit (28→30) et line-height 40px pour tenir dans la bande
+  // sombre du haut (0 → ~28% = 252px). Avec tag à y=60-100 et 5 lignes
+  // max de préambule commençant à y=135, on termine à y=135+4×40=295.
   function renderPreambleLine(line, y) {
     const parts = line.split(/(\*\*[^*]+\*\*)/);
     const tspans = parts.map(p => {
@@ -199,14 +202,14 @@ function buildSvgCAStyle({ tag, preamble, title_lines, image, palette }) {
       }
       return `<tspan fill="#ffffff" font-weight="600">${xmlEscape(p)}</tspan>`;
     }).join('');
-    return `<text x="80" y="${y}" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3">${tspans}</text>`;
+    return `<text x="80" y="${y}" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)">${tspans}</text>`;
   }
 
-  const preambleLines = preamble.map((line, i) => renderPreambleLine(line, 155 + i * 48)).join('\n  ');
+  const preambleLines = preamble.map((line, i) => renderPreambleLine(line, 135 + i * 40)).join('\n  ');
 
-  // Titre : 1 ou 2 lignes max, couleur par ligne via palette
-  const titleSizeBase = title_lines.length > 1 ? 95 : 115;
-  const titleY = title_lines.length > 1 ? H - 180 : H - 120;
+  // Titre : placé dans la bande sombre du bas (72% → 78% → 100%).
+  const titleSizeBase = title_lines.length > 1 ? 90 : 110;
+  const titleY = title_lines.length > 1 ? H - 160 : H - 110;
   const titleSpans = title_lines.map((l, i) => {
     const fit = fitFontSize(l, titleSizeBase, 1400, 0.52);
     const color = i === 0 ? P.title_1 : P.title_2;
@@ -219,11 +222,17 @@ function buildSvgCAStyle({ tag, preamble, title_lines, image, palette }) {
   <title>${xmlEscape(tag)} — ${xmlEscape(title_lines.join(' '))}</title>
   <defs>
     <clipPath id="clip"><rect width="${W}" height="${H}"/></clipPath>
+    <!-- Gradient LETTERBOX : bandes sombres haut (préambule) + bas (titre),
+         photo PLEINEMENT VISIBLE au centre (opacity ~0.22). -->
     <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="${P.tint}" stop-opacity="${Math.min(0.95, P.tint_opacity + 0.08).toFixed(2)}"/>
-      <stop offset="40%" stop-color="${P.tint}" stop-opacity="${(P.tint_opacity - 0.15).toFixed(2)}"/>
-      <stop offset="70%" stop-color="${P.tint}" stop-opacity="${(P.tint_opacity - 0.02).toFixed(2)}"/>
-      <stop offset="100%" stop-color="${P.tint}" stop-opacity="${Math.min(0.98, P.tint_opacity + 0.13).toFixed(2)}"/>
+      <stop offset="0%"   stop-color="${P.tint}" stop-opacity="0.93"/>
+      <stop offset="27%"  stop-color="${P.tint}" stop-opacity="0.90"/>
+      <stop offset="32%"  stop-color="${P.tint}" stop-opacity="0.35"/>
+      <stop offset="45%"  stop-color="${P.tint}" stop-opacity="0.20"/>
+      <stop offset="60%"  stop-color="${P.tint}" stop-opacity="0.22"/>
+      <stop offset="72%"  stop-color="${P.tint}" stop-opacity="0.45"/>
+      <stop offset="78%"  stop-color="${P.tint}" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="${P.tint}" stop-opacity="0.95"/>
     </linearGradient>
     <filter id="textshadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.75"/>
