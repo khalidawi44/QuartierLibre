@@ -33,25 +33,59 @@ const BANNERS = [
   { slug: 'ranzay',           title: 'QUARTIER RANZAY',       accent: 'VILLE-DORTOIR',               image: null },
   { slug: 'pilotiere',        title: 'QUARTIER PILOTIÈRE',    accent: 'ON N\'ATTEND PLUS, ON FAIT',  image: null },
 
-  // 4 actualités urgentes — mode photo (buildSvgWithPhoto) :
-  // image_path = chemin LOCAL → sera embarquée en base64 dans le SVG
-  // (nécessaire car WP sert les SVG via <img>, qui bloque les fetch
-  //  d'images externes pour raisons de sécurité. Embed = self-contained.)
+  // 4 actualités — style Contre-Attaque :
+  // préambule multi-lignes en haut (mots entre ** = surlignés en jaune),
+  // photo en fond assombrie, titre impactant en bas.
   { slug: 'actualite-soudan',
-    title: 'SOUDAN',                   accent: 'LA GUERRE OUBLIÉE',
-    category_label: 'INTERNATIONAL · GUERRE',
+    ca_style: true,
+    tag: 'GUERRE OUBLIÉE',
+    preamble: [
+      'Depuis avril 2023, le Soudan s\'effondre.',
+      '**150 000 morts**. **13 millions de déplacés**.',
+      'Famine déclarée au Darfour, massacres ethniques à El Fasher.',
+      'Les médias occidentaux regardent ailleurs.',
+      'La France arme **les complices émiratis**.',
+    ],
+    title_lines: ['SOUDAN :', 'LE SILENCE COMPLICE'],
     image_path: 'content/media/soudan-guerre-oubliee.jpg' },
+
   { slug: 'actualite-loi-immigration',
-    title: 'LOI IMMIGRATION 2026',     accent: 'AIDER DEVIENT UN CRIME',
-    category_label: 'FRANCE · POLITIQUE',
+    ca_style: true,
+    tag: 'DÉLIT DE SOLIDARITÉ',
+    preamble: [
+      'Le 8 avril 2026, l\'Assemblée a voté la',
+      '**52ème loi immigration depuis 1980**.',
+      'Désormais : héberger un sans-papier =',
+      '**5 ans de prison. 75 000 € d\'amende**.',
+      'Les associations entrent en résistance.',
+    ],
+    title_lines: ['LOI 2026 :', 'AIDER DEVIENT UN CRIME'],
     image_path: 'content/media/loi-immigration-2026.jpg' },
+
   { slug: 'actualite-videosurveillance',
-    title: '150 CAMÉRAS IA',           accent: 'LE PANOPTIQUE ARRIVE',
-    category_label: 'NANTES · BELLEVUE',
+    ca_style: true,
+    tag: 'PANOPTIQUE DE CLASSE',
+    preamble: [
+      'Vote discret du conseil municipal, 3 avril.',
+      '**3,2 millions d\'euros** pour **150 caméras IA**',
+      'installées exclusivement dans les quartiers populaires.',
+      'Reconnaissance faciale prête à être activée.',
+      'Bellevue, Malakoff, Breil : **territoires sous surveillance**.',
+    ],
+    title_lines: ['NANTES :', '150 CAMÉRAS IA DANS LES QUARTIERS'],
     image_path: 'content/media/nantes-videosurveillance.jpg' },
+
   { slug: 'actualite-1er-mai',
-    title: '1ER MAI 2026',             accent: 'TOUT LIER, TOUT BLOQUER',
-    category_label: 'LUTTES · GRÈVE GÉNÉRALE',
+    ca_style: true,
+    tag: 'GRÈVE GÉNÉRALE',
+    preamble: [
+      'CGT, Solidaires, FSU. Cimade, DAL, Palestine.',
+      'Pour la première fois depuis dix ans,',
+      '**les luttes convergent**.',
+      'Retraites. Loi immigration. Gaza. Salaires.',
+      '**Tout lier. Tout bloquer.**',
+    ],
+    title_lines: ['1ER MAI 2026 :', 'ON MARCHE ENSEMBLE'],
     image_path: 'content/media/1er-mai-2026.jpg' },
 ];
 
@@ -84,7 +118,98 @@ function fitFontSize(text, baseSize, maxWidth, avgCharWidthRatio = 0.55) {
 }
 
 /**
- * Rendu avec photo de fond (style Contre-Attaque).
+ * Rendu style Contre-Attaque :
+ * - Préambule multi-lignes en haut (mots ** en jaune)
+ * - Photo en fond assombrie
+ * - Titre gros impactant en bas
+ * - Tag rouge en haut-gauche
+ */
+function buildSvgCAStyle({ tag, preamble, title_lines, image }) {
+  const W = 1600, H = 900;
+  const tagWidth = Math.max(240, tag.length * 12 + 50);
+
+  // Rendu du préambule : chaque segment **texte** → tspan jaune
+  function renderPreambleLine(line, y) {
+    // Split on ** markers
+    const parts = line.split(/(\*\*[^*]+\*\*)/);
+    const tspans = parts.map(p => {
+      if (p.startsWith('**') && p.endsWith('**')) {
+        const t = p.slice(2, -2);
+        return `<tspan fill="#ffcb05" font-weight="900">${xmlEscape(t)}</tspan>`;
+      }
+      return `<tspan fill="#ffffff" font-weight="600">${xmlEscape(p)}</tspan>`;
+    }).join('');
+    return `<text x="80" y="${y}" font-family="Inter, system-ui, sans-serif" font-size="34" letter-spacing="-0.3">${tspans}</text>`;
+  }
+
+  const preambleLines = preamble.map((line, i) => renderPreambleLine(line, 155 + i * 48)).join('\n  ');
+
+  // Titre : 1 ou 2 lignes max, taille dynamique
+  const titleSizeBase = title_lines.length > 1 ? 95 : 115;
+  const titleY = title_lines.length > 1 ? H - 180 : H - 120;
+  const titleSpans = title_lines.map((l, i) => {
+    const fit = fitFontSize(l, titleSizeBase, 1400, 0.52);
+    const color = i === title_lines.length - 1 ? '#ffcb05' : '#ffffff';
+    return `<text x="80" y="${titleY + i * (titleSizeBase + 5)}" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="${fit}" letter-spacing="-2" fill="${color}" filter="url(#textshadow)">${xmlEscape(l)}</text>`;
+  }).join('\n  ');
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${xmlEscape(tag)} — ${xmlEscape(title_lines.join(' '))}">
+  <title>${xmlEscape(tag)} — ${xmlEscape(title_lines.join(' '))}</title>
+  <defs>
+    <clipPath id="clip"><rect width="${W}" height="${H}"/></clipPath>
+    <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#0f0f0f" stop-opacity="0.92"/>
+      <stop offset="40%" stop-color="#0f0f0f" stop-opacity="0.70"/>
+      <stop offset="70%" stop-color="#0f0f0f" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0f0f0f" stop-opacity="0.98"/>
+    </linearGradient>
+    <filter id="textshadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Photo de fond -->
+  <g clip-path="url(#clip)">
+    <image href="${xmlEscape(image)}" xlink:href="${xmlEscape(image)}"
+           x="0" y="0" width="${W}" height="${H}"
+           preserveAspectRatio="xMidYMid slice"/>
+  </g>
+
+  <!-- Voile assombrisant -->
+  <rect width="${W}" height="${H}" fill="url(#overlay)"/>
+
+  <!-- Cadre rouge (top + bottom) -->
+  <rect x="0" y="0" width="${W}" height="8" fill="#e02810"/>
+  <rect x="0" y="${H - 8}" width="${W}" height="8" fill="#e02810"/>
+
+  <!-- Tag rouge -->
+  <g transform="translate(80, 60)">
+    <rect x="0" y="0" width="${tagWidth}" height="40" fill="#e02810" rx="2"/>
+    <text x="${tagWidth / 2}" y="28" font-family="Inter, system-ui, sans-serif" font-weight="900"
+          font-size="15" letter-spacing="3.5" fill="#ffffff" text-anchor="middle">${xmlEscape(tag)}</text>
+  </g>
+
+  <!-- Préambule multi-lignes -->
+  ${preambleLines}
+
+  <!-- Titre principal (bas, 1 ou 2 lignes) -->
+  ${titleSpans}
+
+  <!-- Signature -->
+  <text x="${W - 80}" y="${H - 40}"
+        font-family="Inter, system-ui, sans-serif"
+        font-weight="600"
+        font-size="16"
+        letter-spacing="5"
+        fill="#a9a595"
+        text-anchor="end">— QUARTIERLIBRE.ORG</text>
+</svg>
+`;
+}
+
+/**
+ * Rendu avec photo de fond (ancien style, encore utilisé par fallback).
  */
 function buildSvgWithPhoto({ title, accent, image, category_label }) {
   const W = 1600, H = 900;
@@ -239,16 +364,21 @@ function main() {
     if (banner.image_path && !banner.image) {
       banner.image = embedAsDataUri(banner.image_path);
     }
-    const svg = banner.image
-      ? buildSvgWithPhoto(banner)
-      : buildSvgTypographic(banner);
+    let svg;
+    if (banner.ca_style) {
+      svg = buildSvgCAStyle(banner);
+    } else if (banner.image) {
+      svg = buildSvgWithPhoto(banner);
+    } else {
+      svg = buildSvgTypographic(banner);
+    }
     // Les actualités gardent leur slug tel quel ; les quartiers héritent du préfixe historique.
     const filename = banner.slug.startsWith('actualite-')
       ? `${banner.slug}.svg`
       : `quartier-${banner.slug}.svg`;
     const outPath = path.join(OUTPUT_DIR, filename);
     fs.writeFileSync(outPath, svg, 'utf-8');
-    const mode = banner.image ? '📷 photo' : '🎨 typo ';
+    const mode = banner.ca_style ? '📰 ca-style' : (banner.image ? '📷 photo' : '🎨 typo ');
     console.log(`  ${mode}  ${filename}  (${svg.length} chars)`);
     ok++;
     if (banner.image) photo++; else typo++;
