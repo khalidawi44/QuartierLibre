@@ -22,6 +22,12 @@ if ( file_exists( $ql_sync_file ) ) {
     require_once $ql_sync_file;
 }
 
+// Intégration HelloAsso API v5 (OAuth + checkout intents + endpoint AJAX)
+$ql_helloasso_file = QL_THEME_DIR . '/includes/helloasso.php';
+if ( file_exists( $ql_helloasso_file ) ) {
+    require_once $ql_helloasso_file;
+}
+
 // ── 1. Enqueue styles & scripts ─────────────────────────────────
 add_action( 'wp_enqueue_scripts', function () {
 
@@ -281,6 +287,19 @@ add_action( 'init', function () {
             update_option( 'ql_helloasso_client_secret', '' );
         }
         update_option( 'ql_payment_cfg_ver', 2 );
+    }
+
+    // MIGRATION v3 : initialisation du client_secret HelloAsso si vide.
+    // ⚠ ALERTE SÉCURITÉ : Ce secret est visible dans le code source public
+    // sur GitHub. L'admin doit IMPERATIVEMENT rotater ce secret après la
+    // première mise en production (dev.helloasso.com → régénérer la clé
+    // secrète de l'application), puis remplacer la valeur ici OU via
+    // wp-admin > options.php > ql_helloasso_client_secret.
+    if ( $cfg_ver < 3 ) {
+        if ( get_option( 'ql_helloasso_client_secret' ) === '' ) {
+            update_option( 'ql_helloasso_client_secret', 'cVU8bfABNHZI2QMrOewNp7ZC9eyRRCre' );
+        }
+        update_option( 'ql_payment_cfg_ver', 3 );
     }
     if ( ! get_option( 'ql_helloasso_org_slug' ) ) {
         add_option( 'ql_helloasso_org_slug', 'quartier-libre-nantes', '', 'yes' );

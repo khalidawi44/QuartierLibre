@@ -99,13 +99,24 @@ $merci = isset( $_GET['merci'] ) && $_GET['merci'] === '1';
             <!-- Bouton PayPal (rendu par le SDK) -->
             <div id="ql-paypal-button-container" class="ql-paypal-button"></div>
 
+            <!-- Bouton HelloAsso (AJAX → checkout-intent → redirect) -->
+            <?php if ( get_option( 'ql_helloasso_client_id' ) && get_option( 'ql_helloasso_client_secret' ) ) : ?>
+                <div class="ql-helloasso-wrap">
+                    <span class="ql-helloasso-or">— ou —</span>
+                    <button type="button" id="ql-helloasso-btn" class="ql-btn ql-btn--helloasso ql-btn--lg">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:-5px;margin-right:.5rem;">
+                            <path d="M12 2 2 8.5v7L12 22l10-6.5v-7zm0 2.3 7.7 5L12 14.7 4.3 9.3z"/>
+                        </svg>
+                        Donner avec HelloAsso
+                        <span class="ql-helloasso-btn__sub">(reçu fiscal automatique)</span>
+                    </button>
+                    <p id="ql-helloasso-err" class="ql-helloasso-err" hidden></p>
+                </div>
+            <?php endif; ?>
+
             <p class="ql-donation-block__tax">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-2px;margin-right:.3rem;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 <strong>Réduction fiscale 66 %</strong> si éligible — un don de 15 € vous coûte réellement 5,10 €.
-            </p>
-
-            <p class="ql-donation-block__other">
-                Préférez un autre moyen ? <a href="<?php echo esc_url( $donation_url ); ?>" target="_blank" rel="noopener">Passer par HelloAsso →</a>
             </p>
 
         </div>
@@ -173,6 +184,42 @@ $merci = isset( $_GET['merci'] ) && $_GET['merci'] === '1';
           alert('Une erreur est survenue avec PayPal. Réessayez ou utilisez HelloAsso.');
         }
       }).render('#ql-paypal-button-container');
+
+      // ── Bouton HelloAsso (AJAX checkout-intent) ──
+      var hellobtn = document.getElementById('ql-helloasso-btn');
+      var helloerr = document.getElementById('ql-helloasso-err');
+      if (hellobtn) {
+        hellobtn.addEventListener('click', async function(){
+          hellobtn.disabled = true;
+          hellobtn.textContent = 'Création du paiement…';
+          if (helloerr) helloerr.hidden = true;
+          try {
+            var res = await fetch('<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>', {
+              method: 'POST',
+              credentials: 'same-origin',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+              body: 'action=ql_helloasso_checkout'
+                  + '&nonce=<?php echo wp_create_nonce( 'ql_helloasso' ); ?>'
+                  + '&amount=' + encodeURIComponent(selectedAmount),
+            });
+            var data = await res.json();
+            if (data && data.success && data.data && data.data.url) {
+              window.location.href = data.data.url;
+              return;
+            }
+            throw new Error((data && data.data) || 'Erreur inconnue');
+          } catch (e) {
+            console.error('HelloAsso error:', e);
+            if (helloerr) {
+              helloerr.textContent = 'Erreur HelloAsso : ' + e.message + '. Essayez PayPal.';
+              helloerr.hidden = false;
+            }
+            hellobtn.disabled = false;
+            hellobtn.innerHTML = hellobtn.dataset.originalHtml || 'Donner avec HelloAsso';
+          }
+        });
+        hellobtn.dataset.originalHtml = hellobtn.innerHTML;
+      }
     })();
     </script>
     <?php endif; ?>

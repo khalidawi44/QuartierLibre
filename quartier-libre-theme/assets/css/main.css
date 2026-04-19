@@ -2261,19 +2261,62 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
   min-height: 52px;
 }
 
-/* Lien « autre moyen » sous PayPal */
-.ql-donation-block__other {
+/* Bouton HelloAsso sous PayPal (wrap pour séparateur « — ou — ») */
+.ql-helloasso-wrap {
+  max-width: 520px;
+  margin: 1rem auto 2rem;
   text-align: center;
-  margin-top: 1rem;
-  font-size: .92rem;
+}
+.ql-helloasso-or {
+  display: block;
   color: var(--ql-muted);
-}
-.ql-donation-block__other a {
-  color: var(--ql-accent);
+  font-size: .85rem;
   font-weight: 700;
-  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  margin-bottom: 1rem;
 }
-.ql-donation-block__other a:hover { text-decoration: underline; }
+.ql-btn--helloasso {
+  background: #156dfa; /* bleu HelloAsso */
+  color: #fff;
+  border: 2px solid #156dfa;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .3rem;
+  padding: .8rem 1.4rem;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: background var(--ql-t);
+}
+.ql-btn--helloasso:hover:not(:disabled) {
+  background: #0a4fc7;
+  border-color: #0a4fc7;
+  color: #fff;
+}
+.ql-btn--helloasso:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+.ql-helloasso-btn__sub {
+  display: block; width: 100%;
+  font-size: .75rem; font-weight: 500;
+  opacity: .9;
+  letter-spacing: .02em;
+}
+.ql-helloasso-err {
+  margin-top: 1rem;
+  padding: .8rem 1.2rem;
+  background: #fff5f3;
+  border-left: 4px solid var(--ql-accent);
+  font-size: .9rem;
+  color: var(--ql-accent);
+  text-align: left;
+}
 
 /* Bloc « merci » après un don */
 .ql-donation-thanks {
