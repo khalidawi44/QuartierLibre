@@ -259,14 +259,28 @@ add_action( 'init', function () {
     if ( ! get_option( 'ql_paypal_client_id' ) ) {
         add_option( 'ql_paypal_client_id', 'AVyYRWTPC5wdtmdOCsjSrKp4_Em2kuQumBN2Mh9jBlbR8qcisZQj0yY8294PV0eWowqVS85ZOp1vjoN0', '', 'no' );
     }
-    // HelloAsso : client_secret (PRIVÉ — utilisé uniquement côté serveur)
-    if ( ! get_option( 'ql_helloasso_client_secret' ) ) {
-        add_option( 'ql_helloasso_client_secret', 'c128914df736404aa609faa9d697afc8', '', 'no' );
-    }
-    // HelloAsso : autres paramètres (à compléter via WP admin quand l'asso
-    // aura fourni ces valeurs depuis son dashboard HelloAsso Développeurs)
+    // HelloAsso client_id (public par design — OAuth2 client_credentials)
     if ( ! get_option( 'ql_helloasso_client_id' ) ) {
-        add_option( 'ql_helloasso_client_id', '', '', 'no' );
+        add_option( 'ql_helloasso_client_id', 'c128914df736404aa609faa9d697afc8', '', 'no' );
+    }
+    // HelloAsso client_secret (PRIVÉ — serveur uniquement).
+    // À récupérer sur dev.helloasso.com > Mes applications > secret affiché
+    // une seule fois à la création. Vide par défaut.
+    if ( ! get_option( 'ql_helloasso_client_secret' ) ) {
+        add_option( 'ql_helloasso_client_secret', '', '', 'no' );
+    }
+
+    // MIGRATION v2 : le client_id de HelloAsso avait été stocké par erreur
+    // dans ql_helloasso_client_secret (commit précédent). On corrige :
+    // on déplace la valeur vers client_id et on vide le secret.
+    $cfg_ver = (int) get_option( 'ql_payment_cfg_ver', 0 );
+    if ( $cfg_ver < 2 ) {
+        $stored_secret = get_option( 'ql_helloasso_client_secret' );
+        if ( $stored_secret === 'c128914df736404aa609faa9d697afc8' ) {
+            update_option( 'ql_helloasso_client_id', $stored_secret );
+            update_option( 'ql_helloasso_client_secret', '' );
+        }
+        update_option( 'ql_payment_cfg_ver', 2 );
     }
     if ( ! get_option( 'ql_helloasso_org_slug' ) ) {
         add_option( 'ql_helloasso_org_slug', 'quartier-libre-nantes', '', 'yes' );

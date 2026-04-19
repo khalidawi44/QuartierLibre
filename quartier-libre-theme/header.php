@@ -81,6 +81,10 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                     }
                     echo '</li>';
                 }
+                // Item « À propos » en fin de menu (statique, pas une catégorie)
+                $apropos = get_page_by_path( 'a-propos' );
+                $apropos_url = $apropos ? get_permalink( $apropos ) : home_url( '/a-propos/' );
+                echo '<li><a href="' . esc_url( $apropos_url ) . '">À propos</a></li>';
                 echo '</ul>';
                 ?>
 
