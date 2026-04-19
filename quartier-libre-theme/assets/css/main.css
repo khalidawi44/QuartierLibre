@@ -2572,6 +2572,237 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 }
 .ql-comments .logged-in-as a { color: var(--ql-accent); }
 
+/* ── 18f. Page « À propos » — style Contre-Attaque ───────── */
+.ql-apropos-page { background: var(--ql-paper); }
+
+/* Hero : fond noir + accroche militante */
+.ql-apropos-hero {
+  background:
+    linear-gradient(135deg, var(--ql-ink) 0%, #1a0a08 100%);
+  color: #fff;
+  padding: 5rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ql-apropos-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M0 30 L30 0' stroke='%23ffffff' stroke-width='.4' opacity='.08'/></svg>");
+  opacity: .6;
+  pointer-events: none;
+}
+.ql-apropos-hero__kicker {
+  display: inline-block;
+  background: var(--ql-accent); color: #fff;
+  font-size: .78rem; font-weight: 900;
+  letter-spacing: .18em; text-transform: uppercase;
+  padding: .4rem 1rem;
+  margin-bottom: 1.4rem;
+  position: relative;
+}
+.ql-apropos-hero__title {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  margin: 0 0 1.5rem;
+  position: relative;
+}
+.ql-apropos-hero__accent { color: var(--ql-yellow); }
+.ql-apropos-hero__lede {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: #ddd;
+  position: relative;
+}
+.ql-apropos-hero__lede strong { color: var(--ql-yellow); }
+
+/* Blocs de texte paragraph */
+.ql-apropos-block { padding: 4rem 0; background: var(--ql-paper); }
+.ql-apropos-block--dark {
+  background: var(--ql-ink);
+  color: #fff;
+}
+.ql-apropos-block--dark .ql-apropos-text p,
+.ql-apropos-block--dark .ql-apropos-text strong,
+.ql-apropos-block--dark .ql-apropos-text em { color: #fff; }
+.ql-apropos-block--alt { background: var(--ql-paper-2); }
+.ql-apropos-block__inner { max-width: 820px; margin: 0 auto; }
+
+.ql-section__head--light { /* titre blanc sur fond sombre */ }
+.ql-apropos-block--dark .ql-section__title { color: #fff !important; }
+
+.ql-apropos-text {
+  font-size: 1.12rem;
+  line-height: 1.78;
+  color: var(--ql-ink);
+}
+.ql-apropos-text p { margin: 0 0 1.25em; }
+.ql-apropos-lead {
+  font-size: 1.28rem;
+  font-weight: 600;
+  line-height: 1.55;
+  border-left: 4px solid var(--ql-accent);
+  padding-left: 1.2rem;
+  margin-bottom: 1.8rem !important;
+}
+.ql-apropos-text strong { color: var(--ql-accent); font-weight: 800; }
+.ql-apropos-block--dark .ql-apropos-text strong { color: var(--ql-yellow); }
+
+/* Bloc chiffres */
+.ql-apropos-stats {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #1a0a08 0%, var(--ql-accent) 150%);
+  color: #fff;
+}
+.ql-apropos-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.ql-apropos-stat { text-align: center; }
+.ql-apropos-stat__number {
+  display: block;
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-weight: 900;
+  font-size: clamp(3rem, 5vw, 4.2rem);
+  line-height: 1;
+  color: #fff;
+  margin-bottom: .5rem;
+}
+.ql-apropos-stat--accent .ql-apropos-stat__number { color: var(--ql-yellow); }
+.ql-apropos-stat__label {
+  display: block;
+  font-size: .88rem;
+  color: #ddd;
+  font-weight: 600;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* Roster (2 colonnes noms) */
+.ql-apropos-roster {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 720px) { .ql-apropos-roster { grid-template-columns: 1.6fr 1fr; } }
+.ql-apropos-roster h3 {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-size: 1.3rem; font-weight: 900; margin: 0 0 .8rem;
+  color: var(--ql-yellow);
+  text-transform: uppercase; letter-spacing: .04em;
+}
+.ql-apropos-roster ul {
+  list-style: none; padding: 0; margin: 0;
+}
+.ql-apropos-roster li {
+  padding: .5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  font-size: .98rem;
+  line-height: 1.45;
+}
+.ql-apropos-roster li:last-child { border-bottom: 0; }
+.ql-apropos-roster li strong { color: #fff; font-weight: 700; }
+.ql-apropos-roster li small { color: #aaa; font-size: .82rem; }
+
+/* Citation */
+.ql-apropos-quote {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-size: clamp(1.3rem, 2.2vw, 1.65rem);
+  font-style: italic;
+  line-height: 1.45;
+  text-align: center;
+  max-width: 720px;
+  margin: 1.5rem auto 2.5rem !important;
+  padding: 2rem 2.5rem;
+  border-top: 4px solid var(--ql-accent);
+  border-bottom: 4px solid var(--ql-accent);
+  color: var(--ql-ink);
+  background: none !important;
+}
+
+/* Appel à soutien */
+.ql-apropos-cta {
+  background: var(--ql-accent);
+  color: #fff;
+  padding: 4rem 0;
+}
+.ql-apropos-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ql-apropos-cta h2 {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  margin: 0 0 1rem;
+  color: #fff;
+}
+.ql-apropos-cta p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ffecec;
+  margin-bottom: 2rem;
+}
+.ql-apropos-cta strong { color: var(--ql-yellow); }
+.ql-apropos-cta__buttons {
+  display: flex; flex-wrap: wrap;
+  gap: 1rem; justify-content: center;
+}
+.ql-apropos-cta .ql-btn--accent {
+  background: #fff; color: var(--ql-accent);
+  border: 2px solid #fff;
+}
+.ql-apropos-cta .ql-btn--accent:hover {
+  background: var(--ql-yellow); color: var(--ql-ink);
+  border-color: var(--ql-yellow);
+}
+.ql-apropos-cta .ql-btn--ghost {
+  background: transparent; color: #fff;
+  border: 2px solid #fff;
+}
+.ql-apropos-cta .ql-btn--ghost:hover {
+  background: #fff; color: var(--ql-accent);
+}
+
+/* 3 colonnes contact/rejoindre/diffuser */
+.ql-apropos-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (min-width: 800px) { .ql-apropos-columns { grid-template-columns: repeat(3, 1fr); } }
+.ql-apropos-column {
+  background: #fff;
+  padding: 1.8rem 1.5rem;
+  border-top: 4px solid var(--ql-accent);
+}
+.ql-apropos-column h3 {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-size: 1.25rem; font-weight: 900;
+  margin: 0 0 .8rem;
+  color: var(--ql-ink);
+}
+.ql-apropos-column p {
+  font-size: .95rem; line-height: 1.55;
+  color: #333; margin: 0 0 .9em;
+}
+.ql-apropos-column a { color: var(--ql-accent); font-weight: 600; }
+
+.ql-apropos-page__extra { padding: 2.5rem 0 4rem; }
+.ql-apropos-page__extra .ql-post__content { max-width: 720px; margin: 0 auto; }
+
 /* ── 19. Utilitaires & motion ─────────────────────────────── */
 .ql-muted { color: var(--ql-muted); }
 .ql-accent { color: var(--ql-accent); }
