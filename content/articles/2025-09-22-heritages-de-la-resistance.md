@@ -16,7 +16,7 @@ original_url: "https://quartierlibre.org/heritages-de-la-resistance/"
 
 ## Héritages de la résistance et leçons des Brigades internationales
 
-À Gaza, le massacre continue. Les bombes tombent sans relâche, les infrastructures civiles sont détruites, l’eau est coupée, les hôpitaux ciblés. La famine est utilisée comme arme. Et au sommet de cette stratégie d’anéantissement, Netanyahou ose affirmer qu’**« il n’y aura jamais d’État palestinien »**. C’est là l’aveu brut d’un projet colonial : effacer un peuple, lui nier jusqu’à son existence politique. La définition même d’un génocide !
+À [Gaza](/category/genocide/), le massacre continue. Les bombes tombent sans relâche, les infrastructures civiles sont détruites, l’eau est coupée, les hôpitaux ciblés. La famine est utilisée comme arme. Et au sommet de cette stratégie d’anéantissement, Netanyahou ose affirmer qu’**« il n’y aura jamais d’État palestinien »**. C’est là l’aveu brut d’un projet colonial : effacer un peuple, lui nier jusqu’à son existence politique. La définition même d’un génocide !
 
 ---
 
@@ -65,3 +65,7 @@ Nous n’avons pas le luxe de la neutralité. Face à un génocide déclaré, ch
 Et l’Histoire jugera ceux qui auront répondu. attire l’attention et fait parler. Partout dans le monde, des drapeaux aux balcons, des banderoles sur les bâtiments, des filtres et images numériques sur les réseaux sociaux. Créer un effet visuel impossible à ignorer.
 
 > « Notre peuple ne déposera jamais les armes tant qu’il n’aura pas obtenu sa liberté et la fin de l’occupation. » Ismaïl Haniyeh
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

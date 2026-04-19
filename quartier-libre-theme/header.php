@@ -59,19 +59,23 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                 // hiérarchie lui-même pour garantir la cohérence avec les articles.
                 echo '<ul class="ql-nav__list">';
                 $tree = function_exists( 'ql_categories_tree' ) ? ql_categories_tree() : array();
+                // URL fallback : si le term n'existe pas encore en BDD (premier
+                // chargement avant Sync QL articles), on utilise l'archive par
+                // slug. Le lien fonctionnera dès que la catégorie sera créée.
+                $cat_url = function ( $slug ) {
+                    $t = get_term_by( 'slug', $slug, 'category' );
+                    if ( $t && ! is_wp_error( $t ) ) return get_term_link( $t );
+                    return home_url( '/category/' . $slug . '/' );
+                };
                 foreach ( $tree as $parent_slug => $parent_data ) {
-                    $term = get_term_by( 'slug', $parent_slug, 'category' );
-                    if ( ! $term ) continue;
                     $has_children = ! empty( $parent_data['children'] );
                     $li_class = $has_children ? ' class="menu-item-has-children"' : '';
                     echo '<li' . $li_class . '>';
-                    echo '<a href="' . esc_url( get_term_link( $term ) ) . '">' . esc_html( $parent_data['label'] ) . '</a>';
+                    echo '<a href="' . esc_url( $cat_url( $parent_slug ) ) . '">' . esc_html( $parent_data['label'] ) . '</a>';
                     if ( $has_children ) {
                         echo '<ul class="sub-menu">';
                         foreach ( $parent_data['children'] as $child_slug => $child_label ) {
-                            $child = get_term_by( 'slug', $child_slug, 'category' );
-                            if ( ! $child ) continue;
-                            echo '<li><a href="' . esc_url( get_term_link( $child ) ) . '">' . esc_html( $child_label ) . '</a></li>';
+                            echo '<li><a href="' . esc_url( $cat_url( $child_slug ) ) . '">' . esc_html( $child_label ) . '</a></li>';
                         }
                         echo '</ul>';
                     }

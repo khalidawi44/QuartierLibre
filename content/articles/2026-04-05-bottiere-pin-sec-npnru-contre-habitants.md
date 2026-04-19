@@ -69,3 +69,14 @@ Deux observations :
 À Bottière-Pin Sec comme ailleurs, les habitants ne vont pas empêcher les démolitions **en lisant les brochures de la mairie**. Elles arrivent quand des **collectifs se montent**, quand les habitants **refusent les relogements** inacceptables, quand la **presse** (militante) couvre, quand la **pression politique** devient intenable.
 
 *Habitant·e de Bottière-Pin Sec confronté·e à un relogement, à un immeuble qu'on laisse pourrir, à une décision prise sans vous consulter ? [Écrivez-nous](/bureau-des-plaintes/). On relaie, on enquête, on documente.*
+
+
+## Voir aussi — les autres quartiers
+
+- [Breil](/category/breil/)
+- [Bout des Landes](/category/bout-des-landes/)
+- [Clos Toreau](/category/clos-toreau/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

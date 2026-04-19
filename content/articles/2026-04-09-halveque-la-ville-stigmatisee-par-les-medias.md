@@ -96,3 +96,14 @@ C'est l'un des rôles fondamentaux d'un média comme **Quartier Libre**. Pas raj
 - **Soutenir** financièrement les médias indépendants qui couvrent autrement (c'est le sens de notre appel à dons).
 
 *Vous avez une initiative positive à la Halvêque — association, fête de quartier, solidarité, créativité — que les médias mainstream ignorent ? [Envoyez-nous un mot](/bureau-des-plaintes/). On la fait exister.*
+
+
+## Voir aussi — les autres quartiers
+
+- [Ranzay](/category/ranzay/)
+- [Pilotière](/category/pilotiere/)
+- [Port Boyer](/category/port-boyer/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

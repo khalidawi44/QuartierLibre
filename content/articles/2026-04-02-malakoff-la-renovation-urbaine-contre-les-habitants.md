@@ -65,3 +65,14 @@ La mixité, c'est toujours les pauvres qui bougent. Jamais les riches qui vienne
 Sans ces garanties, la rénovation urbaine à Malakoff continuera d'être ce qu'elle est : une **opération foncière** qui profite aux promoteurs et à la mairie, sur le dos des familles populaires.
 
 *Habitant·e de Malakoff concerné·e par un relogement forcé ou une dégradation délibérée ? Contactez-nous via le [Bureau des plaintes](/bureau-des-plaintes/).*
+
+
+## Voir aussi — les autres quartiers
+
+- [Dervallières](/category/dervallieres/)
+- [Clos Toreau](/category/clos-toreau/)
+- [Bellevue](/category/bellevue/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

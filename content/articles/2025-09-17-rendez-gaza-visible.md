@@ -17,7 +17,7 @@ original_url: "https://quartierlibre.org/rendez-gaza-visible/"
 
 ## L’arme contre le silence
 
-En ce moment même, Gaza est sous le feu. Les bombes tombent, mais ce qui menace autant le peuple palestinien, c’est l’invisibilité. Israël compte sur notre silence pour poursuivre son offensive sans témoin.
+En ce moment même, [Gaza](/category/genocide/) est sous le feu. Les bombes tombent, mais ce qui menace autant le peuple palestinien, c’est l’invisibilité. Israël compte sur notre silence pour poursuivre son offensive sans témoin.
 
 L’histoire nous l’a montré : les peuples peuvent briser cette invisibilité. Dans les années 80, les rues du monde entier se couvraient d’affiches « Free Mandela ». Dans les années 2000, les rubans rouges contre le VIH ont rendu visible un combat ignoré. Plus récemment, les mains noires levées de Black Lives Matter ont envahi l’espace public et forcé les caméras à regarder.
 
@@ -42,3 +42,7 @@ Parce que rendre Gaza visible, c’est refuser le génocide.
 Chaque fenêtre devient un point de visibilité, chaque drapeau une voix pour ceux qui n’en ont plus. Inspirons-nous des mobilisations spectaculaires comme le Tour d’Espagne : un événement collectif, massif, qui attire l’attention et fait parler. Partout dans le monde, des drapeaux aux balcons, des banderoles sur les bâtiments, des filtres et images numériques sur les réseaux sociaux. Créer un effet visuel impossible à ignorer.
 
 ![](https://i0.wp.com/quartierlibre.org/wp-content/uploads/2025/09/gaza_flag_affiche-scaled.png?fit=1086%2C1536&ssl=1)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

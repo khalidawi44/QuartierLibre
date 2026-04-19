@@ -41,14 +41,14 @@ Au Ranzay, **il manque absolument tout** de ce qui fait la vie d'un quartier pop
 - **Des associations sportives** de jeunesse (le club de foot local subsiste à peine, pas de club de boxe, pas de karaté, pas de danse).
 - **Un café, un bar, un lieu** où les adultes peuvent se croiser autrement que chez le médecin ou à l'arrêt de tram.
 - **Un marché hebdomadaire** (il y en avait un, supprimé en 2019 faute de « rentabilité »).
-- **Une bibliothèque** ou même un simple **point-lecture** (il faut aller à La Halvêque ou en centre-ville).
+- **Une bibliothèque** ou même un simple **point-lecture** (il faut aller à La [Halvêque](/category/halveque/) ou en centre-ville).
 - **Des fêtes de quartier régulières** — il y a une fête de quartier une fois par an, c'est tout.
 
 ## Le désert associatif : une conséquence politique
 
 Ce désert **n'est pas une fatalité**. C'est le résultat de **choix politiques** répétés :
 
-- Les **subventions municipales** aux associations de quartier sont concentrées sur les plus gros quartiers (Bellevue, Malakoff, Dervallières). Le Ranzay passe toujours après.
+- Les **subventions municipales** aux associations de quartier sont concentrées sur les plus gros quartiers ([Bellevue](/category/bellevue/), [Malakoff](/category/malakoff/), [Dervallières](/category/dervallieres/)). Le Ranzay passe toujours après.
 - Les **locaux disponibles** pour les associations sont rares et chers.
 - Les **contrats aidés** (les fameux CUI, PEC, emplois-jeunes) qui faisaient tourner les petites associations ont été massivement supprimés depuis 2017.
 - La mairie **ne publie pas** d'appel à projets spécifique pour les petits quartiers.
@@ -86,3 +86,14 @@ Au Ranzay, ce qui manque n'est pas un nouveau plan de rénovation urbaine ni une
 **Sans ça**, le Ranzay continuera d'être ce qu'il est : un quartier qui dort. Un quartier où les **morts sociales** se multiplient silencieusement. Un quartier que la mairie **n'aura plus qu'à « dynamiser »** d'ici 10 ans par un énième plan ANRU qui expulsera les habitants survivants.
 
 *Habitant·e du Ranzay qui veut monter quelque chose, qui cherche des voisins pour s'organiser, qui a une idée ? [Écrivez-nous](/bureau-des-plaintes/). On met en lien, on relaie, on appuie.*
+
+
+## Voir aussi — les autres quartiers
+
+- [Pilotière](/category/pilotiere/)
+- [Bellevue](/category/bellevue/)
+- [Halvêque](/category/halveque/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

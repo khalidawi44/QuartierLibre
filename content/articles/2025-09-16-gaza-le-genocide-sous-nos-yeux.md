@@ -17,7 +17,7 @@ original_url: "https://quartierlibre.org/gaza-le-genocide-sous-nos-yeux/"
 
 ## Massacres , horreurs et exode
 
-Les 15 et 16 septembre 2025, Gaza a été frappée avec une intensité inouïe. Les frappes israéliennes ont anéanti des quartiers entiers, tuant femmes, enfants et vieillards. Hier, **la famille al-Sultan a été entièrement décimée**. Quinze vies effacées en un instant, des enfants et des adultes balayés par des bombes prétendument “chirurgicales”. Les responsables israéliens parlent de sécurité, mais les images, les témoignages et les coprs parlent eux , de massacre.
+Les 15 et 16 septembre 2025, [Gaza](/category/genocide/) a été frappée avec une intensité inouïe. Les frappes israéliennes ont anéanti des quartiers entiers, tuant femmes, enfants et vieillards. Hier, **la famille al-Sultan a été entièrement décimée**. Quinze vies effacées en un instant, des enfants et des adultes balayés par des bombes prétendument “chirurgicales”. Les responsables israéliens parlent de sécurité, mais les images, les témoignages et les coprs parlent eux , de massacre.
 
 ![](https://quartierlibre.org/wp-content/uploads/2025/09/famill_entiere_DCD.jpeg)
 
@@ -52,3 +52,7 @@ Gaza brûle, Gaza saigne, mais **nous pouvons agir**. Chaque drapeau, chaque pho
 Le temps de l’indignation passive est terminé. Il faut transformer la colère en action, le chagrin en visibilité. Si nous nous mobilisons massivement, symboliquement, nous pouvons créer un impact réel. **Informer, dénoncer, documenter et montrer la solidarité : c’est notre seule arme face au génocide en cours.**
 
 > ***« La paix n’est pas seulement l’absence de violence, c’est la présence de justice. »*** **Edward Said** (1935‑2003), intellectuel et écrivain palestinien
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

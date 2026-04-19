@@ -14,7 +14,7 @@ author: "rachida-ben-arfa"
 original_url: "https://quartierlibre.org/gaza-famine-declaree-les-responsables-doivent-rendre-des-comptes/"
 ---
 
-## Famine et massacres à Gaza
+## Famine et massacres à [Gaza](/category/genocide/)
 
 L’ONU a  officiellement déclaré ce que tous le monde criait si fort : la famine à Gaza, une première au Moyen-Orient. Selon le système IPC (Integrated Food Security Phase Classification), 5**14 000 personnes, soit près d’un quart de la population, sont en situation de famine**, et ce chiffre pourrait atteindre **641 000** d’ici fin septembre. Le rapport qualifie cette situation de ***« catastrophe entièrement provoquée par l’homme » .***
 
@@ -36,3 +36,7 @@ A l’échelle de notre pays , **5,4** **millions** de Français sur 68 millions
 📢 **Quartier Libre** lance un appel à la mobilisation :
 
 **« Fin de l’impunité et  justice pour Gaza »**
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

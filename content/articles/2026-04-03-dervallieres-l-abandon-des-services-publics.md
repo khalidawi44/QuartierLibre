@@ -72,3 +72,14 @@ C'est le **deal néolibéral** appliqué aux quartiers populaires : on enlève l
 Les Dervallières ne sont pas un quartier « difficile ». C'est un quartier **abandonné par l'État** et **pointé du doigt** quand quelqu'un ose le dire.
 
 *Vous vivez aux Dervallières et vous avez subi une fermeture de service public sans solution de remplacement ? Racontez-nous via le [Bureau des plaintes](/bureau-des-plaintes/).*
+
+
+## Voir aussi — les autres quartiers
+
+- [Clos Toreau](/category/clos-toreau/)
+- [Bottière — Pin Sec](/category/bottiere-pin-sec/)
+- [Malakoff](/category/malakoff/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

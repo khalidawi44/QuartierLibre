@@ -42,7 +42,7 @@ Un **marchand de sommeil**, c'est un bailleur privé qui :
 
 L'**Université de Nantes** a plus de 40 000 étudiants. Le **CROUS** propose à peine **4 500 logements**. **9 étudiants sur 10** doivent se débrouiller seuls sur le marché privé.
 
-Face à la **pénurie**, les prix explosent. Les étudiants les plus précaires se retrouvent à **Port Boyer**, à **Malakoff**, ou **dans des chambres insalubres** parce qu'ils n'ont pas le choix.
+Face à la **pénurie**, les prix explosent. Les étudiants les plus précaires se retrouvent à **Port Boyer**, à **[Malakoff](/category/malakoff/)**, ou **dans des chambres insalubres** parce qu'ils n'ont pas le choix.
 
 L'université **ne dénonce pas** publiquement cette situation. Le CROUS **ne publie pas** de cartographie des logements-piège connus. La mairie **ne sanctionne pas** les marchands de sommeil identifiés.
 
@@ -91,3 +91,14 @@ C'est un **remplacement de population lent**, qui profite aux **bailleurs privé
 Sans action, Port Boyer continuera d'être ce qu'il est : un **entrepôt de précaires**, rentable pour les propriétaires voyous, douloureux pour les habitants.
 
 *Étudiant·e ou locataire à Port Boyer dans un logement insalubre ou sur-occupé ? [Contactez-nous](/bureau-des-plaintes/). On documente, on anonymise si besoin, et on publie pour forcer les institutions à agir.*
+
+
+## Voir aussi — les autres quartiers
+
+- [Halvêque](/category/halveque/)
+- [Ranzay](/category/ranzay/)
+- [Bout des Landes](/category/bout-des-landes/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

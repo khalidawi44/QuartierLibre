@@ -250,6 +250,17 @@ add_action( 'init', function () {
     }
 }, 25 );
 
+// Crée l'arborescence de catégories si elle n'existe pas encore.
+// Check léger (vérifie un seul term) et ne s'exécute qu'une fois par
+// jour pour éviter les appels inutiles.
+add_action( 'init', function () {
+    if ( ! function_exists( 'ql_ensure_categories' ) ) return;
+    $last = (int) get_option( 'ql_cats_init', 0 );
+    if ( $last && ( time() - $last ) < DAY_IN_SECONDS ) return;
+    ql_ensure_categories();
+    update_option( 'ql_cats_init', time(), false );
+}, 30 );
+
 // ── 6. Extrait + "Lire la suite" sobres ─────────────────────────
 add_filter( 'excerpt_length', function () { return 28; }, 999 );
 add_filter( 'excerpt_more',  function () { return '…'; } );
