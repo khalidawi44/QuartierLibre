@@ -13,6 +13,7 @@ featured_image: "content/media/quartier-bottiere-pin-sec.jpg"
 status: "draft"
 date: "2026-04-05 14:00:00"
 author: "mehdi-haddad"
+plainte_variant: "logement"
 ---
 
 ## Un plan à 240 millions d'euros — pour qui ?

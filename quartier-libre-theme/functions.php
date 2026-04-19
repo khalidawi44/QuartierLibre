@@ -28,6 +28,12 @@ if ( file_exists( $ql_helloasso_file ) ) {
     require_once $ql_helloasso_file;
 }
 
+// Variantes du Bureau des plaintes (adaptées au contexte de l'article)
+$ql_plainte_variants_file = QL_THEME_DIR . '/includes/plainte-variants.php';
+if ( file_exists( $ql_plainte_variants_file ) ) {
+    require_once $ql_plainte_variants_file;
+}
+
 // ── 1. Enqueue styles & scripts ─────────────────────────────────
 add_action( 'wp_enqueue_scripts', function () {
 

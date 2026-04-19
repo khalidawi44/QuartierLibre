@@ -737,6 +737,18 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
         delete_post_meta( $post_id, '_ql_une' );
     }
 
+    // Variante du Bureau des plaintes (modal adaptée au contexte)
+    // Frontmatter `plainte_variant: immigration` / police / logement / default
+    if ( ! empty( $front['plainte_variant'] ) ) {
+        $allowed = array( 'default', 'immigration', 'police', 'logement' );
+        $pv = sanitize_key( (string) $front['plainte_variant'] );
+        if ( in_array( $pv, $allowed, true ) ) {
+            update_post_meta( $post_id, '_ql_plainte_variant', $pv );
+        }
+    } else {
+        delete_post_meta( $post_id, '_ql_plainte_variant' );
+    }
+
     // Source externe (ex. pour republier un article de Contre-Attaque, etc.)
     if ( ! empty( $front['source_name'] ) ) {
         update_post_meta( $post_id, '_ql_source_name', sanitize_text_field( $front['source_name'] ) );

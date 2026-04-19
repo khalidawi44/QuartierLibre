@@ -13,6 +13,7 @@ featured_image: "content/media/quartier-bellevue.jpg"
 status: "draft"
 date: "2026-04-01 09:00:00"
 author: "aissata-diallo"
+plainte_variant: "police"
 une: true
 ---
 

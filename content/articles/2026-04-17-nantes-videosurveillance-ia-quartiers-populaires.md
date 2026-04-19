@@ -22,6 +22,7 @@ bq_background: "content/media/nantes-videosurveillance.jpg"
 status: "draft"
 date: "2026-04-17 09:00:00"
 author: "aissata-diallo"
+plainte_variant: "police"
 une: true
 ---
 

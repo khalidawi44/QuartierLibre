@@ -14,6 +14,7 @@ bq_background: "content/media/quartier-port-boyer-bg.jpg"
 status: "draft"
 date: "2026-04-08 09:00:00"
 author: "lea-marchand"
+plainte_variant: "logement"
 ---
 
 ## Un quartier à la confluence des précarités

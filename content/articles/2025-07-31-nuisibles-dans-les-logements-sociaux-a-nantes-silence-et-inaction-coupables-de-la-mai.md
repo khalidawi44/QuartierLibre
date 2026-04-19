@@ -12,6 +12,7 @@ featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/Nantes
 status: "publish"
 date: "2025-07-31 12:22:40"
 author: "soraya-messaoudi"
+plainte_variant: "logement"
 original_url: "https://quartierlibre.org/nuisibles-dans-les-logements-sociaux-a-nantes-silence-et-inaction-coupables-de-la-mairie-et-de-nantes-metropole-habitat/"
 ---
 

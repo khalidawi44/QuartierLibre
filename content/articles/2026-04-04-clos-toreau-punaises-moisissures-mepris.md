@@ -14,6 +14,7 @@ featured_image: "content/media/quartier-clos-toreau.jpg"
 status: "draft"
 date: "2026-04-04 09:30:00"
 author: "soraya-messaoudi"
+plainte_variant: "logement"
 ---
 
 ## Un des plus petits quartiers HLM, une des plus grandes hontes

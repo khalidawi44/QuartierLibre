@@ -13,6 +13,7 @@ featured_image_url: "https://quartierlibre.org/wp-content/uploads/2024/04/johann
 status: "publish"
 date: "2024-04-23 06:25:10"
 author: "mehdi-haddad"
+plainte_variant: "logement"
 original_url: "https://quartierlibre.org/ecologie-de-facade-misere-derriere-les-murs/"
 ---
 

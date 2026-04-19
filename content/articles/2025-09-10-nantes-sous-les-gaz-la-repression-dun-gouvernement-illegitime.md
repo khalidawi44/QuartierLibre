@@ -12,6 +12,7 @@ featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/671F64
 status: "publish"
 date: "2025-09-10 08:23:05"
 author: "fatou-traore"
+plainte_variant: "police"
 une: true
 original_url: "https://quartierlibre.org/nantes-sous-les-gaz-la-repression-dun-gouvernement-illegitime/"
 ---

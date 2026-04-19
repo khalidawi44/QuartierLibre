@@ -17,6 +17,7 @@ featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/quarti
 status: "publish"
 date: "2025-07-23 21:54:00"
 author: "fatou-traore"
+plainte_variant: "police"
 original_url: "https://quartierlibre.org/securite-mediation-prevention-les-quartiers-sous-controle-pas-sous-protection/"
 ---
 

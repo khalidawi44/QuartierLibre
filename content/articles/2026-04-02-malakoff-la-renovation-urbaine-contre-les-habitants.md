@@ -13,6 +13,7 @@ featured_image: "content/media/quartier-malakoff.jpg"
 status: "draft"
 date: "2026-04-02 10:00:00"
 author: "younes-boukhris"
+plainte_variant: "logement"
 ---
 
 ## Un quartier qui change — mais pas pour ses habitants

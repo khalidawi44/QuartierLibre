@@ -16,6 +16,7 @@ bq_background: "content/media/loi-immigration-2026.jpg"
 status: "draft"
 date: "2026-04-16 09:00:00"
 author: "julien-moreau"
+plainte_variant: "immigration"
 ---
 
 ## Ce que la loi dit vraiment, mot à mot

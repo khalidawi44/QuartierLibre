@@ -14,6 +14,7 @@ featured_image: "content/media/quartier-breil.jpg"
 status: "draft"
 date: "2026-04-06 10:30:00"
 author: "fatou-traore"
+plainte_variant: "police"
 ---
 
 ## Un quartier calme — sauf quand la BAC débarque
