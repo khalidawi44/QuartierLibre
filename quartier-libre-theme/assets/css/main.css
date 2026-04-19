@@ -1308,9 +1308,11 @@ p  { margin: 0 0 1em; }
   color: #fff !important;
   text-align: center;
   background-color: #0f0f0f;
+  /* --ql-bq-bg est injecté par wp_head par article (meta _ql_bq_bg ou
+     featured_image raster). Fallback sur l'image partagée du thème. */
   background-image:
     linear-gradient(135deg, rgba(15,15,15,.90) 0%, rgba(224,40,16,.65) 100%),
-    url("../img/blockquote-bg.jpg");
+    var(--ql-bq-bg, url("../img/blockquote-bg.jpg"));
   background-size: cover, cover;
   background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;

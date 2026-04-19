@@ -12,6 +12,7 @@ tags:
   - delit-de-solidarite
 excerpt: "Le 8 avril 2026, l'Assemblée a voté la 52ème loi sur l'immigration depuis 1980. Cette fois, aider un sans-papier peut vous coûter 5 ans de prison et 75 000 €. Les associations entrent en résistance."
 featured_image: "content/media/actualite-loi-immigration.svg"
+bq_background: "content/media/loi-immigration-2026.jpg"
 status: "draft"
 date: "2026-04-16 09:00:00"
 author: "julien-moreau"

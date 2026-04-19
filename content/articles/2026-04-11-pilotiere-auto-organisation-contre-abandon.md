@@ -10,6 +10,7 @@ tags:
   - resistance
 excerpt: "À la Pilotière, on n'attend plus la mairie. On a compris. Derrière le silence institutionnel, des habitants bâtissent leurs propres solidarités : aides aux devoirs, frigos partagés, garde collective. La leçon des quartiers qui se prennent en main."
 featured_image: "content/media/quartier-pilotiere.svg"
+bq_background: "content/media/quartier-pilotiere-bg.jpg"
 status: "draft"
 date: "2026-04-11 09:30:00"
 author: "sofia-bensalem"

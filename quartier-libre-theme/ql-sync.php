@@ -693,6 +693,28 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
 
     if ( $thumb_id ) set_post_thumbnail( $post_id, $thumb_id );
 
+    // ── Image de fond des blockquotes (témoignages pleine largeur) ──
+    // Frontmatter optionnel `bq_background` : chemin repo OU URL.
+    // Utilisé quand le featured_image est un SVG (qui ne peut pas servir
+    // de fond CSS directement) ou quand on veut une image différente du
+    // featured pour les citations.
+    if ( ! empty( $front['bq_background'] ) ) {
+        $bq_count = 0;
+        $bq_val = trim( (string) $front['bq_background'] );
+        $bq_id  = 0;
+        if ( preg_match( '#^https?://#', $bq_val ) ) {
+            $bq_id = ql_upload_image_from_url( $bq_val, $bq_count );
+        } else {
+            $bq_id = ql_upload_image_from_repo( $bq_val, $bq_count );
+        }
+        if ( $bq_id ) {
+            $bq_url = wp_get_attachment_url( $bq_id );
+            if ( $bq_url ) update_post_meta( $post_id, '_ql_bq_bg', $bq_url );
+        }
+    } else {
+        delete_post_meta( $post_id, '_ql_bq_bg' );
+    }
+
     // Article sélectionné pour la Une (featured sur la home)
     // Frontmatter `une: true` → meta `_ql_une` = 1 (sinon supprimé)
     $is_une = false;

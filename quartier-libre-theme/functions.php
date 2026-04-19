@@ -331,6 +331,27 @@ add_action( 'wp_head', function () {
     echo '<link rel="preload" as="image" href="' . esc_url( $src ) . '" fetchpriority="high">' . "\n";
 }, 3 );
 
+// ── Image de fond des blockquotes (témoignages) — par article ───
+// Injecte une variable CSS --ql-bq-bg pointant sur une image thématique
+// propre à l'article. Priorité :
+//   1. meta _ql_bq_bg définie par frontmatter bq_background
+//   2. featured_image si c'est un raster (jpg/png/webp — pas svg)
+//   3. sinon : fallback CSS sur l'image partagée dans le thème
+add_action( 'wp_head', function () {
+    if ( ! is_singular( 'post' ) ) return;
+    $bq_bg = get_post_meta( get_the_ID(), '_ql_bq_bg', true );
+    if ( ! $bq_bg && has_post_thumbnail() ) {
+        $tid  = get_post_thumbnail_id();
+        $mime = get_post_mime_type( $tid );
+        if ( $mime && $mime !== 'image/svg+xml' ) {
+            $bq_bg = wp_get_attachment_url( $tid );
+        }
+    }
+    if ( $bq_bg ) {
+        echo '<style>.ql-single{--ql-bq-bg:url("' . esc_url( $bq_bg ) . '")}</style>' . "\n";
+    }
+}, 4 );
+
 // Alt text de secours si vide : utilise le titre de l'article
 add_filter( 'wp_get_attachment_image_attributes', function ( $attrs, $attachment ) {
     if ( empty( $attrs['alt'] ) ) {

@@ -11,6 +11,7 @@ tags:
   - emirats
 excerpt: "Depuis avril 2023, le Soudan vit l'une des pires catastrophes humanitaires du siècle. 13 millions de déplacés, famine déclarée, massacres ethniques à El Fasher. Et les médias occidentaux regardent ailleurs."
 featured_image: "content/media/actualite-soudan.svg"
+bq_background: "content/media/soudan-guerre-oubliee.jpg"
 status: "draft"
 date: "2026-04-15 09:00:00"
 author: "rachida-ben-arfa"

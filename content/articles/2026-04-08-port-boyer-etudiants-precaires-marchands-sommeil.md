@@ -10,6 +10,7 @@ tags:
   - marchands-de-sommeil
 excerpt: "Coincé entre la fac et l'Erdre, Port Boyer devient le dépôt de la précarité étudiante et ouvrière. Les marchands de sommeil prospèrent pendant que l'université ferme les yeux."
 featured_image: "content/media/quartier-port-boyer.svg"
+bq_background: "content/media/quartier-port-boyer-bg.jpg"
 status: "draft"
 date: "2026-04-08 09:00:00"
 author: "lea-marchand"

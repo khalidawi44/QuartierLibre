@@ -10,6 +10,7 @@ tags:
   - trafic
 excerpt: "La Halvêque ne fait pas la une des grands journaux pour ses associations, ses bénévoles, ses fêtes de quartier. Elle la fait pour chaque fait divers, chaque interpellation. La fabrique médiatique du « quartier difficile » en action."
 featured_image: "content/media/quartier-halveque.svg"
+bq_background: "content/media/quartier-halveque-bg.jpg"
 status: "draft"
 date: "2026-04-09 10:00:00"
 author: "naima-ouedraogo"
