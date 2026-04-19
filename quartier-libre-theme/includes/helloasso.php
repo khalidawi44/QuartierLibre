@@ -107,7 +107,17 @@ function ql_helloasso_create_checkout( $amount_euros, $payer = array() ) {
     $code = wp_remote_retrieve_response_code( $response );
     $raw  = wp_remote_retrieve_body( $response );
     if ( $code < 200 || $code >= 300 ) {
-        return new WP_Error( 'ha_http_' . $code, 'HelloAsso API ' . $code . ' : ' . substr( $raw, 0, 300 ) );
+        // Messages d'erreur explicites pour les codes les plus courants
+        $messages = array(
+            401 => 'Authentification HelloAsso invalide — vérifiez client_id/secret.',
+            403 => 'Organisation non autorisée ou slug incorrect (actuel : "' . $slug . '").',
+            404 => 'Organisation "' . $slug . '" introuvable sur HelloAsso.',
+            409 => 'Votre compte HelloAsso n\'est pas encore activé pour recevoir des paiements via l\'API. Complétez d\'abord la configuration de votre association sur helloasso.com (RIB, statuts, validation).',
+            422 => 'Données invalides envoyées à HelloAsso. Détail : ' . substr( $raw, 0, 200 ),
+        );
+        $msg = isset( $messages[ $code ] ) ? $messages[ $code ] : 'HelloAsso a répondu ' . $code;
+        if ( $raw ) $msg .= ' (' . substr( $raw, 0, 150 ) . ')';
+        return new WP_Error( 'ha_http_' . $code, $msg );
     }
     $data = json_decode( $raw, true );
     if ( empty( $data['redirectUrl'] ) ) {

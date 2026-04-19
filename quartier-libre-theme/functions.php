@@ -351,8 +351,18 @@ add_action( 'init', function () {
         }
         update_option( 'ql_payment_cfg_ver', 3 );
     }
+
+    // MIGRATION v4 : le slug HelloAsso par défaut était 'quartier-libre-nantes'
+    // (placeholder faux). Le vrai slug est 'union-des-quartiers-libres'
+    // (trouvé via l'API HelloAsso /v5/users/me/organizations).
+    if ( $cfg_ver < 4 ) {
+        if ( get_option( 'ql_helloasso_org_slug' ) === 'quartier-libre-nantes' ) {
+            update_option( 'ql_helloasso_org_slug', 'union-des-quartiers-libres' );
+        }
+        update_option( 'ql_payment_cfg_ver', 4 );
+    }
     if ( ! get_option( 'ql_helloasso_org_slug' ) ) {
-        add_option( 'ql_helloasso_org_slug', 'quartier-libre-nantes', '', 'yes' );
+        add_option( 'ql_helloasso_org_slug', 'union-des-quartiers-libres', '', 'yes' );
     }
 }, 5 );
 
