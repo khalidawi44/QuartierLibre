@@ -1,22 +1,22 @@
 <?php
 /**
  * Template Name: Soutenir
- * Page de dons — tiered buttons + alternatives.
+ * Page de dons — PayPal intégré (SDK) + alternatives.
  *
- * Configuration : WP Admin > Apparence > Personnaliser, ou directement
- * dans wp_options :
- *   - ql_donorbox_url : URL cible des boutons (HelloAsso, Donorbox, …).
- *     Le paramètre ?amount= est automatiquement ajouté pour les tiers.
- *   - ql_rib_iban      : IBAN pour virement bancaire (optionnel)
- *   - ql_rib_bic       : BIC (optionnel)
+ * Configuration :
+ *   - ql_paypal_client_id : Client ID PayPal REST (défaut : celui de QL)
+ *   - ql_donorbox_url     : URL HelloAsso/Donorbox de secours (bouton « montant libre »)
+ *   - ql_rib_iban / ql_rib_bic : RIB pour virement bancaire (optionnel)
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 get_header();
 
+// Client ID PayPal — public par design (utilisé dans le JS frontend)
+$paypal_client_id = get_option( 'ql_paypal_client_id', 'AVyYRWTPC5wdtmdOCsjSrKp4_Em2kuQumBN2Mh9jBlbR8qcisZQj0yY8294PV0eWowqVS85ZOp1vjoN0' );
+
 $donation_url = get_option( 'ql_donorbox_url', '' );
 if ( empty( $donation_url ) ) {
-    // Placeholder — l'admin doit configurer l'URL réelle (HelloAsso recommandé en FR)
     $donation_url = 'https://www.helloasso.com/associations/quartier-libre-nantes';
 }
 
@@ -30,13 +30,7 @@ $tiers = array(
     array( 'amount' => 100, 'label' => '100 €', 'desc' => 'Un média qui dure' ),
 );
 
-function ql_donation_link( $base, $amount = null, $recurring = false ) {
-    $sep = ( strpos( $base, '?' ) !== false ) ? '&' : '?';
-    $args = array();
-    if ( $amount ) $args[] = 'amount=' . (int) $amount;
-    if ( $recurring ) $args[] = 'recurring=1';
-    return $base . ( ! empty( $args ) ? $sep . implode( '&', $args ) : '' );
-}
+$merci = isset( $_GET['merci'] ) && $_GET['merci'] === '1';
 ?>
 
 <div class="ql-soutenir-page">
@@ -53,45 +47,135 @@ function ql_donation_link( $base, $amount = null, $recurring = false ) {
         </div>
     </section>
 
+    <?php if ( $merci ) : ?>
+    <section class="ql-donation-thanks">
+        <div class="ql-container">
+            <div class="ql-donation-thanks__box">
+                <strong>Merci pour votre don.</strong>
+                Votre soutien finance directement nos prochaines enquêtes.
+                Un reçu PayPal vous a été envoyé par email.
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
+
     <section class="ql-donation-block">
         <div class="ql-container">
 
             <header class="ql-donation-block__head">
                 <h2>Faire un don</h2>
-                <p>Choisissez un montant. Paiement sécurisé via notre plateforme partenaire.</p>
+                <p>Choisissez un montant. Paiement sécurisé via PayPal (carte bancaire ou compte PayPal).</p>
             </header>
 
-            <div class="ql-donation-tiers">
+            <!-- Sélecteur de montant (QL styled) -->
+            <div class="ql-donation-tiers" role="radiogroup" aria-label="Montant du don">
                 <?php foreach ( $tiers as $t ) :
-                    $url   = ql_donation_link( $donation_url, $t['amount'] );
-                    $hl    = ! empty( $t['highlight'] ) ? ' ql-donation-tier--highlight' : '';
+                    $hl       = ! empty( $t['highlight'] ) ? ' ql-donation-tier--highlight' : '';
+                    $selected = ! empty( $t['highlight'] ) ? ' is-active' : '';
                 ?>
-                    <a class="ql-donation-tier<?php echo $hl; ?>" href="<?php echo esc_url( $url ); ?>" target="_blank" rel="noopener">
+                    <button type="button"
+                            class="ql-donation-tier<?php echo $hl . $selected; ?>"
+                            data-amount="<?php echo esc_attr( $t['amount'] ); ?>"
+                            role="radio"
+                            aria-checked="<?php echo ! empty( $t['highlight'] ) ? 'true' : 'false'; ?>">
                         <?php if ( ! empty( $t['highlight'] ) ) : ?>
                             <span class="ql-donation-tier__badge">Le plus soutenu</span>
                         <?php endif; ?>
                         <span class="ql-donation-tier__amount"><?php echo esc_html( $t['label'] ); ?></span>
                         <span class="ql-donation-tier__desc"><?php echo esc_html( $t['desc'] ); ?></span>
-                    </a>
+                    </button>
                 <?php endforeach; ?>
             </div>
 
-            <div class="ql-donation-block__custom">
-                <a class="ql-btn ql-btn--outline ql-btn--lg" href="<?php echo esc_url( $donation_url ); ?>" target="_blank" rel="noopener">
-                    Montant libre →
-                </a>
-                <span class="ql-donation-block__recurring">
-                    ou <a href="<?php echo esc_url( ql_donation_link( $donation_url, null, true ) ); ?>" target="_blank" rel="noopener">mettre en place un don mensuel</a>
-                </span>
+            <!-- Montant libre (input) -->
+            <div class="ql-donation-custom">
+                <label for="ql-custom-amount">Ou saisissez votre montant :</label>
+                <div class="ql-donation-custom__wrap">
+                    <input type="number" id="ql-custom-amount" min="1" step="1" placeholder="Libre" inputmode="numeric">
+                    <span class="ql-donation-custom__currency">€</span>
+                </div>
             </div>
+
+            <!-- Bouton PayPal (rendu par le SDK) -->
+            <div id="ql-paypal-button-container" class="ql-paypal-button"></div>
 
             <p class="ql-donation-block__tax">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-2px;margin-right:.3rem;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 <strong>Réduction fiscale 66 %</strong> si éligible — un don de 15 € vous coûte réellement 5,10 €.
             </p>
 
+            <p class="ql-donation-block__other">
+                Préférez un autre moyen ? <a href="<?php echo esc_url( $donation_url ); ?>" target="_blank" rel="noopener">Passer par HelloAsso →</a>
+            </p>
+
         </div>
     </section>
+
+    <?php if ( $paypal_client_id ) : ?>
+    <!-- PayPal JS SDK — rendu des boutons + logique du montant dynamique -->
+    <script src="https://www.paypal.com/sdk/js?client-id=<?php echo esc_attr( $paypal_client_id ); ?>&currency=EUR&intent=capture&disable-funding=credit,card"></script>
+    <script>
+    (function(){
+      if (!window.paypal) return;
+      var DEFAULT_AMOUNT = 15;
+      var selectedAmount = DEFAULT_AMOUNT;
+
+      var tiers  = document.querySelectorAll('.ql-donation-tier');
+      var input  = document.getElementById('ql-custom-amount');
+
+      function setActive(amount, fromInput) {
+        selectedAmount = Math.max(1, parseInt(amount, 10) || DEFAULT_AMOUNT);
+        tiers.forEach(function(t){
+          var match = parseInt(t.dataset.amount, 10) === selectedAmount && !fromInput;
+          t.classList.toggle('is-active', match);
+          t.setAttribute('aria-checked', match ? 'true' : 'false');
+        });
+      }
+
+      tiers.forEach(function(t){
+        t.addEventListener('click', function(){
+          if (input) input.value = '';
+          setActive(parseInt(t.dataset.amount, 10), false);
+        });
+      });
+      if (input) {
+        input.addEventListener('input', function(){
+          if (this.value) setActive(this.value, true);
+        });
+      }
+
+      paypal.Buttons({
+        style: {
+          layout: 'vertical',
+          color:  'gold',
+          shape:  'rect',
+          label:  'donate',
+          height: 48,
+        },
+        createOrder: function(data, actions){
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: selectedAmount.toFixed(2),
+                currency_code: 'EUR'
+              },
+              description: 'Don Quartier Libre — média indépendant'
+            }]
+          });
+        },
+        onApprove: function(data, actions){
+          return actions.order.capture().then(function(){
+            window.location.href = '<?php echo esc_url( add_query_arg( 'merci', '1', get_permalink() ) ); ?>';
+          });
+        },
+        onError: function(err){
+          console.error('PayPal error:', err);
+          alert('Une erreur est survenue avec PayPal. Réessayez ou utilisez HelloAsso.');
+        }
+      }).render('#ql-paypal-button-container');
+    })();
+    </script>
+    <?php endif; ?>
 
     <section class="ql-donation-alt">
         <div class="ql-container">
