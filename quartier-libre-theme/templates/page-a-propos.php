@@ -39,6 +39,23 @@ $contact_email = get_option( 'ql_contact_email', 'contact@quartierlibre.org' );
                 <h2 class="ql-section__title">Qui sommes-nous ?</h2>
             </header>
 
+            <?php
+            // Image à la une de la page /a-propos/ — mise par l'admin WP.
+            // S'affiche en bloc pleine largeur au-dessus du texte.
+            if ( has_post_thumbnail() ) : ?>
+                <figure class="ql-apropos-image">
+                    <?php the_post_thumbnail( 'ql-hero', array(
+                        'class'   => 'ql-apropos-image__img',
+                        'loading' => 'eager',
+                        'decoding'=> 'async',
+                    ) ); ?>
+                    <?php $cap = get_the_post_thumbnail_caption();
+                    if ( $cap ) : ?>
+                        <figcaption><?php echo esc_html( $cap ); ?></figcaption>
+                    <?php endif; ?>
+                </figure>
+            <?php endif; ?>
+
             <div class="ql-apropos-text">
                 <p class="ql-apropos-lead">
                     <strong>Quartier Libre</strong>, c'est une rédaction issue des quartiers HLM de Nantes

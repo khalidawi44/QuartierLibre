@@ -2801,6 +2801,32 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
   padding-left: 1.2rem;
   margin-bottom: 1.8rem !important;
 }
+
+/* Image dans la section « Qui sommes-nous ? » (featured image de la page) */
+.ql-apropos-image {
+  margin: 0 0 2rem;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--ql-radius-lg, 4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+}
+.ql-apropos-image__img,
+.ql-apropos-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: cover;
+  object-position: center;
+}
+.ql-apropos-image figcaption {
+  padding: .5rem 1rem;
+  font-size: .82rem;
+  color: var(--ql-muted);
+  background: var(--ql-paper-2);
+  border-top: 1px solid var(--ql-line);
+}
 .ql-apropos-text strong { color: var(--ql-accent); font-weight: 800; }
 .ql-apropos-block--dark .ql-apropos-text strong { color: var(--ql-yellow); }
 
