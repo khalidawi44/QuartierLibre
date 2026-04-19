@@ -740,7 +740,7 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
     // Variante du Bureau des plaintes (modal adaptée au contexte)
     // Frontmatter `plainte_variant: immigration` / police / logement / international / default
     if ( ! empty( $front['plainte_variant'] ) ) {
-        $allowed = array( 'default', 'immigration', 'police', 'logement', 'international' );
+        $allowed = array( 'default', 'immigration', 'police', 'logement', 'international', 'videosurveillance' );
         $pv = sanitize_key( (string) $front['plainte_variant'] );
         if ( in_array( $pv, $allowed, true ) ) {
             update_post_meta( $post_id, '_ql_plainte_variant', $pv );

@@ -88,6 +88,37 @@ function ql_plainte_variants() {
             ),
         ),
 
+        'videosurveillance' => array(
+            'label'    => 'Signaler — vidéosurveillance',
+            'kicker'   => 'Panoptique',
+            'subtitle' => 'Nouvelle caméra repérée ? Demande d\'effacement RGPD ? Contrôle au faciès suite à une alerte caméra ? <strong>Documentez, cartographiez, résistez.</strong>',
+            'type_options' => array(
+                'Signaler nouvelle caméra'      => 'Signaler une nouvelle caméra repérée',
+                'Contrôle suite alerte'         => 'Contrôle policier suite à une alerte caméra',
+                'Demande effacement RGPD'       => 'Demande d\'effacement d\'images (RGPD)',
+                'Accès aux images'              => 'Demande d\'accès aux images me concernant',
+                'Reconnaissance faciale'        => 'Témoignage sur reconnaissance faciale',
+                'Pression commerce'             => 'Pression sur un commerçant pour installer une caméra',
+                'Rejoindre cartographie'        => 'Rejoindre la cartographie collective',
+                'Autre'                         => 'Autre',
+            ),
+            'emergency_notice' => 'Pour saisir la CNIL : <a href="https://www.cnil.fr/fr/plaintes" class="ql-emergency-link" target="_blank" rel="noopener">cnil.fr/plaintes</a> · <a href="https://www.laquadrature.net/" class="ql-emergency-link" target="_blank" rel="noopener">La Quadrature du Net</a>',
+            'extra_fields' => array(
+                array(
+                    'name'        => 'ql_camera_location',
+                    'label'       => 'Adresse précise de la caméra',
+                    'placeholder' => 'Ex : Mail du Front populaire, Bellevue, à côté du #12',
+                    'type'        => 'text',
+                ),
+                array(
+                    'name'        => 'ql_camera_when',
+                    'label'       => 'Depuis quand est-elle là ?',
+                    'placeholder' => 'Ex : apparue en mars 2026',
+                    'type'        => 'text',
+                ),
+            ),
+        ),
+
         'international' => array(
             'label'    => 'Solidarité — international',
             'kicker'   => 'Solidarité',
@@ -166,6 +197,11 @@ function ql_plainte_current_variant_key() {
         if ( in_array( 'politique', $cats, true ) || in_array( 'justice', $cats, true ) ) {
             // Par défaut pour politique on ne suppose pas immigration (trop large)
             // Il faut que l'article précise `plainte_variant: immigration`
+        }
+        // Détection vidéosurveillance : tag 'videosurveillance' ou 'ia'
+        $tags = wp_get_post_tags( get_the_ID(), array( 'fields' => 'slugs' ) );
+        if ( in_array( 'videosurveillance', (array) $tags, true ) ) {
+            return 'videosurveillance';
         }
         if ( in_array( 'repression', $cats, true ) || in_array( 'breil', $cats, true ) ) {
             return 'police';

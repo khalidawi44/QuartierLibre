@@ -37,9 +37,11 @@ $V = function_exists( 'ql_plainte_current_variant' ) ? ql_plainte_current_varian
 $trigger_label = 'Bureau des plaintes';
 if ( ! empty( $V['kicker'] ) ) {
     $kicker_lower = strtolower( $V['kicker'] );
-    if ( $kicker_lower === 'urgence' )     $trigger_label = 'Aide & urgence';
-    elseif ( $kicker_lower === 'témoignage' ) $trigger_label = 'Signaler — police';
-    elseif ( $kicker_lower === 'habitat' )    $trigger_label = 'Signaler — logement';
+    if ( $kicker_lower === 'urgence' )         $trigger_label = 'Aide & urgence';
+    elseif ( $kicker_lower === 'témoignage' )   $trigger_label = 'Signaler — police';
+    elseif ( $kicker_lower === 'habitat' )      $trigger_label = 'Signaler — logement';
+    elseif ( $kicker_lower === 'panoptique' )   $trigger_label = 'Signaler — caméra';
+    elseif ( $kicker_lower === 'solidarité' )   $trigger_label = 'Solidarité';
 }
 $variant_key = function_exists( 'ql_plainte_current_variant_key' ) ? ql_plainte_current_variant_key() : 'default';
 ?>

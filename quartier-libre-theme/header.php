@@ -39,7 +39,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                 if ( $logo_id ) {
                     $src = wp_get_attachment_image_url( $logo_id, 'full' );
                     if ( $src ) {
-                        echo '<img src="' . esc_url( $src ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="ql-brand__logo">';
+                        // loading=eager + data-no-lazy pour éviter que NitroPack
+                        // masque le logo pendant sa stratégie de lazy-loading
+                        echo '<img src="' . esc_url( $src ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="ql-brand__logo" loading="eager" fetchpriority="high" data-no-lazy="1">';
                         $rendered = true;
                     }
                 }
