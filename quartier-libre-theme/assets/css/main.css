@@ -1273,27 +1273,62 @@ p  { margin: 0 0 1em; }
 }
 .ql-post__content li { margin-bottom: .4em; }
 
+/* Blockquote = témoignage pleine largeur sur image de fond.
+   Le fond = featured_image de l'article, avec voile sombre rouge
+   pour garantir la lisibilité du texte blanc centré. */
 .ql-post__content blockquote {
-  margin: 2.2em 0;
-  padding: 1.5rem 1.8rem 1.5rem 3.5rem;
+  margin: 3em calc(50% - 50vw);
+  padding: 4rem clamp(1rem, 5vw, 4rem);
   font-family: var(--ql-font-serif);
-  font-size: 1.3rem; font-style: italic; line-height: 1.55;
-  color: var(--ql-ink);
-  background: linear-gradient(135deg, var(--ql-paper-2) 0%, #f3ede1 100%);
-  border-left: 6px solid var(--ql-accent);
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  background-color: var(--ql-ink);
+  background-image:
+    linear-gradient(135deg, rgba(15,15,15,.82) 0%, rgba(224,40,16,.55) 100%),
+    var(--ql-hero-img, linear-gradient(135deg, #1a0a08, #0f0f0f));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
+  isolation: isolate;
 }
 .ql-post__content blockquote::before {
-  content: """;
-  position: absolute;
-  top: -.1em; left: .5rem;
-  font-size: 4.5rem;
-  line-height: 1;
-  color: var(--ql-accent);
+  content: "\201C"; /* guillemet ouvrant courbé */
+  display: block;
+  font-size: 6rem;
+  line-height: .8;
+  color: var(--ql-yellow);
   font-family: var(--ql-font-serif);
-  opacity: .7;
+  font-weight: 900;
+  font-style: normal;
+  margin-bottom: .2em;
+}
+.ql-post__content blockquote p {
+  max-width: 880px;
+  margin: 0 auto 1em;
+  position: relative;
 }
 .ql-post__content blockquote p:last-child { margin-bottom: 0; }
+.ql-post__content blockquote strong {
+  background: transparent;
+  color: var(--ql-yellow);
+}
+
+/* Sans featured_image ou hors single — fallback sobre */
+.ql-post__content blockquote:not([style]) {
+  /* la variable CSS gère le fallback via linear-gradient par défaut */
+}
+
+/* Mobile : on garde la pleine largeur mais padding réduit */
+@media (max-width: 600px) {
+  .ql-post__content blockquote {
+    padding: 2.5rem 1.2rem;
+  }
+  .ql-post__content blockquote::before { font-size: 4rem; }
+}
 
 /* ── Listes : puces rouges stylées ───────────────────────── */
 .ql-post__content ul {
@@ -2186,6 +2221,325 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 
 .ql-soutenir-page__extra { padding: 2.5rem 0 4rem; }
 .ql-soutenir-page__extra .ql-post__content { max-width: 720px; margin: 0 auto; }
+
+/* ── 18d. Page Connexion / Inscription ───────────────────── */
+.ql-connexion-page { background: var(--ql-paper); }
+
+.ql-connexion-hero {
+  background:
+    linear-gradient(135deg, var(--ql-ink) 0%, #1a0a08 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='2' cy='2' r='1' fill='%23ffffff' opacity='.08'/></svg>");
+  color: #fff;
+  padding: 3.5rem 0 2.5rem;
+  text-align: center;
+}
+.ql-connexion-hero__kicker {
+  display: inline-block;
+  background: var(--ql-accent);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: .35rem .9rem;
+  margin-bottom: 1rem;
+}
+.ql-connexion-hero__title {
+  font-family: var(--ql-font-serif);
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 .8rem;
+}
+.ql-connexion-hero__lede {
+  max-width: 560px;
+  margin: 0 auto;
+  color: #ddd;
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+.ql-connexion-hero__lede strong { color: var(--ql-yellow); }
+
+/* Messages (erreur / succès) */
+.ql-connexion-notice {
+  max-width: 720px;
+  margin: 2rem auto 0;
+  padding: 1rem 1.3rem;
+  border-left: 4px solid var(--ql-accent);
+  background: #fff5f3;
+  color: var(--ql-ink);
+  font-size: .95rem;
+}
+.ql-connexion-notice--success {
+  background: #f0f9ee;
+  border-left-color: #2d8a2d;
+}
+.ql-connexion-notice a { color: var(--ql-accent); font-weight: 600; }
+
+/* Grille 2 colonnes */
+.ql-connexion-forms { padding: 2.5rem 0 4rem; }
+.ql-connexion-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  max-width: 920px;
+  margin: 2.5rem auto 0;
+}
+@media (min-width: 780px) {
+  .ql-connexion-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.ql-connexion-card {
+  background: #fff;
+  border: 1px solid var(--ql-line);
+  border-top: 4px solid var(--ql-ink);
+  padding: 2rem 1.8rem 2.2rem;
+  position: relative;
+  transition: transform var(--ql-t), box-shadow var(--ql-t);
+}
+.ql-connexion-card--register { border-top-color: var(--ql-accent); }
+.ql-connexion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+.ql-connexion-card__badge {
+  position: absolute;
+  top: -14px; left: 1.8rem;
+  background: var(--ql-ink);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .3rem .7rem;
+}
+.ql-connexion-card__badge--accent { background: var(--ql-accent); }
+.ql-connexion-card__title {
+  font-family: var(--ql-font-serif);
+  font-weight: 900;
+  font-size: 1.6rem;
+  margin: .4rem 0 1.5rem;
+  color: var(--ql-ink);
+}
+
+/* Formulaires */
+.ql-connexion-form .ql-field { margin-bottom: 1.1rem; }
+.ql-connexion-form label {
+  display: block;
+  font-weight: 700;
+  font-size: .82rem;
+  color: var(--ql-ink);
+  margin-bottom: .35rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.ql-connexion-form input[type="text"],
+.ql-connexion-form input[type="email"],
+.ql-connexion-form input[type="password"] {
+  width: 100%;
+  padding: .75rem .9rem;
+  font: inherit;
+  font-size: 1rem;
+  border: 1.5px solid var(--ql-line);
+  background: #fff;
+  color: var(--ql-ink);
+  transition: border-color var(--ql-t), box-shadow var(--ql-t);
+}
+.ql-connexion-form input:focus {
+  outline: 0;
+  border-color: var(--ql-accent);
+  box-shadow: 0 0 0 3px rgba(224,40,16,.15);
+}
+.ql-connexion-form .ql-field--hint {
+  display: block;
+  font-size: .78rem;
+  color: var(--ql-muted);
+  margin-top: .3rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.ql-connexion-form .ql-field--check label {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  font-weight: 400;
+  font-size: .82rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #333;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.ql-connexion-form .ql-field--check input {
+  margin-top: .15rem;
+  accent-color: var(--ql-accent);
+}
+.ql-connexion-form__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .85rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.ql-connexion-form__remember {
+  display: flex !important;
+  align-items: center;
+  gap: .4rem;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  cursor: pointer;
+}
+.ql-connexion-form__remember input { accent-color: var(--ql-accent); }
+.ql-connexion-form__forgot {
+  color: var(--ql-accent);
+  text-decoration: underline;
+  font-weight: 600;
+}
+.ql-connexion-form__submit { width: 100%; }
+.ql-connexion-form__note {
+  background: var(--ql-paper-2);
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--ql-muted);
+  font-size: .92rem;
+  color: #444;
+}
+.ql-connexion-form__note a {
+  color: var(--ql-accent);
+  font-weight: 600;
+}
+
+.ql-btn--ink {
+  background: var(--ql-ink);
+  color: #fff;
+  border: 2px solid var(--ql-ink);
+}
+.ql-btn--ink:hover {
+  background: #fff;
+  color: var(--ql-ink);
+}
+
+.ql-connexion-page__footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--ql-muted);
+  font-size: .92rem;
+}
+.ql-connexion-page__footer a {
+  color: var(--ql-accent);
+  font-weight: 600;
+}
+
+/* ── 18e. Commentaires sous article ──────────────────────── */
+.ql-comments-wrap { margin-top: 2.5rem; margin-bottom: 2rem; }
+.ql-comments {
+  background: var(--ql-paper-2);
+  padding: 2rem clamp(1.2rem, 3vw, 2.5rem);
+  border-top: 4px solid var(--ql-accent);
+}
+.ql-comments .comments-title,
+.ql-comments h2 {
+  font-family: var(--ql-font-serif);
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem;
+  padding-top: 1rem;
+  text-align: center;
+  position: relative;
+}
+.ql-comments .comments-title::before,
+.ql-comments h2::before {
+  content: "★";
+  display: block;
+  color: var(--ql-accent);
+  font-size: 1rem;
+  margin-bottom: .6rem;
+}
+.ql-comments .comments-title::after,
+.ql-comments h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--ql-accent) 50%, transparent 100%);
+  margin: .6rem auto 0;
+}
+.ql-comments ol.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+.ql-comments .comment {
+  background: #fff;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--ql-accent);
+}
+.ql-comments .comment-author { font-weight: 700; }
+.ql-comments .comment-meta {
+  font-size: .8rem;
+  color: var(--ql-muted);
+  margin-bottom: .6rem;
+}
+.ql-comments form#commentform {
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid var(--ql-line);
+}
+.ql-comments form#commentform textarea,
+.ql-comments form#commentform input[type="text"],
+.ql-comments form#commentform input[type="email"],
+.ql-comments form#commentform input[type="url"] {
+  width: 100%;
+  padding: .65rem .8rem;
+  border: 1.5px solid var(--ql-line);
+  font: inherit;
+  background: #fff;
+}
+.ql-comments form#commentform textarea:focus,
+.ql-comments form#commentform input:focus {
+  outline: 0;
+  border-color: var(--ql-accent);
+  box-shadow: 0 0 0 3px rgba(224,40,16,.15);
+}
+.ql-comments form#commentform label {
+  display: block;
+  font-weight: 700;
+  font-size: .82rem;
+  margin-bottom: .3rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.ql-comments form#commentform .comment-form-comment,
+.ql-comments form#commentform .comment-form-author,
+.ql-comments form#commentform .comment-form-email,
+.ql-comments form#commentform .comment-form-url {
+  margin-bottom: 1rem;
+}
+.ql-comments form#commentform .form-submit input[type="submit"] {
+  background: var(--ql-accent);
+  color: #fff;
+  border: 0;
+  padding: .8rem 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  cursor: pointer;
+  transition: background var(--ql-t);
+}
+.ql-comments form#commentform .form-submit input[type="submit"]:hover {
+  background: #c71f05;
+}
+.ql-comments .logged-in-as,
+.ql-comments .comment-notes {
+  font-size: .85rem;
+  color: var(--ql-muted);
+  margin-bottom: 1rem;
+}
+.ql-comments .logged-in-as a { color: var(--ql-accent); }
 
 /* ── 19. Utilitaires & motion ─────────────────────────────── */
 .ql-muted { color: var(--ql-muted); }

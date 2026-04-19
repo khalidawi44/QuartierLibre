@@ -239,8 +239,50 @@ add_action( 'init', function () {
 add_filter( 'theme_page_templates', function ( $templates ) {
     $templates['templates/page-bureau-plaintes.php'] = 'Bureau des Plaintes';
     $templates['templates/page-soutenir.php']        = 'Soutenir (dons)';
+    $templates['templates/page-connexion.php']       = 'Connexion / Inscription';
     $templates['templates/page-pleine-largeur.php']  = 'Pleine largeur';
     return $templates;
+} );
+
+// Auto-création de la page /connexion/ et assignation du template
+add_action( 'init', function () {
+    $existing = get_page_by_path( 'connexion' );
+    if ( $existing ) {
+        if ( ! get_page_template_slug( $existing->ID ) ) {
+            update_post_meta( $existing->ID, '_wp_page_template', 'templates/page-connexion.php' );
+        }
+        return;
+    }
+    $pid = wp_insert_post( array(
+        'post_title'   => 'Connexion',
+        'post_name'    => 'connexion',
+        'post_status'  => 'publish',
+        'post_type'    => 'page',
+        'post_content' => 'Espace membres — connexion et inscription.',
+    ) );
+    if ( $pid && ! is_wp_error( $pid ) ) {
+        update_post_meta( $pid, '_wp_page_template', 'templates/page-connexion.php' );
+    }
+}, 28 );
+
+// Redirige wp-login.php vers /connexion/ (sauf si déjà un POST de
+// connexion en cours OU un admin qui se connecte)
+add_action( 'login_init', function () {
+    // Laisser passer POST (soumission du formulaire) et les actions spéciales
+    if ( $_SERVER['REQUEST_METHOD'] !== 'GET' ) return;
+    $action = isset( $_GET['action'] ) ? $_GET['action'] : '';
+    // Actions à laisser sur wp-login.php (réinitialisation mdp, logout, confirm, etc.)
+    $pass_through = array( 'logout', 'lostpassword', 'retrievepassword', 'rp', 'resetpass', 'postpass', 'confirm_admin_email' );
+    if ( in_array( $action, $pass_through, true ) ) return;
+    // Sinon, on renvoie vers /connexion/ en conservant les paramètres
+    $connexion = get_page_by_path( 'connexion' );
+    if ( ! $connexion ) return;
+    $url = get_permalink( $connexion );
+    if ( ! empty( $_GET ) ) {
+        $url = add_query_arg( $_GET, $url );
+    }
+    wp_safe_redirect( $url );
+    exit;
 } );
 
 // Auto-assigne le template Soutenir à la page /soutenir/ si elle existe
@@ -282,11 +324,14 @@ add_filter( 'body_class', function ( $classes ) {
 //  JSON-LD, canonical, sitemap, robots.txt. On ajoute ce qui reste.)
 
 // Preload du featured image sur les single posts — gain LCP
+// + CSS variable --ql-hero-img exposée pour réutilisation dans les
+//   blockquotes (fond image des témoignages)
 add_action( 'wp_head', function () {
     if ( ! is_singular( 'post' ) || ! has_post_thumbnail() ) return;
     $src = get_the_post_thumbnail_url( null, 'ql-hero' );
     if ( ! $src ) return;
     echo '<link rel="preload" as="image" href="' . esc_url( $src ) . '" fetchpriority="high">' . "\n";
+    echo '<style>.ql-single{--ql-hero-img:url(' . esc_url( $src ) . ')}</style>' . "\n";
 }, 3 );
 
 // Alt text de secours si vide : utilise le titre de l'article

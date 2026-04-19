@@ -119,6 +119,13 @@ get_header(); ?>
 
     </div><!-- /.ql-post__body -->
 
+    <?php // ── Commentaires : juste sous l'article, avant les articles liés ── ?>
+    <?php if ( comments_open() || get_comments_number() ) : ?>
+        <div class="ql-container ql-comments-wrap">
+            <div class="ql-comments"><?php comments_template(); ?></div>
+        </div>
+    <?php endif; ?>
+
     <?php
     // ── Articles liés au sujet : priorité aux tags partagés ─────
     $current_id = get_the_ID();
@@ -164,11 +171,6 @@ get_header(); ?>
     wp_reset_postdata();
     ?>
 
-    <?php if ( comments_open() || get_comments_number() ) : ?>
-        <div class="ql-container">
-            <div class="ql-comments"><?php comments_template(); ?></div>
-        </div>
-    <?php endif; ?>
 
 </article>
 
