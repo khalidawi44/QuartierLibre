@@ -131,14 +131,17 @@
   }
 
   // ── Auto-popup plainte en fin d'article (single.php) ────────
-  // Quand le lecteur atteint le bas de l'article (fin de .ql-post__content),
-  // on ouvre la modal. Une seule fois par session pour ne pas harceler.
-  // Clé sessionStorage versionnée (v3) : incrémenter si on modifie la
-  // logique pour reset chez les visiteurs déjà flaggés.
+  // Firing UNE FOIS PAR ARTICLE (pas par session globale). La clé
+  // sessionStorage intègre le pathname : chaque article garde son
+  // propre flag. Résultat :
+  //   - 1ère visite de /bellevue-.../     → popup fire
+  //   - 2ème visite même session          → popup ne fire pas (respect)
+  //   - 1ère visite de /breil-.../        → popup fire (autre clé)
+  //   - Nouvelle session                  → toutes les clés reset
   var singlePostContent = document.querySelector('.ql-post__content');
   var plainteBtnAuto = document.querySelector('.ql-plainte-trigger');
   if (singlePostContent && plainteBtnAuto && 'IntersectionObserver' in window) {
-    var STORAGE_KEY = 'ql-plainte-shown-v3';
+    var STORAGE_KEY = 'ql-plainte-seen:' + window.location.pathname;
     var alreadyShown = false;
     try { alreadyShown = !!sessionStorage.getItem(STORAGE_KEY); } catch (e) {}
 
@@ -153,8 +156,6 @@
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
-            // Clic programmé sur le trigger — ouvre la modal via le
-            // handler déjà installé.
             plainteBtnAuto.click();
             plainteObs.disconnect();
           }
@@ -162,6 +163,14 @@
       }, { threshold: 0, rootMargin: '0px 0px 100px 0px' });
       plainteObs.observe(sentinel);
     }
+
+    // Nettoyage : supprime les anciennes clés globales (v1, v2, v3)
+    // qui empêchaient le popup de fire sur d'autres articles.
+    try {
+      sessionStorage.removeItem('ql-plainte-shown');
+      sessionStorage.removeItem('ql-plainte-shown-v2');
+      sessionStorage.removeItem('ql-plainte-shown-v3');
+    } catch (e) {}
   }
 
   // ── Liens externes dans les articles → popup petite taille ──
