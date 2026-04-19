@@ -146,48 +146,15 @@ $paypal_client_id = get_option( 'ql_paypal_client_id', '' );
         </div>
     </section>
 
-    <!-- UNE RÉDACTION (fusionnée avec « Qui sommes-nous ») -->
+    <!-- UNE RÉDACTION + Qui sommes-nous (en bas de la colonne droite) -->
     <section class="ql-apropos-block ql-apropos-block--dark">
         <div class="ql-container ql-apropos-block__inner">
             <header class="ql-section__head ql-section__head--light">
                 <h2 class="ql-section__title">Une rédaction qui vit dans les quartiers</h2>
             </header>
 
-            <?php if ( has_post_thumbnail() ) : ?>
-                <figure class="ql-apropos-image">
-                    <?php the_post_thumbnail( 'ql-hero', array(
-                        'class'    => 'ql-apropos-image__img',
-                        'loading'  => 'lazy',
-                        'decoding' => 'async',
-                    ) ); ?>
-                </figure>
-            <?php endif; ?>
-
-            <div class="ql-apropos-text">
-                <p class="ql-apropos-lead">
-                    <strong>Quartier Libre</strong> — rédaction issue des quartiers HLM de Nantes
-                    (Bellevue, Malakoff, Dervallières, Clos Toreau, Bottière-Pin Sec, Breil,
-                    Bout des Landes, Port Boyer, Halvêque, Ranzay, Pilotière).
-                </p>
-
-                <p>
-                    Nos journalistes ne parachutent pas depuis Paris pour écrire un sujet « cité » avant de
-                    rentrer à la maison. Chacun·e est spécialisé·e sur <strong>un quartier précis</strong>
-                    où il ou elle vit, enseigne, milite, élève ses enfants. On écrit depuis <em>nos</em>
-                    immeubles, <em>nos</em> halls, <em>nos</em> écoles — pas depuis un open-space parisien.
-                </p>
-
-                <p>
-                    Nous existons parce qu'aucun média dominant ne parle des quartiers populaires sans les
-                    caricaturer. Enquêtes de terrain, témoignages anonymes, contre-récits, archives locales :
-                    <strong>nous documentons, nous publions, nous relayons</strong>. Notre ligne est
-                    <strong>militante de gauche, antiraciste, anticapitaliste, anticoloniale</strong> —
-                    nous ne prétendons pas à une neutralité qui n'existe pas : un média, comme un quartier,
-                    a un camp. Celui des habitant·es contre celui des puissant·es.
-                </p>
-            </div>
-
             <div class="ql-apropos-roster">
+                <!-- COLONNE GAUCHE : Liste des journalistes quartier -->
                 <div class="ql-apropos-roster__col">
                     <h3>Quartiers populaires</h3>
                     <ul>
@@ -205,12 +172,49 @@ $paypal_client_id = get_option( 'ql_paypal_client_id', '' );
                         <li><strong>Sofia Bensalem</strong> — Pilotière</li>
                     </ul>
                 </div>
+
+                <!-- COLONNE DROITE : Correspondant·es + bloc Qui sommes-nous en dessous -->
                 <div class="ql-apropos-roster__col">
                     <h3>Correspondant·es</h3>
                     <ul>
                         <li><strong>Rachida Ben Arfa</strong> — International<br><small>Gaza, Soudan, Palestine, résistances globales</small></li>
                         <li><strong>Julien Moreau</strong> — National<br><small>Politique française, luttes sociales</small></li>
                     </ul>
+
+                    <!-- Bloc Qui sommes-nous intégré ici (sous les correspondants) -->
+                    <div class="ql-apropos-side-block">
+                        <h3>Qui sommes-nous ?</h3>
+
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <figure class="ql-apropos-side-image">
+                                <?php the_post_thumbnail( 'ql-card', array(
+                                    'class'    => 'ql-apropos-side-image__img',
+                                    'loading'  => 'lazy',
+                                    'decoding' => 'async',
+                                ) ); ?>
+                            </figure>
+                        <?php endif; ?>
+
+                        <p class="ql-apropos-side-block__lead">
+                            <strong>Quartier Libre</strong> — rédaction issue des quartiers HLM de Nantes.
+                        </p>
+                        <p>
+                            Nos journalistes ne parachutent pas depuis Paris. Chacun·e est spécialisé·e
+                            sur <strong>un quartier précis</strong> où il ou elle vit, enseigne, milite,
+                            élève ses enfants. Nous écrivons depuis <em>nos</em> immeubles, <em>nos</em>
+                            halls, <em>nos</em> écoles.
+                        </p>
+                        <p>
+                            Nous existons parce qu'aucun média dominant ne parle des quartiers populaires
+                            sans les caricaturer. Enquêtes de terrain, témoignages anonymes, contre-récits :
+                            <strong>nous documentons, publions, relayons</strong>.
+                        </p>
+                        <p>
+                            Ligne <strong>militante de gauche, antiraciste, anticapitaliste,
+                            anticoloniale</strong>. Un média, comme un quartier, a un camp — celui des
+                            habitant·es contre celui des puissant·es.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

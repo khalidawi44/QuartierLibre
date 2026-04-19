@@ -2793,26 +2793,23 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 .ql-apropos-page { background: var(--ql-paper); }
 
 /* Hero : photo banderole CA (les-banderoles-du-mouvement, 2019).
-   Zoom sur la banderole en haut de l'image via background-size > cover
-   et background-position haute. */
+   Image affichée en cover naturel, position centrée verticalement
+   pour maximiser la visibilité de la banderole. Overlay léger. */
 .ql-apropos-hero {
   background-color: var(--ql-ink);
   background-image:
-    linear-gradient(135deg, rgba(15,15,15,.72) 0%, rgba(224,40,16,.55) 100%),
+    linear-gradient(135deg, rgba(15,15,15,.60) 0%, rgba(224,40,16,.45) 100%),
     url("../img/hero-apropos.jpg");
-  /* 180% de largeur pour cropper et zoomer sur la banderole (haut image).
-     Position horizontale centrée, verticale sur 20 % d'en haut (là où
-     la banderole est tenue). */
-  background-size: auto 100%, 180% auto;
-  background-position: center center, center 18%;
+  background-size: cover, cover;
+  background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;
   background-attachment: scroll, scroll;
   color: #fff;
-  padding: 6rem 0 5rem;
+  padding: 5rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
-  min-height: 360px;
+  min-height: 560px;            /* hero plus grand → plus d'image visible */
   display: flex;
   align-items: center;
 }
@@ -3155,6 +3152,55 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 .ql-apropos-roster li:last-child { border-bottom: 0; }
 .ql-apropos-roster li strong { color: #fff; font-weight: 700; }
 .ql-apropos-roster li small { color: #aaa; font-size: .82rem; }
+
+/* Bloc « Qui sommes-nous » placé sous les correspondants (colonne droite) */
+.ql-apropos-side-block {
+  margin-top: 2.5rem;
+  padding: 1.4rem 1.3rem;
+  background: rgba(255, 255, 255, .05);
+  border-left: 3px solid var(--ql-accent);
+  color: #ddd;
+}
+.ql-apropos-side-block h3 {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--ql-yellow);
+  margin: 0 0 1rem;
+  padding: 0 0 .5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, .12);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.ql-apropos-side-block p {
+  font-size: .92rem;
+  line-height: 1.55;
+  margin: 0 0 .8em;
+  color: #ddd;
+}
+.ql-apropos-side-block p:last-child { margin-bottom: 0; }
+.ql-apropos-side-block p strong { color: var(--ql-yellow); font-weight: 700; }
+.ql-apropos-side-block p em { color: #fff; font-style: italic; }
+.ql-apropos-side-block__lead {
+  font-size: 1rem !important;
+  font-weight: 700;
+  color: #fff !important;
+}
+.ql-apropos-side-image {
+  margin: 0 0 1rem;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 6px 20px rgba(224, 40, 16, .25);
+}
+.ql-apropos-side-image__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* Fondateur (Khalid) — distinction visuelle */
 .ql-apropos-roster__founder {
