@@ -1,7 +1,7 @@
 ---
 title: "Malakoff : la « rénovation urbaine » comme cheval de Troie de la gentrification"
 slug: "malakoff-renovation-urbaine-gentrification"
-category: "infos-locale"
+category: "malakoff"
 tags:
   - quartier-malakoff
   - renovation-urbaine

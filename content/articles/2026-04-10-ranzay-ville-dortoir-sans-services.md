@@ -1,7 +1,7 @@
 ---
 title: "Ranzay : ville-dortoir, désert associatif — la fatigue d'un quartier oublié"
 slug: "ranzay-ville-dortoir-sans-services"
-category: "infos-locale"
+category: "ranzay"
 tags:
   - quartier-ranzay
   - services-publics

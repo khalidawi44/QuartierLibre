@@ -1,7 +1,7 @@
 ---
 title: "LE CADAVRE POLITIQUE DU PS : UN MORT QUI GESTICULE ENCORE"
 slug: "le-cadavre-politique-du-ps-un-mort-qui-gesticule-encore"
-category: "france"
+category: "politique"
 tags:
   - dissolution
   - partie-socialiste

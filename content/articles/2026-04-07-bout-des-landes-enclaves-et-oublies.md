@@ -1,7 +1,7 @@
 ---
 title: "Bout des Landes : enclavés, oubliés — le quartier qu'on ne dessert plus"
 slug: "bout-des-landes-enclaves-et-oublies"
-category: "infos-locale"
+category: "bout-des-landes"
 tags:
   - quartier-bout-des-landes
   - transports

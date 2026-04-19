@@ -1,7 +1,7 @@
 ---
 title: "GAZA : FAMINE DÉCLARÉE, LES RESPONSABLES DOIVENT RENDRE DES COMPTES"
 slug: "gaza-famine-declaree-les-responsables-doivent-rendre-des-comptes"
-category: "international"
+category: "famine"
 tags:
   - gaza
   - israel

@@ -26,8 +26,12 @@ if ( $une_q->have_posts() ) {
     while ( $une_q->have_posts() ) {
         $une_q->the_post();
         $cat = ql_primary_category();
-        $cat_key = $cat ? $cat->term_id : 0;
-        if ( isset( $cat_seen[ $cat_key ] ) ) continue; // déjà une une pour cette catégorie
+        // Dédupe par catégorie RACINE (top-level) : un article « bellevue »
+        // et un article « malakoff » (tous deux enfants d'infos-locale) ne
+        // peuvent pas être tous les deux en une — un seul par top-level.
+        $root = $cat ? ql_root_category( $cat ) : null;
+        $cat_key = $root ? $root->term_id : ( $cat ? $cat->term_id : 0 );
+        if ( isset( $cat_seen[ $cat_key ] ) ) continue;
         $cat_seen[ $cat_key ] = true;
         $slides[] = array(
             'id'     => get_the_ID(),

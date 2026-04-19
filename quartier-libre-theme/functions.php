@@ -180,17 +180,26 @@ add_filter( 'wp_nav_menu_objects', function ( $items, $args ) {
     } ) );
 }, 10, 2 );
 
-// ── 4. Catégories par défaut (Local / France / International / Luttes) ─
+// ── 4. Catégories par défaut — 5 parents + sous-catégories ─────
+// L'arborescence réelle est définie dans ql_categories_tree() (ql-sync.php)
+// et créée via ql_ensure_categories(). Ici on ne fait que déclencher
+// cette création à l'activation du thème.
 add_action( 'after_switch_theme', function () {
-    $cats = array(
-        'local'         => 'Info locale',
-        'france'        => 'France',
-        'international' => 'International',
-        'luttes'        => 'Luttes',
-    );
-    foreach ( $cats as $slug => $name ) {
-        if ( ! term_exists( $slug, 'category' ) ) {
-            wp_insert_term( $name, 'category', array( 'slug' => $slug ) );
+    if ( function_exists( 'ql_ensure_categories' ) ) {
+        ql_ensure_categories();
+    } else {
+        // Fallback minimal si ql-sync.php pas encore chargé
+        $cats = array(
+            'infos-locale'  => 'Info locale',
+            'france'        => 'France',
+            'international' => 'International',
+            'luttes'        => 'Luttes',
+            'histoire'      => 'Histoire',
+        );
+        foreach ( $cats as $slug => $name ) {
+            if ( ! term_exists( $slug, 'category' ) ) {
+                wp_insert_term( $name, 'category', array( 'slug' => $slug ) );
+            }
         }
     }
 } );
@@ -427,8 +436,29 @@ function ql_primary_category( $post_id = null ) {
     $post_id = $post_id ?: get_the_ID();
     $cats    = get_the_category( $post_id );
     if ( empty( $cats ) ) { return null; }
-    // On privilégie la catégorie la plus spécifique (celle avec le plus d'articles parent inclus)
+    // On privilégie les sous-catégories (parent > 0 = plus spécifiques).
+    // Ex : un article dans « bellevue » (enfant d'« infos-locale »)
+    // affiche « Bellevue » comme badge, pas « Info locale ».
+    foreach ( $cats as $c ) {
+        if ( (int) $c->parent > 0 ) return $c;
+    }
     return $cats[0];
+}
+
+/**
+ * Remonte à la catégorie racine (top-level) depuis n'importe quelle
+ * sous-catégorie. Utile pour grouper : l'article « bellevue » a pour
+ * racine « infos-locale ».
+ */
+function ql_root_category( $cat ) {
+    if ( ! $cat || is_wp_error( $cat ) ) return null;
+    $guard = 0;
+    while ( (int) $cat->parent > 0 && $guard++ < 10 ) {
+        $parent = get_term( $cat->parent, 'category' );
+        if ( ! $parent || is_wp_error( $parent ) ) break;
+        $cat = $parent;
+    }
+    return $cat;
 }
 
 // ── 12. Traitement du formulaire Bureau des Plaintes ───────────

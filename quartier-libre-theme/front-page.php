@@ -19,12 +19,14 @@ $has_any = (int) wp_count_posts()->publish > 0;
         <?php get_template_part( 'template-parts/hero-carousel' ); ?>
 
         <?php
-        // Détection auto des 4 catégories les plus actives (slug dynamique).
+        // Détection auto des 4 catégories principales (top-level uniquement,
+        // les sous-catégories restent accessibles via le menu).
         $top_cats = get_categories( array(
             'orderby'    => 'count',
             'order'      => 'DESC',
             'number'     => 4,
-            'hide_empty' => true,
+            'hide_empty' => false, // top-level peut être vide si tous les articles sont en sous-cat
+            'parent'     => 0,     // top-level seulement
         ) );
         $i = 0;
         foreach ( $top_cats as $cat ) {

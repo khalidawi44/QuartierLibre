@@ -1,7 +1,7 @@
 ---
 title: "🇵🇸 GÉNOCIDE À GAZA : Appel à la Résistance"
 slug: "heritages-de-la-resistance"
-category: "international"
+category: "resistance"
 tags:
   - gaza
   - mandela

@@ -1,7 +1,7 @@
 ---
 title: "🦞 Homard en papier mâché, parapluies vs valises de Kadhafi : prison pour les pauvres, passe-droit pour les puissants"
 slug: "homard-en-papier-mache-parapluies-vs-valises-de-kadhafi-prison-pour-les-pauvres-passe-droit-pour-les-puissants"
-category: "france"
+category: "justice"
 tags:
   - association-malfaiteur
   - homard

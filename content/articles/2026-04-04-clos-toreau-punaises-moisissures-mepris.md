@@ -1,7 +1,7 @@
 ---
 title: "Clos Toreau : punaises, moisissures, mépris — le quotidien des locataires de NMH"
 slug: "clos-toreau-punaises-moisissures-mepris"
-category: "infos-locale"
+category: "clos-toreau"
 tags:
   - quartier-clos-toreau
   - insalubrite-publique

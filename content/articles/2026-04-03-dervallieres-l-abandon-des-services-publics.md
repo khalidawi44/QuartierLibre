@@ -1,7 +1,7 @@
 ---
 title: "Dervallières : l'abandon méthodique des services publics"
 slug: "dervallieres-abandon-services-publics"
-category: "infos-locale"
+category: "dervallieres"
 tags:
   - quartier-dervallieres
   - services-publics

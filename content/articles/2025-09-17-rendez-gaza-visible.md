@@ -1,7 +1,7 @@
 ---
 title: "🇵🇸 Rendez Gaza visible"
 slug: "rendez-gaza-visible"
-category: "international"
+category: "genocide"
 tags:
   - gaza
   - palestine

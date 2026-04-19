@@ -1,7 +1,7 @@
 ---
 title: "Bloquons tout à Nantes : rappel des rendez-vous"
 slug: "bloquons-tout-a-nantes-rappel-des-rendez-vous"
-category: "luttes"
+category: "mobilisations"
 tags:
   - 10septembre
   - blocage

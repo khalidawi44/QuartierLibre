@@ -1,7 +1,7 @@
 ---
 title: "Halvêque : quand les médias bourgeois fabriquent un « territoire perdu »"
 slug: "halveque-stigmatisation-mediatique"
-category: "infos-locale"
+category: "halveque"
 tags:
   - quartier-halveque
   - medias

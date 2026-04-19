@@ -1,7 +1,7 @@
 ---
 title: "Écologie de façade, misère derrière les murs : où passe l’argent des quartiers populaires ?"
 slug: "ecologie-de-facade-misere-derriere-les-murs"
-category: "infos-locale"
+category: "bottiere-pin-sec"
 tags:
   - johanna-rolland
   - logement

@@ -1,7 +1,7 @@
 ---
 title: "Port Boyer : étudiants précaires, marchands de sommeil, silence universitaire"
 slug: "port-boyer-etudiants-precaires-marchands-de-sommeil"
-category: "infos-locale"
+category: "port-boyer"
 tags:
   - quartier-port-boyer
   - logement

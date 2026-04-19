@@ -374,7 +374,107 @@ function ql_create_authors() {
     return array( 'created' => $created, 'updated' => $updated );
 }
 
+// ── Arborescence des catégories (parent + enfants) ────────────
+// Source unique de vérité pour la taxonomie du site. Utilisé par
+// ql_ensure_categories() (création/maj sur sync) et par le menu
+// fallback du header.
+function ql_categories_tree() {
+    return array(
+        'infos-locale' => array(
+            'label'    => 'Info locale',
+            'children' => array(
+                'bellevue'          => 'Bellevue',
+                'malakoff'          => 'Malakoff',
+                'dervallieres'      => 'Dervallières',
+                'clos-toreau'       => 'Clos Toreau',
+                'bottiere-pin-sec'  => 'Bottière — Pin Sec',
+                'breil'             => 'Breil',
+                'bout-des-landes'   => 'Bout des Landes',
+                'port-boyer'        => 'Port Boyer',
+                'halveque'          => 'Halvêque',
+                'ranzay'            => 'Ranzay',
+                'pilotiere'         => 'Pilotière',
+                'transports'        => 'Transports',
+                'autres-villes'     => 'Autres villes',
+            ),
+        ),
+        'france' => array(
+            'label'    => 'France',
+            'children' => array(
+                'politique'   => 'Politique',
+                'justice'     => 'Justice',
+                'fait-divers' => 'Fait divers',
+                'economie'    => 'Économie',
+                'societe'     => 'Société',
+            ),
+        ),
+        'international' => array(
+            'label'    => 'International',
+            'children' => array(
+                'guerre'     => 'Guerre',
+                'genocide'   => 'Génocide',
+                'famine'     => 'Famine',
+                'resistance' => 'Résistance',
+            ),
+        ),
+        'luttes' => array(
+            'label'    => 'Luttes',
+            'children' => array(
+                'mobilisations' => 'Mobilisations',
+                'repression'    => 'Répression',
+                'solidarite'    => 'Solidarité',
+            ),
+        ),
+        'histoire' => array(
+            'label'    => 'Histoire',
+            'children' => array(),
+        ),
+    );
+}
+
+function ql_ensure_categories() {
+    $tree = ql_categories_tree();
+    $created = 0;
+    foreach ( $tree as $parent_slug => $parent_data ) {
+        $parent = get_term_by( 'slug', $parent_slug, 'category' );
+        if ( ! $parent ) {
+            $r = wp_insert_term( $parent_data['label'], 'category', array( 'slug' => $parent_slug ) );
+            if ( is_wp_error( $r ) ) continue;
+            $parent_id = (int) $r['term_id'];
+            $created++;
+        } else {
+            $parent_id = (int) $parent->term_id;
+        }
+
+        if ( empty( $parent_data['children'] ) ) continue;
+
+        foreach ( $parent_data['children'] as $child_slug => $child_name ) {
+            $child = get_term_by( 'slug', $child_slug, 'category' );
+            if ( ! $child ) {
+                $r = wp_insert_term( $child_name, 'category', array(
+                    'slug'   => $child_slug,
+                    'parent' => $parent_id,
+                ) );
+                if ( ! is_wp_error( $r ) ) $created++;
+            } else {
+                // Si le parent est différent, on corrige (re-parentage)
+                if ( (int) $child->parent !== $parent_id ) {
+                    wp_update_term( $child->term_id, 'category', array( 'parent' => $parent_id ) );
+                }
+            }
+        }
+    }
+    return $created;
+}
+
 function ql_do_content_sync() {
+    // Crée/met à jour l'arborescence des catégories
+    $cats_created = ql_ensure_categories();
+    if ( $cats_created > 0 ) {
+        echo '<div class="notice notice-info"><p>Catégories : <strong>'
+            . (int) $cats_created . '</strong> nouvelle(s) créée(s).</p></div>';
+    }
+
     // Crée/met à jour la rédaction (13 auteurs) avant tout upsert d'article
     $authors_result = ql_create_authors();
     if ( $authors_result['created'] > 0 || $authors_result['updated'] > 0 ) {

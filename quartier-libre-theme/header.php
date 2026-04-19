@@ -63,13 +63,27 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                         'depth'          => 2,
                     ) );
                 } else {
+                    // Fallback : menu construit à partir de l'arborescence de
+                    // catégories (parent + sous-menu des enfants).
                     echo '<ul class="ql-nav__list">';
-                    $cats = array( 'local' => 'Info locale', 'france' => 'France', 'international' => 'International', 'luttes' => 'Luttes' );
-                    foreach ( $cats as $slug => $label ) {
-                        $term = get_term_by( 'slug', $slug, 'category' );
-                        if ( $term ) {
-                            echo '<li><a href="' . esc_url( get_term_link( $term ) ) . '">' . esc_html( $label ) . '</a></li>';
+                    $tree = function_exists( 'ql_categories_tree' ) ? ql_categories_tree() : array();
+                    foreach ( $tree as $parent_slug => $parent_data ) {
+                        $term = get_term_by( 'slug', $parent_slug, 'category' );
+                        if ( ! $term ) continue;
+                        $has_children = ! empty( $parent_data['children'] );
+                        $li_class = $has_children ? ' class="menu-item-has-children"' : '';
+                        echo '<li' . $li_class . '>';
+                        echo '<a href="' . esc_url( get_term_link( $term ) ) . '">' . esc_html( $parent_data['label'] ) . '</a>';
+                        if ( $has_children ) {
+                            echo '<ul class="sub-menu">';
+                            foreach ( $parent_data['children'] as $child_slug => $child_label ) {
+                                $child = get_term_by( 'slug', $child_slug, 'category' );
+                                if ( ! $child ) continue;
+                                echo '<li><a href="' . esc_url( get_term_link( $child ) ) . '">' . esc_html( $child_label ) . '</a></li>';
+                            }
+                            echo '</ul>';
                         }
+                        echo '</li>';
                     }
                     echo '</ul>';
                 }

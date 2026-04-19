@@ -1,7 +1,7 @@
 ---
 title: "Keolis Nantes : La privatisation à marche forcée"
 slug: "keolis-nantes-la-privatisation-a-marche-forcee"
-category: "infos-locale"
+category: "transports"
 tags:
   - lrem
   - lutte-social
