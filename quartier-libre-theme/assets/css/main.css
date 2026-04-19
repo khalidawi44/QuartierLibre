@@ -397,6 +397,45 @@ p  { margin: 0 0 1em; }
 /* ── 7. Main ────────────────────────────────────────────────── */
 .ql-main { padding: 2rem 0 4rem; min-height: 60vh; }
 
+/* ── 7a. Header « À la une » ─────────────────────────────── */
+.ql-une-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0 auto 1.2rem;
+  padding: 0 .5rem;
+}
+.ql-une-header__rail {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--ql-accent) 50%, transparent 100%);
+}
+.ql-une-header__rail:first-child {
+  background: linear-gradient(90deg, transparent 0%, var(--ql-accent) 100%);
+}
+.ql-une-header__rail:last-child {
+  background: linear-gradient(90deg, var(--ql-accent) 0%, transparent 100%);
+}
+.ql-une-header__title {
+  font-family: var(--ql-font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 900;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: var(--ql-ink);
+  margin: 0;
+  white-space: nowrap;
+  position: relative;
+}
+.ql-une-header__title::before,
+.ql-une-header__title::after {
+  content: "★";
+  color: var(--ql-accent);
+  font-size: .7em;
+  margin: 0 .5em;
+  vertical-align: .1em;
+}
+
 /* ── 7b. Hero Carousel (style Contre-Attaque) ───────────────── */
 .ql-carousel {
   position: relative;
@@ -1064,16 +1103,73 @@ p  { margin: 0 0 1em; }
 .ql-post__content p { margin: 0 0 1.25em; font-weight: 400; }
 .ql-post__content p:last-child { margin-bottom: 0; }
 
+/* ── Premier paragraphe : drop cap + plus grand ───────────── */
+.ql-post__content > p:first-of-type {
+  font-size: 1.18rem;
+  line-height: 1.65;
+  color: var(--ql-ink);
+}
+.ql-post__content > p:first-of-type::first-letter {
+  font-family: var(--ql-font-serif);
+  font-weight: 900;
+  font-size: 4.2em;
+  line-height: .88;
+  float: left;
+  padding: .1em .12em 0 0;
+  color: var(--ql-accent);
+  margin-bottom: -.1em;
+}
+
+/* ── Titres de section : H2 avec filet rouge, H3 avec pastille ── */
 .ql-post__content h2, .ql-post__content h3, .ql-post__content h4 {
   font-family: var(--ql-font-serif);
   font-weight: 900;
   line-height: 1.18;
-  margin: 2em 0 .6em;
+  margin: 2.2em 0 .8em;
   color: var(--ql-ink);
+  position: relative;
 }
-.ql-post__content h2 { font-size: 1.7rem; }
-.ql-post__content h3 { font-size: 1.35rem; }
-.ql-post__content h4 { font-size: 1.15rem; }
+.ql-post__content h2 {
+  font-size: 1.85rem;
+  padding-top: 1rem;
+  border-top: 3px solid var(--ql-accent);
+}
+.ql-post__content h2::before {
+  content: "";
+  position: absolute;
+  top: -3px; left: 0;
+  width: 48px; height: 3px;
+  background: var(--ql-yellow);
+}
+.ql-post__content h3 {
+  font-size: 1.4rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--ql-accent);
+}
+.ql-post__content h4 {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--ql-accent);
+  margin-bottom: .4em;
+}
+
+/* ── Alternance de fond : un paragraphe sur deux chaudement teinté ── */
+/* Approche :has() : toute section H2 suivie par des paragraphes reçoit
+   un fond subtil alterné. Fallback sans :has() = pas d'alternance (dégradation propre). */
+.ql-post__content h2:nth-of-type(even) {
+  background: linear-gradient(90deg, rgba(224,40,16,.06) 0%, transparent 70%);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+/* ── Paragraphe "lead" ou statistique (marqué avec **gras** en début) ── */
+.ql-post__content p strong {
+  background: linear-gradient(transparent 65%, rgba(255,203,5,.55) 65%);
+  padding: 0 .1em;
+}
 
 .ql-post__content a {
   color: var(--ql-accent);
@@ -1107,16 +1203,77 @@ p  { margin: 0 0 1em; }
 .ql-post__content li { margin-bottom: .4em; }
 
 .ql-post__content blockquote {
-  margin: 1.8em 0;
-  padding: 1rem 1.4rem;
+  margin: 2.2em 0;
+  padding: 1.5rem 1.8rem 1.5rem 3.5rem;
   font-family: var(--ql-font-serif);
-  font-size: 1.2rem; font-style: italic; line-height: 1.55;
-  color: var(--ql-ink-soft);
-  background: var(--ql-paper-2);
-  border-left: 4px solid var(--ql-accent);
-  border-radius: 0 var(--ql-radius) var(--ql-radius) 0;
+  font-size: 1.3rem; font-style: italic; line-height: 1.55;
+  color: var(--ql-ink);
+  background: linear-gradient(135deg, var(--ql-paper-2) 0%, #f3ede1 100%);
+  border-left: 6px solid var(--ql-accent);
+  position: relative;
+}
+.ql-post__content blockquote::before {
+  content: """;
+  position: absolute;
+  top: -.1em; left: .5rem;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--ql-accent);
+  font-family: var(--ql-font-serif);
+  opacity: .7;
 }
 .ql-post__content blockquote p:last-child { margin-bottom: 0; }
+
+/* ── Listes : puces rouges stylées ───────────────────────── */
+.ql-post__content ul {
+  padding-left: 0;
+  list-style: none;
+}
+.ql-post__content ul li {
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: .55em;
+}
+.ql-post__content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .55em;
+  width: .65em; height: 3px;
+  background: var(--ql-accent);
+}
+.ql-post__content ol {
+  padding-left: 1.3em;
+  counter-reset: ql-list;
+  list-style: none;
+}
+.ql-post__content ol li {
+  counter-increment: ql-list;
+  position: relative;
+  padding-left: 2em;
+  margin-bottom: .55em;
+}
+.ql-post__content ol li::before {
+  content: counter(ql-list);
+  position: absolute;
+  left: 0; top: 0;
+  width: 1.5em; height: 1.5em;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--ql-ink);
+  color: #fff;
+  font-family: var(--ql-font-serif);
+  font-weight: 900;
+  font-size: .85em;
+  border-radius: 50%;
+}
+
+/* ── Séparateur horizontal (--- en Markdown) avec dégradé ── */
+.ql-post__content hr {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--ql-accent) 50%, transparent 100%);
+  margin: 3em auto;
+  max-width: 200px;
+}
 
 /* Images : simple, safe, centré */
 .ql-post__content img {

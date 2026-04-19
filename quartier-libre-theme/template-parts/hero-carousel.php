@@ -83,6 +83,11 @@ if ( empty( $slides ) ) { return; }
 
 $slide_count = count( $slides );
 ?>
+<header class="ql-une-header">
+    <span class="ql-une-header__rail" aria-hidden="true"></span>
+    <h2 class="ql-une-header__title">À la une</h2>
+    <span class="ql-une-header__rail" aria-hidden="true"></span>
+</header>
 <section class="ql-carousel" aria-label="À la une" data-total="<?php echo (int) $slide_count; ?>">
     <div class="ql-carousel__track">
         <?php foreach ( $slides as $i => $s ) : ?>
