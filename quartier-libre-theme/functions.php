@@ -724,6 +724,62 @@ add_action( 'widgets_init', function () {
 } );
 
 // ── 11. Helper : catégorie principale d'un article ──────────────
+/**
+ * Affiche le logo Quartier Libre (helper réutilisable).
+ * Priorité :
+ *   1. Logo custom défini dans WP Customizer (option la plus simple pour l'admin)
+ *   2. Fichier local assets/images/logo.svg|png|webp
+ *   3. Wordmark texte en fallback
+ *
+ * @param array $args {
+ *   class     : classes CSS additionnelles (défaut '')
+ *   link      : true pour wrapper dans un <a> vers l'accueil (défaut true)
+ *   alt       : texte alternatif (défaut : nom du site)
+ *   size      : taille WP (custom_logo seulement, défaut 'medium')
+ *   loading   : 'lazy' ou 'eager' (défaut 'lazy')
+ * }
+ */
+function ql_logo( $args = array() ) {
+    $args = wp_parse_args( $args, array(
+        'class'   => '',
+        'link'    => true,
+        'alt'     => get_bloginfo( 'name' ),
+        'size'    => 'medium',
+        'loading' => 'lazy',
+    ) );
+
+    $class  = 'ql-logo ' . $args['class'];
+    $alt    = esc_attr( $args['alt'] );
+    $img    = '';
+
+    $custom = get_theme_mod( 'custom_logo' );
+    if ( $custom ) {
+        $img = wp_get_attachment_image( $custom, $args['size'], false, array(
+            'class'   => $class,
+            'alt'     => $alt,
+            'loading' => $args['loading'],
+        ) );
+    } else {
+        $files = array( '/assets/images/logo.svg', '/assets/images/logo.png', '/assets/images/logo.webp' );
+        $found = '';
+        foreach ( $files as $p ) {
+            if ( file_exists( QL_THEME_DIR . $p ) ) { $found = QL_THEME_URI . $p; break; }
+        }
+        if ( $found ) {
+            $img = '<img src="' . esc_url( $found ) . '" alt="' . $alt . '" class="' . esc_attr( $class ) . '" loading="' . esc_attr( $args['loading'] ) . '">';
+        } else {
+            // Fallback wordmark texte
+            $img = '<span class="ql-logo ql-logo--wordmark ' . esc_attr( $args['class'] ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
+        }
+    }
+
+    if ( $args['link'] ) {
+        $img = '<a href="' . esc_url( home_url( '/' ) ) . '" aria-label="' . $alt . ' — accueil">' . $img . '</a>';
+    }
+
+    return $img;
+}
+
 function ql_primary_category( $post_id = null ) {
     $post_id = $post_id ?: get_the_ID();
     $cats    = get_the_category( $post_id );

@@ -12,7 +12,28 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
     <div class="ql-container ql-footer__grid">
 
         <div class="ql-footer__col ql-footer__brand">
-            <p class="ql-footer__wordmark"><?php bloginfo( 'name' ); ?></p>
+            <?php
+            // Logo footer — priorité : custom_logo WP > fichier thème > texte
+            $logo_custom = get_theme_mod( 'custom_logo' );
+            $logo_files  = array( '/assets/images/logo.svg', '/assets/images/logo.png', '/assets/images/logo.webp' );
+            $logo_found  = '';
+            foreach ( $logo_files as $p ) {
+                if ( file_exists( QL_THEME_DIR . $p ) ) { $logo_found = QL_THEME_URI . $p; break; }
+            }
+
+            if ( $logo_custom ) {
+                $img = wp_get_attachment_image( $logo_custom, 'medium', false, array(
+                    'class'   => 'ql-footer__logo',
+                    'alt'     => get_bloginfo( 'name' ),
+                    'loading' => 'lazy',
+                ) );
+                echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="ql-footer__brand-link" aria-label="' . esc_attr( get_bloginfo( 'name' ) ) . ' — accueil">' . $img . '</a>';
+            } elseif ( $logo_found ) {
+                echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="ql-footer__brand-link"><img src="' . esc_url( $logo_found ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="ql-footer__logo" loading="lazy"></a>';
+            } else {
+                echo '<p class="ql-footer__wordmark"><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a></p>';
+            }
+            ?>
             <p class="ql-footer__tag">Par nous, pour nous. Les quartiers prennent la parole.</p>
         </div>
 

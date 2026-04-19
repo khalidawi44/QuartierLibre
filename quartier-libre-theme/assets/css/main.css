@@ -146,7 +146,8 @@ p  { margin: 0 0 1em; }
   display: inline-flex; align-items: center; gap: .75rem;
   text-decoration: none; flex: 0 0 auto;
 }
-.ql-brand__logo { max-height: 56px; width: auto; display: block; }
+.ql-brand__logo { max-height: 60px; width: auto; display: block; }
+.ql-brand img { max-height: 60px; width: auto; display: block; }
 .ql-brand__wordmark {
   font-family: var(--ql-font-serif); font-weight: 900;
   font-size: clamp(1.35rem, 2.4vw, 1.75rem);
@@ -1787,6 +1788,27 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 }
 @media (min-width: 700px) { .ql-footer__grid { grid-template-columns: 1.4fr 1fr 1fr 1.3fr; } }
 .ql-footer__wordmark { font-family: var(--ql-font-serif); font-weight: 900; font-size: 1.6rem; color: #fff; margin: 0 0 .35em; }
+.ql-footer__wordmark a { color: inherit; text-decoration: none; }
+.ql-footer__wordmark a:hover { color: var(--ql-yellow); }
+
+/* Logo image dans le footer */
+.ql-footer__brand-link { display: inline-block; margin-bottom: .5rem; }
+.ql-footer__logo {
+  max-width: 180px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  display: block;
+  /* le logo a besoin d'un fond sombre — le footer est déjà noir, parfait */
+}
+
+/* Helper .ql-logo générique (utilisé par ql_logo() partout) */
+.ql-logo { display: block; max-width: 100%; height: auto; }
+.ql-logo--wordmark {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-weight: 900;
+  font-size: 1.4rem;
+}
 .ql-footer__tag { color: #a9a595; font-size: .92rem; max-width: 28ch; line-height: 1.5; }
 .ql-footer__title {
   color: #fff; font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 800;
