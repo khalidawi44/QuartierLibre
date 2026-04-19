@@ -397,44 +397,10 @@ p  { margin: 0 0 1em; }
 /* ── 7. Main ────────────────────────────────────────────────── */
 .ql-main { padding: 2rem 0 4rem; min-height: 60vh; }
 
-/* ── 7a. Header « À la une » ─────────────────────────────── */
-.ql-une-header {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin: 0 auto 1.2rem;
-  padding: 0 .5rem;
-}
-.ql-une-header__rail {
-  flex: 1;
-  height: 3px;
-  background: linear-gradient(90deg, transparent 0%, var(--ql-accent) 50%, transparent 100%);
-}
-.ql-une-header__rail:first-child {
-  background: linear-gradient(90deg, transparent 0%, var(--ql-accent) 100%);
-}
-.ql-une-header__rail:last-child {
-  background: linear-gradient(90deg, var(--ql-accent) 0%, transparent 100%);
-}
-.ql-une-header__title {
-  font-family: var(--ql-font-serif);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 900;
-  letter-spacing: -.01em;
-  text-transform: uppercase;
-  color: var(--ql-ink);
-  margin: 0;
-  white-space: nowrap;
-  position: relative;
-}
-.ql-une-header__title::before,
-.ql-une-header__title::after {
-  content: "★";
-  color: var(--ql-accent);
-  font-size: .7em;
-  margin: 0 .5em;
-  vertical-align: .1em;
-}
+/* ── 7a. Header « À la une » — alias de ql-section__head ─── */
+/* Conservé pour compat si le template n'a pas encore été re-synchronisé,
+   pointe vers le style unifié défini plus bas. */
+.ql-une-header { /* désormais identique à .ql-section__head */ }
 
 /* ── 7b. Hero Carousel (style Contre-Attaque) ───────────────── */
 .ql-carousel {
@@ -717,25 +683,95 @@ p  { margin: 0 0 1em; }
 @media (min-width: 1100px) { .ql-grid--4 { grid-template-columns: repeat(4, 1fr); } }
 
 .ql-section { margin-block: 3.5rem; }
-.ql-section__head {
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: 1rem; margin-bottom: 1.5rem;
-  border-bottom: 3px solid var(--ql-ink); padding-bottom: .5rem;
+
+/* ── Header unifié « À la une » / sections de catégorie ───
+   Titre centré serif 900 entouré d'étoiles ★ rouges, rails dégradés
+   rouge→transparent de chaque côté. Un lien « Voir tous → » éventuel
+   se positionne en absolu à droite sous le header. */
+.ql-section__head,
+.ql-une-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto 1.8rem;
+  padding: .5rem .5rem 0;
   position: relative;
+  border: 0;
 }
-.ql-section__head::before {
-  content: ""; position: absolute; bottom: -3px; left: 0;
-  width: 60px; height: 3px; background: var(--ql-accent);
+.ql-section__head::before,
+.ql-section__head::after,
+.ql-une-header::before,
+.ql-une-header::after {
+  content: "";
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--ql-accent) 100%);
 }
-.ql-section__title {
-  font-family: var(--ql-font-serif); font-weight: 900; font-size: 1.5rem; margin: 0;
-  text-transform: uppercase; letter-spacing: .02em;
+.ql-section__head::after,
+.ql-une-header::after {
+  background: linear-gradient(90deg, var(--ql-accent) 0%, transparent 100%);
 }
+
+.ql-section__title,
+.ql-une-header__title {
+  flex: 0 0 auto;
+  font-family: var(--ql-font-serif);
+  font-weight: 900;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: var(--ql-ink);
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+.ql-section__title::before,
+.ql-section__title::after,
+.ql-une-header__title::before,
+.ql-une-header__title::after {
+  content: "★";
+  color: var(--ql-accent);
+  font-size: .65em;
+  margin: 0 .45em;
+  vertical-align: .15em;
+}
+
 .ql-section__link {
-  font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
-  color: var(--ql-muted); text-decoration: none;
+  position: absolute;
+  right: .5rem;
+  top: calc(100% + .5rem);
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--ql-muted);
+  text-decoration: none;
+  padding: .3rem .7rem;
+  border: 1px solid var(--ql-line);
+  transition: all var(--ql-t);
 }
-.ql-section__link:hover { color: var(--ql-accent); }
+.ql-section__link:hover {
+  color: #fff;
+  background: var(--ql-accent);
+  border-color: var(--ql-accent);
+}
+
+/* Titre à ellipsis sur mobile pour éviter débordement */
+@media (max-width: 520px) {
+  .ql-section__title,
+  .ql-une-header__title {
+    font-size: 1.15rem;
+    max-width: 65vw;
+    white-space: normal;
+    text-align: center;
+  }
+  .ql-section__title::before,
+  .ql-section__title::after,
+  .ql-une-header__title::before,
+  .ql-une-header__title::after {
+    margin: 0 .3em;
+  }
+}
 
 /* ── 11. Dossiers ───────────────────────────────────────────── */
 .ql-dossiers {
