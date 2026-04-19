@@ -19,28 +19,36 @@ $has_any = (int) wp_count_posts()->publish > 0;
         <?php get_template_part( 'template-parts/hero-carousel' ); ?>
 
         <?php
-        // Détection auto des 4 catégories principales (top-level uniquement,
-        // les sous-catégories restent accessibles via le menu).
-        $top_cats = get_categories( array(
-            'orderby'    => 'count',
-            'order'      => 'DESC',
-            'number'     => 4,
-            'hide_empty' => false, // top-level peut être vide si tous les articles sont en sous-cat
-            'parent'     => 0,     // top-level seulement
-        ) );
-        $i = 0;
-        foreach ( $top_cats as $cat ) {
+        // Ordre fixe des sections après « À la une » :
+        //   1. Infos locale (Nantes)
+        //   2. France (politique nationale)
+        //   3. International (Gaza, Soudan, résistances)
+        //   4. Luttes (répression, solidarité)
+        //   5. Rendez-vous (manifs, mobilisations à venir)
+        // Les autres rubriques (Histoire) restent accessibles via le menu.
+        $sections = array(
+            array( 'slug' => 'infos-locale',  'label' => 'Infos locale' ),
+            array( 'slug' => 'france',        'label' => 'France' ),
+            array( 'slug' => 'international', 'label' => 'International' ),
+            array( 'slug' => 'luttes',        'label' => 'Luttes' ),
+        );
+        foreach ( $sections as $s ) {
             get_template_part( 'template-parts/section-category', null, array(
-                'slug'  => $cat->slug,
-                'label' => $cat->name,
+                'slug'  => $s['slug'],
+                'label' => $s['label'],
                 'count' => 3,
             ) );
-            $i++;
-            // Après la 2e section, insérer le bloc Dossiers
-            if ( $i === 2 ) {
-                get_template_part( 'template-parts/dossiers' );
-            }
         }
+
+        // Agenda : rendez-vous militants à venir (sous-catégorie mobilisations)
+        get_template_part( 'template-parts/section-category', null, array(
+            'slug'  => 'mobilisations',
+            'label' => 'Rendez-vous — manifs & mobilisations',
+            'count' => 3,
+        ) );
+
+        // Dossiers (après les sections d'actualité)
+        get_template_part( 'template-parts/dossiers' );
 
         // Appel aux dons
         get_template_part( 'template-parts/soutenir' );
