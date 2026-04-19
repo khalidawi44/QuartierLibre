@@ -34,25 +34,39 @@ const BANNERS = [
   { slug: 'pilotiere',        title: 'QUARTIER PILOTIÈRE',    accent: 'ON N\'ATTEND PLUS, ON FAIT',  image: null },
 
   // 4 actualités urgentes — mode photo (buildSvgWithPhoto) :
-  // l'image JPG téléchargée sert de fond, on superpose la typo.
-  // URL raw.githubusercontent pour que le fetch marche universellement.
+  // image_path = chemin LOCAL → sera embarquée en base64 dans le SVG
+  // (nécessaire car WP sert les SVG via <img>, qui bloque les fetch
+  //  d'images externes pour raisons de sécurité. Embed = self-contained.)
   { slug: 'actualite-soudan',
     title: 'SOUDAN',                   accent: 'LA GUERRE OUBLIÉE',
     category_label: 'INTERNATIONAL · GUERRE',
-    image: 'https://raw.githubusercontent.com/khalidawi44/QuartierLibre/main/content/media/soudan-guerre-oubliee.jpg' },
+    image_path: 'content/media/soudan-guerre-oubliee.jpg' },
   { slug: 'actualite-loi-immigration',
     title: 'LOI IMMIGRATION 2026',     accent: 'AIDER DEVIENT UN CRIME',
     category_label: 'FRANCE · POLITIQUE',
-    image: 'https://raw.githubusercontent.com/khalidawi44/QuartierLibre/main/content/media/loi-immigration-2026.jpg' },
+    image_path: 'content/media/loi-immigration-2026.jpg' },
   { slug: 'actualite-videosurveillance',
     title: '150 CAMÉRAS IA',           accent: 'LE PANOPTIQUE ARRIVE',
     category_label: 'NANTES · BELLEVUE',
-    image: 'https://raw.githubusercontent.com/khalidawi44/QuartierLibre/main/content/media/nantes-videosurveillance.jpg' },
+    image_path: 'content/media/nantes-videosurveillance.jpg' },
   { slug: 'actualite-1er-mai',
     title: '1ER MAI 2026',             accent: 'TOUT LIER, TOUT BLOQUER',
     category_label: 'LUTTES · GRÈVE GÉNÉRALE',
-    image: 'https://raw.githubusercontent.com/khalidawi44/QuartierLibre/main/content/media/1er-mai-2026.jpg' },
+    image_path: 'content/media/1er-mai-2026.jpg' },
 ];
+
+// Helper : lit un fichier local et le convertit en data URI base64
+function embedAsDataUri(filePath) {
+  const abs = path.resolve(__dirname, filePath);
+  if (!fs.existsSync(abs)) {
+    console.warn('⚠ Image introuvable :', abs);
+    return '';
+  }
+  const buf = fs.readFileSync(abs);
+  const ext = path.extname(filePath).slice(1).toLowerCase();
+  const mime = ext === 'jpg' ? 'jpeg' : ext;
+  return `data:image/${mime};base64,${buf.toString('base64')}`;
+}
 
 function xmlEscape(s) {
   return String(s)
@@ -221,6 +235,10 @@ function main() {
 
   let ok = 0, photo = 0, typo = 0;
   for (const banner of BANNERS) {
+    // Si image_path est fourni, on l'embed en base64 dans banner.image
+    if (banner.image_path && !banner.image) {
+      banner.image = embedAsDataUri(banner.image_path);
+    }
     const svg = banner.image
       ? buildSvgWithPhoto(banner)
       : buildSvgTypographic(banner);
