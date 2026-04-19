@@ -30,10 +30,22 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
             <a class="ql-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php bloginfo( 'name' ); ?> — accueil">
                 <?php
-                $logo_custom = get_theme_mod( 'custom_logo' );
-                if ( $logo_custom ) {
-                    the_custom_logo();
-                } else {
+                // IMPORTANT : on n'utilise PAS the_custom_logo() car il ajoute son
+                // propre <a> → nested links = HTML invalide, casse l'affichage.
+                // On récupère l'ID du logo et on output <img> directement.
+                $logo_id = get_theme_mod( 'custom_logo' );
+                $rendered = false;
+
+                if ( $logo_id ) {
+                    $src = wp_get_attachment_image_url( $logo_id, 'full' );
+                    if ( $src ) {
+                        echo '<img src="' . esc_url( $src ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="ql-brand__logo">';
+                        $rendered = true;
+                    }
+                }
+
+                if ( ! $rendered ) {
+                    // Fallback 1 : fichier dans le thème
                     $logo_paths = array( '/assets/images/logo.svg', '/assets/images/logo.png', '/assets/images/logo.webp' );
                     $found = '';
                     foreach ( $logo_paths as $p ) {
@@ -42,6 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                     if ( $found ) {
                         echo '<img src="' . esc_url( $found ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="ql-brand__logo" width="200" height="60">';
                     } else {
+                        // Fallback 2 : wordmark texte
                         echo '<span class="ql-brand__wordmark">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
                     }
                 }
