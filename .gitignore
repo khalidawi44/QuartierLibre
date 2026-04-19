@@ -24,3 +24,4 @@ error_log
 # (déjà sous .claude/article/, ne pas dupliquer dans le repo)
 
 .claude/
+_tmp_*
