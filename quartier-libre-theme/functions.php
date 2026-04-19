@@ -253,9 +253,31 @@ add_filter( 'theme_page_templates', function ( $templates ) {
     $templates['templates/page-soutenir.php']        = 'Soutenir (dons)';
     $templates['templates/page-connexion.php']       = 'Connexion / Inscription';
     $templates['templates/page-a-propos.php']        = 'À propos';
+    $templates['templates/page-tous-articles.php']   = 'Tous les articles';
     $templates['templates/page-pleine-largeur.php']  = 'Pleine largeur';
     return $templates;
 } );
+
+// Auto-création de la page /tous-les-articles/ avec son template
+add_action( 'init', function () {
+    $existing = get_page_by_path( 'tous-les-articles' );
+    if ( $existing ) {
+        if ( ! get_page_template_slug( $existing->ID ) ) {
+            update_post_meta( $existing->ID, '_wp_page_template', 'templates/page-tous-articles.php' );
+        }
+        return;
+    }
+    $pid = wp_insert_post( array(
+        'post_title'   => 'Tous les articles',
+        'post_name'    => 'tous-les-articles',
+        'post_status'  => 'publish',
+        'post_type'    => 'page',
+        'post_content' => '',
+    ) );
+    if ( $pid && ! is_wp_error( $pid ) ) {
+        update_post_meta( $pid, '_wp_page_template', 'templates/page-tous-articles.php' );
+    }
+}, 31 );
 
 // ── Configuration paiements (init une fois, puis éditable admin) ──
 // Les clés sont stockées en wp_options pour être modifiables via

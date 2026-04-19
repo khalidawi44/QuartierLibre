@@ -33,58 +33,8 @@ $paypal_client_id = get_option( 'ql_paypal_client_id', '' );
         </div>
     </section>
 
-    <!-- QUI NOUS SOMMES -->
-    <section class="ql-apropos-block">
-        <div class="ql-container ql-apropos-block__inner">
-            <header class="ql-section__head">
-                <h2 class="ql-section__title">Qui sommes-nous ?</h2>
-            </header>
-
-            <?php
-            // Image à la une de la page /a-propos/ — mise par l'admin WP.
-            // S'affiche en bloc pleine largeur au-dessus du texte.
-            if ( has_post_thumbnail() ) : ?>
-                <figure class="ql-apropos-image">
-                    <?php the_post_thumbnail( 'ql-hero', array(
-                        'class'   => 'ql-apropos-image__img',
-                        'loading' => 'eager',
-                        'decoding'=> 'async',
-                    ) ); ?>
-                    <?php $cap = get_the_post_thumbnail_caption();
-                    if ( $cap ) : ?>
-                        <figcaption><?php echo esc_html( $cap ); ?></figcaption>
-                    <?php endif; ?>
-                </figure>
-            <?php endif; ?>
-
-            <div class="ql-apropos-text">
-                <p class="ql-apropos-lead">
-                    <strong>Quartier Libre</strong>, c'est une rédaction issue des quartiers HLM de Nantes
-                    — Bellevue, Malakoff, Dervallières, Bottière-Pin Sec, Breil, Clos Toreau,
-                    Bout des Landes, Port Boyer, Halvêque, Ranzay, Pilotière.
-                </p>
-
-                <p>
-                    Nous écrivons depuis <em>nos</em> immeubles, <em>nos</em> halls, <em>nos</em> écoles,
-                    <em>nos</em> associations. Nous racontons ce qui s'y passe <strong>vraiment</strong> — pas
-                    ce que BFM en dit, pas ce que la mairie PS en laisse filtrer dans ses communiqués.
-                </p>
-
-                <p>
-                    Nous existons parce qu'aucun média dominant ne parle des quartiers populaires
-                    sans les caricaturer. <strong>Quartier Libre</strong> répare ce silence.
-                    Enquêtes de terrain, témoignages anonymes, contre-récits, archives locales :
-                    nous documentons, nous publions, nous relayons.
-                </p>
-
-                <p>
-                    Notre ligne est <strong>militante de gauche, antiraciste, anticapitaliste, anticoloniale</strong>.
-                    Nous ne prétendons pas à une neutralité qui n'existe pas : nous assumons qu'un média,
-                    comme un quartier, a un camp — celui des habitant·es contre celui des puissant·es.
-                </p>
-            </div>
-        </div>
-    </section>
+    <!-- (La section « Qui sommes-nous ? » est désormais intégrée en sidebar
+          de la section « Une rédaction » plus bas, pour éviter la redite.) -->
 
     <!-- FRISE / NOS RACINES -->
     <section class="ql-apropos-block ql-apropos-block--alt">
@@ -122,7 +72,7 @@ $paypal_client_id = get_option( 'ql_paypal_client_id', '' );
                 </li>
 
                 <li class="ql-timeline__item">
-                    <span class="ql-timeline__year">2018<br>2020</span>
+                    <span class="ql-timeline__year ql-timeline__year--range">2018 – 2020</span>
                     <div class="ql-timeline__body">
                         <h3>Gilets jaunes, mouvement retraites</h3>
                         <p>Des années de mobilisations majeures. Khalid et la rédaction de Nantes
@@ -196,46 +146,88 @@ $paypal_client_id = get_option( 'ql_paypal_client_id', '' );
         </div>
     </section>
 
-    <!-- LA RÉDACTION -->
+    <!-- LA RÉDACTION + SIDEBAR « Qui sommes-nous » -->
     <section class="ql-apropos-block ql-apropos-block--dark">
-        <div class="ql-container ql-apropos-block__inner">
+        <div class="ql-container">
             <header class="ql-section__head ql-section__head--light">
                 <h2 class="ql-section__title">Une rédaction qui vit dans les quartiers</h2>
             </header>
 
-            <div class="ql-apropos-text">
-                <p>
-                    Nos journalistes ne parachutent pas depuis Paris pour écrire un sujet « cité » avant de
-                    rentrer à la maison. Chacun·e de nous est spécialisé·e sur <strong>un quartier précis</strong>
-                    où il ou elle vit, enseigne, milite, élève ses enfants.
-                </p>
+            <div class="ql-apropos-layout">
 
-                <div class="ql-apropos-roster">
-                    <div class="ql-apropos-roster__col">
-                        <h3>Quartiers populaires</h3>
-                        <ul>
-                            <li class="ql-apropos-roster__founder"><strong>Khalid</strong> — Fondateur, Bellevue<br><small>Rédaction, coordination, enquêtes de terrain</small></li>
-                            <li><strong>Aïssata Diallo</strong> — Bellevue</li>
-                            <li><strong>Younes Boukhris</strong> — Malakoff</li>
-                            <li><strong>Karima Benali</strong> — Dervallières</li>
-                            <li><strong>Soraya Messaoudi</strong> — Clos Toreau</li>
-                            <li><strong>Mehdi Haddad</strong> — Bottière&ndash;Pin Sec</li>
-                            <li><strong>Fatou Traoré</strong> — Breil</li>
-                            <li><strong>Samir Touré</strong> — Bout des Landes</li>
-                            <li><strong>Léa Marchand</strong> — Port Boyer</li>
-                            <li><strong>Naïma Ouédraogo</strong> — Halvêque</li>
-                            <li><strong>Amadou Koné</strong> — Ranzay</li>
-                            <li><strong>Sofia Bensalem</strong> — Pilotière</li>
-                        </ul>
-                    </div>
-                    <div class="ql-apropos-roster__col">
-                        <h3>Correspondant·es</h3>
-                        <ul>
-                            <li><strong>Rachida Ben Arfa</strong> — International<br><small>Gaza, Soudan, Palestine, résistances globales</small></li>
-                            <li><strong>Julien Moreau</strong> — National<br><small>Politique française, luttes sociales</small></li>
-                        </ul>
+                <!-- Colonne principale (gauche) : roster + intro -->
+                <div class="ql-apropos-layout__main">
+                    <p class="ql-apropos-layout__intro">
+                        Nos journalistes ne parachutent pas depuis Paris pour écrire un sujet « cité » avant de
+                        rentrer à la maison. Chacun·e de nous est spécialisé·e sur <strong>un quartier précis</strong>
+                        où il ou elle vit, enseigne, milite, élève ses enfants.
+                    </p>
+
+                    <div class="ql-apropos-roster">
+                        <div class="ql-apropos-roster__col">
+                            <h3>Quartiers populaires</h3>
+                            <ul>
+                                <li class="ql-apropos-roster__founder"><strong>Khalid</strong> — Fondateur, Clos Toreau<br><small>Rédaction, coordination, enquêtes de terrain</small></li>
+                                <li><strong>Aïssata Diallo</strong> — Bellevue</li>
+                                <li><strong>Younes Boukhris</strong> — Malakoff</li>
+                                <li><strong>Karima Benali</strong> — Dervallières</li>
+                                <li><strong>Soraya Messaoudi</strong> — Clos Toreau</li>
+                                <li><strong>Mehdi Haddad</strong> — Bottière&ndash;Pin Sec</li>
+                                <li><strong>Fatou Traoré</strong> — Breil</li>
+                                <li><strong>Samir Touré</strong> — Bout des Landes</li>
+                                <li><strong>Léa Marchand</strong> — Port Boyer</li>
+                                <li><strong>Naïma Ouédraogo</strong> — Halvêque</li>
+                                <li><strong>Amadou Koné</strong> — Ranzay</li>
+                                <li><strong>Sofia Bensalem</strong> — Pilotière</li>
+                            </ul>
+                        </div>
+                        <div class="ql-apropos-roster__col">
+                            <h3>Correspondant·es</h3>
+                            <ul>
+                                <li><strong>Rachida Ben Arfa</strong> — International<br><small>Gaza, Soudan, Palestine, résistances globales</small></li>
+                                <li><strong>Julien Moreau</strong> — National<br><small>Politique française, luttes sociales</small></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Sidebar droite : « Qui sommes-nous » (titre, image, texte) -->
+                <aside class="ql-apropos-layout__side">
+                    <h3 class="ql-apropos-layout__side-title">Qui sommes-nous ?</h3>
+
+                    <?php if ( has_post_thumbnail() ) : ?>
+                        <figure class="ql-apropos-image">
+                            <?php the_post_thumbnail( 'ql-card', array(
+                                'class'    => 'ql-apropos-image__img',
+                                'loading'  => 'lazy',
+                                'decoding' => 'async',
+                            ) ); ?>
+                        </figure>
+                    <?php endif; ?>
+
+                    <p class="ql-apropos-lead">
+                        <strong>Quartier Libre</strong> — rédaction issue des quartiers HLM de Nantes.
+                    </p>
+
+                    <p>
+                        Nous écrivons depuis <em>nos</em> immeubles, <em>nos</em> halls, <em>nos</em> écoles,
+                        <em>nos</em> associations. Nous racontons ce qui s'y passe <strong>vraiment</strong>
+                        — pas ce que BFM en dit, pas ce que la mairie PS en laisse filtrer.
+                    </p>
+
+                    <p>
+                        Nous existons parce qu'aucun média dominant ne parle des quartiers populaires
+                        sans les caricaturer. Enquêtes, témoignages anonymes, contre-récits, archives locales :
+                        <strong>nous documentons, nous publions, nous relayons</strong>.
+                    </p>
+
+                    <p>
+                        Notre ligne est <strong>militante de gauche, antiraciste, anticapitaliste,
+                        anticoloniale</strong>. Nous assumons qu'un média, comme un quartier, a un camp —
+                        celui des habitant·es contre celui des puissant·es.
+                    </p>
+                </aside>
+
             </div>
         </div>
     </section>

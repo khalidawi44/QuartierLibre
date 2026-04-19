@@ -2922,16 +2922,18 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
   padding-left: 4rem;
 }
 @media (min-width: 720px) {
   .ql-timeline__item {
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 140px 1fr;
     gap: 2.5rem;
     padding-left: 0;
+    align-items: start;
   }
 }
+.ql-timeline__item:last-child { margin-bottom: 0; }
 .ql-timeline__item::before {
   /* pastille rouge ronde */
   content: "";
@@ -2964,13 +2966,22 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 .ql-timeline__year {
   font-family: var(--ql-font-serif, 'Fraunces', serif);
   font-weight: 900;
-  font-size: 2.2rem;
-  line-height: 1;
+  font-size: 2.4rem;
+  line-height: 1.1;        /* évite que les 2 chiffres d'une année multi-ligne se touchent */
   color: var(--ql-accent);
   letter-spacing: -.02em;
+  display: block;
+  white-space: nowrap;
+}
+.ql-timeline__year--range {
+  font-size: 1.4rem;       /* plage d'années plus discrète qu'un millésime seul */
+  white-space: nowrap;
 }
 @media (min-width: 720px) {
-  .ql-timeline__year { text-align: right; }
+  .ql-timeline__year {
+    text-align: right;
+    padding-right: 0;
+  }
 }
 
 .ql-timeline__body {
@@ -3040,14 +3051,73 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
   letter-spacing: .05em;
 }
 
-/* Roster (2 colonnes noms) */
+/* Layout 2 colonnes : rédaction (gauche) + qui sommes-nous (sidebar droite) */
+.ql-apropos-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .ql-apropos-layout { grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); gap: 3rem; }
+}
+.ql-apropos-layout__main { min-width: 0; }
+.ql-apropos-layout__intro {
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.ql-apropos-layout__intro strong { color: var(--ql-yellow); }
+
+.ql-apropos-layout__side {
+  background: rgba(255, 255, 255, .06);
+  border-left: 3px solid var(--ql-accent);
+  padding: 1.5rem 1.4rem;
+  color: #ddd;
+}
+.ql-apropos-layout__side-title {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: var(--ql-yellow);
+  margin: 0 0 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, .15);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.ql-apropos-layout__side .ql-apropos-image {
+  margin: 0 0 1rem;
+  border-radius: 2px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+}
+.ql-apropos-layout__side .ql-apropos-image__img { max-height: 220px; }
+.ql-apropos-layout__side p {
+  font-size: .92rem;
+  line-height: 1.55;
+  color: #ddd;
+  margin: 0 0 .8em;
+}
+.ql-apropos-layout__side p strong { color: var(--ql-yellow); font-weight: 700; }
+.ql-apropos-layout__side p em { color: #fff; font-style: italic; }
+.ql-apropos-layout__side .ql-apropos-lead {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #fff;
+  border-left: 0;
+  padding-left: 0;
+  margin-bottom: 1rem !important;
+}
+
+/* Roster (2 colonnes noms dans la colonne principale) */
 .ql-apropos-roster {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 1.5rem;
 }
-@media (min-width: 720px) { .ql-apropos-roster { grid-template-columns: 1.6fr 1fr; } }
+@media (min-width: 620px) { .ql-apropos-roster { grid-template-columns: 1.6fr 1fr; } }
 .ql-apropos-roster h3 {
   font-family: var(--ql-font-serif, 'Fraunces', serif);
   font-size: 1.3rem; font-weight: 900; margin: 0 0 .8rem;
@@ -3363,6 +3433,120 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
   .ql-don-modal__header { padding: 3rem 1.2rem 1rem; }
   .ql-don-modal__body { padding: 1.2rem 1rem 2rem; }
 }
+
+/* ── 18g. Page « Tous les articles » ─────────────────────── */
+.ql-ta-page { background: var(--ql-paper); }
+
+.ql-ta-hero {
+  background: linear-gradient(135deg, var(--ql-ink) 0%, #1a0a08 100%);
+  color: #fff;
+  padding: 3rem 0 2.5rem;
+  text-align: center;
+}
+.ql-ta-hero__kicker {
+  display: inline-block;
+  background: var(--ql-accent);
+  color: #fff;
+  font-size: .74rem;
+  font-weight: 900;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: .3rem .8rem;
+  margin-bottom: 1rem;
+}
+.ql-ta-hero__title {
+  font-family: var(--ql-font-serif, 'Fraunces', serif);
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  font-weight: 900;
+  margin: 0 0 .6rem;
+  line-height: 1.1;
+}
+.ql-ta-hero__lede {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #ddd;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.ql-ta-hero__lede strong { color: var(--ql-yellow); }
+
+.ql-ta-container { padding: 2.5rem 0 4rem; }
+
+.ql-ta-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ql-line);
+}
+.ql-ta-filter {
+  display: inline-block;
+  padding: .55rem 1.1rem;
+  background: transparent;
+  color: var(--ql-ink);
+  border: 2px solid var(--ql-line);
+  font-size: .88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  text-decoration: none;
+  transition: all var(--ql-t);
+}
+.ql-ta-filter:hover {
+  border-color: var(--ql-accent);
+  color: var(--ql-accent);
+}
+.ql-ta-filter.is-active {
+  background: var(--ql-accent);
+  color: #fff;
+  border-color: var(--ql-accent);
+}
+
+.ql-ta-grid { margin-bottom: 3rem; }
+
+.ql-ta-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.ql-ta-pagination .page-numbers {
+  display: inline-block;
+  padding: .5rem .9rem;
+  background: #fff;
+  border: 1.5px solid var(--ql-line);
+  color: var(--ql-ink);
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--ql-t);
+}
+.ql-ta-pagination .page-numbers:hover {
+  border-color: var(--ql-accent);
+  color: var(--ql-accent);
+}
+.ql-ta-pagination .page-numbers.current {
+  background: var(--ql-accent);
+  color: #fff;
+  border-color: var(--ql-accent);
+}
+.ql-ta-pagination .page-numbers.dots {
+  border: 0;
+  background: transparent;
+  padding: .5rem .2rem;
+}
+
+.ql-ta-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--ql-muted);
+}
+.ql-ta-empty p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+.ql-ta-page__extra { padding: 1rem 0 2rem; }
+.ql-ta-page__extra .ql-post__content { max-width: 720px; margin: 0 auto; }
 
 /* ── 19. Utilitaires & motion ─────────────────────────────── */
 .ql-muted { color: var(--ql-muted); }

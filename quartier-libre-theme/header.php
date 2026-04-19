@@ -81,7 +81,11 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                     }
                     echo '</li>';
                 }
-                // Item « À propos » en fin de menu (statique, pas une catégorie)
+                // Items statiques en fin de menu (pages, pas catégories)
+                $ta = get_page_by_path( 'tous-les-articles' );
+                $ta_url = $ta ? get_permalink( $ta ) : home_url( '/tous-les-articles/' );
+                echo '<li><a href="' . esc_url( $ta_url ) . '">Tous les articles</a></li>';
+
                 $apropos = get_page_by_path( 'a-propos' );
                 $apropos_url = $apropos ? get_permalink( $apropos ) : home_url( '/a-propos/' );
                 echo '<li><a href="' . esc_url( $apropos_url ) . '">À propos</a></li>';

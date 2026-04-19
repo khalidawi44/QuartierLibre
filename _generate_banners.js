@@ -187,7 +187,10 @@ function buildSvgCAStyle({ tag, preamble, title_lines, image, palette }) {
     tint:    '#0f0f0f',
     tint_opacity: 0.85,
   }, palette || {});
-  const tagWidth = Math.max(240, tag.length * 12 + 50);
+  // Tag plus généreux : font 24 au lieu de 17, hauteur 52 au lieu de 40
+  const tagFontSize = 24;
+  const tagHeight = 52;
+  const tagWidth = Math.max(280, tag.length * 16 + 60);
 
   // Typographies inspirées de Contre-Attaque :
   // - Préambule : sans-serif semi-bold condensé (Haettenschweiler ou fallback)
@@ -258,11 +261,11 @@ function buildSvgCAStyle({ tag, preamble, title_lines, image, palette }) {
   <rect x="0" y="0" width="${W}" height="8" fill="#e02810"/>
   <rect x="0" y="${H - 8}" width="${W}" height="8" fill="#e02810"/>
 
-  <!-- Tag (couleur palette, police condensée comme le reste) -->
-  <g transform="translate(80, 60)">
-    <rect x="0" y="0" width="${tagWidth}" height="40" fill="${P.tag_bg}" rx="2"/>
-    <text x="${tagWidth / 2}" y="28" font-family="${FONT_TITLE}" font-weight="900"
-          font-size="17" letter-spacing="3.5" fill="${P.tag_fg}" text-anchor="middle">${xmlEscape(tag)}</text>
+  <!-- Tag (couleur palette, police condensée — grand pour la lisibilité) -->
+  <g transform="translate(60, 50)">
+    <rect x="0" y="0" width="${tagWidth}" height="${tagHeight}" fill="${P.tag_bg}" rx="2"/>
+    <text x="${tagWidth / 2}" y="${tagHeight / 2 + tagFontSize / 3}" font-family="${FONT_TITLE}" font-weight="900"
+          font-size="${tagFontSize}" letter-spacing="4" fill="${P.tag_fg}" text-anchor="middle">${xmlEscape(tag)}</text>
   </g>
 
   <!-- Préambule multi-lignes -->
