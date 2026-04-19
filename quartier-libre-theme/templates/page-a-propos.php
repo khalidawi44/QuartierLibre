@@ -85,6 +85,87 @@ $contact_email = get_option( 'ql_contact_email', 'contact@quartierlibre.org' );
         </div>
     </section>
 
+    <!-- FRISE / NOS RACINES -->
+    <section class="ql-apropos-block ql-apropos-block--alt">
+        <div class="ql-container ql-apropos-block__inner">
+            <header class="ql-section__head">
+                <h2 class="ql-section__title">Nos racines</h2>
+            </header>
+
+            <p class="ql-apropos-text" style="text-align:center;max-width:640px;margin:0 auto 3rem;">
+                Quartier Libre n'est pas sorti de nulle part. Il vient d'une <strong>décennie de luttes,
+                d'enquêtes et de presse militante nantaise</strong>.
+            </p>
+
+            <ol class="ql-timeline">
+
+                <li class="ql-timeline__item">
+                    <span class="ql-timeline__year">2012</span>
+                    <div class="ql-timeline__body">
+                        <h3>Naissance de Nantes Révoltée</h3>
+                        <p>Un média indépendant émerge à Nantes. Reportages de rue, documentation
+                           de la répression policière, relais des luttes locales — ZAD, mal-logement,
+                           antifascisme, solidarité sans-papiers.</p>
+                    </div>
+                </li>
+
+                <li class="ql-timeline__item">
+                    <span class="ql-timeline__year">2015</span>
+                    <div class="ql-timeline__body">
+                        <h3>Khalid rejoint Nantes Révoltée</h3>
+                        <p>Habitant d'un quartier populaire nantais, <strong>Khalid</strong> commence
+                           à collaborer avec Nantes Révoltée. Reportages terrain, témoignages recueillis
+                           dans les HLM, enquêtes sur Nantes Métropole Habitat et les violences
+                           policières en cité.</p>
+                    </div>
+                </li>
+
+                <li class="ql-timeline__item">
+                    <span class="ql-timeline__year">2018<br>2020</span>
+                    <div class="ql-timeline__body">
+                        <h3>Gilets jaunes, mouvement retraites</h3>
+                        <p>Des années de mobilisations majeures. Khalid et la rédaction de Nantes
+                           Révoltée sont sur chaque manif, chaque blocage, chaque nuit de répression.
+                           La parole des quartiers populaires trouve sa place.</p>
+                    </div>
+                </li>
+
+                <li class="ql-timeline__item">
+                    <span class="ql-timeline__year">2022</span>
+                    <div class="ql-timeline__body">
+                        <h3>Nantes Révoltée devient <em>Contre-Attaque</em></h3>
+                        <p>Pour les 10 ans du média, l'équipe passe à l'échelle nationale. Le nom
+                           change, l'audience s'envole. Mais une question reste :
+                           <strong>qui parle spécifiquement des quartiers populaires de Nantes ?</strong></p>
+                    </div>
+                </li>
+
+                <li class="ql-timeline__item ql-timeline__item--highlight">
+                    <span class="ql-timeline__year">2024</span>
+                    <div class="ql-timeline__body">
+                        <h3>Naissance de Quartier Libre</h3>
+                        <p>Khalid fonde <strong>Quartier Libre</strong>, média entièrement dédié
+                           aux HLM nantais. Pas de concurrence avec Contre-Attaque — une
+                           <em>complémentarité</em> : eux la France, nous le terrain. Eux le national,
+                           nous Bellevue, Malakoff, Dervallières, le Breil, la Bottière.</p>
+                    </div>
+                </li>
+
+                <li class="ql-timeline__item">
+                    <span class="ql-timeline__year">2026</span>
+                    <div class="ql-timeline__body">
+                        <h3>Aujourd'hui — 13 journalistes, 11 quartiers</h3>
+                        <p>Chaque quartier populaire de Nantes a désormais sa ou son journaliste
+                           spécialisé·e. Des correspondant·es couvrent le national et l'international
+                           (Gaza, Soudan, loi immigration). Le Bureau des plaintes reçoit des
+                           centaines de témoignages. <strong>Le mouvement continue.</strong></p>
+                    </div>
+                </li>
+
+            </ol>
+        </div>
+    </section>
+
     <!-- CHIFFRES / TIMELINE -->
     <section class="ql-apropos-stats">
         <div class="ql-container">
