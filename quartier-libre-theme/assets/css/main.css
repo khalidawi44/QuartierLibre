@@ -2870,14 +2870,18 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
   margin-bottom: 1.8rem !important;
 }
 
-/* Image dans la section « Qui sommes-nous ? » (featured image de la page) */
+/* Image featured de la page À propos */
 .ql-apropos-image {
   margin: 0 0 2rem;
   padding: 0;
   position: relative;
   overflow: hidden;
   border-radius: var(--ql-radius-lg, 4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .3);
+}
+/* Sur fond sombre (--dark), shadow plus prononcée */
+.ql-apropos-block--dark .ql-apropos-image {
+  box-shadow: 0 10px 32px rgba(224, 40, 16, .25);
 }
 .ql-apropos-image__img,
 .ql-apropos-image img {
@@ -2914,7 +2918,9 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
   background: linear-gradient(180deg, var(--ql-accent) 0%, var(--ql-accent) 90%, transparent 100%);
 }
 @media (min-width: 720px) {
-  .ql-timeline::before { left: 120px; }
+  /* La ligne verticale est DANS le gap entre colonne année (140px) et body.
+     Position : 140px (fin de colonne année) + ~20px (milieu du gap). */
+  .ql-timeline::before { left: 160px; }
 }
 
 .ql-timeline__item {
@@ -2935,7 +2941,7 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 }
 .ql-timeline__item:last-child { margin-bottom: 0; }
 .ql-timeline__item::before {
-  /* pastille rouge ronde */
+  /* pastille rouge ronde — centrée sur la ligne verticale */
   content: "";
   position: absolute;
   left: calc(2rem - 11px);
@@ -2948,7 +2954,8 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
   z-index: 1;
 }
 @media (min-width: 720px) {
-  .ql-timeline__item::before { left: calc(120px - 11px); }
+  /* Centrée sur la ligne à 160px : 160 - (25/2) = 147.5 ≈ 148 */
+  .ql-timeline__item::before { left: 148px; }
 }
 
 /* Highlight : fondation QL — pastille jaune plus grosse */
@@ -2960,7 +2967,8 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
   top: 0;
 }
 @media (min-width: 720px) {
-  .ql-timeline__item--highlight::before { left: calc(120px - 14px); }
+  /* Centrée sur la ligne à 160px : 160 - (30/2) = 145 */
+  .ql-timeline__item--highlight::before { left: 145px; }
 }
 
 .ql-timeline__year {
