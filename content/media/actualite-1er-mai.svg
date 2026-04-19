@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="1ER MAI 2026 — TOUT LIER, TOUT BLOQUER">
+  <title>1ER MAI 2026 — TOUT LIER, TOUT BLOQUER</title>
+  <defs>
+    <clipPath id="clip"><rect width="1600" height="900"/></clipPath>
+    <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(15,15,15,0.55)"/>
+      <stop offset="50%" stop-color="rgba(15,15,15,0.25)"/>
+      <stop offset="100%" stop-color="rgba(15,15,15,0.95)"/>
+    </linearGradient>
+    <filter id="textshadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Photo de fond (préserve l'aspect via slice) -->
+  <g clip-path="url(#clip)">
+    <image href="https://raw.githubusercontent.com/khalidawi44/QuartierLibre/main/content/media/1er-mai-2026.jpg" xlink:href="https://raw.githubusercontent.com/khalidawi44/QuartierLibre/main/content/media/1er-mai-2026.jpg"
+           x="0" y="0" width="1600" height="900"
+           preserveAspectRatio="xMidYMid slice"/>
+  </g>
+
+  <!-- Dégradé assombrisant pour lisibilité -->
+  <rect width="1600" height="900" fill="url(#overlay)"/>
+
+  <!-- Cadre rouge -->
+  <rect x="0" y="0" width="1600" height="8" fill="#e02810"/>
+  <rect x="0" y="892" width="1600" height="8" fill="#e02810"/>
+
+  <!-- Badge catégorie -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="293" height="44" fill="#e02810" rx="2"/>
+    <text x="146.5" y="31" font-family="Inter, system-ui, sans-serif" font-weight="800"
+          font-size="16" letter-spacing="4" fill="#ffffff" text-anchor="middle">LUTTES · GRÈVE GÉNÉRALE</text>
+  </g>
+
+  <!-- Titre principal (bas, plein largeur) -->
+  <text x="800" y="680"
+        font-family="Fraunces, Georgia, serif"
+        font-weight="900"
+        font-size="130"
+        letter-spacing="-2"
+        fill="#ffffff"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        filter="url(#textshadow)">1ER MAI 2026</text>
+
+  <!-- Accent jaune -->
+  <text x="800" y="790"
+        font-family="Fraunces, Georgia, serif"
+        font-weight="900"
+        font-style="italic"
+        font-size="80"
+        letter-spacing="1"
+        fill="#ffcb05"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        filter="url(#textshadow)">TOUT LIER, TOUT BLOQUER</text>
+
+  <!-- Signature -->
+  <text x="800" y="860"
+        font-family="Inter, system-ui, sans-serif"
+        font-weight="600"
+        font-size="18"
+        letter-spacing="6"
+        fill="#a9a595"
+        text-anchor="middle">— QUARTIERLIBRE.ORG —</text>
+</svg>

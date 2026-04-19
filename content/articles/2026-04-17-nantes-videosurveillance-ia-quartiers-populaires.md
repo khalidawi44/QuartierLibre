@@ -12,7 +12,7 @@ tags:
   - libertes-publiques
   - thales
 excerpt: "Le 3 avril 2026, en catimini, le conseil municipal de Nantes a voté 3,2 M€ pour installer 150 caméras de vidéosurveillance dites « intelligentes » — toutes dans les quartiers populaires. On vous raconte ce que ça fait vraiment."
-featured_image: "content/media/nantes-videosurveillance.jpg"
+featured_image: "content/media/actualite-videosurveillance.svg"
 status: "draft"
 date: "2026-04-17 09:00:00"
 author: "aissata-diallo"

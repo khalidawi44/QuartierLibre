@@ -18,7 +18,9 @@ const path = require('path');
 const OUTPUT_DIR = 'content/media';
 
 // image: URL absolue d'une photo (si fournie) — sinon rendu typographique
+// category_label : texte du badge rouge en haut (défaut "INFOS LOCALE")
 const BANNERS = [
+  // 11 quartiers HLM (badge INFOS LOCALE)
   { slug: 'bellevue',         title: 'QUARTIER BELLEVUE',     accent: 'ZONE SOUS CONTRÔLE',          image: null },
   { slug: 'malakoff',         title: 'QUARTIER MALAKOFF',     accent: 'ON DÉMOLIT POUR CHASSER',     image: null },
   { slug: 'dervallieres',     title: 'QUARTIER DERVALLIÈRES', accent: 'L\'ÉTAT SE RETIRE',           image: null },
@@ -30,6 +32,26 @@ const BANNERS = [
   { slug: 'halveque',         title: 'QUARTIER HALVÊQUE',     accent: 'CE QU\'ON NE VOUS MONTRE PAS',image: null },
   { slug: 'ranzay',           title: 'QUARTIER RANZAY',       accent: 'VILLE-DORTOIR',               image: null },
   { slug: 'pilotiere',        title: 'QUARTIER PILOTIÈRE',    accent: 'ON N\'ATTEND PLUS, ON FAIT',  image: null },
+
+  // 4 actualités urgentes — mode photo (buildSvgWithPhoto) :
+  // l'image JPG téléchargée sert de fond, on superpose la typo.
+  // URL raw.githubusercontent pour que le fetch marche universellement.
+  { slug: 'actualite-soudan',
+    title: 'SOUDAN',                   accent: 'LA GUERRE OUBLIÉE',
+    category_label: 'INTERNATIONAL · GUERRE',
+    image: 'https://raw.githubusercontent.com/khalidawi44/QuartierLibre/main/content/media/soudan-guerre-oubliee.jpg' },
+  { slug: 'actualite-loi-immigration',
+    title: 'LOI IMMIGRATION 2026',     accent: 'AIDER DEVIENT UN CRIME',
+    category_label: 'FRANCE · POLITIQUE',
+    image: 'https://raw.githubusercontent.com/khalidawi44/QuartierLibre/main/content/media/loi-immigration-2026.jpg' },
+  { slug: 'actualite-videosurveillance',
+    title: '150 CAMÉRAS IA',           accent: 'LE PANOPTIQUE ARRIVE',
+    category_label: 'NANTES · BELLEVUE',
+    image: 'https://raw.githubusercontent.com/khalidawi44/QuartierLibre/main/content/media/nantes-videosurveillance.jpg' },
+  { slug: 'actualite-1er-mai',
+    title: '1ER MAI 2026',             accent: 'TOUT LIER, TOUT BLOQUER',
+    category_label: 'LUTTES · GRÈVE GÉNÉRALE',
+    image: 'https://raw.githubusercontent.com/khalidawi44/QuartierLibre/main/content/media/1er-mai-2026.jpg' },
 ];
 
 function xmlEscape(s) {
@@ -50,10 +72,13 @@ function fitFontSize(text, baseSize, maxWidth, avgCharWidthRatio = 0.55) {
 /**
  * Rendu avec photo de fond (style Contre-Attaque).
  */
-function buildSvgWithPhoto({ title, accent, image }) {
+function buildSvgWithPhoto({ title, accent, image, category_label }) {
   const W = 1600, H = 900;
+  const label = category_label || 'INFOS LOCALE';
   const titleSize = fitFontSize(title, 130, 1400);
   const accentSize = fitFontSize(accent, 80, 1400);
+  // Badge : largeur dynamique selon la longueur du label
+  const labelWidth = Math.max(240, label.length * 11 + 40);
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${xmlEscape(title)} — ${xmlEscape(accent)}">
@@ -86,9 +111,9 @@ function buildSvgWithPhoto({ title, accent, image }) {
 
   <!-- Badge catégorie -->
   <g transform="translate(60, 60)">
-    <rect x="0" y="0" width="260" height="44" fill="#e02810" rx="2"/>
-    <text x="130" y="31" font-family="Inter, system-ui, sans-serif" font-weight="800"
-          font-size="16" letter-spacing="4" fill="#ffffff" text-anchor="middle">INFOS LOCALE</text>
+    <rect x="0" y="0" width="${labelWidth}" height="44" fill="#e02810" rx="2"/>
+    <text x="${labelWidth / 2}" y="31" font-family="Inter, system-ui, sans-serif" font-weight="800"
+          font-size="16" letter-spacing="4" fill="#ffffff" text-anchor="middle">${xmlEscape(label)}</text>
   </g>
 
   <!-- Titre principal (bas, plein largeur) -->
@@ -129,8 +154,10 @@ function buildSvgWithPhoto({ title, accent, image }) {
 /**
  * Rendu typographique (fallback) — utilisé si pas d'image fournie.
  */
-function buildSvgTypographic({ title, accent }) {
+function buildSvgTypographic({ title, accent, category_label }) {
   const W = 1600, H = 900;
+  const label = category_label || 'INFOS LOCALE';
+  const labelWidth = Math.max(260, label.length * 11 + 40);
   const titleSize = fitFontSize(title, 110, 1400);
   const accentSize = fitFontSize(accent, 75, 1400);
 
@@ -163,9 +190,9 @@ function buildSvgTypographic({ title, accent }) {
   <rect x="0" y="${H - 8}" width="${W}" height="8" fill="#e02810"/>
 
   <g transform="translate(80, 80)">
-    <rect x="0" y="0" width="260" height="44" fill="#e02810" rx="2"/>
-    <text x="130" y="31" font-family="Inter, system-ui, sans-serif" font-weight="800"
-          font-size="16" letter-spacing="4" fill="#ffffff" text-anchor="middle">INFOS LOCALE</text>
+    <rect x="0" y="0" width="${labelWidth}" height="44" fill="#e02810" rx="2"/>
+    <text x="${labelWidth / 2}" y="31" font-family="Inter, system-ui, sans-serif" font-weight="800"
+          font-size="16" letter-spacing="4" fill="#ffffff" text-anchor="middle">${xmlEscape(label)}</text>
   </g>
 
   <text x="${W / 2}" y="${H / 2 - 40}"
@@ -197,7 +224,10 @@ function main() {
     const svg = banner.image
       ? buildSvgWithPhoto(banner)
       : buildSvgTypographic(banner);
-    const filename = `quartier-${banner.slug}.svg`;
+    // Les actualités gardent leur slug tel quel ; les quartiers héritent du préfixe historique.
+    const filename = banner.slug.startsWith('actualite-')
+      ? `${banner.slug}.svg`
+      : `quartier-${banner.slug}.svg`;
     const outPath = path.join(OUTPUT_DIR, filename);
     fs.writeFileSync(outPath, svg, 'utf-8');
     const mode = banner.image ? '📷 photo' : '🎨 typo ';

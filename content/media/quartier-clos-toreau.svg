@@ -19,61 +19,34 @@
     </filter>
   </defs>
 
-  <!-- Fond -->
   <rect width="1600" height="900" fill="url(#bg)"/>
   <rect width="1600" height="900" fill="url(#hatches)"/>
   <rect width="1600" height="900" fill="url(#glow)"/>
 
-  <!-- Cadre rouge fin en haut -->
   <rect x="0" y="0" width="1600" height="8" fill="#e02810"/>
   <rect x="0" y="892" width="1600" height="8" fill="#e02810"/>
 
-  <!-- Badge catégorie (en haut à gauche) -->
   <g transform="translate(80, 80)">
     <rect x="0" y="0" width="260" height="44" fill="#e02810" rx="2"/>
-    <text x="130" y="31"
-          font-family="Inter, system-ui, sans-serif"
-          font-weight="800"
-          font-size="16"
-          letter-spacing="4"
-          fill="#ffffff"
-          text-anchor="middle">INFOS LOCALE</text>
+    <text x="130" y="31" font-family="Inter, system-ui, sans-serif" font-weight="800"
+          font-size="16" letter-spacing="4" fill="#ffffff" text-anchor="middle">INFOS LOCALE</text>
   </g>
 
-  <!-- Titre principal -->
   <text x="800" y="410"
-        font-family="Fraunces, Georgia, 'Times New Roman', serif"
-        font-weight="900"
-        font-size="110"
-        letter-spacing="-2"
-        fill="#ffffff"
-        text-anchor="middle"
-        dominant-baseline="middle"
+        font-family="Fraunces, Georgia, serif" font-weight="900" font-size="110"
+        letter-spacing="-2" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"
         filter="url(#textshadow)">QUARTIER CLOS TOREAU</text>
 
-  <!-- Filet rouge de séparation -->
   <line x1="720" y1="470" x2="880" y2="470"
         stroke="#e02810" stroke-width="4"/>
 
-  <!-- Accent en jaune -->
   <text x="800" y="550"
-        font-family="Fraunces, Georgia, serif"
-        font-weight="900"
-        font-style="italic"
-        font-size="75"
-        letter-spacing="1"
-        fill="#ffcb05"
-        text-anchor="middle"
-        dominant-baseline="middle"
+        font-family="Fraunces, Georgia, serif" font-weight="900" font-style="italic"
+        font-size="75" letter-spacing="1" fill="#ffcb05"
+        text-anchor="middle" dominant-baseline="middle"
         filter="url(#textshadow)">PUNAISES, MÉPRIS</text>
 
-  <!-- Signature en bas -->
   <text x="800" y="840"
-        font-family="Inter, system-ui, sans-serif"
-        font-weight="600"
-        font-size="20"
-        letter-spacing="6"
-        fill="#a9a595"
-        text-anchor="middle"
-        text-transform="uppercase">— QUARTIERLIBRE.ORG —</text>
+        font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="20"
+        letter-spacing="6" fill="#a9a595" text-anchor="middle">— QUARTIERLIBRE.ORG —</text>
 </svg>
