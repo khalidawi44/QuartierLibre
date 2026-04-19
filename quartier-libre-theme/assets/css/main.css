@@ -23,6 +23,9 @@
   --ql-yellow:       #ffcb05;      /* jaune surligneur (emphases) */
   --ql-yellow-dark:  #e6b000;
 
+  --ql-ps-pink:      #e91e63;      /* rose PS — badges et tags liés au Parti Socialiste */
+  --ql-ps-pink-dark: #c2185b;
+
   --ql-focus:        #2563eb;
 
   /* Typographie */
@@ -3672,6 +3675,53 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
 
 .ql-rubriques-page__extra { padding: 1rem 0 3rem; }
 .ql-rubriques-page__extra .ql-post__content { max-width: 720px; margin: 0 auto; }
+
+/* ── 18i. Convention couleur : PS / Johanna Rolland = rose ─
+   Partout où un tag/catégorie référence le Parti Socialiste,
+   l'élément prend la couleur --ql-ps-pink. */
+
+/* Tags pointant vers les slugs PS-liés (bas d'article) */
+.ql-post__tags a[href*="/tag/ps/"],
+.ql-post__tags a[href*="/tag/parti-socialiste/"],
+.ql-post__tags a[href*="/tag/johanna-rolland/"],
+.ql-post__tags a[href*="/tag/mairie-ps/"],
+.ql-post__tags a[href*="/tag/johanna_rolland/"] {
+  color: #fff;
+  background: var(--ql-ps-pink);
+  border-color: var(--ql-ps-pink);
+}
+.ql-post__tags a[href*="/tag/ps/"]:hover,
+.ql-post__tags a[href*="/tag/parti-socialiste/"]:hover,
+.ql-post__tags a[href*="/tag/johanna-rolland/"]:hover,
+.ql-post__tags a[href*="/tag/mairie-ps/"]:hover {
+  background: var(--ql-ps-pink-dark);
+  border-color: var(--ql-ps-pink-dark);
+}
+
+/* Body class (WP tag archive) : ajoute un liseré rose sur le header de l'archive */
+body.tag-ps .ql-archive-header,
+body.tag-parti-socialiste .ql-archive-header,
+body.tag-johanna-rolland .ql-archive-header,
+body.tag-mairie-ps .ql-archive-header {
+  border-left: 6px solid var(--ql-ps-pink);
+  padding-left: 1.2rem;
+}
+
+/* Badge inline utilitaire .ql-ps (pour futurs usages dans les articles
+   ou sur les cartes : on peut écrire <span class="ql-ps">PS</span>) */
+.ql-ps {
+  display: inline-block;
+  background: var(--ql-ps-pink);
+  color: #fff;
+  font-weight: 800;
+  font-size: .72em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .1em .5em;
+  margin: 0 .15em;
+  vertical-align: .1em;
+  border-radius: 2px;
+}
 
 /* ── 19. Utilitaires & motion ─────────────────────────────── */
 .ql-muted { color: var(--ql-muted); }
