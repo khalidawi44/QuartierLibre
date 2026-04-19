@@ -113,6 +113,21 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && !plainteModal.hasAttribute('hidden')) { closeModal(); }
     });
+
+    // Intercepter les liens "/bureau-des-plaintes/" dans les articles :
+    // au lieu de naviguer, on ouvre la modal directement.
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest && e.target.closest('a');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      // Match /bureau-des-plaintes/ ou l'URL complète
+      if (/\/bureau-des-plaintes\/?(\?|#|$)/.test(href)) {
+        // Laisser passer si on est déjà sur la page Bureau des plaintes
+        if (/\/bureau-des-plaintes\//.test(window.location.pathname)) return;
+        e.preventDefault();
+        openModal();
+      }
+    });
   }
 
   // ── Auto-popup plainte en fin d'article (single.php) ────────
