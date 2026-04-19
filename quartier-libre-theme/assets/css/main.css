@@ -1112,7 +1112,7 @@ p  { margin: 0 0 1em; }
   background-image: none !important;
   border: 0 !important;
   border-radius: 0 !important;
-  text-align: left !important;
+  text-align: center !important;
   text-indent: 0 !important;
   letter-spacing: -0.01em !important;
   line-height: 1.18 !important;
@@ -1129,8 +1129,9 @@ p  { margin: 0 0 1em; }
 .ql-post__content h3 { font-size: 1.35rem !important; }
 .ql-post__content h4 { font-size: 1.15rem !important; }
 
-/* OVERRIDE PARAGRAPHES : flux normal, aucune surprise */
-.ql-post__content p {
+/* OVERRIDE PARAGRAPHES : flux normal, aucune surprise —
+   sauf les <p> dans les blockquotes (témoignages, texte blanc centré). */
+.ql-post__content p:not(blockquote p) {
   display: block !important;
   clear: none !important;
   margin: 0 0 1.25em !important;
@@ -1147,8 +1148,9 @@ p  { margin: 0 0 1em; }
   max-width: 100% !important;
 }
 
-/* Tous les enfants directs : flux normal forcé */
-.ql-post__content > * {
+/* Tous les enfants directs : flux normal forcé — SAUF blockquote
+   (témoignages full-bleed avec margins négatifs -50vw). */
+.ql-post__content > *:not(blockquote) {
   display: block !important;
   max-width: 100% !important;
   box-sizing: border-box !important;

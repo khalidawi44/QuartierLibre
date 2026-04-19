@@ -131,30 +131,37 @@
   }
 
   // ── Auto-popup plainte en fin d'article (single.php) ────────
-  // Quand le lecteur atteint le bas de l'article, on ouvre la modal.
-  // Une seule fois par session (sessionStorage) pour ne pas harceler.
-  var singlePostBody = document.querySelector('.ql-post__body');
+  // Quand le lecteur atteint le bas de l'article (fin de .ql-post__content),
+  // on ouvre la modal. Une seule fois par session pour ne pas harceler.
+  // Clé sessionStorage versionnée (v3) : incrémenter si on modifie la
+  // logique pour reset chez les visiteurs déjà flaggés.
+  var singlePostContent = document.querySelector('.ql-post__content');
   var plainteBtnAuto = document.querySelector('.ql-plainte-trigger');
-  if (singlePostBody && plainteBtnAuto && 'IntersectionObserver' in window) {
-    try {
-      if (!sessionStorage.getItem('ql-plainte-shown')) {
-        var sentinel = document.createElement('div');
-        sentinel.setAttribute('aria-hidden', 'true');
-        sentinel.style.cssText = 'height:1px;width:100%;pointer-events:none;';
-        singlePostBody.appendChild(sentinel);
+  if (singlePostContent && plainteBtnAuto && 'IntersectionObserver' in window) {
+    var STORAGE_KEY = 'ql-plainte-shown-v3';
+    var alreadyShown = false;
+    try { alreadyShown = !!sessionStorage.getItem(STORAGE_KEY); } catch (e) {}
 
-        var plainteObs = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              try { sessionStorage.setItem('ql-plainte-shown', '1'); } catch (e) {}
-              plainteBtnAuto.click();
-              plainteObs.disconnect();
-            }
-          });
-        }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
-        plainteObs.observe(sentinel);
-      }
-    } catch (e) { /* sessionStorage peut être bloqué, on ignore */ }
+    if (!alreadyShown) {
+      var sentinel = document.createElement('div');
+      sentinel.setAttribute('aria-hidden', 'true');
+      sentinel.className = 'ql-plainte-sentinel';
+      sentinel.style.cssText = 'height:1px;width:100%;pointer-events:none;';
+      singlePostContent.appendChild(sentinel);
+
+      var plainteObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+            // Clic programmé sur le trigger — ouvre la modal via le
+            // handler déjà installé.
+            plainteBtnAuto.click();
+            plainteObs.disconnect();
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px 100px 0px' });
+      plainteObs.observe(sentinel);
+    }
   }
 
   // ── Liens externes dans les articles → popup petite taille ──
