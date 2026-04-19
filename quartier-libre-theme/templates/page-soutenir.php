@@ -114,10 +114,63 @@ $merci = isset( $_GET['merci'] ) && $_GET['merci'] === '1';
                 </div>
             <?php endif; ?>
 
-            <p class="ql-donation-block__tax">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-2px;margin-right:.3rem;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <strong>Réduction fiscale 66 %</strong> si éligible — un don de 15 € vous coûte réellement 5,10 €.
-            </p>
+            <!-- FAQ accordion (remplace l'ancien bloc fiscal) -->
+            <div class="ql-donation-faq">
+                <h3 class="ql-donation-faq__title">Vos questions avant de donner</h3>
+
+                <details class="ql-faq-item">
+                    <summary>Que finance mon don concrètement ?</summary>
+                    <div class="ql-faq-item__content">
+                        <p>Tout. Hébergement du site, captation vidéo, déplacements pour les enquêtes (bus, TGV), achats matériels (dictaphones, vidéos), protection juridique en cas de poursuites, et rémunération modeste des journalistes qui consacrent leurs soirées à Quartier Libre.</p>
+                        <p>Aucun dirigeant n'est payé. Aucun actionnaire n'existe. <strong>100 % de votre don sert la rédaction et les enquêtes.</strong></p>
+                    </div>
+                </details>
+
+                <details class="ql-faq-item">
+                    <summary>Mes informations personnelles sont-elles protégées ?</summary>
+                    <div class="ql-faq-item__content">
+                        <p>Oui. Les dons PayPal/HelloAsso sont traités par nos partenaires de paiement — nous ne voyons que votre prénom et le montant. Votre adresse email reste confidentielle et ne sera jamais revendue, partagée, ou utilisée pour du marketing tiers.</p>
+                        <p>Vous pouvez demander la suppression de toutes vos données à tout moment via <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">le formulaire de contact</a>.</p>
+                    </div>
+                </details>
+
+                <details class="ql-faq-item">
+                    <summary>Mon don est-il déductible d'impôts ?</summary>
+                    <div class="ql-faq-item__content">
+                        <p><strong>Non, pas encore.</strong> Quartier Libre n'est pas (pour le moment) reconnu d'intérêt général par l'administration fiscale. Nous ne pouvons donc pas émettre de reçu fiscal CERFA.</p>
+                        <p>C'est un statut que nous cherchons à obtenir — il demande des démarches longues. Si c'est un critère essentiel pour vous, sachez que <strong>votre don reste précieux sans déduction</strong>, et que nous vous tiendrons informé·e dès que la reconnaissance fiscale sera effective.</p>
+                    </div>
+                </details>
+
+                <details class="ql-faq-item">
+                    <summary>Puis-je faire un don mensuel récurrent ?</summary>
+                    <div class="ql-faq-item__content">
+                        <p>Pas encore via notre intégration directe, mais c'est possible via HelloAsso : cliquez sur le bouton "Donner avec HelloAsso" et choisissez "Don mensuel" sur leur page. Vous pouvez interrompre à tout moment depuis votre espace HelloAsso.</p>
+                        <p>Un don mensuel de 5 € couvre plus que trois dons ponctuels de 15 € sur l'année — et ça nous permet de <strong>planifier nos enquêtes à plus long terme</strong>.</p>
+                    </div>
+                </details>
+
+                <details class="ql-faq-item">
+                    <summary>Qui gère l'argent ?</summary>
+                    <div class="ql-faq-item__content">
+                        <p>Quartier Libre est porté juridiquement par une structure associative. La trésorerie est tenue par un collectif de deux personnes, dont les comptes sont audités annuellement et <strong>publiés en transparence sur ce site</strong> (bilan financier à venir dans la rubrique À propos).</p>
+                    </div>
+                </details>
+
+                <details class="ql-faq-item">
+                    <summary>Puis-je donner en liquide ou par chèque ?</summary>
+                    <div class="ql-faq-item__content">
+                        <p>Oui. Pour un don en liquide, prenez rendez-vous via <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">le formulaire de contact</a> — on organise une rencontre dans votre quartier. Pour un chèque, précisez-le également via le contact et on vous envoie l'adresse postale.</p>
+                    </div>
+                </details>
+
+                <details class="ql-faq-item">
+                    <summary>Est-ce que je recevrai une newsletter ?</summary>
+                    <div class="ql-faq-item__content">
+                        <p>Seulement si vous vous inscrivez volontairement via <a href="#ql-nl-email">la newsletter du site</a>. Donner ne vous inscrit à rien. Vous pouvez donner anonymement sans aucun suivi marketing.</p>
+                    </div>
+                </details>
+            </div>
 
         </div>
     </section>

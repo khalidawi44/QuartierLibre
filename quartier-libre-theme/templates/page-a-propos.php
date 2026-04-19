@@ -12,6 +12,7 @@ get_header();
 
 $donation_url = get_option( 'ql_donorbox_url', 'https://www.helloasso.com/associations/quartier-libre-nantes' );
 $contact_email = get_option( 'ql_contact_email', 'contact@quartierlibre.org' );
+$paypal_client_id = get_option( 'ql_paypal_client_id', '' );
 ?>
 
 <div class="ql-apropos-page">
@@ -284,7 +285,7 @@ $contact_email = get_option( 'ql_contact_email', 'contact@quartierlibre.org' );
                     un témoignage, une voix qui monte.</strong>
                 </p>
                 <div class="ql-apropos-cta__buttons">
-                    <a class="ql-btn ql-btn--accent ql-btn--lg" href="<?php echo esc_url( home_url( '/soutenir/' ) ); ?>">Faire un don</a>
+                    <button type="button" class="ql-btn ql-btn--accent ql-btn--lg" data-open-don-modal>Faire un don</button>
                     <a class="ql-btn ql-btn--ghost" href="#ql-nl-email">S'abonner à la newsletter</a>
                 </div>
             </div>
@@ -346,5 +347,160 @@ $contact_email = get_option( 'ql_contact_email', 'contact@quartierlibre.org' );
     endwhile; ?>
 
 </div>
+
+<!-- ── MODAL DON (bouton 'Faire un don' l'ouvre) ──────────── -->
+<div class="ql-don-modal" id="ql-don-modal" role="dialog" aria-modal="true" aria-labelledby="ql-don-modal-title" hidden>
+    <div class="ql-don-modal__backdrop" data-close-don></div>
+    <div class="ql-don-modal__panel">
+        <button type="button" class="ql-don-modal__close" aria-label="Fermer" data-close-don>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+
+        <div class="ql-don-modal__header">
+            <span class="ql-don-modal__kicker">Soutenir</span>
+            <h2 id="ql-don-modal-title">Faire un don à Quartier Libre</h2>
+            <p class="ql-don-modal__subtitle">Paiement sécurisé via PayPal ou HelloAsso. 100 % de votre don finance la rédaction.</p>
+        </div>
+
+        <div class="ql-don-modal__body">
+
+            <div class="ql-donation-tiers" role="radiogroup" aria-label="Montant du don">
+                <button type="button" class="ql-donation-tier" data-amount="5"><span class="ql-donation-tier__amount">5 €</span><span class="ql-donation-tier__desc">Un café militant</span></button>
+                <button type="button" class="ql-donation-tier ql-donation-tier--highlight is-active" data-amount="15" aria-checked="true"><span class="ql-donation-tier__badge">Le plus soutenu</span><span class="ql-donation-tier__amount">15 €</span><span class="ql-donation-tier__desc">Un article publié</span></button>
+                <button type="button" class="ql-donation-tier" data-amount="30"><span class="ql-donation-tier__amount">30 €</span><span class="ql-donation-tier__desc">Une enquête</span></button>
+                <button type="button" class="ql-donation-tier" data-amount="100"><span class="ql-donation-tier__amount">100 €</span><span class="ql-donation-tier__desc">Un média qui dure</span></button>
+            </div>
+
+            <div class="ql-donation-custom">
+                <label for="ql-modal-custom-amount">Ou montant libre :</label>
+                <div class="ql-donation-custom__wrap">
+                    <input type="number" id="ql-modal-custom-amount" min="1" step="1" placeholder="Libre" inputmode="numeric">
+                    <span class="ql-donation-custom__currency">€</span>
+                </div>
+            </div>
+
+            <div id="ql-modal-paypal-container" class="ql-paypal-button"></div>
+
+            <?php if ( get_option( 'ql_helloasso_client_id' ) && get_option( 'ql_helloasso_client_secret' ) ) : ?>
+                <div class="ql-helloasso-wrap">
+                    <span class="ql-helloasso-or">— ou —</span>
+                    <button type="button" id="ql-modal-helloasso-btn" class="ql-btn ql-btn--helloasso ql-btn--lg">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:-5px;margin-right:.5rem;"><path d="M12 2 2 8.5v7L12 22l10-6.5v-7zm0 2.3 7.7 5L12 14.7 4.3 9.3z"/></svg>
+                        Donner avec HelloAsso
+                    </button>
+                    <p id="ql-modal-helloasso-err" class="ql-helloasso-err" hidden></p>
+                </div>
+            <?php endif; ?>
+
+            <p class="ql-don-modal__footer-link">
+                <a href="<?php echo esc_url( home_url( '/soutenir/' ) ); ?>">Voir la page Soutenir complète (FAQ, virement, autres moyens) →</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<?php if ( $paypal_client_id ) : ?>
+<script src="https://www.paypal.com/sdk/js?client-id=<?php echo esc_attr( $paypal_client_id ); ?>&currency=EUR&intent=capture&disable-funding=credit,card"></script>
+<?php endif; ?>
+<script>
+(function(){
+  var modal   = document.getElementById('ql-don-modal');
+  var opens   = document.querySelectorAll('[data-open-don-modal]');
+  var closes  = document.querySelectorAll('[data-close-don]');
+  if (!modal || !opens.length) return;
+
+  var DEFAULT_AMOUNT = 15;
+  var selectedAmount = DEFAULT_AMOUNT;
+  var paypalRendered = false;
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    if (!paypalRendered && window.paypal) renderPaypal();
+  }
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+  opens.forEach(function(b){ b.addEventListener('click', openModal); });
+  closes.forEach(function(b){ b.addEventListener('click', closeModal); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  var tiers = modal.querySelectorAll('.ql-donation-tier');
+  var input = document.getElementById('ql-modal-custom-amount');
+  function setActive(amount, fromInput) {
+    selectedAmount = Math.max(1, parseInt(amount, 10) || DEFAULT_AMOUNT);
+    tiers.forEach(function(t){
+      var match = parseInt(t.dataset.amount, 10) === selectedAmount && !fromInput;
+      t.classList.toggle('is-active', match);
+      t.setAttribute('aria-checked', match ? 'true' : 'false');
+    });
+  }
+  tiers.forEach(function(t){
+    t.addEventListener('click', function(){
+      if (input) input.value = '';
+      setActive(parseInt(t.dataset.amount, 10), false);
+    });
+  });
+  if (input) input.addEventListener('input', function(){
+    if (this.value) setActive(this.value, true);
+  });
+
+  function renderPaypal() {
+    if (!window.paypal) return;
+    paypal.Buttons({
+      style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'donate', height: 44 },
+      createOrder: function(data, actions){
+        return actions.order.create({
+          purchase_units: [{
+            amount: { value: selectedAmount.toFixed(2), currency_code: 'EUR' },
+            description: 'Don Quartier Libre — média indépendant'
+          }]
+        });
+      },
+      onApprove: function(data, actions){
+        return actions.order.capture().then(function(){
+          window.location.href = '<?php echo esc_url( home_url( '/soutenir/?merci=1' ) ); ?>';
+        });
+      },
+      onError: function(err){ console.error('PayPal:', err); }
+    }).render('#ql-modal-paypal-container');
+    paypalRendered = true;
+  }
+
+  var helloBtn = document.getElementById('ql-modal-helloasso-btn');
+  var helloErr = document.getElementById('ql-modal-helloasso-err');
+  if (helloBtn) {
+    helloBtn.addEventListener('click', async function(){
+      helloBtn.disabled = true;
+      var origHtml = helloBtn.innerHTML;
+      helloBtn.textContent = 'Création du paiement…';
+      if (helloErr) helloErr.hidden = true;
+      try {
+        var res = await fetch('<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+          body: 'action=ql_helloasso_checkout'
+              + '&nonce=<?php echo wp_create_nonce( 'ql_helloasso' ); ?>'
+              + '&amount=' + encodeURIComponent(selectedAmount),
+        });
+        var data = await res.json();
+        if (data && data.success && data.data && data.data.url) {
+          window.location.href = data.data.url;
+          return;
+        }
+        throw new Error((data && data.data) || 'Erreur inconnue');
+      } catch (e) {
+        if (helloErr) { helloErr.textContent = 'Erreur : ' + e.message; helloErr.hidden = false; }
+        helloBtn.disabled = false;
+        helloBtn.innerHTML = origHtml;
+      }
+    });
+  }
+})();
+</script>
 
 <?php get_footer(); ?>
