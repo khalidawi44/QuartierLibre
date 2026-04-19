@@ -1062,14 +1062,15 @@ p  { margin: 0 0 1em; }
 
 /* ═══ NUCLEAR RESET : casse tout CSS hérité (Gutenberg, vieux thème, plugins) ═══ */
 
-/* Nouveau stacking context isolé */
+/* Nouveau stacking context isolé — sans 'contain' qui bloquait
+   les breakouts pleine largeur des blockquotes. */
 .ql-post__content {
-  contain: layout style;
   isolation: isolate;
 }
 
-/* Tue tout positionnement/transform/float sur tous les descendants */
-.ql-post__content * {
+/* Tue tout positionnement/transform/float sur tous les descendants
+   — SAUF blockquotes (témoignages pleine largeur, besoin de relative). */
+.ql-post__content *:not(blockquote):not(blockquote *) {
   position: static !important;
   transform: none !important;
   clip-path: none !important;
@@ -1080,8 +1081,8 @@ p  { margin: 0 0 1em; }
   filter: none !important;
   float: none !important;
 }
-.ql-post__content *::before,
-.ql-post__content *::after {
+.ql-post__content *:not(blockquote):not(blockquote *)::before,
+.ql-post__content *:not(blockquote):not(blockquote *)::after {
   position: static !important;
   clip-path: none !important;
   transform: none !important;
@@ -1273,30 +1274,40 @@ p  { margin: 0 0 1em; }
 }
 .ql-post__content li { margin-bottom: .4em; }
 
-/* Blockquote = témoignage pleine largeur sur image de fond.
-   Le fond = featured_image de l'article, avec voile sombre rouge
-   pour garantir la lisibilité du texte blanc centré. */
+/* Blockquote = témoignage pleine largeur viewport + fond fixe.
+   Image neutre depuis assets/img/ (Unsplash libre, concrete urbain
+   sombre, zéro texte) pour garantir la lisibilité du texte blanc
+   superposé. Overlay dégradé 135° noir 90% → rouge 65%. */
 .ql-post__content blockquote {
-  margin: 3em calc(50% - 50vw);
-  padding: 4rem clamp(1rem, 5vw, 4rem);
+  position: relative !important;
+  width: 100vw;
+  max-width: 100vw;
+  margin-top: 3.5em !important;
+  margin-bottom: 3.5em !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding: 5rem clamp(1rem, 5vw, 4rem);
   font-family: var(--ql-font-serif);
-  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-size: clamp(1.3rem, 2.3vw, 1.8rem);
   font-style: italic;
-  line-height: 1.5;
-  color: #fff;
+  line-height: 1.55;
+  color: #fff !important;
   text-align: center;
-  background-color: var(--ql-ink);
+  background-color: #0f0f0f;
   background-image:
-    linear-gradient(135deg, rgba(15,15,15,.82) 0%, rgba(224,40,16,.55) 100%),
-    var(--ql-hero-img, linear-gradient(135deg, #1a0a08, #0f0f0f));
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
+    linear-gradient(135deg, rgba(15,15,15,.90) 0%, rgba(224,40,16,.65) 100%),
+    url("../img/blockquote-bg.jpg");
+  background-size: cover, cover;
+  background-position: center center, center center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  border: 0 !important;
+  border-radius: 0 !important;
   isolation: isolate;
+  overflow: hidden;
 }
 .ql-post__content blockquote::before {
-  content: "\201C"; /* guillemet ouvrant courbé */
+  content: "\201C";
   display: block;
   font-size: 6rem;
   line-height: .8;
@@ -1304,30 +1315,34 @@ p  { margin: 0 0 1em; }
   font-family: var(--ql-font-serif);
   font-weight: 900;
   font-style: normal;
-  margin-bottom: .2em;
+  margin-bottom: .3em;
+  text-align: center;
 }
 .ql-post__content blockquote p {
-  max-width: 880px;
-  margin: 0 auto 1em;
-  position: relative;
+  max-width: 860px;
+  margin: 0 auto 1em !important;
+  color: #fff !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,.6);
 }
-.ql-post__content blockquote p:last-child { margin-bottom: 0; }
+.ql-post__content blockquote p:last-child { margin-bottom: 0 !important; }
 .ql-post__content blockquote strong {
-  background: transparent;
-  color: var(--ql-yellow);
+  background: transparent !important;
+  color: var(--ql-yellow) !important;
+  padding: 0;
 }
+.ql-post__content blockquote a { color: var(--ql-yellow) !important; }
 
-/* Sans featured_image ou hors single — fallback sobre */
-.ql-post__content blockquote:not([style]) {
-  /* la variable CSS gère le fallback via linear-gradient par défaut */
-}
-
-/* Mobile : on garde la pleine largeur mais padding réduit */
-@media (max-width: 600px) {
+/* Mobile : background-attachment:fixed cassé sur iOS → scroll normal.
+   Padding réduit pour éviter hauteur excessive sur petits écrans. */
+@media (max-width: 768px) {
   .ql-post__content blockquote {
-    padding: 2.5rem 1.2rem;
+    padding: 3rem 1.2rem;
+    background-attachment: scroll, scroll;
   }
   .ql-post__content blockquote::before { font-size: 4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ql-post__content blockquote { background-attachment: scroll, scroll; }
 }
 
 /* ── Listes : puces rouges stylées ───────────────────────── */

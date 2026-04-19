@@ -324,14 +324,11 @@ add_filter( 'body_class', function ( $classes ) {
 //  JSON-LD, canonical, sitemap, robots.txt. On ajoute ce qui reste.)
 
 // Preload du featured image sur les single posts — gain LCP
-// + CSS variable --ql-hero-img exposée pour réutilisation dans les
-//   blockquotes (fond image des témoignages)
 add_action( 'wp_head', function () {
     if ( ! is_singular( 'post' ) || ! has_post_thumbnail() ) return;
     $src = get_the_post_thumbnail_url( null, 'ql-hero' );
     if ( ! $src ) return;
     echo '<link rel="preload" as="image" href="' . esc_url( $src ) . '" fetchpriority="high">' . "\n";
-    echo '<style>.ql-single{--ql-hero-img:url(' . esc_url( $src ) . ')}</style>' . "\n";
 }, 3 );
 
 // Alt text de secours si vide : utilise le titre de l'article
