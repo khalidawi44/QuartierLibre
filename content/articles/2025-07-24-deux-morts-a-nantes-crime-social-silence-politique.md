@@ -1,7 +1,7 @@
 ---
 title: "Deux morts à Nantes : crime social, silence politique"
 slug: "deux-morts-a-nantes-crime-social-silence-politique"
-category: "a-la-une"
+category: "infos-locale"
 tags:
   - johanna-rolland
   - logement
@@ -12,7 +12,7 @@ excerpt: "Samedi 20 juillet 2025, deux hommes sans domicile fixe ont été retro
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/sans_abrisme.png"
 status: "publish"
 date: "2025-07-24 17:05:24"
-author: "khalid44"
+author: "aissata-diallo"
 original_url: "https://quartierlibre.org/deux-morts-a-nantes-crime-social-silence-politique/"
 ---
 

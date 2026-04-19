@@ -1,7 +1,7 @@
 ---
 title: "Nantes sous les gaz : la répression d’un gouvernement illégitime"
 slug: "nantes-sous-les-gaz-la-repression-dun-gouvernement-illegitime"
-category: "a-la-une"
+category: "luttes"
 tags:
   - 10septembre
   - lecornu
@@ -11,7 +11,8 @@ excerpt: "Nouveau premier ministre de la guerre Ce samedi, à Nantes, la place d
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/671F64E7-F55D-49FD-8B9C-5B4CE2D94D0D.png"
 status: "publish"
 date: "2025-09-10 08:23:05"
-author: "khalid44"
+author: "fatou-traore"
+une: true
 original_url: "https://quartierlibre.org/nantes-sous-les-gaz-la-repression-dun-gouvernement-illegitime/"
 ---
 

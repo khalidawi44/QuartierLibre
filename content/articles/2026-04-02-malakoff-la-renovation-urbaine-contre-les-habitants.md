@@ -12,7 +12,7 @@ excerpt: "À Malakoff, on ne rénove pas. On déplace. Derrière les brochures d
 featured_image: "content/media/quartier-malakoff.jpg"
 status: "draft"
 date: "2026-04-02 10:00:00"
-author: "khalid44"
+author: "younes-boukhris"
 ---
 
 ## Un quartier qui change — mais pas pour ses habitants

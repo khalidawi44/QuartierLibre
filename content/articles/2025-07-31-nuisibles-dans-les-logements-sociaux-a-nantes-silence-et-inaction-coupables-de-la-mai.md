@@ -1,7 +1,7 @@
 ---
 title: "Nuisibles dans les logements sociaux à Nantes : silence et inaction coupables de la mairie et de Nantes Métropole Habitat"
 slug: "nuisibles-dans-les-logements-sociaux-a-nantes-silence-et-inaction-coupables-de-la-mairie-et-de-nantes-metropole-habitat"
-category: "a-la-une"
+category: "infos-locale"
 tags:
   - insalubrite-publique
   - johanna-rolland
@@ -11,7 +11,7 @@ excerpt: "Un problème sanitaire majeur ignoré Dans plusieurs quartiers populai
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/Nantes-Habitat-insalubrite-scaled.jpg"
 status: "publish"
 date: "2025-07-31 12:22:40"
-author: "khalid44"
+author: "soraya-messaoudi"
 original_url: "https://quartierlibre.org/nuisibles-dans-les-logements-sociaux-a-nantes-silence-et-inaction-coupables-de-la-mairie-et-de-nantes-metropole-habitat/"
 ---
 

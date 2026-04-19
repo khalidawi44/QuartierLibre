@@ -12,7 +12,7 @@ excerpt: "Coincé entre la fac et l'Erdre, Port Boyer devient le dépôt de la p
 featured_image: "content/media/quartier-port-boyer.svg"
 status: "draft"
 date: "2026-04-08 09:00:00"
-author: "khalid44"
+author: "lea-marchand"
 ---
 
 ## Un quartier à la confluence des précarités

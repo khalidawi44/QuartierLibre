@@ -1,7 +1,7 @@
 ---
 title: "🦞 Homard en papier mâché, parapluies vs valises de Kadhafi : prison pour les pauvres, passe-droit pour les puissants"
 slug: "homard-en-papier-mache-parapluies-vs-valises-de-kadhafi-prison-pour-les-pauvres-passe-droit-pour-les-puissants"
-category: "a-la-une"
+category: "france"
 tags:
   - association-malfaiteur
   - homard
@@ -11,7 +11,7 @@ excerpt: "À Nantes comme à Paris, la justice ne pèse pas de la même façon s
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/association.png"
 status: "publish"
 date: "2025-09-27 05:49:00"
-author: "khalid44"
+author: "julien-moreau"
 original_url: "https://quartierlibre.org/homard-en-papier-mache-parapluies-vs-valises-de-kadhafi-prison-pour-les-pauvres-passe-droit-pour-les-puissants/"
 ---
 

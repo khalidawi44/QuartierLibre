@@ -1,7 +1,7 @@
 ---
 title: "LE CADAVRE POLITIQUE DU PS : UN MORT QUI GESTICULE ENCORE"
 slug: "le-cadavre-politique-du-ps-un-mort-qui-gesticule-encore"
-category: "a-la-une"
+category: "france"
 tags:
   - dissolution
   - partie-socialiste
@@ -10,7 +10,7 @@ excerpt: "L’actualité brûlante et la stratégie de survie du PS Alors que la
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/ps_un_cadavre_qui_bouge_encore.webp"
 status: "publish"
 date: "2025-09-01 17:50:49"
-author: "khalid44"
+author: "julien-moreau"
 original_url: "https://quartierlibre.org/le-cadavre-politique-du-ps-un-mort-qui-gesticule-encore/"
 ---
 

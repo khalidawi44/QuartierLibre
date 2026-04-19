@@ -12,7 +12,7 @@ excerpt: "À la Pilotière, on n'attend plus la mairie. On a compris. Derrière 
 featured_image: "content/media/quartier-pilotiere.svg"
 status: "draft"
 date: "2026-04-11 09:30:00"
-author: "khalid44"
+author: "sofia-bensalem"
 ---
 
 ## Un petit quartier, une grande leçon

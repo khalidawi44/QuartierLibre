@@ -315,7 +315,74 @@ function ql_do_github_sync() {
 //  SYNC DE CONTENU — articles Markdown → WordPress posts
 // ════════════════════════════════════════════════════════════════
 
+// ── Roster de la rédaction (création idempotente) ─────────────
+// Crée/met à jour les 13 auteurs fictionnels de la rédaction
+// (11 spécialistes quartier + 2 correspondants national/international).
+// Chaque entrée : login, display_name, email, bio.
+// Les mots de passe sont générés aléatoirement — l'admin peut les
+// réinitialiser via WP Admin > Utilisateurs si besoin.
+function ql_authors_roster() {
+    return array(
+        // 11 spécialistes quartier HLM
+        array( 'login' => 'aissata-diallo',   'display' => 'Aïssata Diallo',   'first' => 'Aïssata', 'last' => 'Diallo',    'email' => 'aissata.diallo@quartierlibre.org',   'bio' => 'Reporter terrain à Bellevue. Documente la politique sécuritaire, la vidéosurveillance, les témoignages des habitant·es face à la BAC et aux services publics absents.' ),
+        array( 'login' => 'younes-boukhris',  'display' => 'Younes Boukhris',  'first' => 'Younes',  'last' => 'Boukhris',  'email' => 'younes.boukhris@quartierlibre.org',  'bio' => 'Malakoff. Spécialiste urbanisme et rénovation urbaine — décrypte les PRU/NPNRU et leurs effets de gentrification sur les quartiers populaires.' ),
+        array( 'login' => 'karima-benali',    'display' => 'Karima Benali',    'first' => 'Karima',  'last' => 'Benali',    'email' => 'karima.benali@quartierlibre.org',    'bio' => 'Dervallières. Enquête sur l\'abandon des services publics — écoles, PMI, poste — et la solidarité qui s\'organise malgré tout.' ),
+        array( 'login' => 'soraya-messaoudi', 'display' => 'Soraya Messaoudi', 'first' => 'Soraya',  'last' => 'Messaoudi', 'email' => 'soraya.messaoudi@quartierlibre.org', 'bio' => 'Clos Toreau. Logement indigne, bailleurs sociaux défaillants, punaises et moisissures — le quotidien que Nantes Métropole Habitat refuse de voir.' ),
+        array( 'login' => 'mehdi-haddad',     'display' => 'Mehdi Haddad',     'first' => 'Mehdi',   'last' => 'Haddad',    'email' => 'mehdi.haddad@quartierlibre.org',     'bio' => 'Bottière–Pin Sec. Suit la destruction programmée du quartier au nom de la « rénovation urbaine » et la résistance des locataires.' ),
+        array( 'login' => 'fatou-traore',     'display' => 'Fatou Traoré',     'first' => 'Fatou',   'last' => 'Traoré',    'email' => 'fatou.traore@quartierlibre.org',     'bio' => 'Breil. Violences policières, contrôles au faciès, justice sociale — donne la parole aux ados et aux familles.' ),
+        array( 'login' => 'samir-toure',      'display' => 'Samir Touré',      'first' => 'Samir',   'last' => 'Touré',     'email' => 'samir.toure@quartierlibre.org',      'bio' => 'Bout des Landes. Transports publics, enclavement territorial, mobilités subies — comment on condamne un quartier en réduisant les bus.' ),
+        array( 'login' => 'lea-marchand',     'display' => 'Léa Marchand',     'first' => 'Léa',     'last' => 'Marchand',  'email' => 'lea.marchand@quartierlibre.org',     'bio' => 'Port Boyer. Logement étudiant, marchands de sommeil, précarité jeune — le silence complice des institutions universitaires.' ),
+        array( 'login' => 'naima-ouedraogo',  'display' => 'Naïma Ouédraogo',  'first' => 'Naïma',   'last' => 'Ouédraogo', 'email' => 'naima.ouedraogo@quartierlibre.org',  'bio' => 'Halvêque. Médias dominants, fabrique des « territoires perdus », contre-narratifs — rendre visible ce que le 20h efface.' ),
+        array( 'login' => 'amadou-kone',      'display' => 'Amadou Koné',      'first' => 'Amadou',  'last' => 'Koné',      'email' => 'amadou.kone@quartierlibre.org',      'bio' => 'Ranzay. Vie de quartier, tissu associatif, liens sociaux — ce qui tient debout quand les institutions reculent.' ),
+        array( 'login' => 'sofia-bensalem',   'display' => 'Sofia Bensalem',   'first' => 'Sofia',   'last' => 'Bensalem',  'email' => 'sofia.bensalem@quartierlibre.org',   'bio' => 'Pilotière. Auto-organisation, collectifs habitants, entraide — les quartiers qui se prennent en main.' ),
+        // Correspondants
+        array( 'login' => 'rachida-ben-arfa', 'display' => 'Rachida Ben Arfa', 'first' => 'Rachida', 'last' => 'Ben Arfa',  'email' => 'rachida.benarfa@quartierlibre.org',  'bio' => 'Correspondante internationale. Couvre Gaza, la Palestine, les résistances populaires au Maghreb et au Moyen-Orient. Relaye ce que les médias mainstream préfèrent taire.' ),
+        array( 'login' => 'julien-moreau',    'display' => 'Julien Moreau',    'first' => 'Julien',  'last' => 'Moreau',    'email' => 'julien.moreau@quartierlibre.org',    'bio' => 'Correspondant national. Politique française, décomposition du PS, dérives autoritaires macronistes, luttes sociales — éclairage structurel depuis les quartiers.' ),
+    );
+}
+
+function ql_create_authors() {
+    $created = 0; $updated = 0;
+    foreach ( ql_authors_roster() as $a ) {
+        $user = get_user_by( 'login', $a['login'] );
+        if ( ! $user ) {
+            $user_id = wp_insert_user( array(
+                'user_login'    => $a['login'],
+                'user_pass'     => wp_generate_password( 16, true, false ),
+                'user_email'    => $a['email'],
+                'display_name'  => $a['display'],
+                'first_name'    => $a['first'],
+                'last_name'     => $a['last'],
+                'nickname'      => $a['display'],
+                'description'   => $a['bio'],
+                'role'          => 'author',
+            ) );
+            if ( ! is_wp_error( $user_id ) ) { $created++; }
+        } else {
+            // Mise à jour légère (bio + display) — pas de reset du password
+            wp_update_user( array(
+                'ID'           => $user->ID,
+                'display_name' => $a['display'],
+                'first_name'   => $a['first'],
+                'last_name'    => $a['last'],
+                'description'  => $a['bio'],
+                'nickname'     => $a['display'],
+            ) );
+            $updated++;
+        }
+    }
+    return array( 'created' => $created, 'updated' => $updated );
+}
+
 function ql_do_content_sync() {
+    // Crée/met à jour la rédaction (13 auteurs) avant tout upsert d'article
+    $authors_result = ql_create_authors();
+    if ( $authors_result['created'] > 0 || $authors_result['updated'] > 0 ) {
+        echo '<div class="notice notice-info"><p>Rédaction : <strong>'
+            . (int) $authors_result['created'] . '</strong> auteur(s) créé(s), <strong>'
+            . (int) $authors_result['updated'] . '</strong> mis à jour.</p></div>';
+    }
+
     $files = ql_gh_list_content_files( QL_GH_ARTICLES_PATH );
     if ( ! is_array( $files ) ) {
         echo '<div class="notice notice-error"><p>Impossible de lister le dossier <code>content/articles/</code> sur GitHub.</p></div>';
@@ -525,6 +592,19 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
     }
 
     if ( $thumb_id ) set_post_thumbnail( $post_id, $thumb_id );
+
+    // Article sélectionné pour la Une (featured sur la home)
+    // Frontmatter `une: true` → meta `_ql_une` = 1 (sinon supprimé)
+    $is_une = false;
+    if ( isset( $front['une'] ) ) {
+        $v = $front['une'];
+        $is_une = ( $v === true || $v === 1 || $v === '1' || strtolower( (string) $v ) === 'true' );
+    }
+    if ( $is_une ) {
+        update_post_meta( $post_id, '_ql_une', 1 );
+    } else {
+        delete_post_meta( $post_id, '_ql_une' );
+    }
 
     // Source externe (ex. pour republier un article de Contre-Attaque, etc.)
     if ( ! empty( $front['source_name'] ) ) {

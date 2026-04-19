@@ -12,7 +12,7 @@ excerpt: "La Halvêque ne fait pas la une des grands journaux pour ses associati
 featured_image: "content/media/quartier-halveque.svg"
 status: "draft"
 date: "2026-04-09 10:00:00"
-author: "khalid44"
+author: "naima-ouedraogo"
 ---
 
 ## Le quartier que Presse Océan adore détester

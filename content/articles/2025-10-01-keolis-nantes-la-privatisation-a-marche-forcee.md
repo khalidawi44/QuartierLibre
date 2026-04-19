@@ -1,7 +1,7 @@
 ---
 title: "Keolis Nantes : La privatisation à marche forcée"
 slug: "keolis-nantes-la-privatisation-a-marche-forcee"
-category: "a-la-une"
+category: "infos-locale"
 tags:
   - lrem
   - lutte-social
@@ -12,7 +12,7 @@ excerpt: "À Nantes, la grève des conducteurs de Keolis Atlantique En grève ch
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/10/keolis.png"
 status: "publish"
 date: "2025-10-01 06:58:08"
-author: "khalid44"
+author: "samir-toure"
 original_url: "https://quartierlibre.org/keolis-nantes-la-privatisation-a-marche-forcee/"
 ---
 

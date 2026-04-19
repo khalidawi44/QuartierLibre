@@ -12,7 +12,7 @@ excerpt: "Aux Dervalli√®res, on ferme les guichets, on supprime les postes, on √
 featured_image: "content/media/quartier-dervallieres.jpg"
 status: "draft"
 date: "2026-04-03 11:00:00"
-author: "khalid44"
+author: "karima-benali"
 ---
 
 ## Un quartier qu'on vide, pas un quartier qu'on sert

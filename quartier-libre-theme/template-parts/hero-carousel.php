@@ -1,36 +1,81 @@
 <?php
 /**
- * Hero Carousel — style Contre-Attaque.
- * 6 articles en carrousel plein-largeur : grosse image + titre en overlay.
- * CSS-only scroll-snap + boutons nav JS simples.
+ * Hero Carousel — « À la une »
+ * Affiche les articles marqués _ql_une = 1 (frontmatter `une: true`).
+ * Un article « une » par catégorie (le plus récent si plusieurs).
+ * Fallback : si aucun article marqué, prend le dernier article de chacune
+ * des catégories principales.
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-$q = new WP_Query( array(
-    'posts_per_page'      => 6,
-    'ignore_sticky_posts' => false,
-    'no_found_rows'       => true,
-    'meta_query'          => array(
-        array( 'key' => '_thumbnail_id' ),  // uniquement articles avec image à la une
+// 1. Récupérer tous les articles marqués « à la une »
+$une_q = new WP_Query( array(
+    'posts_per_page' => 12,
+    'meta_query'     => array(
+        array( 'key' => '_ql_une', 'value' => '1', 'compare' => '=' ),
     ),
+    'no_found_rows'  => true,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
 ) );
 
-if ( ! $q->have_posts() ) { return; }
-
 $slides = array();
-while ( $q->have_posts() ) {
-    $q->the_post();
-    $slides[] = array(
-        'id'     => get_the_ID(),
-        'url'    => get_permalink(),
-        'title'  => get_the_title(),
-        'img'    => get_the_post_thumbnail_url( null, 'ql-hero' ) ?: get_the_post_thumbnail_url( null, 'full' ),
-        'cat'    => ql_primary_category(),
-        'date'   => get_the_date(),
-        'author' => get_the_author(),
-    );
+$cat_seen = array(); // une seule slide par catégorie
+
+if ( $une_q->have_posts() ) {
+    while ( $une_q->have_posts() ) {
+        $une_q->the_post();
+        $cat = ql_primary_category();
+        $cat_key = $cat ? $cat->term_id : 0;
+        if ( isset( $cat_seen[ $cat_key ] ) ) continue; // déjà une une pour cette catégorie
+        $cat_seen[ $cat_key ] = true;
+        $slides[] = array(
+            'id'     => get_the_ID(),
+            'url'    => get_permalink(),
+            'title'  => get_the_title(),
+            'img'    => get_the_post_thumbnail_url( null, 'ql-hero' ) ?: get_the_post_thumbnail_url( null, 'full' ),
+            'cat'    => $cat,
+            'date'   => get_the_date(),
+            'author' => get_the_author(),
+        );
+    }
+    wp_reset_postdata();
 }
-wp_reset_postdata();
+
+// 2. Fallback : si moins de 3 articles « à la une », compléter avec le dernier
+// article de chaque catégorie principale manquante.
+if ( count( $slides ) < 3 ) {
+    $main_cat_slugs = array( 'infos-locale', 'france', 'international', 'luttes' );
+    foreach ( $main_cat_slugs as $slug ) {
+        $term = get_term_by( 'slug', $slug, 'category' );
+        if ( ! $term || isset( $cat_seen[ $term->term_id ] ) ) continue;
+
+        $fallback = new WP_Query( array(
+            'posts_per_page' => 1,
+            'category__in'   => array( $term->term_id ),
+            'no_found_rows'  => true,
+            'meta_query'     => array(
+                array( 'key' => '_thumbnail_id' ),
+            ),
+        ) );
+        if ( $fallback->have_posts() ) {
+            $fallback->the_post();
+            $cat_seen[ $term->term_id ] = true;
+            $slides[] = array(
+                'id'     => get_the_ID(),
+                'url'    => get_permalink(),
+                'title'  => get_the_title(),
+                'img'    => get_the_post_thumbnail_url( null, 'ql-hero' ) ?: get_the_post_thumbnail_url( null, 'full' ),
+                'cat'    => $term,
+                'date'   => get_the_date(),
+                'author' => get_the_author(),
+            );
+            wp_reset_postdata();
+        }
+    }
+}
+
+if ( empty( $slides ) ) { return; }
 
 $slide_count = count( $slides );
 ?>
@@ -66,19 +111,21 @@ $slide_count = count( $slides );
         <?php endforeach; ?>
     </div>
 
-    <button class="ql-carousel__nav ql-carousel__nav--prev" type="button" aria-label="Article précédent">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
-    </button>
-    <button class="ql-carousel__nav ql-carousel__nav--next" type="button" aria-label="Article suivant">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-    </button>
+    <?php if ( $slide_count > 1 ) : ?>
+        <button class="ql-carousel__nav ql-carousel__nav--prev" type="button" aria-label="Article précédent">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="ql-carousel__nav ql-carousel__nav--next" type="button" aria-label="Article suivant">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
 
-    <div class="ql-carousel__dots" role="tablist" aria-label="Navigation des articles">
-        <?php for ( $i = 0; $i < $slide_count; $i++ ) : ?>
-            <button type="button" class="ql-carousel__dot<?php echo $i === 0 ? ' is-active' : ''; ?>"
-                    role="tab"
-                    aria-label="Aller à l'article <?php echo $i + 1; ?>"
-                    data-index="<?php echo $i; ?>"></button>
-        <?php endfor; ?>
-    </div>
+        <div class="ql-carousel__dots" role="tablist" aria-label="Navigation des articles">
+            <?php for ( $i = 0; $i < $slide_count; $i++ ) : ?>
+                <button type="button" class="ql-carousel__dot<?php echo $i === 0 ? ' is-active' : ''; ?>"
+                        role="tab"
+                        aria-label="Aller à l'article <?php echo $i + 1; ?>"
+                        data-index="<?php echo $i; ?>"></button>
+            <?php endfor; ?>
+        </div>
+    <?php endif; ?>
 </section>

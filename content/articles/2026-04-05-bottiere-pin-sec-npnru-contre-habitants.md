@@ -12,7 +12,7 @@ excerpt: "Le NPNRU de Bottière-Pin Sec engage la démolition de centaines de lo
 featured_image: "content/media/quartier-bottiere-pin-sec.jpg"
 status: "draft"
 date: "2026-04-05 14:00:00"
-author: "khalid44"
+author: "mehdi-haddad"
 ---
 
 ## Un plan à 240 millions d'euros — pour qui ?

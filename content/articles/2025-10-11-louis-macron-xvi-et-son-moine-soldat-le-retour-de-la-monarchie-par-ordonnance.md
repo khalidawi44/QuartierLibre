@@ -1,7 +1,7 @@
 ---
 title: "Louis-Macron XVI et son moine-soldat : le retour de la monarchie par ordonnance"
 slug: "louis-macron-xvi-et-son-moine-soldat-le-retour-de-la-monarchie-par-ordonnance"
-category: "a-la-une"
+category: "france"
 tags:
   - gouvernement
   - lecornu
@@ -10,7 +10,8 @@ excerpt: "Louis-Macron XVI a donné un bras d’honneur au peuple. Derrière les
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/10/macronroi.jpg"
 status: "publish"
 date: "2025-10-11 07:05:23"
-author: "khalid44"
+author: "julien-moreau"
+une: true
 original_url: "https://quartierlibre.org/louis-macron-xvi-et-son-moine-soldat-le-retour-de-la-monarchie-par-ordonnance/"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "🇵🇸 Gaza : le génocide sous nos yeux"
 slug: "gaza-le-genocide-sous-nos-yeux"
-category: "a-la-une"
+category: "international"
 tags:
   - gaza
   - israel
@@ -10,7 +10,8 @@ excerpt: "Les 15 et 16 septembre 2025, Gaza a été frappée avec une intensité
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/gaza-un-genocide.jpeg"
 status: "publish"
 date: "2025-09-16 07:05:35"
-author: "khalid44"
+author: "rachida-ben-arfa"
+une: true
 original_url: "https://quartierlibre.org/gaza-le-genocide-sous-nos-yeux/"
 ---
 

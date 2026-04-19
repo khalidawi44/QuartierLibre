@@ -13,7 +13,7 @@ excerpt: "Au Clos Toreau, vivre en logement social c'est cohabiter avec les puna
 featured_image: "content/media/quartier-clos-toreau.jpg"
 status: "draft"
 date: "2026-04-04 09:30:00"
-author: "khalid44"
+author: "soraya-messaoudi"
 ---
 
 ## Un des plus petits quartiers HLM, une des plus grandes hontes

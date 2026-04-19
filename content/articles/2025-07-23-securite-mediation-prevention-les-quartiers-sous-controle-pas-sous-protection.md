@@ -1,7 +1,7 @@
 ---
 title: "“Sécurité”, “médiation”, “prévention” : les quartiers sous contrôle, pas sous protection"
 slug: "securite-mediation-prevention-les-quartiers-sous-controle-pas-sous-protection"
-category: "a-la-une"
+category: "luttes"
 tags:
   - bassem-asseh
   - camera-videosurveillance
@@ -16,7 +16,7 @@ excerpt: "Sur son site officiel, Nantes Métropole prétend “travailler avec l
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/quartier_sous_controle.jpeg"
 status: "publish"
 date: "2025-07-23 21:54:00"
-author: "khalid44"
+author: "fatou-traore"
 original_url: "https://quartierlibre.org/securite-mediation-prevention-les-quartiers-sous-controle-pas-sous-protection/"
 ---
 

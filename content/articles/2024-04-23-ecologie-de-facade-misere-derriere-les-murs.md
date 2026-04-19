@@ -1,7 +1,7 @@
 ---
 title: "Écologie de façade, misère derrière les murs : où passe l’argent des quartiers populaires ?"
 slug: "ecologie-de-facade-misere-derriere-les-murs"
-category: "a-la-une"
+category: "infos-locale"
 tags:
   - johanna-rolland
   - logement
@@ -12,7 +12,7 @@ excerpt: "Nantes Métropole annonce un “second plan d’actions” pour les qu
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2024/04/johanna_rolland_plante_choux.jpeg"
 status: "publish"
 date: "2024-04-23 06:25:10"
-author: "khalid44"
+author: "mehdi-haddad"
 original_url: "https://quartierlibre.org/ecologie-de-facade-misere-derriere-les-murs/"
 ---
 

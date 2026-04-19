@@ -12,7 +12,7 @@ excerpt: "Au Bout des Landes, il faut 45 minutes en bus pour aller au centre-vil
 featured_image: "content/media/quartier-bout-des-landes.jpg"
 status: "draft"
 date: "2026-04-07 11:00:00"
-author: "khalid44"
+author: "samir-toure"
 ---
 
 ## Le quartier le plus mal desservi de Nantes

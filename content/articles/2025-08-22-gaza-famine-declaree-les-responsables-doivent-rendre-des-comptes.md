@@ -1,7 +1,7 @@
 ---
 title: "GAZA : FAMINE DÉCLARÉE, LES RESPONSABLES DOIVENT RENDRE DES COMPTES"
 slug: "gaza-famine-declaree-les-responsables-doivent-rendre-des-comptes"
-category: "a-la-une"
+category: "international"
 tags:
   - gaza
   - israel
@@ -10,7 +10,7 @@ excerpt: "Famine et massacres à Gaza L’ONU a officiellement déclaré ce que 
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/08/GENOCIDE8GAZA.webp"
 status: "publish"
 date: "2025-08-22 09:53:30"
-author: "khalid44"
+author: "rachida-ben-arfa"
 original_url: "https://quartierlibre.org/gaza-famine-declaree-les-responsables-doivent-rendre-des-comptes/"
 ---
 

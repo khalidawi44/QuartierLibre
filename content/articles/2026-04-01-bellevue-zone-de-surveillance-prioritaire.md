@@ -12,7 +12,8 @@ excerpt: "Plus grand quartier HLM de Nantes, à cheval sur la ville et Saint-Her
 featured_image: "content/media/quartier-bellevue.jpg"
 status: "draft"
 date: "2026-04-01 09:00:00"
-author: "khalid44"
+author: "aissata-diallo"
+une: true
 ---
 
 ## Le plus grand quartier populaire de la métropole, transformé en zone de contrôle

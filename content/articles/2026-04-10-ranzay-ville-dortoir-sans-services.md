@@ -12,7 +12,7 @@ excerpt: "Le Ranzay, c'est quelques centaines de logements entassés, une place 
 featured_image: "content/media/quartier-ranzay.svg"
 status: "draft"
 date: "2026-04-10 11:30:00"
-author: "khalid44"
+author: "amadou-kone"
 ---
 
 ## Un quartier fantôme en plein jour

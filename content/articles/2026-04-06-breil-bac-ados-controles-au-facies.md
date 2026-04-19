@@ -13,7 +13,7 @@ excerpt: "Au Breil, les contrôles policiers ne visent pas les criminels. Ils vi
 featured_image: "content/media/quartier-breil.jpg"
 status: "draft"
 date: "2026-04-06 10:30:00"
-author: "khalid44"
+author: "fatou-traore"
 ---
 
 ## Un quartier calme — sauf quand la BAC débarque

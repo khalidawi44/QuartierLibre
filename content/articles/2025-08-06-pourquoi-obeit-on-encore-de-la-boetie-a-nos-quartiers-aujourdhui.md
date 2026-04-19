@@ -1,14 +1,14 @@
 ---
 title: "Pourquoi obéit-on encore ? De La Boétie à nos quartiers aujourd’hui , étude croisé !"
 slug: "pourquoi-obeit-on-encore-de-la-boetie-a-nos-quartiers-aujourdhui"
-category: "a-la-une"
+category: "histoire"
 tags:
   - histoire
 excerpt: "Constat mondial : un même schéma de domination Du Clos Toreau à Nantes jusqu’aux favelas de Rio, en passant par les cités de Nanterre ou les townships de…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/08/de-la-boetie.jpg"
 status: "publish"
 date: "2025-08-06 09:24:02"
-author: "khalid44"
+author: "julien-moreau"
 original_url: "https://quartierlibre.org/pourquoi-obeit-on-encore-de-la-boetie-a-nos-quartiers-aujourdhui/"
 ---
 

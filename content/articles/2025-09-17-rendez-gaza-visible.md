@@ -1,7 +1,7 @@
 ---
 title: "🇵🇸 Rendez Gaza visible"
 slug: "rendez-gaza-visible"
-category: "a-la-une"
+category: "international"
 tags:
   - gaza
   - palestine
@@ -9,7 +9,7 @@ excerpt: "En ce moment même, Gaza est sous le feu. Les bombes tombent, mais ce 
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/09/gaza_flag_affiche-scaled.png"
 status: "publish"
 date: "2025-09-17 03:15:56"
-author: "khalid44"
+author: "rachida-ben-arfa"
 original_url: "https://quartierlibre.org/rendez-gaza-visible/"
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: "Nantes 2024 : Quand l’argent public danse au bal des privilégiés et l’ombre lourde des banques"
 slug: "nantes-2024-quand-largent-public-danse-au-bal-des-privilegies-et-lombre-lourde-des-banques"
-category: "a-la-une"
+category: "france"
 excerpt: "Ne vous méprenez pas : on nous ressert des beaux discours écolos, des spots bien léchés, des hashtags « Nantes s’engage ». Mais ouvrez grand les yeux :…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/08/bal_des_privilegie.webp"
 status: "publish"
 date: "2025-08-12 13:45:54"
-author: "khalid44"
+author: "julien-moreau"
 original_url: "https://quartierlibre.org/nantes-2024-quand-largent-public-danse-au-bal-des-privilegies-et-lombre-lourde-des-banques/"
 ---
 
