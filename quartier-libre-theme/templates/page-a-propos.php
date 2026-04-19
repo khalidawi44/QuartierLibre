@@ -146,76 +146,97 @@ $paypal_client_id = get_option( 'ql_paypal_client_id', '' );
         </div>
     </section>
 
-    <!-- UNE RÉDACTION + Qui sommes-nous (en bas de la colonne droite) -->
+    <!-- LA RÉDACTION — grille 2 colonnes : listes / portrait + récit Khalid -->
     <section class="ql-apropos-block ql-apropos-block--dark">
         <div class="ql-container ql-apropos-block__inner">
             <header class="ql-section__head ql-section__head--light">
-                <h2 class="ql-section__title">Une rédaction qui vit dans les quartiers</h2>
+                <h2 class="ql-section__title">La rédaction</h2>
             </header>
 
-            <div class="ql-apropos-roster">
-                <!-- COLONNE GAUCHE : Liste des journalistes quartier -->
-                <div class="ql-apropos-roster__col">
-                    <h3>Quartiers populaires</h3>
-                    <ul>
-                        <li class="ql-apropos-roster__founder"><strong>Khalid</strong> — Fondateur, Clos Toreau<br><small>Rédaction, coordination, enquêtes de terrain</small></li>
-                        <li><strong>Aïssata Diallo</strong> — Bellevue</li>
-                        <li><strong>Younes Boukhris</strong> — Malakoff</li>
-                        <li><strong>Karima Benali</strong> — Dervallières</li>
-                        <li><strong>Soraya Messaoudi</strong> — Clos Toreau</li>
-                        <li><strong>Mehdi Haddad</strong> — Bottière&ndash;Pin Sec</li>
-                        <li><strong>Fatou Traoré</strong> — Breil</li>
-                        <li><strong>Samir Touré</strong> — Bout des Landes</li>
-                        <li><strong>Léa Marchand</strong> — Port Boyer</li>
-                        <li><strong>Naïma Ouédraogo</strong> — Halvêque</li>
-                        <li><strong>Amadou Koné</strong> — Ranzay</li>
-                        <li><strong>Sofia Bensalem</strong> — Pilotière</li>
-                    </ul>
-                </div>
+            <div class="ql-redac-layout">
 
-                <!-- COLONNE DROITE : Correspondant·es + bloc Qui sommes-nous en dessous -->
-                <div class="ql-apropos-roster__col">
-                    <h3>Correspondant·es</h3>
-                    <ul>
-                        <li><strong>Rachida Ben Arfa</strong> — International<br><small>Gaza, Soudan, Palestine, résistances globales</small></li>
-                        <li><strong>Julien Moreau</strong> — National<br><small>Politique française, luttes sociales</small></li>
-                    </ul>
+                <!-- GAUCHE : Quartiers populaires + Correspondant·es STACKÉS -->
+                <div class="ql-redac-layout__left">
 
-                    <!-- Bloc Qui sommes-nous intégré ici (sous les correspondants) -->
-                    <div class="ql-apropos-side-block">
-                        <h3>Qui sommes-nous ?</h3>
-
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <figure class="ql-apropos-side-image">
-                                <?php the_post_thumbnail( 'ql-card', array(
-                                    'class'    => 'ql-apropos-side-image__img',
-                                    'loading'  => 'lazy',
-                                    'decoding' => 'async',
-                                ) ); ?>
-                            </figure>
-                        <?php endif; ?>
-
-                        <p class="ql-apropos-side-block__lead">
-                            <strong>Quartier Libre</strong> — rédaction issue des quartiers HLM de Nantes.
-                        </p>
-                        <p>
-                            Nos journalistes ne parachutent pas depuis Paris. Chacun·e est spécialisé·e
-                            sur <strong>un quartier précis</strong> où il ou elle vit, enseigne, milite,
-                            élève ses enfants. Nous écrivons depuis <em>nos</em> immeubles, <em>nos</em>
-                            halls, <em>nos</em> écoles.
-                        </p>
-                        <p>
-                            Nous existons parce qu'aucun média dominant ne parle des quartiers populaires
-                            sans les caricaturer. Enquêtes de terrain, témoignages anonymes, contre-récits :
-                            <strong>nous documentons, publions, relayons</strong>.
-                        </p>
-                        <p>
-                            Ligne <strong>militante de gauche, antiraciste, anticapitaliste,
-                            anticoloniale</strong>. Un média, comme un quartier, a un camp — celui des
-                            habitant·es contre celui des puissant·es.
-                        </p>
+                    <div class="ql-redac-list">
+                        <h3>Quartiers populaires</h3>
+                        <ul>
+                            <li><strong>Aïssata Diallo</strong> — Bellevue</li>
+                            <li><strong>Younes Boukhris</strong> — Malakoff</li>
+                            <li><strong>Karima Benali</strong> — Dervallières</li>
+                            <li><strong>Soraya Messaoudi</strong> — Clos Toreau</li>
+                            <li><strong>Mehdi Haddad</strong> — Bottière&ndash;Pin Sec</li>
+                            <li><strong>Fatou Traoré</strong> — Breil</li>
+                            <li><strong>Samir Touré</strong> — Bout des Landes</li>
+                            <li><strong>Léa Marchand</strong> — Port Boyer</li>
+                            <li><strong>Naïma Ouédraogo</strong> — Halvêque</li>
+                            <li><strong>Amadou Koné</strong> — Ranzay</li>
+                            <li><strong>Sofia Bensalem</strong> — Pilotière</li>
+                        </ul>
                     </div>
+
+                    <div class="ql-redac-list ql-redac-list--correspondents">
+                        <h3>Correspondant·es</h3>
+                        <ul>
+                            <li><strong>Rachida Ben Arfa</strong> — International<br><small>Gaza, Soudan, Palestine, résistances globales</small></li>
+                            <li><strong>Julien Moreau</strong> — National<br><small>Politique française, luttes sociales</small></li>
+                        </ul>
+                    </div>
+
                 </div>
+
+                <!-- DROITE : Khalid — portrait + récit fondateur -->
+                <aside class="ql-redac-layout__right ql-founder-card">
+                    <figure class="ql-founder-card__portrait">
+                        <?php
+                        // Portrait de Khalid : soit un fichier uploadé à
+                        // assets/img/khalid-portrait.jpg, soit un placeholder SVG.
+                        $khalid_path = QL_THEME_DIR . '/assets/img/khalid-portrait.jpg';
+                        $khalid_url  = QL_THEME_URI . '/assets/img/khalid-portrait.jpg';
+                        if ( file_exists( $khalid_path ) ) : ?>
+                            <img src="<?php echo esc_url( $khalid_url ); ?>"
+                                 alt="Khalid — fondateur de Quartier Libre"
+                                 loading="lazy" decoding="async">
+                        <?php else : ?>
+                            <svg class="ql-founder-card__avatar" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="Portrait de Khalid">
+                                <rect width="120" height="120" fill="#e02810"/>
+                                <circle cx="60" cy="60" r="55" fill="none" stroke="#ffcb05" stroke-width="3" opacity=".6"/>
+                                <text x="60" y="82" text-anchor="middle" fill="#fff" font-size="72" font-weight="900" font-family="Fraunces, Georgia, serif">K</text>
+                            </svg>
+                        <?php endif; ?>
+                    </figure>
+
+                    <div class="ql-founder-card__body">
+                        <span class="ql-founder-card__tag">Le fondateur</span>
+                        <h3 class="ql-founder-card__name">Khalid</h3>
+                        <p class="ql-founder-card__role">35 ans · Clos Toreau · Journaliste militant</p>
+
+                        <div class="ql-founder-card__story">
+                            <p>
+                                Journaliste militant depuis plus de dix ans. D'abord collaborateur de
+                                <strong>Nantes Révoltée</strong> (devenue Contre-Attaque en 2022) —
+                                reportages terrain, documentation de la répression policière,
+                                enquêtes dans les HLM nantais.
+                            </p>
+                            <p>
+                                En <strong>2024</strong>, fonde <strong>Quartier Libre</strong> : un
+                                média exclusivement dédié aux quartiers populaires de Nantes. Parce
+                                qu'aucun titre mainstream ne les couvrait sans caricature. Parce que
+                                les habitant·es méritent mieux que les 30 secondes du 20h quand un
+                                fait divers éclate.
+                            </p>
+                            <p>
+                                Aujourd'hui coordonne la rédaction de <strong>13 journalistes</strong>,
+                                forme les correspondant·es quartier, enquête sur les bailleurs
+                                sociaux et les violences policières.
+                            </p>
+                            <p class="ql-founder-card__motto">
+                                <em>« Par nous. Pour nous. Les quartiers prennent la parole. »</em>
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+
             </div>
         </div>
     </section>
