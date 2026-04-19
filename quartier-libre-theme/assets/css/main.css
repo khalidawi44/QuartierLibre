@@ -1194,15 +1194,31 @@ p  { margin: 0 0 1em; }
 }
 .ql-post__content h2 {
   font-size: 1.85rem;
-  padding-top: 1rem;
-  border-top: 3px solid var(--ql-accent);
+  padding-top: 2.5rem;
+  margin-top: 3em;
+  text-align: center;
 }
+/* Étoile rouge centrée au-dessus du H2, encadrée par deux rails
+   dégradés — rôle de transition entre sections. */
 .ql-post__content h2::before {
+  content: "★";
+  display: block;
+  color: var(--ql-accent);
+  font-size: 1.2rem;
+  letter-spacing: .5em;
+  margin-bottom: 1rem;
+  position: static;
+  background: none;
+  width: auto; height: auto;
+  text-align: center;
+}
+.ql-post__content h2::after {
   content: "";
-  position: absolute;
-  top: -3px; left: 0;
-  width: 48px; height: 3px;
-  background: var(--ql-yellow);
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--ql-accent) 50%, transparent 100%);
+  margin: .7rem auto 0;
 }
 .ql-post__content h3 {
   font-size: 1.4rem;
@@ -1217,16 +1233,8 @@ p  { margin: 0 0 1em; }
   margin-bottom: .4em;
 }
 
-/* ── Alternance de fond : un paragraphe sur deux chaudement teinté ── */
-/* Approche :has() : toute section H2 suivie par des paragraphes reçoit
-   un fond subtil alterné. Fallback sans :has() = pas d'alternance (dégradation propre). */
-.ql-post__content h2:nth-of-type(even) {
-  background: linear-gradient(90deg, rgba(224,40,16,.06) 0%, transparent 70%);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
+/* (Ancienne alternance de fond supprimée : remplacée par le séparateur
+   ★ + rail rouge au-dessus de chaque H2 dans les règles précédentes.) */
 
 /* ── Paragraphe "lead" ou statistique (marqué avec **gras** en début) ── */
 .ql-post__content p strong {
@@ -1327,69 +1335,6 @@ p  { margin: 0 0 1em; }
   font-weight: 900;
   font-size: .85em;
   border-radius: 50%;
-}
-
-/* ── Breaks de chapitre — parallax entre H2 des articles ─── */
-.ql-chapter-break {
-  position: relative;
-  height: 180px;
-  margin: 3rem calc(50% - 50vw) 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  isolation: isolate;
-}
-.ql-chapter-break::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-attachment: fixed;
-  background-repeat: repeat;
-  z-index: -1;
-}
-.ql-chapter-break--dark::before {
-  background-color: var(--ql-ink);
-  background-image:
-    linear-gradient(135deg, rgba(224,40,16,.15) 0%, transparent 60%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><circle cx='2' cy='2' r='1' fill='%23ffffff' opacity='.08'/></svg>");
-  background-size: 100% 100%, 40px 40px;
-}
-.ql-chapter-break--accent::before {
-  background-color: var(--ql-accent);
-  background-image:
-    linear-gradient(135deg, rgba(0,0,0,.35) 0%, transparent 70%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path d='M0 30 L30 0' stroke='%23ffffff' stroke-width='.5' opacity='.18'/></svg>");
-  background-size: 100% 100%, 30px 30px;
-}
-.ql-chapter-break__star {
-  font-family: var(--ql-font-serif);
-  font-size: 3.5rem;
-  color: var(--ql-yellow);
-  text-shadow: 0 0 24px rgba(0,0,0,.5);
-  line-height: 1;
-}
-.ql-chapter-break--dark .ql-chapter-break__star {
-  color: var(--ql-accent);
-  text-shadow: 0 0 30px rgba(224,40,16,.6);
-}
-
-/* Sur mobile : background-attachment:fixed est souvent janky/désactivé.
-   On garde la bande décorative mais en scroll normal. */
-@media (max-width: 768px) {
-  .ql-chapter-break {
-    height: 120px;
-    margin-inline: calc(50% - 50vw);
-  }
-  .ql-chapter-break::before {
-    background-attachment: scroll;
-  }
-  .ql-chapter-break__star { font-size: 2.3rem; }
-}
-
-/* prefers-reduced-motion : on enlève le fixed mais garde la bande */
-@media (prefers-reduced-motion: reduce) {
-  .ql-chapter-break::before { background-attachment: scroll; }
 }
 
 /* ── Séparateur horizontal (--- en Markdown) avec dégradé ── */

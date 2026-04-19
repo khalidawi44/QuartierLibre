@@ -38,12 +38,6 @@ Quartier Libre Nantes rappelle que l’histoire se répète : chaque fois que le
 
 La rue, elle, respire encore.
 
-## Voir aussi
-
-- [Bloquons tout à Nantes](/category/mobilisations/)
-- [Breil : la BAC](/category/breil/)
-- [Cadavre politique du PS](/category/politique/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

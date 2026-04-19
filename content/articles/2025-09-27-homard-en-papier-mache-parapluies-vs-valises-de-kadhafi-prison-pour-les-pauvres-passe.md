@@ -87,12 +87,6 @@ Comme le rappelait Jean de la Fontaine au 17ème siècles :
 
 **Rien a changé !** **Virons-les.**
 
-## Voir aussi
-
-- [Le cadavre du PS](/category/politique/)
-- [Louis-Macron XVI](/category/politique/)
-- [Répression](/category/repression/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

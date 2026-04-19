@@ -54,12 +54,6 @@ Face à ce système qui privilégie les dividendes au détriment des usagers et 
 
 **La situation à Nantes est un avertissement : si nous ne réagissons pas, ce modèle de privatisation généralisée s’étendra à d’autres services publics. Il est temps de dire stop à la logique du profit au détriment de l’intérêt général.**
 
-## Voir aussi
-
-- [Bout des Landes enclavé](/category/bout-des-landes/)
-- [Argent public](/category/economie/)
-- [Mobilisations](/category/mobilisations/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

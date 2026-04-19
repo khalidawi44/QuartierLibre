@@ -76,13 +76,6 @@ Le **Code de la construction** impose aux bailleurs de fournir un logement déce
 
 *Vous vivez au Clos Toreau avec des nuisibles ou des moisissures ? Documentez tout, prenez des photos, et [contactez-nous](/bureau-des-plaintes/). La rédaction relaie, fait remonter, et peut vous aider à vous organiser collectivement.*
 
-
-## Voir aussi — les autres quartiers
-
-- [Bottière — Pin Sec](/category/bottiere-pin-sec/)
-- [Breil](/category/breil/)
-- [Dervallières](/category/dervallieres/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

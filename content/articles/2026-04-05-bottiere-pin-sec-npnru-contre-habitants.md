@@ -70,13 +70,6 @@ Deux observations :
 
 *Habitant·e de Bottière-Pin Sec confronté·e à un relogement, à un immeuble qu'on laisse pourrir, à une décision prise sans vous consulter ? [Écrivez-nous](/bureau-des-plaintes/). On relaie, on enquête, on documente.*
 
-
-## Voir aussi — les autres quartiers
-
-- [Breil](/category/breil/)
-- [Bout des Landes](/category/bout-des-landes/)
-- [Clos Toreau](/category/clos-toreau/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

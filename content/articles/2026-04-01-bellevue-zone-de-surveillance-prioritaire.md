@@ -68,13 +68,6 @@ Tant que Nantes Métropole préférera financer la répression plutôt que les s
 
 *Si vous vivez à Bellevue et que vous avez vécu ces situations, contactez-nous via le [Bureau des plaintes](/bureau-des-plaintes/).*
 
-
-## Voir aussi — les autres quartiers
-
-- [Malakoff](/category/malakoff/)
-- [Dervallières](/category/dervallieres/)
-- [Pilotière](/category/pilotiere/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

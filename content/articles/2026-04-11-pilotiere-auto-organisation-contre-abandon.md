@@ -105,13 +105,6 @@ Si demain, chaque quartier HLM de Nantes avait son **aide aux devoirs**, son **f
 
 *Vous avez une initiative collective dans votre quartier ([Bellevue](/category/bellevue/), [Malakoff](/category/malakoff/), [Dervallières](/category/dervallieres/), [Breil](/category/breil/), etc.) que vous voulez faire connaître ou développer ? [Contactez-nous](/bureau-des-plaintes/). On met en réseau, on médiatise, on célèbre les quartiers qui se prennent en main.*
 
-
-## Voir aussi — les autres quartiers
-
-- [Bellevue](/category/bellevue/)
-- [Malakoff](/category/malakoff/)
-- [Ranzay](/category/ranzay/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

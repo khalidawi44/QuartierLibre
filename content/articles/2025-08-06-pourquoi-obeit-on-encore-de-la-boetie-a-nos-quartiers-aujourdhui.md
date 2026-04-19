@@ -142,12 +142,6 @@ Quelques extraits :
 >
 > – Ce tyran seul, il n’est pas besoin de le combattre, ni de l’abattre. Il est défait de lui-même, pourvu que le pays ne consente point à sa servitude. Il ne s’agit pas de lui ôter quelque chose, mais de ne rien lui donner.
 
-## Voir aussi
-
-- [La propagande par le fait](/category/histoire/)
-- [Répression d'État](/category/repression/)
-- [Mobilisations](/category/mobilisations/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

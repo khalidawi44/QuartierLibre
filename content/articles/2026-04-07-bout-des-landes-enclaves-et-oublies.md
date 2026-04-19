@@ -82,13 +82,6 @@ Et si on regarde d'où vient l'argent : les habitants du Bout des Landes **paien
 
 *Vous habitez le Bout des Landes et vous galérez avec les transports ? [Racontez-nous](/bureau-des-plaintes/) votre galère : on consolide les témoignages, on fait un dossier, on met la pression.*
 
-
-## Voir aussi — les autres quartiers
-
-- [Port Boyer](/category/port-boyer/)
-- [Halvêque](/category/halveque/)
-- [Breil](/category/breil/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

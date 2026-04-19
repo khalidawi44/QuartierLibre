@@ -79,13 +79,6 @@ En attendant que l'État change — ça peut être long — quelques réflexes u
 
 *Vous avez été témoin ou victime d'un contrôle au Breil ou ailleurs ? Envoyez-nous votre récit via le [Bureau des plaintes](/bureau-des-plaintes/). On documente, on publie, on fait monter la pression.*
 
-
-## Voir aussi — les autres quartiers
-
-- [Bout des Landes](/category/bout-des-landes/)
-- [Port Boyer](/category/port-boyer/)
-- [Bottière — Pin Sec](/category/bottiere-pin-sec/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

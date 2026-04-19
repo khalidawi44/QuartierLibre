@@ -87,13 +87,6 @@ Au Ranzay, ce qui manque n'est pas un nouveau plan de rénovation urbaine ni une
 
 *Habitant·e du Ranzay qui veut monter quelque chose, qui cherche des voisins pour s'organiser, qui a une idée ? [Écrivez-nous](/bureau-des-plaintes/). On met en lien, on relaie, on appuie.*
 
-
-## Voir aussi — les autres quartiers
-
-- [Pilotière](/category/pilotiere/)
-- [Bellevue](/category/bellevue/)
-- [Halvêque](/category/halveque/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

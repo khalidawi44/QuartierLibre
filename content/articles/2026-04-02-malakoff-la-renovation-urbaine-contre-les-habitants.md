@@ -66,13 +66,6 @@ Sans ces garanties, la rénovation urbaine à Malakoff continuera d'être ce qu'
 
 *Habitant·e de Malakoff concerné·e par un relogement forcé ou une dégradation délibérée ? Contactez-nous via le [Bureau des plaintes](/bureau-des-plaintes/).*
 
-
-## Voir aussi — les autres quartiers
-
-- [Dervallières](/category/dervallieres/)
-- [Clos Toreau](/category/clos-toreau/)
-- [Bellevue](/category/bellevue/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

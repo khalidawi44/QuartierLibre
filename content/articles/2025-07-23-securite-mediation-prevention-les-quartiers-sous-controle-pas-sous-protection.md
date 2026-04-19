@@ -111,12 +111,6 @@ Pas un mot sur la **justice environnementale**.
 
 > **« Ils veulent le calme ? Qu’ils commencent par la justice.«**
 
-## Voir aussi
-
-- [Nantes sous les gaz](/category/repression/)
-- [Breil : la BAC](/category/breil/)
-- [Mobilisations](/category/mobilisations/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

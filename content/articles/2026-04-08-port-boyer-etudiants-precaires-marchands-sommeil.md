@@ -92,13 +92,6 @@ Sans action, Port Boyer continuera d'être ce qu'il est : un **entrepôt de pré
 
 *Étudiant·e ou locataire à Port Boyer dans un logement insalubre ou sur-occupé ? [Contactez-nous](/bureau-des-plaintes/). On documente, on anonymise si besoin, et on publie pour forcer les institutions à agir.*
 
-
-## Voir aussi — les autres quartiers
-
-- [Halvêque](/category/halveque/)
-- [Ranzay](/category/ranzay/)
-- [Bout des Landes](/category/bout-des-landes/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

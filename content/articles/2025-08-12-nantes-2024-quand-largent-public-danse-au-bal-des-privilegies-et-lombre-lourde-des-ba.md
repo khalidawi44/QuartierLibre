@@ -165,12 +165,6 @@ Alors, en 2026, Nantes aura un choix simple : continuer à servir les banques ou
 
 **Virons-les.**
 
-## Voir aussi
-
-- [Keolis privatisation](/category/transports/)
-- [Politique française](/category/politique/)
-- [Justice inégale](/category/justice/)
-
 ---
 
 *Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*
