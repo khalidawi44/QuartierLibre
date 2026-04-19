@@ -1,7 +1,12 @@
 ---
 title: "Nantes : la mairie PS vote 150 caméras « IA » dans les quartiers — le panoptique arrive"
 slug: "nantes-videosurveillance-ia-quartiers-populaires"
-category: "bellevue"
+category:
+  - bellevue
+  - malakoff
+  - bottiere-pin-sec
+  - breil
+  - clos-toreau
 tags:
   - videosurveillance
   - ia
@@ -26,7 +31,7 @@ Le conseil municipal du 3 avril 2026 a duré six heures. L'ordre du jour comptai
 
 > **Délibération n° 31 — Déploiement de la vidéoprotection urbaine de nouvelle génération, phase 2**
 
-Traduction : **150 nouvelles caméras « intelligentes »** équipées d'intelligence artificielle dans les rues nantaises. Coût : **3,2 millions d'euros**. Fournisseur : un consortium piloté par [Thales](https://www.thalesgroup.com/) avec Idemia en sous-traitance pour la brique biométrique.
+Traduction : **150 nouvelles caméras « intelligentes »** équipées d'intelligence artificielle dans les rues nantaises. Coût : **3,2 millions d'euros**. Fournisseur : un consortium piloté par **Thales** — le même groupe qui fournit des drones à l'armée israélienne et des fichiers biométriques à l'État français — avec **Idemia** en sous-traitance pour la brique biométrique.
 
 Vote : **56 pour, 8 contre, 3 abstentions**. Durée des débats : 11 minutes. Aucune délibération publique préalable, aucune consultation citoyenne, pas un mot dans Ouest-France.
 

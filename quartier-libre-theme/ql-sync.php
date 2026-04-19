@@ -675,16 +675,25 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
     }
     if ( is_wp_error( $post_id ) || ! $post_id ) return false;
 
+    // Catégories : accepte soit une string ("bellevue") soit un array
+    // (['bellevue', 'malakoff', ...]). Un article peut vivre dans
+    // plusieurs sous-catégories quand il touche plusieurs sujets.
     if ( ! empty( $front['category'] ) ) {
-        $slug_c = sanitize_title( $front['category'] );
-        $cat = get_term_by( 'slug', $slug_c, 'category' );
-        if ( ! $cat ) {
-            $r = wp_insert_term( $front['category'], 'category', array( 'slug' => $slug_c ) );
-            $cat_id = ! is_wp_error( $r ) ? $r['term_id'] : 0;
-        } else {
-            $cat_id = $cat->term_id;
+        $raw_cats = is_array( $front['category'] ) ? $front['category'] : array( $front['category'] );
+        $cat_ids = array();
+        foreach ( $raw_cats as $raw ) {
+            $raw = trim( (string) $raw );
+            if ( $raw === '' ) continue;
+            $slug_c = sanitize_title( $raw );
+            $cat = get_term_by( 'slug', $slug_c, 'category' );
+            if ( ! $cat ) {
+                $r = wp_insert_term( $raw, 'category', array( 'slug' => $slug_c ) );
+                if ( ! is_wp_error( $r ) ) $cat_ids[] = (int) $r['term_id'];
+            } else {
+                $cat_ids[] = (int) $cat->term_id;
+            }
         }
-        if ( ! empty( $cat_id ) ) wp_set_post_categories( $post_id, array( (int) $cat_id ) );
+        if ( ! empty( $cat_ids ) ) wp_set_post_categories( $post_id, array_unique( $cat_ids ) );
     }
 
     if ( ! empty( $front['tags'] ) && is_array( $front['tags'] ) ) {
