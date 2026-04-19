@@ -72,3 +72,13 @@ De nombreux révolutionnaires finirent par se convaincre que **la terreur devait
 De nos jours ,  les actions du Black Bloc dans les différentes manifestations s’inscrit également dans cette tactique de lutte .
 
 » **La terreur face à la terreur des États qui répriment des peuples à l’agonie** «
+
+## Voir aussi
+
+- [Pourquoi obéit-on ?](/category/histoire/)
+- [Politique française](/category/politique/)
+- [Mobilisations](/category/mobilisations/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

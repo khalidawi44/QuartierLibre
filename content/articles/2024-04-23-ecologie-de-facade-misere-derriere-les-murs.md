@@ -118,3 +118,13 @@ Parce que les plans d’actions municipaux ne changent pas le quotidien.
 Parce qu’un jour, il faudra **rendre des comptes** sur ces années d’abandon, de mépris, de gestion coloniale.
 
 > » **Et parce que la véritable écologie est populaire, radicale, et commence par le droit au logement digne.** «
+
+## Voir aussi
+
+- [Bottière-Pin Sec](/category/bottiere-pin-sec/)
+- [Clos Toreau](/category/clos-toreau/)
+- [Malakoff](/category/malakoff/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

@@ -200,6 +200,29 @@
     }
   });
 
+  // ── Breaks de chapitre (parallax fixed) entre H2 d'articles ──
+  // Insère une bande décorative pleine largeur avant chaque H2
+  // (sauf le premier) dans le corps d'article. CSS : background-
+  // attachment: fixed → effet parallax quand le lecteur scrolle.
+  (function () {
+    var body = document.querySelector('.ql-post__content, .ql-article__body');
+    if (!body) return;
+    var h2s = body.querySelectorAll(':scope > h2');
+    Array.prototype.forEach.call(h2s, function (h2, i) {
+      if (i === 0) return;
+      var brk = document.createElement('div');
+      brk.className = 'ql-chapter-break';
+      brk.setAttribute('aria-hidden', 'true');
+      // Alternance de motif pour variation visuelle
+      brk.classList.add(i % 2 === 0 ? 'ql-chapter-break--dark' : 'ql-chapter-break--accent');
+      var star = document.createElement('span');
+      star.className = 'ql-chapter-break__star';
+      star.textContent = '★';
+      brk.appendChild(star);
+      h2.parentNode.insertBefore(brk, h2);
+    });
+  })();
+
   // ── Barre de progression de lecture (single.php) ────────────
   var progressBar = document.querySelector('.ql-reading-progress span');
   var articleBody = document.querySelector('.ql-single .ql-article__body');

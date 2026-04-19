@@ -88,3 +88,13 @@ Et comme le rappelait le philosophe grec Polybe :
 > « Tous les empires ont une fin, et le roi qui ne respecte pas son peuple tombe inévitablement. »
 
 Le roi peut orchestrer ses ministres templiers et son moine-soldat, mais face à la volonté populaire, il n’y aura pas d’échappatoire.
+
+## Voir aussi
+
+- [Le cadavre politique du PS](/category/politique/)
+- [Justice à deux vitesses](/category/justice/)
+- [Répression d'État](/category/repression/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

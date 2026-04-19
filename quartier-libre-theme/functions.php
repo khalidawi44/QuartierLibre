@@ -277,6 +277,29 @@ add_filter( 'body_class', function ( $classes ) {
     return $classes;
 } );
 
+// ── 8-SEO. Améliorations SEO/perf complémentaires à Yoast ───────
+// (Yoast gère déjà : meta description, Open Graph, Twitter Card,
+//  JSON-LD, canonical, sitemap, robots.txt. On ajoute ce qui reste.)
+
+// Preload du featured image sur les single posts — gain LCP
+add_action( 'wp_head', function () {
+    if ( ! is_singular( 'post' ) || ! has_post_thumbnail() ) return;
+    $src = get_the_post_thumbnail_url( null, 'ql-hero' );
+    if ( ! $src ) return;
+    echo '<link rel="preload" as="image" href="' . esc_url( $src ) . '" fetchpriority="high">' . "\n";
+}, 3 );
+
+// Alt text de secours si vide : utilise le titre de l'article
+add_filter( 'wp_get_attachment_image_attributes', function ( $attrs, $attachment ) {
+    if ( empty( $attrs['alt'] ) ) {
+        $post = get_post( $attachment->post_parent );
+        if ( $post ) {
+            $attrs['alt'] = wp_strip_all_tags( get_the_title( $post ) );
+        }
+    }
+    return $attrs;
+}, 10, 2 );
+
 // ── 8. Nettoyage wp_head (perf & propreté) ──────────────────────
 remove_action( 'wp_head', 'wp_generator' );
 remove_action( 'wp_head', 'wlwmanifest_link' );

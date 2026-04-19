@@ -93,3 +93,13 @@ Le drame n’est ni un accident, ni un oubli. En 2017, Emmanuel Macron promettai
 >
 >
 > **« Laisser des logements vides pendant que des gens meurent dehors, ce n’est pas une erreur. C’est une politique. »** — *Droit Au Logement (DAL)*
+
+## Voir aussi
+
+- [Bellevue sous contrôle](/category/bellevue/)
+- [Clos Toreau](/category/clos-toreau/)
+- [Répression](/category/repression/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

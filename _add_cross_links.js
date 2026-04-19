@@ -55,6 +55,80 @@ const GAZA_FILES = [
   '2025-09-22-heritages-de-la-resistance.md',
 ];
 
+// Pour les articles France / Histoire / Luttes : liste de 3 "Voir aussi"
+// sous forme [label, URL]. URLs : /category/{slug}/ ou /{article-slug}/.
+const SEE_ALSO = {
+  // France — politique/économie/justice
+  '2025-09-01-le-cadavre-politique-du-ps-un-mort-qui-gesticule-encore.md': [
+    ['Louis-Macron XVI', '/category/politique/'],
+    ['Homard en papier mâché', '/category/justice/'],
+    ['Argent public, bal des privilégiés', '/category/economie/'],
+  ],
+  '2025-10-11-louis-macron-xvi-et-son-moine-soldat-le-retour-de-la-monarchie-par-ordonnance.md': [
+    ['Le cadavre politique du PS', '/category/politique/'],
+    ['Justice à deux vitesses', '/category/justice/'],
+    ['Répression d\'État', '/category/repression/'],
+  ],
+  '2025-09-27-homard-en-papier-mache-parapluies-vs-valises-de-kadhafi-prison-pour-les-pauvres-passe.md': [
+    ['Le cadavre du PS', '/category/politique/'],
+    ['Louis-Macron XVI', '/category/politique/'],
+    ['Répression', '/category/repression/'],
+  ],
+  '2025-08-12-nantes-2024-quand-largent-public-danse-au-bal-des-privilegies-et-lombre-lourde-des-ba.md': [
+    ['Keolis privatisation', '/category/transports/'],
+    ['Politique française', '/category/politique/'],
+    ['Justice inégale', '/category/justice/'],
+  ],
+  // Histoire
+  '2025-08-06-la-propagande-par-le-fait.md': [
+    ['Pourquoi obéit-on ?', '/category/histoire/'],
+    ['Politique française', '/category/politique/'],
+    ['Mobilisations', '/category/mobilisations/'],
+  ],
+  '2025-08-06-pourquoi-obeit-on-encore-de-la-boetie-a-nos-quartiers-aujourdhui.md': [
+    ['La propagande par le fait', '/category/histoire/'],
+    ['Répression d\'État', '/category/repression/'],
+    ['Mobilisations', '/category/mobilisations/'],
+  ],
+  // Luttes
+  '2025-07-23-securite-mediation-prevention-les-quartiers-sous-controle-pas-sous-protection.md': [
+    ['Nantes sous les gaz', '/category/repression/'],
+    ['Breil : la BAC', '/category/breil/'],
+    ['Mobilisations', '/category/mobilisations/'],
+  ],
+  '2025-09-10-bloquons-tout-a-nantes-rappel-des-rendez-vous.md': [
+    ['Nantes sous les gaz', '/category/repression/'],
+    ['Sécurité/médiation', '/category/repression/'],
+    ['Louis-Macron XVI', '/category/politique/'],
+  ],
+  '2025-09-10-nantes-sous-les-gaz-la-repression-dun-gouvernement-illegitime.md': [
+    ['Bloquons tout à Nantes', '/category/mobilisations/'],
+    ['Breil : la BAC', '/category/breil/'],
+    ['Cadavre politique du PS', '/category/politique/'],
+  ],
+  // Infos-locale multi-quartier / transports / fait-divers
+  '2025-10-01-keolis-nantes-la-privatisation-a-marche-forcee.md': [
+    ['Bout des Landes enclavé', '/category/bout-des-landes/'],
+    ['Argent public', '/category/economie/'],
+    ['Mobilisations', '/category/mobilisations/'],
+  ],
+  '2025-07-24-deux-morts-a-nantes-crime-social-silence-politique.md': [
+    ['Bellevue sous contrôle', '/category/bellevue/'],
+    ['Clos Toreau', '/category/clos-toreau/'],
+    ['Répression', '/category/repression/'],
+  ],
+  '2025-07-31-nuisibles-dans-les-logements-sociaux-a-nantes-silence-et-inaction-coupables-de-la-mai.md': [
+    ['Clos Toreau', '/category/clos-toreau/'],
+    ['Malakoff rénovation', '/category/malakoff/'],
+    ['Bellevue', '/category/bellevue/'],
+  ],
+  '2024-04-23-ecologie-de-facade-misere-derriere-les-murs.md': [
+    ['Bottière-Pin Sec', '/category/bottiere-pin-sec/'],
+    ['Clos Toreau', '/category/clos-toreau/'],
+    ['Malakoff', '/category/malakoff/'],
+  ],
+};
+
 function escapeRegex(s) { return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&'); }
 
 /**
@@ -199,7 +273,40 @@ for (const [file, ownSlug] of Object.entries(OWN_SLUG)) {
   }
 }
 
-// 2. Gaza articles — cross-ref + HelloAsso footer
+// 2. France / Histoire / Luttes / autres — Voir aussi + HelloAsso
+for (const [file, picks] of Object.entries(SEE_ALSO)) {
+  const full = path.join(ARTICLES, file);
+  if (!fs.existsSync(full)) continue;
+  const content = fs.readFileSync(full, 'utf8');
+  const m = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!m) continue;
+  const front = m[1];
+  let body = m[2];
+  const original = body;
+
+  if (!body.includes('## Voir aussi')) {
+    const block = '\n\n## Voir aussi\n\n' +
+      picks.map(([label, url]) => '- [' + label + '](' + url + ')').join('\n') +
+      '\n';
+    // Insère avant le footer HelloAsso si présent, sinon à la fin
+    if (body.includes('helloasso.com')) {
+      const idx = body.lastIndexOf('\n---\n');
+      if (idx > 0) body = body.slice(0, idx) + block + body.slice(idx);
+      else body = body.trimEnd() + block;
+    } else {
+      body = body.trimEnd() + block;
+    }
+  }
+  body = addHelloAssoFooter(body);
+
+  if (body !== original) {
+    fs.writeFileSync(full, '---\n' + front + '\n---\n' + body);
+    touched++;
+    console.log('✓', file);
+  }
+}
+
+// 3. Gaza articles — cross-ref + HelloAsso footer
 for (const file of GAZA_FILES) {
   const full = path.join(ARTICLES, file);
   if (!fs.existsSync(full)) continue;

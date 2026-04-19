@@ -995,8 +995,35 @@ p  { margin: 0 0 1em; }
   font-weight: 900; line-height: 1.1;
   font-size: clamp(1.9rem, 4.8vw, 3rem);
   letter-spacing: -0.02em;
-  margin: 0 0 1rem;
+  margin: 0 auto 1rem;
   color: var(--ql-ink);
+  text-align: center;
+  max-width: 900px;
+  position: relative;
+  padding: 1.5rem 0;
+}
+/* Décoration style « À la une » : rail + étoile ★ au-dessus et en dessous */
+.ql-post__title::before,
+.ql-post__title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  max-width: 380px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--ql-accent) 25%, var(--ql-accent) 75%, transparent 100%);
+  margin: 0 auto;
+  position: relative;
+}
+.ql-post__title::before { margin-bottom: 1.3rem; }
+.ql-post__title::after  { margin-top: 1.3rem; }
+/* Étoiles ★ superposées sur les rails */
+.ql-post__header-inner .ql-post__title {
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><text x='10' y='16' text-anchor='middle' font-size='16' fill='%23e02810' font-family='serif' font-weight='900'>★</text></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><text x='10' y='16' text-anchor='middle' font-size='16' fill='%23e02810' font-family='serif' font-weight='900'>★</text></svg>");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center top, center bottom;
+  background-size: 20px 20px, 20px 20px;
 }
 .ql-post__lede {
   font-family: var(--ql-font-serif);
@@ -1300,6 +1327,69 @@ p  { margin: 0 0 1em; }
   font-weight: 900;
   font-size: .85em;
   border-radius: 50%;
+}
+
+/* ── Breaks de chapitre — parallax entre H2 des articles ─── */
+.ql-chapter-break {
+  position: relative;
+  height: 180px;
+  margin: 3rem calc(50% - 50vw) 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.ql-chapter-break::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  z-index: -1;
+}
+.ql-chapter-break--dark::before {
+  background-color: var(--ql-ink);
+  background-image:
+    linear-gradient(135deg, rgba(224,40,16,.15) 0%, transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><circle cx='2' cy='2' r='1' fill='%23ffffff' opacity='.08'/></svg>");
+  background-size: 100% 100%, 40px 40px;
+}
+.ql-chapter-break--accent::before {
+  background-color: var(--ql-accent);
+  background-image:
+    linear-gradient(135deg, rgba(0,0,0,.35) 0%, transparent 70%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path d='M0 30 L30 0' stroke='%23ffffff' stroke-width='.5' opacity='.18'/></svg>");
+  background-size: 100% 100%, 30px 30px;
+}
+.ql-chapter-break__star {
+  font-family: var(--ql-font-serif);
+  font-size: 3.5rem;
+  color: var(--ql-yellow);
+  text-shadow: 0 0 24px rgba(0,0,0,.5);
+  line-height: 1;
+}
+.ql-chapter-break--dark .ql-chapter-break__star {
+  color: var(--ql-accent);
+  text-shadow: 0 0 30px rgba(224,40,16,.6);
+}
+
+/* Sur mobile : background-attachment:fixed est souvent janky/désactivé.
+   On garde la bande décorative mais en scroll normal. */
+@media (max-width: 768px) {
+  .ql-chapter-break {
+    height: 120px;
+    margin-inline: calc(50% - 50vw);
+  }
+  .ql-chapter-break::before {
+    background-attachment: scroll;
+  }
+  .ql-chapter-break__star { font-size: 2.3rem; }
+}
+
+/* prefers-reduced-motion : on enlève le fixed mais garde la bande */
+@media (prefers-reduced-motion: reduce) {
+  .ql-chapter-break::before { background-attachment: scroll; }
 }
 
 /* ── Séparateur horizontal (--- en Markdown) avec dégradé ── */

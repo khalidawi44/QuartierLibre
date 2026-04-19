@@ -88,3 +88,13 @@ Le Parti socialiste n’est plus un parti de transformation sociale. Ses figures
 Dès le 10 septembre, la seule issue est claire : **VIRONS-LES !**
 
 Macron doit démissionner, et tous les responsables directs et indirects de la répression doivent être jugés. Comme le rappelle Manuel Valls : *« La fermeté est nécessaire. »* **Oui, la fermeté du peuple, pour reprendre ce qui nous a été volé.** Rendez-vous le 10, **Le peuple reprend le pouvoir** pour le début de leur fin !
+
+## Voir aussi
+
+- [Louis-Macron XVI](/category/politique/)
+- [Homard en papier mâché](/category/justice/)
+- [Argent public, bal des privilégiés](/category/economie/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

@@ -37,3 +37,13 @@ Ce n’est pas un accident, mais la continuité : Cazeneuve hier, Darmanin aujou
 Quartier Libre Nantes rappelle que l’histoire se répète : chaque fois que le pouvoir tremble, il sort les gaz et les matraques. Mais une vérité demeure : un gouvernement qui a besoin d’asphyxier sa population pour se maintenir n’a déjà plus d’autorité.
 
 La rue, elle, respire encore.
+
+## Voir aussi
+
+- [Bloquons tout à Nantes](/category/mobilisations/)
+- [Breil : la BAC](/category/breil/)
+- [Cadavre politique du PS](/category/politique/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

@@ -37,3 +37,13 @@ original_url: "https://quartierlibre.org/bloquons-tout-a-nantes-rappel-des-rende
 - Nort-sur-Erdre : 6h rond-point Saint Georges
 - Saint-Nazaire : 7h rond-point de la Certé, à l’entrée de Saint-Nazaire (côté Trignac)
 - Pornic : 7h30 rond-point pollono
+
+## Voir aussi
+
+- [Nantes sous les gaz](/category/repression/)
+- [Sécurité/médiation](/category/repression/)
+- [Louis-Macron XVI](/category/politique/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*

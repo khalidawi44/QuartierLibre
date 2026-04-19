@@ -95,3 +95,13 @@ Contactez-nous ci-dessous, et ensemble, faisons valoir vos droits. Ne restez pas
 - **Code de la santé publique – article L1331-22**, sur l’insalubrité et les responsabilités du bailleur.
 - **Rapport parlementaire sur l’insalubrité**, Assemblée nationale, 2019. Voir les débats sur le rôle des bailleurs sociaux.[https://www.assemblee-nationale.fr/dyn/15/rapports/dce/l15b2104_rapport-information](https://www.assemblee-nationale.fr/dyn/15/rapports/cion-eco/l15b5121_rapport-information#)
 - Témoignages directs recueillis dans les quartiers de Nantes (Clos Toreau, Malakoff, Bellevue), à retrouver sur notre plateforme Quartier Libre. Écrivez-nous pour partager le vôtre.
+
+## Voir aussi
+
+- [Clos Toreau](/category/clos-toreau/)
+- [Malakoff rénovation](/category/malakoff/)
+- [Bellevue](/category/bellevue/)
+
+---
+
+*Cette enquête vit grâce à ses lectrices et lecteurs. Pour qu'elle continue, [soutenez Quartier Libre](https://www.helloasso.com/associations/quartier-libre-nantes).*
