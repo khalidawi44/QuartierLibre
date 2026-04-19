@@ -34,23 +34,23 @@
   <rect x="0" y="0" width="1600" height="8" fill="#e02810"/>
   <rect x="0" y="892" width="1600" height="8" fill="#e02810"/>
 
-  <!-- Tag (couleur palette) -->
+  <!-- Tag (couleur palette, police condensée comme le reste) -->
   <g transform="translate(80, 60)">
     <rect x="0" y="0" width="240" height="40" fill="#c71f05" rx="2"/>
-    <text x="120" y="28" font-family="Inter, system-ui, sans-serif" font-weight="900"
-          font-size="15" letter-spacing="3.5" fill="#ffffff" text-anchor="middle">GUERRE OUBLIÉE</text>
+    <text x="120" y="28" font-family="'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', 'Anton', 'Bebas Neue', sans-serif" font-weight="900"
+          font-size="17" letter-spacing="3.5" fill="#ffffff" text-anchor="middle">GUERRE OUBLIÉE</text>
   </g>
 
   <!-- Préambule multi-lignes -->
-  <text x="80" y="135" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Depuis avril 2023, le Soudan s&apos;effondre.</tspan></text>
-  <text x="80" y="175" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#f5a830" font-weight="900">150 000 morts</tspan><tspan fill="#ffffff" font-weight="600">. </tspan><tspan fill="#f5a830" font-weight="900">13 millions de déplacés</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
-  <text x="80" y="215" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Famine déclarée au Darfour, massacres ethniques à El Fasher.</tspan></text>
-  <text x="80" y="255" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Les médias occidentaux regardent ailleurs.</tspan></text>
-  <text x="80" y="295" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">La France arme </tspan><tspan fill="#f5a830" font-weight="900">les complices émiratis</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
+  <text x="80" y="135" font-family="'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif" font-size="32" letter-spacing="0.2" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Depuis avril 2023, le Soudan s&apos;effondre.</tspan></text>
+  <text x="80" y="177" font-family="'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif" font-size="32" letter-spacing="0.2" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#f5a830" font-weight="900">150 000 morts</tspan><tspan fill="#ffffff" font-weight="600">. </tspan><tspan fill="#f5a830" font-weight="900">13 millions de déplacés</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
+  <text x="80" y="219" font-family="'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif" font-size="32" letter-spacing="0.2" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Famine déclarée au Darfour, massacres ethniques à El Fasher.</tspan></text>
+  <text x="80" y="261" font-family="'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif" font-size="32" letter-spacing="0.2" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Les médias occidentaux regardent ailleurs.</tspan></text>
+  <text x="80" y="303" font-family="'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif" font-size="32" letter-spacing="0.2" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">La France arme </tspan><tspan fill="#f5a830" font-weight="900">les complices émiratis</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
 
   <!-- Titre principal (bas, couleurs palette) -->
-  <text x="80" y="740" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="90" letter-spacing="-2" fill="#ffffff" filter="url(#textshadow)">SOUDAN :</text>
-  <text x="80" y="835" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="90" letter-spacing="-2" fill="#e63824" filter="url(#textshadow)">LE SILENCE COMPLICE</text>
+  <text x="80" y="730" font-family="'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', 'Anton', 'Bebas Neue', sans-serif" font-weight="900" font-size="110" letter-spacing="1" fill="#ffffff" filter="url(#textshadow)">SOUDAN :</text>
+  <text x="80" y="835" font-family="'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', 'Anton', 'Bebas Neue', sans-serif" font-weight="900" font-size="110" letter-spacing="1" fill="#e63824" filter="url(#textshadow)">LE SILENCE COMPLICE</text>
 
   <!-- Signature (toujours discrète) -->
   <text x="1520" y="860"

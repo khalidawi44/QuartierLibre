@@ -34,23 +34,23 @@
   <rect x="0" y="0" width="1600" height="8" fill="#e02810"/>
   <rect x="0" y="892" width="1600" height="8" fill="#e02810"/>
 
-  <!-- Tag (couleur palette) -->
+  <!-- Tag (couleur palette, police condensée comme le reste) -->
   <g transform="translate(80, 60)">
     <rect x="0" y="0" width="290" height="40" fill="#e02810" rx="2"/>
-    <text x="145" y="28" font-family="Inter, system-ui, sans-serif" font-weight="900"
-          font-size="15" letter-spacing="3.5" fill="#ffffff" text-anchor="middle">PANOPTIQUE DE CLASSE</text>
+    <text x="145" y="28" font-family="'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', 'Anton', 'Bebas Neue', sans-serif" font-weight="900"
+          font-size="17" letter-spacing="3.5" fill="#ffffff" text-anchor="middle">PANOPTIQUE DE CLASSE</text>
   </g>
 
   <!-- Préambule multi-lignes -->
-  <text x="80" y="135" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Vote discret du conseil municipal, 3 avril.</tspan></text>
-  <text x="80" y="175" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#00d4ff" font-weight="900">3,2 millions d&apos;euros</tspan><tspan fill="#ffffff" font-weight="600"> pour </tspan><tspan fill="#00d4ff" font-weight="900">150 caméras IA</tspan><tspan fill="#ffffff" font-weight="600"></tspan></text>
-  <text x="80" y="215" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">installées exclusivement dans les quartiers populaires.</tspan></text>
-  <text x="80" y="255" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Reconnaissance faciale prête à être activée.</tspan></text>
-  <text x="80" y="295" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Bellevue, Malakoff, Breil : </tspan><tspan fill="#00d4ff" font-weight="900">territoires sous surveillance</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
+  <text x="80" y="135" font-family="'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif" font-size="32" letter-spacing="0.2" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Vote discret du conseil municipal, 3 avril.</tspan></text>
+  <text x="80" y="177" font-family="'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif" font-size="32" letter-spacing="0.2" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600"></tspan><tspan fill="#00d4ff" font-weight="900">3,2 millions d&apos;euros</tspan><tspan fill="#ffffff" font-weight="600"> pour </tspan><tspan fill="#00d4ff" font-weight="900">150 caméras IA</tspan><tspan fill="#ffffff" font-weight="600"></tspan></text>
+  <text x="80" y="219" font-family="'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif" font-size="32" letter-spacing="0.2" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">installées exclusivement dans les quartiers populaires.</tspan></text>
+  <text x="80" y="261" font-family="'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif" font-size="32" letter-spacing="0.2" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Reconnaissance faciale prête à être activée.</tspan></text>
+  <text x="80" y="303" font-family="'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif" font-size="32" letter-spacing="0.2" filter="url(#textshadow)"><tspan fill="#ffffff" font-weight="600">Bellevue, Malakoff, Breil : </tspan><tspan fill="#00d4ff" font-weight="900">territoires sous surveillance</tspan><tspan fill="#ffffff" font-weight="600">.</tspan></text>
 
   <!-- Titre principal (bas, couleurs palette) -->
-  <text x="80" y="740" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="90" letter-spacing="-2" fill="#ffffff" filter="url(#textshadow)">NANTES :</text>
-  <text x="80" y="835" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="81" letter-spacing="-2" fill="#00d4ff" filter="url(#textshadow)">150 CAMÉRAS IA DANS LES QUARTIERS</text>
+  <text x="80" y="730" font-family="'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', 'Anton', 'Bebas Neue', sans-serif" font-weight="900" font-size="110" letter-spacing="1" fill="#ffffff" filter="url(#textshadow)">NANTES : 150 CAMÉRAS IA</text>
+  <text x="80" y="835" font-family="'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', 'Anton', 'Bebas Neue', sans-serif" font-weight="900" font-size="110" letter-spacing="1" fill="#00d4ff" filter="url(#textshadow)">DANS LES QUARTIERS</text>
 
   <!-- Signature (toujours discrète) -->
   <text x="1520" y="860"

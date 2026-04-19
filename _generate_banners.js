@@ -103,7 +103,7 @@ const BANNERS = [
       'Reconnaissance faciale prête à être activée.',
       'Bellevue, Malakoff, Breil : **territoires sous surveillance**.',
     ],
-    title_lines: ['NANTES :', '150 CAMÉRAS IA DANS LES QUARTIERS'],
+    title_lines: ['NANTES : 150 CAMÉRAS IA', 'DANS LES QUARTIERS'],
     image_path: 'content/media/nantes-videosurveillance.jpg',
     palette: {
       accent:  '#00d4ff',   // cyan néon
@@ -189,10 +189,14 @@ function buildSvgCAStyle({ tag, preamble, title_lines, image, palette }) {
   }, palette || {});
   const tagWidth = Math.max(240, tag.length * 12 + 50);
 
-  // Rendu du préambule : chaque segment **texte** → tspan en accent.
-  // Font réduit (28→30) et line-height 40px pour tenir dans la bande
-  // sombre du haut (0 → ~28% = 252px). Avec tag à y=60-100 et 5 lignes
-  // max de préambule commençant à y=135, on termine à y=135+4×40=295.
+  // Typographies inspirées de Contre-Attaque :
+  // - Préambule : sans-serif semi-bold condensé (Haettenschweiler ou fallback)
+  // - Titres : condensed bold sans-serif (Impact = présent sur tous les OS)
+  //   Pas de serif Fraunces : CA utilise exclusivement des polices grotesques
+  //   trapues et serrées qui crient l'urgence.
+  const FONT_TITLE = "'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', 'Anton', 'Bebas Neue', sans-serif";
+  const FONT_BODY  = "'Haettenschweiler', 'Arial Narrow', 'Oswald', 'Roboto Condensed', 'Inter', sans-serif";
+
   function renderPreambleLine(line, y) {
     const parts = line.split(/(\*\*[^*]+\*\*)/);
     const tspans = parts.map(p => {
@@ -202,18 +206,19 @@ function buildSvgCAStyle({ tag, preamble, title_lines, image, palette }) {
       }
       return `<tspan fill="#ffffff" font-weight="600">${xmlEscape(p)}</tspan>`;
     }).join('');
-    return `<text x="80" y="${y}" font-family="Inter, system-ui, sans-serif" font-size="30" letter-spacing="-0.3" filter="url(#textshadow)">${tspans}</text>`;
+    return `<text x="80" y="${y}" font-family="${FONT_BODY}" font-size="32" letter-spacing="0.2" filter="url(#textshadow)">${tspans}</text>`;
   }
 
-  const preambleLines = preamble.map((line, i) => renderPreambleLine(line, 135 + i * 40)).join('\n  ');
+  const preambleLines = preamble.map((line, i) => renderPreambleLine(line, 135 + i * 42)).join('\n  ');
 
-  // Titre : placé dans la bande sombre du bas (72% → 78% → 100%).
-  const titleSizeBase = title_lines.length > 1 ? 90 : 110;
-  const titleY = title_lines.length > 1 ? H - 160 : H - 110;
+  // Titre : Impact (condensed narrow) — avgCharWidthRatio ~0.40 au lieu
+  // de 0.52 pour serif, donc on peut grossir la base sans overflow.
+  const titleSizeBase = title_lines.length > 1 ? 110 : 130;
+  const titleY = title_lines.length > 1 ? H - 170 : H - 115;
   const titleSpans = title_lines.map((l, i) => {
-    const fit = fitFontSize(l, titleSizeBase, 1400, 0.52);
+    const fit = fitFontSize(l, titleSizeBase, 1420, 0.42);
     const color = i === 0 ? P.title_1 : P.title_2;
-    return `<text x="80" y="${titleY + i * (titleSizeBase + 5)}" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="${fit}" letter-spacing="-2" fill="${color}" filter="url(#textshadow)">${xmlEscape(l)}</text>`;
+    return `<text x="80" y="${titleY + i * (titleSizeBase - 5)}" font-family="${FONT_TITLE}" font-weight="900" font-size="${fit}" letter-spacing="1" fill="${color}" filter="url(#textshadow)">${xmlEscape(l)}</text>`;
   }).join('\n  ');
 
   // Le tint définit la couleur du voile (pas toujours noir)
@@ -253,11 +258,11 @@ function buildSvgCAStyle({ tag, preamble, title_lines, image, palette }) {
   <rect x="0" y="0" width="${W}" height="8" fill="#e02810"/>
   <rect x="0" y="${H - 8}" width="${W}" height="8" fill="#e02810"/>
 
-  <!-- Tag (couleur palette) -->
+  <!-- Tag (couleur palette, police condensée comme le reste) -->
   <g transform="translate(80, 60)">
     <rect x="0" y="0" width="${tagWidth}" height="40" fill="${P.tag_bg}" rx="2"/>
-    <text x="${tagWidth / 2}" y="28" font-family="Inter, system-ui, sans-serif" font-weight="900"
-          font-size="15" letter-spacing="3.5" fill="${P.tag_fg}" text-anchor="middle">${xmlEscape(tag)}</text>
+    <text x="${tagWidth / 2}" y="28" font-family="${FONT_TITLE}" font-weight="900"
+          font-size="17" letter-spacing="3.5" fill="${P.tag_fg}" text-anchor="middle">${xmlEscape(tag)}</text>
   </g>
 
   <!-- Préambule multi-lignes -->
