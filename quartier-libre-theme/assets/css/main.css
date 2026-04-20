@@ -146,10 +146,10 @@ p  { margin: 0 0 1em; }
   display: inline-flex; align-items: center; gap: .75rem;
   text-decoration: none; flex: 0 0 auto;
 }
-.ql-brand__logo { max-height: 96px; width: auto; display: block; }
-.ql-brand img { max-height: 96px; width: auto; display: block; }
+.ql-brand__logo { max-height: 72px; width: auto; display: block; }
+.ql-brand img { max-height: 72px; width: auto; display: block; }
 @media (max-width: 899px) {
-  .ql-brand__logo, .ql-brand img { max-height: 64px; }
+  .ql-brand__logo, .ql-brand img { max-height: 52px; }
 }
 .ql-brand__wordmark {
   font-family: var(--ql-font-serif); font-weight: 900;
@@ -4199,19 +4199,33 @@ body.tag-mairie-ps .ql-archive-header {
   .ql-home-main .ql-grid--3 { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ── Sidebar homepage ───────────────────────────────────────── */
+/* ── Sidebar homepage (sticky, reste visible au scroll) ──────── */
 .ql-sidebar--home {
   display: flex; flex-direction: column; gap: 1.25rem;
   min-width: 0;
 }
 @media (min-width: 1000px) {
-  .ql-sidebar--home { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto;
-    /* Scrollbar discrète */
-    scrollbar-width: thin; scrollbar-color: rgba(0,0,0,.2) transparent;
+  /* Hauteur approximative du header sticky (topbar + barre logo/menu)
+     pour que la sidebar se cale sous le header, pas derrière. */
+  .ql-sidebar--home {
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(var(--ql-header-h, 140px) + 1rem);
+    align-self: start;
+    max-height: calc(100vh - var(--ql-header-h, 140px) - 2rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,.2) transparent;
+    /* will-change + contain aident la stabilité du sticky */
+    will-change: transform;
   }
   .ql-sidebar--home::-webkit-scrollbar { width: 6px; }
   .ql-sidebar--home::-webkit-scrollbar-thumb { background: rgba(0,0,0,.2); border-radius: 3px; }
+  .ql-sidebar--home::-webkit-scrollbar-track { background: transparent; }
 }
+/* Le parent grid ne doit pas avoir overflow:hidden/auto (sinon sticky casse).
+   Double sécurité : on force overflow:visible sur le wrapper. */
+.ql-home-layout { overflow: visible; }
 
 .ql-widget {
   background: #fff;
