@@ -4410,6 +4410,18 @@ body.tag-mairie-ps .ql-archive-header {
   font-weight: 600;
   align-self: center;
 }
+.ql-widget-rdv__empty {
+  font-size: .85rem; color: var(--ql-muted, #5a5a5a);
+  margin: 0; line-height: 1.5;
+}
+.ql-widget-rdv__empty small {
+  display: block; margin-top: .4rem;
+  font-size: .72rem; color: #8a8578;
+}
+.ql-widget-rdv__empty code {
+  background: #f1efe8; padding: 1px 4px;
+  border-radius: 2px; font-size: .92em;
+}
 
 /* ── Widget 5 : Socials ───────────────────────────────────── */
 .ql-widget-social {

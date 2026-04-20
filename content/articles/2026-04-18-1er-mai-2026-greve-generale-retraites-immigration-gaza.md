@@ -14,6 +14,7 @@ tags:
   - nantes
 excerpt: "Appel intersyndical + associatif national pour un 1er mai massif. Retraites, loi immigration, Gaza, salaires — pour une fois, tout est lié. À Nantes, départ 10h place du Bouffay."
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2026/04/1ermai_banderole.jpg"
+event_date: "2026-05-01"
 bq_background: "content/media/1er-mai-2026.jpg"
 status: "draft"
 date: "2026-04-18 09:00:00"

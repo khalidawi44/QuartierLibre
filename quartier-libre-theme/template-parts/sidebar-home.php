@@ -105,33 +105,56 @@ $socials = array(
 
     <!-- 4. RENDEZ-VOUS FUTURS ─────────────────────────────────────── -->
     <?php
+    // On affiche UNIQUEMENT les articles avec event_date >= aujourd'hui.
+    // Les articles passés (ex: Bloquons tout 09/2025) sont exclus
+    // même s'ils sont dans la catégorie mobilisations.
+    $today_str = current_time( 'Y-m-d' );
     $rdv_query = new WP_Query( array(
         'post_type'      => 'post',
-        'category_name'  => 'mobilisations',
         'posts_per_page' => 4,
         'no_found_rows'  => true,
+        'meta_key'       => '_ql_event_date',
+        'orderby'        => 'meta_value',
+        'order'          => 'ASC',
+        'meta_query'     => array(
+            array(
+                'key'     => '_ql_event_date',
+                'value'   => $today_str,
+                'compare' => '>=',
+                'type'    => 'DATE',
+            ),
+        ),
     ) );
-    if ( $rdv_query->have_posts() ) : ?>
+    ?>
     <section class="ql-widget ql-widget--rdv" aria-label="Rendez-vous militants">
-        <h3 class="ql-widget__title">Rendez-vous</h3>
-        <ul class="ql-widget-rdv">
-            <?php while ( $rdv_query->have_posts() ) : $rdv_query->the_post(); ?>
-                <li class="ql-widget-rdv__item">
-                    <a href="<?php the_permalink(); ?>">
-                        <time class="ql-widget-rdv__date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
-                            <span class="ql-widget-rdv__day"><?php echo esc_html( get_the_date( 'd' ) ); ?></span>
-                            <span class="ql-widget-rdv__month"><?php echo esc_html( mb_strtoupper( get_the_date( 'M' ) ) ); ?></span>
-                        </time>
-                        <span class="ql-widget-rdv__title"><?php echo esc_html( wp_trim_words( get_the_title(), 12, '…' ) ); ?></span>
-                    </a>
-                </li>
-            <?php endwhile; wp_reset_postdata(); ?>
-        </ul>
+        <h3 class="ql-widget__title">Rendez-vous à venir</h3>
+        <?php if ( $rdv_query->have_posts() ) : ?>
+            <ul class="ql-widget-rdv">
+                <?php while ( $rdv_query->have_posts() ) : $rdv_query->the_post();
+                    $event_date = get_post_meta( get_the_ID(), '_ql_event_date', true );
+                    $event_ts   = $event_date ? strtotime( $event_date ) : 0;
+                ?>
+                    <li class="ql-widget-rdv__item">
+                        <a href="<?php the_permalink(); ?>">
+                            <time class="ql-widget-rdv__date" datetime="<?php echo esc_attr( $event_date ); ?>">
+                                <span class="ql-widget-rdv__day"><?php echo $event_ts ? esc_html( date_i18n( 'd', $event_ts ) ) : '—'; ?></span>
+                                <span class="ql-widget-rdv__month"><?php echo $event_ts ? esc_html( mb_strtoupper( date_i18n( 'M', $event_ts ) ) ) : ''; ?></span>
+                            </time>
+                            <span class="ql-widget-rdv__title"><?php echo esc_html( wp_trim_words( get_the_title(), 12, '…' ) ); ?></span>
+                        </a>
+                    </li>
+                <?php endwhile; wp_reset_postdata(); ?>
+            </ul>
+        <?php else : ?>
+            <p class="ql-widget-rdv__empty">
+                Aucun rendez-vous militant programmé pour le moment.<br>
+                <small>Ajoutez <code>event_date: "YYYY-MM-DD"</code> dans le frontmatter d'un article pour l'afficher ici.</small>
+            </p>
+        <?php endif; ?>
         <p class="ql-widget__more">
-            <a href="<?php echo esc_url( get_category_link( get_category_by_slug( 'mobilisations' ) ) ); ?>">Tous les rendez-vous →</a>
+            <a href="<?php echo esc_url( home_url( '/category/mobilisations/' ) ); ?>">Toutes les mobilisations →</a>
         </p>
     </section>
-    <?php endif; ?>
 
     <!-- 5. RÉSEAUX SOCIAUX ────────────────────────────────────────── -->
     <section class="ql-widget ql-widget--social" aria-label="Réseaux sociaux">

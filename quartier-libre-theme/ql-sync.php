@@ -827,6 +827,19 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
         wp_set_post_tags( $post_id, $front['tags'], false );
     }
 
+    // Date d'événement (rendez-vous militants) — frontmatter `event_date: "YYYY-MM-DD"`.
+    // Stockée en post meta `_ql_event_date` pour le widget sidebar Rendez-vous :
+    // seuls les articles avec une date future apparaissent dans la liste.
+    if ( ! empty( $front['event_date'] ) ) {
+        $ed = trim( (string) $front['event_date'] );
+        // Accepte YYYY-MM-DD ou YYYY-MM-DD HH:MM — on normalise en YYYY-MM-DD
+        if ( preg_match( '/^(\d{4}-\d{2}-\d{2})/', $ed, $m ) ) {
+            update_post_meta( $post_id, '_ql_event_date', $m[1] );
+        }
+    } else {
+        delete_post_meta( $post_id, '_ql_event_date' );
+    }
+
     if ( $thumb_id ) set_post_thumbnail( $post_id, $thumb_id );
 
     // ── Image de fond des blockquotes (témoignages pleine largeur) ──
