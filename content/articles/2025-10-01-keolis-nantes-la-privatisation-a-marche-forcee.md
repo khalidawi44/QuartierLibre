@@ -27,7 +27,7 @@ original_url: "https://quartierlibre.org/keolis-nantes-la-privatisation-a-marche
 
 ### Une technocrate au service du privé
 
-Diplômée d’HEC Paris et de l’École nationale d’administration (ENA), Marie-Ange Debon a débuté sa carrière en tant que magistrate à la Cour des comptes, avant de gravir les échelons dans le secteur public et privé. Elle a occupé des postes de direction chez France 3, Technicolor, puis chez Suez, où elle a dirigé les divisions internationale et France. En 2020, elle est nommée présidente du directoire de Keolis, **une filiale de la SNCF** spécialisée dans les transports publics. **Depuis sa prise de fonction, elle a transformé Keolis en une entreprise axée sur la rentabilité, au détriment des conditions de travail des salariés et de la qualité du service public.**
+Diplômée d’HEC Paris et de l’École nationale d’administration (ENA), Marie-Ange Debon a débuté sa carrière comme magistrate à la Cour des comptes, avant de gravir les échelons dans le secteur public et privé. Elle a occupé des postes de direction chez France 3, Technicolor, puis chez Suez. En août 2020, elle est nommée **présidente du directoire de Keolis** — groupe détenu à **70 % par la SNCF** et à 30 % par la Caisse de dépôt et placement du Québec (CDPQ) — spécialisé dans les transports publics ([fiche officielle Keolis](https://www.keolis.com/)). **Depuis sa prise de fonction, la stratégie du groupe privilégie les marchés internationaux et la rentabilité, au détriment des conditions de travail des salariés et de la qualité du service public.**
 
 ### Keolis Nantes : un modèle de privatisation à l’image des cars Macron
 
@@ -39,7 +39,7 @@ Keolis et les cars Macron ne sont pas des exceptions : c’est **une logique pol
 
 Alors que les conducteurs de Keolis Nantes peinent à joindre les deux bouts, **Marie-Ange Debon perçoit un salaire annuel de 450 000 €,** selon les rapports officiels de l’Agence des participations de l’État (APE). Cette rémunération, largement supérieure à celle de nombreux travailleurs du secteur public, témoigne d’une déconnexion totale entre les dirigeants et la réalité du terrain.
 
-À la RATP, le PDG **Grégoire Poux-Guillaume perçoit 350 000 €**, tandis que **3 250 salariés** ont été transférés vers des opérateurs privés, avec des salaires stagnants. Chez Transdev, le président **Bertrand Meunier touche environ 300 000 €**, alors que les employés voient leurs emplois menacés par la privatisation. À la SNCF, **Jean-Pierre Farandou gagne 450 000 €**, pendant que des milliers de conducteurs et agents subissent concurrence, transferts et conditions de travail dégradées. Partout, les dirigeants encaissent des centaines de milliers d’euros pendant que les salariés perdent dignité, sécurité et revenu.
+À la RATP, l’ancien Premier ministre **Jean Castex** préside le groupe depuis novembre 2022, avec une rémunération plafonnée à **450 000 €** bruts (plafond applicable aux dirigeants d’entreprise publique française, décret du 26 juillet 2012). Chez Transdev, **Thierry Mallet** préside le groupe depuis 2016. À la SNCF, **Jean-Pierre Farandou** a été président jusqu’en 2024, soumis au même plafond de 450 000 €. Partout, les dirigeants touchent les rémunérations plafond du secteur public, pendant que les conducteurs en bas de l’échelle salariale accumulent les contrats courts, les transferts imposés et la dégradation des conditions de travail.
 
 ### Des pertes locales, des bénéfices globaux
 

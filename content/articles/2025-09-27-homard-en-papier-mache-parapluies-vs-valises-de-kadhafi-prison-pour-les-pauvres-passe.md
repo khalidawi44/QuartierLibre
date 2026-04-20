@@ -28,9 +28,9 @@ original_url: "https://quartierlibre.org/homard-en-papier-mache-parapluies-vs-va
 
 ### Nantes — homard, parapluies et planques
 
-Cinq militants furent arrêtés à Nantes en pleine rue, juste avant une manifestation contre la réforme des retraites. Certains furent mis en examen pour **association de malfaiteurs**, d’autres comme **témoins assistés**. Guet-apens, filatures, planques, photos volées : la police a surveillé la fabrication du homard en papier mâché à la Maison du Peuple comme si elle traquait un laboratoire clandestin.
+Le **14 septembre 2019**, cinq militants furent interpellés à Nantes, en pleine rue, alors qu’ils chargeaient dans un camion un **homard géant en papier mâché** destiné à une marche convergence des luttes — une référence ironique à l’affaire **François de Rugy**, le député nantais mis en cause quelques mois plus tôt pour des dîners arrosés au homard à l’hôtel de Lassay. Trois d’entre eux avaient le homard, deux autres transportaient de la peinture, des K-ways et des pétards. Mis en garde à vue 48 heures, ils furent poursuivis pour **association de malfaiteurs en vue de dégradations**. Guet-apens, filatures, planques, photos volées : la police a surveillé la fabrication du homard comme si elle traquait un laboratoire clandestin ([Reporterre](https://reporterre.net/48-heures-de-garde-a-vue-pour-avoir-fabrique-un-homard-geant), [France 3 Pays de la Loire](https://france3-regions.franceinfo.fr/pays-de-la-loire/loire-atlantique/nantes/manif-samedi-nantes-arretes-homard-peintures-accuses-association-malfaiteurs-1722959.html)).
 
-Parmi eux, un militant reste la **pierre angulaire de l’affaire** sur la base d’une **simple présomption de personnalité** , la fameuse fiche S .  Il n’a pas été arrêté ce jour-là, mais sa présence dans le dossier justifie, aux yeux des enquêteurs, tout un arsenal judiciaire. Les parapluies et le homard ont été saisis et mis sous scellés par le juge d’instruction. L’instruction est toujours ouverte à ce jour.
+Le juge d’instruction a rendu un **non-lieu en 2021**. Le parquet a fait **appel** de ce non-lieu ([Contre-Attaque, septembre 2021](https://contre-attaque.net/2021/09/22/association-de-malfaiteurs-a-nantes-le-parquet-fait-appel-du-non-lieu/)). Les parapluies et le homard avaient été saisis et placés sous scellés.
 
 Cette affaire illustre parfaitement la logique judiciaire : faute de faits concrets, on invente des intentions, on projette des hypothèses de délits futurs. Une démonstration de force disproportionnée pour intimider et criminaliser l’engagement citoyen.
 
@@ -63,19 +63,13 @@ Malgré cette illégalité, le **juge administratif maintient l’interdiction**
 
 ### Sarkozy — millions libyens, guerre et secret-défense
 
-Pendant ce temps, Nicolas Sarkozy est rattrapé par l’affaire du **financement libyen de sa campagne de 2007** : des millions en valises provenant de Kadhafi. Derrière ce financement, l’intervention militaire française en Libye en 2011, qui plonge le pays dans le chaos et conduit à la mort de Kadhafi.
+Pendant ce temps, Nicolas Sarkozy est rattrapé par l’affaire du **financement libyen de sa campagne de 2007** : des soupçons de financement occulte par le régime Kadhafi. Derrière ce dossier, l’intervention militaire française en Libye en 2011, qui plonge le pays dans le chaos et conduit à la mort de Kadhafi.
 
-Interrogé en direct par **David Pujadas** :
+Interrogé en 2016 sur le plateau de **L’Émission politique** (France 2) par **David Pujadas**, Sarkozy réagissait vivement à la question de sa responsabilité dans la mort du dirigeant libyen :
 
-— *« Avez-vous fait assassiner Kadhafi ? »*
+— *« Vous m’accusez d’avoir fait tuer Monsieur Kadhafi, ai-je compris cela ? »* ([vidéo de la séquence](https://www.youtube.com/watch?v=4RHDbrf36oY))
 
-Sarkozy répond, outré :
-
-— *« Vous êtes fou de dire ça ! »*
-
-L’homme bénéficie de l’**immunité présidentielle**, du **secret-défense**, et d’un calendrier judiciaire aménagé. Les soupçons demeurent : pas de Kadhafi, pas de témoin gênant, pas de remboursement.
-
-Récemment, le tribunal l’a condamné à **5 ans de prison ferme**. Mais avec un **mandat de dépôt différé**, traitement de faveur, privilège du puissant. Ironie du sort : on se demande avec un sourire noir… **« Que va-t-il sortir du chapeau ce malfaiteur ? Corruption d’un juge ? Maladie soudaine ? »**
+Le **25 septembre 2025**, le tribunal correctionnel de Paris l’a condamné à **5 ans de prison ferme** pour **association de malfaiteurs** en vue de préparer la corruption. Il a été **relaxé** des autres chefs (financement illégal de campagne et recel de détournement de fonds publics libyens). Une **exécution provisoire** a été ordonnée, avec mandat de dépôt à effet différé ([Politis](https://www.politis.fr/articles/2025/09/decryptage-affaire-libyenne-tout-comprendre-des-condamnations/), [Transparency France](https://transparency-france.org/2025/09/25/affaire-du-financement-libyen-une-condamnation-de-nicolas-sarkozy-historique-et-inedite/)). C’est la **première fois** qu’un ancien président de la République française est condamné à une peine de prison ferme assortie d’une incarcération.
 
 ---
 

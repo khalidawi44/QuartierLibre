@@ -23,7 +23,7 @@ Louis-Macron XVI a donné un **bras d’honneur au peuple**. Derrière les appar
 
 Quand ce n’est pas par **l’article 49-3**, qui permet de faire passer un texte sans vote si le gouvernement engage sa responsabilité, c’est par **ordonnance** : selon la Constitution, **après 70 jours où le Parlement n’a pas voté le budget**, le gouvernement peut adopter le texte par décret, sans aucune approbation parlementaire. Cinisme pur. Froid calcul. Monarchie assumée. Le peuple continue de payer, Macron ordonne.
 
-Au centre de cette mécanique se trouve **Stéphane Lecornu**, le **moine-soldat** du roi. « Moine » pour sa discipline monastique et sa formation rigoureuse, « soldat » pour son rôle passé de ministre des Armées. Lecornu est chargé de **défendre les ordonnances royales**, de veiller à ce que chaque ministre respecte l’ordre et que chaque décision suive le plan monarchique. Doux en apparence, polissé dans ses discours, mais féroce comme un lion dès qu’il s’agit de protéger la carcasse macroniste.
+Au centre de cette mécanique se trouve **Sébastien Lecornu**, le **moine-soldat** du roi. « Moine » pour sa discipline monastique et sa formation rigoureuse, « soldat » pour son rôle passé de ministre des Armées. Lecornu est chargé de **défendre les ordonnances royales**, de veiller à ce que chaque ministre respecte l’ordre et que chaque décision suive le plan monarchique. Doux en apparence, polissé dans ses discours, mais féroce comme un lion dès qu’il s’agit de protéger la carcasse macroniste.
 
 **Ce n’est pas un hasard** que Lecornu ait été choisi : son message est clair pour tous ceux qui se mettraient en travers du chemin du roi Macron. Le moine-soldat est un avertissement **pour le peuple et pour les politiciens** : obéissez, ou vous subirez les conséquences du calendrier monarchique. Chaque manœuvre est calculée : chaises musicales des ministres, faux débats parlementaires, annonces publiques calibrées. Macron contrôle le temps, la parole et le calendrier législatif. Lecornu, fidèle moine-soldat, veille à ce que tout soit exécuté selon les ordres royaux.
 
@@ -33,11 +33,13 @@ Pendant ce temps, le peuple attend dehors, spectateur impuissant. Mais ceux qui 
 
 ## Exclusivité : le gouvernement de rupture… ou pas
 
-Annoncé comme un **gouvernement de rupture**, le nouveau cabinet dirigé par **Stéphane Lecornu2,** promettra de bouleverser la politique française, comme le proclamait le cornu1. Mais en réalité, c’est un **recyclage des mêmes acteurs**, un bal de chaises musicales pour masquer le cynisme royal. Chaque ministère est désormais un front de bataille, un **château à défendre** avec des  **templiers à leurs têtes**.
+Annoncé comme un **gouvernement de rupture**, le nouveau cabinet dirigé par **Sébastien Lecornu2,** promettra de bouleverser la politique française, comme le proclamait le cornu1. Mais en réalité, c’est un **recyclage des mêmes acteurs**, un bal de chaises musicales pour masquer le cynisme royal. Chaque ministère est désormais un front de bataille, un **château à défendre** avec des  **templiers à leurs têtes**.
 
 ### Le Saint Gouvernement Lecornu2 :
 
-- **Stéphane Moine-Soldat Lecornu** — Premier ministre — *Château de Jérusalem*
+*Les « ministres » ci-dessous sont une **allégorie satirique** qui renvoie à des figures politiques françaises associées aux grandes mesures des dernières années. Pour la **composition officielle** du gouvernement Lecornu II (nommé le 12 octobre 2025), voir [info.gouv.fr](https://www.info.gouv.fr/actualite/composition-du-gouvernement-du-sebastien-lecornu).*
+
+- **Sébastien Moine-Soldat Lecornu** — Premier ministre — *Château de Jérusalem*
 
 **Batailles/ordonnances** : orchestrateur de l’**ordonnance budgétaire après 70 jours**, garant de l’exécution des mesures impopulaires, muselage du Parlement et calendrier législatif taillé sur mesure pour que le peuple n’ait aucune voix.
 
@@ -49,9 +51,9 @@ Annoncé comme un **gouvernement de rupture**, le nouveau cabinet dirigé par **
 
 - **Batailles/ordonnances** : réformes fiscales favorisant les riches, coupes dans le logement social et aides aux collectivités, plans d’austérité pour ménages moyens et modestes. Résultat : familles étranglées financièrement, pauvreté accrue.
 
-- **Alexandre Gerard de Ridefort Benalla** — Intérieur — *Château d’Ascalon*
+- **Bruno de Ridefort Retailleau** — Intérieur — *Château d’Ascalon*
 
-- **Batailles** : Barbouze de l’Elysée , matraqueur de la rue contrescarpe
+- **Batailles** : circulaire du 23 janvier 2025 durcissant la régularisation des sans-papiers (5 à 7 ans de présence requise), discours de fermeté contre les associations
 
 - **Éric Guillaume de Beaujeu Dupond-Moretti** — Justice — *Château de Montgisard*
 

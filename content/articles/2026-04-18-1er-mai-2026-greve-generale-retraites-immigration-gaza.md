@@ -30,32 +30,35 @@ une: true
 
 ## Pourquoi ce 1er mai ne sera pas comme les autres
 
-Depuis 2019, chaque 1er mai ressemble au précédent : cortège syndical, chants, ballons, discours, dispersion. Un rituel. Une messe.
+Depuis plusieurs années, chaque 1er mai ressemble au précédent : cortège syndical, chants, ballons, discours, dispersion. Un rituel. Une messe.
 
-**Ce 1er mai 2026 est différent.** Trois raisons :
+**Ce 1er mai 2026 s'annonce différent.** Trois raisons :
 
-1. La colère accumulée par **trois ans de Macron 2** atteint des niveaux inédits. Réforme des retraites validée en force en 2023, lois travail successives, budget d'austérité 2026 qui taille dans les services publics.
-2. La [**loi asile-immigration**](/category/politique/) votée le 8 avril cristallise un rejet qui dépasse la gauche habituelle : les associations humanitaires, les médecins, les profs, les prêtres — tout un tissu solidaire bascule dans la désobéissance.
-3. **Gaza**. Après 30 mois de [génocide documenté](/category/genocide/), la solidarité internationale se structure enfin. Les universités nantaises sont occupées depuis trois semaines. Le campus de Tertre vit au rythme des AG quotidiennes.
+1. La colère accumulée contre la politique Macron atteint des niveaux inédits. [**Réforme des retraites**](https://www.conseil-constitutionnel.fr/decision/2023/2023849DC.htm) imposée par 49.3 en mars 2023 et validée par le Conseil constitutionnel le 14 avril 2023, budgets d'austérité successifs, gouvernements de plus en plus fragiles (Borne, Attal, Barnier, Bayrou, Lecornu).
+2. La [**loi Darmanin du 26 janvier 2024**](/category/politique/) et la **circulaire Retailleau du 23 janvier 2025** cristallisent un rejet qui dépasse la gauche habituelle : les associations humanitaires, les médecins, les profs, les prêtres — tout un tissu solidaire continue de documenter les effets concrets du durcissement.
+3. **Gaza**. Après plus de deux ans de [massacres documentés](/category/genocide/), la solidarité internationale se structure. Les mobilisations étudiantes, associatives et citoyennes se poursuivent sur les campus nantais.
 
 Pour une fois, les luttes convergent. Pour une fois, on arrête de les cloisonner.
 
-## L'appel intersyndical
+## L'appel intersyndical à vérifier
 
-Rédigé le 10 avril et co-signé par un front inédit :
+*À date de rédaction, l'appel intersyndical national pour le 1er mai 2026 n'a pas encore été publié dans sa forme définitive. Les mots d'ordre ci-dessous reprennent les **revendications historiques portées par les organisations syndicales et associatives françaises** ces dernières années — retraite, salaires, immigration, Palestine, écologie.*
 
-- **CGT**, **Solidaires**, **FSU**, **UNEF**, **Confédération paysanne**
+Organisations historiquement signataires des appels du 1er mai (liste non figée) :
+
+- **CGT**, **Solidaires**, **FSU** ([appel unitaire 1er mai](https://www.cgt.fr/))
+- **Confédération paysanne**, **UNEF**
 - **ATTAC**, **Greenpeace**, **Ligue des Droits de l'Homme**
 - **Cimade**, **RESF**, **Utopia 56**, **Droit Au Logement**
-- **Collectif Urgence Palestine**, **AFPS**
+- **AFPS**, collectifs pour la Palestine
 
-Les cinq mots d'ordre :
+Revendications récurrentes dans les appels CGT-Solidaires-FSU :
 
-1. **Retraite à 60 ans** pour toutes et tous. Abrogation de la réforme Borne-Macron.
-2. **Augmentation générale des salaires** — SMIC à 1 700 € net, indexation sur l'inflation.
-3. **Abrogation de la loi asile-immigration** et fin du délit de solidarité.
-4. **Cessez-le-feu immédiat à Gaza**, sanctions économiques contre Israël, suspension des livraisons d'armes françaises.
-5. **Arrêt du saccage écologique et social** : contre les mégabassines, contre les fermetures d'hôpitaux, contre la privatisation des services publics — y compris chez nous avec [Keolis](/category/transports/).
+1. **Abrogation de la réforme des retraites 2023** et retour à l'âge de départ à 62 ans (position CGT-Solidaires-FSU).
+2. **Augmentation générale des salaires** et du SMIC, indexation sur l'inflation.
+3. **Défense des droits** des personnes étrangères : retrait de la circulaire Retailleau, régularisation par le travail, défense de l'AME.
+4. **Cessez-le-feu à Gaza**, suspension des livraisons d'armes françaises à Israël, sanctions économiques.
+5. **Services publics** : contre les fermetures d'hôpitaux, contre la privatisation — notamment des transports publics (référence aux conflits chez [Keolis](/category/transports/)).
 
 ## À Nantes : ce qu'il faut savoir
 
@@ -82,7 +85,7 @@ Durée estimée : 3 à 4 heures. Plusieurs cortèges internes :
 
 ## Se protéger en manifestation — rappel
 
-Le dispositif policier annoncé est **exceptionnel** : 2 800 agents (CRS, BAC, BRAV-M spécialement déplacée de Paris). Les préfectures ont reçu instruction de « fermeté ». Comme en 2023. Comme [à Nantes sous les gaz](/category/repression/).
+Le dispositif policier pour le 1er mai à Nantes est traditionnellement **important**. Préparez-vous à un encadrement serré comme lors des manifestations précédentes (mouvement des retraites 2023, journée du 10 septembre 2025 — voir [Nantes sous les gaz](/category/repression/)).
 
 Règles élémentaires :
 

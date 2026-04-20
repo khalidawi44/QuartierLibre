@@ -41,14 +41,14 @@ Vous avez entendu parler de tout ça au 20h ? Non. Personne ne vous a tenu au co
 
 ## El Fasher : un massacre ethnique sous nos yeux
 
-La ville d'**El Fasher**, capitale du Darfour-Nord, est assiégée depuis 18 mois par les RSF. Les milices — composées majoritairement de combattants arabes — y mènent un **nettoyage ethnique** contre les populations masalit, four et zaghawa.
+La ville d'**El Fasher**, capitale du Darfour-Nord, a été assiégée pendant 18 mois par les RSF avant de **tomber entre leurs mains le 26 octobre 2025**. Les milices — composées majoritairement de combattants arabes — y ont mené un **nettoyage ethnique** contre les populations masalit, four et zaghawa.
 
-- Exécutions sommaires documentées par [Human Rights Watch](https://www.hrw.org/fr/africa/sudan)
+- Exécutions sommaires documentées par [Human Rights Watch](https://www.hrw.org/africa/sudan) et [Amnesty International](https://www.amnesty.fr/conflits-armes-et-populations/actualites/soudan-temoignages-massacres-el-fasher)
 - Viols de masse utilisés comme arme de guerre
-- Blocage humanitaire total : l'aide ne passe plus depuis décembre 2025
-- 750 000 personnes piégées sans eau, sans nourriture, sans médicaments
+- Selon l'**Université Yale** (janvier 2026), environ **60 000 habitants** tués ou portés disparus dans les massacres qui ont suivi la chute de la ville
+- Population déplacée de force vers Tawila et d'autres localités où les conditions humanitaires sont catastrophiques
 
-La Cour pénale internationale parle de « risque imminent de [génocide](/category/genocide/) ». Les chancelleries occidentales, elles, publient des communiqués poliment préoccupés.
+Une **mission d'enquête indépendante de l'ONU** a dénoncé, le **19 février 2026**, des « signes distinctifs d'un génocide » à El Fasher. Les chancelleries occidentales, elles, publient des communiqués poliment préoccupés.
 
 ## La famine comme arme de guerre
 
@@ -56,7 +56,7 @@ Ce qui se passe au Soudan n'est pas une crise alimentaire classique. C'est **une
 
 Les RSF bloquent les convois humanitaires. L'armée régulière bombarde les zones contrôlées par l'adversaire. Les récoltes sont brûlées systématiquement. Les marchés sont ciblés.
 
-Dans le camp de Zamzam, près d'El Fasher, **un enfant meurt toutes les deux heures** de malnutrition. Les ONG présentes sur place — ce qu'il en reste — n'ont plus de stocks depuis février 2026.
+Dans le camp de **Zamzam**, près d'El Fasher, la famine a été **officiellement confirmée par l'IPC en août 2024** (phase 5). Depuis la prise d'El Fasher par les RSF fin octobre 2025, la plupart des habitants ont été forcés de fuir. Les ONG encore présentes au Darfour fonctionnent avec des stocks extrêmement réduits.
 
 ## Les complicités qu'on tait
 
