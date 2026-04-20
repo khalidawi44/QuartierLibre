@@ -97,6 +97,36 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                     <button class="ql-search-toggle" type="button" aria-expanded="false" aria-controls="ql-search-panel" aria-label="Rechercher">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
                     </button>
+
+                    <?php
+                    // Bouton connexion / menu utilisateur — change selon l'état de connexion
+                    $connexion_page = get_page_by_path( 'connexion' );
+                    $connexion_url  = $connexion_page ? get_permalink( $connexion_page ) : home_url( '/connexion/' );
+                    if ( is_user_logged_in() ) :
+                        $current_user = wp_get_current_user();
+                        $avatar = get_avatar_url( $current_user->ID, array( 'size' => 32 ) );
+                    ?>
+                        <div class="ql-user-menu">
+                            <button type="button" class="ql-user-menu__trigger" aria-haspopup="true" aria-expanded="false" aria-label="Mon compte">
+                                <img src="<?php echo esc_url( $avatar ); ?>" alt="" class="ql-user-menu__avatar">
+                                <span class="ql-user-menu__name"><?php echo esc_html( $current_user->display_name ); ?></span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                            </button>
+                            <ul class="ql-user-menu__dropdown" hidden>
+                                <li><a href="<?php echo esc_url( admin_url( 'profile.php' ) ); ?>">Mon profil</a></li>
+                                <?php if ( current_user_can( 'edit_posts' ) ) : ?>
+                                    <li><a href="<?php echo esc_url( admin_url() ); ?>">Administration</a></li>
+                                <?php endif; ?>
+                                <li><a href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>">Déconnexion</a></li>
+                            </ul>
+                        </div>
+                    <?php else : ?>
+                        <a class="ql-btn ql-btn--ghost ql-btn--connexion" href="<?php echo esc_url( $connexion_url ); ?>">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                            Connexion
+                        </a>
+                    <?php endif; ?>
+
                     <a class="ql-btn ql-btn--accent" href="<?php
                         $plainte = get_page_by_path( 'bureau-des-plaintes' );
                         echo esc_url( $plainte ? get_permalink( $plainte ) : home_url( '/bureau-des-plaintes/' ) );

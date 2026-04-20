@@ -4456,6 +4456,120 @@ body.tag-mairie-ps .ql-archive-header {
   min-width: 0;
 }
 
+/* ══════════════════════════════════════════════════════════════
+   Connexion sociale (page /connexion/) + bouton connexion menu
+   ══════════════════════════════════════════════════════════════ */
+
+/* Boutons sociaux sur la page connexion */
+.ql-social-login {
+  max-width: 440px; margin: 0 auto 1.8rem;
+  display: flex; flex-direction: column; gap: .6rem;
+}
+.ql-social-login__separator {
+  position: relative; text-align: center;
+  margin: .5rem 0;
+  color: var(--ql-muted, #5a5a5a); font-size: .85rem;
+}
+.ql-social-login__separator::before,
+.ql-social-login__separator::after {
+  content: ""; position: absolute; top: 50%;
+  width: calc(50% - 20px); height: 1px;
+  background: #d5d0c4;
+}
+.ql-social-login__separator::before { left: 0; }
+.ql-social-login__separator::after  { right: 0; }
+.ql-social-login__separator span {
+  background: var(--ql-paper, #fafaf7); padding: 0 .8rem;
+  text-transform: uppercase; letter-spacing: .1em; font-weight: 600;
+}
+
+.ql-social-login__btn {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .75rem 1rem; border-radius: 6px;
+  background: #fff; color: var(--ql-ink, #0f0f0f);
+  border: 1.5px solid #d5d0c4;
+  text-decoration: none; font-weight: 600; font-size: .95rem;
+  transition: all .15s ease;
+}
+.ql-social-login__btn:hover {
+  background: #f1efe8; border-color: var(--ql-ink, #0f0f0f);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0,0,0,.08);
+}
+.ql-social-login__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+}
+.ql-social-login__btn--facebook { background: #1877f2; color: #fff; border-color: #1877f2; }
+.ql-social-login__btn--facebook:hover { background: #0f5fc0; border-color: #0f5fc0; color: #fff; }
+.ql-social-login__btn--apple    { background: #000; color: #fff; border-color: #000; }
+.ql-social-login__btn--apple:hover { background: #2a2a2a; border-color: #2a2a2a; color: #fff; }
+
+.ql-social-login__admin-note {
+  background: #fffbea; border: 1px solid #f2c94c;
+  color: #7a5c00; padding: .65rem .8rem;
+  border-radius: 4px; font-size: .82rem;
+  margin: .4rem 0 0; line-height: 1.5;
+}
+.ql-social-login__admin-note a { color: #b5250a; font-weight: 700; }
+
+/* Bouton connexion dans le menu (état déconnecté) */
+.ql-btn--connexion {
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: .45rem .8rem;
+  background: transparent; color: var(--ql-ink, #0f0f0f);
+  border: 1.5px solid var(--ql-ink, #0f0f0f);
+  border-radius: 4px; font-weight: 700; font-size: .85rem;
+  text-decoration: none;
+  transition: all .15s ease;
+}
+.ql-btn--connexion:hover {
+  background: var(--ql-ink, #0f0f0f); color: #fff;
+}
+@media (max-width: 899px) {
+  .ql-btn--connexion .ql-btn-label,
+  .ql-btn--connexion { font-size: .78rem; padding: .4rem .55rem; }
+}
+
+/* Menu utilisateur (état connecté) */
+.ql-user-menu { position: relative; }
+.ql-user-menu__trigger {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: transparent; border: 1.5px solid #d5d0c4;
+  border-radius: 20px; padding: 3px 10px 3px 3px;
+  cursor: pointer; font-family: inherit;
+  transition: all .15s ease;
+}
+.ql-user-menu__trigger:hover { border-color: var(--ql-ink, #0f0f0f); }
+.ql-user-menu__avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: block; flex: 0 0 auto;
+}
+.ql-user-menu__name {
+  font-weight: 600; font-size: .85rem; color: var(--ql-ink, #0f0f0f);
+  max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+@media (max-width: 899px) { .ql-user-menu__name { display: none; } }
+
+.ql-user-menu__dropdown {
+  position: absolute; top: calc(100% + 6px); right: 0;
+  background: #fff; border: 1px solid #e8e5db;
+  border-radius: 6px; padding: .3rem;
+  min-width: 180px; list-style: none; margin: 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  z-index: 60;
+}
+.ql-user-menu__dropdown li { margin: 0; }
+.ql-user-menu__dropdown a {
+  display: block; padding: .55rem .75rem;
+  color: var(--ql-ink, #0f0f0f); text-decoration: none;
+  font-size: .88rem; border-radius: 4px;
+  transition: background .12s ease;
+}
+.ql-user-menu__dropdown a:hover {
+  background: #f1efe8; color: var(--ql-accent, #e63312);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

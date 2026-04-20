@@ -920,6 +920,73 @@ function ql_root_category( $cat ) {
 }
 
 /**
+ * Boutons de connexion sociale (Google / Facebook / Apple).
+ *
+ * Compatible avec le plugin **Nextend Social Login** (gratuit) : les URLs
+ * générées sont `/wp-login.php?loginSocial=<provider>`, format Nextend.
+ * Dès que le plugin est activé côté admin (Extensions → Ajouter → Nextend
+ * Social Login → configurer les Client ID/Secret de chaque provider),
+ * ces boutons fonctionnent sans modification de code.
+ *
+ * Si le plugin n'est pas actif : les boutons renvoient à wp-login.php qui
+ * ignore le paramètre loginSocial (fallback gracieux — l'utilisateur voit
+ * le form login WP classique).
+ *
+ * Un admin verra un avertissement discret en haut de la page connexion.
+ */
+function ql_social_login_buttons( $redirect_to = '' ) {
+    $providers = array(
+        'google' => array(
+            'label' => 'Continuer avec Google',
+            'brand' => '#ea4335',
+            'icon'  => '<svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A10.98 10.98 0 0 0 12 23z"/><path fill="#fbbc04" d="M5.84 14.09A6.6 6.6 0 0 1 5.48 12c0-.72.13-1.43.36-2.09V7.07H2.18A10.98 10.98 0 0 0 1 12c0 1.77.42 3.44 1.18 4.93z"/><path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1A10.98 10.98 0 0 0 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>',
+        ),
+        'facebook' => array(
+            'label' => 'Continuer avec Facebook',
+            'brand' => '#1877f2',
+            'icon'  => '<svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>',
+        ),
+        'apple' => array(
+            'label' => 'Continuer avec Apple',
+            'brand' => '#000',
+            'icon'  => '<svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>',
+        ),
+    );
+
+    $out = '<div class="ql-social-login" role="group" aria-label="Connexion via réseaux sociaux">';
+    $out .= '<div class="ql-social-login__separator"><span>ou</span></div>';
+
+    foreach ( $providers as $key => $p ) {
+        $url = add_query_arg( array(
+            'loginSocial' => $key,
+            'redirect_to' => $redirect_to ?: home_url( '/' ),
+        ), site_url( 'wp-login.php' ) );
+
+        $out .= sprintf(
+            '<a href="%s" class="ql-social-login__btn ql-social-login__btn--%s" data-provider="%s">'
+          . '<span class="ql-social-login__icon">%s</span>'
+          . '<span class="ql-social-login__label">%s</span>'
+          . '</a>',
+            esc_url( $url ),
+            esc_attr( $key ),
+            esc_attr( $key ),
+            $p['icon'],
+            esc_html( $p['label'] )
+        );
+    }
+
+    // Avertissement admin si Nextend pas actif
+    if ( current_user_can( 'manage_options' ) && ! class_exists( 'NextendSocialLogin' ) && ! class_exists( '\\NSL\\REST\\Nextend_REST' ) ) {
+        $out .= '<p class="ql-social-login__admin-note">'
+              . '<strong>Admin :</strong> installez et activez le plugin <a href="' . esc_url( admin_url( 'plugin-install.php?tab=search&s=nextend+social+login' ) ) . '" target="_blank">Nextend Social Login</a> pour activer réellement ces boutons. Tant qu\'il n\'est pas actif, les boutons renvoient à la page wp-login.php standard.'
+              . '</p>';
+    }
+
+    $out .= '</div>';
+    return $out;
+}
+
+/**
  * SVG d'icône de réseau social (inline, couleur currentColor).
  * Source des paths : Feather Icons + simplicite icons — licence MIT.
  */

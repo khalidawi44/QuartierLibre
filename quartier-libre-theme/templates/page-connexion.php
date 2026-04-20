@@ -56,6 +56,14 @@ get_header();
                 </div>
             <?php endif; ?>
 
+            <?php
+            // Boutons de connexion sociale (Google, Facebook, Apple) — compatible
+            // Nextend Social Login quand le plugin est actif.
+            if ( function_exists( 'ql_social_login_buttons' ) ) {
+                echo ql_social_login_buttons( $redirect_to );
+            }
+            ?>
+
             <div class="ql-connexion-grid">
 
                 <article class="ql-connexion-card ql-connexion-card--login">

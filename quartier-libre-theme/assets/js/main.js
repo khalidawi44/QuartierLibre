@@ -374,6 +374,39 @@
     update();
   }
 
+  // ── User menu (avatar + dropdown) ──────────────────────────
+  var userTrigger = document.querySelector('.ql-user-menu__trigger');
+  var userDropdown = document.querySelector('.ql-user-menu__dropdown');
+  if (userTrigger && userDropdown) {
+    userTrigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = userTrigger.getAttribute('aria-expanded') === 'true';
+      userTrigger.setAttribute('aria-expanded', String(!open));
+      if (open) {
+        userDropdown.setAttribute('hidden', '');
+      } else {
+        userDropdown.removeAttribute('hidden');
+      }
+    });
+    // Fermer si clic en dehors
+    document.addEventListener('click', function (e) {
+      if (!userDropdown.hasAttribute('hidden')
+          && !userDropdown.contains(e.target)
+          && !userTrigger.contains(e.target)) {
+        userDropdown.setAttribute('hidden', '');
+        userTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+    // Fermer sur Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !userDropdown.hasAttribute('hidden')) {
+        userDropdown.setAttribute('hidden', '');
+        userTrigger.setAttribute('aria-expanded', 'false');
+        userTrigger.focus();
+      }
+    });
+  }
+
   // ── Fermer le menu mobile quand on clique un lien ───────────
   if (nav) {
     nav.addEventListener('click', function (e) {
