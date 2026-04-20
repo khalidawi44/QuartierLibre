@@ -1427,8 +1427,19 @@ p  { margin: 0 0 1em; }
     padding-right: clamp(1rem, 6vw, 5rem) !important;
   }
 }
-/* Évite le scroll horizontal causé par le width: 100vw */
-html, body { overflow-x: hidden; }
+/* Évite le scroll horizontal causé par le width: 100vw du testimony,
+   SANS casser position:sticky (overflow-x:hidden créait un conteneur
+   de scroll qui rendait les descendants sticky inopérants → sidebar
+   qui ne suivait plus le scroll).
+   overflow:clip fait la même chose sans créer de scroll container. */
+html, body { overflow-x: clip; }
+/* Fallback pour navigateurs sans support clip (Safari <16) : on utilise
+   overflow-x:hidden mais seulement sur un wrapper interne, pas sur
+   html/body, pour préserver le sticky. */
+@supports not (overflow-x: clip) {
+  html, body { overflow-x: visible; }
+  #page, .site, body > .ql-container { overflow-x: hidden; }
+}
 
 /* ── Listes : puces rouges stylées ───────────────────────── */
 .ql-post__content ul {
