@@ -30,23 +30,31 @@ get_header(); ?>
         ?>
     </header>
 
-    <?php if ( have_posts() ) : ?>
-        <div class="ql-grid ql-grid--3">
-            <?php while ( have_posts() ) : the_post();
-                get_template_part( 'template-parts/card-article' );
-            endwhile; ?>
+    <div class="ql-page-layout">
+
+        <!-- SIDEBAR GAUCHE (30%) -->
+        <?php get_template_part( 'template-parts/sidebar-home' ); ?>
+
+        <div class="ql-page-main">
+            <?php if ( have_posts() ) : ?>
+                <div class="ql-grid ql-grid--2">
+                    <?php while ( have_posts() ) : the_post();
+                        get_template_part( 'template-parts/card-article' );
+                    endwhile; ?>
+                </div>
+
+                <nav class="ql-pagination" aria-label="Pagination">
+                    <?php echo paginate_links( array(
+                        'prev_text' => '←',
+                        'next_text' => '→',
+                    ) ); ?>
+                </nav>
+            <?php else : ?>
+                <p>Aucun article pour l'instant dans cette rubrique.</p>
+            <?php endif; ?>
         </div>
 
-        <nav class="ql-pagination" aria-label="Pagination">
-            <?php echo paginate_links( array(
-                'prev_text' => '←',
-                'next_text' => '→',
-            ) ); ?>
-        </nav>
-    <?php else : ?>
-        <p>Aucun article pour l'instant dans cette rubrique.</p>
-    <?php endif; ?>
-
+    </div><!-- /.ql-page-layout -->
 </div>
 
 <?php get_footer(); ?>

@@ -56,6 +56,7 @@ get_header(); ?>
         </div>
     </header>
 
+    <div class="ql-container">
     <div class="ql-article-layout">
 
         <!-- SIDEBAR GAUCHE (30%) — mêmes widgets que la home -->
@@ -124,6 +125,7 @@ get_header(); ?>
 
     </div><!-- /.ql-post__body -->
     </div><!-- /.ql-article-layout -->
+    </div><!-- /.ql-container -->
 
     <?php // ── Commentaires : juste sous l'article, avant les articles liés ── ?>
     <?php if ( comments_open() || get_comments_number() ) : ?>

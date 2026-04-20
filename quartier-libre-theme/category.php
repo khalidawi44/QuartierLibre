@@ -30,49 +30,58 @@ if ( have_posts() ) {
 
     <?php
     // Sur la rubrique "Infos Locale" : afficher la mosaïque des quartiers HLM
+    // (en pleine largeur, au-dessus du split sidebar/contenu)
     $cat_slug = $term ? $term->slug : '';
     if ( in_array( $cat_slug, array( 'infos-locale', 'info-locale', 'local', 'nantes' ), true ) ) {
         get_template_part( 'template-parts/quartiers' );
     }
     ?>
 
-    <?php if ( $have_featured ) : ?>
-        <article class="ql-cat-featured">
-            <?php if ( has_post_thumbnail() ) : ?>
-                <a class="ql-cat-featured__media" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-                    <?php the_post_thumbnail( 'ql-hero', array( 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
-                </a>
+    <div class="ql-page-layout">
+
+        <!-- SIDEBAR GAUCHE (30%) -->
+        <?php get_template_part( 'template-parts/sidebar-home' ); ?>
+
+        <div class="ql-page-main">
+            <?php if ( $have_featured ) : ?>
+                <article class="ql-cat-featured">
+                    <?php if ( has_post_thumbnail() ) : ?>
+                        <a class="ql-cat-featured__media" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+                            <?php the_post_thumbnail( 'ql-hero', array( 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
+                        </a>
+                    <?php endif; ?>
+                    <div class="ql-cat-featured__body">
+                        <span class="ql-card__cat ql-card__cat--static">À la une · <?php echo esc_html( single_cat_title( '', false ) ); ?></span>
+                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                        <p class="ql-cat-featured__excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 42, '…' ) ); ?></p>
+                        <div class="ql-card__meta">
+                            <span>Par <?php the_author(); ?></span>
+                            <span aria-hidden="true">·</span>
+                            <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time>
+                        </div>
+                    </div>
+                </article>
             <?php endif; ?>
-            <div class="ql-cat-featured__body">
-                <span class="ql-card__cat ql-card__cat--static">À la une · <?php echo esc_html( single_cat_title( '', false ) ); ?></span>
-                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                <p class="ql-cat-featured__excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 42, '…' ) ); ?></p>
-                <div class="ql-card__meta">
-                    <span>Par <?php the_author(); ?></span>
-                    <span aria-hidden="true">·</span>
-                    <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time>
-                </div>
-            </div>
-        </article>
-    <?php endif; ?>
 
-    <?php if ( have_posts() ) : ?>
-        <section class="ql-section" aria-label="Autres articles">
-            <header class="ql-section__head">
-                <h2 class="ql-section__title">À lire aussi dans cette rubrique</h2>
-            </header>
-            <div class="ql-grid ql-grid--3">
-                <?php while ( have_posts() ) : the_post();
-                    get_template_part( 'template-parts/card-article' );
-                endwhile; ?>
-            </div>
-        </section>
+            <?php if ( have_posts() ) : ?>
+                <section class="ql-section" aria-label="Autres articles">
+                    <header class="ql-section__head">
+                        <h2 class="ql-section__title">À lire aussi dans cette rubrique</h2>
+                    </header>
+                    <div class="ql-grid ql-grid--2">
+                        <?php while ( have_posts() ) : the_post();
+                            get_template_part( 'template-parts/card-article' );
+                        endwhile; ?>
+                    </div>
+                </section>
 
-        <nav class="ql-pagination" aria-label="Pagination">
-            <?php echo paginate_links( array( 'prev_text' => '←', 'next_text' => '→' ) ); ?>
-        </nav>
-    <?php endif; ?>
+                <nav class="ql-pagination" aria-label="Pagination">
+                    <?php echo paginate_links( array( 'prev_text' => '←', 'next_text' => '→' ) ); ?>
+                </nav>
+            <?php endif; ?>
+        </div>
 
+    </div><!-- /.ql-page-layout -->
 </div>
 
 <?php get_footer(); ?>
