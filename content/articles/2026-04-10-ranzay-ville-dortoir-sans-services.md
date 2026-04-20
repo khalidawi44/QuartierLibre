@@ -26,7 +26,7 @@ Ce n'est pas un « quartier chaud ». Ce n'est pas un quartier « difficile ». 
 
 **C'est peut-être pire** que la stigmatisation subie par d'autres. Au Ranzay, personne ne parle. **Personne**.
 
-> « On est juste oubliés. C'est même pas qu'on nous méprise, c'est qu'on n'existe pas pour eux. » — une habitante de la rue Charles-Monselet
+>! « On est juste oubliés. C'est même pas qu'on nous méprise, c'est qu'on n'existe pas pour eux. » — une habitante de la rue Charles-Monselet
 
 ## Le modèle urbanistique mort : la ville-dortoir
 
@@ -66,7 +66,7 @@ Vivre dans un désert associatif, ce n'est pas neutre.
 - **Les adultes** rentrent du travail épuisés dans des immeubles silencieux. Pas de lieu où décompresser.
 - **Les personnes âgées** (il y en a beaucoup au Ranzay, population vieillissante) sont **profondément isolées**. Une étude CCAS de 2023 estimait que **25 %** des plus de 70 ans du quartier n'avaient **aucune interaction sociale régulière** hors famille.
 
-> « Depuis que mon mari est mort, je parle à la caissière du Super U et c'est tout. Une semaine sur deux. » — une habitante de 77 ans
+>! « Depuis que mon mari est mort, je parle à la caissière du Super U et c'est tout. Une semaine sur deux. » — une habitante de 77 ans
 
 ## La police, elle, vient quand même
 

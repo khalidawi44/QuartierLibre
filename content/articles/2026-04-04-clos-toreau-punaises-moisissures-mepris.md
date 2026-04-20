@@ -28,7 +28,7 @@ Le Clos Toreau, au sud de Nantes, coincé entre le périphérique et la Loire, c
 
 Les habitants du Clos Toreau vivent depuis des années avec des **infestations massives** : punaises de lit, cafards, rats, **moisissures noires** sur les murs. Ils alertent depuis des années. Ils ne sont pas écoutés.
 
-> « J'ai appelé NMH vingt fois pour les moisissures dans la chambre de mon fils. Vingt fois. On m'a répondu "on va regarder". Ça fait trois ans. » — une locataire du Clos Toreau
+>! « J'ai appelé NMH vingt fois pour les moisissures dans la chambre de mon fils. Vingt fois. On m'a répondu "on va regarder". Ça fait trois ans. » — une locataire du Clos Toreau
 
 ## Les moisissures : un problème structurel, pas une faute des locataires
 
@@ -51,7 +51,7 @@ Après les moisissures, les punaises de lit. Depuis 2020, plusieurs résidences 
 
 NMH fait intervenir des désinsectiseurs. Une fois. Parfois deux. Puis abandonne. Les punaises reviennent. Les locataires **jettent leurs meubles**, **brûlent leurs vêtements**, **dorment ailleurs chez des proches**. Certains **craquent** et demandent une mutation — qu'on leur refuse parce qu' « il y a une liste d'attente ».
 
-> « On a tout jeté. Matelas, canapé, armoires. Trois mois plus tard, elles étaient de retour. » — un locataire de la rue de Castellane
+>! « On a tout jeté. Matelas, canapé, armoires. Trois mois plus tard, elles étaient de retour. » — un locataire de la rue de Castellane
 
 ## Les responsables : toujours les mêmes
 

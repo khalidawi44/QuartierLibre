@@ -71,14 +71,14 @@ La mairie appelle ça « déploiement territorialement équilibré ». Nous, on 
 
 ## Les mots d'habitants
 
-> « On nous met des caméras partout pour notre sécurité, qu'ils disent. Mais quand j'ai été agressée sur le Mail, j'ai appelé les flics — ils sont venus 40 minutes après. Les caméras, elles filment en direct ? Et elles font quoi ? »
-> — Samira, 43 ans, Bellevue
+>! « On nous met des caméras partout pour notre sécurité, qu'ils disent. Mais quand j'ai été agressée sur le Mail, j'ai appelé les flics — ils sont venus 40 minutes après. Les caméras, elles filment en direct ? Et elles font quoi ? »
+>! — Samira, 43 ans, Bellevue
 
-> « Mon fils a 16 ans. Il traîne avec ses potes devant l'immeuble. Pas de drogue, rien. Juste discuter. Maintenant, dès qu'ils sont plus que trois, la caméra envoie une alerte. Ils ont été contrôlés trois fois en deux semaines. C'est ça, être jeune au Breil en 2026 : exister devient suspect. »
-> — Un père de famille, [Breil](/category/breil/)
+>! « Mon fils a 16 ans. Il traîne avec ses potes devant l'immeuble. Pas de drogue, rien. Juste discuter. Maintenant, dès qu'ils sont plus que trois, la caméra envoie une alerte. Ils ont été contrôlés trois fois en deux semaines. C'est ça, être jeune au Breil en 2026 : exister devient suspect. »
+>! — Un père de famille, [Breil](/category/breil/)
 
-> « La mairie nous explique que c'est pour lutter contre les trafics. Mais les dealers, eux, ils savent où sont les caméras et ils changent de coin. Les caméras, ils ne les gênent pas. Elles ne dérangent que les gens normaux. »
-> — Boutiquier, [Clos Toreau](/category/clos-toreau/)
+>! « La mairie nous explique que c'est pour lutter contre les trafics. Mais les dealers, eux, ils savent où sont les caméras et ils changent de coin. Les caméras, ils ne les gênent pas. Elles ne dérangent que les gens normaux. »
+>! — Boutiquier, [Clos Toreau](/category/clos-toreau/)
 
 ## La dérive légale : la CNIL piétinée
 

@@ -47,7 +47,7 @@ Ils parlent de :
 
 La “sécurité partagée” vantée par la Métropole ? C’est du **blabla institutionnel** qui cache une **réalité de guerre sociale**. Quand un ado est plaqué contre un mur pour avoir “regardé de travers”, où est la prévention ? Où est la médiation ?
 
-> *“Ils appellent ça prévention, nous on appelle ça de l’intimidation.”* — un habitant du Breil
+>! *“Ils appellent ça prévention, nous on appelle ça de l’intimidation.”* — un habitant du Breil
 
 ### Des millions pour la vidéosurveillance, zéro pour l’entretien des bâtiments
 

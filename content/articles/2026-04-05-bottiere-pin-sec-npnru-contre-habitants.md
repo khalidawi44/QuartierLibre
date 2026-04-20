@@ -27,7 +27,7 @@ Le **Nouveau Programme National de Rénovation Urbaine (NPNRU)** de Bottière-Pi
 
 Sur le terrain, c'est autre chose. C'est **plus de 400 logements démolis**. C'est **des centaines de familles** déplacées, dispersées, perdues. C'est la **destruction programmée** d'un tissu social construit sur 50 ans.
 
-> « Ils appellent ça un plan de quartier. Nous on appelle ça un plan d'expulsion. » — un habitant du Pin Sec
+>! « Ils appellent ça un plan de quartier. Nous on appelle ça un plan d'expulsion. » — un habitant du Pin Sec
 
 ## La mécanique bien huilée de la démolition
 
@@ -50,7 +50,7 @@ Entre l'étape 5 et l'étape 7, il peut se passer **5 à 8 ans**. Pendant ce tem
 - **Commerçants** du quartier qui ferment parce que la clientèle est dispersée.
 - **Associations** qui perdent leurs adhérents historiques.
 
-> « J'ai vécu 38 ans dans cet immeuble. Mes enfants y sont nés. Mon mari y est mort. Ils me disent que je dois partir. Pour aller où ? » — une habitante de la rue du Pin Sec, 74 ans
+>! « J'ai vécu 38 ans dans cet immeuble. Mes enfants y sont nés. Mon mari y est mort. Ils me disent que je dois partir. Pour aller où ? » — une habitante de la rue du Pin Sec, 74 ans
 
 ## La « mixité sociale » : toujours dans le même sens
 

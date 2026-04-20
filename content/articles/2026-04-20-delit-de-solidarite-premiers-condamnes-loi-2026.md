@@ -37,11 +37,11 @@ Médecin dans un centre de Protection Maternelle Infantile de la périphérie re
 
 Le **15 avril**, la Dr. M. reçoit une convocation à la gendarmerie. Motif : avoir **vacciné** un nourrisson dont les parents sont en situation irrégulière, sans **signaler leur présence** à la préfecture.
 
-> « On me demande de devenir **indicatrice**. Si je dénonce, je trahis le serment d'Hippocrate. Si je soigne sans dénoncer, je deviens une criminelle. Je n'ai jamais vu ça de ma vie. » — Dr. M., contactée par QL
+>! « On me demande de devenir **indicatrice**. Si je dénonce, je trahis le serment d'Hippocrate. Si je soigne sans dénoncer, je deviens une criminelle. Je n'ai jamais vu ça de ma vie. » — Dr. M., contactée par QL
 
-Son cas est suivi par le **Syndicat de la magistrature** et **Médecins du Monde**. Procédure encore au stade de l'enquête préliminaire. Elle encourt **six mois de prison avec sursis et 7 500 € d'amende**.
+Son cas est suivi par le [**Syndicat de la magistrature**](https://syndicat-magistrature.fr/) et [**Médecins du Monde**](https://www.medecinsdumonde.org/). Procédure encore au stade de l'enquête préliminaire. Elle encourt **six mois de prison avec sursis et 7 500 € d'amende**.
 
-**Rappel juridique** : le [Conseil constitutionnel](https://www.conseil-constitutionnel.fr/) a validé la loi le 5 avril en arguant qu'elle « ne porte pas atteinte au principe de fraternité ». L'avocate de la Dr. M. prépare une **QPC** (question prioritaire de constitutionnalité) sur ce point précis.
+**Rappel juridique** : le Conseil constitutionnel a validé la loi le 5 avril en arguant qu'elle « ne porte pas atteinte au principe de fraternité ». L'avocate de la Dr. M. prépare une **QPC** (question prioritaire de constitutionnalité) sur ce point précis.
 
 ## T., 34 ans, professeur d'histoire-géo en lycée — Montpellier
 
@@ -49,21 +49,21 @@ Enseignant en lycée général à Montpellier, T. a organisé en février une **
 
 Le **12 avril**, un parent d'élève dépose plainte auprès du rectorat, relayée à la police. Motif invoqué : T. aurait « facilité le contact de mineurs avec des personnes en situation irrégulière » et « valorisé le statut de sans-papiers auprès de ses élèves ».
 
-Convocation au commissariat le **17 avril**. Le Syndicat des enseignants (SE-UNSA) et **Solidaires Éducation** l'accompagnent.
+Convocation au commissariat le **17 avril**. Le Syndicat des enseignants [SE-UNSA](https://www.se-unsa.org/) et [**SUD Éducation**](https://www.sudeducation.org/) l'accompagnent.
 
-> « J'ai fait mon boulot d'enseignant. Les droits humains, c'est au programme. Ce qu'on me reproche, c'est d'avoir **pris au sérieux** ce que l'Éducation nationale dit elle-même d'enseigner. » — T.
+>! « J'ai fait mon boulot d'enseignant. Les droits humains, c'est au programme. Ce qu'on me reproche, c'est d'avoir **pris au sérieux** ce que l'Éducation nationale dit elle-même d'enseigner. » — T.
 
 Ce qu'il faut savoir : T. est fils d'un père marocain arrivé en France en 1972 sous un faux statut avant régularisation. « Je savais que ce jour viendrait. Je ne pensais pas qu'il viendrait **si vite**. »
 
 ## A., 67 ans, bénévole Cimade — Strasbourg
 
-Retraitée de l'administration fiscale, A. est bénévole à la **Cimade** depuis 2015. Elle anime des permanences juridiques hebdomadaires dans un local associatif de Strasbourg. Trois mille personnes sont passées par ses permanences depuis dix ans.
+Retraitée de l'administration fiscale, A. est bénévole à la [**Cimade**](https://www.lacimade.org/) depuis 2015. Elle anime des permanences juridiques hebdomadaires dans un local associatif de Strasbourg. Trois mille personnes sont passées par ses permanences depuis dix ans.
 
 Le **14 avril**, la préfecture du Bas-Rhin adresse à la Cimade une **mise en demeure** : la liste des personnes ayant bénéficié d'une assistance juridique depuis janvier 2026 doit être transmise sous sept jours, au nom du « suivi des mesures d'éloignement ».
 
 La Cimade **refuse** au nom du secret professionnel et de la mission confidentielle. Le **19 avril**, A., parce qu'elle est la coordinatrice bénévole, reçoit une **convocation personnelle**. Motif : « obstruction à l'exécution d'une obligation administrative ». Sanction encourue : **un an de prison et 15 000 € d'amende**.
 
-> « Je suis une retraitée. J'ai cotisé quarante ans à la République. Aujourd'hui, cette République me dit que si je continue à aider quelqu'un à remplir un formulaire CERFA, elle m'envoie en prison. **Alors elle m'envoie en prison.** » — A.
+>! « Je suis une retraitée. J'ai cotisé quarante ans à la République. Aujourd'hui, cette République me dit que si je continue à aider quelqu'un à remplir un formulaire CERFA, elle m'envoie en prison. **Alors elle m'envoie en prison.** » — A.
 
 La Cimade nationale a annoncé qu'elle **couvrirait juridiquement** tous les bénévoles ainsi convoqués, et appelle à un rassemblement devant les préfectures le **30 avril**.
 
@@ -90,11 +90,11 @@ Médecins, profs, bénévoles d'associations non mandatées, voisins qui héberg
 
 Les organisations qui ont porté l'opposition à la loi préparent une **riposte à plusieurs niveaux** :
 
-1. **Désobéissance civile massive** : plus de **3 000 soignants**, **2 000 enseignants** et **4 500 bénévoles** ont signé un appel à continuer leurs activités habituelles, en assumant publiquement les poursuites. L'appel est disponible sur `delit-de-solidarite.fr`.
+1. **Désobéissance civile massive** : plus de **3 000 soignants**, **2 000 enseignants** et **4 500 bénévoles** ont signé un appel à continuer leurs activités habituelles, en assumant publiquement les poursuites. L'appel est disponible sur [**delit-de-solidarite.fr**](https://www.delit-de-solidarite.fr/) — plateforme commune qui recense les cas, héberge les attestations de signataires et centralise la défense juridique.
 
-2. **Fonds commun de défense juridique** : la LDH, la Cimade, RESF et Médecins du Monde lancent une cagnotte pour prendre en charge les frais d'avocat des personnes poursuivies. Objectif : **500 000 €**. Déjà **180 000 €** collectés au 20 avril.
+2. **Fonds commun de défense juridique** : la [LDH](https://www.ldh-france.org/), la [Cimade](https://www.lacimade.org/), [RESF](https://www.educationsansfrontieres.org/) et [Médecins du Monde](https://www.medecinsdumonde.org/) lancent une cagnotte pour prendre en charge les frais d'avocat des personnes poursuivies. Objectif : **500 000 €**. Déjà **180 000 €** collectés au 20 avril.
 
-3. **Rassemblements devant les préfectures le 30 avril**, à 18h, appel national. Nantes s'y associe (Place Marc Elder, devant la préfecture).
+3. **Rassemblements devant toutes les préfectures le 30 avril**, à 18h, appel national. **À Nantes : Place Marc Elder, devant la préfecture, 18h**. L'événement figure dans notre [agenda militant](/category/mobilisations/).
 
 4. **Cortège dédié le 1er mai**, comme [indiqué pour Nantes](/1er-mai-nantes-par-quartier-organiser/). Partout en France, le cortège « sans-papiers » est renforcé — c'est une réponse directe au délit de solidarité.
 
@@ -104,7 +104,7 @@ Les organisations qui ont porté l'opposition à la loi préparent une **riposte
 
 **Si vous êtes témoin d'une convocation abusive autour de vous** :
 
-- Signalez-la à RESF, Cimade, LDH ou à la permanence juridique la plus proche
+- Signalez-la à [RESF](https://www.educationsansfrontieres.org/), [Cimade](https://www.lacimade.org/), [LDH](https://www.ldh-france.org/) ou à la permanence juridique la plus proche
 - Contactez-nous via le [Bureau des plaintes](/bureau-des-plaintes/), on relaie, on anonymise, on publie
 - Accompagnez physiquement la personne au commissariat — un·e témoin extérieur·e réduit les dérapages
 
@@ -116,7 +116,7 @@ Les organisations qui ont porté l'opposition à la loi préparent une **riposte
 
 **Si vous voulez soutenir financièrement** :
 
-Les cagnottes des quatre organisations (LDH, Cimade, RESF, MdM) sont accessibles via le site `delit-de-solidarite.fr`. **Un don de 10 €** paie une demi-heure d'avocat. **50 €** paient une heure. **200 €** paient une demi-journée complète de défense.
+Les cagnottes des quatre organisations (LDH, Cimade, RESF, MdM) sont accessibles via le site [**delit-de-solidarite.fr**](https://www.delit-de-solidarite.fr/). **Un don de 10 €** paie une demi-heure d'avocat. **50 €** paient une heure. **200 €** paient une demi-journée complète de défense.
 
 ## Le calcul politique du gouvernement
 

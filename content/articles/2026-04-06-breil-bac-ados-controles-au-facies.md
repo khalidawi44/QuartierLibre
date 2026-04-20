@@ -28,7 +28,7 @@ Le Breil, au nord de Nantes, c'est 5 000 habitants. Un quartier HLM relativement
 
 Et pourtant, la **BAC** (Brigade Anti-Criminalité) y débarque **plusieurs fois par semaine**. Dans des voitures banalisées. À 17h, l'heure à laquelle les collégiens rentrent du collège. À 21h, l'heure à laquelle les ados sortent respirer après le dîner.
 
-> « Ils arrivent vite, ils descendent à trois ou quatre, ils plaquent les plus jeunes contre la grille, ils fouillent, ils ressortent. Ils repartent. Rien trouvé. Ils recommencent la semaine suivante. » — un éducateur du quartier
+>! « Ils arrivent vite, ils descendent à trois ou quatre, ils plaquent les plus jeunes contre la grille, ils fouillent, ils ressortent. Ils repartent. Rien trouvé. Ils recommencent la semaine suivante. » — un éducateur du quartier
 
 ## Le contrôle au faciès, institutionnalisé
 
@@ -49,7 +49,7 @@ Un contrôle au faciès, ce n'est pas un événement anodin. C'est :
 - Un **moteur de décrochage** : certains jeunes arrêtent de sortir, d'aller à l'école, pour éviter le contrôle suivant.
 - Un **générateur de défiance** totale envers l'institution, qu'elle soit scolaire, sociale ou judiciaire.
 
-> « Mon petit frère a 14 ans. Il m'a dit : "à quoi ça sert que j'aille à l'école, de toute façon pour eux je serai toujours un voyou". » — une grande sœur du Breil
+>! « Mon petit frère a 14 ans. Il m'a dit : "à quoi ça sert que j'aille à l'école, de toute façon pour eux je serai toujours un voyou". » — une grande sœur du Breil
 
 ## La défense officielle : « on répond à des appels »
 

@@ -26,7 +26,7 @@ Tapez « Halvêque » sur le site de **Presse Océan** ou **Ouest-France** : la 
 
 C'est le **traitement médiatique habituel** des quartiers populaires : on les **réduit** à leurs pires moments, on en fait des **icônes de l'insécurité**, on leur colle une étiquette qui ne partira jamais.
 
-> « Ma cousine habite Nantes-Nord. Dès que les gens apprennent où elle vit, ils ont une réaction. Peur, pitié, méfiance. Jamais la même chose que pour quelqu'un qui habite Procé. » — un habitant de la Halvêque
+>! « Ma cousine habite Nantes-Nord. Dès que les gens apprennent où elle vit, ils ont une réaction. Peur, pitié, méfiance. Jamais la même chose que pour quelqu'un qui habite Procé. » — un habitant de la Halvêque
 
 ## Le cadrage médiatique : un pouvoir politique
 
@@ -69,7 +69,7 @@ Prenez deux minutes, allez à la Halvêque. Discutez avec les habitants. Vous d�
 
 **Rien de cela n'intéresse Presse Océan.** Ce n'est pas rentable. Ça ne fait pas cliquer.
 
-> « Quand j'ai organisé le festival du quartier l'an dernier, j'ai appelé cinq médias locaux. Aucun n'est venu. Deux semaines plus tard, il y a eu une bagarre : ils étaient tous là. » — une bénévole du centre socioculturel
+>! « Quand j'ai organisé le festival du quartier l'an dernier, j'ai appelé cinq médias locaux. Aucun n'est venu. Deux semaines plus tard, il y a eu une bagarre : ils étaient tous là. » — une bénévole du centre socioculturel
 
 ## Le cercle vicieux
 

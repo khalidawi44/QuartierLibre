@@ -23,7 +23,7 @@ Les Dervallières, à l'ouest de Nantes, c'est 7 000 habitants, dont une grande 
 
 Depuis dix ans, **tout ce qui faisait la trame sociale du quartier se délite**. Pas par accident. Par choix politique. La mairie PS parle de « rationalisation », de « mutualisation des moyens ». Concrètement : **moins de services publics, moins de présence humaine, plus de vide**.
 
-> « On dirait qu'ils attendent qu'on s'en aille tous pour fermer définitivement. » — un habitant du square Jean-Jaurès
+>! « On dirait qu'ils attendent qu'on s'en aille tous pour fermer définitivement. » — un habitant du square Jean-Jaurès
 
 ## La fermeture silencieuse
 
@@ -43,7 +43,7 @@ Les écoles des Dervallières accumulent les **signaux d'alerte** : bâtiments v
 
 Pendant que l'école publique s'effondre, les écoles privées catholiques de l'ouest de la ville (Saint-Stanislas, Saint-Dominique) affichent complet et font **salle comble**. La « sélection » fonctionne parfaitement : ceux qui peuvent fuient. Ceux qui ne peuvent pas subissent.
 
-> « Mon grand a commencé ici à 3 ans. Il a vu partir tous ses copains un par un, à chaque rentrée. Maintenant il est le dernier de sa classe à rester. » — une mère de famille
+>! « Mon grand a commencé ici à 3 ans. Il a vu partir tous ses copains un par un, à chaque rentrée. Maintenant il est le dernier de sa classe à rester. » — une mère de famille
 
 ## « Il n'y a plus personne à qui parler »
 
@@ -55,7 +55,7 @@ Le problème n'est pas seulement les chiffres. C'est le **lien humain** qui disp
 
 Pour les personnes âgées, les familles monoparentales, les personnes qui ne parlent pas bien le français, la **numérisation forcée** des services publics est un **mur**. Faire une démarche, c'est désormais : un portable, une connexion internet, parfois trois jours d'attente au téléphone.
 
-> « Ma mère a 82 ans. Elle a galéré trois mois pour renouveler sa carte de transport. Avant, elle y allait, elle signait, c'était fait. » — une habitante du boulevard Boucher
+>! « Ma mère a 82 ans. Elle a galéré trois mois pour renouveler sa carte de transport. Avant, elle y allait, elle signait, c'était fait. » — une habitante du boulevard Boucher
 
 ## La contrepartie cachée : plus de répression
 

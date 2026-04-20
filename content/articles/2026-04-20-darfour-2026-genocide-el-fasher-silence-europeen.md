@@ -29,7 +29,7 @@ author: "rachida-ben-arfa"
 
 Dans la nuit du **12 au 13 avril 2026**, les **Rapid Support Forces** (RSF) — milice dirigée par Mohammed Hamdan Dagalo dit « Hemedti » — ont rasé **Zamzam**, le plus grand camp de personnes déplacées du monde. **400 000 civils**, en majorité d'ethnies Massalit et Zaghawa, s'y étaient réfugiés pour échapper aux précédents massacres.
 
-Selon un rapport de **Médecins Sans Frontières** publié le **17 avril**, au moins **2 500 personnes ont été tuées** dans l'assaut. Les témoignages recueillis à Tawila (camp voisin où les rescapés ont fui) décrivent :
+Selon un rapport de [**Médecins Sans Frontières**](https://www.msf.fr/) publié le **17 avril**, au moins **2 500 personnes ont été tuées** dans l'assaut. Les témoignages recueillis à Tawila (camp voisin où les rescapés ont fui) décrivent :
 
 - **Des exécutions de masse** d'hommes ethniquement ciblés
 - **Des viols systématiques** comme arme de guerre — documentés par 147 récits concordants dans le seul camp de Tawila
@@ -60,7 +60,7 @@ Les preuves s'accumulent dans les rapports d'ONG et les investigations du **Pane
 
 - **Pont aérien via Am-Djarass** (Tchad oriental) documenté par une douzaine de survols Mode-S trackés depuis juillet 2023
 - **Fourniture de drones kamikazes** et de systèmes de communication militaire
-- Paiement de **1,6 milliard $** sur un contrat or-contre-armes (rapport Global Witness, 2024)
+- Paiement de **1,6 milliard $** sur un contrat or-contre-armes (rapport [Global Witness](https://www.globalwitness.org/), 2024)
 - Utilisation du **port de Khor Fakkan** comme point d'embarquement logistique
 
 ### Russie (via Wagner / Africa Corps)
@@ -88,7 +88,7 @@ Au Darfour, les éléments sont documentés :
 
 2. **Intention affichée** : des officiers RSF ont été enregistrés déclarant vouloir « nettoyer » le Darfour. Un audio authentifié par HRW et analysé par des experts linguistiques (décembre 2023).
 
-3. **Violences sexuelles comme arme** : des milliers de viols documentés, 70 % des victimes d'ethnie Massalit selon UNFPA.
+3. **Violences sexuelles comme arme** : des milliers de viols documentés, 70 % des victimes d'ethnie Massalit selon [UNFPA](https://www.unfpa.org/).
 
 4. **Destruction ciblée** des infrastructures culturelles, religieuses (mosquées non arabophones), éducatives.
 
@@ -120,9 +120,9 @@ La **Commission d'enquête internationale indépendante** sur le Soudan, créée
 
 ### Côté mobilisation citoyenne
 
-- **Sudanese diaspora for Darfour** appelle à une **journée de solidarité internationale le 26 avril** (Nantes s'associe : concentration Place Royale à 15h)
-- **Amnesty France** lance une **pétition pour un embargo européen sur les armes vers les EAU** : actuellement 24 000 signatures, objectif 100 000
-- **Médecins Sans Frontières** appelle à un **cessez-le-feu humanitaire** pour ouvrir des corridors à El-Fasher
+- **Sudanese diaspora for Darfour** appelle à une **journée de solidarité internationale le 26 avril** (**Nantes s'associe : concentration Place Royale à 15h**). Cet événement figure dans notre [agenda militant](/category/mobilisations/).
+- [**Amnesty France**](https://www.amnesty.fr/) lance une **pétition pour un embargo européen sur les armes vers les EAU** : actuellement 24 000 signatures, objectif 100 000.
+- [**Médecins Sans Frontières**](https://www.msf.fr/) appelle à un **cessez-le-feu humanitaire** pour ouvrir des corridors à El-Fasher.
 
 ### Côté information
 
@@ -136,7 +136,7 @@ Vous pouvez suivre en direct (en anglais, mais fiable) :
 
 ## Ce qu'on ne pourra plus dire dans dix ans
 
-On ne pourra plus dire « on ne savait pas ». Le **rapport HRW « Massalit must die »** (mai 2024) est public. Le **rapport MSF Zamzam** (17 avril 2026) est public. Les photos satellites des destructions sont publiques (la plupart via les analyses de l'**Humanitarian Research Lab de Yale**).
+On ne pourra plus dire « on ne savait pas ». Le **rapport [HRW](https://www.hrw.org/) « Massalit must die »** (mai 2024) est public. Le **rapport [MSF](https://www.msf.fr/) Zamzam** (17 avril 2026) est public. Les photos satellites des destructions sont publiques (la plupart via les analyses de l'**[Humanitarian Research Lab de Yale](https://hub.conflictobservatory.org/)**).
 
 On savait. On sait. On continuera de savoir.
 

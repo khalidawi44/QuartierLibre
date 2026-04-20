@@ -36,8 +36,8 @@ En trois ans :
 
 Vous avez entendu parler de tout ça au 20h ? Non. Personne ne vous a tenu au courant.
 
-> « Quand ils nous bombardent, il n'y a pas de BFMTV en direct. Pas de minute de silence à l'Assemblée. Personne ne brandit le drapeau soudanais sur la tour Eiffel. On meurt dans le noir. »
-> — Habitant d'Omdurman, contacté via Signal
+>! « Quand ils nous bombardent, il n'y a pas de BFMTV en direct. Pas de minute de silence à l'Assemblée. Personne ne brandit le drapeau soudanais sur la tour Eiffel. On meurt dans le noir. »
+>! — Habitant d'Omdurman, contacté via Signal
 
 ## El Fasher : un massacre ethnique sous nos yeux
 

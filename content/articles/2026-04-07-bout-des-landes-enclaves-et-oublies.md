@@ -27,7 +27,7 @@ Bout des Landes, tout au nord de Nantes, c'est 4 500 habitants dans un **cul-de-
 
 Pour les Nantais des Hauts-Pavés, du centre-ville ou de l'Île de Nantes, c'est 10-15 minutes en tram. La **même ville**, deux **temporalités** différentes selon votre code postal.
 
-> « Pour aller au travail à 6h, je dois partir à 4h40. Les enfants, je ne les vois plus le matin. » — un habitant du Bout des Landes, ouvrier dans le bâtiment
+>! « Pour aller au travail à 6h, je dois partir à 4h40. Les enfants, je ne les vois plus le matin. » — un habitant du Bout des Landes, ouvrier dans le bâtiment
 
 ## Après 21h : plus rien ne passe
 
@@ -59,7 +59,7 @@ Cet enclavement n'est pas neutre. Il a des conséquences **économiques** et **s
 - **Accès à la culture nul** : théâtre, concerts, cinémas en ville ? Oubliez si vous n'avez pas de voiture.
 - **Isolement social** : les ados qui ne peuvent pas bouger restent entre eux, ce qui renforce encore la stigmatisation du quartier « fermé sur lui-même ».
 
-> « Mes grands-parents habitaient Saint-Donatien. Ils venaient nous voir en tram, direct. Maintenant les trams s'arrêtent au [Ranzay](/category/ranzay/). Eux ils sont vieux, ils viennent plus. » — une jeune habitante
+>! « Mes grands-parents habitaient Saint-Donatien. Ils venaient nous voir en tram, direct. Maintenant les trams s'arrêtent au [Ranzay](/category/ranzay/). Eux ils sont vieux, ils viennent plus. » — une jeune habitante
 
 ## La fausse excuse : « il faut être rentable »
 

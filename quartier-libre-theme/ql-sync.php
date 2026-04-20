@@ -1082,11 +1082,26 @@ function ql_markdown_to_html( $md, &$images_count ) {
             continue;
         }
         if ( preg_match( '/^-{3,}$/', trim( $line ) ) ) { $flush(); $out[] = '<hr>'; continue; }
-        if ( preg_match( '/^>\s?(.*)$/', $line, $m ) ) {
+        // Témoignage (encart grand format avec fond image) : >!
+        // Citation normale (politicien, média, source) : >
+        if ( preg_match( '/^>(!)?\s?(.*)$/', $line, $m ) ) {
             if ( $in_ul ) { $out[] = '</ul>'; $in_ul = false; }
             if ( $in_ol ) { $out[] = '</ol>'; $in_ol = false; }
-            if ( ! $in_quote ) { $out[] = '<blockquote>'; $in_quote = true; }
-            $out[] = '<p>' . $inline( $m[1] ) . '</p>';
+            $is_testimony = ( $m[1] === '!' );
+            if ( ! $in_quote ) {
+                $out[] = $is_testimony
+                    ? '<blockquote class="ql-testimony">'
+                    : '<blockquote>';
+                $in_quote = $is_testimony ? 'testimony' : 'normal';
+            } elseif ( $in_quote !== ( $is_testimony ? 'testimony' : 'normal' ) ) {
+                // Changement de type (normal → témoignage ou inverse) : on ferme et on rouvre
+                $out[] = '</blockquote>';
+                $out[] = $is_testimony
+                    ? '<blockquote class="ql-testimony">'
+                    : '<blockquote>';
+                $in_quote = $is_testimony ? 'testimony' : 'normal';
+            }
+            $out[] = '<p>' . $inline( $m[2] ) . '</p>';
             continue;
         }
         if ( $in_quote ) { $out[] = '</blockquote>'; $in_quote = false; }

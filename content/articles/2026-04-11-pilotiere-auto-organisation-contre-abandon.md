@@ -28,7 +28,7 @@ Mais la Pilotière a quelque chose que n'ont pas tous les autres quartiers : **u
 
 **C'est cette expérience que cet article veut documenter.** Parce que ce qui se passe à la Pilotière peut inspirer ailleurs.
 
-> « Personne ne viendra nous sauver. On l'a compris. Alors on fait nous-mêmes. » — une habitante militante
+>! « Personne ne viendra nous sauver. On l'a compris. Alors on fait nous-mêmes. » — une habitante militante
 
 ## Les initiatives concrètes
 
@@ -50,7 +50,7 @@ Le principe : **zéro flicage**, zéro questionnaire, zéro condition de ressour
 
 Le frigo fonctionne **24h/24**. Il est nettoyé par un **roulement de bénévoles**. Il y a eu quelques abus au début, gérés collectivement. Aujourd'hui, c'est **totalement intégré** à la vie du quartier.
 
-> « J'avais honte au début de prendre. Maintenant je dépose aussi, quand je peux. Ça libère. » — un bénéficiaire du frigo partagé
+>! « J'avais honte au début de prendre. Maintenant je dépose aussi, quand je peux. Ça libère. » — un bénéficiaire du frigo partagé
 
 ### La garde collective des enfants
 

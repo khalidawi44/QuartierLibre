@@ -43,7 +43,7 @@ Le mécanisme est rodé :
 
 Résultat : les anciens habitants **ne reviennent jamais**. Le quartier se **boboïse**. La métropole salue la réussite de la « mixité ». Les sociologues complaisants publient des études. Personne ne compte combien de familles ont été **déracinées**.
 
-> « Ils m'ont relogée à Doulon. Je mettais 10 minutes à pied à l'école, maintenant je mets 40 minutes en bus. Mes enfants ont perdu leurs copains. On a perdu nos voisins. » — une habitante relogée en 2023
+>! « Ils m'ont relogée à Doulon. Je mettais 10 minutes à pied à l'école, maintenant je mets 40 minutes en bus. Mes enfants ont perdu leurs copains. On a perdu nos voisins. » — une habitante relogée en 2023
 
 ## Les chiffres qu'on ne met pas dans la brochure
 
@@ -59,7 +59,7 @@ On nous vend la mixité sociale comme un progrès. **Une mixité à sens unique*
 
 La mixité, c'est toujours les pauvres qui bougent. Jamais les riches qui viennent habiter en vrai à côté d'eux.
 
-> « Ils appellent ça mixité. Nous on appelle ça expropriation. » — un ancien locataire du Square Vincent-Gâche
+>! « Ils appellent ça mixité. Nous on appelle ça expropriation. » — un ancien locataire du Square Vincent-Gâche
 
 ## Ce qu'il faudrait faire, vraiment
 

@@ -28,7 +28,7 @@ Port Boyer, nord-est de Nantes, bord de l'Erdre, à quelques minutes du campus u
 
 La proximité de la **fac** y a amené une **colonie étudiante** croissante : étudiants en colocation, jeunes précaires, nouveaux arrivants à Nantes. Couplée à une **population ouvrière vieillissante** et à des **familles monoparentales**, cette mixité fait de Port Boyer un terrain **idéal pour les marchands de sommeil**.
 
-> « Dans ma cage d'escalier, on est trois étudiants colocs dans 35m². En face, une famille de cinq dans un T2. Le proprio ne fait plus aucun travaux depuis 2019. » — un étudiant en licence
+>! « Dans ma cage d'escalier, on est trois étudiants colocs dans 35m². En face, une famille de cinq dans un T2. Le proprio ne fait plus aucun travaux depuis 2019. » — un étudiant en licence
 
 ## Les marchands de sommeil : business très lucratif, jamais sanctionné
 
@@ -55,7 +55,7 @@ L'université **ne dénonce pas** publiquement cette situation. Le CROUS **ne pu
 
 **Résultat** : une **économie parallèle** du logement précaire prospère à Port Boyer, au détriment des étudiants et des familles ouvrières qui y vivent depuis 30 ans.
 
-> « J'ai payé 450 € par mois pendant 8 mois pour une chambre sans chauffage. J'ai fini aux urgences avec une bronchite à répétition. » — une étudiante en 2e année
+>! « J'ai payé 450 € par mois pendant 8 mois pour une chambre sans chauffage. J'ai fini aux urgences avec une bronchite à répétition. » — une étudiante en 2e année
 
 ## Les anciens habitants : sacrifiés au passage
 

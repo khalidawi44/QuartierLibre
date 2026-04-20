@@ -27,7 +27,7 @@ Bellevue, c'est **près de 17 000 habitants** à cheval sur Nantes et Saint-Herb
 
 Classé **Zone de Sécurité Prioritaire (ZSP)** depuis 2012 sous Hollande, Bellevue n'en est jamais sorti. Depuis, chaque mandat ajoute sa couche : plus de **caméras de vidéosurveillance**, plus de patrouilles, plus de contrôles. Mais toujours la même réalité : **écoles qui tombent en ruine, transports qui ne passent plus après 22h, médecins qui partent**.
 
-> « Chez nous, l'État ne vient jamais. Sauf quand il y a la BAC. » — un habitant du Grand Bellevue
+>! « Chez nous, l'État ne vient jamais. Sauf quand il y a la BAC. » — un habitant du Grand Bellevue
 
 ## Caméras partout, personne pour aider
 
@@ -49,7 +49,7 @@ Les habitants de Bellevue ne parlent pas de « présence de proximité » ni de 
 
 On contrôle les gamins qui attendent le bus. On contrôle les mamans qui reviennent des courses. On contrôle les pères qui rentrent du travail.
 
-> « Mon fils de 15 ans s'est fait contrôler trois fois la semaine dernière. Trois. Il rentrait de l'école. » — une mère de famille, rue Jean-Jaurès
+>! « Mon fils de 15 ans s'est fait contrôler trois fois la semaine dernière. Trois. Il rentrait de l'école. » — une mère de famille, rue Jean-Jaurès
 
 ## Démolir pour cacher, pas pour améliorer
 
@@ -57,7 +57,7 @@ La mairie parle de **« rénovation urbaine »** à Bellevue. Concrètement, cel
 
 Les habitants relogés atterrissent souvent dans des logements **plus chers**, **plus petits**, ou **plus éloignés**. Ceux qui restent vivent dans des immeubles **dégradés**, où les travaux promis sont reportés d'année en année pendant que les responsables préparent la prochaine démolition.
 
-> « Quand ils détruisent, c'est pas pour nous. C'est pour faire venir d'autres gens. » — un locataire du Bois Hue
+>! « Quand ils détruisent, c'est pas pour nous. C'est pour faire venir d'autres gens. » — un locataire du Bois Hue
 
 ## Ce qu'il faudrait vraiment
 

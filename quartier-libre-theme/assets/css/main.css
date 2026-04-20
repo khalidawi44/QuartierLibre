@@ -1303,82 +1303,108 @@ p  { margin: 0 0 1em; }
 }
 .ql-post__content li { margin-bottom: .4em; }
 
-/* Blockquote = témoignage pleine largeur viewport + fond fixe.
-   Image neutre depuis assets/img/ (Unsplash libre, concrete urbain
-   sombre, zéro texte) pour garantir la lisibilité du texte blanc
-   superposé. Overlay dégradé 135° noir 90% → rouge 65%. */
-.ql-post__content blockquote {
-  /* Full-bleed : s'étendre jusqu'aux bords du viewport. La technique
-     la plus fiable = position: relative + left/right négatifs à 50vw. */
+/* ── Blockquote — deux styles distincts ────────────────────── */
+/*   blockquote DEFAULT = citation inline (politicien, média, source
+                           institutionnelle) → italic, bordure gauche
+   blockquote.ql-testimony = TÉMOIGNAGE personnel (habitant·e,
+                              locataire, lycéenne…) → gros encart
+                              pleine largeur colonne avec fond
+                              photographique.
+   La distinction se fait dans le markdown :
+     > text          → blockquote classique (citation)
+     >! text         → blockquote.ql-testimony (témoignage) */
+
+/* Citation classique — sobre, lisible, intégrée au flux du texte */
+.ql-post__content blockquote:not(.ql-testimony) {
+  margin: 1.8em 0 !important;
+  padding: .6em 0 .6em 1.4em !important;
+  border-left: 4px solid var(--ql-accent, #e63312) !important;
+  background: transparent !important;
+  font-family: var(--ql-font-serif, serif);
+  font-size: 1.08em;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ql-ink, #0f0f0f) !important;
+  max-width: none;
+  width: auto;
+}
+.ql-post__content blockquote:not(.ql-testimony) p {
+  margin: 0 0 .5em !important;
+  color: inherit !important;
+  text-shadow: none !important;
+}
+.ql-post__content blockquote:not(.ql-testimony) p:last-child { margin-bottom: 0 !important; }
+.ql-post__content blockquote:not(.ql-testimony) strong {
+  background: transparent !important;
+  color: var(--ql-accent, #e63312) !important;
+}
+.ql-post__content blockquote:not(.ql-testimony) a {
+  color: var(--ql-accent, #e63312) !important;
+}
+
+/* Témoignage — gros encart avec image de fond, reste DANS la colonne
+   de l'article (ne tente plus le full-bleed 100vw qui se faisait
+   cropper par la sidebar). Même impact visuel, pas de débordement. */
+.ql-post__content blockquote.ql-testimony {
   position: relative !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
-  left: 50% !important;
-  right: 50% !important;
-  margin-top: 3.5em !important;
-  margin-bottom: 3.5em !important;
-  margin-left: -50vw !important;
-  margin-right: -50vw !important;
-  padding: 5rem clamp(1rem, 5vw, 4rem) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 2.5em 0 !important;
+  padding: 3.5rem clamp(1rem, 4vw, 3rem) !important;
   box-sizing: border-box !important;
   font-family: var(--ql-font-serif);
-  font-size: clamp(1.3rem, 2.3vw, 1.8rem);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
   font-style: italic;
   line-height: 1.55;
   color: #fff !important;
   text-align: center;
   background-color: #0f0f0f;
-  /* --ql-bq-bg est injecté par wp_head par article (meta _ql_bq_bg ou
-     featured_image raster). Fallback sur l'image partagée du thème. */
   background-image:
     linear-gradient(135deg, rgba(15,15,15,.90) 0%, rgba(224,40,16,.65) 100%),
     var(--ql-bq-bg, url("../img/blockquote-bg.jpg"));
   background-size: cover, cover;
   background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;
-  background-attachment: fixed, fixed;
+  /* background-attachment: scroll → fix sidebar-layout + iOS safari */
+  background-attachment: scroll, scroll;
   border: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 6px !important;
   isolation: isolate;
   overflow: hidden;
 }
-.ql-post__content blockquote::before {
+.ql-post__content blockquote.ql-testimony::before {
   content: "\201C";
   display: block;
-  font-size: 6rem;
+  font-size: 5rem;
   line-height: .8;
-  color: var(--ql-yellow);
+  color: var(--ql-yellow, #ffcb05);
   font-family: var(--ql-font-serif);
   font-weight: 900;
   font-style: normal;
   margin-bottom: .3em;
   text-align: center;
 }
-.ql-post__content blockquote p {
+.ql-post__content blockquote.ql-testimony p {
   max-width: 860px;
   margin: 0 auto 1em !important;
   color: #fff !important;
   text-shadow: 0 2px 8px rgba(0,0,0,.6);
 }
-.ql-post__content blockquote p:last-child { margin-bottom: 0 !important; }
-.ql-post__content blockquote strong {
+.ql-post__content blockquote.ql-testimony p:last-child { margin-bottom: 0 !important; }
+.ql-post__content blockquote.ql-testimony strong {
   background: transparent !important;
-  color: var(--ql-yellow) !important;
+  color: var(--ql-yellow, #ffcb05) !important;
   padding: 0;
 }
-.ql-post__content blockquote a { color: var(--ql-yellow) !important; }
-
-/* Mobile : background-attachment:fixed cassé sur iOS → scroll normal.
-   Padding réduit pour éviter hauteur excessive sur petits écrans. */
-@media (max-width: 768px) {
-  .ql-post__content blockquote {
-    padding: 3rem 1.2rem;
-    background-attachment: scroll, scroll;
-  }
-  .ql-post__content blockquote::before { font-size: 4rem; }
+.ql-post__content blockquote.ql-testimony a {
+  color: var(--ql-yellow, #ffcb05) !important;
 }
-@media (prefers-reduced-motion: reduce) {
-  .ql-post__content blockquote { background-attachment: scroll, scroll; }
+
+@media (max-width: 768px) {
+  .ql-post__content blockquote.ql-testimony {
+    padding: 2.4rem 1rem !important;
+  }
+  .ql-post__content blockquote.ql-testimony::before { font-size: 3.5rem; }
 }
 
 /* ── Listes : puces rouges stylées ───────────────────────── */
