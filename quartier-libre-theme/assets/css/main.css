@@ -3926,6 +3926,66 @@ body.tag-mairie-ps .ql-archive-header {
   border-radius: 2px;
 }
 
+/* ── 18j. Bouton « retour en haut » (fixe bas-gauche) ───── */
+.ql-back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 9998;  /* sous le bureau-plaintes trigger mais au-dessus du reste */
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 2px solid var(--ql-ink);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ql-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .2);
+  transition: all var(--ql-t);
+
+  /* Transition d'apparition (piloté par .is-visible) */
+  opacity: 0;
+  transform: translateY(20px) scale(.9);
+  pointer-events: none;
+}
+.ql-back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.ql-back-to-top[hidden] { display: none; }
+.ql-back-to-top:hover {
+  background: var(--ql-accent);
+  border-color: var(--ql-accent);
+  color: #fff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 24px rgba(224, 40, 16, .35);
+}
+.ql-back-to-top:focus-visible {
+  outline: 3px solid var(--ql-yellow);
+  outline-offset: 3px;
+}
+.ql-back-to-top:active { transform: translateY(0) scale(.95); }
+
+/* Mobile : plus compact, collé un peu moins du bord */
+@media (max-width: 600px) {
+  .ql-back-to-top {
+    width: 42px;
+    height: 42px;
+    bottom: 1rem;
+    left: 1rem;
+  }
+}
+
+/* Respect de prefers-reduced-motion : fade simple, pas de translateY */
+@media (prefers-reduced-motion: reduce) {
+  .ql-back-to-top { transition: opacity .15s; }
+  .ql-back-to-top:hover { transform: none; }
+}
+
 /* ── 19. Utilitaires & motion ─────────────────────────────── */
 .ql-muted { color: var(--ql-muted); }
 .ql-accent { color: var(--ql-accent); }

@@ -4,6 +4,42 @@
 (function () {
   'use strict';
 
+  // ── Bouton « retour en haut » (fixe, bas-gauche) ─────────────
+  // Apparaît quand le lecteur a scrollé >400px. Clic = scroll top smooth.
+  (function () {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'ql-back-to-top';
+    btn.setAttribute('aria-label', 'Remonter en haut de la page');
+    btn.setAttribute('title', 'Remonter en haut');
+    btn.hidden = true;
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+    document.body.appendChild(btn);
+
+    var raf = null;
+    var check = function () {
+      raf = null;
+      var visible = window.scrollY > 400;
+      if (visible && btn.hidden) {
+        btn.hidden = false;
+        requestAnimationFrame(function(){ btn.classList.add('is-visible'); });
+      } else if (!visible && !btn.hidden) {
+        btn.classList.remove('is-visible');
+        setTimeout(function(){ btn.hidden = true; }, 220);
+      }
+    };
+    var onScroll = function () { if (!raf) raf = requestAnimationFrame(check); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    btn.addEventListener('click', function () {
+      if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    });
+  })();
+
   // ── Burger menu mobile ──────────────────────────────────────
   var burger = document.querySelector('.ql-burger');
   var nav    = document.getElementById('ql-menu-primary');
