@@ -21,6 +21,7 @@ tags:
   - hrw
 excerpt: "El-Fasher encerclée depuis plus de 340 jours. Zamzam, le plus grand camp de déplacés du monde, rasé en avril. Les Massalit et les Zaghawa exterminés au Darfour-Ouest. Et l'Union européenne qui continue de parler de « conflit ». Un génocide documenté, ignoré — organisé."
 status: "draft"
+force_status: "draft"
 date: "2026-04-20 21:00:00"
 author: "rachida-ben-arfa"
 ---

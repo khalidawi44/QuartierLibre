@@ -27,6 +27,7 @@ excerpt: "À dix jours de la grève générale, les collectifs nantais s'organis
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2026/04/1ermai_banderole.jpg"
 event_date: "2026-05-01"
 status: "draft"
+force_status: "draft"
 date: "2026-04-20 19:30:00"
 author: "karima-benali"
 ---

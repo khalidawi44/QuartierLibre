@@ -19,6 +19,7 @@ tags:
   - justice
 excerpt: "Douze jours après la promulgation de la loi asile-immigration 2026, les premières convocations tombent. Une médecin PMI, un prof de lycée, un bénévole de la Cimade — trois visages de ce qu'un gouvernement aux abois appelle désormais « mise en danger de l'ordre public »."
 status: "draft"
+force_status: "draft"
 date: "2026-04-20 20:15:00"
 author: "julien-moreau"
 ---

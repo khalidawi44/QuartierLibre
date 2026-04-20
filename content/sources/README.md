@@ -23,19 +23,17 @@ Quartier Libre se positionne en 2026 avec un univers narratif partiellement fict
 
 ## Index des articles
 
-### Articles principaux
+### Articles principaux (🟡 rétrogradés en draft le 20 avril 2026 — force_status: draft)
 - [`2026-04-20-delit-de-solidarite-premiers-condamnes-loi-2026.md`](2026-04-20-delit-de-solidarite-premiers-condamnes-loi-2026.md)
 - [`2026-04-20-darfour-2026-genocide-el-fasher-silence-europeen.md`](2026-04-20-darfour-2026-genocide-el-fasher-silence-europeen.md)
 - [`2026-04-20-1er-mai-nantes-par-quartier-organiser.md`](2026-04-20-1er-mai-nantes-par-quartier-organiser.md)
 
 ### Agenda militant
-- [`agenda-23-avril-ag-bellevue.md`](agenda-23-avril-ag-bellevue.md)
-- [`agenda-24-avril-ag-malakoff.md`](agenda-24-avril-ag-malakoff.md)
-- [`agenda-25-avril-clos-toreau.md`](agenda-25-avril-clos-toreau.md)
-- [`agenda-26-avril-ag-dervallieres.md`](agenda-26-avril-ag-dervallieres.md)
-- [`agenda-26-avril-darfour-place-royale.md`](agenda-26-avril-darfour-place-royale.md)
-- [`agenda-30-avril-prefectures.md`](agenda-30-avril-prefectures.md)
-- [`agenda-15-mai-depot-prefecture.md`](agenda-15-mai-depot-prefecture.md)
+❌ **Tous les 7 agenda initialement créés ont été supprimés** le 20 avril 2026 car 100 % fictionnels (inventés par l'IA sans source). Les fichiers `.md` dans `content/articles/` ont été retirés du repo.
+
+Les articles correspondants en WP admin (s'ils avaient été synchronisés comme publiés) doivent être mis à la corbeille manuellement via Articles → Corbeille.
+
+La nouvelle règle (cf. `CLAUDE.md` global) interdit toute création d'événement sans source publique vérifiable.
 
 ## Méthode à suivre (pour les futurs articles)
 

@@ -739,9 +739,30 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
     $existing = get_posts( array(
         'name'           => $slug,
         'post_type'      => 'post',
-        'post_status'    => array( 'publish', 'draft', 'pending', 'future', 'private' ),
+        'post_status'    => array( 'publish', 'draft', 'pending', 'future', 'private', 'trash' ),
         'posts_per_page' => 1,
     ) );
+
+    // ── Trash explicite : frontmatter `trash: true` ──
+    // Permet de supprimer un article depuis un .md (alternatif à la
+    // suppression via WP admin). Force la corbeille même si l'article
+    // est actuellement publié (override de la règle "ne pas rétrograder").
+    if ( ! empty( $front['trash'] ) && ! empty( $existing ) ) {
+        wp_trash_post( $existing[0]->ID );
+        return array( 'id' => $existing[0]->ID, 'action' => 'trashed' );
+    }
+
+    // ── Force draft : frontmatter `force_status: "draft"` ──
+    // Même logique mais rétrograde en brouillon au lieu de corbeille.
+    if ( ! empty( $front['force_status'] )
+         && in_array( $front['force_status'], array( 'draft', 'pending', 'private' ), true )
+         && ! empty( $existing ) ) {
+        wp_update_post( array(
+            'ID'          => $existing[0]->ID,
+            'post_status' => $front['force_status'],
+        ) );
+        return array( 'id' => $existing[0]->ID, 'action' => 'forced_' . $front['force_status'] );
+    }
 
     $thumb_id = 0;
     if ( ! empty( $front['featured_image_url'] ) ) {
