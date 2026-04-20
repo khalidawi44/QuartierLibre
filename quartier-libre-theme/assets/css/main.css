@@ -4543,6 +4543,7 @@ body.tag-mairie-ps .ql-archive-header {
 .ql-widget-social__icon--instagram { color: #e1306c; }
 .ql-widget-social__icon--facebook  { color: #1877f2; }
 .ql-widget-social__icon--telegram  { color: #229ed9; }
+.ql-widget-social__icon--snapchat  { color: #0f0f0f; background: #FFFC00; padding: 3px; border-radius: 50%; }
 .ql-widget-social__icon--rss       { color: #ff8800; }
 .ql-widget-social li a:hover .ql-widget-social__icon { color: inherit; }
 
