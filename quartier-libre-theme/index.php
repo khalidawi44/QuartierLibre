@@ -30,7 +30,7 @@ get_header(); ?>
     <section class="ql-section" aria-label="Derniers articles">
         <header class="ql-section__head">
             <h2 class="ql-section__title">Tous les articles</h2>
-            <a class="ql-section__link" href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ?: home_url( '/articles/' ) ); ?>">Archives →</a>
+            <a class="ql-section__link" href="<?php echo esc_url( home_url( '/tous-les-articles/' ) ); ?>">Archives →</a>
         </header>
 
         <div class="ql-grid ql-grid--3">
