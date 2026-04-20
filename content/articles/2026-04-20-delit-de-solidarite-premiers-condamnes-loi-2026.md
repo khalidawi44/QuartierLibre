@@ -123,12 +123,25 @@ Les témoignages seront **anonymisés** (comme la Cimade a anonymisé « Abou »
 
 ### Où vérifier
 
-Pour approfondir, tous les liens cités dans cet article renvoient vers les sources publiques. Pour aller plus loin :
+Tous les liens cités dans cet article renvoient vers les sites publics des organisations. Chacune maintient une rubrique « presse / communiqués / actualités » où tu peux retrouver les textes cités et suivre les mises à jour :
 
-- **La Cimade — dossier complet loi Darmanin** : https://www.lacimade.org/analyse/projet-de-loi-asile-et-immigration-2023/
-- **GISTI — textes réglementaires et recours** : https://www.gisti.org/
-- **LDH — communiqués immigration** : https://www.ldh-france.org/
-- **Amnesty France — circulaire Retailleau, 5 choses à savoir** : https://www.amnesty.fr/reperes/immigration-circulaire-retailleau-les-choses-a-savoir/
+**Associations de défense des droits des personnes étrangères** :
+- [La Cimade](https://www.lacimade.org/) — [rubrique presse](https://www.lacimade.org/category/presse/)
+- [GISTI](https://www.gisti.org/) — textes réglementaires, analyses, recours
+- [Ligue des Droits de l'Homme (LDH)](https://www.ldh-france.org/)
+- [Amnesty International France](https://www.amnesty.fr/)
+- [Utopia 56](https://www.utopia56.org/)
+- [Emmaüs France](https://emmaus-france.org/)
+
+**Réseaux** :
+- [Anvita — Association nationale des villes et territoires accueillants](https://www.anvita.fr/)
+- [RESF — Réseau Éducation Sans Frontières](https://www.educationsansfrontieres.org/)
+
+**Institutions militantes** :
+- [Syndicat de la magistrature](https://syndicat-magistrature.fr/)
+- [Observatoire international des prisons](https://oip.org/)
+- [Oxfam France](https://www.oxfamfrance.org/) — [rubrique communiqués](https://www.oxfamfrance.org/communiques-de-presse/)
+- [CCFD-Terre Solidaire](https://ccfd-terresolidaire.org/)
 
 ---
 

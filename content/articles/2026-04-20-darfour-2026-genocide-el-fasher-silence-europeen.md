@@ -31,7 +31,7 @@ author: "rachida-ben-arfa"
 
 Le **24 février 2026**, la **Mission d'enquête internationale indépendante des Nations unies sur le Soudan** (Independent International Fact-Finding Mission for the Sudan, *FFM*) a publié des conclusions sans ambiguïté : les **Rapid Support Forces** (RSF, milice de Mohamed Hamdan Dagalo dit « Hemedti ») ont commis au Darfour des actes qui portent *« les marques caractéristiques d'un génocide »* (« hallmarks of genocide »).
 
-La conclusion est reprise par [Human Rights Watch](https://www.hrw.org/news/2026/02/24/un-body-finds-hallmarks-of-genocide-in-darfur) et détaillée dans le [rapport de l'OHCHR du 24 février 2026](https://www.ohchr.org/en/press-releases/2026/02/sudan-rsf-violations-capture-el-fasher-amount-war-crimes). Laetitia Bader, directrice de la Horn of Africa Division chez HRW, en est la principale voix publique.
+La conclusion est reprise par [Human Rights Watch](https://www.hrw.org/africa/sudan) ([communiqué du 24 février 2026](https://www.hrw.org/news/2026/02/24/un-body-finds-hallmarks-of-genocide-in-darfur)) et détaillée dans les rapports publiés sur la [page Soudan de l'OHCHR](https://www.ohchr.org/en/countries/sudan). Laetitia Bader, directrice de la Horn of Africa Division chez HRW, en est la principale voix publique.
 
 Les États-Unis avaient déjà officiellement qualifié de **génocide** les actes des RSF au Darfour dès **janvier 2025** (déclaration Blinken avant la transition Trump), en accompagnant la qualification de sanctions contre Hemedti personnellement.
 
@@ -47,11 +47,11 @@ Bilan documenté (sources : OHCHR, HRW, The Lancet, MSF) :
 
 - **14 000+ civils tués** pendant le siège
 - **60 000+ exécutés** après la bataille, selon estimations tardives
-- **6 000+ morts documentés** rien que dans les **3 premiers jours** de l'offensive finale ([OHCHR, février 2026](https://www.ohchr.org/en/press-releases/2026/02/sudan-rsf-violations-capture-el-fasher-amount-war-crimes))
+- **6 000+ morts documentés** rien que dans les **3 premiers jours** de l'offensive finale (communiqués de presse 2026 sur la [page Soudan OHCHR](https://www.ohchr.org/en/countries/sudan))
 - **100 000+ personnes** ont fui après la chute
 - **26 000+** fuis dans les deux premiers jours post-chute
 
-Population El-Fasher passée de **1,11 million en avril 2023** à **413 454 en 2025** ([The Lancet — 500 days under siege](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)02244-5/fulltext)). Soit une chute de **62 %** en 30 mois.
+Population El-Fasher passée de **1,11 million en avril 2023** à **413 454 en 2025** (analyse publiée dans *The Lancet* — [sommaire de l'article sur thelancet.com](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)02244-5/fulltext)). Soit une chute de **62 %** en 30 mois.
 
 ### Les installations civiles ciblées pendant le siège
 
@@ -64,9 +64,9 @@ Les chiffres sont compilés par des sources ouvertes croisées ([référence Wik
 
 ### Le massacre de Zamzam (11-13 avril 2025) — exactement un an
 
-Un an avant la chute d'El-Fasher, les RSF avaient déjà attaqué le **plus grand camp de déplacés du monde**, Zamzam, qui hébergeait **environ 500 000 personnes** ([MSF USA — Sudan's largest displacement camp under attack](https://www.doctorswithoutborders.org/latest/sudans-largest-displacement-camp-under-attack)).
+Un an avant la chute d'El-Fasher, les RSF avaient déjà attaqué le **plus grand camp de déplacés du monde**, Zamzam, qui hébergeait **environ 500 000 personnes**. [Médecins Sans Frontières](https://www.msf.org/sudan) a dû y suspendre ses activités ; le détail de la crise est sur la [page réponse Soudan de MSF](https://www.doctorswithoutborders.org/latest/sudan-crisis-response).
 
-Bilan officiel ONU ([rapport OHCHR « Three days of terror with no safe refuge »](https://www.ohchr.org/en/documents/country-reports/report-ohchr-sudan-country-office-offensive-rapid-support-forces-zamzam)) :
+Bilan officiel ONU publié fin 2025 sur la [page Soudan de l'OHCHR](https://www.ohchr.org/en/countries/sudan) :
 
 - **1 013 civils tués** en trois jours
 - **319 exécutés sommairement** dans le camp ou sur les routes de fuite
@@ -74,7 +74,7 @@ Bilan officiel ONU ([rapport OHCHR « Three days of terror with no safe refuge �
 - **104 survivants documentés** de violences sexuelles (75 femmes, 26 filles, 3 garçons) — majoritairement d'ethnie Zaghawa, signature ethnique du nettoyage en cours
 - **9 humanitaires** de Relief International tués dans une clinique du camp
 
-Les rapports Amnesty et OHCHR confirment tous un **ciblage ethnique** systématique (**Massalit, Zaghawa, Four**) — les trois groupes non-arabophones historiquement dominants au Darfour ([Amnesty — "A Refuge Destroyed"](https://www.amnesty.org/en/documents/afr54/0509/2025/en/), [OHCHR décembre 2025](https://www.ohchr.org/en/press-releases/2025/12/sudan-un-report-details-horrific-patterns-violations-committed-during-rsf)).
+Les rapports [Amnesty International](https://www.amnesty.org/en/location/africa/east-africa-the-horn-and-great-lakes/sudan/) et OHCHR confirment un **ciblage ethnique** systématique (**Massalit, Zaghawa, Four**) — les trois groupes non-arabophones historiquement dominants au Darfour. Amnesty a consolidé ses enquêtes sur sa [page projet Soudan](https://www.amnesty.org/en/projects/sudan-conflict/).
 
 ## Le soutien extérieur aux RSF — celui qu'on ne nomme pas
 
@@ -82,19 +82,22 @@ La guerre au Soudan n'est pas une guerre « interne ». Plusieurs États y jouen
 
 ### Les Émirats arabes unis
 
-Une enquête d'**Amnesty International** a établi que les **EAU exportent des armes chinoises aux RSF** en violation de l'embargo de l'ONU. Les livraisons incluent : drones armés et non-armés chinois, mitrailleuses lourdes, armes légères, mortiers, artillerie ([sources multiples croisées](https://www.adhrb.org/2026/02/united-nations-rules-uae-funded-rsfs-atrocities-as-genocidal/)).
+Une enquête publiée sur la [page projet Soudan d'Amnesty International](https://www.amnesty.org/en/projects/sudan-conflict/) a établi que les **EAU exportent des armes chinoises aux RSF** en violation de l'embargo de l'ONU. Les livraisons incluent : drones armés et non-armés chinois, mitrailleuses lourdes, armes légères, mortiers, artillerie. La conclusion ONU sur le financement émirati est relayée par l'[ADHRB (Americans for Democracy & Human Rights in Bahrain)](https://www.adhrb.org/2026/02/united-nations-rules-uae-funded-rsfs-atrocities-as-genocidal/).
 
-Les **routes d'approvisionnement** passent par la **Libye**, le **Tchad** et l'**Ouganda** ([PBS — outside powers in Sudan's war](https://www.pbs.org/newshour/world/the-role-outside-powers-are-playing-in-sudans-continued-brutal-war)).
+Les **routes d'approvisionnement** passent par la **Libye**, le **Tchad** et l'**Ouganda** — analyse détaillée par [PBS News](https://www.pbs.org/newshour/world/the-role-outside-powers-are-playing-in-sudans-continued-brutal-war).
 
-Un rapport de [Global Security](https://www.globalsecurity.org/military/library/news/2025/10/mil-251029-presstv07.htm) (octobre 2025) a également mis en évidence que des armes **britanniques** ont été livrées aux RSF via les EAU.
+Des armes **britanniques** ont également été livrées aux RSF via les EAU, selon une investigation reprise en octobre 2025 ([Global Security](https://www.globalsecurity.org/military/library/news/2025/10/mil-251029-presstv07.htm)).
 
 ### L'action en justice
 
-En **2025**, le Soudan a déposé un recours devant la **Cour internationale de justice (CIJ)** contre les EAU pour **complicité de génocide** ([UN News — World Court hearing](https://news.un.org/en/story/2025/04/1162066)). Dans sa requête, le Soudan accuse les EAU *« d'être complices du génocide des Massalit par leur soutien financier, politique et militaire extensif à la milice rebelle RSF. »*
+En **avril 2025**, le Soudan a déposé un recours devant la **Cour internationale de justice (CIJ)** contre les EAU pour **complicité de génocide** (couverture [UN News](https://news.un.org/en/story/2025/04/1162066)). Dans sa requête, le Soudan accuse les EAU *« d'être complices du génocide des Massalit par leur soutien financier, politique et militaire extensif à la milice rebelle RSF. »*
 
 La CIJ s'est déclarée incompétente pour juger l'affaire sur le fond (les EAU ont formulé une réserve à l'article 9 de la Convention sur le génocide) — mais le dossier juridique existe et les éléments de preuve sont publics.
 
-Des analyses complémentaires sont disponibles chez l'[ECDHR](https://www.ecdhr.org/the-role-of-the-united-arab-emirates-in-the-genocide-in-sudan/), le [CAAT britannique](https://caat.org.uk/news/genocide-in-sudan-the-role-of-the-uae-and-the-complicity-of-the-west/), et l'[Human Rights Research Center](https://www.humanrightsresearch.org/post/how-does-the-united-arab-emirates-financing-of-the-rapid-support-forces-perpetuate-political-violen).
+Analyses complémentaires du rôle des EAU :
+- [European Centre for Democracy and Human Rights](https://www.ecdhr.org/the-role-of-the-united-arab-emirates-in-the-genocide-in-sudan/)
+- [Campaign Against Arms Trade (Royaume-Uni)](https://caat.org.uk/news/genocide-in-sudan-the-role-of-the-uae-and-the-complicity-of-the-west/)
+- [Human Rights Research Center](https://www.humanrightsresearch.org/post/how-does-the-united-arab-emirates-financing-of-the-rapid-support-forces-perpetuate-political-violen)
 
 ## La position de la France — asymétrie troublante
 
@@ -104,7 +107,7 @@ Plusieurs dizaines de morts dans ce bombardement, dont des enfants et des médec
 
 Mais sur les **RSF** ? Sur les **Émirats arabes unis** qui les arment ? Sur la **confirmation ONU du génocide** en février 2026 ? Silence diplomatique.
 
-Les **Radicaux de Gauche** ont publié, le 12 novembre 2025 déjà, [un appel à l'action immédiate de la France et de l'Europe face au risque de génocide](https://www.lesradicauxdegauche-lrdg.fr/actualites/20251112-3794-soudan-face-au-risque-de-genocide-la-france-et-leurope-doivent-agir-immediatement). Aucune mesure substantielle contre les EAU n'a suivi.
+Les [Radicaux de Gauche](https://www.lesradicauxdegauche-lrdg.fr/) ont publié, dès le 12 novembre 2025, [un appel à l'action immédiate de la France et de l'Europe face au risque de génocide](https://www.lesradicauxdegauche-lrdg.fr/actualites/20251112-3794-soudan-face-au-risque-de-genocide-la-france-et-leurope-doivent-agir-immediatement). Aucune mesure substantielle contre les EAU n'a suivi.
 
 Une **conférence internationale sur le Soudan** a été planifiée à **Berlin le 15 avril 2026** pour remettre le conflit au centre des priorités diplomatiques. À ce stade, les résultats ne sont pas publics.
 
@@ -131,14 +134,28 @@ La Convention sur le génocide, rappelons-le, n'est pas qu'une description moral
 
 ## Où s'informer, comment relayer
 
-Les sources principales sont ouvertes :
+Les sources principales sont ouvertes. Chaque organisation ci-dessous maintient une page dédiée au Soudan avec ses rapports à jour :
 
-- **ONU** : [OHCHR pages Soudan](https://www.ohchr.org/en/countries/sudan) + [UN News](https://news.un.org/en/)
-- **ONG** : [Amnesty](https://www.amnesty.org/), [HRW](https://www.hrw.org/), [MSF](https://www.msf.fr/)
-- **Recherche** : [Yale Humanitarian Research Lab](https://ysph.yale.edu/) (analyses satellitaires)
-- **Conseil de sécurité** : [Security Council Report](https://www.securitycouncilreport.org/)
-- **Presse** : [Sudan Tribune](https://sudantribune.com/), [Al Jazeera](https://www.aljazeera.com/) (coverage régulier)
-- **Analyse francophone** : [MSF-Crash](https://msf-crash.org/) + [France 24 Afrique](https://www.france24.com/fr/afrique/)
+**Institutions** :
+- [Page Soudan du Haut-Commissariat aux droits de l'homme de l'ONU (OHCHR)](https://www.ohchr.org/en/countries/sudan) — rapports officiels
+- [UN News](https://news.un.org/en/) — actualité ONU
+- [Security Council Report — Soudan](https://www.securitycouncilreport.org/un-documents/sudan/)
+
+**ONG internationales** :
+- [Amnesty International — page Soudan](https://www.amnesty.org/en/location/africa/east-africa-the-horn-and-great-lakes/sudan/) + [projet dédié conflit Soudan](https://www.amnesty.org/en/projects/sudan-conflict/)
+- [Human Rights Watch — page Soudan](https://www.hrw.org/africa/sudan)
+- [Médecins Sans Frontières — page Soudan](https://www.msf.org/sudan) + [réponse crise](https://www.doctorswithoutborders.org/latest/sudan-crisis-response)
+
+**Recherche indépendante** :
+- [Yale Humanitarian Research Lab](https://ysph.yale.edu/news-article/un-concludes-rsf-conducted-genocide-in-el-fasher-yale-lab-provided-key-evidence/) — analyses satellitaires utilisées par l'ONU
+
+**Presse spécialisée** :
+- [Sudan Tribune](https://sudantribune.com/) — investigation locale
+- [Al Jazeera — couverture Soudan](https://www.aljazeera.com/tag/sudan/)
+
+**Analyse francophone** :
+- [MSF-Crash](https://msf-crash.org/) — réflexions humanitaires
+- [France 24 Afrique](https://www.france24.com/fr/afrique/) — couverture française
 
 Quartier Libre continuera à **relayer chaque rapport majeur** et à rappeler la **position française** à chaque étape.
 
