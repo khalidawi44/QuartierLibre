@@ -3,8 +3,8 @@ title: "Nuisibles dans les logements sociaux à Nantes : silence et inaction cou
 slug: "nuisibles-dans-les-logements-sociaux-a-nantes-silence-et-inaction-coupables-de-la-mairie-et-de-nantes-metropole-habitat"
 category:
   - infos-locale
-  - clos-toreau
   - luttes
+  - logement
 tags:
   - insalubrite-publique
   - johanna-rolland

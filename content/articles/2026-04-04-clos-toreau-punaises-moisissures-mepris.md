@@ -4,6 +4,8 @@ slug: "clos-toreau-punaises-moisissures-mepris"
 category:
   - infos-locale
   - clos-toreau
+  - luttes
+  - logement
 tags:
   - quartier-clos-toreau
   - insalubrite-publique

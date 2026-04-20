@@ -4,8 +4,8 @@ slug: "port-boyer-etudiants-precaires-marchands-de-sommeil"
 category:
   - infos-locale
   - port-boyer
-  - malakoff
   - luttes
+  - logement
 tags:
   - quartier-port-boyer
   - logement

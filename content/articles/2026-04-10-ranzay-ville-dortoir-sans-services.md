@@ -4,8 +4,6 @@ slug: "ranzay-ville-dortoir-sans-services"
 category:
   - infos-locale
   - ranzay
-  - luttes
-  - repression
 tags:
   - quartier-ranzay
   - services-publics

@@ -3,11 +3,8 @@ title: "Écologie de façade, misère derrière les murs : où passe l’argent 
 slug: "ecologie-de-facade-misere-derriere-les-murs"
 category:
   - infos-locale
-  - bellevue
-  - bottiere-pin-sec
-  - dervallieres
-  - clos-toreau
   - luttes
+  - logement
 tags:
   - johanna-rolland
   - logement

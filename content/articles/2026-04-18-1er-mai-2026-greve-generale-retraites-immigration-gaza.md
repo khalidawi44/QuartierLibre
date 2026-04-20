@@ -4,13 +4,9 @@ slug: "1er-mai-2026-greve-generale-retraites-immigration-gaza"
 category:
   - infos-locale
   - france
-  - international
   - politique
-  - genocide
   - luttes
   - mobilisations
-  - solidarite
-  - repression
 tags:
   - greve
   - 1er-mai

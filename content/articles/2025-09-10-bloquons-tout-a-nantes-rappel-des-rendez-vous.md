@@ -4,8 +4,6 @@ slug: "bloquons-tout-a-nantes-rappel-des-rendez-vous"
 category:
   - infos-locale
   - autres-villes
-  - france
-  - politique
   - luttes
   - mobilisations
 tags:

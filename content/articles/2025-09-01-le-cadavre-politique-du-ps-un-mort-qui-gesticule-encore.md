@@ -4,8 +4,6 @@ slug: "le-cadavre-politique-du-ps-un-mort-qui-gesticule-encore"
 category:
   - france
   - politique
-  - luttes
-  - repression
 tags:
   - dissolution
   - partie-socialiste

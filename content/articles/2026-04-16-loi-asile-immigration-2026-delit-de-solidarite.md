@@ -4,11 +4,9 @@ slug: "loi-asile-immigration-2026-delit-de-solidarite"
 category:
   - france
   - politique
-  - societe
   - luttes
   - repression
   - solidarite
-  - mobilisations
 tags:
   - immigration
   - asile

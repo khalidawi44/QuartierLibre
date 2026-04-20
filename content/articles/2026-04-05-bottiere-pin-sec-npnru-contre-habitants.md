@@ -5,6 +5,7 @@ category:
   - infos-locale
   - bottiere-pin-sec
   - luttes
+  - logement
 tags:
   - quartier-bottiere-pin-sec
   - npnru

@@ -4,8 +4,6 @@ slug: "dervallieres-abandon-services-publics"
 category:
   - infos-locale
   - dervallieres
-  - luttes
-  - repression
 tags:
   - quartier-dervallieres
   - services-publics

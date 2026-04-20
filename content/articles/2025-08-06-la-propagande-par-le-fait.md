@@ -4,7 +4,6 @@ slug: "la-propagande-par-le-fait"
 category:
   - histoire
   - luttes
-  - repression
 excerpt: "«Les bourgeois nous tuent par la faim ; volons, tuons, dynamitons, tous les moyens sont bons pour nous débarrasser de cette pourriture». Michel Zévaco, cité par Alexandre Bérard,…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/08/Attentat_de_lhotel_Terminus.jpg"
 status: "publish"

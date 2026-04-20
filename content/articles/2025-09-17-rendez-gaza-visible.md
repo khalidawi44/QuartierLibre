@@ -5,7 +5,6 @@ category:
   - international
   - genocide
   - resistance
-  - luttes
   - solidarite
 tags:
   - gaza

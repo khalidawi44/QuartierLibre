@@ -4,9 +4,7 @@ slug: "keolis-nantes-la-privatisation-a-marche-forcee"
 category:
   - infos-locale
   - transports
-  - france
   - economie
-  - politique
   - luttes
   - mobilisations
 tags:

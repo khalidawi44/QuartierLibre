@@ -5,6 +5,7 @@ category:
   - infos-locale
   - malakoff
   - luttes
+  - logement
 tags:
   - quartier-malakoff
   - renovation-urbaine

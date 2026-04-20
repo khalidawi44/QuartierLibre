@@ -5,7 +5,6 @@ category:
   - infos-locale
   - france
   - justice
-  - politique
   - luttes
   - repression
 tags:

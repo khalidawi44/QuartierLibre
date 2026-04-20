@@ -529,6 +529,7 @@ function ql_categories_tree() {
                 'mobilisations' => 'Mobilisations',
                 'repression'    => 'Répression',
                 'solidarite'    => 'Solidarité',
+                'logement'      => 'Logement',
             ),
         ),
         'histoire' => array(

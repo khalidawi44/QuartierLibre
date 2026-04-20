@@ -4,8 +4,6 @@ slug: "louis-macron-xvi-et-son-moine-soldat-le-retour-de-la-monarchie-par-ordonn
 category:
   - france
   - politique
-  - luttes
-  - repression
 tags:
   - gouvernement
   - lecornu

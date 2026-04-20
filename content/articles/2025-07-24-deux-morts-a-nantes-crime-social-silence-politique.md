@@ -4,11 +4,10 @@ slug: "deux-morts-a-nantes-crime-social-silence-politique"
 category:
   - infos-locale
   - france
-  - politique
-  - fait-divers
   - societe
   - luttes
   - solidarite
+  - logement
 tags:
   - johanna-rolland
   - logement

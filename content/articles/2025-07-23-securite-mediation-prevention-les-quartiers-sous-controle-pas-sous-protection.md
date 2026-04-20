@@ -3,10 +3,6 @@ title: "“Sécurité”, “médiation”, “prévention” : les quartiers so
 slug: "securite-mediation-prevention-les-quartiers-sous-controle-pas-sous-protection"
 category:
   - infos-locale
-  - bellevue
-  - malakoff
-  - clos-toreau
-  - breil
   - luttes
   - repression
 tags:
