@@ -65,6 +65,19 @@ function ql_sync_render() {
         echo '<div class="notice notice-success"><p>Journal vidé.</p></div>';
     }
 
+    // Action : enregistrer / retirer le token GitHub
+    if ( isset( $_POST['ql_save_token'] ) && check_admin_referer( 'ql_token_nonce' ) ) {
+        $token = isset( $_POST['ql_github_token'] ) ? trim( wp_unslash( $_POST['ql_github_token'] ) ) : '';
+        if ( $token === '' ) {
+            delete_option( 'ql_github_token' );
+            echo '<div class="notice notice-success"><p>Token GitHub supprimé. Retour en mode anonyme (60 req/h).</p></div>';
+        } else {
+            update_option( 'ql_github_token', $token, false );
+            ql_gh_set_error( '' );
+            echo '<div class="notice notice-success"><p>Token GitHub enregistré. Limite passée à <strong>5000 req/h</strong>.</p></div>';
+        }
+    }
+
     ?>
     <style>
         .ql-sync-card {
@@ -139,6 +152,46 @@ function ql_sync_render() {
         </div>
     </div>
 
+    <?php
+    // ── Cadre Token GitHub ──────────────────────────────────────
+    $current_token = trim( (string) get_option( 'ql_github_token', '' ) );
+    $token_masked  = $current_token ? ( substr( $current_token, 0, 4 ) . '…' . substr( $current_token, -4 ) ) : '';
+    $last_err      = ql_gh_last_error();
+    ?>
+    <div style="background:#fff;padding:24px;border:1px solid #ddd;border-radius:8px;margin:20px 0;">
+        <h3 style="margin-top:0;">🔑 Token GitHub (optionnel mais recommandé)</h3>
+        <p style="color:#555;">
+            Sans token, l'API GitHub limite à <strong>60 requêtes par heure</strong>. Chaque sync en fait 10 à 20 → après 3-4 synchros on est bloqué pendant une heure. Avec un Personal Access Token : <strong>5000 req/h</strong>.
+        </p>
+        <p style="color:#555;font-size:.92em;">
+            Crée un token sur <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">github.com/settings/tokens</a> (fine-grained, scope <code>public_repo</code> suffit pour un dépôt public). Colle-le ci-dessous :
+        </p>
+        <form method="post" style="margin-top:12px;">
+            <?php wp_nonce_field( 'ql_token_nonce' ); ?>
+            <?php if ( $current_token ) : ?>
+                <p><strong>Token actuel :</strong> <code><?php echo esc_html( $token_masked ); ?></code> <span style="color:#2a8a2a;">✓ actif</span></p>
+                <p>
+                    <input type="password" name="ql_github_token" placeholder="Coller un nouveau token pour remplacer" style="width:420px;max-width:100%;">
+                </p>
+                <p>
+                    <button type="submit" name="ql_save_token" class="button button-primary">Remplacer le token</button>
+                    <button type="submit" name="ql_save_token" class="button" onclick="document.querySelector('input[name=ql_github_token]').value='';return true;" style="margin-left:8px;">Supprimer le token</button>
+                </p>
+            <?php else : ?>
+                <p>
+                    <input type="password" name="ql_github_token" placeholder="ghp_xxxxxxxxxxxxxxxx ou github_pat_xxx…" style="width:420px;max-width:100%;">
+                </p>
+                <p>
+                    <button type="submit" name="ql_save_token" class="button button-primary">Enregistrer le token</button>
+                </p>
+            <?php endif; ?>
+        </form>
+        <?php if ( $last_err ) : ?>
+            <p style="margin-top:16px;padding:10px 14px;background:#fff1ef;border-left:4px solid #e63312;color:#7a2010;">
+                <strong>Dernière erreur GitHub :</strong> <?php echo esc_html( $last_err ); ?>
+            </p>
+        <?php endif; ?>
+    </div>
 
     <?php
     // Journal
@@ -169,6 +222,30 @@ function ql_log_msg( $msg ) {
     update_option( 'ql_sync_log', $logs, false );
 }
 
+// ── Helper : headers GitHub (avec token si configuré) ──────────
+// L'admin peut stocker un Personal Access Token via wp_options :
+//   wp option update ql_github_token "ghp_xxxxx"
+// Sans token : 60 req/h anonyme. Avec token : 5000 req/h.
+function ql_gh_headers() {
+    $headers = array(
+        'Accept'     => 'application/vnd.github+json',
+        'User-Agent' => 'QuartierLibre-Sync/1.0',
+    );
+    $token = trim( (string) get_option( 'ql_github_token', '' ) );
+    if ( $token ) {
+        $headers['Authorization'] = 'Bearer ' . $token;
+    }
+    return $headers;
+}
+
+// Dernière erreur GitHub (pour affichage utilisateur)
+function ql_gh_last_error() {
+    return get_option( 'ql_gh_last_error', '' );
+}
+function ql_gh_set_error( $msg ) {
+    update_option( 'ql_gh_last_error', $msg, false );
+}
+
 // ── API GitHub : lister récursivement les fichiers ─────────────
 function ql_gh_list_files( $path = '' ) {
     $url = sprintf(
@@ -177,24 +254,46 @@ function ql_gh_list_files( $path = '' ) {
         rawurlencode( QL_GH_THEME_PATH . ( $path ? '/' . $path : '' ) ),
         QL_GH_BRANCH
     );
-    // Nettoyage : rawurlencode met des %2F sur les /, on les remet
     $url = str_replace( '%2F', '/', $url );
 
     $resp = wp_remote_get( $url, array(
         'timeout'   => 20,
         'sslverify' => true,
-        'headers'   => array(
-            'Accept'     => 'application/vnd.github+json',
-            'User-Agent' => 'QuartierLibre-Sync/1.0',
-        ),
+        'headers'   => ql_gh_headers(),
     ) );
 
-    if ( is_wp_error( $resp ) ) return false;
+    if ( is_wp_error( $resp ) ) {
+        ql_gh_set_error( 'Erreur réseau : ' . $resp->get_error_message() );
+        return false;
+    }
     $code = wp_remote_retrieve_response_code( $resp );
-    if ( $code !== 200 ) return false;
+    if ( $code !== 200 ) {
+        // Récupère info rate-limit pour message précis
+        $remaining = wp_remote_retrieve_header( $resp, 'x-ratelimit-remaining' );
+        $reset_ts  = (int) wp_remote_retrieve_header( $resp, 'x-ratelimit-reset' );
+        $body      = wp_remote_retrieve_body( $resp );
+
+        if ( $code === 403 && $remaining === '0' ) {
+            $reset_in = $reset_ts ? max( 0, $reset_ts - time() ) : 0;
+            $mins     = ceil( $reset_in / 60 );
+            $has_tok  = get_option( 'ql_github_token' ) ? ' (vous avez un token — vérifiez qu\'il est valide)' : ' — ajoutez un GitHub token dans wp_options ql_github_token pour passer à 5000 req/h';
+            ql_gh_set_error( 'Rate limit GitHub atteint (60 req/h anonyme). Réessayez dans ' . $mins . ' min' . $has_tok );
+        } elseif ( $code === 404 ) {
+            ql_gh_set_error( 'Repo ou chemin introuvable : ' . QL_GH_OWNER . '/' . QL_GH_REPO . '/' . QL_GH_THEME_PATH );
+        } elseif ( $code === 401 ) {
+            ql_gh_set_error( 'Token GitHub invalide (401). Régénérez un PAT sur github.com/settings/tokens' );
+        } else {
+            ql_gh_set_error( 'GitHub API ' . $code . ' : ' . substr( $body, 0, 200 ) );
+        }
+        return false;
+    }
 
     $data = json_decode( wp_remote_retrieve_body( $resp ), true );
-    if ( ! is_array( $data ) ) return false;
+    if ( ! is_array( $data ) ) {
+        ql_gh_set_error( 'Réponse GitHub non-JSON' );
+        return false;
+    }
+    ql_gh_set_error( '' ); // reset si ça passe
 
     $files = array();
     foreach ( $data as $item ) {
@@ -235,10 +334,17 @@ function ql_do_github_sync() {
     // 1. Lister les fichiers via API GitHub
     $files = ql_gh_list_files();
     if ( ! is_array( $files ) || empty( $files ) ) {
-        echo '<div class="notice notice-error"><p><strong>Impossible de lister les fichiers</strong> depuis GitHub. '
-           . 'Vérifiez que le repo <code>' . esc_html( QL_GH_OWNER . '/' . QL_GH_REPO ) . '</code> '
-           . 'existe et qu\'il est <strong>public</strong> (ou que l\'API GitHub n\'a pas atteint sa limite horaire).</p></div>';
-        ql_log_msg( 'ERREUR: impossible de lister les fichiers GitHub' );
+        $detail = ql_gh_last_error();
+        echo '<div class="notice notice-error"><p><strong>Impossible de lister les fichiers</strong> depuis GitHub.</p>';
+        if ( $detail ) {
+            echo '<p><strong>Cause :</strong> ' . esc_html( $detail ) . '</p>';
+        }
+        $has_token = trim( (string) get_option( 'ql_github_token', '' ) ) !== '';
+        if ( ! $has_token ) {
+            echo '<p><em>Astuce :</em> configurez un <strong>Personal Access Token GitHub</strong> dans le cadre ci-dessous pour passer de 60 à 5000 req/h (crée le sur <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">github.com/settings/tokens</a>, scope : <code>public_repo</code> suffit).</p>';
+        }
+        echo '</div>';
+        ql_log_msg( 'ERREUR: liste GitHub KO — ' . ( $detail ?: 'motif inconnu' ) );
         return;
     }
 
@@ -485,7 +591,13 @@ function ql_do_content_sync() {
 
     $files = ql_gh_list_content_files( QL_GH_ARTICLES_PATH );
     if ( ! is_array( $files ) ) {
-        echo '<div class="notice notice-error"><p>Impossible de lister le dossier <code>content/articles/</code> sur GitHub.</p></div>';
+        $detail = ql_gh_last_error();
+        echo '<div class="notice notice-error"><p>Impossible de lister le dossier <code>content/articles/</code> sur GitHub.</p>';
+        if ( $detail ) {
+            echo '<p><strong>Cause :</strong> ' . esc_html( $detail ) . '</p>';
+        }
+        echo '</div>';
+        ql_log_msg( 'ERREUR: liste articles GitHub KO — ' . ( $detail ?: 'motif inconnu' ) );
         return;
     }
 
@@ -540,16 +652,31 @@ function ql_gh_list_content_files( $path ) {
 
     $resp = wp_remote_get( $url, array(
         'timeout' => 20, 'sslverify' => true,
-        'headers' => array(
-            'Accept'     => 'application/vnd.github+json',
-            'User-Agent' => 'QuartierLibre-Sync/1.0',
-        ),
+        'headers' => ql_gh_headers(),
     ) );
-    if ( is_wp_error( $resp ) ) return false;
-    if ( wp_remote_retrieve_response_code( $resp ) !== 200 ) return false;
+    if ( is_wp_error( $resp ) ) {
+        ql_gh_set_error( 'Erreur réseau : ' . $resp->get_error_message() );
+        return false;
+    }
+    $code = wp_remote_retrieve_response_code( $resp );
+    if ( $code !== 200 ) {
+        $remaining = wp_remote_retrieve_header( $resp, 'x-ratelimit-remaining' );
+        $reset_ts  = (int) wp_remote_retrieve_header( $resp, 'x-ratelimit-reset' );
+        if ( $code === 403 && $remaining === '0' ) {
+            $mins = $reset_ts ? ceil( max( 0, $reset_ts - time() ) / 60 ) : 60;
+            $has_tok = get_option( 'ql_github_token' ) ? ' (token présent — vérifiez sa validité)' : ' — ajoutez ql_github_token dans wp_options pour passer à 5000 req/h';
+            ql_gh_set_error( 'Rate limit GitHub atteint. Réessayez dans ' . $mins . ' min' . $has_tok );
+        } else {
+            ql_gh_set_error( 'GitHub API ' . $code . ' sur ' . $path );
+        }
+        return false;
+    }
 
     $data = json_decode( wp_remote_retrieve_body( $resp ), true );
-    if ( ! is_array( $data ) ) return false;
+    if ( ! is_array( $data ) ) {
+        ql_gh_set_error( 'Réponse GitHub non-JSON pour ' . $path );
+        return false;
+    }
 
     $files = array();
     foreach ( $data as $item ) {
