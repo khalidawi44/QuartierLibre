@@ -25,7 +25,7 @@ $socials = array(
     'twitter'   => array( 'label' => 'X / Twitter','url' => get_option( 'ql_social_twitter',   '' ) ),
     'instagram' => array( 'label' => 'Instagram',  'url' => get_option( 'ql_social_instagram', 'https://www.instagram.com/quartierlibre44/' ) ),
     'facebook'  => array( 'label' => 'Facebook',   'url' => get_option( 'ql_social_facebook',  'https://www.facebook.com/profile.php?id=61578685711984' ) ),
-    'telegram'  => array( 'label' => 'Telegram',   'url' => get_option( 'ql_social_telegram',  '' ) ),
+    'telegram'  => array( 'label' => 'Telegram',   'url' => get_option( 'ql_social_telegram',  'https://t.me/nantesrevoltee/1577' ) ),
     'snapchat'  => array( 'label' => 'Snapchat',   'url' => get_option( 'ql_social_snapchat',  'https://t.snapchat.com/2lbKw2lU' ) ),
     'rss'       => array( 'label' => 'Flux RSS',   'url' => get_feed_link() ),
 );
@@ -164,7 +164,7 @@ $socials = array(
             <?php foreach ( $socials as $key => $s ) :
                 if ( empty( $s['url'] ) ) continue; ?>
                 <li>
-                    <a href="<?php echo esc_url( $s['url'] ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( $s['label'] ); ?>">
+                    <a href="<?php echo esc_url( $s['url'] ); ?>" target="_blank" rel="noopener" aria-label="Quartier Libre sur <?php echo esc_attr( $s['label'] ); ?>" title="Quartier Libre sur <?php echo esc_attr( $s['label'] ); ?>">
                         <span class="ql-widget-social__icon ql-widget-social__icon--<?php echo esc_attr( $key ); ?>" aria-hidden="true">
                             <?php echo ql_social_icon_svg( $key ); // helper dans functions.php ?>
                         </span>
