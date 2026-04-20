@@ -106,6 +106,10 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                         $current_user = wp_get_current_user();
                         $avatar = get_avatar_url( $current_user->ID, array( 'size' => 32 ) );
                     ?>
+                        <?php
+                        $profile_page = get_page_by_path( 'mon-profil' );
+                        $profile_url  = $profile_page ? get_permalink( $profile_page ) : home_url( '/mon-profil/' );
+                        ?>
                         <div class="ql-user-menu">
                             <button type="button" class="ql-user-menu__trigger" aria-haspopup="true" aria-expanded="false" aria-label="Mon compte">
                                 <img src="<?php echo esc_url( $avatar ); ?>" alt="" class="ql-user-menu__avatar">
@@ -113,7 +117,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                             </button>
                             <ul class="ql-user-menu__dropdown" hidden>
-                                <li><a href="<?php echo esc_url( admin_url( 'profile.php' ) ); ?>">Mon profil</a></li>
+                                <li><a href="<?php echo esc_url( $profile_url ); ?>">Mon profil</a></li>
                                 <?php if ( current_user_can( 'edit_posts' ) ) : ?>
                                     <li><a href="<?php echo esc_url( admin_url() ); ?>">Administration</a></li>
                                 <?php endif; ?>

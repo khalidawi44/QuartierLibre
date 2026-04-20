@@ -418,6 +418,61 @@ add_action( 'init', function () {
     }
 }, 28 );
 
+// Auto-création de la page /mon-profil/ (espace utilisateur custom,
+// sans accès à wp-admin)
+add_action( 'init', function () {
+    $existing = get_page_by_path( 'mon-profil' );
+    if ( $existing ) {
+        if ( ! get_page_template_slug( $existing->ID ) ) {
+            update_post_meta( $existing->ID, '_wp_page_template', 'templates/page-mon-profil.php' );
+        }
+        return;
+    }
+    $pid = wp_insert_post( array(
+        'post_title'   => 'Mon profil',
+        'post_name'    => 'mon-profil',
+        'post_status'  => 'publish',
+        'post_type'    => 'page',
+        'post_content' => 'Espace personnel — gérez votre compte, photo, préférences.',
+    ) );
+    if ( $pid && ! is_wp_error( $pid ) ) {
+        update_post_meta( $pid, '_wp_page_template', 'templates/page-mon-profil.php' );
+    }
+}, 28 );
+
+// ── Blocage total de wp-admin pour les utilisateurs non-éditeurs ──
+// Les abonnés (subscriber) n'ont RIEN à faire dans le back-office WP.
+// On redirige toute tentative d'accès à /wp-admin/* vers /mon-profil/.
+// Les rôles avec edit_posts (author, editor, administrator) passent —
+// seul l'admin réel touche à l'admin WP.
+add_action( 'admin_init', function () {
+    // Laisser passer les appels AJAX (nombreux plugins en dépendent)
+    if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) return;
+    // Laisser passer les admin-post.php qu'on utilise pour nos forms
+    if ( isset( $_POST['action'] ) && strpos( (string) $_POST['action'], 'ql_' ) === 0 ) return;
+    // Laisser passer les rôles qui savent écrire
+    if ( current_user_can( 'edit_posts' ) ) return;
+
+    // Rediriger vers /mon-profil/
+    $profile_page = get_page_by_path( 'mon-profil' );
+    $redirect = $profile_page ? get_permalink( $profile_page ) : home_url( '/mon-profil/' );
+    wp_safe_redirect( $redirect );
+    exit;
+} );
+
+// Masquer la barre d'admin WP pour tous les non-éditeurs
+add_action( 'after_setup_theme', function () {
+    if ( ! current_user_can( 'edit_posts' ) ) show_admin_bar( false );
+} );
+
+// Le lien "Éditer le profil" WP redirige vers /mon-profil/ (évite que
+// d'autres plugins/emails linkent vers /wp-admin/profile.php)
+add_filter( 'edit_profile_url', function ( $url, $user_id ) {
+    if ( user_can( $user_id, 'edit_posts' ) ) return $url; // admins gardent la vraie
+    $profile_page = get_page_by_path( 'mon-profil' );
+    return $profile_page ? get_permalink( $profile_page ) : home_url( '/mon-profil/' );
+}, 10, 2 );
+
 // Redirige wp-login.php vers /connexion/ (sauf si déjà un POST de
 // connexion en cours OU un admin qui se connecte)
 add_action( 'login_init', function () {
@@ -917,6 +972,134 @@ function ql_root_category( $cat ) {
         $cat = $parent;
     }
     return $cat;
+}
+
+/**
+ * Filtre get_avatar_url/get_avatar pour renvoyer une photo custom
+ * quand l'utilisateur a uploadé une image via /mon-profil/.
+ * La photo est stockée comme attachment + ID dans user meta `ql_avatar_id`.
+ */
+add_filter( 'get_avatar_url', function ( $url, $id_or_email, $args ) {
+    $user_id = 0;
+    if ( is_numeric( $id_or_email ) ) {
+        $user_id = (int) $id_or_email;
+    } elseif ( is_object( $id_or_email ) && isset( $id_or_email->user_id ) ) {
+        $user_id = (int) $id_or_email->user_id;
+    } elseif ( is_string( $id_or_email ) ) {
+        $u = get_user_by( 'email', $id_or_email );
+        if ( $u ) $user_id = $u->ID;
+    }
+    if ( ! $user_id ) return $url;
+
+    $avatar_id = (int) get_user_meta( $user_id, 'ql_avatar_id', true );
+    if ( ! $avatar_id ) return $url;
+
+    $size = isset( $args['size'] ) ? (int) $args['size'] : 96;
+    $custom = wp_get_attachment_image_url( $avatar_id, array( $size, $size ) );
+    return $custom ? $custom : $url;
+}, 10, 3 );
+
+/**
+ * Handler : mise à jour du profil utilisateur depuis /mon-profil/.
+ * Gère : display_name, first_name, last_name, description, email, photo,
+ * changement de mot de passe. Toujours soumis en POST via admin-post.php.
+ */
+add_action( 'admin_post_ql_profile_update', 'ql_handle_profile_update' );
+function ql_handle_profile_update() {
+    if ( ! is_user_logged_in() ) {
+        wp_safe_redirect( home_url( '/connexion/' ) );
+        exit;
+    }
+    if ( ! isset( $_POST['ql_profile_nonce'] ) || ! wp_verify_nonce( $_POST['ql_profile_nonce'], 'ql_profile_update' ) ) {
+        wp_die( 'Jeton de sécurité invalide. Retour en arrière et réessayez.' );
+    }
+
+    $user_id = get_current_user_id();
+    $redirect = add_query_arg( 'updated', '1', home_url( '/mon-profil/' ) );
+
+    // ── 1. Infos de base ──
+    $data = array( 'ID' => $user_id );
+    if ( isset( $_POST['display_name'] ) ) {
+        $data['display_name'] = sanitize_text_field( wp_unslash( $_POST['display_name'] ) );
+    }
+    if ( isset( $_POST['first_name'] ) ) {
+        $data['first_name'] = sanitize_text_field( wp_unslash( $_POST['first_name'] ) );
+    }
+    if ( isset( $_POST['last_name'] ) ) {
+        $data['last_name'] = sanitize_text_field( wp_unslash( $_POST['last_name'] ) );
+    }
+    if ( isset( $_POST['description'] ) ) {
+        $data['description'] = wp_kses_post( wp_unslash( $_POST['description'] ) );
+    }
+    if ( isset( $_POST['user_email'] ) ) {
+        $new_email = sanitize_email( wp_unslash( $_POST['user_email'] ) );
+        if ( $new_email && is_email( $new_email ) ) {
+            $data['user_email'] = $new_email;
+        }
+    }
+
+    // ── 2. Mot de passe ──
+    $new_pass = isset( $_POST['new_password'] ) ? (string) $_POST['new_password'] : '';
+    $confirm  = isset( $_POST['confirm_password'] ) ? (string) $_POST['confirm_password'] : '';
+    if ( $new_pass !== '' ) {
+        if ( strlen( $new_pass ) < 8 ) {
+            $redirect = add_query_arg( 'err', 'pwd_short', home_url( '/mon-profil/' ) );
+            wp_safe_redirect( $redirect ); exit;
+        }
+        if ( $new_pass !== $confirm ) {
+            $redirect = add_query_arg( 'err', 'pwd_mismatch', home_url( '/mon-profil/' ) );
+            wp_safe_redirect( $redirect ); exit;
+        }
+        $data['user_pass'] = $new_pass;
+    }
+
+    $res = wp_update_user( $data );
+    if ( is_wp_error( $res ) ) {
+        $redirect = add_query_arg( 'err', 'update_failed', home_url( '/mon-profil/' ) );
+        wp_safe_redirect( $redirect ); exit;
+    }
+
+    // ── 3. Upload de photo ──
+    if ( ! empty( $_FILES['ql_avatar']['name'] ) && empty( $_FILES['ql_avatar']['error'] ) ) {
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+        require_once ABSPATH . 'wp-admin/includes/image.php';
+        require_once ABSPATH . 'wp-admin/includes/media.php';
+
+        $allowed = array( 'image/jpeg', 'image/png', 'image/webp', 'image/gif' );
+        $filetype = wp_check_filetype_and_ext( $_FILES['ql_avatar']['tmp_name'], $_FILES['ql_avatar']['name'] );
+        if ( ! in_array( $filetype['type'], $allowed, true ) ) {
+            $redirect = add_query_arg( 'err', 'bad_image', home_url( '/mon-profil/' ) );
+            wp_safe_redirect( $redirect ); exit;
+        }
+        if ( $_FILES['ql_avatar']['size'] > 2 * 1024 * 1024 ) {
+            $redirect = add_query_arg( 'err', 'image_too_big', home_url( '/mon-profil/' ) );
+            wp_safe_redirect( $redirect ); exit;
+        }
+
+        $attach_id = media_handle_upload( 'ql_avatar', 0 );
+        if ( is_wp_error( $attach_id ) ) {
+            $redirect = add_query_arg( 'err', 'upload_failed', home_url( '/mon-profil/' ) );
+            wp_safe_redirect( $redirect ); exit;
+        }
+
+        // Supprime l'ancienne photo si elle existait
+        $old_id = (int) get_user_meta( $user_id, 'ql_avatar_id', true );
+        if ( $old_id && $old_id !== $attach_id ) {
+            wp_delete_attachment( $old_id, true );
+        }
+
+        update_user_meta( $user_id, 'ql_avatar_id', $attach_id );
+    }
+
+    // ── 4. Suppression de photo ──
+    if ( ! empty( $_POST['ql_avatar_remove'] ) ) {
+        $old_id = (int) get_user_meta( $user_id, 'ql_avatar_id', true );
+        if ( $old_id ) { wp_delete_attachment( $old_id, true ); }
+        delete_user_meta( $user_id, 'ql_avatar_id' );
+    }
+
+    wp_safe_redirect( $redirect );
+    exit;
 }
 
 /**

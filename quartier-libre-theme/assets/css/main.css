@@ -4576,6 +4576,100 @@ body.tag-mairie-ps .ql-archive-header {
   background: #f1efe8; color: var(--ql-accent, #e63312);
 }
 
+/* ══════════════════════════════════════════════════════════════
+   Page /mon-profil/ — espace utilisateur custom (remplace wp-admin/profile.php)
+   ══════════════════════════════════════════════════════════════ */
+.ql-profil-page { background: var(--ql-paper, #fafaf7); min-height: 70vh; }
+
+.ql-profil-hero {
+  background: linear-gradient(135deg, var(--ql-ink, #0f0f0f) 0%, #1a0a08 100%);
+  color: #fff; padding: 3rem 0 2.4rem;
+  border-bottom: 4px solid var(--ql-accent, #e63312);
+}
+.ql-profil-hero__kicker {
+  display: inline-block; background: var(--ql-yellow, #ffcb05);
+  color: var(--ql-ink, #0f0f0f); padding: .25rem .7rem;
+  font-size: .72rem; font-weight: 800; letter-spacing: .1em;
+  text-transform: uppercase; border-radius: 2px; margin-bottom: .8rem;
+}
+.ql-profil-hero__title {
+  font-family: var(--ql-font-serif, serif); font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 .5rem; color: #fff;
+}
+.ql-profil-hero__lede {
+  font-size: 1rem; max-width: 560px; margin: 0;
+  color: rgba(255,255,255,.85); line-height: 1.5;
+}
+
+.ql-profil-main { padding: 2rem 0 3rem; }
+
+.ql-profil-grid {
+  display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 820px) {
+  .ql-profil-grid { grid-template-columns: 320px 1fr; }
+  .ql-profil-card--wide { grid-column: 1 / -1; }
+}
+
+.ql-profil-card {
+  background: #fff; border: 1px solid #e8e5db;
+  border-radius: 8px; padding: 1.5rem;
+}
+.ql-profil-card__title {
+  font-family: var(--ql-font-serif, serif); font-weight: 900;
+  font-size: 1.1rem; margin: 0 0 1.2rem; color: var(--ql-ink, #0f0f0f);
+  padding-bottom: .6rem; border-bottom: 2px solid var(--ql-accent, #e63312);
+}
+.ql-profil-card__hint {
+  color: var(--ql-muted, #5a5a5a); font-size: .88rem;
+  margin: 0 0 1rem;
+}
+
+/* Carte photo */
+.ql-profil-avatar-wrap {
+  display: flex; justify-content: center; margin-bottom: 1rem;
+}
+.ql-profil-avatar {
+  width: 160px; height: 160px; border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--ql-accent, #e63312);
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+}
+.ql-profil-avatar-actions {
+  display: flex; flex-direction: column; gap: .6rem; align-items: center;
+}
+.ql-profil-avatar-actions label.ql-btn {
+  cursor: pointer; display: inline-flex; align-items: center; gap: .4rem;
+}
+.ql-profil-remove-check {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .85rem; color: var(--ql-muted, #5a5a5a); cursor: pointer;
+}
+
+.ql-profil-sep {
+  border: 0; border-top: 1px solid #e8e5db; margin: 1.5rem 0;
+}
+
+.ql-profil-actions {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  padding-top: 1rem;
+}
+.ql-profil-logout {
+  color: var(--ql-muted, #5a5a5a); font-size: .88rem;
+  text-decoration: underline; text-decoration-color: #d5d0c4;
+  text-underline-offset: 3px;
+}
+.ql-profil-logout:hover { color: var(--ql-accent, #e63312); }
+
+.ql-profil-admin-note {
+  margin-top: 1.5rem; padding: .8rem 1rem;
+  background: #fffbea; border: 1px solid #f2c94c;
+  border-radius: 4px; font-size: .88rem; color: #7a5c00;
+}
+.ql-profil-admin-note a { color: var(--ql-accent, #e63312); font-weight: 700; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
