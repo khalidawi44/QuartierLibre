@@ -4212,7 +4212,7 @@ body.tag-mairie-ps .ql-archive-header {
   .ql-home-main .ql-grid--3 { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ── Sidebar homepage (sticky, reste visible au scroll) ──────── */
+/* ── Sidebar (home + articles) — sticky, scrollbar masquée ──── */
 .ql-sidebar--home {
   display: flex; flex-direction: column; gap: 1.25rem;
   min-width: 0;
@@ -4227,18 +4227,48 @@ body.tag-mairie-ps .ql-archive-header {
     align-self: start;
     max-height: calc(100vh - var(--ql-header-h, 140px) - 2rem);
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0,0,0,.2) transparent;
-    /* will-change + contain aident la stabilité du sticky */
     will-change: transform;
+    /* Scrollbar totalement invisible — scroll interne reste fonctionnel */
+    scrollbar-width: none;          /* Firefox */
+    -ms-overflow-style: none;       /* IE / Edge legacy */
   }
-  .ql-sidebar--home::-webkit-scrollbar { width: 6px; }
-  .ql-sidebar--home::-webkit-scrollbar-thumb { background: rgba(0,0,0,.2); border-radius: 3px; }
-  .ql-sidebar--home::-webkit-scrollbar-track { background: transparent; }
+  .ql-sidebar--home::-webkit-scrollbar {
+    width: 0; height: 0;
+    display: none;                  /* Chrome / Safari */
+  }
 }
 /* Le parent grid ne doit pas avoir overflow:hidden/auto (sinon sticky casse).
-   Double sécurité : on force overflow:visible sur le wrapper. */
-.ql-home-layout { overflow: visible; }
+   Double sécurité : on force overflow:visible sur les wrappers. */
+.ql-home-layout,
+.ql-article-layout { overflow: visible; }
+
+/* ── Layout article (single.php) — sidebar à GAUCHE, contenu à droite ── */
+.ql-article-layout {
+  display: grid; grid-template-columns: 1fr; gap: 2rem;
+  max-width: 1200px; margin: 2rem auto 0;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+@media (min-width: 1000px) {
+  .ql-article-layout {
+    /* Inverse de la home : sidebar à GAUCHE (3fr), contenu à droite (7fr) */
+    grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
+    gap: 2.4rem;
+    align-items: start;
+  }
+}
+/* Sur mobile : le contenu de l'article passe AVANT la sidebar */
+@media (max-width: 999px) {
+  .ql-article-layout .ql-sidebar--home { order: 2; }
+  .ql-article-layout .ql-post__body    { order: 1; }
+}
+/* Dans l'article, le .ql-post__body ne doit plus avoir son padding/margin
+   de centrage par défaut puisqu'il est dans une grille */
+.ql-article-layout .ql-post__body {
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding-left: 0; padding-right: 0;
+}
 
 .ql-widget {
   background: #fff;

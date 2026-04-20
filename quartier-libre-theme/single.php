@@ -56,7 +56,12 @@ get_header(); ?>
         </div>
     </header>
 
-    <div class="ql-post__body">
+    <div class="ql-article-layout">
+
+        <!-- SIDEBAR GAUCHE (30%) — mêmes widgets que la home -->
+        <?php get_template_part( 'template-parts/sidebar-home' ); ?>
+
+        <div class="ql-post__body">
         <div class="ql-post__content">
             <?php the_content(); ?>
             <?php wp_link_pages( array( 'before' => '<nav class="ql-pagination">Pages :', 'after' => '</nav>' ) ); ?>
@@ -118,6 +123,7 @@ get_header(); ?>
         <?php endif; ?>
 
     </div><!-- /.ql-post__body -->
+    </div><!-- /.ql-article-layout -->
 
     <?php // ── Commentaires : juste sous l'article, avant les articles liés ── ?>
     <?php if ( comments_open() || get_comments_number() ) : ?>
