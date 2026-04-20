@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 <header class="ql-header" role="banner">
     <div class="ql-header__bar">
-        <div class="ql-container ql-header__inner">
+        <div class="ql-header__inner">
 
             <a class="ql-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php bloginfo( 'name' ); ?> — accueil">
                 <?php

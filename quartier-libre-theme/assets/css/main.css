@@ -138,14 +138,17 @@ p  { margin: 0 0 1em; }
   border-bottom: 1px solid var(--ql-line);
 }
 .ql-header__bar { padding: .9rem 0; }
+/* Header en pleine largeur (pas de max-width .ql-container) : le logo
+   se cale directement au bord de la fenêtre avec 14px de marge. */
 .ql-header__inner {
-  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
-  /* Padding asymétrique : le logo se colle à gauche (petite marge),
-     le menu/recherche garde sa marge droite normale. */
-  padding-left: .75rem !important;
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%;
+  padding-left: 14px;
+  padding-right: 14px;
+  gap: 2rem;
 }
 @media (min-width: 900px) {
-  .ql-header__inner { padding-left: 1rem !important; }
+  .ql-header__inner { padding-left: 14px; padding-right: 20px; }
 }
 
 .ql-brand {
@@ -166,11 +169,14 @@ p  { margin: 0 0 1em; }
 }
 
 /* Navigation */
-.ql-nav { display: flex; align-items: center; gap: 1.5rem; }
+.ql-nav { display: flex; align-items: center; gap: 2.2rem; }
 .ql-nav__list {
   list-style: none; margin: 0; padding: 0;
-  display: flex; gap: 1.25rem; align-items: center;
+  display: flex; gap: 2rem; align-items: center;
   flex-wrap: nowrap;
+}
+@media (min-width: 1200px) {
+  .ql-nav__list { gap: 2.5rem; }
 }
 .ql-nav__list > li { position: relative; white-space: nowrap; }
 .ql-nav__list a {
