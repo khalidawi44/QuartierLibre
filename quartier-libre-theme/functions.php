@@ -772,12 +772,21 @@ add_action( 'widgets_init', function () {
  * il peut vider via le bouton ou attendre l'expiration.
  */
 function ql_resolve_logo_url() {
-    $cached = get_transient( 'ql_logo_url_v1' );
+    $cached = get_transient( 'ql_logo_url_v2' );
     if ( $cached !== false ) return $cached; // peut être '' si aucun trouvé
 
     $url = '';
 
-    // 1. custom_logo via Customizer
+    // 0. URL explicite (option ql_logo_url) — valeur par défaut ci-dessous,
+    //    permet de piloter le logo sans passer par le Customizer.
+    //    Changer via : wp option update ql_logo_url "https://..."
+    $explicit = get_option( 'ql_logo_url', 'https://quartierlibre.org/wp-content/uploads/2026/04/logo_home.png' );
+    if ( $explicit ) {
+        $url = $explicit;
+    }
+
+    // 1. custom_logo via Customizer — écrase seulement si on a explicitement
+    //    uploadé un logo via Apparence → Personnaliser (signal fort de l'admin)
     $logo_id = (int) get_theme_mod( 'custom_logo' );
     if ( $logo_id ) {
         $src = wp_get_attachment_image_url( $logo_id, 'full' );
@@ -820,7 +829,7 @@ function ql_resolve_logo_url() {
         }
     }
 
-    set_transient( 'ql_logo_url_v1', $url, HOUR_IN_SECONDS );
+    set_transient( 'ql_logo_url_v2', $url, HOUR_IN_SECONDS );
     return $url;
 }
 
@@ -828,9 +837,17 @@ function ql_resolve_logo_url() {
  * Vide le cache du logo quand l'admin change de logo dans le Customizer
  * ou upload un nouveau fichier média.
  */
-add_action( 'customize_save_after', function() { delete_transient( 'ql_logo_url_v1' ); } );
-add_action( 'add_attachment',       function() { delete_transient( 'ql_logo_url_v1' ); } );
-add_action( 'delete_attachment',    function() { delete_transient( 'ql_logo_url_v1' ); } );
+add_action( 'customize_save_after', function() { delete_transient( 'ql_logo_url_v2' ); delete_transient( 'ql_logo_url_v1' ); } );
+add_action( 'add_attachment',       function() { delete_transient( 'ql_logo_url_v2' ); delete_transient( 'ql_logo_url_v1' ); } );
+add_action( 'delete_attachment',    function() { delete_transient( 'ql_logo_url_v2' ); delete_transient( 'ql_logo_url_v1' ); } );
+// Cleanup des vieux transients au bump de version ql_logo_url_v1 → v2
+add_action( 'init', function() {
+    if ( get_option( 'ql_logo_cache_bump' ) !== 'v2' ) {
+        delete_transient( 'ql_logo_url_v1' );
+        delete_transient( 'ql_logo_url_v2' );
+        update_option( 'ql_logo_cache_bump', 'v2', false );
+    }
+}, 5 );
 
 function ql_logo( $args = array() ) {
     $args = wp_parse_args( $args, array(
