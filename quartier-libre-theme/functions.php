@@ -1259,3 +1259,202 @@ function ql_handle_plainte() {
     wp_safe_redirect( add_query_arg( 'plainte', 'envoye', wp_get_referer() ?: home_url() ) );
     exit;
 }
+
+// ══════════════════════════════════════════════════════════════
+// FICHES SOURCES ÉDITORIALES — accessible depuis WP admin
+// ══════════════════════════════════════════════════════════════
+// Chaque article synchronisé depuis GitHub peut avoir un fichier
+// frère dans `content/sources/<slug>.md` qui liste les sources de
+// chaque affirmation factuelle. ql-sync.php fetch ces fichiers et
+// les stocke en post_meta `_ql_sources_md`. On les affiche ici :
+//   1. Meta-box « Sources & vérification » dans l'éditeur d'article
+//   2. Colonne dans la liste des articles (✔ sourcé / ⚠ sans source)
+
+// 1. Meta-box dans l'éditeur
+add_action( 'add_meta_boxes', function () {
+    add_meta_box(
+        'ql_sources_metabox',
+        '📋 Sources & vérification éditoriale',
+        'ql_render_sources_metabox',
+        'post',
+        'normal',
+        'high'
+    );
+} );
+
+function ql_render_sources_metabox( $post ) {
+    $sources_md = get_post_meta( $post->ID, '_ql_sources_md', true );
+
+    if ( empty( $sources_md ) ) {
+        echo '<div style="padding:16px;background:#fff1ef;border-left:4px solid #e63312;border-radius:3px;">';
+        echo '<p style="margin:0 0 8px;font-weight:700;color:#7a2010;">⚠ Aucune fiche source pour cet article</p>';
+        echo '<p style="margin:0;color:#5a5a5a;">';
+        echo 'Créez un fichier <code>content/sources/' . esc_html( $post->post_name ) . '.md</code> ';
+        echo 'dans le repo GitHub, puis lancez <em>Sync QL → Synchroniser les articles</em> pour le charger ici.';
+        echo '</p>';
+        echo '<p style="margin:8px 0 0;color:#5a5a5a;font-size:.88rem;">';
+        echo 'La fiche doit tracer chaque affirmation factuelle avec statut (🟢 vérifié / 🟡 scénario / 🔴 fiction) et lien source public.';
+        echo '</p>';
+        echo '</div>';
+        return;
+    }
+
+    // Conversion markdown minimale pour affichage lisible.
+    // On garde les liens cliquables et une typo simple.
+    $html = ql_render_sources_md_to_html( $sources_md );
+
+    echo '<style>
+        .ql-sources-box { max-height: 600px; overflow-y: auto; padding: 1.2rem 1.4rem; background: #fafaf7; border: 1px solid #e8e5db; border-radius: 4px; font-size: .94em; line-height: 1.55; }
+        .ql-sources-box h1, .ql-sources-box h2, .ql-sources-box h3 { margin-top: 1.4em; margin-bottom: .5em; line-height: 1.2; color: #0f0f0f; }
+        .ql-sources-box h1 { font-size: 1.25em; border-bottom: 2px solid #e63312; padding-bottom: .3em; }
+        .ql-sources-box h2 { font-size: 1.1em; }
+        .ql-sources-box h3 { font-size: 1em; color: #7a2010; }
+        .ql-sources-box ul { margin: .6em 0 1em 1.2em; padding: 0; }
+        .ql-sources-box li { margin-bottom: .35em; }
+        .ql-sources-box a { color: #e63312; font-weight: 600; }
+        .ql-sources-box code { background: #f1efe8; padding: 1px 4px; border-radius: 2px; font-size: .92em; }
+        .ql-sources-box table { border-collapse: collapse; margin: 1em 0; font-size: .9em; }
+        .ql-sources-box th, .ql-sources-box td { border: 1px solid #d5d0c4; padding: 6px 10px; text-align: left; vertical-align: top; }
+        .ql-sources-box th { background: #f1efe8; font-weight: 700; }
+        .ql-sources-box p { margin: .5em 0; }
+        .ql-sources-box blockquote { border-left: 3px solid #e63312; margin: .8em 0; padding: .2em 0 .2em .8em; color: #5a5a5a; font-style: italic; }
+        .ql-sources-box hr { border: 0; border-top: 1px solid #d5d0c4; margin: 1.5em 0; }
+    </style>';
+
+    echo '<div class="ql-sources-box">' . $html . '</div>';
+
+    echo '<p style="margin-top:10px;color:#5a5a5a;font-size:.88rem;">';
+    echo 'Fiche sourcée depuis <code>content/sources/' . esc_html( $post->post_name ) . '.md</code> (GitHub). ';
+    echo 'Pour modifier, éditez le fichier dans le repo puis re-sync les articles.';
+    echo '</p>';
+}
+
+// Rendu markdown simple pour les fiches sources — supporte titres,
+// listes, liens, code inline, blockquote, tableaux GFM, hr.
+function ql_render_sources_md_to_html( $md ) {
+    if ( ! $md ) return '';
+    $md = str_replace( "\r\n", "\n", $md );
+    $lines = explode( "\n", $md );
+    $out = array();
+    $in_table = false; $in_list = false;
+
+    $inline = function ( $s ) {
+        // Liens [text](url)
+        $s = preg_replace_callback( '/\[([^\]]+)\]\(([^\)]+)\)/', function ( $m ) {
+            return '<a href="' . esc_url( $m[2] ) . '" target="_blank" rel="noopener">' . esc_html( $m[1] ) . '</a>';
+        }, $s );
+        // Gras **text**
+        $s = preg_replace( '/\*\*([^\*]+)\*\*/', '<strong>$1</strong>', $s );
+        // Code inline `code`
+        $s = preg_replace( '/`([^`]+)`/', '<code>$1</code>', $s );
+        return $s;
+    };
+
+    foreach ( $lines as $line ) {
+        $trimmed = trim( $line );
+
+        // Table GFM : détection "| col1 | col2 |" avec ligne séparateur
+        if ( strpos( $trimmed, '|' ) === 0 ) {
+            if ( preg_match( '/^\|[\s\-:|]+\|$/', $trimmed ) ) { continue; } // séparateur
+            $cells = array_map( 'trim', explode( '|', trim( $trimmed, '|' ) ) );
+            if ( ! $in_table ) { $out[] = '<table>'; $in_table = true; $is_header = true; }
+            else { $is_header = false; }
+            $tag = $is_header && count( $out ) && strpos( end( $out ), '<table>' ) !== false ? 'th' : 'td';
+            $row = '<tr>';
+            foreach ( $cells as $c ) { $row .= '<' . $tag . '>' . $inline( $c ) . '</' . $tag . '>'; }
+            $row .= '</tr>';
+            $out[] = $row;
+            continue;
+        } elseif ( $in_table ) {
+            $out[] = '</table>';
+            $in_table = false;
+        }
+
+        if ( $trimmed === '' ) { if ( $in_list ) { $out[] = '</ul>'; $in_list = false; } continue; }
+        if ( preg_match( '/^### (.+)$/', $trimmed, $m ) ) { if($in_list){$out[]='</ul>';$in_list=false;} $out[] = '<h3>' . $inline( $m[1] ) . '</h3>'; continue; }
+        if ( preg_match( '/^## (.+)$/', $trimmed, $m ) )  { if($in_list){$out[]='</ul>';$in_list=false;} $out[] = '<h2>' . $inline( $m[1] ) . '</h2>'; continue; }
+        if ( preg_match( '/^# (.+)$/', $trimmed, $m ) )   { if($in_list){$out[]='</ul>';$in_list=false;} $out[] = '<h1>' . $inline( $m[1] ) . '</h1>'; continue; }
+        if ( preg_match( '/^---+$/', $trimmed ) )         { if($in_list){$out[]='</ul>';$in_list=false;} $out[] = '<hr>'; continue; }
+        if ( preg_match( '/^> (.+)$/', $trimmed, $m ) )   { if($in_list){$out[]='</ul>';$in_list=false;} $out[] = '<blockquote>' . $inline( $m[1] ) . '</blockquote>'; continue; }
+        if ( preg_match( '/^[-*]\s+(.+)$/', $trimmed, $m ) ) {
+            if ( ! $in_list ) { $out[] = '<ul>'; $in_list = true; }
+            $out[] = '<li>' . $inline( $m[1] ) . '</li>';
+            continue;
+        }
+        if ( $in_list ) { $out[] = '</ul>'; $in_list = false; }
+        $out[] = '<p>' . $inline( $trimmed ) . '</p>';
+    }
+    if ( $in_list )  { $out[] = '</ul>'; }
+    if ( $in_table ) { $out[] = '</table>'; }
+    return implode( "\n", $out );
+}
+
+// 2. Colonne « Sources » dans la liste des articles admin
+add_filter( 'manage_post_posts_columns', function ( $cols ) {
+    $new = array();
+    foreach ( $cols as $k => $v ) {
+        $new[ $k ] = $v;
+        if ( $k === 'title' ) {
+            $new['ql_sources'] = 'Sources';
+        }
+    }
+    return $new;
+} );
+add_action( 'manage_post_posts_custom_column', function ( $col, $post_id ) {
+    if ( $col !== 'ql_sources' ) return;
+    $has = get_post_meta( $post_id, '_ql_sources_md', true );
+    if ( $has ) {
+        echo '<span title="Fiche sources disponible" style="color:#2a8a2a;font-size:1.2em;">✔</span>';
+    } else {
+        echo '<span title="Pas de fiche sources — vérifier avant publication" style="color:#c94d18;font-size:1.2em;">⚠</span>';
+    }
+}, 10, 2 );
+
+// 3. Page admin « Outils → Sources QL » pour voir toutes les fiches d'un coup
+add_action( 'admin_menu', function () {
+    add_management_page(
+        'Sources éditoriales QL',
+        'Sources QL',
+        'edit_posts',
+        'ql-sources-index',
+        'ql_render_sources_index'
+    );
+} );
+
+function ql_render_sources_index() {
+    echo '<div class="wrap"><h1>📋 Fiches sources — articles publiés et brouillons</h1>';
+    echo '<p>Toutes les fiches <code>content/sources/*.md</code> synchronisées depuis GitHub. Un clic ouvre l\'article dans l\'éditeur pour voir le détail.</p>';
+
+    $posts = get_posts( array(
+        'post_type'      => 'post',
+        'post_status'    => array( 'publish', 'draft', 'pending', 'private' ),
+        'posts_per_page' => -1,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ) );
+
+    echo '<table class="widefat striped"><thead><tr>';
+    echo '<th style="width:40px;">État</th>';
+    echo '<th>Titre</th>';
+    echo '<th style="width:100px;">Statut</th>';
+    echo '<th style="width:140px;">Date</th>';
+    echo '<th style="width:100px;">Action</th>';
+    echo '</tr></thead><tbody>';
+
+    foreach ( $posts as $p ) {
+        $has = get_post_meta( $p->ID, '_ql_sources_md', true );
+        echo '<tr>';
+        if ( $has ) {
+            echo '<td><span style="color:#2a8a2a;font-size:1.3em;" title="Sourcé">✔</span></td>';
+        } else {
+            echo '<td><span style="color:#c94d18;font-size:1.3em;" title="Pas de source">⚠</span></td>';
+        }
+        echo '<td><strong>' . esc_html( $p->post_title ) . '</strong></td>';
+        echo '<td>' . esc_html( $p->post_status ) . '</td>';
+        echo '<td>' . esc_html( get_the_date( 'd/m/Y', $p ) ) . '</td>';
+        echo '<td><a class="button" href="' . esc_url( get_edit_post_link( $p->ID ) ) . '">Éditer</a></td>';
+        echo '</tr>';
+    }
+
+    echo '</tbody></table></div>';
+}

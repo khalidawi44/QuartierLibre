@@ -611,7 +611,19 @@ function ql_do_content_sync() {
         return;
     }
 
-    $created = 0; $updated = 0; $images = 0; $errors = 0;
+    // ── Pré-fetch : liste des fichiers sources ──
+    // On indexe content/sources/<basename>.md pour pouvoir associer à
+    // chaque article sa fiche de sources. Téléchargé en lazy plus bas.
+    $sources_files = ql_gh_list_content_files( 'content/sources' );
+    $sources_index = array();
+    if ( is_array( $sources_files ) ) {
+        foreach ( $sources_files as $sf ) {
+            $base = basename( $sf['path'], '.md' );
+            $sources_index[ $base ] = $sf['download'];
+        }
+    }
+
+    $created = 0; $updated = 0; $images = 0; $errors = 0; $sources_loaded = 0;
 
     foreach ( $md_files as $f ) {
         $raw = ql_gh_raw( $f['download'] );
@@ -622,6 +634,17 @@ function ql_do_content_sync() {
             ql_log_msg( 'SKIP: ' . basename( $f['path'] ) . ' — pas de title' );
             $errors++;
             continue;
+        }
+
+        // Injection du contenu sources (si trouvé) dans le frontmatter
+        // transitoire — ql_upsert_article le stockera en post_meta.
+        $article_base = basename( $f['path'], '.md' );
+        if ( isset( $sources_index[ $article_base ] ) ) {
+            $sources_raw = ql_gh_raw( $sources_index[ $article_base ] );
+            if ( $sources_raw ) {
+                $parsed['front']['_ql_sources_raw'] = $sources_raw;
+                $sources_loaded++;
+            }
         }
 
         $result = ql_upsert_article( $parsed['front'], $parsed['body'], $images );
@@ -847,6 +870,15 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
 
     if ( ! empty( $front['tags'] ) && is_array( $front['tags'] ) ) {
         wp_set_post_tags( $post_id, $front['tags'], false );
+    }
+
+    // Contenu de la fiche sources (content/sources/<slug>.md fetché par
+    // ql_do_content_sync et injecté dans $front['_ql_sources_raw']).
+    // Stocké en post_meta pour affichage dans le meta-box de l'éditeur.
+    if ( ! empty( $front['_ql_sources_raw'] ) ) {
+        update_post_meta( $post_id, '_ql_sources_md', $front['_ql_sources_raw'] );
+    } else {
+        delete_post_meta( $post_id, '_ql_sources_md' );
     }
 
     // Catégorie principale explicite (pour choisir le badge) — frontmatter
