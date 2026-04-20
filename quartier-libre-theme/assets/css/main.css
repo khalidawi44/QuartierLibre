@@ -1342,9 +1342,9 @@ p  { margin: 0 0 1em; }
   color: var(--ql-accent, #e63312) !important;
 }
 
-/* Témoignage — gros encart avec image de fond, reste DANS la colonne
-   de l'article (ne tente plus le full-bleed 100vw qui se faisait
-   cropper par la sidebar). Même impact visuel, pas de débordement. */
+/* Témoignage — gros encart avec image de fond, FULL-BLEED pleine largeur
+   viewport (même dans les layouts sidebar grâce à --ql-article-left calculé
+   en JS). Sur mobile (stack), fallback à 100% de la colonne. */
 .ql-post__content blockquote.ql-testimony {
   position: relative !important;
   width: 100% !important;
@@ -1406,6 +1406,29 @@ p  { margin: 0 0 1em; }
   }
   .ql-post__content blockquote.ql-testimony::before { font-size: 3.5rem; }
 }
+
+/* FULL-BLEED desktop : quand la sidebar est présente (article/page avec
+   .ql-article-layout ou .ql-page-layout), le testimony déborde en
+   pleine largeur viewport grâce à --ql-article-left calculé en JS
+   (cf. qlSetArticleOffset dans main.js).
+   La formule : margin-left négatif = -(position gauche de la colonne)
+   → ramène le bord gauche de l'encart au bord gauche de la fenêtre.
+   Width 100vw → va jusqu'au bord droit. */
+@media (min-width: 1000px) {
+  .ql-article-layout .ql-post__content blockquote.ql-testimony,
+  .ql-article-layout .ql-post__body blockquote.ql-testimony,
+  .ql-page-layout .ql-page-main blockquote.ql-testimony {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(var(--ql-article-left, 0px) * -1) !important;
+    margin-right: 0 !important;
+    border-radius: 0 !important;
+    padding-left: clamp(1rem, 6vw, 5rem) !important;
+    padding-right: clamp(1rem, 6vw, 5rem) !important;
+  }
+}
+/* Évite le scroll horizontal causé par le width: 100vw */
+html, body { overflow-x: hidden; }
 
 /* ── Listes : puces rouges stylées ───────────────────────── */
 .ql-post__content ul {

@@ -4,6 +4,28 @@
 (function () {
   'use strict';
 
+  // ── Calcul offsetLeft de la colonne article pour full-bleed testimony ──
+  // Quand la sidebar est à gauche (articles + pages + archives), les
+  // blockquotes "témoignage" veulent sortir en pleine largeur viewport.
+  // On stocke la position de la colonne article dans une CSS var que
+  // le blockquote utilise en margin-left négatif pour aller jusqu'au
+  // bord gauche de la fenêtre (et width: 100vw pour le bord droit).
+  function qlSetArticleOffset() {
+    var targets = document.querySelectorAll(
+      '.ql-article-layout .ql-post__content, ' +
+      '.ql-article-layout .ql-post__body, ' +
+      '.ql-page-layout .ql-page-main'
+    );
+    if (!targets.length) return;
+    // On prend le premier match (il n'y en a normalement qu'un par page)
+    var rect = targets[0].getBoundingClientRect();
+    document.documentElement.style.setProperty('--ql-article-left', rect.left + 'px');
+  }
+  // Run ASAP + au resize + au load (images chargées peuvent shifter le layout)
+  qlSetArticleOffset();
+  window.addEventListener('load', qlSetArticleOffset);
+  window.addEventListener('resize', qlSetArticleOffset);
+
   // ── Bouton « retour en haut » (fixe, bas-gauche) ─────────────
   // Apparaît quand le lecteur a scrollé >400px. Clic = scroll top smooth.
   (function () {
