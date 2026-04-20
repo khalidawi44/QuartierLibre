@@ -94,6 +94,16 @@ add_action( 'after_setup_theme', function () {
     add_theme_support( 'responsive-embeds' );
     add_theme_support( 'customize-selective-refresh-widgets' );
 
+    // Logo personnalisé (Apparence → Personnaliser → Identité du site → Logo).
+    // Sans cette déclaration, l'option custom_logo n'est PAS exposée dans
+    // le Customizer → le thème ne peut pas lire get_theme_mod('custom_logo').
+    add_theme_support( 'custom-logo', array(
+        'height'      => 120,
+        'width'       => 480,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ) );
+
     // Tailles d'image dédiées
     add_image_size( 'ql-hero',    1600, 900, true );  // une / hero
     add_image_size( 'ql-card',     800, 520, true );  // cartes articles
@@ -749,6 +759,79 @@ add_action( 'widgets_init', function () {
  *   loading   : 'lazy' ou 'eager' (défaut 'lazy')
  * }
  */
+/**
+ * Résout l'URL du logo avec cascade ultra-robuste :
+ *   1. custom_logo (Customizer WP — la voie officielle)
+ *   2. Recherche médiathèque pour un attachment dont le nom contient "logo"
+ *      (gère le cas où l'admin a uploadé directement via Médias sans
+ *      passer par le Customizer, ex : logoA4.png, logo-quartier.svg…)
+ *   3. Fichier dans le thème : assets/images/logo.{svg,png,webp}
+ *   4. Chaîne vide = le template doit utiliser le wordmark texte
+ *
+ * Résultat mis en cache 1h dans un transient — si l'admin change le logo
+ * il peut vider via le bouton ou attendre l'expiration.
+ */
+function ql_resolve_logo_url() {
+    $cached = get_transient( 'ql_logo_url_v1' );
+    if ( $cached !== false ) return $cached; // peut être '' si aucun trouvé
+
+    $url = '';
+
+    // 1. custom_logo via Customizer
+    $logo_id = (int) get_theme_mod( 'custom_logo' );
+    if ( $logo_id ) {
+        $src = wp_get_attachment_image_url( $logo_id, 'full' );
+        if ( $src ) $url = $src;
+    }
+
+    // 2. Recherche médiathèque par nom de fichier
+    if ( ! $url ) {
+        $q = new WP_Query( array(
+            'post_type'      => 'attachment',
+            'post_status'    => 'inherit',
+            'post_mime_type' => array( 'image/png', 'image/jpeg', 'image/svg+xml', 'image/webp' ),
+            'posts_per_page' => 20,
+            's'              => 'logo',
+            'fields'         => 'ids',
+            'no_found_rows'  => true,
+        ) );
+        if ( ! empty( $q->posts ) ) {
+            // Préférence : nom de fichier qui commence par "logo"
+            $best = 0;
+            foreach ( $q->posts as $id ) {
+                $file = get_attached_file( $id );
+                if ( ! $file ) continue;
+                $basename = strtolower( basename( $file ) );
+                if ( strpos( $basename, 'logo' ) === 0 ) { $best = $id; break; }
+                if ( ! $best ) $best = $id;
+            }
+            if ( $best ) {
+                $src = wp_get_attachment_image_url( $best, 'full' );
+                if ( $src ) $url = $src;
+            }
+        }
+    }
+
+    // 3. Fichier thème
+    if ( ! $url ) {
+        $files = array( '/assets/images/logo.svg', '/assets/images/logo.png', '/assets/images/logo.webp' );
+        foreach ( $files as $p ) {
+            if ( file_exists( QL_THEME_DIR . $p ) ) { $url = QL_THEME_URI . $p; break; }
+        }
+    }
+
+    set_transient( 'ql_logo_url_v1', $url, HOUR_IN_SECONDS );
+    return $url;
+}
+
+/**
+ * Vide le cache du logo quand l'admin change de logo dans le Customizer
+ * ou upload un nouveau fichier média.
+ */
+add_action( 'customize_save_after', function() { delete_transient( 'ql_logo_url_v1' ); } );
+add_action( 'add_attachment',       function() { delete_transient( 'ql_logo_url_v1' ); } );
+add_action( 'delete_attachment',    function() { delete_transient( 'ql_logo_url_v1' ); } );
+
 function ql_logo( $args = array() ) {
     $args = wp_parse_args( $args, array(
         'class'   => '',

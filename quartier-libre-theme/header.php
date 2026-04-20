@@ -30,35 +30,20 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
             <a class="ql-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php bloginfo( 'name' ); ?> — accueil">
                 <?php
-                // IMPORTANT : on n'utilise PAS the_custom_logo() car il ajoute son
-                // propre <a> → nested links = HTML invalide, casse l'affichage.
-                // On récupère l'ID du logo et on output <img> directement.
-                $logo_id = get_theme_mod( 'custom_logo' );
-                $rendered = false;
-
-                if ( $logo_id ) {
-                    $src = wp_get_attachment_image_url( $logo_id, 'full' );
-                    if ( $src ) {
-                        // loading=eager + data-no-lazy pour éviter que NitroPack
-                        // masque le logo pendant sa stratégie de lazy-loading
-                        echo '<img src="' . esc_url( $src ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="ql-brand__logo" loading="eager" fetchpriority="high" data-no-lazy="1">';
-                        $rendered = true;
-                    }
-                }
-
-                if ( ! $rendered ) {
-                    // Fallback 1 : fichier dans le thème
-                    $logo_paths = array( '/assets/images/logo.svg', '/assets/images/logo.png', '/assets/images/logo.webp' );
-                    $found = '';
-                    foreach ( $logo_paths as $p ) {
-                        if ( file_exists( QL_THEME_DIR . $p ) ) { $found = QL_THEME_URI . $p; break; }
-                    }
-                    if ( $found ) {
-                        echo '<img src="' . esc_url( $found ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="ql-brand__logo" width="200" height="60">';
-                    } else {
-                        // Fallback 2 : wordmark texte
-                        echo '<span class="ql-brand__wordmark">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
-                    }
+                // Cascade de résolution du logo (voir ql_resolve_logo_url dans
+                // functions.php) : Customizer → recherche médiathèque par nom
+                // → fichier thème → vide. On ajoute tous les attributs
+                // anti-lazy-load (NitroPack, Jetpack, WP Rocket, etc.) pour
+                // garantir que le logo s'affiche au-dessus de la ligne de flottaison.
+                $logo_url = function_exists( 'ql_resolve_logo_url' ) ? ql_resolve_logo_url() : '';
+                if ( $logo_url ) {
+                    echo '<img src="' . esc_url( $logo_url ) . '"'
+                       . ' alt="' . esc_attr( get_bloginfo( 'name' ) ) . '"'
+                       . ' class="ql-brand__logo no-lazyload"'
+                       . ' loading="eager" fetchpriority="high"'
+                       . ' data-no-lazy="1" data-nitro-stealth-load="1" data-skip-lazy="1">';
+                } else {
+                    echo '<span class="ql-brand__wordmark">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
                 }
                 ?>
             </a>

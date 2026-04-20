@@ -209,12 +209,107 @@
     } catch (e) {}
   }
 
-  // ── Liens externes dans les articles → popup petite taille ──
-  // Convention : tout lien absolu http(s) pointant vers un autre
-  // domaine que quartierlibre.org et situé dans le corps d'un article
-  // s'ouvre dans une fenêtre popup de 680×480px (centrée).
-  // Sur mobile, les navigateurs ignorent les dimensions → ouvre
-  // simplement un nouvel onglet (comportement gracieux).
+  // ── Liens externes dans les articles ──────────────────────────
+  // Desktop       : popup centrée 680×480 (comme avant)
+  // Mobile/tablet : AUCUNE navigation — on affiche une capture d'écran
+  //                 inline (service WordPress mShots, gratuit, sans clé)
+  //                 dans une modal. Le lecteur voit la source
+  //                 référencée sans quitter l'article.
+  //
+  // Raison : lire un long dossier sur téléphone ne doit pas être
+  // interrompu par un saut vers un autre site. La capture suffit pour
+  // constater la source citée.
+  var QL_isTouch  = 'ontouchstart' in window || (navigator.maxTouchPoints || 0) > 0;
+  var QL_isNarrow = window.matchMedia('(max-width: 1024px)').matches;
+  var QL_useShots = QL_isTouch || QL_isNarrow;
+
+  function qlBuildShotUrl(targetUrl, widthPx) {
+    var w = Math.min(1280, Math.max(400, widthPx || 800));
+    return 'https://s.wordpress.com/mshots/v1/' + encodeURIComponent(targetUrl) + '?w=' + w;
+  }
+
+  function qlOpenShotModal(targetUrl) {
+    var existing = document.querySelector('.ql-shot-modal');
+    if (existing) { existing.remove(); }
+
+    var hostLabel = targetUrl;
+    try { hostLabel = new URL(targetUrl).host.replace(/^www\./, ''); } catch (e) {}
+
+    var modal = document.createElement('div');
+    modal.className = 'ql-shot-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Aperçu : ' + hostLabel);
+
+    var shotW   = Math.min(1024, Math.max(400, (window.innerWidth || 800) * 0.9));
+    var shotUrl = qlBuildShotUrl(targetUrl, shotW);
+
+    modal.innerHTML =
+      '<div class="ql-shot-modal__backdrop" data-close></div>' +
+      '<div class="ql-shot-modal__panel">' +
+        '<header class="ql-shot-modal__header">' +
+          '<span class="ql-shot-modal__host">' + hostLabel + '</span>' +
+          '<button type="button" class="ql-shot-modal__close" aria-label="Fermer" data-close>' +
+            '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+          '</button>' +
+        '</header>' +
+        '<div class="ql-shot-modal__body">' +
+          '<div class="ql-shot-modal__loading">' +
+            '<div class="ql-shot-modal__spinner" aria-hidden="true"></div>' +
+            '<p>Génération de la capture…<br><small>5-10 secondes la première fois</small></p>' +
+          '</div>' +
+          '<img class="ql-shot-modal__img" alt="Capture d\'écran de ' + hostLabel + '" hidden>' +
+          '<div class="ql-shot-modal__fallback" hidden>' +
+            '<p>Impossible d\'afficher un aperçu.<br><small>Le site bloque peut-être les captures automatiques.</small></p>' +
+          '</div>' +
+        '</div>' +
+        '<footer class="ql-shot-modal__footer">' +
+          '<small>Source référencée dans l\'article</small>' +
+        '</footer>' +
+      '</div>';
+
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+
+    var img      = modal.querySelector('.ql-shot-modal__img');
+    var loading  = modal.querySelector('.ql-shot-modal__loading');
+    var fallback = modal.querySelector('.ql-shot-modal__fallback');
+    var retries  = 0;
+    var maxRetries = 4;
+
+    function tryLoad() {
+      img.src = shotUrl + '&_r=' + Date.now(); // cache-bust à chaque retry
+    }
+    img.addEventListener('load', function () {
+      // mShots renvoie parfois un placeholder 400×300 pendant génération.
+      // On retry si l'image est vraiment petite.
+      if (img.naturalWidth < 200 && retries < maxRetries) {
+        retries++;
+        setTimeout(tryLoad, 2500);
+        return;
+      }
+      loading.hidden = true;
+      img.hidden     = false;
+    });
+    img.addEventListener('error', function () {
+      if (retries < maxRetries) { retries++; setTimeout(tryLoad, 2500); return; }
+      loading.hidden  = true;
+      fallback.hidden = false;
+    });
+    tryLoad();
+
+    function closeModal() {
+      modal.remove();
+      document.body.style.overflow = '';
+    }
+    modal.querySelectorAll('[data-close]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function escHandler(e) {
+      if (e.key === 'Escape') { closeModal(); document.removeEventListener('keydown', escHandler); }
+    });
+  }
+
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a');
     if (!a) return;
@@ -235,8 +330,15 @@
     // Exclure les boutons de partage sociaux (ils gèrent leur propre ouverture)
     if (a.closest('.ql-post__share, .ql-share, .ql-social')) return;
 
-    // Externe → popup centrée, petite taille
     e.preventDefault();
+
+    // ── Mobile / tablet / touch : capture d'écran inline ──
+    if (QL_useShots) {
+      qlOpenShotModal(href);
+      return;
+    }
+
+    // ── Desktop : popup centrée (comportement historique) ──
     var w = 680, h = 480;
     var left = Math.max(0, (window.screen.availWidth  - w) / 2);
     var top  = Math.max(0, (window.screen.availHeight - h) / 2);
@@ -245,7 +347,6 @@
                    ',resizable=yes,scrollbars=yes,toolbar=no,menubar=no,status=no,location=yes';
     var win = window.open(href, 'ql-external-popup', features);
     if (!win) {
-      // Popup bloquée → fallback nouvel onglet
       window.open(href, '_blank', 'noopener');
     } else {
       try { win.opener = null; } catch (_) {}

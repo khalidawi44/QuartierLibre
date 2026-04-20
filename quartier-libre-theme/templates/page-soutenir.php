@@ -108,7 +108,6 @@ $merci = isset( $_GET['merci'] ) && $_GET['merci'] === '1';
                             <path d="M12 2 2 8.5v7L12 22l10-6.5v-7zm0 2.3 7.7 5L12 14.7 4.3 9.3z"/>
                         </svg>
                         Donner avec HelloAsso
-                        <span class="ql-helloasso-btn__sub">(reçu fiscal automatique)</span>
                     </button>
                     <p id="ql-helloasso-err" class="ql-helloasso-err" hidden></p>
                 </div>

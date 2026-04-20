@@ -1030,7 +1030,26 @@ function ql_markdown_to_html( $md, &$images_count ) {
         return $line;
     };
 
+    // Support des blocs de code fencés ```…``` — sinon wptexturize
+    // transforme les backticks en guillemets français et chaque ligne
+    // devient un paragraphe séparé. On collecte tout le bloc tel quel
+    // et on l'émet comme <pre><code> (aucun inline applied à l'intérieur).
+    $in_code = false; $code_buf = array();
+
     foreach ( explode( "\n", $md ) as $line ) {
+        // Détection fence ```
+        if ( preg_match( '/^```/', $line ) ) {
+            if ( ! $in_code ) {
+                $flush();
+                $in_code = true; $code_buf = array();
+            } else {
+                $out[] = '<pre class="ql-code"><code>' . esc_html( implode( "\n", $code_buf ) ) . '</code></pre>';
+                $in_code = false; $code_buf = array();
+            }
+            continue;
+        }
+        if ( $in_code ) { $code_buf[] = $line; continue; }
+
         if ( trim( $line ) === '' ) { $flush(); continue; }
         if ( preg_match( '/^(#{2,6})\s+(.+)$/', $line, $m ) ) {
             $flush();
@@ -1061,6 +1080,10 @@ function ql_markdown_to_html( $md, &$images_count ) {
         }
         $flush();
         $out[] = '<p>' . $inline( $line ) . '</p>';
+    }
+    // Si on sort du foreach avec un bloc de code pas fermé, on le ferme proprement
+    if ( $in_code && ! empty( $code_buf ) ) {
+        $out[] = '<pre class="ql-code"><code>' . esc_html( implode( "\n", $code_buf ) ) . '</code></pre>';
     }
     $flush();
     return implode( "\n", $out );

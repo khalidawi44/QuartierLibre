@@ -54,12 +54,7 @@ Les cinq mots d'ordre :
 
 **Départ : 10h, Place du Bouffay**. Parcours annoncé :
 
-```
-Place du Bouffay → Rue du Château → Rue de la Marne
- → Place Royale → Cours des Cinquante Otages
- → Place du Commerce → Quai de la Fosse
- → Place Mellinet → Préfecture (dispersion)
-```
+Place du Bouffay → Rue du Château → Rue de la Marne → Place Royale → Cours des Cinquante Otages → Place du Commerce → Quai de la Fosse → Place Mellinet → Préfecture (dispersion).
 
 Durée estimée : 3 à 4 heures. Plusieurs cortèges internes :
 

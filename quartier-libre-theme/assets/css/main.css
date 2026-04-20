@@ -3991,6 +3991,184 @@ body.tag-mairie-ps .ql-archive-header {
 .ql-accent { color: var(--ql-accent); }
 .ql-highlight { background: var(--ql-yellow); padding: 0 .2em; }
 
+/* ── Encart dons homepage (formulaire inline) ───────────────── */
+/* Le template-parts/soutenir.php embarque maintenant directement
+   tiers + PayPal + HelloAsso dans la 3e colonne du grid existant,
+   au lieu de juste un bouton « Faire un don ». Dimensions calées
+   pour ne pas faire exploser la hauteur de l'encart. */
+.ql-soutenir--embed .ql-soutenir__cta.ql-soutenir-embed {
+  display: flex; flex-direction: column; gap: .6rem;
+  min-width: 240px; max-width: 320px;
+  text-align: left;
+}
+@media (max-width: 799px) {
+  .ql-soutenir--embed .ql-soutenir__cta.ql-soutenir-embed {
+    max-width: 100%;
+  }
+}
+
+.ql-soutenir-embed__tiers {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+}
+.ql-soutenir-tier {
+  background: rgba(255,255,255,.15); color: #fff;
+  border: 1.5px solid rgba(255,255,255,.35);
+  padding: .55rem .3rem; border-radius: 3px;
+  font-weight: 700; font-size: .92rem; cursor: pointer;
+  transition: all .15s ease; font-family: inherit;
+}
+.ql-soutenir-tier:hover {
+  background: rgba(255,255,255,.3); border-color: rgba(255,255,255,.6);
+}
+.ql-soutenir-tier.is-active {
+  background: var(--ql-yellow); color: var(--ql-ink);
+  border-color: var(--ql-yellow);
+}
+
+.ql-soutenir-embed__custom {
+  display: flex; align-items: center; gap: .4rem;
+  background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.3);
+  border-radius: 3px; padding: 0 .6rem;
+}
+.ql-soutenir-embed__custom input {
+  flex: 1; background: transparent; border: 0; color: #fff;
+  padding: .5rem 0; font-size: .95rem; outline: none;
+  font-family: inherit;
+}
+.ql-soutenir-embed__custom input::placeholder { color: rgba(255,255,255,.55); }
+.ql-soutenir-embed__custom input:focus { color: #fff; }
+.ql-soutenir-embed__custom span { color: rgba(255,255,255,.7); font-weight: 700; font-size: .95rem; }
+
+.ql-soutenir-embed__paypal {
+  min-height: 42px;
+  /* PayPal SDK injecte son bouton ici */
+}
+.ql-soutenir-embed__paypal iframe { color-scheme: light; }
+
+.ql-soutenir-embed__ha {
+  width: 100%;
+  background: #005f9e !important; color: #fff !important;
+  border: 0 !important; padding: .55rem !important;
+  font-size: .88rem !important;
+  display: inline-flex !important; align-items: center; justify-content: center; gap: .4rem;
+  min-height: 36px;
+}
+.ql-soutenir-embed__ha:hover { background: #00487a !important; }
+.ql-soutenir-embed__ha:disabled { opacity: .6; cursor: wait; }
+
+.ql-soutenir-embed__err {
+  color: #ffd9d4; background: rgba(0,0,0,.25);
+  padding: .35rem .5rem; border-radius: 3px;
+  font-size: .8rem; margin: 0;
+}
+.ql-soutenir-embed__more {
+  color: rgba(255,255,255,.85); font-size: .78rem;
+  text-decoration: underline; text-decoration-color: rgba(255,255,255,.4);
+  text-underline-offset: 2px;
+  margin-top: .15rem;
+}
+.ql-soutenir-embed__more:hover { color: #fff; text-decoration-color: #fff; }
+
+/* ── Modal capture d'écran (mobile/tablet) ──────────────────
+   Remplace le saut vers un site externe : sur touch/narrow,
+   un clic sur un lien externe ouvre une capture d'écran de la
+   source via WordPress mShots au lieu de quitter l'article. */
+.ql-shot-modal {
+  position: fixed; inset: 0; z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 12px;
+  animation: qlShotFadeIn .2s ease-out;
+}
+@keyframes qlShotFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.ql-shot-modal__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.ql-shot-modal__panel {
+  position: relative;
+  background: var(--ql-paper, #fafaf7);
+  border-radius: 10px;
+  max-width: 1024px; width: 100%;
+  max-height: 92vh;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  animation: qlShotSlideUp .25s cubic-bezier(.2,.9,.3,1.1);
+}
+@keyframes qlShotSlideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+.ql-shot-modal__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .8rem 1rem;
+  background: var(--ql-ink, #0f0f0f); color: #fff;
+  flex: 0 0 auto;
+}
+.ql-shot-modal__host {
+  font-family: var(--ql-font-mono, monospace);
+  font-size: .88rem; font-weight: 600;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  max-width: calc(100% - 40px);
+}
+.ql-shot-modal__close {
+  background: transparent; border: 0; color: #fff;
+  cursor: pointer; padding: 4px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 4px;
+  transition: background .15s ease;
+}
+.ql-shot-modal__close:hover { background: rgba(255,255,255,.15); }
+
+.ql-shot-modal__body {
+  flex: 1 1 auto;
+  overflow: auto;
+  min-height: 260px;
+  display: flex; align-items: center; justify-content: center;
+  background: #f1efe8;
+}
+.ql-shot-modal__loading {
+  text-align: center; padding: 2rem 1rem;
+  color: var(--ql-muted, #5a5a5a);
+}
+.ql-shot-modal__loading p { margin: 1rem 0 0; font-size: .92rem; line-height: 1.5; }
+.ql-shot-modal__loading small { opacity: .7; }
+
+.ql-shot-modal__spinner {
+  width: 42px; height: 42px; margin: 0 auto;
+  border: 3px solid rgba(230, 51, 18, 0.2);
+  border-top-color: var(--ql-accent, #e63312);
+  border-radius: 50%;
+  animation: qlShotSpin .8s linear infinite;
+}
+@keyframes qlShotSpin { to { transform: rotate(360deg); } }
+
+.ql-shot-modal__img {
+  width: 100%; height: auto; display: block;
+}
+.ql-shot-modal__fallback {
+  text-align: center; padding: 2rem 1rem;
+  color: var(--ql-muted, #5a5a5a);
+}
+
+.ql-shot-modal__footer {
+  padding: .6rem 1rem;
+  background: #fafaf7;
+  border-top: 1px solid #e8e5db;
+  text-align: center; color: var(--ql-muted, #5a5a5a);
+  flex: 0 0 auto;
+}
+.ql-shot-modal__footer small { font-size: .78rem; }
+
+@media (max-width: 600px) {
+  .ql-shot-modal { padding: 0; }
+  .ql-shot-modal__panel { max-height: 100vh; border-radius: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
