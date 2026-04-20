@@ -1,7 +1,10 @@
 ---
 title: "Bottière-Pin Sec : le NPNRU ou comment détruire un quartier en prétendant le « rénover »"
 slug: "bottiere-pin-sec-npnru-contre-habitants"
-category: "bottiere-pin-sec"
+category:
+  - infos-locale
+  - bottiere-pin-sec
+  - luttes
 tags:
   - quartier-bottiere-pin-sec
   - npnru

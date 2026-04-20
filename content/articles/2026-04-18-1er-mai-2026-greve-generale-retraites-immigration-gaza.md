@@ -1,7 +1,16 @@
 ---
 title: "1er mai 2026 : grève générale — retraites, loi immigration, Gaza : tout lier, tout bloquer"
 slug: "1er-mai-2026-greve-generale-retraites-immigration-gaza"
-category: "mobilisations"
+category:
+  - infos-locale
+  - france
+  - international
+  - politique
+  - genocide
+  - luttes
+  - mobilisations
+  - solidarite
+  - repression
 tags:
   - greve
   - 1er-mai

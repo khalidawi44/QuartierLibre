@@ -1,7 +1,11 @@
 ---
 title: "Soudan : la guerre que l'Occident préfère ignorer — famine, génocide, silence"
 slug: "soudan-la-guerre-oubliee-famine-genocide"
-category: "guerre"
+category:
+  - international
+  - guerre
+  - genocide
+  - famine
 tags:
   - soudan
   - darfour

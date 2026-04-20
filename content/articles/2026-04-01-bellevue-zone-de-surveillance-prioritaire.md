@@ -1,7 +1,11 @@
 ---
 title: "Bellevue : zone de surveillance prioritaire — la police omniprésente, les services publics absents"
 slug: "bellevue-zone-de-surveillance-prioritaire"
-category: "bellevue"
+category:
+  - infos-locale
+  - bellevue
+  - luttes
+  - repression
 tags:
   - quartier-bellevue
   - police

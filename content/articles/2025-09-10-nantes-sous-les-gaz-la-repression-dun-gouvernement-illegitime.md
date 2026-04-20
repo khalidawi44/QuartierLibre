@@ -1,7 +1,13 @@
 ---
 title: "Nantes sous les gaz : la répression d’un gouvernement illégitime"
 slug: "nantes-sous-les-gaz-la-repression-dun-gouvernement-illegitime"
-category: "repression"
+category:
+  - infos-locale
+  - france
+  - politique
+  - luttes
+  - repression
+  - mobilisations
 tags:
   - 10septembre
   - lecornu

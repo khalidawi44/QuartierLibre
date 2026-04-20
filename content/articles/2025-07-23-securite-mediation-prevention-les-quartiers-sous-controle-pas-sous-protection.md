@@ -1,7 +1,14 @@
 ---
 title: "“Sécurité”, “médiation”, “prévention” : les quartiers sous contrôle, pas sous protection"
 slug: "securite-mediation-prevention-les-quartiers-sous-controle-pas-sous-protection"
-category: "repression"
+category:
+  - infos-locale
+  - bellevue
+  - malakoff
+  - clos-toreau
+  - breil
+  - luttes
+  - repression
 tags:
   - bassem-asseh
   - camera-videosurveillance

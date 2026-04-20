@@ -1,7 +1,11 @@
 ---
 title: "Louis-Macron XVI et son moine-soldat : le retour de la monarchie par ordonnance"
 slug: "louis-macron-xvi-et-son-moine-soldat-le-retour-de-la-monarchie-par-ordonnance"
-category: "politique"
+category:
+  - france
+  - politique
+  - luttes
+  - repression
 tags:
   - gouvernement
   - lecornu

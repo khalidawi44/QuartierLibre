@@ -1,7 +1,11 @@
 ---
 title: "Pourquoi obéit-on encore ? De La Boétie à nos quartiers aujourd’hui , étude croisé !"
 slug: "pourquoi-obeit-on-encore-de-la-boetie-a-nos-quartiers-aujourdhui"
-category: "histoire"
+category:
+  - histoire
+  - luttes
+  - infos-locale
+  - clos-toreau
 tags:
   - histoire
 excerpt: "Constat mondial : un même schéma de domination Du Clos Toreau à Nantes jusqu’aux favelas de Rio, en passant par les cités de Nanterre ou les townships de…"

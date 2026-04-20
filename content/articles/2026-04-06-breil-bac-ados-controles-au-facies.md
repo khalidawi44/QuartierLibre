@@ -1,7 +1,11 @@
 ---
 title: "Breil : la BAC chasse les ados, le quartier paye l'addition"
 slug: "breil-bac-ados-controles-au-facies"
-category: "breil"
+category:
+  - infos-locale
+  - breil
+  - luttes
+  - repression
 tags:
   - quartier-breil
   - bac

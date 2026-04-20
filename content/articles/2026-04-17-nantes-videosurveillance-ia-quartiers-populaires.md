@@ -2,11 +2,22 @@
 title: "Nantes : la mairie PS vote 150 caméras « IA » dans les quartiers — le panoptique arrive"
 slug: "nantes-videosurveillance-ia-quartiers-populaires"
 category:
+  - infos-locale
   - bellevue
   - malakoff
   - bottiere-pin-sec
   - breil
   - clos-toreau
+  - dervallieres
+  - bout-des-landes
+  - halveque
+  - port-boyer
+  - ranzay
+  - pilotiere
+  - france
+  - politique
+  - luttes
+  - repression
 tags:
   - videosurveillance
   - ia

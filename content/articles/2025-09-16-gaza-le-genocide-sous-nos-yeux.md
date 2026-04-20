@@ -1,7 +1,10 @@
 ---
 title: "🇵🇸 Gaza : le génocide sous nos yeux"
 slug: "gaza-le-genocide-sous-nos-yeux"
-category: "genocide"
+category:
+  - international
+  - genocide
+  - guerre
 tags:
   - gaza
   - israel

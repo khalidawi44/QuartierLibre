@@ -1,7 +1,11 @@
 ---
 title: "Pilotière : quand les habitants s'organisent là où l'État recule"
 slug: "pilotiere-auto-organisation-contre-abandon"
-category: "pilotiere"
+category:
+  - infos-locale
+  - pilotiere
+  - luttes
+  - solidarite
 tags:
   - quartier-pilotiere
   - auto-organisation

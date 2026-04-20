@@ -1,7 +1,14 @@
 ---
 title: "Loi Asile-Immigration 2026 : le délit de solidarité est de retour"
 slug: "loi-asile-immigration-2026-delit-de-solidarite"
-category: "politique"
+category:
+  - france
+  - politique
+  - societe
+  - luttes
+  - repression
+  - solidarite
+  - mobilisations
 tags:
   - immigration
   - asile
