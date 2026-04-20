@@ -21,7 +21,7 @@ tags:
 excerpt: "Samedi 26 avril 15h, Place Royale à Nantes : concentration de solidarité avec les populations civiles du Darfour, en particulier El-Fasher assiégée et les rescapés de Zamzam. Appel international."
 event_date: "2026-04-26"
 status: "publish"
-date: "2026-04-20 22:05:00"
+date: "2026-04-20 09:05:00"
 author: "rachida-ben-arfa"
 ---
 

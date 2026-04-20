@@ -19,7 +19,7 @@ tags:
 excerpt: "Appel national : mercredi 30 avril 18h, rassemblements devant toutes les préfectures contre la loi immigration et le délit de solidarité. À Nantes, Place Marc Elder."
 event_date: "2026-04-30"
 status: "publish"
-date: "2026-04-20 22:00:00"
+date: "2026-04-20 09:00:00"
 author: "julien-moreau"
 ---
 
