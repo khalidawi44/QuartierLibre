@@ -902,6 +902,22 @@ function ql_root_category( $cat ) {
     return $cat;
 }
 
+/**
+ * SVG d'icône de réseau social (inline, couleur currentColor).
+ * Source des paths : Feather Icons + simplicite icons — licence MIT.
+ */
+function ql_social_icon_svg( $key ) {
+    $icons = array(
+        'mastodon'  => '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M21.58 13.91c-.29 1.49-2.6 3.12-5.25 3.44-1.38.16-2.74.32-4.19.25-2.37-.11-4.24-.57-4.24-.57 0 .23.02.45.04.66.31 2.33 2.31 2.47 4.2 2.53 1.91.07 3.61-.47 3.61-.47l.08 1.73s-1.33.72-3.71.85c-1.31.07-2.94-.03-4.83-.53-4.1-1.08-4.81-5.47-4.92-9.92-.03-1.32-.01-2.57-.01-3.61 0-4.55 2.98-5.88 2.98-5.88 1.5-.69 4.08-.98 6.76-1h.07c2.68.02 5.26.31 6.77 1 0 0 2.98 1.33 2.98 5.88 0 0 .04 3.35-.42 5.67m-3.1-5.08v5.53h-2.19V8.99c0-1.14-.48-1.72-1.44-1.72-1.06 0-1.59.69-1.59 2.04v2.96h-2.18V9.31c0-1.35-.53-2.04-1.59-2.04-.96 0-1.44.58-1.44 1.72v5.37H5.86V8.83c0-1.14.29-2.04.87-2.71.6-.67 1.39-1.01 2.37-1.01 1.13 0 1.99.44 2.55 1.31L12.2 7l.55-.58c.56-.87 1.42-1.31 2.55-1.31.98 0 1.77.34 2.37 1.01.58.67.87 1.57.87 2.71"/></svg>',
+        'twitter'   => '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
+        'instagram' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
+        'facebook'  => '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>',
+        'telegram'  => '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M21.58 3.18 2.51 10.54c-1.3.52-1.3 1.27-.24 1.59l4.89 1.53 11.32-7.14c.54-.33 1.03-.15.62.21l-9.17 8.28h-.02l.02.01-.34 5.04c.5 0 .72-.23 1-.5l2.4-2.33 4.98 3.68c.92.5 1.58.25 1.81-.85l3.28-15.47c.34-1.35-.51-1.96-1.48-1.41z"/></svg>',
+        'rss'       => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>',
+    );
+    return isset( $icons[ $key ] ) ? $icons[ $key ] : '';
+}
+
 // ── 12. Traitement du formulaire Bureau des Plaintes ───────────
 add_action( 'admin_post_nopriv_ql_plainte', 'ql_handle_plainte' );
 add_action( 'admin_post_ql_plainte',        'ql_handle_plainte' );

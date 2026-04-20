@@ -1,65 +1,74 @@
 <?php
 /**
- * Front page — prioritaire sur page.php quand une page statique est
- * définie comme accueil. Affiche toujours la une du média.
+ * Front page — layout 70/30 avec sidebar droite.
+ *
+ * Structure :
+ *   [ Hero carousel (pleine largeur) ]
+ *   ┌──────────────────────────┬─────────────┐
+ *   │ 70% : rubriques + cards   │ 30% sidebar │
+ *   │   - Infos locale          │  1 recherche│
+ *   │   - France                │  2 rubriques│
+ *   │   - International         │  3 cagnotte │
+ *   │   - Luttes                │  4 rendez-v.│
+ *   │   - Rendez-vous           │  5 socials  │
+ *   │   - Dossiers              │             │
+ *   └──────────────────────────┴─────────────┘
+ *
+ * Sur mobile/<900px : la sidebar passe sous le contenu (stack vertical).
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 get_header();
 
-// Compte d'articles globaux, pour décider quoi afficher
 $has_any = (int) wp_count_posts()->publish > 0;
-
 ?>
 
 <div class="ql-container">
 
     <?php if ( $has_any ) : ?>
 
+        <?php // Hero carousel reste pleine largeur au-dessus du split 70/30 ?>
         <?php get_template_part( 'template-parts/hero-carousel' ); ?>
 
-        <?php
-        // Ordre fixe des sections après « À la une » :
-        //   1. Infos locale (Nantes)
-        //   2. France (politique nationale)
-        //   3. International (Gaza, Soudan, résistances)
-        //   4. Luttes (répression, solidarité)
-        //   5. Rendez-vous (manifs, mobilisations à venir)
-        // Les autres rubriques (Histoire) restent accessibles via le menu.
-        $sections = array(
-            array( 'slug' => 'infos-locale',  'label' => 'Infos locale' ),
-            array( 'slug' => 'france',        'label' => 'France' ),
-            array( 'slug' => 'international', 'label' => 'International' ),
-            array( 'slug' => 'luttes',        'label' => 'Luttes' ),
-        );
-        foreach ( $sections as $s ) {
-            get_template_part( 'template-parts/section-category', null, array(
-                'slug'  => $s['slug'],
-                'label' => $s['label'],
-                'count' => 3,
-            ) );
-        }
+        <div class="ql-home-layout">
 
-        // Agenda : rendez-vous militants à venir (sous-catégorie mobilisations)
-        get_template_part( 'template-parts/section-category', null, array(
-            'slug'  => 'mobilisations',
-            'label' => 'Rendez-vous — manifs & mobilisations',
-            'count' => 3,
-        ) );
+            <!-- COLONNE PRINCIPALE (70%) : les rubriques -->
+            <main class="ql-home-main">
+                <?php
+                $sections = array(
+                    array( 'slug' => 'infos-locale',  'label' => 'Infos locale' ),
+                    array( 'slug' => 'france',        'label' => 'France' ),
+                    array( 'slug' => 'international', 'label' => 'International' ),
+                    array( 'slug' => 'luttes',        'label' => 'Luttes' ),
+                );
+                foreach ( $sections as $s ) {
+                    get_template_part( 'template-parts/section-category', null, array(
+                        'slug'  => $s['slug'],
+                        'label' => $s['label'],
+                        'count' => 3,
+                    ) );
+                }
 
-        // Dossiers (après les sections d'actualité)
-        get_template_part( 'template-parts/dossiers' );
+                // Rendez-vous militants (sous-catégorie mobilisations)
+                get_template_part( 'template-parts/section-category', null, array(
+                    'slug'  => 'mobilisations',
+                    'label' => 'Rendez-vous — manifs & mobilisations',
+                    'count' => 3,
+                ) );
 
-        // Appel aux dons
-        get_template_part( 'template-parts/soutenir' );
-        ?>
+                // Dossiers
+                get_template_part( 'template-parts/dossiers' );
+                ?>
+            </main>
 
-        <?php // Bloc 'Tous les articles' retiré de la homepage.
-              // Accès via l'item menu 'Tous les articles' → page /tous-les-articles/ ?>
+            <!-- COLONNE LATÉRALE (30%) : widgets dans l'ordre demandé -->
+            <?php get_template_part( 'template-parts/sidebar-home' ); ?>
+
+        </div><!-- /.ql-home-layout -->
 
     <?php else : ?>
 
-        <?php // Site vide : carton d'accueil temporaire ?>
+        <?php // Site vide : carton d'accueil temporaire (inchangé) ?>
         <section class="ql-hero" style="grid-template-columns:1fr;">
             <article class="ql-hero__main" style="min-height:380px;">
                 <div class="ql-hero__main-body" style="max-width:720px;">
@@ -76,45 +85,6 @@ $has_any = (int) wp_count_posts()->publish > 0;
                     </p>
                 </div>
             </article>
-        </section>
-
-        <section class="ql-section" aria-label="Commencer">
-            <header class="ql-section__head">
-                <h2 class="ql-section__title">Démarrer la rédaction</h2>
-            </header>
-            <div class="ql-grid ql-grid--3">
-                <article class="ql-card">
-                    <div class="ql-card__body">
-                        <h3 class="ql-card__title">1. Créer vos catégories</h3>
-                        <p class="ql-card__excerpt">
-                            Assurez-vous que les rubriques <em>local</em>, <em>france</em>,
-                            <em>luttes</em> et <em>international</em> existent (slugs exacts).
-                            Elles apparaîtront automatiquement en home.
-                        </p>
-                        <p><a href="<?php echo esc_url( admin_url( 'edit-tags.php?taxonomy=category' ) ); ?>">Gérer les catégories →</a></p>
-                    </div>
-                </article>
-                <article class="ql-card">
-                    <div class="ql-card__body">
-                        <h3 class="ql-card__title">2. Publier vos articles</h3>
-                        <p class="ql-card__excerpt">
-                            Chaque article doit être rangé dans une catégorie et avoir une <strong>image à la une</strong>
-                            pour s'afficher correctement en hero et en cartes.
-                        </p>
-                        <p><a href="<?php echo esc_url( admin_url( 'post-new.php' ) ); ?>">Nouvel article →</a></p>
-                    </div>
-                </article>
-                <article class="ql-card">
-                    <div class="ql-card__body">
-                        <h3 class="ql-card__title">3. Configurer le menu</h3>
-                        <p class="ql-card__excerpt">
-                            Dans <em>Apparence → Menus</em>, créez un menu avec vos rubriques et
-                            assignez-le à l'emplacement « Menu principal ».
-                        </p>
-                        <p><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">Éditer les menus →</a></p>
-                    </div>
-                </article>
-            </div>
         </section>
 
     <?php endif; ?>
