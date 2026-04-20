@@ -159,11 +159,10 @@ $socials = array(
 </aside>
 
 <?php if ( $paypal_client_id ) : ?>
-<script src="https://www.paypal.com/sdk/js?client-id=<?php echo esc_attr( $paypal_client_id ); ?>&currency=EUR&intent=capture&disable-funding=credit,card" data-no-lazy="1"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=<?php echo esc_attr( $paypal_client_id ); ?>&currency=EUR&intent=capture&disable-funding=credit,card" data-no-lazy="1" data-cfasync="false"></script>
 <?php endif; ?>
 <script>
 (function(){
-  if (!window.paypal) return;
   var DEFAULT = 15, selected = DEFAULT;
   var widget = document.querySelector('.ql-widget--cagnotte');
   if (!widget) return;
@@ -188,24 +187,35 @@ $socials = array(
     if (this.value) setActive(this.value, true);
   });
 
-  if (document.getElementById('ql-cagnotte-paypal')) {
-    paypal.Buttons({
-      style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'donate', height: 38 },
-      createOrder: function(data, actions){
-        return actions.order.create({
-          purchase_units: [{
-            amount: { value: selected.toFixed(2), currency_code: 'EUR' },
-            description: 'Don Quartier Libre — média indépendant'
-          }]
-        });
-      },
-      onApprove: function(data, actions){
-        return actions.order.capture().then(function(){
-          window.location.href = '<?php echo esc_url( $soutenir_url ); ?>?merci=1';
-        });
-      }
-    }).render('#ql-cagnotte-paypal');
+  // PayPal SDK peut ne pas être prêt au moment où ce script s'exécute
+  // (NitroPack/async defer, réseau lent…). On attend jusqu'à 10s.
+  var paypalTarget = document.getElementById('ql-cagnotte-paypal');
+  var attempts = 0, maxAttempts = 100; // 100 × 100ms = 10s
+  function tryRenderPaypal() {
+    if (!paypalTarget) return;
+    if (window.paypal && window.paypal.Buttons) {
+      paypal.Buttons({
+        style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'donate', height: 38 },
+        createOrder: function(data, actions){
+          return actions.order.create({
+            purchase_units: [{
+              amount: { value: selected.toFixed(2), currency_code: 'EUR' },
+              description: 'Don Quartier Libre — média indépendant'
+            }]
+          });
+        },
+        onApprove: function(data, actions){
+          return actions.order.capture().then(function(){
+            window.location.href = '<?php echo esc_url( $soutenir_url ); ?>?merci=1';
+          });
+        }
+      }).render('#ql-cagnotte-paypal');
+      return;
+    }
+    if (attempts++ < maxAttempts) setTimeout(tryRenderPaypal, 100);
+    else paypalTarget.innerHTML = '<a href="<?php echo esc_url( $soutenir_url ); ?>" class="ql-cagnotte-fallback">Faire un don →</a>';
   }
+  tryRenderPaypal();
 
   <?php if ( $has_helloasso ) : ?>
   var haBtn = document.getElementById('ql-cagnotte-ha');

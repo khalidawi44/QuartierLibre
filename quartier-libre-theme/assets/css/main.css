@@ -4284,68 +4284,59 @@ body.tag-mairie-ps .ql-archive-header {
   background: var(--ql-accent);
 }
 
-/* ── Widget 3 : Cagnotte ──────────────────────────────────── */
-.ql-widget--cagnotte {
-  background: var(--ql-accent);
-  border-color: var(--ql-accent);
-  color: #fff;
-  position: relative; overflow: hidden;
-}
-.ql-widget--cagnotte::before {
-  content: ""; position: absolute; inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.1) 0, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(0,0,0,.12) 0, transparent 40%);
-  pointer-events: none;
-}
-.ql-widget--cagnotte > * { position: relative; z-index: 1; }
-.ql-widget--cagnotte .ql-widget__title {
-  color: #fff;
-  border-bottom-color: var(--ql-yellow);
-}
+/* ── Widget 3 : Cagnotte (même style que les autres widgets) ── */
 .ql-widget-cagnotte__blurb {
   font-size: .88rem; line-height: 1.5;
   margin: 0 0 .9rem;
-  opacity: .95;
+  color: #3a3a3a;
 }
-.ql-widget-cagnotte__blurb strong { color: var(--ql-yellow); }
+.ql-widget-cagnotte__blurb strong { color: var(--ql-accent); }
 
 .ql-widget-cagnotte__tiers {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
-  margin-bottom: .6rem;
+  margin-bottom: .55rem;
 }
 .ql-cagnotte-tier {
-  background: rgba(255,255,255,.15); color: #fff;
-  border: 1.5px solid rgba(255,255,255,.35);
+  background: #f1efe8; color: var(--ql-ink);
+  border: 1.5px solid #d5d0c4;
   padding: .45rem .2rem; border-radius: 3px;
   font-weight: 700; font-size: .85rem; cursor: pointer;
   transition: all .15s ease; font-family: inherit;
 }
 .ql-cagnotte-tier:hover {
-  background: rgba(255,255,255,.3); border-color: rgba(255,255,255,.6);
+  background: #e8e5db; border-color: var(--ql-ink);
 }
 .ql-cagnotte-tier.is-active {
-  background: var(--ql-yellow); color: var(--ql-ink);
-  border-color: var(--ql-yellow);
+  background: var(--ql-accent); color: #fff;
+  border-color: var(--ql-accent);
 }
 
 .ql-widget-cagnotte__custom {
   display: flex; align-items: center; gap: .3rem;
-  background: rgba(255,255,255,.1);
-  border: 1.5px solid rgba(255,255,255,.3);
+  background: #fafaf7;
+  border: 1.5px solid #d5d0c4;
   border-radius: 3px; padding: 0 .55rem;
-  margin-bottom: .6rem;
+  margin-bottom: .55rem;
 }
 .ql-widget-cagnotte__custom input {
   flex: 1; background: transparent; border: 0;
-  color: #fff; padding: .45rem 0;
+  color: var(--ql-ink); padding: .45rem 0;
   font-size: .88rem; outline: none; font-family: inherit;
   min-width: 0;
 }
-.ql-widget-cagnotte__custom input::placeholder { color: rgba(255,255,255,.55); }
-.ql-widget-cagnotte__custom span { color: rgba(255,255,255,.7); font-weight: 700; font-size: .88rem; }
+.ql-widget-cagnotte__custom input::placeholder { color: #8a8578; }
+.ql-widget-cagnotte__custom span { color: #5a5a5a; font-weight: 700; font-size: .88rem; }
 
 .ql-widget-cagnotte__paypal { min-height: 40px; }
+.ql-cagnotte-fallback {
+  display: block; text-align: center;
+  background: #ffc439; color: var(--ql-ink);
+  padding: .55rem; border-radius: 3px;
+  font-weight: 700; font-size: .88rem; text-decoration: none;
+  transition: background .15s ease;
+}
+.ql-cagnotte-fallback:hover { background: #f0b429; }
+
 .ql-widget-cagnotte__ha {
   width: 100%; margin-top: .5rem;
   background: #005f9e; color: #fff;
@@ -4357,18 +4348,11 @@ body.tag-mairie-ps .ql-archive-header {
 .ql-widget-cagnotte__ha:hover { background: #00487a; }
 .ql-widget-cagnotte__ha:disabled { opacity: .6; cursor: wait; }
 .ql-widget-cagnotte__err {
-  color: #ffe4df; background: rgba(0,0,0,.25);
+  color: #7a2010; background: #fff1ef;
   padding: .3rem .45rem; border-radius: 3px;
   font-size: .75rem; margin: .5rem 0 0;
+  border-left: 3px solid var(--ql-accent);
 }
-.ql-widget--cagnotte .ql-widget__more {
-  text-align: center; margin-top: .75rem;
-}
-.ql-widget--cagnotte .ql-widget__more a {
-  color: rgba(255,255,255,.9);
-  text-decoration: underline; text-decoration-color: rgba(255,255,255,.4);
-}
-.ql-widget--cagnotte .ql-widget__more a:hover { color: #fff; text-decoration-color: #fff; }
 
 /* ── Widget 4 : Rendez-vous ───────────────────────────────── */
 .ql-widget-rdv {
