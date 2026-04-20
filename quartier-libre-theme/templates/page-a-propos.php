@@ -161,25 +161,25 @@ $paypal_client_id = get_option( 'ql_paypal_client_id', '' );
                     <div class="ql-redac-list">
                         <h3>Quartiers populaires</h3>
                         <ul>
-                            <li><strong>Aïssata Diallo</strong> — Bellevue</li>
-                            <li><strong>Younes Boukhris</strong> — Malakoff</li>
-                            <li><strong>Karima Benali</strong> — Dervallières</li>
-                            <li><strong>Soraya Messaoudi</strong> — Clos Toreau</li>
-                            <li><strong>Mehdi Haddad</strong> — Bottière&ndash;Pin Sec</li>
-                            <li><strong>Fatou Traoré</strong> — Breil</li>
-                            <li><strong>Samir Touré</strong> — Bout des Landes</li>
-                            <li><strong>Léa Marchand</strong> — Port Boyer</li>
-                            <li><strong>Naïma Ouédraogo</strong> — Halvêque</li>
-                            <li><strong>Amadou Koné</strong> — Ranzay</li>
-                            <li><strong>Sofia Bensalem</strong> — Pilotière</li>
+                            <li><strong>Aïssata</strong> — Bellevue</li>
+                            <li><strong>Younes</strong> — Malakoff</li>
+                            <li><strong>Karima</strong> — Dervallières</li>
+                            <li><strong>Soraya</strong> — Clos Toreau</li>
+                            <li><strong>Mehdi</strong> — Bottière&ndash;Pin Sec</li>
+                            <li><strong>Fatou</strong> — Breil</li>
+                            <li><strong>Samir</strong> — Bout des Landes</li>
+                            <li><strong>Léa</strong> — Port Boyer</li>
+                            <li><strong>Naïma</strong> — Halvêque</li>
+                            <li><strong>Amadou</strong> — Ranzay</li>
+                            <li><strong>Sofia</strong> — Pilotière</li>
                         </ul>
                     </div>
 
                     <div class="ql-redac-list ql-redac-list--correspondents">
                         <h3>Correspondant·es</h3>
                         <ul>
-                            <li><strong>Rachida Ben Arfa</strong> — International<br><small>Gaza, Soudan, Palestine, résistances globales</small></li>
-                            <li><strong>Julien Moreau</strong> — National<br><small>Politique française, luttes sociales</small></li>
+                            <li><strong>Rachida</strong> — International<br><small>Gaza, Soudan, Palestine, résistances globales</small></li>
+                            <li><strong>Julien</strong> — National<br><small>Politique française, luttes sociales</small></li>
                         </ul>
                     </div>
 
