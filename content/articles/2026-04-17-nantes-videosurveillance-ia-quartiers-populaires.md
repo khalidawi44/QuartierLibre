@@ -9,6 +9,7 @@ category:
   - politique
   - luttes
   - repression
+primary_category: repression
 tags:
   - videosurveillance
   - ia

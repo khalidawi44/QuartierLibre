@@ -6,6 +6,7 @@ category:
   - port-boyer
   - luttes
   - logement
+primary_category: logement
 tags:
   - quartier-port-boyer
   - logement

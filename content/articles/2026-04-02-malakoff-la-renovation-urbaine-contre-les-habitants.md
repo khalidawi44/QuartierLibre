@@ -6,6 +6,7 @@ category:
   - malakoff
   - luttes
   - logement
+primary_category: logement
 tags:
   - quartier-malakoff
   - renovation-urbaine

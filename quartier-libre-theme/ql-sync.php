@@ -828,6 +828,16 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
         wp_set_post_tags( $post_id, $front['tags'], false );
     }
 
+    // Catégorie principale explicite (pour choisir le badge) — frontmatter
+    // `primary_category: slug`. Override la logique auto de ql_primary_category()
+    // pour les articles où on veut forcer l'affichage d'une catégorie précise.
+    if ( ! empty( $front['primary_category'] ) ) {
+        $primary_slug = sanitize_title( (string) $front['primary_category'] );
+        update_post_meta( $post_id, '_ql_primary_category', $primary_slug );
+    } else {
+        delete_post_meta( $post_id, '_ql_primary_category' );
+    }
+
     // Date d'événement (rendez-vous militants) — frontmatter `event_date: "YYYY-MM-DD"`.
     // Stockée en post meta `_ql_event_date` pour le widget sidebar Rendez-vous :
     // seuls les articles avec une date future apparaissent dans la liste.

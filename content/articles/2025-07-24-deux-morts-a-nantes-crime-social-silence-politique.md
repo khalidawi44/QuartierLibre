@@ -8,6 +8,7 @@ category:
   - luttes
   - solidarite
   - logement
+primary_category: logement
 tags:
   - johanna-rolland
   - logement

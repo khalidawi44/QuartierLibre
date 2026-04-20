@@ -665,7 +665,7 @@ p  { margin: 0 0 1em; }
 /* ── 9. Cards article ───────────────────────────────────────── */
 .ql-card { display: flex; flex-direction: column; gap: .6rem; }
 .ql-card__media {
-  position: relative; display: block; aspect-ratio: 16 / 10;
+  position: relative; display: block; aspect-ratio: 3 / 2;
   background: var(--ql-paper-2);
   overflow: hidden; border-radius: var(--ql-radius);
 }
@@ -1771,7 +1771,7 @@ body:not(.ql-single) .ql-reading-progress { display: none; }
   border-bottom: 1px solid var(--ql-line);
 }
 @media (min-width: 800px) { .ql-cat-featured { grid-template-columns: 1.35fr 1fr; align-items: center; } }
-.ql-cat-featured__media { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--ql-radius-lg); background: var(--ql-paper-2); }
+.ql-cat-featured__media { display: block; aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--ql-radius-lg); background: var(--ql-paper-2); }
 .ql-cat-featured__media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--ql-t); }
 .ql-cat-featured__media:hover img { transform: scale(1.03); }
 .ql-cat-featured__body h2 { font-size: clamp(1.6rem, 3vw, 2.35rem); margin: .75rem 0 .75rem; }

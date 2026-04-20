@@ -7,6 +7,7 @@ category:
   - resistance
   - solidarite
   - histoire
+primary_category: resistance
 tags:
   - gaza
   - mandela

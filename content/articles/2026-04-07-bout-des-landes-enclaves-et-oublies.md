@@ -5,6 +5,7 @@ category:
   - infos-locale
   - bout-des-landes
   - transports
+primary_category: transports
 tags:
   - quartier-bout-des-landes
   - transports

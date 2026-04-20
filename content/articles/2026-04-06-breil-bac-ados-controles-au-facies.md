@@ -6,6 +6,7 @@ category:
   - breil
   - luttes
   - repression
+primary_category: repression
 tags:
   - quartier-breil
   - bac

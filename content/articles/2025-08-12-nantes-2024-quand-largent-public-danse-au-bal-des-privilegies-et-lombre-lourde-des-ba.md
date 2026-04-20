@@ -5,6 +5,7 @@ category:
   - infos-locale
   - economie
   - politique
+primary_category: politique
 excerpt: "Ne vous méprenez pas : on nous ressert des beaux discours écolos, des spots bien léchés, des hashtags « Nantes s’engage ». Mais ouvrez grand les yeux :…"
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/08/bal_des_privilegie.webp"
 status: "publish"

@@ -6,6 +6,7 @@ category:
   - genocide
   - famine
   - guerre
+primary_category: famine
 tags:
   - gaza
   - israel

@@ -945,16 +945,59 @@ function ql_logo( $args = array() ) {
     return $img;
 }
 
+/**
+ * Choisit LA catégorie à afficher comme badge principal d'un article.
+ *
+ * Cascade de priorité :
+ *   1. Override explicite dans le frontmatter via `primary_category: slug`
+ *      (stocké en post_meta _ql_primary_category).
+ *   2. Si l'article touche PLUSIEURS quartiers (≥ 2 sous-cats d'infos-locale)
+ *      → c'est un article TRANSVERSAL. On prend la première sous-cat
+ *      transversale (luttes/france/international) pour refléter le vrai
+ *      sujet, pas un quartier arbitraire.
+ *   3. Sinon (0 ou 1 quartier) : première sous-cat trouvée = quartier
+ *      unique si présent, sinon thème transversal.
+ *   4. Fallback : première catégorie top-level.
+ */
 function ql_primary_category( $post_id = null ) {
     $post_id = $post_id ?: get_the_ID();
     $cats    = get_the_category( $post_id );
     if ( empty( $cats ) ) { return null; }
-    // On privilégie les sous-catégories (parent > 0 = plus spécifiques).
-    // Ex : un article dans « bellevue » (enfant d'« infos-locale »)
-    // affiche « Bellevue » comme badge, pas « Info locale ».
-    foreach ( $cats as $c ) {
-        if ( (int) $c->parent > 0 ) return $c;
+
+    // 1. Override manuel ?
+    $override_slug = get_post_meta( $post_id, '_ql_primary_category', true );
+    if ( $override_slug ) {
+        foreach ( $cats as $c ) {
+            if ( $c->slug === $override_slug ) return $c;
+        }
     }
+
+    // Trouver les IDs des parents "quartier" (infos-locale) et "transversal"
+    $infos_locale = get_term_by( 'slug', 'infos-locale', 'category' );
+    $infos_id     = $infos_locale ? (int) $infos_locale->term_id : 0;
+
+    // Sépare sous-cats quartiers vs sous-cats transversales
+    $quartier_cats    = array();
+    $transversal_cats = array();
+    foreach ( $cats as $c ) {
+        if ( (int) $c->parent === 0 ) continue; // top-level, on ignore ici
+        if ( $infos_id && (int) $c->parent === $infos_id ) {
+            $quartier_cats[] = $c;
+        } else {
+            $transversal_cats[] = $c;
+        }
+    }
+
+    // 2. Multi-quartier → prend le transversal
+    if ( count( $quartier_cats ) >= 2 && ! empty( $transversal_cats ) ) {
+        return $transversal_cats[0];
+    }
+
+    // 3. Sinon : priorité à la première sous-cat (quartier unique ou transversal)
+    if ( ! empty( $quartier_cats ) )    return $quartier_cats[0];
+    if ( ! empty( $transversal_cats ) ) return $transversal_cats[0];
+
+    // 4. Fallback : première top-level
     return $cats[0];
 }
 

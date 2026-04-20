@@ -7,6 +7,7 @@ category:
   - politique
   - luttes
   - mobilisations
+primary_category: mobilisations
 tags:
   - greve
   - 1er-mai

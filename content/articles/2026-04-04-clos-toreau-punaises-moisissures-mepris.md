@@ -6,6 +6,7 @@ category:
   - clos-toreau
   - luttes
   - logement
+primary_category: logement
 tags:
   - quartier-clos-toreau
   - insalubrite-publique

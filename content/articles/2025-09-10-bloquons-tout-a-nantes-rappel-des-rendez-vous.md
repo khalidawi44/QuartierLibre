@@ -6,6 +6,7 @@ category:
   - autres-villes
   - luttes
   - mobilisations
+primary_category: mobilisations
 tags:
   - 10septembre
   - blocage
