@@ -140,11 +140,18 @@ p  { margin: 0 0 1em; }
 .ql-header__bar { padding: .9rem 0; }
 .ql-header__inner {
   display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  /* Padding asymétrique : le logo se colle à gauche (petite marge),
+     le menu/recherche garde sa marge droite normale. */
+  padding-left: .75rem !important;
+}
+@media (min-width: 900px) {
+  .ql-header__inner { padding-left: 1rem !important; }
 }
 
 .ql-brand {
   display: inline-flex; align-items: center; gap: .75rem;
   text-decoration: none; flex: 0 0 auto;
+  margin-left: 0;
 }
 .ql-brand__logo { max-height: 72px; width: auto; display: block; }
 .ql-brand img { max-height: 72px; width: auto; display: block; }
