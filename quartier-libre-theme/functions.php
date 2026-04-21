@@ -1213,10 +1213,120 @@ function ql_social_login_buttons( $redirect_to = '' ) {
 }
 
 /**
+ * Extrait le "needle" (texte à chercher dans l'article) depuis un item 👤.
+ * Priorité :
+ *   1. Texte entre guillemets français « … »
+ *   2. Texte entre guillemets simples "…"
+ *   3. Fallback : tout avant "— Action" ou "— **Action**"
+ */
+function ql_extract_tocheck_needle( $item_html ) {
+    $text = wp_strip_all_tags( $item_html );
+    $text = html_entity_decode( $text, ENT_QUOTES, 'UTF-8' );
+
+    // 1. Guillemets français « »
+    if ( preg_match( '/«\s*([^»]{10,})\s*»/u', $text, $m ) ) {
+        return trim( $m[1] );
+    }
+    // 2. Guillemets courbes " "
+    if ( preg_match( '/"\s*([^"]{10,})\s*"/u', $text, $m ) ) {
+        return trim( $m[1] );
+    }
+    // 3. Fallback : prendre les ~60 premiers caractères avant "— Action"
+    $text = preg_replace( '/\s*—\s*(\*\*)?[Aa]ction.*$/u', '', $text );
+    $text = preg_replace( '/\s+/u', ' ', trim( $text ) );
+    if ( mb_strlen( $text ) > 80 ) $text = mb_substr( $text, 0, 80 );
+    return $text;
+}
+
+/**
+ * Modifie le post_content en retirant ou remplaçant le bloc HTML qui
+ * contient $needle. Retourne un array avec 'found' (bool) et 'preview'
+ * (le bloc trouvé/modifié) pour feedback utilisateur.
+ *
+ * @param int    $post_id
+ * @param string $needle       Texte à chercher dans le contenu
+ * @param string $action       'remove' | 'replace'
+ * @param string $replacement  Texte de remplacement (si 'replace')
+ */
+function ql_modify_post_by_needle( $post_id, $needle, $action, $replacement = '' ) {
+    $post = get_post( $post_id );
+    if ( ! $post ) return array( 'found' => false, 'error' => 'post introuvable' );
+
+    $content = $post->post_content;
+    if ( $needle === '' ) return array( 'found' => false, 'error' => 'needle vide' );
+
+    // Recherche case-insensitive du needle
+    $pos = mb_stripos( $content, $needle );
+    if ( $pos === false ) {
+        return array( 'found' => false, 'error' => 'passage non trouvé dans l\'article' );
+    }
+
+    // Cherche le bloc HTML englobant : remonter en arrière pour trouver la
+    // dernière balise ouvrante parmi p/blockquote/figure/h2/h3/h4/ul/ol/li/div
+    $block_tags = array( 'blockquote', 'figure', 'p', 'h2', 'h3', 'h4', 'h5', 'li', 'ul', 'ol', 'div' );
+    $block_start = null;
+    $block_tag   = null;
+    $before = substr( $content, 0, $pos );
+    foreach ( $block_tags as $tag ) {
+        // Chercher toutes les occurrences de <tag...> et prendre la dernière avant $pos
+        if ( preg_match_all( '/<' . $tag . '(\s[^>]*)?>/i', $before, $matches, PREG_OFFSET_CAPTURE ) ) {
+            $last = end( $matches[0] );
+            if ( $block_start === null || $last[1] > $block_start ) {
+                $block_start = $last[1];
+                $block_tag   = $tag;
+            }
+        }
+    }
+
+    // Si aucun bloc trouvé, fallback : utiliser la ligne seule (split par \n)
+    if ( $block_start === null ) {
+        $line_start = strrpos( substr( $content, 0, $pos ), "\n" );
+        $line_start = $line_start === false ? 0 : $line_start + 1;
+        $line_end   = strpos( $content, "\n", $pos );
+        $line_end   = $line_end === false ? strlen( $content ) : $line_end;
+        $block      = substr( $content, $line_start, $line_end - $line_start );
+
+        if ( $action === 'remove' ) {
+            $new_content = substr( $content, 0, $line_start ) . substr( $content, $line_end );
+        } else {
+            $new_content = substr( $content, 0, $line_start ) . esc_html( $replacement ) . substr( $content, $line_end );
+        }
+        wp_update_post( array( 'ID' => $post_id, 'post_content' => $new_content ) );
+        return array( 'found' => true, 'preview' => $block, 'method' => 'line' );
+    }
+
+    // Trouver la fermeture du bloc
+    $end_tag = '</' . $block_tag . '>';
+    $end_pos = stripos( $content, $end_tag, $pos );
+    if ( $end_pos === false ) {
+        return array( 'found' => false, 'error' => 'balise fermante non trouvée' );
+    }
+    $end_pos += strlen( $end_tag );
+
+    $block = substr( $content, $block_start, $end_pos - $block_start );
+
+    if ( $action === 'remove' ) {
+        $new_content = substr( $content, 0, $block_start ) . substr( $content, $end_pos );
+        // Nettoie les doubles sauts de ligne résiduels
+        $new_content = preg_replace( "/\n{3,}/", "\n\n", $new_content );
+    } else {
+        // Remplace le bloc par un <p>replacement</p>
+        $new_block = '<p>' . esc_html( $replacement ) . '</p>';
+        $new_content = substr( $content, 0, $block_start ) . $new_block . substr( $content, $end_pos );
+    }
+
+    wp_update_post( array( 'ID' => $post_id, 'post_content' => $new_content ) );
+    return array( 'found' => true, 'preview' => $block, 'method' => 'block_' . $block_tag );
+}
+
+/**
  * AJAX handler : enregistrer une décision sur un item 👤.
  * Status possibles : 'validated' (OK tel quel), 'modified' (corrigé avec
  * note), 'removed' (à retirer de l'article), 'pending' (annule la décision).
  * Sauvegarde dans post_meta _ql_item_decisions (assoc array index → decision).
+ *
+ * Pour 'removed' et 'modified' : modifie AUSSI le post_content automatiquement
+ * en retirant ou remplaçant le passage concerné.
  */
 add_action( 'wp_ajax_ql_set_item_decision', 'ql_handle_set_item_decision' );
 function ql_handle_set_item_decision() {
@@ -1235,6 +1345,13 @@ function ql_handle_set_item_decision() {
     $decisions = get_post_meta( $post_id, '_ql_item_decisions', true );
     $decisions = is_array( $decisions ) ? $decisions : array();
 
+    $result = array(
+        'count'      => 0,
+        'modified'   => false,
+        'preview'    => '',
+        'error'      => '',
+    );
+
     if ( $status === 'pending' ) {
         unset( $decisions[ $index ] );
     } else {
@@ -1244,10 +1361,38 @@ function ql_handle_set_item_decision() {
         }
         $decisions[ $index ]['timestamp'] = time();
         $decisions[ $index ]['user_id']   = get_current_user_id();
+
+        // Pour 'removed' et 'modified' : modifier aussi le post_content
+        if ( $status === 'removed' || $status === 'modified' ) {
+            // On doit récupérer le texte de l'item 👤 pour extraire le needle.
+            // L'item est dans la fiche source, parsée à chaque chargement.
+            $sources_md = get_post_meta( $post_id, '_ql_sources_md', true );
+            if ( $sources_md ) {
+                $parsed = ql_parse_sources_sections( $sources_md );
+                if ( isset( $parsed['tocheck'][ $index ] ) ) {
+                    $item_html = $parsed['tocheck'][ $index ];
+                    $needle = ql_extract_tocheck_needle( $item_html );
+                    if ( $needle ) {
+                        $action = $status === 'removed' ? 'remove' : 'replace';
+                        $mod = ql_modify_post_by_needle( $post_id, $needle, $action, $note );
+                        $result['modified']    = ! empty( $mod['found'] );
+                        $result['preview']     = ! empty( $mod['preview'] ) ? mb_substr( wp_strip_all_tags( $mod['preview'] ), 0, 200 ) : '';
+                        $result['error']       = $mod['error'] ?? '';
+                        $result['needle_used'] = $needle;
+                        // On mémorise la trace dans la décision
+                        $decisions[ $index ]['content_modified'] = $result['modified'];
+                        $decisions[ $index ]['content_preview']  = $result['preview'];
+                    } else {
+                        $result['error'] = 'impossible d\'extraire le passage depuis l\'item';
+                    }
+                }
+            }
+        }
     }
 
     update_post_meta( $post_id, '_ql_item_decisions', $decisions );
-    wp_send_json_success( array( 'count' => count( $decisions ) ) );
+    $result['count'] = count( $decisions );
+    wp_send_json_success( $result );
 }
 
 /**
@@ -1659,6 +1804,14 @@ function ql_render_sources_metabox( $post ) {
         .ql-src-publish-btn[disabled] { background: #e8e5db; color: #8a8578; cursor: not-allowed; }
         .ql-src-publish-btn[disabled] .ql-src-publish-btn__on { display: none; }
         .ql-src-publish-btn:not([disabled]) .ql-src-publish-btn__off { display: none; }
+
+        .ql-toast { position: fixed; bottom: 30px; right: 30px; z-index: 10000; max-width: 420px; padding: 14px 18px; border-radius: 6px; box-shadow: 0 6px 20px rgba(0,0,0,.15); font-size: .9em; animation: qlToastSlide .3s ease-out; }
+        .ql-toast--removed { background: #fff1ef; border-left: 4px solid #e63312; color: #7a2010; }
+        .ql-toast--modified { background: #fff8e1; border-left: 4px solid #f2a000; color: #7a5c00; }
+        .ql-toast--warn { background: #fff8e1; border-left: 4px solid #f2a000; color: #7a5c00; }
+        .ql-toast strong { display: block; margin-bottom: 4px; }
+        .ql-toast em { display: block; font-size: .85em; opacity: .85; margin-top: 4px; font-style: italic; }
+        @keyframes qlToastSlide { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     </style>';
 
     echo '<script>
@@ -1682,6 +1835,16 @@ function ql_render_sources_metabox( $post ) {
             fd.append("_ajax_nonce", nonce);
             return fetch(ajaxurl, { method: "POST", credentials: "same-origin", body: fd })
                 .then(function(r){ return r.json(); });
+        }
+
+        function showToast(title, type, preview) {
+            var existing = document.querySelector(".ql-toast");
+            if (existing) existing.remove();
+            var t = document.createElement("div");
+            t.className = "ql-toast ql-toast--" + type;
+            t.innerHTML = "<strong>" + title + "</strong>" + (preview ? "<em>" + preview.substring(0,150) + (preview.length>150?"…":"") + "</em>" : "");
+            document.body.appendChild(t);
+            setTimeout(function(){ t.style.opacity = "0"; setTimeout(function(){ t.remove(); }, 300); }, 4500);
         }
 
         function updateCount() {
@@ -1741,11 +1904,27 @@ function ql_render_sources_metabox( $post ) {
             if (!li) return;
             var idx = li.dataset.index;
 
-            // Bouton Valider ou Supprimer → saveDecision direct
-            if (btn.classList.contains("ql-src-btn--validate") || btn.classList.contains("ql-src-btn--remove")) {
-                var status = btn.dataset.action;
-                saveDecision(idx, status).then(function(){
-                    renderDecision(li, status, "");
+            // Bouton Valider → saveDecision direct (pas de modif article)
+            if (btn.classList.contains("ql-src-btn--validate")) {
+                saveDecision(idx, "validated").then(function(){
+                    renderDecision(li, "validated", "");
+                    updateCount();
+                });
+                return;
+            }
+
+            // Bouton Supprimer → demande confirmation puis supprime le passage
+            if (btn.classList.contains("ql-src-btn--remove")) {
+                if (!confirm("Supprimer automatiquement ce passage de l article ?\\n\\nCela va retirer le bloc contenant la phrase identifiée dans le contenu de l article.")) {
+                    return;
+                }
+                saveDecision(idx, "removed").then(function(res){
+                    renderDecision(li, "removed", "");
+                    if (res && res.data && res.data.modified) {
+                        showToast("✗ Passage retiré de l article", "removed", res.data.preview);
+                    } else if (res && res.data && res.data.error) {
+                        showToast("⚠ Décision enregistrée mais passage non retiré automatiquement : " + res.data.error, "warn", "");
+                    }
                     updateCount();
                 });
                 return;
@@ -1759,13 +1938,18 @@ function ql_render_sources_metabox( $post ) {
                 return;
             }
 
-            // Bouton Enregistrer modification
+            // Bouton Enregistrer modification → remplace le passage par la note
             if (btn.classList.contains("ql-src-btn--save-note")) {
                 var noteInput = li.querySelector(".ql-src-note-input");
                 var note = noteInput.value.trim();
                 if (!note) { noteInput.focus(); return; }
-                saveDecision(idx, "modified", note).then(function(){
+                saveDecision(idx, "modified", note).then(function(res){
                     renderDecision(li, "modified", note);
+                    if (res && res.data && res.data.modified) {
+                        showToast("✎ Passage remplacé dans l article", "modified", note);
+                    } else if (res && res.data && res.data.error) {
+                        showToast("⚠ Décision enregistrée mais passage non remplacé : " + res.data.error, "warn", "");
+                    }
                     updateCount();
                 });
                 return;
