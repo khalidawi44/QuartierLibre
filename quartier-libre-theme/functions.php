@@ -1296,20 +1296,22 @@ function ql_render_sources_metabox( $post ) {
         return;
     }
 
-    // Parse les sections ✓ / ⚠ / ✗ pour faire le résumé chiffré
+    // Parse les sections ✓ / ⚠ / ✗ / 👤 pour faire le résumé chiffré
     $parsed = ql_parse_sources_sections( $sources_md );
     $v = count( $parsed['verified'] );
     $i = count( $parsed['imprecise'] );
     $m = count( $parsed['missing'] );
-    $total = $v + $i + $m;
+    $c = count( $parsed['tocheck'] );
+    $total = $v + $i + $m + $c;
 
     echo '<style>
         .ql-src-dash { margin: 0 0 1em; }
-        .ql-src-dash__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1.2em; }
+        .ql-src-dash__cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1.2em; }
         .ql-src-card { padding: 14px 16px; border-radius: 6px; text-align: center; border: 2px solid; }
         .ql-src-card--ok { background: #e8f5e8; border-color: #2a8a2a; color: #1a5f1a; }
         .ql-src-card--warn { background: #fff8e1; border-color: #f2a000; color: #7a5c00; }
         .ql-src-card--missing { background: #fff1ef; border-color: #e63312; color: #7a2010; }
+        .ql-src-card--check { background: #e6f2ff; border-color: #0d5ba8; color: #0d3e75; }
         .ql-src-card__num { font-size: 2em; font-weight: 900; line-height: 1; font-family: serif; }
         .ql-src-card__lbl { font-size: .82em; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-top: 4px; }
         .ql-src-card__desc { font-size: .78em; margin-top: 2px; opacity: .8; }
@@ -1318,10 +1320,12 @@ function ql_render_sources_metabox( $post ) {
         .ql-src-section--ok { border: 1px solid #b0d6b0; }
         .ql-src-section--warn { border: 1px solid #f2c94c; }
         .ql-src-section--missing { border: 1px solid #e63312; }
+        .ql-src-section--check { border: 1px solid #6aaae4; }
         .ql-src-section summary { padding: 10px 14px; font-weight: 700; cursor: pointer; user-select: none; }
         .ql-src-section--ok > summary { background: #e8f5e8; color: #1a5f1a; }
         .ql-src-section--warn > summary { background: #fff8e1; color: #7a5c00; }
         .ql-src-section--missing > summary { background: #fff1ef; color: #7a2010; }
+        .ql-src-section--check > summary { background: #e6f2ff; color: #0d3e75; }
         .ql-src-section ul { margin: 0; padding: 10px 14px 14px 36px; background: #fff; }
         .ql-src-section li { margin: 0 0 .5em; line-height: 1.5; }
         .ql-src-section li:last-child { margin-bottom: 0; }
@@ -1338,7 +1342,7 @@ function ql_render_sources_metabox( $post ) {
 
     echo '<div class="ql-src-dash">';
 
-    // 3 cases de résumé
+    // 4 cases de résumé
     echo '<div class="ql-src-dash__cards">';
     echo '<div class="ql-src-card ql-src-card--ok">';
     echo '<div class="ql-src-card__num">' . (int) $v . '</div>';
@@ -1356,6 +1360,12 @@ function ql_render_sources_metabox( $post ) {
     echo '<div class="ql-src-card__num">' . (int) $m . '</div>';
     echo '<div class="ql-src-card__lbl">✗ Manquant</div>';
     echo '<div class="ql-src-card__desc">aucune source / à retirer</div>';
+    echo '</div>';
+
+    echo '<div class="ql-src-card ql-src-card--check">';
+    echo '<div class="ql-src-card__num">' . (int) $c . '</div>';
+    echo '<div class="ql-src-card__lbl">👤 À valider</div>';
+    echo '<div class="ql-src-card__desc">témoignages, points éditoriaux</div>';
     echo '</div>';
     echo '</div>';
 
@@ -1389,6 +1399,20 @@ function ql_render_sources_metabox( $post ) {
         echo '<summary>✗ ' . (int) $m . ' affirmation' . ( $m > 1 ? 's' : '' ) . ' sans source — décision requise</summary>';
         echo '<ul>';
         foreach ( $parsed['missing'] as $item ) {
+            echo '<li>' . $item . '</li>';
+        }
+        echo '</ul>';
+        echo '</details>';
+    }
+
+    // Section À VALIDER par la rédaction (ouverte par défaut)
+    // Éléments non web-vérifiables (témoignages anonymes, points politiques
+    // éditoriaux, détails géographiques locaux) que Khalid doit confirmer.
+    if ( $c > 0 ) {
+        echo '<details class="ql-src-section ql-src-section--check" open>';
+        echo '<summary>👤 ' . (int) $c . ' point' . ( $c > 1 ? 's' : '' ) . ' à valider par la rédaction</summary>';
+        echo '<ul>';
+        foreach ( $parsed['tocheck'] as $item ) {
             echo '<li>' . $item . '</li>';
         }
         echo '</ul>';
@@ -1435,20 +1459,34 @@ function ql_render_sources_metabox( $post ) {
  * Chaque item est le HTML rendu de la ligne (liens cliquables).
  */
 function ql_parse_sources_sections( $md ) {
-    $result = array( 'verified' => array(), 'imprecise' => array(), 'missing' => array() );
+    $result = array(
+        'verified'  => array(),
+        'imprecise' => array(),
+        'missing'   => array(),
+        'tocheck'   => array(), // 👤 À valider humainement
+    );
     if ( ! $md ) return $result;
 
     $md = str_replace( "\r\n", "\n", $md );
     $lines = explode( "\n", $md );
 
-    $current = null;  // 'verified' | 'imprecise' | 'missing' | null
+    $current = null;  // 'verified' | 'imprecise' | 'missing' | 'tocheck' | null
     foreach ( $lines as $line ) {
         $trimmed = trim( $line );
 
         // Détection des titres de section ## ... (h2 ou h3)
         if ( preg_match( '/^#{2,3}\s+(.+)$/', $trimmed, $m ) ) {
             $title = strtolower( $m[1] );
-            if ( strpos( $title, '✓' ) !== false
+            if ( strpos( $title, '👤' ) !== false
+              || strpos( $title, 'à valider' ) !== false
+              || strpos( $title, 'a valider' ) !== false
+              || strpos( $title, 'à confirmer' ) !== false
+              || strpos( $title, 'points à surveiller' ) !== false
+              || strpos( $title, 'points a surveiller' ) !== false
+              || strpos( $title, 'points d\'attention' ) !== false
+              || strpos( $title, 'rédaction' ) !== false ) {
+                $current = 'tocheck';
+            } elseif ( strpos( $title, '✓' ) !== false
               || strpos( $title, 'vérifi' ) !== false
               || strpos( $title, 'sourcé' ) !== false ) {
                 $current = 'verified';
@@ -1591,14 +1629,14 @@ function ql_render_sources_index() {
         'order'          => 'DESC',
     ) );
 
-    // Agréger les scores ✓ / ⚠ / ✗ pour chaque article
+    // Agréger les scores ✓ / ⚠ / ✗ / 👤 pour chaque article
     $summary = array();
-    $totals  = array( 'verified' => 0, 'imprecise' => 0, 'missing' => 0, 'no_sheet' => 0, 'articles' => 0 );
+    $totals  = array( 'verified' => 0, 'imprecise' => 0, 'missing' => 0, 'tocheck' => 0, 'no_sheet' => 0, 'articles' => 0 );
     foreach ( $posts as $p ) {
         $md = get_post_meta( $p->ID, '_ql_sources_md', true );
-        $parsed = $md ? ql_parse_sources_sections( $md ) : array( 'verified' => array(), 'imprecise' => array(), 'missing' => array() );
+        $parsed = $md ? ql_parse_sources_sections( $md ) : array( 'verified' => array(), 'imprecise' => array(), 'missing' => array(), 'tocheck' => array() );
         $has_sheet = ! empty( $md );
-        $has_standard_format = $has_sheet && ( count( $parsed['verified'] ) + count( $parsed['imprecise'] ) + count( $parsed['missing'] ) > 0 );
+        $has_standard_format = $has_sheet && ( count( $parsed['verified'] ) + count( $parsed['imprecise'] ) + count( $parsed['missing'] ) + count( $parsed['tocheck'] ) > 0 );
 
         // Score global = 0 (rouge) si pas de fiche ou tout manquant
         //              1 (orange) si imprécisions ou fiche ancien format
@@ -1622,6 +1660,8 @@ function ql_render_sources_index() {
             'verified'    => count( $parsed['verified'] ),
             'imprecise'   => count( $parsed['imprecise'] ),
             'missing'     => count( $parsed['missing'] ),
+            'tocheck'     => count( $parsed['tocheck'] ),
+            'parsed'      => $parsed, // conservé pour la vue détaillée
             'score'       => $score,
         );
 
@@ -1630,6 +1670,7 @@ function ql_render_sources_index() {
         $totals['verified']  += count( $parsed['verified'] );
         $totals['imprecise'] += count( $parsed['imprecise'] );
         $totals['missing']   += count( $parsed['missing'] );
+        $totals['tocheck']   += count( $parsed['tocheck'] );
     }
 
     // Stats globales pour le dashboard
@@ -1642,8 +1683,9 @@ function ql_render_sources_index() {
         else $articles_problem++;
     }
 
-    // Filtre par état (query param ?filter=ok|partial|problem|all)
+    // Filtre par état (query param ?filter=ok|partial|problem|all|todo)
     $filter = isset( $_GET['filter'] ) ? sanitize_key( $_GET['filter'] ) : 'all';
+    $view   = isset( $_GET['view'] ) ? sanitize_key( $_GET['view'] ) : 'table';
 
     ?>
     <style>
@@ -1687,11 +1729,86 @@ function ql_render_sources_index() {
 
     <div class="wrap qls-wrap">
         <h1>📋 Sources éditoriales — Tableau de bord</h1>
-        <p style="max-width:760px;color:#5a5a5a;">
+        <p style="max-width:820px;color:#5a5a5a;">
             Pour chaque article, le nombre d'affirmations <strong>vérifiées</strong> (URL précise),
-            <strong>imprécises</strong> (lien trop général) ou <strong>sans source</strong>.
-            Objectif : <strong>0 rouge, 0 orange</strong> avant publication.
+            <strong>imprécises</strong> (lien trop général), <strong>sans source</strong>,
+            et <strong>à valider humainement</strong> (témoignages, points politiques).
+            Objectif : <strong>0 rouge, 0 orange</strong> avant publication. Les points 👤 bleus sont à faire valider par la rédaction.
         </p>
+
+        <p style="margin:1em 0;">
+            <a class="button <?php echo $view === 'table' ? 'button-primary' : ''; ?>" href="<?php echo esc_url( admin_url( 'tools.php?page=ql-sources-index' ) ); ?>">📊 Tableau</a>
+            <a class="button <?php echo $view === 'todo' ? 'button-primary' : ''; ?>" href="<?php echo esc_url( add_query_arg( 'view', 'todo', admin_url( 'tools.php?page=ql-sources-index' ) ) ); ?>">📝 Tout ce qui reste à faire</a>
+        </p>
+
+        <?php if ( $view === 'todo' ) : ?>
+            <!-- Vue TODO consolidée : tous les points à surveiller, article par article -->
+            <style>
+                .qls-todo { background: #fff; border: 1px solid #e8e5db; border-radius: 6px; padding: 1.4em; }
+                .qls-todo h2 { margin: 0 0 1em; font-size: 1.2em; padding-bottom: .5em; border-bottom: 2px solid #e63312; }
+                .qls-todo-art { margin: 0 0 1.6em; padding: 0 0 1.2em; border-bottom: 1px solid #f1efe8; }
+                .qls-todo-art:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+                .qls-todo-art__title { font-size: 1.02em; font-weight: 700; margin: 0 0 .4em; }
+                .qls-todo-art__title a { color: #0f0f0f; text-decoration: none; }
+                .qls-todo-art__title a:hover { color: #e63312; }
+                .qls-todo-art__meta { font-size: .82em; color: #5a5a5a; margin: 0 0 .8em; }
+                .qls-todo-group { margin: .6em 0 0; padding: .5em .8em .5em 2em; border-radius: 4px; }
+                .qls-todo-group--warn { background: #fff8e1; border-left: 3px solid #f2a000; }
+                .qls-todo-group--missing { background: #fff1ef; border-left: 3px solid #e63312; }
+                .qls-todo-group--check { background: #e6f2ff; border-left: 3px solid #0d5ba8; }
+                .qls-todo-group__title { margin: 0 -.6em .3em -1.4em; padding-left: 1em; font-weight: 700; font-size: .92em; }
+                .qls-todo-group ul { margin: 0; padding-left: 1.2em; font-size: .92em; }
+                .qls-todo-group li { margin-bottom: .25em; line-height: 1.5; }
+                .qls-todo-group li a { color: #e63312; font-weight: 600; }
+                .qls-empty-note { padding: 2em; text-align: center; color: #5a5a5a; background: #e8f5e8; border-radius: 6px; }
+            </style>
+            <div class="qls-todo">
+                <h2>📝 Tous les points à traiter — par article</h2>
+                <?php
+                $has_anything = false;
+                foreach ( $summary as $id => $s ) {
+                    $p = $s['post'];
+                    $i_cnt = $s['imprecise'];
+                    $m_cnt = $s['missing'];
+                    $c_cnt = $s['tocheck'];
+                    if ( $i_cnt === 0 && $m_cnt === 0 && $c_cnt === 0 ) continue;
+                    $has_anything = true;
+
+                    echo '<div class="qls-todo-art">';
+                    echo '<p class="qls-todo-art__title"><a href="' . esc_url( get_edit_post_link( $p->ID ) ) . '">' . esc_html( $p->post_title ) . '</a></p>';
+                    echo '<p class="qls-todo-art__meta">' . esc_html( $p->post_status ) . ' · ' . esc_html( get_the_date( 'd/m/Y', $p ) ) . '</p>';
+
+                    if ( $m_cnt > 0 ) {
+                        echo '<div class="qls-todo-group qls-todo-group--missing">';
+                        echo '<p class="qls-todo-group__title">✗ ' . (int) $m_cnt . ' affirmation' . ( $m_cnt > 1 ? 's' : '' ) . ' sans source — décision requise</p>';
+                        echo '<ul>';
+                        foreach ( $s['parsed']['missing'] as $item ) echo '<li>' . $item . '</li>';
+                        echo '</ul></div>';
+                    }
+                    if ( $i_cnt > 0 ) {
+                        echo '<div class="qls-todo-group qls-todo-group--warn">';
+                        echo '<p class="qls-todo-group__title">⚠ ' . (int) $i_cnt . ' source' . ( $i_cnt > 1 ? 's' : '' ) . ' imprécise' . ( $i_cnt > 1 ? 's' : '' ) . ' — à corriger</p>';
+                        echo '<ul>';
+                        foreach ( $s['parsed']['imprecise'] as $item ) echo '<li>' . $item . '</li>';
+                        echo '</ul></div>';
+                    }
+                    if ( $c_cnt > 0 ) {
+                        echo '<div class="qls-todo-group qls-todo-group--check">';
+                        echo '<p class="qls-todo-group__title">👤 ' . (int) $c_cnt . ' point' . ( $c_cnt > 1 ? 's' : '' ) . ' à valider par la rédaction</p>';
+                        echo '<ul>';
+                        foreach ( $s['parsed']['tocheck'] as $item ) echo '<li>' . $item . '</li>';
+                        echo '</ul></div>';
+                    }
+                    echo '</div>';
+                }
+                if ( ! $has_anything ) {
+                    echo '<p class="qls-empty-note">🎉 <strong>Rien à traiter.</strong> Tous les articles sont 100 % vérifiés.</p>';
+                }
+                ?>
+            </div>
+        </div>
+        <?php return; // on s'arrête là pour la vue todo
+        endif; ?>
 
         <!-- 4 cards filtres -->
         <div class="qls-dash">
@@ -1726,6 +1843,11 @@ function ql_render_sources_index() {
             <span><span class="qls-counts"><span class="w">⚠ <?php echo (int) $totals['imprecise']; ?></span></span> imprécises</span>
             <span class="sep">·</span>
             <span><span class="qls-counts"><span class="m">✗ <?php echo (int) $totals['missing']; ?></span></span> manquantes</span>
+            <?php if ( $totals['tocheck'] > 0 ) : ?>
+                <span class="sep">·</span>
+                <span style="color:#0d5ba8;font-weight:700;">👤 <?php echo (int) $totals['tocheck']; ?></span>
+                <span style="color:#0d5ba8;">à valider par la rédaction</span>
+            <?php endif; ?>
             <?php if ( $totals['no_sheet'] > 0 ) : ?>
                 <span class="sep">·</span>
                 <span style="color:#e63312;font-weight:700;"><?php echo (int) $totals['no_sheet']; ?> article<?php echo $totals['no_sheet']>1?'s':''; ?> sans fiche</span>
@@ -1768,6 +1890,9 @@ function ql_render_sources_index() {
                                 <span class="v">✓<?php echo (int) $s['verified']; ?></span>
                                 <span class="w">⚠<?php echo (int) $s['imprecise']; ?></span>
                                 <span class="m">✗<?php echo (int) $s['missing']; ?></span>
+                                <?php if ( $s['tocheck'] > 0 ) : ?>
+                                    <span style="color:#0d5ba8;font-weight:700;">👤<?php echo (int) $s['tocheck']; ?></span>
+                                <?php endif; ?>
                             </span>
                         <?php elseif ( $s['has_sheet'] ) : ?>
                             <em style="color:#5a5a5a;font-size:.85em;">fiche ancien format</em>
