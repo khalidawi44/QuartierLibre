@@ -1213,6 +1213,102 @@ function ql_social_login_buttons( $redirect_to = '' ) {
 }
 
 /**
+ * AJAX handler : toggle case cochée pour un item 👤 de la fiche sources.
+ * Sauvegarde dans post_meta _ql_validated_items (array d'indices).
+ */
+add_action( 'wp_ajax_ql_toggle_validated', 'ql_handle_toggle_validated' );
+function ql_handle_toggle_validated() {
+    check_ajax_referer( 'ql_toggle_validated', '_ajax_nonce' );
+    $post_id = isset( $_POST['post_id'] ) ? (int) $_POST['post_id'] : 0;
+    $index   = isset( $_POST['index'] ) ? (int) $_POST['index'] : -1;
+    $checked = ! empty( $_POST['checked'] ) && $_POST['checked'] !== '0';
+
+    if ( ! $post_id || $index < 0 ) wp_send_json_error( 'params manquants' );
+    if ( ! current_user_can( 'edit_post', $post_id ) ) wp_send_json_error( 'droits insuffisants' );
+
+    $validated = get_post_meta( $post_id, '_ql_validated_items', true );
+    $validated = is_array( $validated ) ? array_map( 'intval', $validated ) : array();
+
+    if ( $checked && ! in_array( $index, $validated, true ) ) {
+        $validated[] = $index;
+    } elseif ( ! $checked ) {
+        $validated = array_values( array_filter( $validated, function ( $i ) use ( $index ) { return $i !== $index; } ) );
+    }
+
+    update_post_meta( $post_id, '_ql_validated_items', $validated );
+    wp_send_json_success( array( 'count' => count( $validated ) ) );
+}
+
+/**
+ * Lors d'une sync d'article depuis GitHub, on reset les validations si
+ * le contenu de la fiche source a changé (nouveaux items 👤 ajoutés →
+ * les anciennes cases cochées ne correspondent plus forcément).
+ * Hook sur la mise à jour du meta _ql_sources_md.
+ */
+add_action( 'updated_post_meta', function( $meta_id, $post_id, $meta_key, $meta_value ) {
+    if ( $meta_key !== '_ql_sources_md' ) return;
+    $old_hash = get_post_meta( $post_id, '_ql_sources_hash', true );
+    $new_hash = md5( (string) $meta_value );
+    if ( $old_hash && $old_hash !== $new_hash ) {
+        // Fiche modifiée → reset des cases cochées (par prudence)
+        delete_post_meta( $post_id, '_ql_validated_items' );
+    }
+    update_post_meta( $post_id, '_ql_sources_hash', $new_hash );
+}, 10, 4 );
+
+/**
+ * Handler admin-post.php : valider & publier un article.
+ * Appelé depuis :
+ *   - Le méta-box sources dans l'éditeur (bouton « Valider & Publier »)
+ *   - Le tableau Outils → Sources QL (action rapide)
+ * Requiert que l'utilisateur ait le droit publish_posts + un nonce valide.
+ */
+add_action( 'admin_post_ql_validate_publish', 'ql_handle_validate_publish' );
+function ql_handle_validate_publish() {
+    if ( ! current_user_can( 'publish_posts' ) ) {
+        wp_die( 'Droits insuffisants pour publier.' );
+    }
+    $post_id = isset( $_REQUEST['post_id'] ) ? (int) $_REQUEST['post_id'] : 0;
+    if ( ! $post_id || ! check_admin_referer( 'ql_validate_publish_' . $post_id ) ) {
+        wp_die( 'Lien invalide ou expiré.' );
+    }
+
+    $post = get_post( $post_id );
+    if ( ! $post || $post->post_type !== 'post' ) {
+        wp_die( 'Article introuvable.' );
+    }
+
+    // Passer en publish, date = maintenant si pas encore publié dans le passé
+    $data = array( 'ID' => $post_id, 'post_status' => 'publish' );
+    if ( strtotime( $post->post_date ) > time() ) {
+        $data['post_date']     = current_time( 'mysql' );
+        $data['post_date_gmt'] = current_time( 'mysql', true );
+    }
+    wp_update_post( $data );
+
+    // Redirection vers la page d'origine avec un message
+    $redirect = isset( $_REQUEST['_wp_http_referer'] )
+        ? wp_validate_redirect( $_REQUEST['_wp_http_referer'], admin_url() )
+        : admin_url( 'tools.php?page=ql-sources-index' );
+    wp_safe_redirect( add_query_arg( 'ql_published', $post_id, $redirect ) );
+    exit;
+}
+
+/**
+ * Message flash après publication via le bouton Valider & Publier
+ */
+add_action( 'admin_notices', function () {
+    if ( ! isset( $_GET['ql_published'] ) ) return;
+    $post_id = (int) $_GET['ql_published'];
+    $post = get_post( $post_id );
+    if ( ! $post ) return;
+    echo '<div class="notice notice-success is-dismissible"><p>';
+    echo '<strong>✓ Article publié</strong> : « ' . esc_html( $post->post_title ) . ' » est en ligne.';
+    echo ' <a href="' . esc_url( get_permalink( $post_id ) ) . '" target="_blank">Voir sur le site →</a>';
+    echo '</p></div>';
+} );
+
+/**
  * SVG d'icône de réseau social (inline, couleur currentColor).
  * Source des paths : Feather Icons + simplicite icons — licence MIT.
  */
@@ -1408,16 +1504,140 @@ function ql_render_sources_metabox( $post ) {
     // Section À VALIDER par la rédaction (ouverte par défaut)
     // Éléments non web-vérifiables (témoignages anonymes, points politiques
     // éditoriaux, détails géographiques locaux) que Khalid doit confirmer.
+    // Chaque item a une checkbox persistée en post_meta _ql_validated_items.
+    $validated = get_post_meta( $post->ID, '_ql_validated_items', true );
+    $validated = is_array( $validated ) ? $validated : array();
     if ( $c > 0 ) {
+        $n_checked = 0;
+        foreach ( $validated as $v ) if ( $v < $c ) $n_checked++;
         echo '<details class="ql-src-section ql-src-section--check" open>';
-        echo '<summary>👤 ' . (int) $c . ' point' . ( $c > 1 ? 's' : '' ) . ' à valider par la rédaction</summary>';
-        echo '<ul>';
-        foreach ( $parsed['tocheck'] as $item ) {
-            echo '<li>' . $item . '</li>';
+        echo '<summary>👤 ' . (int) $c . ' point' . ( $c > 1 ? 's' : '' ) . ' à valider par la rédaction <span class="ql-check-count" data-total="' . (int) $c . '">(' . (int) $n_checked . '/' . (int) $c . ' cochés)</span></summary>';
+        echo '<ul class="ql-src-checklist" data-post="' . (int) $post->ID . '" data-nonce="' . esc_attr( wp_create_nonce( 'ql_toggle_validated' ) ) . '">';
+        foreach ( $parsed['tocheck'] as $idx => $item ) {
+            $checked_attr = in_array( $idx, $validated, true ) ? ' checked' : '';
+            echo '<li class="ql-src-checkitem' . ( $checked_attr ? ' is-checked' : '' ) . '">';
+            echo '<label>';
+            echo '<input type="checkbox" class="ql-validate-check" data-index="' . (int) $idx . '"' . $checked_attr . '>';
+            echo '<span class="ql-src-checkitem__text">' . $item . '</span>';
+            echo '</label>';
+            echo '</li>';
         }
         echo '</ul>';
         echo '</details>';
     }
+
+    // ── BOUTON VALIDER & PUBLIER ──
+    // Conditions pour être actif :
+    //   - Zéro imprécis et zéro manquant
+    //   - Toutes les cases 👤 cochées (ou pas de 👤 du tout)
+    //   - Post pas déjà publié
+    //   - Utilisateur a le droit publish_posts
+    $all_check_done = ( $c === 0 ) || ( count( array_filter( $validated, function( $i ) use ( $c ) { return $i < $c; } ) ) >= $c );
+    $no_problems    = ( $i === 0 && $m === 0 );
+    $not_published  = ( $post->post_status !== 'publish' );
+    $can_click      = current_user_can( 'publish_posts' ) && $no_problems && $all_check_done && $not_published;
+
+    echo '<div class="ql-src-publish-wrap">';
+    if ( $post->post_status === 'publish' ) {
+        echo '<p class="ql-src-publish-status"><strong>✓ Cet article est déjà publié.</strong> <a href="' . esc_url( get_permalink( $post->ID ) ) . '" target="_blank">Voir sur le site →</a></p>';
+    } else {
+        echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" class="ql-src-publish-form">';
+        wp_nonce_field( 'ql_validate_publish_' . $post->ID );
+        echo '<input type="hidden" name="action" value="ql_validate_publish">';
+        echo '<input type="hidden" name="post_id" value="' . (int) $post->ID . '">';
+        echo '<button type="submit" class="ql-src-publish-btn" ' . ( $can_click ? '' : 'disabled aria-disabled="true"' ) . '>';
+        echo '<span class="ql-src-publish-btn__on">✓ Valider &amp; Publier maintenant</span>';
+        echo '<span class="ql-src-publish-btn__off">';
+        if ( ! $no_problems ) {
+            echo '⚠ Impossible — il reste ' . (int) ( $i + $m ) . ' problème(s) à résoudre';
+        } elseif ( ! $all_check_done ) {
+            $remaining = $c - count( array_filter( $validated, function( $i ) use ( $c ) { return $i < $c; } ) );
+            echo '☐ Cochez d\'abord les ' . (int) $remaining . ' point(s) à valider';
+        } else {
+            echo 'Article non-publiable';
+        }
+        echo '</span>';
+        echo '</button>';
+        echo '</form>';
+    }
+    echo '</div>';
+
+    // Styles + JS pour les checkboxes et le bouton
+    echo '<style>
+        .ql-src-checklist { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+        .ql-src-checkitem { margin-bottom: .5em; padding: 8px 10px; background: #fff; border: 1px solid #d0e3f8; border-radius: 4px; transition: background .15s; }
+        .ql-src-checkitem.is-checked { background: #e8f5e8; border-color: #b0d6b0; }
+        .ql-src-checkitem.is-checked .ql-src-checkitem__text { text-decoration: line-through; opacity: .7; }
+        .ql-src-checkitem label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; margin: 0; }
+        .ql-src-checkitem input[type="checkbox"] { flex: 0 0 auto; margin-top: 3px; transform: scale(1.3); cursor: pointer; }
+        .ql-src-checkitem__text { flex: 1; }
+        .ql-check-count { font-weight: 400; font-size: .9em; margin-left: .3em; opacity: .85; }
+
+        .ql-src-publish-wrap { margin-top: 1.4em; padding-top: 1em; border-top: 2px solid #e8e5db; }
+        .ql-src-publish-status { margin: 0; padding: 12px 14px; background: #e8f5e8; border-radius: 4px; color: #1a5f1a; }
+        .ql-src-publish-btn { width: 100%; padding: 14px 20px; font-size: 1.05em; font-weight: 800; border-radius: 6px; border: 0; cursor: pointer; transition: all .2s; text-transform: uppercase; letter-spacing: .04em; }
+        .ql-src-publish-btn:not([disabled]) { background: #2a8a2a; color: #fff; }
+        .ql-src-publish-btn:not([disabled]):hover { background: #1a6f1a; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,.15); }
+        .ql-src-publish-btn[disabled] { background: #e8e5db; color: #8a8578; cursor: not-allowed; }
+        .ql-src-publish-btn[disabled] .ql-src-publish-btn__on { display: none; }
+        .ql-src-publish-btn:not([disabled]) .ql-src-publish-btn__off { display: none; }
+    </style>';
+
+    echo '<script>
+    (function(){
+        var checklist = document.querySelector(".ql-src-checklist");
+        if (!checklist) return;
+        var postId = checklist.dataset.post;
+        var nonce = checklist.dataset.nonce;
+        var btn = document.querySelector(".ql-src-publish-btn");
+        var countEl = document.querySelector(".ql-check-count");
+
+        function updateState() {
+            var checks = checklist.querySelectorAll(".ql-validate-check");
+            var total = checks.length;
+            var checked = 0;
+            checks.forEach(function(c){ if (c.checked) checked++; });
+            if (countEl) countEl.textContent = "(" + checked + "/" + total + " cochés)";
+            // Update item visual
+            checks.forEach(function(c){
+                var li = c.closest(".ql-src-checkitem");
+                if (li) li.classList.toggle("is-checked", c.checked);
+            });
+            // Update button if no ⚠/✗ remaining
+            if (btn && ' . ( $no_problems ? 'true' : 'false' ) . ') {
+                if (checked === total && ' . ( $not_published ? 'true' : 'false' ) . ') {
+                    btn.removeAttribute("disabled");
+                    btn.removeAttribute("aria-disabled");
+                } else {
+                    btn.setAttribute("disabled", "");
+                    btn.setAttribute("aria-disabled", "true");
+                    var offSpan = btn.querySelector(".ql-src-publish-btn__off");
+                    if (offSpan) offSpan.textContent = "☐ Cochez d\'abord les " + (total - checked) + " point(s) à valider";
+                }
+            }
+        }
+
+        checklist.addEventListener("change", function(e){
+            if (!e.target.matches(".ql-validate-check")) return;
+            var idx = parseInt(e.target.dataset.index, 10);
+            var checked = e.target.checked;
+            // Sauvegarde AJAX
+            var formData = new URLSearchParams();
+            formData.append("action", "ql_toggle_validated");
+            formData.append("post_id", postId);
+            formData.append("index", idx);
+            formData.append("checked", checked ? "1" : "0");
+            formData.append("_ajax_nonce", nonce);
+            fetch(ajaxurl, { method: "POST", credentials: "same-origin", body: formData })
+                .then(function(r){ return r.json(); })
+                .then(function(res){ /* saved */ })
+                .catch(function(err){ console.error("QL validate save failed", err); });
+            updateState();
+        });
+
+        updateState();
+    })();
+    </script>';
 
     // Si fiche existe mais aucune section standard trouvée → fallback affichage markdown brut
     if ( $total === 0 ) {
