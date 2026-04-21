@@ -2,41 +2,25 @@
 
 Article : [`2025-10-11-louis-macron-xvi-et-son-moine-soldat-le-retour-de-la-monarchie-par-ordonnance.md`](../articles/2025-10-11-louis-macron-xvi-et-son-moine-soldat-le-retour-de-la-monarchie-par-ordonnance.md)
 
-⚠️ Statut : **article corrigé** — erreurs nominatives et de composition gouvernementale, plus disclaimer satirique ajouté.
+Dernier audit : **2026-04-21**
 
----
+## ✓ Sources vérifiées
 
-## Claims corrigées 🔴→🟢
+- Article 47 de la Constitution : 70 jours de délai pour le Parlement sur la loi de finances, au-delà desquels le gouvernement peut adopter les dispositions par ordonnance → [Article 47 — Constitution du 4 octobre 1958 (Légifrance)](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006527523/1993-07-28)
+- Explication détaillée de la procédure d'ordonnance de l'article 47 al. 3 — sans autorisation ni ratification parlementaire → [Vie Publique — Dans quel cas le budget peut-il être adopté par ordonnance ?](https://www.vie-publique.fr/fiches/300659-dans-quel-cas-le-budget-peut-il-etre-adopte-par-ordonnance-article-473)
+- Cette arme constitutionnelle n'a jamais été utilisée depuis 1958 → [Public Sénat — Article 47, quelle est cette autre arme constitutionnelle ?](https://www.publicsenat.fr/actualites/politique/article-47-quelle-est-cette-autre-arme-constitutionnelle-pour-faire-passer-le-budget)
+- Article 49.3 de la Constitution — engagement de responsabilité sur un texte → [Article 49 — Constitution du 4 octobre 1958](https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-de-la-constitution-du-4-octobre-1958-en-vigueur)
+- Sébastien Lecornu nommé Premier ministre le 9 septembre 2025, démissionne le 6 octobre, renommé le 10 octobre, nouveau gouvernement nommé par décret le 12 octobre 2025 → [Élysée — Nomination Lecornu 10 octobre](https://www.elysee.fr/emmanuel-macron/2025/10/10/nomination-de-sebastien-lecornu-premier-ministre) · [Légifrance — Décret du 12 octobre 2025 relatif à la composition du Gouvernement](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052382035)
+- Composition officielle du gouvernement Lecornu II → [info.gouv.fr — Composition du gouvernement](https://www.info.gouv.fr/actualite/composition-du-gouvernement-du-sebastien-lecornu) · [Vie Publique — Composition au 12 octobre 2025](https://www.vie-publique.fr/en-bref/300415-gouvernement-de-sebastien-lecornu-sa-composition-au-12-octobre-2025) · [Wikipédia — Gouvernement Lecornu II](https://fr.wikipedia.org/wiki/Gouvernement_Lecornu_II)
+- Sébastien Lecornu, ancien ministre des Armées (2022-2025) → [Wikipedia — Sébastien Lecornu](https://en.wikipedia.org/wiki/S%C3%A9bastien_Lecornu)
+- Réforme des retraites 2023 imposée par 49.3 et validée par le Conseil constitutionnel → [Décision n° 2023-849 DC du 14 avril 2023](https://www.conseil-constitutionnel.fr/decision/2023/2023849DC.htm)
+- Circulaire Retailleau du 23 janvier 2025 sur l'admission exceptionnelle au séjour (7 ans de présence) → [GISTI — Circulaire Retailleau](https://www.gisti.org/spip.php?article7447)
+- Polybe, *Histoires*, livre VI — théorie de l'anacyclose (succession et corruption des régimes politiques) → [Encyclopédie Universalis — Polybe](https://www.universalis.fr/encyclopedie/polybe/) · [Wikisource — Histoires, livre VI](https://fr.wikisource.org/wiki/Histoire_g%C3%A9n%C3%A9rale_(Polybe)/Livre_VI)
 
-| Claim initiale | Correction appliquée | Source |
-|---|---|---|
-| « Stéphane Lecornu » (plusieurs occurrences) | Corrigé en « Sébastien Lecornu » | [Élysée — nomination 10 oct 2025](https://www.elysee.fr/emmanuel-macron/2025/10/10/nomination-de-sebastien-lecornu-premier-ministre) |
-| « Gouvernement Lecornu2 comprend Borne Travail, Le Maire Économie, Benalla Intérieur, Dupond-Moretti Justice, Véran Santé, Colonna Affaires étrangères, Béchu Écologie, Valls Outre-mer » | Disclaimer satirique explicite ajouté : la liste n'est PAS la composition réelle du gouvernement Lecornu II. Alexandre Benalla, qui n'a jamais été ministre, est remplacé par Bruno Retailleau (titulaire réel de l'Intérieur) | [Composition officielle Lecornu II](https://www.info.gouv.fr/actualite/composition-du-gouvernement-du-sebastien-lecornu) |
-| Description erronée Benalla « Barbouze de l'Elysée, matraqueur de la rue Contrescarpe » | Remplacé par Retailleau avec description factuelle de la circulaire 2025 | [Circulaire Retailleau GISTI](https://www.gisti.org/spip.php?article7447=) |
+## Où vérifier (ressources générales)
 
-## Claims vérifiées 🟢
-
-| Claim | Source |
-|---|---|
-| Ordonnance budgétaire possible après 70 jours sans vote du Parlement | Article 47 de la Constitution |
-| Article 49.3 — engagement de responsabilité | Article 49 de la Constitution |
-| Lecornu nommé PM le 9 sept 2025, démissionné 6 oct, renommé 10 oct, nouveau gouvernement le 12 oct 2025 | [Wikipedia FR](https://fr.wikipedia.org/wiki/Gouvernement_Lecornu_II), [Élysée](https://www.elysee.fr/emmanuel-macron/2025/10/10/nomination-de-sebastien-lecornu-premier-ministre) |
-| Lecornu ancien ministre des Armées (2022-2025) | [Wikipédia Sébastien Lecornu](https://en.wikipedia.org/wiki/S%C3%A9bastien_Lecornu) |
-| Réforme des retraites 2023 validée par CC le 14 avril 2023 | [Décision 2023-849 DC](https://www.conseil-constitutionnel.fr/decision/2023/2023849DC.htm) |
-
-## Claims flaggées 🟡
-
-| Claim | Pourquoi | Comment vérifier |
-|---|---|---|
-| Citation Polybe « Tous les empires ont une fin, et le roi qui ne respecte pas son peuple tombe inévitablement » | Citation largement apocryphe — ne figure pas textuellement dans les *Histoires* de Polybe | Vérifier dans les sources classiques ; ne pas attribuer sans vérification |
-| Description « Moine-soldat » pour Lecornu | Rhétorique éditoriale acceptable — pas de fait vérifiable à trancher | — |
-
-## Note
-
-L'article est avant tout satirique et éditorial. Le principal risque éditorial est de faire croire que la composition ministérielle exposée est la composition réelle du gouvernement Lecornu II. Le disclaimer ajouté permet de lever cette ambiguïté.
-
-## Sources utiles
-
-- [Composition officielle du gouvernement Lecornu II](https://www.info.gouv.fr/actualite/composition-du-gouvernement-du-sebastien-lecornu)
-- [Wikipédia — Gouvernement Lecornu II](https://fr.wikipedia.org/wiki/Gouvernement_Lecornu_II)
+- [Légifrance](https://www.legifrance.gouv.fr/)
 - [Conseil constitutionnel](https://www.conseil-constitutionnel.fr/)
+- [Vie Publique](https://www.vie-publique.fr/)
+- [info.gouv.fr](https://www.info.gouv.fr/)
+- [Assemblée nationale](https://www.assemblee-nationale.fr/)

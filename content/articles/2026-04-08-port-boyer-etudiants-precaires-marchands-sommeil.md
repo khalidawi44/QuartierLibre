@@ -47,7 +47,7 @@ Un **marchand de sommeil**, c'est un bailleur privé qui :
 
 ## L'université qui ferme les yeux
 
-L'**Université de Nantes** a plus de 40 000 étudiants. Le **CROUS** propose à peine **4 500 logements**. **9 étudiants sur 10** doivent se débrouiller seuls sur le marché privé.
+**Nantes Université** accueille plus de **60 000 étudiants**. Le **CROUS** propose environ **5 500 logements** en résidence universitaire. **Moins d'un étudiant sur dix** y obtient une place ([Kyros Immo — 62 % des étudiants nantais peinent à se loger](https://kyros.immo/pourquoi-62-des-etudiants-nantais-peinent-a-se-loger/), [CROUS Nantes](https://www.crous-nantes.fr/)).
 
 Face à la **pénurie**, les prix explosent. Les étudiants les plus précaires se retrouvent à **Port Boyer**, à **[Malakoff](/category/malakoff/)**, ou **dans des chambres insalubres** parce qu'ils n'ont pas le choix.
 

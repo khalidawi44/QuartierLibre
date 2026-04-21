@@ -1,22 +1,22 @@
-# Sources — Bloquons tout à Nantes (10 septembre 2025)
+# Sources — Bloquons tout à Nantes : rappel des rendez-vous
 
 Article : [`2025-09-10-bloquons-tout-a-nantes-rappel-des-rendez-vous.md`](../articles/2025-09-10-bloquons-tout-a-nantes-rappel-des-rendez-vous.md)
 
-🟢 Statut : **article conservé** — liste de points de rendez-vous cohérente avec la mobilisation nationale « Bloquons tout » du 10 septembre 2025.
+Dernier audit : **2026-04-21**
 
----
+## ✓ Sources vérifiées
 
-## Claims vérifiées 🟢
+- Appel du collectif « Bloquons tout » et mobilisation du 10 septembre 2025 en Loire-Atlantique → [France 3 Pays de la Loire — Blocages du 10 septembre, quelles actions prévues en Loire-Atlantique](https://france3-regions.franceinfo.fr/pays-de-la-loire/loire-atlantique/nantes/blocages-du-10-septembre-quelles-actions-prevues-en-loire-atlantique-3213074.html)
+- Points de blocage à Nantes : pont de Cheviré, rond-point du Cardo, Rosa Parks, Malakoff → [France 3 Pays de la Loire — Bloquons tout, résumé de la journée](https://france3-regions.franceinfo.fr/pays-de-la-loire/loire-atlantique/nantes/bloquons-tout-le-point-a-la-mi-journee-a-nantes-et-dans-la-region-3214619.html) · [Contre-Attaque — Bloquons tout à Nantes : rappel des rendez-vous](https://contre-attaque.net/2025/09/10/bloquons-tout-a-nantes-rappel-des-rendez-vous/)
+- Rassemblement Place du Commerce à 11h, appel du monde de la culture → [France Bleu — Bloquons tout en Loire-Atlantique](https://www.francebleu.fr/infos/economie-social/en-direct-bloquons-tout-un-millier-de-manifestants-a-l-est-de-nantes-une-centaine-pres-du-pont-de-chevire-8681073)
+- Blocages à Ancenis (rond-point Terrena), Clisson (Leclerc), Vallet, Châteaubriant, Saint-Nazaire, Pornic, Blain → [Infos Nantes — Itinéraires à éviter et points de blocage](https://www.infos-nantes.fr/manifestation-du-10-septembre-en-loire-atlantique-itineraires-a-eviter-et-points-de-blocage/) · [L'Hermine Rouge — ce qui se prépare en Loire-Atlantique (Presse Océan)](https://lherminerouge.fr/bloquons-tout-ce-qui-se-prepare-en-loire-atlantique-pour-le-10-septembre-presseocean-6-7-09-25/)
+- Barrage filtrant de la CGT Zone D2A (aéroport Nantes-Atlantique) → [France Bleu — Bloquons tout en Loire-Atlantique](https://www.francebleu.fr/infos/economie-social/en-direct-bloquons-tout-un-millier-de-manifestants-a-l-est-de-nantes-une-centaine-pres-du-pont-de-chevire-8681073)
+- Appel FSU Loire-Atlantique pour le 10 septembre → [FSU 44 — Le 10, on bloque tout](https://fsu44.fsu.fr/le-10-on-bloque-tout/)
+- Bilan de la journée (arrestations, blocages, participants) en Loire-Atlantique → [SaintNazaireNews — Bilan des manifestations du 10 septembre](https://www.saintnazairenews.fr/news/arrestations-blocages-participants-bilan-des-manifestations-du-10-septembre-en-loire-atlantique)
 
-| Claim | Source |
-|---|---|
-| Blocage du périphérique nantais 10 sept 2025, pont de Cheviré, Cardo, Rosa Parks | [France 3 Pays de la Loire](https://france3-regions.franceinfo.fr/pays-de-la-loire/loire-atlantique/nantes/bloquons-tout-le-point-a-la-mi-journee-a-nantes-et-dans-la-region-3214619.html) |
-| Barrages filtrants CGT à l'aéroport | [France Bleu](https://www.francebleu.fr/infos/economie-social/en-direct-bloquons-tout-un-millier-de-manifestants-a-l-est-de-nantes-une-centaine-pres-du-pont-de-chevire-8681073) |
-| Environ 5 000 personnes place du Commerce à midi | [France 3](https://france3-regions.franceinfo.fr/pays-de-la-loire/loire-atlantique/nantes/bloquons-tout-le-10-septembre-suivez-en-direct-la-mobilisation-dans-les-grandes-villes-des-pays-de-la-loire-3214049.html) |
-| Rassemblement Commerce 11h, appel monde de la culture | Tracts AG Nantes 2025, [Indymedia Nantes](https://nantes.indymedia.org/events/150524/bloquons-tout-10-septembre-2025/) |
-| Blocages à Ancenis, Clisson, Vallet, Châteaubriant, Nort-sur-Erdre, Saint-Nazaire, Pornic | Appel régional relayé par FSU 44, [saintnazairenews](https://www.saintnazairenews.fr/news/arrestations-blocages-participants-bilan-des-manifestations-du-10-septembre-en-loire-atlantique) |
+## Où vérifier (ressources générales)
 
-## Organisations citées
-
-- [FSU 44](https://fsu44.fsu.fr/le-10-on-bloque-tout/)
-- Nantes Révoltée
+- [FSU 44](https://fsu44.fsu.fr/)
+- [CGT Loire-Atlantique](https://lacgt44.fr/)
+- [France 3 Pays de la Loire](https://france3-regions.franceinfo.fr/pays-de-la-loire/)
+- [France Bleu Loire-Océan](https://www.francebleu.fr/loire-ocean)

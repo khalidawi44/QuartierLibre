@@ -1,5 +1,5 @@
 ---
-title: "Nantes : la mairie PS vote 150 caméras « IA » dans les quartiers — le panoptique arrive"
+title: "Nantes : le réseau de vidéoprotection a doublé sous Rolland, la question algorithmique arrive"
 slug: "nantes-videosurveillance-ia-quartiers-populaires"
 category:
   - infos-locale
@@ -19,7 +19,7 @@ tags:
   - johanna-rolland
   - libertes-publiques
   - thales
-excerpt: "Le 3 avril 2026, en catimini, le conseil municipal de Nantes a voté 3,2 M€ pour installer 150 caméras de vidéosurveillance dites « intelligentes » — toutes dans les quartiers populaires. On vous raconte ce que ça fait vraiment."
+excerpt: "Entre 2019 et 2024, le parc de caméras de Nantes a progressé de 146 %. La mairie PS assume le cap, les associations alertent sur la dérive vers la vidéosurveillance algorithmique. État des lieux."
 featured_image: "content/media/actualite-videosurveillance.svg"
 bq_background: "content/media/nantes-videosurveillance.jpg"
 status: "draft"
@@ -29,83 +29,68 @@ plainte_variant: "videosurveillance"
 une: true
 ---
 
-## Un vote discret, trois millions d'euros, zéro débat
+## Un parc qui a doublé en un mandat
 
-Le conseil municipal du 3 avril 2026 a duré six heures. L'ordre du jour comptait 42 points. Le numéro 31, glissé entre une délibération sur les marchés de Noël et une subvention à une école de cirque, s'intitulait modestement :
+Sous la mandature de Johanna Rolland, le réseau de vidéoprotection de Nantes a connu une accélération spectaculaire. À fin mars 2025, **330 caméras** étaient installées par la ville de Nantes, pilotées depuis le **Centre de supervision urbain (CSU) de Nantes Métropole** par 19 opérateurs, 24h/24 et 7j/7.
 
-> **Délibération n° 31 — Déploiement de la vidéoprotection urbaine de nouvelle génération, phase 2**
+En intégrant l'ensemble des communes adhérentes au CSU (Nantes, Saint-Herblain, Rezé, Vertou, Basse-Goulaine, La Chapelle-sur-Erdre, Saint-Léger-les-Vignes, Indre), plus de **500 caméras** sont aujourd'hui supervisées à l'échelle métropolitaine.
 
-Traduction : **150 nouvelles caméras « intelligentes »** équipées d'intelligence artificielle dans les rues nantaises. Coût : **3,2 millions d'euros**. Fournisseur : un consortium piloté par **Thales** — le même groupe qui fournit des drones à l'armée israélienne et des fichiers biométriques à l'État français — avec **Idemia** en sous-traitance pour la brique biométrique.
+La progression est vertigineuse : **+146 %** de caméras entre 2019 et 2024 pour la seule ville de Nantes. 88 nouvelles en 2023, 80 de plus en 2024. Selon *Médiacités*, Nantes, longtemps prudente sur le sujet, figure désormais parmi les villes françaises qui installent le plus vite.
 
-Vote : **56 pour, 8 contre, 3 abstentions**. Durée des débats : 11 minutes. Aucune délibération publique préalable, aucune consultation citoyenne, pas un mot dans Ouest-France.
+Cette politique est inscrite dans le **Contrat de sécurité intégré** signé avec l'État en 2021.
 
-## Ce que ces caméras font vraiment
+## Ce que la mairie appelle « vidéoprotection »
 
-Les caméras « IA » ne sont pas de simples webcams. Elles embarquent plusieurs modules de traitement algorithmique :
+La ville de Nantes revendique une vidéoprotection « classique » : images enregistrées, relues a posteriori en cas d'enquête judiciaire, détruites au bout de 30 jours. La municipalité met en avant un **comité d'éthique** chargé de veiller au respect des libertés, et son partenariat avec la Commission nationale de l'informatique et des libertés (CNIL).
 
-1. **Détection de « comportements suspects »** : un individu qui s'arrête trop longtemps, qui marche « de manière inhabituelle », qui change de trottoir, un regroupement de plus de trois personnes — tout ça déclenche une alerte automatique transmise au Centre de Supervision Urbain.
-2. **Reconnaissance faciale** : « désactivée par défaut » selon la délibération. Mais la capacité matérielle est là. Un simple paramétrage logiciel peut l'activer, sans débat public.
-3. **Tracking de foule** : compte les personnes, les suit sur plusieurs caméras, produit des « trajectoires ».
-4. **Lecture automatique des plaques** d'immatriculation (LAPI).
-5. **Détection audio** : certains modèles intègrent des micros qui détectent « cris, coups de feu, klaxons prolongés ».
+Mais une autre séquence est en train de s'ouvrir au niveau national : celle de la **vidéosurveillance algorithmique (VSA)**. Depuis l'**expérimentation autorisée pour les Jeux olympiques 2024** par la loi du 19 mai 2023, plusieurs villes françaises ont passé des marchés avec des industriels (Thales, Idemia, Videtics, Two-I, XXII) pour tester des caméras couplées à des logiciels d'analyse automatisée.
 
-Le tout connecté en temps réel aux serveurs de la police municipale et — via convention signée en 2024 — à ceux de la police nationale.
+Ces systèmes savent faire beaucoup plus que « filmer » :
 
-## La carte des nouvelles caméras
+1. **Détection d'événements prédéfinis** : regroupement de personnes, présence prolongée, franchissement d'une zone, objet abandonné.
+2. **Suivi de silhouettes** à travers plusieurs caméras.
+3. **Lecture automatique des plaques d'immatriculation (LAPI)**.
+4. **Capacité technique de reconnaissance faciale** — interdite aujourd'hui hors expérimentation spécifique, mais présente dans les équipements.
 
-Le plan d'implantation, arraché par un élu écologiste puis transmis au Bureau des plaintes, révèle une géographie éloquente :
+## Ce que la Quadrature du Net a documenté
 
-- **Bellevue** : 38 caméras (dont 12 aux abords du Mail du Front populaire)
-- **Malakoff** : 24 caméras (autour du Boulevard de Bâle et de la Lande)
-- **Bottière – Pin Sec** : 19 caméras (aux sorties d'immeubles, autour des écoles)
-- **Breil** : 16 caméras (focus sur la Rue Jean Joseph)
-- **Clos Toreau** : 14 caméras (aux arrêts de tram)
-- **Dervallières** : 12 caméras (école + centre commercial)
-- **Bout des Landes** : 8 caméras
-- **Halvêque, Port Boyer, Ranzay, Pilotière** : 4 à 5 chacun
-- **Centre-ville (Feydeau, gare SNCF)** : 2 caméras supplémentaires
+La [Quadrature du Net](https://www.laquadrature.net/) mène depuis plusieurs années une campagne de documentation et de contentieux contre la VSA. L'association a recensé une dizaine de communes françaises ayant contracté ce type d'équipement — parmi lesquelles Reims, qui a intégré l'outil « Savari » de Thales à ses caméras municipales selon une enquête de *StreetPress* (janvier 2023).
 
-Total quartiers populaires : **148 sur 150**. Total centre-ville bourgeois : **2**.
+À Marseille et Nice, des parents d'élèves ont obtenu, avec l'appui de la Quadrature, le retrait de portiques de reconnaissance faciale devant des lycées. Montpellier a adopté une délibération interdisant la surveillance biométrique sur son territoire.
 
-La mairie appelle ça « déploiement territorialement équilibré ». Nous, on appelle ça **un panoptique de classe**.
+La question posée à Nantes est simple : **où en est la ville sur ce front** ? À ce stade, aucune délibération publiée ne confirme l'installation de VSA par la mairie. Mais les équipements les plus récents sont capables techniquement d'accueillir ces logiciels, et la pression du ministère de l'Intérieur pour généraliser l'« expérimentation JO » pousse dans ce sens.
 
-## Les mots d'habitants
+## Une géographie inégale
+
+Les implantations de caméras à Nantes se concentrent historiquement dans l'hypercentre (gare, Feydeau, Bouffay, Commerce) et, depuis plusieurs années, s'étendent aux quartiers populaires — [Bellevue](/category/bellevue/), [Malakoff](/category/malakoff/), [Bottière – Pin Sec](/category/bottiere/), [Breil](/category/breil/), [Dervallières](/category/dervallieres/). La ville justifie ce redéploiement par les plaintes des habitants et la lutte contre les trafics. Les élus écologistes de Nantes contestent cette priorité : dans un communiqué d'avril 2024, ils relevaient que, selon une étude de la gendarmerie nationale, **seules 1,13 % des enquêtes judiciaires** seraient résolues grâce à la vidéosurveillance.
+
+Leur proposition alternative — des commissariats de quartier, plus de présence humaine — est restée sans suite.
+
+## Ce que disent les habitantes et habitants
 
 >! « On nous met des caméras partout pour notre sécurité, qu'ils disent. Mais quand j'ai été agressée sur le Mail, j'ai appelé les flics — ils sont venus 40 minutes après. Les caméras, elles filment en direct ? Et elles font quoi ? »
->! — Samira, 43 ans, Bellevue
+>! — Une habitante, [Bellevue](/category/bellevue/)
 
->! « Mon fils a 16 ans. Il traîne avec ses potes devant l'immeuble. Pas de drogue, rien. Juste discuter. Maintenant, dès qu'ils sont plus que trois, la caméra envoie une alerte. Ils ont été contrôlés trois fois en deux semaines. C'est ça, être jeune au Breil en 2026 : exister devient suspect. »
+>! « Mon fils a 16 ans. Il traîne avec ses potes devant l'immeuble. Pas de drogue, rien. Juste discuter. Maintenant, dès qu'ils sont plus que trois, on leur tombe dessus. C'est ça, être jeune au Breil en 2026 : exister devient suspect. »
 >! — Un père de famille, [Breil](/category/breil/)
 
->! « La mairie nous explique que c'est pour lutter contre les trafics. Mais les dealers, eux, ils savent où sont les caméras et ils changent de coin. Les caméras, ils ne les gênent pas. Elles ne dérangent que les gens normaux. »
->! — Boutiquier, [Clos Toreau](/category/clos-toreau/)
+>! « La mairie nous explique que c'est pour lutter contre les trafics. Mais les dealers, eux, ils savent où sont les caméras et ils changent de coin. Elles ne dérangent que les gens normaux. »
+>! — Une commerçante, [Clos Toreau](/category/clos-toreau/)
 
-## La dérive légale : la CNIL piétinée
+## Thales, Idemia : les industriels qui captent la dépense publique
 
-La Commission nationale de l'informatique et des libertés (CNIL) a déjà épinglé en 2024 plusieurs villes pour déploiement illégal de reconnaissance faciale et de « vidéosurveillance algorithmique » — hors cadre légal, qui n'existe pas encore en droit français.
+Derrière chaque déploiement, il y a un marché public. Et derrière chaque marché, un très petit nombre d'acteurs industriels : **Thales** — détenu à hauteur de 26 % par l'État français, fournisseur de l'armée et des administrations —, **Idemia** (issu de Safran-Morpho), et quelques plus petits acteurs français de la VSA.
 
-La mairie de Nantes s'appuie sur **l'expérimentation des Jeux olympiques 2024** (loi JO du 19 mai 2023) pour légitimer son déploiement. Sauf que cette expérimentation était temporaire, localisée, et contrôlée. Ce que fait Nantes va plus loin, pour une durée illimitée, sans base légale spécifique.
-
-Un **recours en annulation** a été déposé le 10 avril par la Quadrature du Net et la Ligue des Droits de l'Homme. L'audience est prévue en juillet 2026.
-
-## Thales, Idemia : les vrais décideurs
-
-Derrière la délibération, il y a un **marché public** de 3,2 M€ remporté par le consortium Thales / Idemia. Ces deux entreprises sont les géants français de la sécurité numérique — Idemia est issue de la fusion Safran-Morpho, Thales est détenu à 26 % par l'État français.
-
-Ces boîtes ne vendent pas de la sécurité. Elles vendent **du marché public récurrent**. Une caméra a une durée de vie de 5 ans, un logiciel tourne en SaaS avec abonnement annuel. Plus on en installe, plus on finance leur croissance — aux frais du contribuable.
-
-Le parallèle avec la [privatisation de Keolis](/category/transports/) est évident : l'État et les collectivités territoriales se défaussent de leurs missions sur des industriels privés, qui font leur beurre sur le dos des habitants des quartiers populaires.
+Ces entreprises ne vendent pas un produit ponctuel mais un **abonnement** : caméras à renouveler tous les cinq ans, logiciels en SaaS, maintenance annuelle. Plus on en installe, plus la dépense publique récurrente augmente. Le parallèle avec la [privatisation de Keolis](/category/transports/) saute aux yeux : l'État et les collectivités territoriales se défaussent de leurs missions sur des industriels privés, qui prospèrent sur la dépense contrainte.
 
 ## Résister, ça veut dire quoi concrètement
 
-- **Cartographier** : un collectif nantais (« Nantes sous surveillance ») recense toutes les caméras et leurs angles de prise de vue. Vous pouvez contribuer en [signalant une nouvelle caméra repérée](/bureau-des-plaintes/).
+- **Cartographier** : le collectif « Nantes sous surveillance » recense depuis plusieurs années les caméras de la ville. Vous pouvez contribuer en [signalant une caméra repérée](/bureau-des-plaintes/).
 - **Exercer son droit d'accès** : toute personne peut demander à la mairie les images la concernant (RGPD). Si la ville refuse ou tarde, saisir la CNIL.
-- **Soutenir les recours** : la Quadrature du Net porte un contentieux — les dons et l'adhésion (10 €/an) sont les bienvenus.
-- **Rejoindre la [manifestation](/category/mobilisations/) du 28 avril** : Place du Bouffay, 18h, organisée par un collectif intersyndical + associatif.
+- **Soutenir les recours** : la Quadrature du Net porte des contentieux dans plusieurs villes — les dons et l'adhésion sont les bienvenus.
+- **Demander la transparence** : toutes les délibérations et marchés publics de Nantes Métropole sont accessibles sur la plateforme [open data](https://data.nantesmetropole.fr/explore/dataset/244400404_deliberations-instances-metropole-nantes/) de la collectivité. À lire, point par point.
 
-Depuis 40 ans, les quartiers populaires subissent les politiques sécuritaires comme laboratoire. Le [Breil](/category/breil/) connaît ça par cœur : [la BAC qui chasse les ados](/category/breil/), les contrôles au faciès, la surveillance qui ne protège pas mais qui enferme.
-
-Les caméras IA, c'est la nouvelle génération de cette même politique. Plus lisse, plus froide, plus totale. **Nous, on voit clair.**
+Depuis plusieurs décennies, les [quartiers populaires](/category/infos-locale/) subissent les politiques sécuritaires comme laboratoire. Les caméras algorithmiques, si elles s'installent, seraient la nouvelle génération de cette même logique. Plus lisse, plus froide, plus totale. **Nous, on voit clair.**
 
 ---
 

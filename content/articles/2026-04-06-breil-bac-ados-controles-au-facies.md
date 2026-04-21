@@ -37,7 +37,7 @@ Personne ne met de mots sur la couleur de peau des ados contrôlés. C'est **ill
 **Les ados blancs du Breil ne sont quasiment jamais contrôlés.**
 **Les ados noirs ou maghrébins du Breil le sont systématiquement.**
 
-Cette réalité est **documentée** depuis plus de 15 ans par le Défenseur des droits, par Amnesty International, par Human Rights Watch. En 2016, le Conseil d'État a condamné l'État français pour faute lourde dans trois affaires de contrôles au faciès. Ça n'a **rien changé sur le terrain**.
+Cette réalité est **documentée** depuis plus de quinze ans par le Défenseur des droits, par Amnesty International, par Human Rights Watch. Le **9 novembre 2016**, la **Cour de cassation** a définitivement condamné l'État pour **faute lourde** dans trois affaires de contrôle d'identité discriminatoire ([Wikipédia — Contrôle au faciès en France](https://fr.wikipedia.org/wiki/Contr%C3%B4le_au_faci%C3%A8s), [Amnesty France — Qu'est-ce que le contrôle au faciès ?](https://www.amnesty.fr/focus/quest-ce-que-le-controle-au-facies)). Plus récemment, en **octobre 2023**, le Conseil d'État a reconnu l'existence des contrôles au faciès sans pour autant ordonner de mesure corrective contraignante ([HRW — Conseil d'État reconnaît l'existence des contrôles au faciès](https://www.hrw.org/fr/news/2023/10/12/france-le-conseil-detat-reconnait-lexistence-des-controles-au-facies-mais-nordonne)). Ça n'a **rien changé sur le terrain**.
 
 ## Les conséquences : humiliation, décrochage, révolte
 
@@ -55,7 +55,7 @@ Un contrôle au faciès, ce n'est pas un événement anodin. C'est :
 
 La police a toujours la même réponse : « nous répondons à des signalements, nous ciblons des profils suspects, nous faisons notre travail. »
 
-**Mensonges.** Les statistiques internes à la BAC, quand elles fuitent, montrent que **le taux de succès** des contrôles (c'est-à-dire l'**interpellation effective** suivie d'une **mise en examen** fondée) est **infime**. On contrôle des dizaines de jeunes pour **zéro délit** constaté.
+**Mensonges.** Les travaux du Défenseur des droits et les audits sur les pratiques de contrôle d'identité montrent que **le taux de succès** effectif (interpellation suivie d'une procédure fondée) est faible et que de nombreux contrôles sont répétés sur les mêmes profils sans aboutir à une infraction ([Défenseur des droits — Étude relative aux relations police / population](https://www.defenseurdesdroits.fr/rapport-relations-police-population-cas-controles-didentite-2017)). On contrôle des dizaines de jeunes pour peu ou pas de délit constaté.
 
 Ces contrôles n'ont pas pour fonction de **combattre la criminalité**. Ils ont pour fonction de **rappeler aux jeunes des quartiers** qu'ils sont **sous surveillance permanente**. C'est du **marquage territorial**. C'est une politique de domination.
 

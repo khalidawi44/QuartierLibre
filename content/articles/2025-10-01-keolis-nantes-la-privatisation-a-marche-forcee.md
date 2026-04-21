@@ -27,7 +27,7 @@ original_url: "https://quartierlibre.org/keolis-nantes-la-privatisation-a-marche
 
 ### Une technocrate au service du privé
 
-Diplômée d’HEC Paris et de l’École nationale d’administration (ENA), Marie-Ange Debon a débuté sa carrière comme magistrate à la Cour des comptes, avant de gravir les échelons dans le secteur public et privé. Elle a occupé des postes de direction chez France 3, Technicolor, puis chez Suez. En août 2020, elle est nommée **présidente du directoire de Keolis** — groupe détenu à **70 % par la SNCF** et à 30 % par la Caisse de dépôt et placement du Québec (CDPQ) — spécialisé dans les transports publics ([fiche officielle Keolis](https://www.keolis.com/)). **Depuis sa prise de fonction, la stratégie du groupe privilégie les marchés internationaux et la rentabilité, au détriment des conditions de travail des salariés et de la qualité du service public.**
+Diplômée d’HEC Paris (1986) et de l’ENA (promotion Jean Monnet, 1990), Marie-Ange Debon a débuté sa carrière en 1990 comme magistrate à la Cour des comptes. Elle a ensuite occupé des postes de direction chez France 3, chez Thomson (devenu Technicolor), puis chez Suez à partir de 2008 — d'abord comme secrétaire générale, puis comme directrice générale adjointe pour l'international. En août 2020, elle est nommée **présidente du directoire de Keolis** — groupe détenu à **70 % par la SNCF** et à 30 % par la Caisse de dépôt et placement du Québec (CDPQ) — l'un des principaux opérateurs français de transports publics ([fiche officielle Keolis](https://www.keolis.com/)). **Depuis sa prise de fonction, la stratégie du groupe privilégie les marchés internationaux et la rentabilité, au détriment des conditions de travail des salariés et de la qualité du service public.**
 
 ### Keolis Nantes : un modèle de privatisation à l’image des cars Macron
 
@@ -43,15 +43,13 @@ Alors que les conducteurs de Keolis Nantes peinent à joindre les deux bouts, **
 
 ### Des pertes locales, des bénéfices globaux
 
-En 2024, Keolis Nantes a enregistré une perte nette de **1,51 million d’euros** sur un chiffre d’affaires de **47 millions d’euros**. Pendant ce temps, le groupe Keolis, dirigé par Marie-Ange Debon, a réalisé un chiffre d’affaires de
+En 2024, Keolis Nantes a enregistré une perte nette de **1,51 million d’euros** sur un chiffre d’affaires de **47 millions d’euros**. Pendant ce temps, le groupe Keolis, dirigé par Marie-Ange Debon, a réalisé **7,7 milliards d'euros de chiffre d'affaires** en hausse de 10 %. Son résultat courant aurait dégagé 13 millions d'euros de bénéfice net ; mais une dépréciation de 55 millions d'euros liée à la nationalisation des franchises ferroviaires au Royaume-Uni l'a finalement fait basculer à une perte nette de 42 millions d'euros sur l'exercice ([Keolis — communiqué résultats annuels 2024](https://www.keolis.com/newsroom/communiques-de-presse/keolis-consolide-sa-rentabilite-operationnelle-et-sa-structure-financiere/)).
 
-- **7,7 milliards d’euros** et un bénéfice net de **13 millions d’euros**.
-
-Cette situation illustre parfaitement la logique du groupe : **sacrifier les filiales locales pour maximiser les profits à l’échelle mondiale.**
+Cette situation illustre la logique du groupe : **des comptes adossés à un réseau international** pour lequel les filiales locales, comme Nantes, servent de marchés sous tension.
 
 ### Le soutien de l’Élysée et du MEDEF
 
-Marie-Ange Debon n’est pas seulement une dirigeante d’entreprise. Elle est également **vice-présidente du MEDEF International,** l’organisation patronale française, et présidente de l’Union des Transports Publics (UTP). Ces positions lui permettent d’influencer les politiques publiques en faveur des intérêts privés. De plus, le président Emmanuel Macron lui a proposé de **prendre la tête de La Poste**, succédant ainsi à Philippe Wahl. Cette nomination, qui doit encore être validée par le Parlement, témoigne du **soutien de l’Élysée à sa vision du service public.**
+Marie-Ange Debon n’est pas seulement une dirigeante d’entreprise. Elle est également **vice-présidente du MEDEF International** depuis 2016, et a été **présidente de l’Union des Transports Publics et Ferroviaires (UTP)** élue en juin 2021. Ces positions lui permettent d’influencer les politiques publiques en faveur des intérêts privés. En septembre 2025, l'Élysée a proposé sa nomination à la tête du **groupe La Poste** en remplacement de Philippe Wahl — une proposition qui doit encore faire l'objet des validations réglementaires. Ce choix témoigne du **soutien de l’Élysée à sa vision du service public.**
 
 ### La solidarité comme réponse
 

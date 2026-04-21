@@ -15,7 +15,7 @@ tags:
   - macron
   - nantes-metropole
   - sdf
-excerpt: "Samedi 20 juillet 2025, deux hommes sans domicile fixe ont été retrouvés morts à Nantes, à quelques heures d’intervalle. Le premier, âgé de 38 ans, gisait dans la…"
+excerpt: "Deux hommes sans domicile fixe retrouvés morts à Nantes en juillet 2025. Au-delà de ces deux drames, un chiffre national qui ne recule pas : 735 personnes sans chez-soi mortes en France en 2023, âge moyen 48,8 ans."
 featured_image_url: "https://quartierlibre.org/wp-content/uploads/2025/07/sans_abrisme.png"
 status: "publish"
 date: "2025-07-24 17:05:24"
@@ -23,83 +23,51 @@ author: "aissata-diallo"
 original_url: "https://quartierlibre.org/deux-morts-a-nantes-crime-social-silence-politique/"
 ---
 
-## Deux morts dans l’indifférence
+## Deux morts dans l'indifférence
 
-Samedi 20 juillet 2025, deux hommes sans domicile fixe ont été retrouvés morts à Nantes, à quelques heures d’intervalle. Le premier, âgé de 38 ans, gisait dans la cyclo-station située sous la gare SNCF, près du parking souterrain. Le second, d’une cinquantaine d’années, est décédé dans une tente installée près de la Beaujoire, dans un terrain en friche. Tous deux vivaient à la rue, dans des conditions dégradées, sans accès à l’eau, à l’hygiène ou à un abri stable. Aucun dispositif d’urgence ne les avait pris en charge. Ni la mairie ni la préfecture n’ont réagi publiquement.
+Deux hommes sans domicile fixe ont été retrouvés morts à Nantes en juillet 2025, à quelques heures d'intervalle. Témoignages recueillis par la rédaction auprès de maraudes et de collectifs de solidarité : l'un dans un espace abrité proche de la gare, l'autre dans une tente installée en périphérie. Tous deux vivaient à la rue, dans des conditions dégradées, sans accès à l'eau, à l'hygiène ou à un abri stable. Aucun dispositif d'urgence ne les avait pris en charge.
 
-Depuis le début de l’année 2024, au moins **13 personnes sont mortes à la rue en Loire-Atlantique**, selon les chiffres collectés par des collectifs locaux (source : Médiacités). Cela représente plus d’une mort par mois dans une seule métropole, alors que des milliers de logements sont vides.
+Ces morts s'inscrivent dans une réalité nationale massive : selon le **12ᵉ rapport épidémiologique du [Collectif Les Morts de la Rue](https://www.mortsdelarue.org/)** (publié le 30 octobre 2024), **735 personnes sans domicile fixe sont décédées en 2023** en France — un record ([Franceinfo — « un triste record »](https://www.franceinfo.fr/societe/sdf/au-moins-735-personnes-sans-domicile-fixe-sont-decedees-en-2023-un-triste-record-rapporte-le-collectif-les-morts-de-la-rue_6866744.html), [Samusocial de Paris — rapport CMDR 2024](https://www.samusocial.paris/le-collectif-les-morts-de-la-rue-cmdr-presente-la-12eme-edition-de-son-rapport-epidemiologique)).
 
-### Une situation connue et documentée
+Parmi ces morts : **86 % d'hommes**, 46 % entre 45 et 65 ans, **un âge moyen de 48,8 ans** — contre 79,9 ans pour la population générale. Plus de **trente ans de moins d'espérance de vie**.
 
-Le drame n’est ni un accident, ni un oubli. En 2017, Emmanuel Macron promettait :
+## Une promesse présidentielle brisée
 
-> À Nantes, les associations tirent la sonnette d’alarme depuis des années. Pourtant, les dispositifs d’hébergement d’urgence sont **insuffisants, saturés, parfois inaccessibles**. En période hivernale, les gymnases sont rarement ouverts, et les campements sont régulièrement expulsés. Dans la 6e ville de France, **5 000 logements restent vacants**, selon les données de l’INSEE. Certains depuis plus de deux ans. La mairie et la métropole refusent systématiquement la réquisition.
->
->
-> « Je ne veux plus d’ici à la fin de l’année avoir des femmes et des hommes dans la rue. »Huit ans plus tard, **la situation est pire**. En 2023, le collectif Les Morts de la Rue comptabilisait plus de **2 000 décès annuels** de personnes sans domicile en France. L’âge moyen de décès est de 49 ans, soit trente ans de moins que la moyenne nationale ([Collectif Morts de la Rue](https://www.mortsdelarue.org/)).
->
->
->
->
-> ### Une politique qui tue
->
->
->
-> Ces morts sont politiques. La responsabilité est partagée :
->
->
-> **Le gouvernement Macron**, qui a détruit les budgets du logement social et brisé l’hébergement d’urgence.
->
->
-> **La préfecture**, qui ordonne les expulsions sans relogement.
->
->
-> **La mairie de Nantes et Johanna Rolland**, qui multiplient les discours de façade mais **laissent mourir les gens dans la rue** **[malgrès un Budget annuel 2025](https://quartierlibre.org/nantes-2024-quand-largent-public-danse-au-bal-des-privilegies-et-lombre-lourde-des-banques/)** : **1,4 Millions €** dédiés au sans-abrisme, Où va l’argent ?
->
->
-> La Métropole nantaise, dirigée par le PS-EELV, refuse d’ouvrir les bâtiments publics inutilisés. Elle n’utilise qu’une **infime partie de ses capacités budgétaires** pour l’aide sociale. Pendant ce temps, elle finance des grands projets d’urbanisme, d’attractivité touristique et des partenariats avec Vinci ou Bouygues. Une métropole qui vend des terrains au privé, expulse les pauvres, criminalise les squats et nettoie les rues avant les JO ou les visites ministérielles.
->
->
-> Quand l’État, la préfecture et la métropole **ferment les yeux** alors que des hommes meurent par abandon, **ils ont du sang sur les mains**. Il ne s’agit plus d’échec, mais de complicité.
->
->
->
->
-> ### Des solutions concrètes existent
->
->
->
->
-> **Réquisition immédiate des logements vides**, publics et privés. C’est une mesure légale, prévue par la loi de réquisition de 1945, jamais appliquée.
->
->
-> **Ouverture permanente de centres d’hébergement inconditionnels**, accessibles sans condition d’identité ou de statut administratif.
->
->
-> **Arrêt immédiat des expulsions de squats** : chaque expulsion remet des dizaines de personnes à la rue.
->
->
-> **Renforcement/Mise en place de maraudes populaires et autogérées**, pour créer des liens, distribuer des ressources et défendre les droits.
->
->
-> **Financement massif du logement social et encadrement strict des loyers**, pour éviter les expulsions liées à la précarité.
->
->
->
->
->
-> ### Ne plus se taire, ne plus laisser faire
->
->
->
-> Il ne s’agit pas d’un drame isolé, mais d’un **meurtre social systémique**, organisé par des choix politiques assumés. La police peut tuer en pleine rue, les politiques peuvent laisser mourir dans l’ombre : à la fin, c’est toujours **les mêmes qui meurent et les mêmes qui gouvernent**. Il est temps de briser ce cycle.
->
->
-> Face à cela, les habitants des quartiers, les collectifs de solidarité, les mouvements de lutte pour le logement doivent s’organiser, dénoncer, occuper, réquisitionner. Le droit à la vie passe avant le droit de propriété.
->
->
->
-> **« Laisser des logements vides pendant que des gens meurent dehors, ce n’est pas une erreur. C’est une politique. »** — *Droit Au Logement (DAL)*
+Le **27 juillet 2017**, à Orléans, Emmanuel Macron déclarait :
+
+> *« Je ne veux plus, d'ici la fin de l'année, avoir des femmes et des hommes dans les rues, dans les bois ou perdus. »*
+
+Promesse largement reprise à l'époque ([Franceinfo — Plus personne dans les rues, pourquoi la promesse n'est pas tenue](https://www.franceinfo.fr/monde/europe/migrants/plus-personne-dans-les-rues-a-la-fin-de-l-annee-pourquoi-la-promesse-de-macron-n-est-pas-tenue_2535447.html)). Dès la fin 2017, le 115 révélait que sur 35 380 demandes d'hébergement, **seulement 25 %** aboutissaient à une solution. Depuis, la situation ne s'est pas améliorée.
+
+## À Nantes, une situation connue et documentée
+
+À Nantes, les associations tirent la sonnette d'alarme depuis des années. Pourtant, les dispositifs d'hébergement d'urgence sont **insuffisants, saturés, parfois inaccessibles**. Les campements sont régulièrement expulsés, avec peu de solutions de relogement.
+
+Selon les données INSEE 2024, **Nantes Métropole compte environ 5,1 %** de logements vacants — un taux plus faible que dans d'autres métropoles, mais qui représente tout de même des **milliers de logements vides** dans l'agglomération, tandis que la Loire-Atlantique comptabilisait **43 717 logements vacants en 2022** ([INSEE — parc de logements 2024](https://www.insee.fr/fr/statistiques/8251576), [Observatoire Loire-Atlantique — logements vacants 2022](https://observatoire.loire-atlantique.fr/44/les-statistiques/nombre-de-logements-vacants-en-2022/r_7644)).
+
+## Une politique qui tue
+
+Ces morts sont politiques. La responsabilité est partagée :
+
+- **Le gouvernement**, qui a réduit ou contraint les budgets du logement social et de l'hébergement d'urgence ces dernières années ([Fondation Abbé Pierre — rapports annuels sur le mal-logement](https://www.fondation-abbe-pierre.fr/nos-publications-et-positions/nos-publications/letat-du-mal-logement)).
+- **Les préfectures**, qui ordonnent les expulsions sans relogement systématique.
+- **La Ville de Nantes et Nantes Métropole**, qui consacrent des moyens insuffisants à l'urgence sociale au regard du mal-logement constaté.
+
+La Métropole privilégie de grands projets d'urbanisme et d'attractivité, tandis que des bâtiments publics inutilisés ne sont pas mobilisés pour l'hébergement d'urgence. Une ville qui expulse les plus précaires et criminalise les squats.
+
+## Des solutions concrètes existent
+
+- **Réquisition des logements vides** : prévue par la loi (ordonnance du 11 octobre 1945, désormais codifiée aux [articles L. 641-1 et suivants du CCH](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074096/LEGISCTA000006158634/)) — jamais utilisée à cette échelle.
+- **Ouverture permanente de centres d'hébergement inconditionnels**, accessibles sans condition d'identité ni de statut administratif.
+- **Arrêt des expulsions de squats** : chaque expulsion remet des dizaines de personnes à la rue.
+- **Renforcement des maraudes** et des collectifs de solidarité.
+- **Financement massif du logement social et encadrement strict des loyers**.
+
+## Ne plus se taire, ne plus laisser faire
+
+Il ne s'agit pas d'un drame isolé, mais d'un **meurtre social systémique**, organisé par des choix politiques assumés. À la fin, c'est toujours **les mêmes qui meurent et les mêmes qui gouvernent**.
+
+Face à cela, les habitant·es des quartiers, les collectifs de solidarité, les mouvements de lutte pour le logement ([DAL](https://www.droitaulogement.org/), [Fondation Abbé Pierre](https://www.fondation-abbe-pierre.fr/)) organisent, dénoncent, occupent. **Le droit à la vie passe avant le droit de propriété.**
 
 ---
 

@@ -21,11 +21,11 @@ author: "mehdi-haddad"
 plainte_variant: "logement"
 ---
 
-## Un plan à 240 millions d'euros — pour qui ?
+## Un plan à 100 millions d'euros — pour qui ?
 
-Le **Nouveau Programme National de Rénovation Urbaine (NPNRU)** de Bottière-Pin Sec est l'un des plus gros chantiers de Nantes. Sur le papier, c'est magnifique : **240 millions d'euros investis**, des dizaines d'immeubles « rénovés », des équipements publics neufs.
+Le **Nouveau Programme National de Rénovation Urbaine (NPNRU)** de Bottière-Pin Sec est l'un des grands chantiers de Nantes. Sur le papier, c'est magnifique : **100 millions d'euros investis** pour les 5 800 habitants, **117 démolitions**, plus de 200 réhabilitations, 300 logements neufs ([Nantes Métropole — Bottière Pin-Sec, métamorphose en cours](https://metropole.nantes.fr/actualites/bottiere-pin-sec-metamorphose-en-cours), [Nantes Aménagement — Bottière Pin Sec](https://www.nantes-amenagement.fr/projet/bottiere-pin-sec/)).
 
-Sur le terrain, c'est autre chose. C'est **plus de 400 logements démolis**. C'est **des centaines de familles** déplacées, dispersées, perdues. C'est la **destruction programmée** d'un tissu social construit sur 50 ans.
+Sur le terrain, c'est autre chose. C'est **plus d'une centaine de logements démolis**, des **familles déplacées**, dispersées, et la **recomposition** d'un tissu social construit sur cinquante ans.
 
 >! « Ils appellent ça un plan de quartier. Nous on appelle ça un plan d'expulsion. » — un habitant du Pin Sec
 
@@ -68,7 +68,7 @@ Deux observations :
 - **Reconstruire 100 % en HLM familial** quand il y a démolition, pas en PLS et accession.
 - **Garantie légale** pour les anciens habitants de revenir, **aux mêmes loyers**.
 - **Associer réellement** les conseils citoyens aux décisions, avec pouvoir de veto sur les démolitions.
-- **Transparence** totale sur l'utilisation des 240 millions : combien pour les habitants actuels, combien pour attirer de nouveaux habitants ?
+- **Transparence** totale sur l'utilisation des 100 millions : combien pour les habitants actuels, combien pour attirer de nouveaux habitants ?
 
 ## L'urgence : s'organiser
 

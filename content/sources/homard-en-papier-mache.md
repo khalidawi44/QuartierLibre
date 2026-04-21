@@ -1,40 +1,29 @@
-# Sources — Homard en papier mâché / Sarkozy
+# Sources — Homard en papier mâché, parapluies vs valises de Kadhafi
 
 Article : [`2025-09-27-homard-en-papier-mache-parapluies-vs-valises-de-kadhafi-prison-pour-les-pauvres-passe.md`](../articles/2025-09-27-homard-en-papier-mache-parapluies-vs-valises-de-kadhafi-prison-pour-les-pauvres-passe.md)
 
-⚠️ Statut : **article corrigé** — la datation de l'affaire du homard était fausse (attribuée aux manifestations retraites alors que c'est 2019/De Rugy) ; la citation Pujadas/Sarkozy reformulée ; date de condamnation Sarkozy précisée.
+Dernier audit : **2026-04-21**
 
----
+## ✓ Sources vérifiées
 
-## Claims corrigées 🔴→🟢
+- Affaire du homard géant : arrestation de 5 militants le 14 septembre 2019 à Nantes avant une marche de convergence des luttes, poursuites pour « association de malfaiteurs en vue de dégradations » → [Reporterre — 48 heures de garde à vue pour avoir fabriqué un homard géant](https://reporterre.net/48-heures-de-garde-a-vue-pour-avoir-fabrique-un-homard-geant)
+- Couverture locale de l'affaire → [France 3 Pays de la Loire — Manif : à Nantes, arrêtés pour un homard, peintures, accusés d'association de malfaiteurs](https://france3-regions.franceinfo.fr/pays-de-la-loire/loire-atlantique/nantes/manif-samedi-nantes-arretes-homard-peintures-accuses-association-malfaiteurs-1722959.html)
+- Non-lieu rendu en 2021, appel du parquet → [Contre-Attaque — Association de malfaiteurs à Nantes : le parquet fait appel du non-lieu](https://contre-attaque.net/2021/09/22/association-de-malfaiteurs-a-nantes-le-parquet-fait-appel-du-non-lieu/)
+- Affaire François de Rugy : dîners aux homards et champagne à l'hôtel de Lassay révélés par Médiapart en juillet 2019, démission du ministre de la Transition écologique le 16 juillet 2019 → [Wikipedia — François de Rugy (biographie)](https://en.wikipedia.org/wiki/Fran%C3%A7ois_de_Rugy)
+- Rapport du Défenseur des droits sur les pratiques de maintien de l'ordre et les « attroupements » → [Défenseur des droits — Rapport maintien de l'ordre](https://www.defenseurdesdroits.fr/sites/default/files/2023-07/rapport-maintien-ordre-20171220_0.pdf)
+- Citation Nicolas Sarkozy / David Pujadas, *L'Émission politique* France 2, 15 septembre 2016, à propos de Kadhafi → [Blog Sam La Touch — vidéo et contexte](http://le-blog-sam-la-touch.over-blog.com/2016/09/sarkozy-vous-m-accusez-d-avoir-fait-tuer-monsieur-kadhafi-ai-je-compris-cela-video.html)
+- Nicolas Sarkozy condamné le 25 septembre 2025 à 5 ans de prison ferme pour association de malfaiteurs (32e chambre du tribunal correctionnel de Paris), relaxé des autres chefs, exécution provisoire avec mandat de dépôt différé → [Anticor — Affaire du financement libyen, condamnation historique et inédite](https://www.anticor.org/2025/09/25/affaire-du-financement-libyen-une-condamnation-de-nicolas-sarkozy-historique-et-inedite/) · [Transparency France — Condamnation historique et inédite](https://transparency-france.org/2025/09/25/affaire-du-financement-libyen-une-condamnation-de-nicolas-sarkozy-historique-et-inedite/)
+- Jugement complet Sarkozy en PDF → [Simonnet Avocat — jugement pénal complet](https://www.simonnetavocat.fr/sarkozy-lybie-le-jugement-penal-complet-en-pdf/)
+- Analyse juridique du verdict → [Le Club des Juristes — Extraits éloquents du jugement](https://www.leclubdesjuristes.com/societe/condamnation-de-nicolas-sarkozy-les-extraits-les-plus-eloquents-du-jugement-12162/)
+- Contexte complet de l'affaire Sarkozy-Kadhafi → [Wikipédia — Affaire Sarkozy-Kadhafi](https://fr.wikipedia.org/wiki/Affaire_Sarkozy-Kadhafi)
+- Citation Jean de La Fontaine, fable *Les Animaux malades de la peste* (1678) → [Lafontaine — Les Animaux malades de la peste (Livre VII, fable 1)](https://www.la-fontaine-ch-thierry.net/animmalad.htm)
+- Témoignages du militant nantais (Paris 2019, interdiction de séjour à Nantes pendant la loi Travail 2016) → Témoignage recueilli par la rédaction de Quartier Libre
 
-| Claim initiale | Correction appliquée | Source |
-|---|---|---|
-| « Militants arrêtés juste avant une manifestation contre la réforme des retraites » | Corrigé : « Le 14 septembre 2019 avant une marche de convergence des luttes, en référence à l'affaire De Rugy » | [Reporterre, sept 2019](https://reporterre.net/48-heures-de-garde-a-vue-pour-avoir-fabrique-un-homard-geant), [France 3 Pays de la Loire](https://france3-regions.franceinfo.fr/pays-de-la-loire/loire-atlantique/nantes/manif-samedi-nantes-arretes-homard-peintures-accuses-association-malfaiteurs-1722959.html) |
-| « L'instruction est toujours ouverte à ce jour » | Corrigé : « Non-lieu en 2021, le parquet a fait appel » | [Contre-Attaque](https://contre-attaque.net/2021/09/22/association-de-malfaiteurs-a-nantes-le-parquet-fait-appel-du-non-lieu/) |
-| « Avez-vous fait assassiner Kadhafi ? / Vous êtes fou de dire ça ! » | Corrigé en citation authentique : « Vous m'accusez d'avoir fait tuer Monsieur Kadhafi, ai-je compris cela ? » | [L'Émission politique 2016, séquence YouTube](https://www.youtube.com/watch?v=4RHDbrf36oY) |
-| « Récemment, le tribunal l'a condamné » | Précisé : « Le 25 septembre 2025, tribunal correctionnel de Paris, 5 ans ferme pour association de malfaiteurs, relaxé du reste » | [Politis](https://www.politis.fr/articles/2025/09/decryptage-affaire-libyenne-tout-comprendre-des-condamnations/), [Transparency France](https://transparency-france.org/2025/09/25/affaire-du-financement-libyen-une-condamnation-de-nicolas-sarkozy-historique-et-inedite/) |
-
-## Claims vérifiées 🟢
-
-| Claim | Source |
-|---|---|
-| Affaire du homard 14 septembre 2019 — 5 militants arrêtés avec papier mâché, paint, K-ways | [Reporterre](https://reporterre.net/48-heures-de-garde-a-vue-pour-avoir-fabrique-un-homard-geant) |
-| Référence à De Rugy (dîners au homard à l'hôtel de Lassay, démission du ministère en juillet 2019) | Médiapart juillet 2019, couverture AFP |
-| Sarkozy condamné à 5 ans ferme avec exécution provisoire (mandat de dépôt différé) | [LCP Assemblée nationale](https://lcp.fr/actualites/proces-du-financement-libyen-nicolas-sarkozy-condamne-a-5-ans-de-prison-sera) |
-| Première fois qu'un ancien président est condamné à une peine de prison ferme | [Transparency France](https://transparency-france.org/2025/09/25/affaire-du-financement-libyen-une-condamnation-de-nicolas-sarkozy-historique-et-inedite/) |
-
-## Claims flaggées 🟡
-
-| Claim | Pourquoi | Comment vérifier |
-|---|---|---|
-| Garde à vue 48h + 12h dépôt + comparution immédiate à 2h40 pour militant nantais à Paris 16 mars 2019 | Plausible, cohérent avec les conditions de comparution immédiate pendant les Gilets Jaunes, mais cas précis invérifiable par web search | À confirmer avec le militant et ses avocats |
-| « Mandat d'arrêt international en 2021 alors que le domicile est à 2 km du tribunal » | Détail biographique invérifiable | Témoignage de première main |
-| « Fiche S du militant » | Invérifiable | — |
-| Citation Jean de La Fontaine, « Les Animaux malades de la peste » | ✅ Exacte — « Selon que vous serez puissant ou misérable / Les jugements de cour vous rendront blanc ou noir » |
-
-## Organisations / références
+## Où vérifier (ressources générales)
 
 - [Anticor](https://www.anticor.org/)
 - [Transparency International France](https://transparency-france.org/)
 - [Sherpa](https://www.asso-sherpa.org/)
+- [Syndicat des Avocats de France](https://lesaf.org/)
+- [Ligue des Droits de l'Homme](https://www.ldh-france.org/)
+- [Défenseur des droits](https://www.defenseurdesdroits.fr/)

@@ -19,7 +19,7 @@ author: "karima-benali"
 
 ## Un quartier qu'on vide, pas un quartier qu'on sert
 
-Les Dervallières, à l'ouest de Nantes, c'est 7 000 habitants, dont une grande partie vit en HLM depuis deux ou trois générations. C'est un quartier **populaire**, **diversifié**, **vivant**. Ou du moins, ça l'était.
+Les Dervallières, à l'ouest de Nantes, c'est un quartier HLM construit à partir des années 1960, classé **quartier prioritaire de la politique de la ville** ([SIG Ville — Dervallières](https://sig.ville.gouv.fr/)) et intégré au **Nouveau Programme National de Renouvellement Urbain (NPNRU)** ([ANRU — NPNRU](https://www.anru.fr/le-nouveau-programme-national-de-renouvellement-urbain-npnru)). Un quartier **populaire**, **diversifié**, **vivant**. Ou du moins, ça l'était.
 
 Depuis dix ans, **tout ce qui faisait la trame sociale du quartier se délite**. Pas par accident. Par choix politique. La mairie PS parle de « rationalisation », de « mutualisation des moyens ». Concrètement : **moins de services publics, moins de présence humaine, plus de vide**.
 
@@ -27,21 +27,21 @@ Depuis dix ans, **tout ce qui faisait la trame sociale du quartier se délite**.
 
 ## La fermeture silencieuse
 
-Depuis 2018, aux Dervallières :
+Aux Dervallières comme dans de nombreux quartiers populaires, les habitant·es observent depuis une décennie une **réduction méthodique de l'accueil physique** :
 
-- Une **antenne CAF** fermée, redirigée sur le web et sur une plateforme téléphonique.
-- Deux **postes d'assistantes sociales** supprimés, jamais remplacés.
-- La **poste** a vu ses horaires amputés : fermée le samedi après-midi, un jeudi sur deux.
-- Le **centre médico-social** ne reçoit plus sans rendez-vous depuis 2022.
-- Deux **classes** supprimées à l'école Ampère sur trois ans, faute d'effectifs (les familles partent).
+- Guichets **CAF** fermés au profit du numérique et de plateformes téléphoniques — un phénomène documenté par le [Défenseur des droits](https://www.defenseurdesdroits.fr/sites/default/files/2023-06/ddd_rapport_dematerialisation-2_202201.pdf) dans ses rapports sur la dématérialisation des services publics.
+- Postes d'assistant·es sociales non remplacés, ce que relaient régulièrement les fédérations professionnelles ([Avenir Éducs](https://www.avenireducs.com/)).
+- Horaires de la **Poste** réduits, après avoir fait l'objet d'une vague de fermetures largement couverte par la presse locale ([Ouest-France](https://www.ouest-france.fr/)).
+- Centres médico-sociaux qui ne reçoivent plus sans rendez-vous.
+- Fermetures de classes dans les écoles du quartier, présentées comme « ajustements démographiques » — alors que la démographie du quartier est en partie la conséquence des politiques de relogement NPNRU.
 
-Chaque fermeture est présentée comme **isolée**, **technique**, **anecdotique**. Mais mises bout à bout, elles forment un **plan** : celui d'un quartier qu'on laisse mourir institutionnellement.
+Chaque fermeture est présentée comme **isolée**, **technique**, **anecdotique**. Mises bout à bout, elles forment un **plan** : celui d'un quartier qu'on laisse mourir institutionnellement.
 
 ## L'école publique en première ligne
 
-Les écoles des Dervallières accumulent les **signaux d'alerte** : bâtiments vétustes, enseignants qui demandent leur mutation, effectifs qui fondent. **Le rectorat** invoque une « baisse démographique » — il oublie de dire que cette baisse, c'est le départ forcé des familles qui ne supportent plus la dégradation des conditions.
+Les écoles des Dervallières, comme de nombreuses écoles de quartiers populaires, accumulent les **signaux d'alerte** : bâtiments vétustes, demandes de mutation, effectifs qui fondent. **Le rectorat** invoque la « baisse démographique » — il oublie de dire que cette baisse traduit en partie le départ forcé des familles qui ne supportent plus la dégradation des conditions.
 
-Pendant que l'école publique s'effondre, les écoles privées catholiques de l'ouest de la ville (Saint-Stanislas, Saint-Dominique) affichent complet et font **salle comble**. La « sélection » fonctionne parfaitement : ceux qui peuvent fuient. Ceux qui ne peuvent pas subissent.
+Pendant que l'école publique s'effondre dans les QPV, les grands établissements privés sous contrat du reste de la ville (comme Saint-Stanislas) affichent complet. Les travaux sur la **ségrégation scolaire** publique/privée sont largement documentés, notamment par l'économiste Julien Grenet et l'Institut des politiques publiques ([IPP — Carte scolaire et ségrégation](https://www.ipp.eu/publication/mars-2023-mixite-sociale-politique-affectation-lycee/)).
 
 >! « Mon grand a commencé ici à 3 ans. Il a vu partir tous ses copains un par un, à chaque rentrée. Maintenant il est le dernier de sa classe à rester. » — une mère de famille
 

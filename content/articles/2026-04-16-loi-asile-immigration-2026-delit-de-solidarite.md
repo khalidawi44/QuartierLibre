@@ -50,11 +50,11 @@ Les associations (Cimade, [RESF](https://www.educationsansfrontieres.org/), [GIS
 
 L'**Aide Médicale d'État (AME)** est régulièrement attaquée au Parlement. Le gouvernement a plusieurs fois évoqué sa transformation en « aide médicale d'urgence », en restreignant le panier de soins pris en charge — sans que ces réformes aient, à ce jour, été adoptées intégralement. Le maintien de l'AME reste un **combat ouvert**, régulièrement défendu par des tribunes de médecins et d'ONG (Médecins du Monde, MSF, Académie de médecine).
 
-## Une tribune collective en janvier 2026
+## Une mobilisation associative continue
 
-Le **27 janvier 2026**, à l'occasion des deux ans de la loi Darmanin, plusieurs associations (LDH, Cimade, GISTI, SAF, Syndicat de la Magistrature, etc.) ont publié une **tribune commune** dénonçant le recul des droits des personnes étrangères et appelant à la résistance citoyenne. ([la tribune sur le site de la LDH](https://www.ldh-france.org/))
+Depuis l'adoption de la loi Darmanin puis la diffusion de la circulaire Retailleau, les principales associations de défense des droits des personnes étrangères (LDH, Cimade, GISTI, SAF, Syndicat de la Magistrature, Amnesty, Médecins du Monde) multiplient tribunes, notes d'analyse et contentieux dénonçant le recul des droits et appelant à la résistance citoyenne.
 
-Dans cette mobilisation, trois axes :
+Trois axes structurent ce travail :
 
 - **Défendre** l'immunité humanitaire issue de la décision Herrou.
 - **Documenter** les dysfonctionnements : OQTF à répétition, conditions en CRA, refus abusifs de régularisation au titre de la circulaire Retailleau.

@@ -22,21 +22,21 @@ Alors que la dissolution menace dans l’air politique français et que la colè
 
 ### Cazeneuve, le faux sage
 
-Bernard Cazeneuve, ancien Premier ministre, multiplie les interventions médiatiques pour vanter un socialisme humaniste et responsable. « Nous devons montrer que nous avons appris de nos erreurs », déclare-t-il lors d’une interview récente. Mais les chiffres parlent d’eux-mêmes : sous son gouvernement, les blessés en manifestations contre la loi El Khomry se comptent par centaines, et les prisonniers politiques, militants syndicalistes ou étudiants, par miliers. Sa présence médiatique est une tentative de blanchir le passé, mais le peuple n’oublie pas.
+Bernard Cazeneuve, ancien Premier ministre (2016-2017), ancien ministre de l'Intérieur (2014-2016), multiplie depuis plusieurs années les interventions médiatiques pour vanter un socialisme « humaniste et responsable ». Mais les chiffres parlent d'eux-mêmes : sous les gouvernements PS Valls puis Cazeneuve, les blessés lors des manifestations contre la loi El Khomri se comptent par centaines (du côté des manifestants comme des forces de l'ordre), des dizaines de militants syndicaux et étudiants ont été poursuivis et condamnés à des peines de prison ([Wikipédia — Mouvement social contre la loi Travail 2016](https://fr.wikipedia.org/wiki/Mouvement_social_contre_la_loi_Travail_en_France_de_2016)). Sa présence médiatique est une tentative de retraite honorable, mais le peuple n'oublie pas.
 
 ### Valls, le revenant de toutes les défaites
 
-Manuel Valls, malgré ses défaites cuisantes en Espagne et en France, reste une figure influente du gouvernement et continue d’imposer sa logique sécuritaire et répressive. Sur un plateau télévisé, il affirme : « La fermeté est nécessaire pour le maintien de l’ordre et la cohésion nationale. » Des propos qui trahissent le mépris pour les mobilisations sociales et les milliers de manifestants blessés ou arrêtés depuis 2016.
+Manuel Valls, malgré ses échecs électoraux en Espagne (municipales de Barcelone 2019) et en France (primaire PS 2017, législatives 2017), reste une figure publique qui continue de défendre la même ligne sécuritaire et répressive qu'il incarnait à Matignon (2014-2016). Il parle régulièrement de « fermeté » et de « cohésion nationale » — autant de formules qui ont justifié les mesures d'exception et les mobilisations des BAC contre les manifestants.
 
 ### Macron et la continuité répressive
 
-Emmanuel Macron continue de gouverner dans la continuité des politiques libérales et sécuritaires inaugurées par le PS. Selon ses propres déclarations : « La réforme du travail était indispensable. » Cette continuité confirme que le PS, loin d’être un allié des travailleurs et des chômeurs, agit comme un facilitateur de la politique néolibérale et sécuritaire.
+Emmanuel Macron, ministre de l'Économie de Hollande (2014-2016) avant de devenir président, a poursuivi les politiques libérales et sécuritaires inaugurées par le PS : ordonnances Travail 2017, réforme de l'assurance-chômage, réforme des retraites 2023. Cette continuité confirme que le PS, loin d'être un rempart des travailleur·ses, a préparé la bascule que Macron a ensuite accélérée.
 
 ### Les chiffres de la répression
 
-- Plus de 500 manifestants blessés en 2016-2017 lors des mobilisations contre la loi El Khomry.
-- Une trentaine de militants syndicaux et étudiants encore emprisonnés ou poursuivis pour leur participation aux mouvements sociaux.
-- Une dizaine de décrets répressifs votés pour limiter les manifestations et le droit de grève depuis l’arrivée de Macron, souvent inspirés de précédentes pratiques PS.
+- Près de **300 policiers et gendarmes blessés** en deux mois contre la loi El Khomri, côté forces de l'ordre ; des centaines de manifestants blessés côté rue (Paris, Rennes : un manifestant éborgné par un tir de flash-ball) — chiffres officiels et presse de 2016 ([Wikipédia — Mouvement social loi Travail 2016](https://fr.wikipedia.org/wiki/Mouvement_social_contre_la_loi_Travail_en_France_de_2016))
+- **2 500 manifestants blessés et 1 800 membres des forces de l'ordre** pendant la première année des Gilets Jaunes (2018-2019), dont **24 éborgnés et 5 mains arrachées** ([Amnesty France — Gilets jaunes, un bilan inquiétant](https://www.amnesty.fr/liberte-d-expression/actualites/gilets-jaunes-un-bilan-inquietant), [Fondation Jean-Jaurès — les violences en France](https://www.jean-jaures.org/publication/les-violences-en-france-entre-retour-et-prise-de-conscience/))
+- La loi Renseignement de 2015 puis la loi SILT de 2017 ont pérennisé dans le droit commun des dispositions de l'état d'urgence (écoutes, assignations, périmètres de protection) ([LDH — Sortie de l'état d'urgence : analyse SILT](https://www.ldh-france.org/))
 
 ### Le PS, un cadavre politique gesticulant
 
@@ -89,7 +89,7 @@ Le Parti socialiste n’est plus un parti de transformation sociale. Ses figures
 
 Dès le 10 septembre, la seule issue est claire : **VIRONS-LES !**
 
-Macron doit démissionner, et tous les responsables directs et indirects de la répression doivent être jugés. Comme le rappelle Manuel Valls : *« La fermeté est nécessaire. »* **Oui, la fermeté du peuple, pour reprendre ce qui nous a été volé.** Rendez-vous le 10, **Le peuple reprend le pouvoir** pour le début de leur fin !
+Macron doit démissionner, et tous les responsables directs et indirects de la répression doivent rendre des comptes. **La fermeté, oui — mais celle du peuple**, pour reprendre ce qui nous a été volé. Rendez-vous le 10, **le peuple reprend le pouvoir**.
 
 ---
 

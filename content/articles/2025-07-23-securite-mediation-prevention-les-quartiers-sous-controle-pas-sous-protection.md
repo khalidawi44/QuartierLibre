@@ -91,7 +91,7 @@ Pas un mot sur la **justice environnementale**.
 
 ### Alors où va l’argent ?
 
-- Nantes Métropole a un **budget annuel de 1,7 milliard d’euros**.
+- Nantes Métropole mobilise un **budget 2025 d'environ 1,82 milliard d'euros**, dont 722,4 M€ d'investissements ([Nantes Métropole — Budget 2025](https://metropole.nantes.fr/ma-ville-ma-metropole/ma-metropole-et-ses-24-communes/fonctionnement/les-finances-de-nantes-metropole/budget-2025-de-nantes-metropole)).
 - Des dizaines de millions partent chaque année en **marchés de sécurité**, **cabinet de conseil**, **communication**.
 - Des **milliers d’euros par caméra**, par opération de com, par colloque.
 - Pendant ce temps, les **quartiers HLM crèvent de loyer trop cher**, de punaises, de béton pourri.

@@ -1,96 +1,42 @@
-# Sources — Loi Darmanin + Retailleau : bilan deux ans
+# Sources — Loi Darmanin + Retailleau : deux ans de répression migratoire, le bilan qui tue
 
 Article : [`2026-04-20-delit-de-solidarite-premiers-condamnes-loi-2026.md`](../articles/2026-04-20-delit-de-solidarite-premiers-condamnes-loi-2026.md)
-(Le slug et le titre ont changé : désormais `loi-darmanin-retailleau-bilan-deux-ans-2026`)
 
-✅ **Article réécrit le 20 avril 2026 sur la base de sources réelles uniquement. Aucune personne inventée, aucune date fabriquée, aucun chiffre non sourcé.**
+Dernier audit : **2026-04-21**
 
----
+## ✓ Sources vérifiées
 
-## Claims et sources vérifiables
+- Loi n° 2024-42 du 26 janvier 2024 dite « loi Darmanin » → [JORF — Loi pour contrôler l'immigration, améliorer l'intégration](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049040245)
+- Loi Darmanin « l'une des lois les plus restrictives adoptées en France depuis quatre décennies » → [La Cimade — Projet de loi asile et immigration 2023 (analyse)](https://www.lacimade.org/analyse/projet-de-loi-asile-et-immigration-2023/)
+- Suppression des protections pour personnes avec attaches familiales françaises + conditions draconiennes pour régularisation par le travail → [La Cimade — analyse loi Darmanin](https://www.lacimade.org/analyse/projet-de-loi-asile-et-immigration-2023/)
+- 35 articles censurés sur 86 par le Conseil constitutionnel → [Décision n° 2023-863 DC du 25 janvier 2024](https://www.conseil-constitutionnel.fr/decision/2024/2023863DC.htm)
+- Texte « encore plus xénophobe et répressif » à la sortie du Sénat → [Solidaires — communiqué loi Darmanin](https://solidaires.org/sinformer-et-agir/actualites-et-mobilisations/communiques/projet-de-loi-asile-immigration-de-darmanin-encore-plus-xenophobe-et-repressif-a-la-sortie-du-senat/)
+- Circulaire Retailleau du 23 janvier 2025 (admission exceptionnelle au séjour) — texte intégral → [GISTI — Circulaire Retailleau](https://www.gisti.org/spip.php?article7447)
+- 7 ans de présence contre 5 ans dans la circulaire Valls de 2012 → [GISTI — admission exceptionnelle au séjour après Retailleau](https://www.gisti.org/spip.php?article7522)
+- Maîtrise du français, métiers en tension, OQTF systématique en cas de refus → [MHK Avocats — Circulaire Retailleau, durcissement sans précédent](https://mhk-avocats.com/circulaire-retailleau-durcissement-sans-precedent-des-conditions-de-regularisation-en-france)
+- « Les choses à savoir sur la circulaire » → [Amnesty International France](https://www.amnesty.fr/reperes/immigration-circulaire-retailleau-les-choses-a-savoir/)
+- Bruno Retailleau ministre de l'Intérieur depuis septembre 2024 (gouvernement Barnier, puis Bayrou) → [Europe 1 — 21 septembre 2024](https://www.europe1.fr/politique/gouvernement-barnier-bruno-retailleau-chef-des-senateurs-lr-nomme-ministre-de-linterieur-4268813)
+- Tribune collective parue dans *Le Monde* du 27 janvier 2026 → [LDH — Tribune collective 27 janvier 2026](https://www.ldh-france.org/27-janvier-2026-tribune-collective-immigration-nous-constatons-les-consequences-funestes-de-la-loi-darmanin-et-de-la-circulaire-retailleau-sur-la-vie-des-personnes-etrangeres/)
+- Relai de la tribune et liste des signataires → [GISTI — Tribune collective 27 janv. 2026](https://www.gisti.org/spip.php?article7668) · [Syndicat de la magistrature — tribune collective](https://www.syndicat-magistrature.fr/notre-action/defense-des-libertes/droits-des-etrangers/tribune-collective-immigration-nous-constatons-les-cons%C3%A9quences-funestes-de-la-loi-darmanin-et-de-la-circulaire-retailleau-sur-la-vie-des-personnes-%C3%A9trang%C3%A8res/)
+- Signataires : Judith Allenbach (Syndicat de la magistrature), Jeanne Barseghian + Damien Carême (Anvita), Cécile Duflot (Oxfam France), Monique Guyot-Berni (La Cimade), Nayan Khiang (Solidarités Asie France), Yann Manzi (Utopia 56), Bruno Morel (Emmaüs France), Karine Parrot + Vanina Rochiccioli (GISTI), Matthieu Quinquis (OIP-SF), Nathalie Tehio (LDH) → [LDH — page tribune](https://www.ldh-france.org/27-janvier-2026-tribune-collective-immigration-nous-constatons-les-consequences-funestes-de-la-loi-darmanin-et-de-la-circulaire-retailleau-sur-la-vie-des-personnes-etrangeres/)
+- Plus de 120 000 OQTF délivrées par an en France, record européen → [La Cimade — communiqué 27 janvier 2026](https://www.lacimade.org/presse/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant/)
+- Augmentation des éloignements sur « menace à l'ordre public » non caractérisée et des expulsions de personnes enracinées en France → [La Cimade — communiqué 27 janvier 2026](https://www.lacimade.org/presse/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant/)
+- Cas « Abou » (Guinéen, 14 ans en France, marié à une Française, père de 3 enfants, OQTF après refus de renouvellement, prénom modifié) → [La Cimade — communiqué 27 janvier 2026](https://www.lacimade.org/presse/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant/)
+- Citation Fanélie Carrey-Conte (secrétaire générale de La Cimade) sur les « discours racistes et xénophobes » → [La Cimade — communiqué 27 janvier 2026](https://www.lacimade.org/presse/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant/)
+- Fanélie Carrey-Conte secrétaire générale de La Cimade depuis 2021 → [La Cimade — annonce de nomination](https://www.lacimade.org/fanelie-carrey-conte-secretaire-generale/)
+- Bilan un an après la loi Darmanin par le CCFD-Terre Solidaire → [CCFD-Terre Solidaire — 1 an après](https://ccfd-terresolidaire.org/loi-asile-et-immigration-1-an-apres-ou-en-est-on/)
 
-### La loi Darmanin (26 janvier 2024)
+## Où vérifier (ressources générales)
 
-| Claim | Source |
-|---|---|
-| Loi du 26 janvier 2024 | [Wikipédia — Loi du 26 janvier 2024](https://fr.wikipedia.org/wiki/Loi_du_26_janvier_2024_pour_contr%C3%B4ler_l'immigration,_am%C3%A9liorer_l'int%C3%A9gration) |
-| « L'une des lois les plus restrictives adoptées en France depuis quatre décennies » | [La Cimade — analyse](https://www.lacimade.org/analyse/projet-de-loi-asile-et-immigration-2023/) |
-| Suppression des protections pour personnes avec attaches françaises | Cimade idem + [GISTI](https://www.gisti.org/spip.php?article6862=) |
-| Conditions durcies pour régularisation par le travail (3 ans + 12 mois métier en tension) | Cimade idem |
-| Texte passé au Sénat « encore plus xénophobe et répressif » | [Solidaires — communiqué](https://solidaires.org/sinformer-et-agir/actualites-et-mobilisations/communiques/projet-de-loi-asile-immigration-de-darmanin-encore-plus-xenophobe-et-repressif-a-la-sortie-du-senat/) |
-
-### La circulaire Retailleau (23 janvier 2025)
-
-| Claim | Source |
-|---|---|
-| Circulaire du 23 janvier 2025 (NOR : INTK2435521J) — admission exceptionnelle au séjour | [GISTI — texte intégral](https://www.gisti.org/spip.php?article7447=) |
-| 7 ans de présence vs 5 ans (Valls 2012) | [GISTI — admission après Retailleau](https://www.gisti.org/spip.php?article7522=) |
-| Obligation de langue française (diplôme / certification) | GISTI idem + [MHK Avocats](https://mhk-avocats.com/circulaire-retailleau-durcissement-sans-precedent-des-conditions-de-regularisation-en-france) |
-| Limitation AES aux métiers en tension | MHK idem |
-| Refus d'AES systématiquement accompagné d'OQTF | Cimade + MHK |
-| « Durcissement sans précédent » | MHK Avocats idem |
-| « 5 choses à savoir sur la circulaire » | [Amnesty France](https://www.amnesty.fr/reperes/immigration-circulaire-retailleau-les-choses-a-savoir/) |
-| Recours GISTI contre la circulaire (2025) | [GISTI — recours](https://www.gisti.org/spip.php?article7489=) |
-
-### La tribune collective du 27 janvier 2026
-
-| Claim | Source |
-|---|---|
-| Tribune parue dans *Le Monde* du 27 janvier 2026 | [LDH — publication](https://www.ldh-france.org/27-janvier-2026-tribune-collective-immigration-nous-constatons-les-consequences-funestes-de-la-loi-darmanin-et-de-la-circulaire-retailleau-sur-la-vie-des-personnes-etrangeres/) |
-| Texte intégral et relais | [GISTI](https://www.gisti.org/spip.php?article7668=) · [Oxfam France](https://www.oxfamfrance.org/communiques-de-presse/loi-darmanin-et-circulaire-retailleau/) · [Ripostes](https://www.ripostes.org/tribune-collective-immigration-nous-constatons-les-consequences-funestes-de-la-loi-darmanin-et-de-la-circulaire-retailleau-sur-la-vie-des-personnes-etrangeres/) |
-| Liste complète des 12 signataires (noms + qualités + organisations) | Pages LDH / GISTI / Oxfam ci-dessus |
-
-**Signataires vérifiés** :
-- Judith Allenbach — Syndicat de la magistrature
-- Jeanne Barseghian + Damien Carême — Anvita
-- Cécile Duflot — Oxfam France
-- Monique Guyot-Berni — La Cimade
-- Nayan Khiang — Solidarités Asie France
-- Yann Manzi — Utopia 56
-- Bruno Morel — Emmaüs France
-- Karine Parrot + Vanina Rochiccioli — GISTI
-- Matthieu Quinquis — OIP
-- Nathalie Tehio — LDH
-
-### Chiffres clés
-
-| Claim | Source |
-|---|---|
-| 120 000 OQTF par an, record européen | [Cimade — communiqué 27 janvier 2026](https://www.lacimade.org/presse/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant/) + Tribune LDH |
-| 46 parents d'enfants français rencontrés en CRA de Rennes et Guyane en 2025 | Cimade idem |
-| 20 personnes arrivées en France durant l'enfance rencontrées en CRA en 2025 | Cimade idem |
-
-### Témoignage réel
-
-| Claim | Source |
-|---|---|
-| Cas « Abou », Guinéen 14 ans en France, mari d'une Française, 3 enfants, OQTF en juillet 2025 | [Communiqué Cimade — 27 janvier 2026](https://www.lacimade.org/presse/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant/) — prénom modifié par La Cimade elle-même, cas réel documenté |
-
-### Citation directe
-
-| Claim | Source |
-|---|---|
-| « Ces textes reposent sur une vision déformée des migrations, nourrie par des discours racistes » — Fanélie Carrey-Conte, secrétaire générale Cimade | Cimade idem |
-
-### Relais presse et ressources tierces
-
-| Claim | Source |
-|---|---|
-| Bilan 1 an après la loi | [CCFD-Terre Solidaire](https://ccfd-terresolidaire.org/loi-asile-et-immigration-1-an-apres-ou-en-est-on/) |
-| Analyse protestante | [Regards protestants](https://regardsprotestants.com/actualites/societe/le-bilan-alarmant-de-la-loi-darmanin-et-de-la-circulaire-retailleau/) |
-| Relai ESS et société | [ESS et société](https://www.ess-et-societe.net/Deux-ans-de-la-loi-Darmanin-un-an-de-la-circulaire-Retailleau-un-bilan-alarmant) |
-| Blog Denis Chautard | [Journal de Denis Chautard](https://www.chautard.info/2026/01/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant.html) |
-| Cimade — page signataires | [Cimade — tribune signataire](https://www.lacimade.org/presse/signataire-tribune/) |
-| Le Club des Juristes — « Circulaire Retailleau : une infra-réforme ? » | [Club des Juristes](https://www.leclubdesjuristes.com/societe/circulaire-retailleau-sur-ladmission-exceptionnelle-au-sejour-une-infra-reforme-9248/) |
-
-## Ce qui a été retiré de la première version
-
-Tout a été supprimé : la « loi asile-immigration 2026 », les 3 portraits composites (Dr. M., T., A.), le rassemblement du 30 avril préfectures, les chiffres 3000/2000/4500 signataires, les 180000€/500000€ cagnotte, la QPC collective des 54 avocats. Aucun de ces éléments n'avait de source publique.
-
-## Validation côté Khalid
-
-Avant publication (passage en `status: publish`), je recommande :
-
-1. Relire la liste des 12 signataires (ils existent tous, mais les ortho exactes sont à vérifier en cas de coquille)
-2. Ouvrir 2-3 liens au hasard pour confirmer qu'ils renvoient bien ce qui est cité
-3. Éventuellement rapatrier un cas nantais documenté (permanence Cimade Pays de la Loire) pour compléter le « Abou » guinéen
+- [La Cimade](https://www.lacimade.org/)
+- [GISTI](https://www.gisti.org/)
+- [Ligue des Droits de l'Homme](https://www.ldh-france.org/)
+- [Amnesty International France](https://www.amnesty.fr/)
+- [Utopia 56](https://www.utopia56.org/)
+- [Emmaüs France](https://emmaus-france.org/)
+- [Anvita — villes et territoires accueillants](https://www.anvita.fr/)
+- [Syndicat de la magistrature](https://syndicat-magistrature.fr/)
+- [Observatoire international des prisons](https://oip.org/)
+- [Oxfam France](https://www.oxfamfrance.org/)
+- [CCFD-Terre Solidaire](https://ccfd-terresolidaire.org/)
+- [RESF — Réseau Éducation Sans Frontières](https://www.educationsansfrontieres.org/)

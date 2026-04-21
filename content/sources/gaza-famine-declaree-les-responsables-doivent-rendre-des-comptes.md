@@ -1,31 +1,27 @@
-# Sources — Gaza : famine déclarée
+# Sources — Gaza : famine déclarée, les responsables doivent rendre des comptes
 
 Article : [`2025-08-22-gaza-famine-declaree-les-responsables-doivent-rendre-des-comptes.md`](../articles/2025-08-22-gaza-famine-declaree-les-responsables-doivent-rendre-des-comptes.md)
 
-🟢 Statut : **article conservé** — les chiffres correspondent à la situation au 22 août 2025, date de publication.
+Dernier audit : **2026-04-21**
 
----
+## ✓ Sources vérifiées
 
-## Claims vérifiées 🟢
+- IPC déclare officiellement la famine dans le gouvernorat de Gaza (22 août 2025) → [IPC — Famine confirmed in Gaza Governorate, projected to expand](https://www.ipcinfo.org/ipcinfo-website/countries-in-focus-archive/issue-134/en/)
+- 514 000 personnes en Phase 5 entre le 1er juillet et le 15 août 2025 → [UNICEF — Gaza : la famine confirmée pour la première fois (22 août 2025)](https://www.unicef.fr/article/gaza-la-famine-confirmee-pour-la-premiere-fois/)
+- Plus de 640 000 personnes projetées en Phase 5 d'ici fin septembre 2025 → [UNICEF — Famine confirmed for first time in Gaza](https://www.unicef.org/press-releases/famine-confirmed-first-time-gaza)
+- Première famine officiellement confirmée au Moyen-Orient → [OMS — Famine confirmed for first time in Gaza (22 août 2025)](https://www.who.int/fr/news/item/22-08-2025-famine-confirmed-for-first-time-in-gaza)
+- António Guterres : « un échec pour l'humanité toute entière » → [ONU Info — Famine à Gaza (22 août 2025)](https://news.un.org/fr/story/2025/08/1157336)
+- Comprendre la méthodologie IPC → [ONU Genève — Comprendre le rapport de l'IPC](https://www.ungeneva.org/fr/news-media/news/2025/09/110244/comprendre-le-rapport-de-lipc-comment-est-evaluee-la-famine-gaza)
+- Lettre dans The Lancet estimant jusqu'à 186 000 morts (juillet 2024) — 7,9 % de la population sur base de 2,3 millions recensés en 2022 → [The Lancet — Counting the dead in Gaza: difficult but essential](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)01169-3/fulltext)
+- Reprise et analyse de l'étude Lancet → [Al Jazeera — Gaza toll could exceed 186 000](https://www.aljazeera.com/news/2024/7/8/gaza-toll-could-exceed-186000-lancet-study-says)
+- Bilan de plus de 40 000 morts à Gaza, repris par les agences onusiennes → [OCHA oPt — humanitarian updates](https://www.ochaopt.org/)
+- Citation Mahmoud Darwich « Nous avons sur cette terre ce qui rend la vie digne d'être vécue » — premier vers du poème *Sur cette terre* (recueil « La Terre nous est étroite », 1986) → [Poetry International — On This Earth (Mahmoud Darwich)](https://www.poetryinternational.com/en/poets-poems/poems/poem/103-12093_On-this-earth)
 
-| Claim | Source |
-|---|---|
-| IPC confirme la famine à Gaza, 514 000 personnes en phase 5 | [IPC Famine Review Committee Report, août 2025](https://www.ipcinfo.org/fileadmin/user_upload/ipcinfo/docs/IPC_Famine_Review_Committee_Report_Gaza_Aug2025.pdf) |
-| 641 000 personnes en phase 5 projetées fin septembre | [IPC Gaza, 22 août 2025](https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1159696/) |
-| « Catastrophe entièrement provoquée par l'homme » (formule IPC) | [UNICEF, 22 août 2025](https://www.unicef.org/press-releases/famine-confirmed-first-time-gaza) |
-| The Lancet estime jusqu'à 186 000 morts (juillet 2024) | [France 24, juillet 2024](https://www.france24.com/fr/moyen-orient/20240711-gaza-estimation-lancet-bilan-186-000-morts-palestiniens-israel-medecins-monde-calcul-hamas) |
-| Première famine confirmée au Moyen-Orient | [OMS, 22 août 2025](https://www.who.int/news/item/22-08-2025-famine-confirmed-for-first-time-in-gaza) |
-
-## Claims flaggées 🟡
-
-| Claim | Pourquoi | Comment vérifier |
-|---|---|---|
-| Citation Mahmoud Darwich « Si je meurs, je veux être enterré dans ma terre » | Attribution à Darwich à vérifier — formule proche de plusieurs de ses poèmes | Rechercher la source précise (recueil, poème) |
-| « 40 000 civils palestiniens morts depuis octobre 2023 » | Chiffre correspondant au bilan officiel du ministère de la Santé de Gaza à l'été 2024 (sources OCHA) | [OCHA oPt](https://www.ochaopt.org/) |
-
-## Organisations citées
+## Où vérifier (ressources générales)
 
 - [IPC — Integrated Food Security Phase Classification](https://www.ipcinfo.org/)
 - [UNICEF](https://www.unicef.org/)
-- [OMS — Organisation mondiale de la santé](https://www.who.int/)
+- [OMS](https://www.who.int/)
+- [OCHA oPt](https://www.ochaopt.org/)
 - [The Lancet](https://www.thelancet.com/)
+- [UNRWA](https://www.unrwa.org/)

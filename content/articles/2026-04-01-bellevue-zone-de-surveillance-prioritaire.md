@@ -23,25 +23,19 @@ une: true
 
 ## Le plus grand quartier populaire de la métropole, transformé en zone de contrôle
 
-Bellevue, c'est **près de 17 000 habitants** à cheval sur Nantes et Saint-Herblain. C'est aussi l'un des plus grands quartiers HLM de l'Ouest de la France. Et surtout, c'est devenu le **laboratoire préféré** de la mairie PS pour tester sa politique sécuritaire.
+Bellevue, c'est **près de 20 000 habitants** à cheval sur Nantes et Saint-Herblain. C'est aussi l'un des plus grands quartiers HLM de l'Ouest de la France, majoritairement composé de logements sociaux construits à partir des années 1960 ([Bellevue sur Wikipédia](https://fr.wikipedia.org/wiki/Bellevue_(Nantes))). Et surtout, c'est devenu le **laboratoire préféré** des politiques sécuritaires.
 
-Classé **Zone de Sécurité Prioritaire (ZSP)** depuis 2012 sous Hollande, Bellevue n'en est jamais sorti. Depuis, chaque mandat ajoute sa couche : plus de **caméras de vidéosurveillance**, plus de patrouilles, plus de contrôles. Mais toujours la même réalité : **écoles qui tombent en ruine, transports qui ne passent plus après 22h, médecins qui partent**.
+Classé **Zone de Sécurité Prioritaire (ZSP)** depuis 2012 (lancement par le ministère de l'Intérieur sous Hollande), Bellevue n'en est jamais vraiment sorti ([Wikipédia — Zone de sécurité prioritaire](https://fr.wikipedia.org/wiki/Zone_de_s%C3%A9curit%C3%A9_prioritaire)). Depuis, chaque mandat ajoute sa couche : plus de **caméras de vidéosurveillance**, plus de patrouilles, plus de contrôles. Mais toujours la même réalité : **écoles à bout de souffle, transports qui ne passent plus après 22h, déserts médicaux**.
 
 >! « Chez nous, l'État ne vient jamais. Sauf quand il y a la BAC. » — un habitant du Grand Bellevue
 
 ## Caméras partout, personne pour aider
 
-En 2024, **Bassem Asseh** (adjoint à la sécurité de Johanna Rolland) annonçait fièrement l'installation de **nouvelles caméras de vidéosurveillance** dans les halls d'immeubles et sur les places. Le budget : plusieurs centaines de milliers d'euros.
+En 2024, la Ville de Nantes a installé 80 caméras supplémentaires à travers la ville, dans la continuité du plan annuel lancé depuis 2019 — qui a fait progresser le parc de vidéoprotection de **146 %** en cinq ans ([Médiacités — Nantes parmi les villes qui accélèrent](https://www.mediacites.fr/breve/nantes/2024/05/02/videosurveillance-apres-avoir-tarde-a-sy-mettre-nantes-est-lune-des-villes-qui-installe-le-plus-de-cameras-depuis-2019/), [Métropole Nantes — 80 caméras 2024](https://metropole.nantes.fr/actualites/2024/securite-tranquillite-publique/videoprotection-80-cameras)). Bellevue figure parmi les quartiers concernés.
 
-Pendant ce temps, au centre socioculturel du quartier, **deux postes d'éducateurs** ne sont plus remplacés. Le conseil citoyen peine à se réunir. L'antenne mairie ferme deux après-midi par semaine.
+Pendant ce temps, les postes d'éducateurs et d'animateurs socioculturels restent sous tension, plusieurs collectifs locaux alertent depuis des années sur la réduction des moyens aux centres socioculturels de la ville, à l'instar du travail de veille de la [Fédération des Centres Sociaux de France](https://www.centres-sociaux.fr/).
 
 La logique est claire : **on surveille, on ne soutient pas**. On traite les quartiers populaires comme des territoires à maintenir sous contrôle, pas comme des lieux où vivent des familles qui méritent des services publics dignes.
-
-### Les chiffres parlent
-
-- **+200 caméras** de vidéosurveillance installées à Bellevue en 10 ans
-- **-30 %** de postes d'animateurs socioculturels sur la même période
-- **1 médecin généraliste** pour **plus de 3 000 habitants** dans certains îlots
 
 ## La BAC comme seule politique de quartier
 

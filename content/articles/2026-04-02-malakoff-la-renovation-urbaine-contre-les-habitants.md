@@ -23,7 +23,7 @@ plainte_variant: "logement"
 
 ## Un quartier qui change — mais pas pour ses habitants
 
-Malakoff, c'est 10 000 habitants, à un jet de tram de la gare et du centre-ville. Pendant des décennies, ce fut l'un des grands quartiers HLM de Nantes, construit dans les années 70 pour loger les classes populaires et les travailleurs immigrés.
+Malakoff, classé **quartier prioritaire** de la politique de la ville, compte un peu plus de 3 400 habitants au recensement 2018 ([SIG Ville — Quartier Prioritaire Malakoff](https://sig.ville.gouv.fr/atlas/QP/)). À un jet de tram de la gare et du centre-ville, c'est l'un des grands quartiers HLM de Nantes, construit à partir des années 1970 pour loger les classes populaires et les travailleurs immigrés ([Wikipédia — Malakoff (Nantes)](https://fr.wikipedia.org/wiki/Malakoff_(Nantes))).
 
 Aujourd'hui, **Malakoff change de visage**. Des tours tombent. De nouveaux immeubles poussent. La mairie parle de **« renouvellement »**, **« mixité »**, **« quartier ouvert ».** Les brochures promettent un futur lumineux.
 
@@ -31,7 +31,7 @@ Mais sur le terrain, c'est autre chose : un **remplacement de population** méth
 
 ## Comment on chasse les pauvres proprement
 
-Le plan ANRU (Agence Nationale pour la Rénovation Urbaine) à Malakoff, c'est **des centaines de logements démolis**, **remplacés** par des programmes neufs dont une partie — souvent la majorité — passe en **accession à la propriété** ou en **loyers intermédiaires** inaccessibles aux anciens locataires.
+Le plan **Malakoff – Pré-Gauchet** engagé par la convention avec l'**ANRU** (Agence Nationale pour la Rénovation Urbaine) signée en 2004, c'est **397 logements démolis** en phase 1 (2004-2009), tours « Sicile » et « Portugal » détruites, remplacés par environ 400 logements neufs dont une partie en **accession à la propriété** et en **loyers intermédiaires** inaccessibles aux anciens locataires ([ANRU — La mue de Malakoff-Pré-Gauchet](https://www.anru.fr/actualites/nantes-la-mue-reussie-du-quartier-malakoff-pre-gauchet), [ENS — Un projet multidimensionnel](https://www.geographie.ens.psl.eu/Un-projet-multidimensionnel.html?lang=fr)). L'ANRU a contribué à hauteur de 48,4 M€.
 
 Le mécanisme est rodé :
 
@@ -45,13 +45,11 @@ Résultat : les anciens habitants **ne reviennent jamais**. Le quartier se **bob
 
 >! « Ils m'ont relogée à Doulon. Je mettais 10 minutes à pied à l'école, maintenant je mets 40 minutes en bus. Mes enfants ont perdu leurs copains. On a perdu nos voisins. » — une habitante relogée en 2023
 
-## Les chiffres qu'on ne met pas dans la brochure
+## Les arbitrages qu'on ne met pas dans la brochure
 
-- Sur les tours démolies depuis 2015 à Malakoff, **moins de 40 %** des habitants relogés sont revenus dans le quartier après reconstruction.
-- Les nouveaux logements dits **« sociaux »** intègrent de plus en plus de **PLS** (loyers plafonnés les plus hauts), inaccessibles aux familles à faibles revenus.
-- Le prix du **mètre carré** dans Malakoff neuf a **doublé** en 10 ans.
+La question des **taux de retour** des ménages relogés dans leur quartier après démolition est documentée depuis plus de quinze ans comme l'une des principales limites du PNRU puis du NPNRU ([Rapport ANRU — Bilan du PNRU](https://www.anru.fr/sites/default/files/media/downloads/2023-bilan_pnru_web_planches.pdf), [Résovilles — Comprendre PNRU / NPNRU](https://resovilles.com/pnru-npnru-anru-comprendre-politiques-de-renouvellement-urbain-quartiers-prioritaires/)). Les nouveaux logements dits sociaux intègrent fréquemment une part importante de **PLS** (loyers plafonnés les plus hauts), moins accessibles aux familles à faibles revenus — plusieurs chercheurs et observateurs ont pointé cette dérive ([USH — Union Sociale pour l'Habitat, veille sur les loyers](https://www.union-habitat.org/)).
 
-Pendant que ça s'envole, les anciens habitants, eux, se retrouvent dans des quartiers toujours plus périphériques, toujours plus mal desservis, toujours plus stigmatisés.
+Pendant que le prix du mètre carré s'envole dans les programmes neufs, les anciens habitants, eux, se retrouvent parfois dans des quartiers plus périphériques, toujours plus mal desservis, toujours plus stigmatisés.
 
 ## La « mixité sociale » : un mot pour cacher la purge
 

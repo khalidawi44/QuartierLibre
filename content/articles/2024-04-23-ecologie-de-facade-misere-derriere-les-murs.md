@@ -20,11 +20,9 @@ plainte_variant: "logement"
 original_url: "https://quartierlibre.org/ecologie-de-facade-misere-derriere-les-murs/"
 ---
 
-## Une écologie de vitrine, pour la com’
+## Une écologie de vitrine, pour la com'
 
-**Millons d’ €uros**
-
-C’est le montant annoncé fièrement par Nantes Métropole pour ses “plans d’actions” dans les quartiers populaires. Mais dans la réalité des cités HLM, les moisissures rongent les murs, les punaises de lit dévorent les corps, les enfants dorment dans des logements insalubres.
+Nantes Métropole communique abondamment sur ses « plans d'actions » dans les quartiers populaires et sur sa politique de transition écologique « juste » et « inclusive » ([Nantes Métropole — Contrat de ville et quartiers prioritaires](https://contrat-ville-agglonantaise.fr/)). Mais dans la réalité des cités HLM, les moisissures rongent les murs, les punaises de lit dévorent les corps, les enfants dorment dans des logements insalubres.
 
 Nantes Métropole annonce un “second plan d’actions” pour les quartiers populaires, vantant une **transition écologique “juste” et “inclusive”**. Sur le papier, tout est parfait : arbres plantés, city-stades repeints, pistes cyclables fléchées, façades colorées. Mais **dans les appartements des tours HLM de Bellevue, Bottière, Dervallières ou du Clos Toreau, les habitants vivent l’exact inverse** de cette fable municipale.
 
@@ -33,18 +31,11 @@ Nantes Métropole annonce un “second plan d’actions” pour les quartiers po
 - Cafards ,Rats ,Punaises de lit.
 - Radiateurs en panne, Pas d’eau chaude, Air irrespirable.
 
-### Où est passée l’écologie dans les logements ?
+### Où est passée l'écologie dans les logements ?
 
-Les chiffres claquent :
+Le **Nouveau Programme National de Renouvellement Urbain (NPNRU)** représente plusieurs centaines de millions d'euros d'engagement sur Nantes Métropole, répartis entre bailleurs sociaux (Nantes Métropole Habitat, CDC Habitat…), la métropole, l'État et les communes ([ANRU — NPNRU](https://www.anru.fr/le-nouveau-programme-national-de-renouvellement-urbain-npnru)). Sur le détail de ces volumes, les conventions signées avec l'ANRU et les bilans annuels sont publics.
 
-650 millions d’euros… pour repeindre les trottoirs ?
-
-- 650 millions d’euros de budget,
-- dont 50 % gérés par des bailleurs sociaux (Nantes Métropole Habitat, CDC Habitat…),
-- 26 % par la métropole,
-- le reste par l’État et les communes.
-
-Mais **aucune ligne claire** ne détaille ce qui est investi pour **assainir, rénover ou entretenir** les logements eux-mêmes.
+Mais **aucune ligne claire** ne détaille ce qui est investi pour **assainir, rénover ou entretenir** les logements eux-mêmes au quotidien — hors grands programmes de démolition-reconstruction.
 
 **Pas un mot** sur l’isolation.
 
@@ -91,9 +82,9 @@ Et tant que le pouvoir local préférera planter des choux que réparer les loge
 
 Pendant que la mairie organise des balades “participatives” et des inaugurations fleuries, **les familles abandonnées dans les tours subissent une écologie à deux vitesses : la vitrine verte pour les photos, la misère noire pour les classes populaires.**
 
-### Où est l’argent ?
+### Où est l'argent ?
 
-Des dizaines de millions par an. 650 millions!
+Des dizaines de millions chaque année.
 
 Mais **rien pour les logements délabrés**.
 

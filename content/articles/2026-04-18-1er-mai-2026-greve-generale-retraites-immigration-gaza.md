@@ -62,26 +62,17 @@ Revendications récurrentes dans les appels CGT-Solidaires-FSU :
 
 ## À Nantes : ce qu'il faut savoir
 
-**Départ : 10h, Place du Bouffay**. Parcours annoncé :
+À la date de rédaction, la fédération [CGT Loire-Atlantique](https://lacgt44.fr/), la [FSU 44](https://fsu44.fsu.fr/) et [Solidaires 44](https://solidaires.org/) n'ont pas publié la version définitive de l'appel nantais. La tradition locale reste la même depuis plusieurs années : rassemblement syndical en début de matinée dans le centre-ville, cortège vers la préfecture.
 
-Place du Bouffay → Rue du Château → Rue de la Marne → Place Royale → Cours des Cinquante Otages → Place du Commerce → Quai de la Fosse → Place Mellinet → Préfecture (dispersion).
+La page nationale [« Trouver un lieu de manifestation »](https://www.cgt.fr/actualites/france/mobilisation/le-1er-mai-trouvez-un-lieu-de-rassemblement-et-de-manifestation) de la CGT et les réseaux de la CGT 44 publieront le lieu et l'heure définitifs. Surveillez aussi les comptes des collectifs nantais (logement, sans-papiers, Palestine, étudiants).
 
-Durée estimée : 3 à 4 heures. Plusieurs cortèges internes :
+Plusieurs cortèges se constituent généralement au sein du défilé :
 
 - **Cortège syndical de tête** : CGT, Solidaires, FSU
-- **Cortège « Logement, quartiers populaires »** : DAL, locataires NMH, collectifs de [Bellevue](/category/bellevue/), [Malakoff](/category/malakoff/), [Clos Toreau](/category/clos-toreau/)
-- **Cortège « Solidarité sans-papiers »** : Sans-Papiers 44, Cimade, RESF
-- **Cortège « Palestine »** : drapeaux, keffiehs, banderoles — prévu en queue de cortège pour maximiser la visibilité
-- **Cortège étudiant** : depuis le campus Tertre, jonction à 11h au Cours des Cinquante Otages
-
-## Après-manifestation : AG populaire
-
-À partir de 14h, **AG ouverte Place Graslin**, co-organisée par les collectifs nantais :
-
-- Retour d'expérience sur la journée
-- Coordination des prochaines dates (8 mai, 20 mai, 1er juin)
-- Préparation d'un **cahier de revendications** que nous déposerons à la préfecture le 15 mai
-- Possible appel à la grève reconductible dans certains secteurs (cheminots, éducation nationale, hospitaliers)
+- **Cortège logement et quartiers populaires** : DAL, locataires de bailleurs sociaux, collectifs de [Bellevue](/category/bellevue/), [Malakoff](/category/malakoff/), [Clos Toreau](/category/clos-toreau/)
+- **Cortège solidarité sans-papiers** : Collectif des Sans-Papiers 44, Cimade, RESF
+- **Cortège Palestine** : drapeaux, keffiehs, banderoles
+- **Cortège étudiant** : depuis les campus, avec jonction sur le parcours
 
 ## Se protéger en manifestation — rappel
 
@@ -92,7 +83,7 @@ Règles élémentaires :
 - **Ne pas venir seul·e**. Venir en groupe, se repérer un point de rendez-vous en cas de dispersion.
 - **Sérum physiologique + lunettes** pour les gaz lacrymogènes. Un chèche pour se protéger la bouche.
 - **Téléphone chargé**, mais mettre en mode avion si vous craignez un contrôle (les téléphones sont fouillés).
-- **Numéro d'avocat commis d'office écrit au feutre sur l'avant-bras** : **02 40 89 30 00** (Barreau de Nantes, permanence 1er mai).
+- Avoir avec soi le numéro d'un·e avocat·e ou le **contact du Barreau de Nantes** pour la permanence pénale ([annuaire Barreau de Nantes](https://www.barreaunantes.fr/)).
 - **Pas d'objets suspects** (cutter, laser, pétard). Même un parapluie peut être confisqué.
 - En cas d'arrestation : **silence absolu**, ne répondre à rien sans avocat, demander un médecin si blessé.
 

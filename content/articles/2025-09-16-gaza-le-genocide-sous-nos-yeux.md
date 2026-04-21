@@ -21,7 +21,7 @@ original_url: "https://quartierlibre.org/gaza-le-genocide-sous-nos-yeux/"
 
 ## Massacres , horreurs et exode
 
-Les 15 et 16 septembre 2025, [Gaza](/category/genocide/) a été frappée avec une intensité inouïe. Les frappes israéliennes ont anéanti des quartiers entiers, tuant femmes, enfants et vieillards. Hier, **la famille al-Sultan a été entièrement décimée**. Quinze vies effacées en un instant, des enfants et des adultes balayés par des bombes prétendument “chirurgicales”. Les responsables israéliens parlent de sécurité, mais les images, les témoignages et les coprs parlent eux , de massacre.
+Mi-septembre 2025, [Gaza](/category/genocide/) a été frappée avec une intensité inouïe. Les frappes israéliennes ont anéanti des quartiers entiers, tuant femmes, enfants et vieillards. Le 12 septembre, **14 membres de la famille al-Sultan ont été tués** dans une seule frappe sur leur maison de la zone at-Twam au nord de Gaza City, parmi eux un jeune footballeur de 14 ans ([Al Jazeera — Israeli attacks on Gaza kill 65, including 14 members of the same family](https://www.aljazeera.com/news/2025/9/12/israeli-attacks-on-gaza-kill-59-including-14-members-of-the-same-family)). Les responsables israéliens parlent de sécurité, mais les images, les témoignages et les corps parlent, eux, de massacre.
 
 ![](https://quartierlibre.org/wp-content/uploads/2025/09/famill_entiere_DCD.jpeg)
 
@@ -55,7 +55,9 @@ Gaza brûle, Gaza saigne, mais **nous pouvons agir**. Chaque drapeau, chaque pho
 
 Le temps de l’indignation passive est terminé. Il faut transformer la colère en action, le chagrin en visibilité. Si nous nous mobilisons massivement, symboliquement, nous pouvons créer un impact réel. **Informer, dénoncer, documenter et montrer la solidarité : c’est notre seule arme face au génocide en cours.**
 
-> ***« La paix n’est pas seulement l’absence de violence, c’est la présence de justice. »*** **Edward Said** (1935‑2003), intellectuel et écrivain palestinien
+> ***« La paix n'est pas seulement l'absence de tension — c'est la présence de la justice. »***
+>
+> **Martin Luther King Jr.**, sermon *When Peace Becomes Obnoxious* (18 mars 1956)
 
 ---
 

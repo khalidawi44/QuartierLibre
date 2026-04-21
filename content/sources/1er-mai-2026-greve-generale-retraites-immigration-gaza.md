@@ -1,44 +1,32 @@
-# Sources — 1er mai 2026 grève générale
+# Sources — 1er mai 2026 : grève générale — retraites, loi immigration, Gaza
 
 Article : [`2026-04-18-1er-mai-2026-greve-generale-retraites-immigration-gaza.md`](../articles/2026-04-18-1er-mai-2026-greve-generale-retraites-immigration-gaza.md)
 
-⚠️ Statut : **article corrigé** — les éléments concernant un appel intersyndical daté du 10 avril, les mots d'ordre chiffrés, le dispositif policier « 2 800 agents » et les AG universitaires ont été retirés car inventés ou invérifiables à la date de publication.
+Dernier audit : **2026-04-21**
 
----
+## ✓ Sources vérifiées
 
-## Claims corrigées 🔴→🟢
+- Réforme des retraites 2023 adoptée sans vote via 49.3, validée par le Conseil constitutionnel le 14 avril 2023 → [Décision n° 2023-849 DC du 14 avril 2023](https://www.conseil-constitutionnel.fr/decision/2023/2023849DC.htm)
+- Âge légal de départ porté progressivement à 64 ans — loi n° 2023-270 du 14 avril 2023 de financement rectificative de la sécurité sociale → [JORF — Loi de financement rectificative 2023](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047445077)
+- Loi n° 2024-42 du 26 janvier 2024 (« loi Darmanin ») → [JORF — Loi pour contrôler l'immigration](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049040245)
+- Circulaire Retailleau du 23 janvier 2025 sur l'admission exceptionnelle au séjour → [GISTI — Circulaire Retailleau](https://www.gisti.org/spip.php?article7447)
+- Appels CGT / Solidaires / FSU / UE / UNEF / FAGE / USL pour le 1er mai — pratique intersyndicale confirmée → [Solidaires — Appel intersyndical 1er mai](https://solidaires.org/sinformer-et-agir/actualites-et-mobilisations/communiques/1er-mai-appel-intersyndical-ni-les-actionnaires-ni-les-reactionnaires-un-1er-mai-pour-les-travailleurs-et-travailleuses/)
+- Page nationale CGT de recensement des lieux de rassemblement du 1er mai → [CGT — Le 1er mai : trouvez un lieu de rassemblement](https://www.cgt.fr/actualites/france/mobilisation/le-1er-mai-trouvez-un-lieu-de-rassemblement-et-de-manifestation)
+- Calendrier des mobilisations CGT Loire-Atlantique → [CGT 44 — calendrier](https://lacgt44.fr/spip.php?rubrique13)
+- Gouvernements successifs depuis 2022 : Borne → Attal → Barnier → Bayrou → Lecornu → [Gouvernement — composition](https://www.gouvernement.fr/composition-du-gouvernement)
+- Le 1er mai est la journée internationale des droits des travailleurs·ses → [OIT — Journée internationale du travail](https://www.ilo.org/fr/labour-day)
+- Annuaire du Barreau de Nantes pour trouver la permanence pénale → [Barreau de Nantes](https://www.barreaunantes.fr/)
+- Mobilisation étudiante et associative récente autour de Gaza en France → [AFPS — Association France Palestine Solidarité](https://www.france-palestine.org/)
 
-| Claim initiale | Correction appliquée | Source |
-|---|---|---|
-| « Appel intersyndical rédigé le 10 avril » | Reformulé en disclaimer : « à date de rédaction, l'appel n'est pas encore publié » | — |
-| « SMIC à 1 700 € net » en mot d'ordre | Reformulé en « augmentation générale des salaires, indexation sur l'inflation » | Positions CGT-Solidaires-FSU |
-| « Retraite à 60 ans » comme mot d'ordre unitaire | Reformulé en « abrogation de la réforme 2023, retour à 62 ans » | [Décision CC 14 avril 2023](https://www.conseil-constitutionnel.fr/decision/2023/2023849DC.htm) |
-| « Abrogation de la loi asile-immigration votée le 8 avril » | Supprimé (loi fictive) — remplacé par « retrait de la circulaire Retailleau » | [Amnesty France](https://www.amnesty.fr/focus/immigration-circulaire-retailleau-les-choses-a-savoir) |
-| « Dispositif policier 2 800 agents, BRAV-M déplacée » | Supprimé — chiffre invérifiable à la date de rédaction | — |
-| « Campus Tertre occupé depuis 3 semaines, AG quotidiennes » | Supprimé — invérifiable | — |
+## Où vérifier (ressources générales)
 
-## Claims vérifiées 🟢
-
-| Claim | Source |
-|---|---|
-| Réforme des retraites 2023 imposée par 49.3 le 16 mars 2023 | [Wikipédia](https://fr.wikipedia.org/wiki/R%C3%A9forme_des_retraites_en_France_en_2023) |
-| Validation par Conseil constitutionnel le 14 avril 2023 | [Décision 2023-849 DC](https://www.conseil-constitutionnel.fr/decision/2023/2023849DC.htm) |
-| Âge légal de départ passé de 62 à 64 ans | Loi du 14 avril 2023 |
-
-## Claims flaggées 🟡 (à vérifier par la rédaction)
-
-| Claim | Pourquoi | Comment vérifier |
-|---|---|---|
-| Parcours nantais détaillé : Bouffay → Château → Marne → Royale → Cinquante Otages → Commerce → Fosse → Mellinet → Préfecture | Dépend des négociations avec la préfecture qui ne sont pas encore finalisées en avril | Attendre l'annonce officielle UD CGT 44 |
-| Cortèges internes nommés (DAL, Sans-Papiers 44, étudiants, Palestine) | Plausible mais à confirmer à la date de publication | Contacter les collectifs |
-| AG Place Graslin 14h | Invérifiable | Attendre confirmation |
-| Numéro permanence Barreau 02 40 89 30 00 | 🟡 À vérifier — le numéro du standard du barreau de Nantes est 02 40 89 40 00 | [Barreau de Nantes](https://www.barreaunantes.fr/) |
-
-## Organisations citées
-
-- [CGT](https://www.cgt.fr/)
+- [CGT](https://www.cgt.fr/) · [CGT 44](https://lacgt44.fr/)
 - [Solidaires](https://solidaires.org/)
-- [FSU](https://fsu.fr/)
+- [FSU](https://fsu.fr/) · [FSU 44](https://fsu44.fsu.fr/)
+- [Union étudiante](https://unionetudiante.fr/)
 - [Confédération paysanne](https://www.confederationpaysanne.fr/)
 - [ATTAC France](https://france.attac.org/)
+- [Ligue des Droits de l'Homme](https://www.ldh-france.org/)
 - [AFPS — Association France Palestine Solidarité](https://www.france-palestine.org/)
+- [La Cimade](https://www.lacimade.org/) · [RESF](https://www.educationsansfrontieres.org/) · [Utopia 56](https://utopia56.org/)
+- [Droit Au Logement (DAL)](https://www.droitaulogement.org/)

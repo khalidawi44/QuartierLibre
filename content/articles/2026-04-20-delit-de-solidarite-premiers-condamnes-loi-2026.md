@@ -66,9 +66,9 @@ Bruno Retailleau prétendait « simplifier » le cadre. Les organisations dénon
 
 D'après le communiqué de La Cimade du 27 janvier 2026 et la tribune collective :
 
-- **120 000 OQTF délivrées par an** en France — *« un record en Europe, sans considération pour la réalité de leur situation ni respect de leurs droits fondamentaux »* ([La Cimade, 27 janvier 2026](https://www.lacimade.org/presse/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant/))
-- **En 2025**, les équipes Cimade ont rencontré en Centre de Rétention Administrative (CRA) **au moins 46 parents d'enfants français** et **20 personnes arrivées en France durant leur enfance** — uniquement dans les CRA de **Rennes et de Guyane**
-- Des recours ont été déposés contre la circulaire par plusieurs organisations en 2025 ([GISTI — recours contre la circulaire Retailleau](https://www.gisti.org/spip.php?article7489=))
+- **Plus de 120 000 OQTF délivrées par an** en France — *« un record en Europe, sans considération pour la réalité de leur situation ni respect de leurs droits fondamentaux »* ([La Cimade, 27 janvier 2026](https://www.lacimade.org/presse/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant/))
+- Augmentation des procédures d'éloignement fondées sur une « menace à l'ordre public » non caractérisée, et des expulsions de personnes enracinées en France, arrivées enfant, ayant un conjoint ou un enfant français ([communiqué Cimade, 27 janv. 2026](https://www.lacimade.org/presse/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant/))
+- Plusieurs organisations ont engagé contentieux et notes d'analyse contre la circulaire depuis sa publication ([GISTI — page dédiée à la circulaire Retailleau](https://www.gisti.org/spip.php?article7447))
 
 ## Un cas documenté — parmi des milliers
 
@@ -80,7 +80,7 @@ Quatorze ans de vie, trois enfants français, un mariage avec une ressortissante
 
 ## La voix des associations
 
->! *« Ces textes reposent sur une vision déformée des migrations, nourrie par des discours racistes. »*
+>! *« Ces textes reposent sur une vision déformée des migrations, nourrie par des discours racistes et xénophobes. »*
 >!
 >! — **Fanélie Carrey-Conte**, secrétaire générale de La Cimade ([communiqué du 27 janvier 2026](https://www.lacimade.org/presse/deux-ans-de-la-loi-darmanin-un-an-de-la-circulaire-retailleau-un-bilan-alarmant/))
 
@@ -92,15 +92,15 @@ Le [CCFD-Terre Solidaire](https://ccfd-terresolidaire.org/loi-asile-et-immigrati
 
 La tribune du 27 janvier 2026 est signée par :
 
-- **Judith Allenbach** — présidente du [Syndicat de la magistrature](https://syndicat-magistrature.fr/) (le syndicat « rouge » des magistrats)
-- **Jeanne Barseghian** (maire écologiste de Strasbourg) et **Damien Carême** (eurodéputé EELV), pour l'[Anvita](https://www.anvita.fr/), le réseau des villes qui se déclarent « accueillantes »
-- **Cécile Duflot** — directrice générale d'[Oxfam France](https://www.oxfamfrance.org/), ancienne ministre du Logement
+- **Judith Allenbach** — présidente du [Syndicat de la magistrature](https://syndicat-magistrature.fr/)
+- **Jeanne Barseghian** et **Damien Carême** — coprésident·es de l'[Anvita](https://www.anvita.fr/), le réseau des villes qui se déclarent « accueillantes »
+- **Cécile Duflot** — directrice générale d'[Oxfam France](https://www.oxfamfrance.org/)
 - **Monique Guyot-Berni** — présidente de [La Cimade](https://www.lacimade.org/)
-- **Nayan Khiang** — Solidarités Asie France
-- **Yann Manzi** — cofondateur d'[Utopia 56](https://www.utopia56.org/)
-- **Bruno Morel** — directeur général d'[Emmaüs Solidarité](https://emmaus-france.org/)
-- **Karine Parrot** et **Vanina Rochiccioli** — co-présidentes du [GISTI](https://www.gisti.org/)
-- **Matthieu Quinquis** — président de l'[Observatoire international des prisons](https://oip.org/)
+- **Nayan Khiang** — président de Solidarités Asie France
+- **Yann Manzi** — délégué général d'[Utopia 56](https://www.utopia56.org/)
+- **Bruno Morel** — président d'[Emmaüs France](https://emmaus-france.org/)
+- **Karine Parrot** et **Vanina Rochiccioli** — coprésidentes du [GISTI](https://www.gisti.org/)
+- **Matthieu Quinquis** — président de la section française de l'[Observatoire international des prisons](https://oip.org/)
 - **Nathalie Tehio** — présidente de la [LDH](https://www.ldh-france.org/)
 
 Douze voix, douze organisations, avec chacune des dizaines d'années d'ancienneté sur ces questions. Ce n'est ni une tribune de campagne, ni un coup médiatique. C'est un **bilan professionnel** de gens qui accompagnent quotidiennement les personnes concernées.

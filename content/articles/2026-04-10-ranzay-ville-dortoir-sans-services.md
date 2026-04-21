@@ -53,7 +53,7 @@ Ce désert **n'est pas une fatalité**. C'est le résultat de **choix politiques
 
 - Les **subventions municipales** aux associations de quartier sont concentrées sur les plus gros quartiers ([Bellevue](/category/bellevue/), [Malakoff](/category/malakoff/), [Dervallières](/category/dervallieres/)). Le Ranzay passe toujours après.
 - Les **locaux disponibles** pour les associations sont rares et chers.
-- Les **contrats aidés** (les fameux CUI, PEC, emplois-jeunes) qui faisaient tourner les petites associations ont été massivement supprimés depuis 2017.
+- Les **contrats aidés** (CUI, PEC) qui faisaient vivre les petites associations ont vu leur volume fortement réduit depuis la réforme de 2017-2018 ([Ministère du Travail — parcours emploi compétences](https://travail-emploi.gouv.fr/emploi-et-insertion/parcours-emploi-competences/)).
 - La mairie **ne publie pas** d'appel à projets spécifique pour les petits quartiers.
 
 Résultat : les **petites associations** qui pourraient faire vivre le Ranzay — clubs, groupes d'entraide, collectifs culturels — n'ont **ni locaux, ni moyens, ni visibilité**.
@@ -64,7 +64,7 @@ Vivre dans un désert associatif, ce n'est pas neutre.
 
 - **Les ados** s'ennuient. Beaucoup quittent le quartier dès qu'ils peuvent — ce qui le vide encore plus.
 - **Les adultes** rentrent du travail épuisés dans des immeubles silencieux. Pas de lieu où décompresser.
-- **Les personnes âgées** (il y en a beaucoup au Ranzay, population vieillissante) sont **profondément isolées**. Une étude CCAS de 2023 estimait que **25 %** des plus de 70 ans du quartier n'avaient **aucune interaction sociale régulière** hors famille.
+- **Les personnes âgées** (il y en a beaucoup au Ranzay, population vieillissante) sont **profondément isolées**. L'étude nationale « Solitudes » des [Petits Frères des Pauvres](https://www.petitsfreresdespauvres.fr/informer/nos-rapports-et-etudes/) montre que **530 000 personnes de 60 ans et plus sont en situation de « mort sociale »** en France, avec des taux d'isolement particulièrement élevés dans les quartiers populaires et les villes-dortoirs.
 
 >! « Depuis que mon mari est mort, je parle à la caissière du Super U et c'est tout. Une semaine sur deux. » — une habitante de 77 ans
 

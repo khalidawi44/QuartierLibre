@@ -52,66 +52,6 @@ Masse salariale (personnel) : **251,3 M€**
 - Entretien durable : **16 M€**
 - Subventions d’équipement : **4,8 M€**
 
-### Budget exécuté en 2023 : fonctionnement & investissement
-
-**Recettes de fonctionnement** :
-
-**Dépenses de fonctionnement** :
-
-Millons d’ €uros
-
-**Emplois d’investissement** :  (dont remboursement de dette : 27,53 Millons d’ €uros).
-
-Millons d’ €uros
-
-**Capacité d’autofinancement** :
-
-Millons d’ €uros
-
-**Entretien durable :**
-
-Millons d’ €uros
-
-### Autres détails 2023 :
-
-**Dépenses de personnel :**
-
-Millons d’ €uros
-
-**Subventions versées :**
-
-Millons d’ €uros
-
-**Achats et charges externes :**
-
-Millons d’ €uros
-
-**Charges financières (intérêts de la dette) :**
-
-Millons d’ €uros
-
-### Investissements par secteur en 2023 :
-
-**Éducation & petite enfance :**
-
-Millons d’ €uros
-
-**Sports :**
-
-Millons d’ €uros
-
-**Culture / patrimoine :**
-
-Millons d’ €uros
-
-**Sécurité & médiation :**
-
-Millons d’ €uros
-
-**Nature & biodiversité :**
-
-Millons d’ €uros
-
 ### Traduction :
 
 - On finance d’abord la dette et les banques.
@@ -119,33 +59,25 @@ Millons d’ €uros
 - On sous-traite au privé ce qui devrait relever du service public.
 - On donne aux quartiers… de quoi organiser la prochaine kermesse, mais pas de quoi régler les problèmes structurels.
 
-### Subventions aux associations : deux poids, deux quartiers
+### Subventions aux associations : regarder la carte
 
-Les données 2024 sont limpides : les associations des quartiers centraux dépassent allègrement les **50 000 €** de subvention annuelle, pendant que Bellevue, Malakoff ou Dervallières se débattent avec moins de **10 000 €**.
+Les subventions versées aux associations par la Ville de Nantes sont publiées en open data et en annexe au budget ([Nantes — données ouvertes](https://data.nantesmetropole.fr/)). Une simple carte par quartier donne à voir une répartition nettement en faveur des associations du centre et des zones plus aisées, alors que les associations de [Bellevue](/category/bellevue/), [Malakoff](/category/malakoff/) et [Dervallières](/category/dervallieres/) fonctionnent souvent avec des enveloppes bien plus modestes.
 
-Résultat : dans certains quartiers, les toitures fuient, les équipements publics rouillent, mais le budget suffit à financer un vide-grenier ou un tournoi de pétanque… pas une rénovation complète.
+Dans certains quartiers, les toitures des équipements publics fuient, les locaux associatifs rouillent, mais le budget suffit à financer un vide-grenier ou un tournoi de pétanque — pas une rénovation complète.
 
-### Les marchés publics 2022 – Le festin des géants, les miettes pour les artisans
+### Les marchés publics : le festin des géants, les miettes pour les artisans
 
-Sur le papier, le projet avait tout pour séduire : une école flambant neuve, symbole de renouveau. Mais en épluchant les marchés publics, on découvre un puzzle où les gros morceaux de fromage sont toujours pour les mêmes :
+Les marchés publics de la Ville et de la Métropole sont tous consultables sur le [Bulletin officiel des annonces de marchés publics (BOAMP)](https://www.boamp.fr/) et sur la [plateforme d'achats de Nantes Métropole](https://marchespublics.nantesmetropole.fr/). En épluchant les lots attribués sur les gros équipements publics de ces dernières années (écoles, équipements sportifs, immobilier municipal), on retrouve souvent les mêmes gros acteurs régionaux ou nationaux (Fayat Bâtiment, Eiffage, Bouygues Construction, Vinci, etc.), tandis que les PME locales se partagent les lots secondaires.
 
-- **Fayat Bâtiment** : plus de **2 M€** pour le gros œuvre
-- **Charpente Cénomane** : **1,7 M€** pour charpente et murs ossature bois
-- **Société Construction Ossature Bois** et **ByN** : entre **400 000** et **700 000 €** chacun
-- **Zanassi Architecture** : **500 000 €** pour conseil et urbanisme, soit environ **7 % du budget** rien qu’en conception
-- **Les PME locales ?** Elles se partagent les miettes, sur des lots secondaires.
-
-Ces chiffres révèlent un système où les gros acteurs locaux et nationaux trustent l’essentiel des financements. Et on s’interroge sur la transparence de l’attribution :
+Trois questions structurent l'enquête citoyenne à mener :
 
 - Y a-t-il une logique purement technique, ou bien politique et économique derrière ces choix ?
 - Quels liens entre élus et grands groupes ?
-- Quels critères réels ont présidé à la sélection des bureaux d’études ?
-
-**À ce stade, on se demande si le projet visait à enseigner l’alphabet… ou à graver la lettre « € » dans toutes les pierres.**
+- Quels critères réels ont présidé à la sélection des bureaux d'études ?
 
 ### Dette municipale : les banques tiennent la clef de la ville
 
-Nantes est endettée à hauteur de **320 M€**, des prêts signés parfois jusqu’en 2049. Chaque année, entre **30 et 50 Millions€** s’envolent vers les intérêts bancaires, avec des taux variables et fixes parfois délirants (3,3 % ou indexés sur l’Euribor). Bref, une ponction indirecte sur les services publics et les projets de quartier.
+Le budget 2025 de la Ville de Nantes prévoit un **recours à l'emprunt de 99 M€** et un **accroissement de l'encours de dette de 30 M€ au 1er janvier 2025**, après un recours à l'emprunt de 92,2 M€ en 2024 ([Budget 2025 de la Ville de Nantes](https://metropole.nantes.fr/ma-ville-ma-metropole/nantes-et-ses-11-quartiers/la-ville-de-nantes-comment-ca-marche/les-finances-de-la-ville-de-nantes/le-budget-2025-de-la-ville-de-nantes)). Les données détaillées des emprunts — durées, taux fixes ou variables indexés sur l'Euribor — sont publiées en open data par la ville ([Emprunts en cours d'amortissement au 1er janvier 2024](https://www.data.gouv.fr/datasets/emprunts-en-cours-damortissement-a-la-ville-de-nantes-au-1er-janvier-2024/)). À chaque année d'exercice, des millions d'euros quittent les caisses municipales vers les intérêts bancaires — une ponction indirecte sur les services publics et les projets de quartier.
 
 Bref, Nantes en 2023, c’est : **des grues pour les murs, des miettes pour les humains**.
 
@@ -159,9 +91,7 @@ Le verdissement des discours est un costume trop grand pour la réalité budgét
 
 **Un système verrouillé, hérité et perpétué** Ce modèle de gestion n’est pas nouveau. Sous Jean-Marc Ayrault, les pratiques opaques et le clientélisme ont prospéré, fondant un système dont le successeur n’a fait que renforcer les mécanismes. Entre cercles d’influence et dépendance bancaire, les intérêts économiques l’emportent sur le bien commun. Il est urgent que Nantes rompe avec ce modèle qui creuse les inégalités, nourrit la dépendance aux banques, et marginalise les quartiers populaires.
 
-Comme le rappelait la sociologue Loïc Wacquant :
-
-> *« Les inégalités économiques se doublent toujours de mécanismes institutionnels et financiers qui les renforcent et les reproduisent. »*
+Comme le montrent depuis vingt ans les travaux du sociologue Loïc Wacquant ([*Punishing the Poor*, 2009](https://loicwacquant.org/); [*Parias urbains*, 2006](https://www.revue-quartmonde.org/9159?lang=fr)), les inégalités économiques se doublent toujours de mécanismes institutionnels et financiers qui les renforcent et les reproduisent.
 
 Alors, en 2026, Nantes aura un choix simple : continuer à servir les banques ou servir le peuple. L’argent, lui, ne se trompe pas : il reflète les vraies priorités.
 

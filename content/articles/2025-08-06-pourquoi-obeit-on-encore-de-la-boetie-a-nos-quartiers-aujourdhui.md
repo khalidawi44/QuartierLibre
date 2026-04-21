@@ -51,7 +51,7 @@ Quand une ville comme Nantes sous-investit dans ses HLM, laisse pourrir les bât
 
 Quand un jeune de quartier n’a accès qu’à un travail précaire, au noir, dans un entrepôt ou sur un chantier, pendant que d’autres enfants, ailleurs, s’épanouissent dans des écoles Montessori, ce n’est pas un hasard : **c’est un système de reproduction sociale**.
 
-> **« Les écoles ne sont pas en crise : elles fonctionnent exactement comme prévu. Elles reproduisent un ordre social, hiérarchique, raciste, sexiste, où les riches restent en haut et les pauvres à leur place. C’est cette reproduction qui crée la vraie insécurité. »**— *Jean-Pierre Garnier*
+Comme l'écrivent Pierre Bourdieu et Jean-Claude Passeron dans [*La reproduction. Éléments pour une théorie du système d'enseignement* (Éditions de Minuit, 1970)](https://www.leseditionsdeminuit.fr/livre-La_Reproduction-2174-1-1-0-1.html), l'école est l'institution centrale qui reproduit les inégalités sociales plutôt qu'elle ne les corrige. Le sociologue urbain [Jean-Pierre Garnier](https://www.laviedesidees.fr/_Garnier-Jean-Pierre_.html) a prolongé cette analyse en montrant que la relégation urbaine et scolaire des classes populaires n'est pas un dysfonctionnement mais un mode de fonctionnement du capitalisme contemporain.
 
 ### Que faire ? La désobéissance comme fondement politique
 
@@ -71,7 +71,7 @@ Car, pour citer encore La Boétie :
 
 La domination sociale, économique et politique qui pèse sur les quartiers du monde ne tient pas seulement par la force. Elle tient par l’habitude, par la résignation, par l’intériorisation de notre prétendue impuissance. Mais cette spirale peut être brisée. Le réveil est possible, **à condition d’oser désobéir, ensemble**.
 
-> « La plus grande des violences, c’est d’avoir convaincu les dominés qu’ils ne peuvent pas faire autrement. » – Étienne Balibar
+Cette domination, comme le montrent depuis un demi-siècle les travaux d'Étienne Balibar sur l'[hégémonie](https://www.cairn.info/publications-de-Balibar-%C3%89tienne--1571.htm) et ceux de Pierre Bourdieu sur la [violence symbolique](https://www.persee.fr/doc/arss_0335-5322_1977_num_16_1_2551), tient surtout par la conviction intériorisée qu'il n'existe pas d'autre voie possible.
 
 ## Étienne de La Boétie : «Pourquoi obéit-on ?»
 

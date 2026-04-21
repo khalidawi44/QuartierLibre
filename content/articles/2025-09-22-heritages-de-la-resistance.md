@@ -69,9 +69,7 @@ Nous n’avons pas le luxe de la neutralité. Face à un génocide déclaré, ch
 
 **Gaza vit, Gaza résiste, Gaza nous appelle.**
 
-Et l’Histoire jugera ceux qui auront répondu. attire l’attention et fait parler. Partout dans le monde, des drapeaux aux balcons, des banderoles sur les bâtiments, des filtres et images numériques sur les réseaux sociaux. Créer un effet visuel impossible à ignorer.
-
-> « Notre peuple ne déposera jamais les armes tant qu’il n’aura pas obtenu sa liberté et la fin de l’occupation. » Ismaïl Haniyeh
+Et l'Histoire jugera ceux qui auront répondu.
 
 ---
 
