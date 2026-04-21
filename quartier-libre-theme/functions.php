@@ -1213,30 +1213,41 @@ function ql_social_login_buttons( $redirect_to = '' ) {
 }
 
 /**
- * AJAX handler : toggle case cochée pour un item 👤 de la fiche sources.
- * Sauvegarde dans post_meta _ql_validated_items (array d'indices).
+ * AJAX handler : enregistrer une décision sur un item 👤.
+ * Status possibles : 'validated' (OK tel quel), 'modified' (corrigé avec
+ * note), 'removed' (à retirer de l'article), 'pending' (annule la décision).
+ * Sauvegarde dans post_meta _ql_item_decisions (assoc array index → decision).
  */
-add_action( 'wp_ajax_ql_toggle_validated', 'ql_handle_toggle_validated' );
-function ql_handle_toggle_validated() {
-    check_ajax_referer( 'ql_toggle_validated', '_ajax_nonce' );
+add_action( 'wp_ajax_ql_set_item_decision', 'ql_handle_set_item_decision' );
+function ql_handle_set_item_decision() {
+    check_ajax_referer( 'ql_set_item_decision', '_ajax_nonce' );
     $post_id = isset( $_POST['post_id'] ) ? (int) $_POST['post_id'] : 0;
     $index   = isset( $_POST['index'] ) ? (int) $_POST['index'] : -1;
-    $checked = ! empty( $_POST['checked'] ) && $_POST['checked'] !== '0';
+    $status  = isset( $_POST['status'] ) ? sanitize_key( $_POST['status'] ) : '';
+    $note    = isset( $_POST['note'] ) ? sanitize_text_field( wp_unslash( $_POST['note'] ) ) : '';
 
     if ( ! $post_id || $index < 0 ) wp_send_json_error( 'params manquants' );
     if ( ! current_user_can( 'edit_post', $post_id ) ) wp_send_json_error( 'droits insuffisants' );
-
-    $validated = get_post_meta( $post_id, '_ql_validated_items', true );
-    $validated = is_array( $validated ) ? array_map( 'intval', $validated ) : array();
-
-    if ( $checked && ! in_array( $index, $validated, true ) ) {
-        $validated[] = $index;
-    } elseif ( ! $checked ) {
-        $validated = array_values( array_filter( $validated, function ( $i ) use ( $index ) { return $i !== $index; } ) );
+    if ( ! in_array( $status, array( 'validated', 'modified', 'removed', 'pending' ), true ) ) {
+        wp_send_json_error( 'status invalide' );
     }
 
-    update_post_meta( $post_id, '_ql_validated_items', $validated );
-    wp_send_json_success( array( 'count' => count( $validated ) ) );
+    $decisions = get_post_meta( $post_id, '_ql_item_decisions', true );
+    $decisions = is_array( $decisions ) ? $decisions : array();
+
+    if ( $status === 'pending' ) {
+        unset( $decisions[ $index ] );
+    } else {
+        $decisions[ $index ] = array( 'status' => $status );
+        if ( $status === 'modified' && $note ) {
+            $decisions[ $index ]['note'] = $note;
+        }
+        $decisions[ $index ]['timestamp'] = time();
+        $decisions[ $index ]['user_id']   = get_current_user_id();
+    }
+
+    update_post_meta( $post_id, '_ql_item_decisions', $decisions );
+    wp_send_json_success( array( 'count' => count( $decisions ) ) );
 }
 
 /**
@@ -1250,8 +1261,10 @@ add_action( 'updated_post_meta', function( $meta_id, $post_id, $meta_key, $meta_
     $old_hash = get_post_meta( $post_id, '_ql_sources_hash', true );
     $new_hash = md5( (string) $meta_value );
     if ( $old_hash && $old_hash !== $new_hash ) {
-        // Fiche modifiée → reset des cases cochées (par prudence)
-        delete_post_meta( $post_id, '_ql_validated_items' );
+        // Fiche modifiée → reset des décisions (par prudence : nouveau
+        // contenu 👤 peut avoir changé l'ordre des items)
+        delete_post_meta( $post_id, '_ql_item_decisions' );
+        delete_post_meta( $post_id, '_ql_validated_items' ); // legacy cleanup
     }
     update_post_meta( $post_id, '_ql_sources_hash', $new_hash );
 }, 10, 4 );
@@ -1501,25 +1514,65 @@ function ql_render_sources_metabox( $post ) {
         echo '</details>';
     }
 
-    // Section À VALIDER par la rédaction (ouverte par défaut)
-    // Éléments non web-vérifiables (témoignages anonymes, points politiques
-    // éditoriaux, détails géographiques locaux) que Khalid doit confirmer.
-    // Chaque item a une checkbox persistée en post_meta _ql_validated_items.
-    $validated = get_post_meta( $post->ID, '_ql_validated_items', true );
-    $validated = is_array( $validated ) ? $validated : array();
+    // Section À VALIDER par la rédaction (ouverte par défaut).
+    // Chaque item 👤 peut recevoir une des 3 décisions :
+    //   - 'validated' : OK tel quel
+    //   - 'modified'  : reformulé, avec note de correction
+    //   - 'removed'   : à retirer de l'article
+    // Décisions persistées en post_meta _ql_item_decisions (assoc array
+    // index → ['status' => ..., 'note' => ...]).
+    $decisions = get_post_meta( $post->ID, '_ql_item_decisions', true );
+    $decisions = is_array( $decisions ) ? $decisions : array();
+
+    // Migration des anciennes cases cochées vers le nouveau format
+    $legacy_validated = get_post_meta( $post->ID, '_ql_validated_items', true );
+    if ( is_array( $legacy_validated ) && ! empty( $legacy_validated ) && empty( $decisions ) ) {
+        foreach ( $legacy_validated as $idx ) {
+            $decisions[ (int) $idx ] = array( 'status' => 'validated' );
+        }
+        update_post_meta( $post->ID, '_ql_item_decisions', $decisions );
+    }
+
+    $n_decided = 0;
+    foreach ( $decisions as $k => $d ) { if ( (int) $k < $c ) $n_decided++; }
+
     if ( $c > 0 ) {
-        $n_checked = 0;
-        foreach ( $validated as $v ) if ( $v < $c ) $n_checked++;
         echo '<details class="ql-src-section ql-src-section--check" open>';
-        echo '<summary>👤 ' . (int) $c . ' point' . ( $c > 1 ? 's' : '' ) . ' à valider par la rédaction <span class="ql-check-count" data-total="' . (int) $c . '">(' . (int) $n_checked . '/' . (int) $c . ' cochés)</span></summary>';
-        echo '<ul class="ql-src-checklist" data-post="' . (int) $post->ID . '" data-nonce="' . esc_attr( wp_create_nonce( 'ql_toggle_validated' ) ) . '">';
+        echo '<summary>👤 ' . (int) $c . ' point' . ( $c > 1 ? 's' : '' ) . ' à valider par la rédaction <span class="ql-check-count" data-total="' . (int) $c . '">(' . (int) $n_decided . '/' . (int) $c . ' traités)</span></summary>';
+        echo '<ul class="ql-src-checklist" data-post="' . (int) $post->ID . '" data-nonce="' . esc_attr( wp_create_nonce( 'ql_set_item_decision' ) ) . '">';
         foreach ( $parsed['tocheck'] as $idx => $item ) {
-            $checked_attr = in_array( $idx, $validated, true ) ? ' checked' : '';
-            echo '<li class="ql-src-checkitem' . ( $checked_attr ? ' is-checked' : '' ) . '">';
-            echo '<label>';
-            echo '<input type="checkbox" class="ql-validate-check" data-index="' . (int) $idx . '"' . $checked_attr . '>';
-            echo '<span class="ql-src-checkitem__text">' . $item . '</span>';
-            echo '</label>';
+            $decision = isset( $decisions[ $idx ] ) ? $decisions[ $idx ] : null;
+            $status   = $decision ? ( $decision['status'] ?? 'pending' ) : 'pending';
+            $note     = $decision['note'] ?? '';
+            $li_class = 'ql-src-checkitem ql-src-checkitem--' . esc_attr( $status );
+
+            echo '<li class="' . $li_class . '" data-index="' . (int) $idx . '">';
+            echo '<div class="ql-src-checkitem__text">' . $item . '</div>';
+
+            if ( $status === 'validated' ) {
+                echo '<div class="ql-src-decision ql-src-decision--validated">✓ Validé tel quel <button type="button" class="ql-src-undo" data-index="' . (int) $idx . '">↺ Annuler</button></div>';
+            } elseif ( $status === 'removed' ) {
+                echo '<div class="ql-src-decision ql-src-decision--removed">✗ Décidé de retirer de l\'article <button type="button" class="ql-src-undo" data-index="' . (int) $idx . '">↺ Annuler</button></div>';
+            } elseif ( $status === 'modified' ) {
+                echo '<div class="ql-src-decision ql-src-decision--modified">';
+                echo '✎ Modifié : <em>' . esc_html( $note ) . '</em> ';
+                echo '<button type="button" class="ql-src-undo" data-index="' . (int) $idx . '">↺ Annuler</button>';
+                echo '</div>';
+            } else {
+                // Non traité → 3 boutons
+                echo '<div class="ql-src-actions">';
+                echo '<button type="button" class="ql-src-btn ql-src-btn--validate" data-action="validated" data-index="' . (int) $idx . '">✓ Valider tel quel</button>';
+                echo '<button type="button" class="ql-src-btn ql-src-btn--modify" data-action="modified" data-index="' . (int) $idx . '">✎ Modifier</button>';
+                echo '<button type="button" class="ql-src-btn ql-src-btn--remove" data-action="removed" data-index="' . (int) $idx . '">✗ Supprimer</button>';
+                echo '</div>';
+                // Champ de note, caché par défaut, ouvert si clic sur "Modifier"
+                echo '<div class="ql-src-note-wrap" hidden>';
+                echo '<textarea class="ql-src-note-input" placeholder="Saisir la correction ou la reformulation appliquée à l\'article…" rows="2"></textarea>';
+                echo '<button type="button" class="ql-src-btn ql-src-btn--save-note" data-index="' . (int) $idx . '">Enregistrer la modification</button>';
+                echo '<button type="button" class="ql-src-btn ql-src-btn--cancel" data-index="' . (int) $idx . '">Annuler</button>';
+                echo '</div>';
+            }
+
             echo '</li>';
         }
         echo '</ul>';
@@ -1529,10 +1582,10 @@ function ql_render_sources_metabox( $post ) {
     // ── BOUTON VALIDER & PUBLIER ──
     // Conditions pour être actif :
     //   - Zéro imprécis et zéro manquant
-    //   - Toutes les cases 👤 cochées (ou pas de 👤 du tout)
+    //   - Tous les items 👤 ont reçu une décision (validated/modified/removed)
     //   - Post pas déjà publié
     //   - Utilisateur a le droit publish_posts
-    $all_check_done = ( $c === 0 ) || ( count( array_filter( $validated, function( $i ) use ( $c ) { return $i < $c; } ) ) >= $c );
+    $all_check_done = ( $c === 0 ) || ( $n_decided >= $c );
     $no_problems    = ( $i === 0 && $m === 0 );
     $not_published  = ( $post->post_status !== 'publish' );
     $can_click      = current_user_can( 'publish_posts' ) && $no_problems && $all_check_done && $not_published;
@@ -1551,8 +1604,8 @@ function ql_render_sources_metabox( $post ) {
         if ( ! $no_problems ) {
             echo '⚠ Impossible — il reste ' . (int) ( $i + $m ) . ' problème(s) à résoudre';
         } elseif ( ! $all_check_done ) {
-            $remaining = $c - count( array_filter( $validated, function( $i ) use ( $c ) { return $i < $c; } ) );
-            echo '☐ Cochez d\'abord les ' . (int) $remaining . ' point(s) à valider';
+            $remaining = $c - $n_decided;
+            echo '☐ Traitez d\'abord les ' . (int) $remaining . ' point(s) à valider';
         } else {
             echo 'Article non-publiable';
         }
@@ -1562,20 +1615,45 @@ function ql_render_sources_metabox( $post ) {
     }
     echo '</div>';
 
-    // Styles + JS pour les checkboxes et le bouton
+    // Styles + JS pour les 3 actions et le bouton publier
     echo '<style>
         .ql-src-checklist { list-style: none !important; margin: 0 !important; padding: 0 !important; }
-        .ql-src-checkitem { margin-bottom: .5em; padding: 8px 10px; background: #fff; border: 1px solid #d0e3f8; border-radius: 4px; transition: background .15s; }
-        .ql-src-checkitem.is-checked { background: #e8f5e8; border-color: #b0d6b0; }
-        .ql-src-checkitem.is-checked .ql-src-checkitem__text { text-decoration: line-through; opacity: .7; }
-        .ql-src-checkitem label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; margin: 0; }
-        .ql-src-checkitem input[type="checkbox"] { flex: 0 0 auto; margin-top: 3px; transform: scale(1.3); cursor: pointer; }
-        .ql-src-checkitem__text { flex: 1; }
+        .ql-src-checkitem { margin-bottom: .6em; padding: 10px 12px; background: #fff; border: 1px solid #d0e3f8; border-radius: 4px; transition: background .15s; }
+        .ql-src-checkitem--validated { background: #e8f5e8; border-color: #b0d6b0; }
+        .ql-src-checkitem--removed   { background: #fff1ef; border-color: #e63312; }
+        .ql-src-checkitem--modified  { background: #fff8e1; border-color: #f2a000; }
+        .ql-src-checkitem__text { display: block; margin-bottom: 8px; line-height: 1.5; }
+        .ql-src-checkitem--validated .ql-src-checkitem__text,
+        .ql-src-checkitem--removed .ql-src-checkitem__text { text-decoration: line-through; opacity: .65; }
+
+        .ql-src-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+        .ql-src-btn { padding: 5px 11px; border-radius: 3px; font-size: .82em; font-weight: 700; cursor: pointer; border: 1.5px solid; transition: all .12s; background: #fff; font-family: inherit; }
+        .ql-src-btn--validate { color: #1a6f1a; border-color: #2a8a2a; }
+        .ql-src-btn--validate:hover { background: #2a8a2a; color: #fff; }
+        .ql-src-btn--modify { color: #7a5c00; border-color: #f2a000; }
+        .ql-src-btn--modify:hover { background: #f2a000; color: #fff; }
+        .ql-src-btn--remove { color: #7a2010; border-color: #e63312; }
+        .ql-src-btn--remove:hover { background: #e63312; color: #fff; }
+        .ql-src-btn--save-note { color: #fff; background: #2a8a2a; border-color: #2a8a2a; }
+        .ql-src-btn--save-note:hover { background: #1a6f1a; }
+        .ql-src-btn--cancel { color: #5a5a5a; border-color: #d5d0c4; }
+
+        .ql-src-note-wrap { margin-top: 8px; padding: 8px; background: #fffbea; border: 1px dashed #f2c94c; border-radius: 3px; }
+        .ql-src-note-input { width: 100%; box-sizing: border-box; padding: 6px 8px; border: 1px solid #d5d0c4; border-radius: 3px; font-family: inherit; font-size: .92em; margin-bottom: 6px; }
+
+        .ql-src-decision { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; padding: 4px 8px; font-size: .86em; font-weight: 700; border-radius: 3px; }
+        .ql-src-decision--validated { background: #d4ebd4; color: #1a5f1a; }
+        .ql-src-decision--removed   { background: #ffd9d4; color: #7a2010; }
+        .ql-src-decision--modified  { background: #ffecb3; color: #7a5c00; }
+        .ql-src-decision em { font-style: italic; font-weight: 500; margin-right: auto; margin-left: 6px; color: inherit; }
+        .ql-src-undo { margin-left: auto; padding: 2px 8px; font-size: .88em; background: transparent; border: 1px solid currentColor; color: inherit; border-radius: 2px; cursor: pointer; opacity: .8; font-weight: 600; }
+        .ql-src-undo:hover { opacity: 1; }
+
         .ql-check-count { font-weight: 400; font-size: .9em; margin-left: .3em; opacity: .85; }
 
         .ql-src-publish-wrap { margin-top: 1.4em; padding-top: 1em; border-top: 2px solid #e8e5db; }
         .ql-src-publish-status { margin: 0; padding: 12px 14px; background: #e8f5e8; border-radius: 4px; color: #1a5f1a; }
-        .ql-src-publish-btn { width: 100%; padding: 14px 20px; font-size: 1.05em; font-weight: 800; border-radius: 6px; border: 0; cursor: pointer; transition: all .2s; text-transform: uppercase; letter-spacing: .04em; }
+        .ql-src-publish-btn { width: 100%; padding: 14px 20px; font-size: 1.05em; font-weight: 800; border-radius: 6px; border: 0; cursor: pointer; transition: all .2s; text-transform: uppercase; letter-spacing: .04em; font-family: inherit; }
         .ql-src-publish-btn:not([disabled]) { background: #2a8a2a; color: #fff; }
         .ql-src-publish-btn:not([disabled]):hover { background: #1a6f1a; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,.15); }
         .ql-src-publish-btn[disabled] { background: #e8e5db; color: #8a8578; cursor: not-allowed; }
@@ -1591,51 +1669,126 @@ function ql_render_sources_metabox( $post ) {
         var nonce = checklist.dataset.nonce;
         var btn = document.querySelector(".ql-src-publish-btn");
         var countEl = document.querySelector(".ql-check-count");
+        var noProblems = ' . ( $no_problems ? 'true' : 'false' ) . ';
+        var notPublished = ' . ( $not_published ? 'true' : 'false' ) . ';
 
-        function updateState() {
-            var checks = checklist.querySelectorAll(".ql-validate-check");
-            var total = checks.length;
-            var checked = 0;
-            checks.forEach(function(c){ if (c.checked) checked++; });
-            if (countEl) countEl.textContent = "(" + checked + "/" + total + " cochés)";
-            // Update item visual
-            checks.forEach(function(c){
-                var li = c.closest(".ql-src-checkitem");
-                if (li) li.classList.toggle("is-checked", c.checked);
-            });
-            // Update button if no ⚠/✗ remaining
-            if (btn && ' . ( $no_problems ? 'true' : 'false' ) . ') {
-                if (checked === total && ' . ( $not_published ? 'true' : 'false' ) . ') {
+        function saveDecision(idx, status, note) {
+            var fd = new URLSearchParams();
+            fd.append("action", "ql_set_item_decision");
+            fd.append("post_id", postId);
+            fd.append("index", idx);
+            fd.append("status", status);
+            if (note) fd.append("note", note);
+            fd.append("_ajax_nonce", nonce);
+            return fetch(ajaxurl, { method: "POST", credentials: "same-origin", body: fd })
+                .then(function(r){ return r.json(); });
+        }
+
+        function updateCount() {
+            var items = checklist.querySelectorAll(".ql-src-checkitem");
+            var total = items.length;
+            var decided = checklist.querySelectorAll(".ql-src-checkitem--validated, .ql-src-checkitem--removed, .ql-src-checkitem--modified").length;
+            if (countEl) countEl.textContent = "(" + decided + "/" + total + " traités)";
+            if (btn && noProblems) {
+                if (decided === total && notPublished) {
                     btn.removeAttribute("disabled");
                     btn.removeAttribute("aria-disabled");
                 } else {
                     btn.setAttribute("disabled", "");
-                    btn.setAttribute("aria-disabled", "true");
                     var offSpan = btn.querySelector(".ql-src-publish-btn__off");
-                    if (offSpan) offSpan.textContent = "☐ Cochez d\'abord les " + (total - checked) + " point(s) à valider";
+                    if (offSpan) offSpan.textContent = "☐ Traitez d\'abord les " + (total - decided) + " point(s) à valider";
                 }
             }
         }
 
-        checklist.addEventListener("change", function(e){
-            if (!e.target.matches(".ql-validate-check")) return;
-            var idx = parseInt(e.target.dataset.index, 10);
-            var checked = e.target.checked;
-            // Sauvegarde AJAX
-            var formData = new URLSearchParams();
-            formData.append("action", "ql_toggle_validated");
-            formData.append("post_id", postId);
-            formData.append("index", idx);
-            formData.append("checked", checked ? "1" : "0");
-            formData.append("_ajax_nonce", nonce);
-            fetch(ajaxurl, { method: "POST", credentials: "same-origin", body: formData })
-                .then(function(r){ return r.json(); })
-                .then(function(res){ /* saved */ })
-                .catch(function(err){ console.error("QL validate save failed", err); });
-            updateState();
+        function renderDecision(li, status, note) {
+            var idx = li.dataset.index;
+            var txt = li.querySelector(".ql-src-checkitem__text").outerHTML;
+            li.className = "ql-src-checkitem ql-src-checkitem--" + status;
+            var html = txt;
+            if (status === "validated") {
+                html += "<div class=\"ql-src-decision ql-src-decision--validated\">✓ Validé tel quel <button type=\"button\" class=\"ql-src-undo\" data-index=\"" + idx + "\">↺ Annuler</button></div>";
+            } else if (status === "removed") {
+                html += "<div class=\"ql-src-decision ql-src-decision--removed\">✗ Décidé de retirer de l\'article <button type=\"button\" class=\"ql-src-undo\" data-index=\"" + idx + "\">↺ Annuler</button></div>";
+            } else if (status === "modified") {
+                html += "<div class=\"ql-src-decision ql-src-decision--modified\">✎ Modifié : <em>" + (note || "") + "</em> <button type=\"button\" class=\"ql-src-undo\" data-index=\"" + idx + "\">↺ Annuler</button></div>";
+            }
+            li.innerHTML = html;
+        }
+
+        function renderPending(li) {
+            var idx = li.dataset.index;
+            var txt = li.querySelector(".ql-src-checkitem__text").outerHTML;
+            li.className = "ql-src-checkitem ql-src-checkitem--pending";
+            li.innerHTML = txt
+                + "<div class=\"ql-src-actions\">"
+                +   "<button type=\"button\" class=\"ql-src-btn ql-src-btn--validate\" data-action=\"validated\" data-index=\"" + idx + "\">✓ Valider tel quel</button>"
+                +   "<button type=\"button\" class=\"ql-src-btn ql-src-btn--modify\" data-action=\"modified\" data-index=\"" + idx + "\">✎ Modifier</button>"
+                +   "<button type=\"button\" class=\"ql-src-btn ql-src-btn--remove\" data-action=\"removed\" data-index=\"" + idx + "\">✗ Supprimer</button>"
+                + "</div>"
+                + "<div class=\"ql-src-note-wrap\" hidden>"
+                +   "<textarea class=\"ql-src-note-input\" placeholder=\"Saisir la correction ou la reformulation appliquée à l article…\" rows=\"2\"></textarea>"
+                +   "<button type=\"button\" class=\"ql-src-btn ql-src-btn--save-note\" data-index=\"" + idx + "\">Enregistrer la modification</button>"
+                +   "<button type=\"button\" class=\"ql-src-btn ql-src-btn--cancel\" data-index=\"" + idx + "\">Annuler</button>"
+                + "</div>";
+        }
+
+        checklist.addEventListener("click", function(e){
+            var btn = e.target.closest(".ql-src-btn, .ql-src-undo");
+            if (!btn) return;
+            e.preventDefault();
+            var li = btn.closest(".ql-src-checkitem");
+            if (!li) return;
+            var idx = li.dataset.index;
+
+            // Bouton Valider ou Supprimer → saveDecision direct
+            if (btn.classList.contains("ql-src-btn--validate") || btn.classList.contains("ql-src-btn--remove")) {
+                var status = btn.dataset.action;
+                saveDecision(idx, status).then(function(){
+                    renderDecision(li, status, "");
+                    updateCount();
+                });
+                return;
+            }
+
+            // Bouton Modifier → ouvre le champ note
+            if (btn.classList.contains("ql-src-btn--modify")) {
+                li.querySelector(".ql-src-actions").hidden = true;
+                li.querySelector(".ql-src-note-wrap").hidden = false;
+                li.querySelector(".ql-src-note-input").focus();
+                return;
+            }
+
+            // Bouton Enregistrer modification
+            if (btn.classList.contains("ql-src-btn--save-note")) {
+                var noteInput = li.querySelector(".ql-src-note-input");
+                var note = noteInput.value.trim();
+                if (!note) { noteInput.focus(); return; }
+                saveDecision(idx, "modified", note).then(function(){
+                    renderDecision(li, "modified", note);
+                    updateCount();
+                });
+                return;
+            }
+
+            // Bouton Annuler champ note
+            if (btn.classList.contains("ql-src-btn--cancel")) {
+                li.querySelector(".ql-src-note-wrap").hidden = true;
+                li.querySelector(".ql-src-actions").hidden = false;
+                return;
+            }
+
+            // Bouton Annuler décision (revenir à pending)
+            if (btn.classList.contains("ql-src-undo")) {
+                saveDecision(idx, "pending").then(function(){
+                    renderPending(li);
+                    updateCount();
+                });
+                return;
+            }
         });
 
-        updateState();
+        updateCount();
     })();
     </script>';
 
