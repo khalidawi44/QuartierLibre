@@ -21,6 +21,8 @@ tags:
   - barrot
   - france
 excerpt: "Le 24 février 2026, la Mission d'enquête internationale de l'ONU a conclu officiellement aux « signes caractéristiques d'un génocide » commis par les RSF au Darfour. Ce qu'il faut savoir : les chiffres réels vérifiés, le rôle documenté des Émirats, et pourquoi la France continue de se taire sur les soutiens extérieurs."
+featured_image: "content/media/soudan-guerre-oubliee.jpg"
+bq_background: "content/media/soudan-guerre-oubliee.jpg"
 status: "draft"
 force_status: "draft"
 date: "2026-04-20 09:35:00"

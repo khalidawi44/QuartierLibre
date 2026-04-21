@@ -787,6 +787,73 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
         return array( 'id' => $existing[0]->ID, 'action' => 'forced_' . $front['force_status'] );
     }
 
+    // Fallback automatique d'image par défaut selon primary_category.
+    // Si l'article n'a ni featured_image ni featured_image_url, on pioche
+    // une image thématique dans content/media/ basée sur sa catégorie
+    // principale. Évite les articles sans illustration (rendu moche en
+    // grille + SEO/partage sociaux sans image).
+    if ( empty( $front['featured_image'] ) && empty( $front['featured_image_url'] ) ) {
+        $fallback_map = array(
+            // Transversaux
+            'genocide'       => 'content/media/soudan-guerre-oubliee.jpg',
+            'famine'         => 'content/media/soudan-guerre-oubliee.jpg',
+            'guerre'         => 'content/media/soudan-guerre-oubliee.jpg',
+            'resistance'     => 'content/media/soudan-guerre-oubliee.jpg',
+            'international'  => 'content/media/soudan-guerre-oubliee.jpg',
+            'politique'      => 'content/media/loi-immigration-2026.jpg',
+            'france'         => 'content/media/loi-immigration-2026.jpg',
+            'mobilisations'  => 'content/media/1er-mai-2026.jpg',
+            'repression'     => 'content/media/nantes-videosurveillance.jpg',
+            'solidarite'     => 'content/media/1er-mai-2026.jpg',
+            'logement'       => 'content/media/quartier-clos-toreau.jpg',
+            'luttes'         => 'content/media/1er-mai-2026.jpg',
+            'infos-locale'   => 'content/media/1er-mai-2026.jpg',
+            // Quartiers (peuvent aussi être primary_category)
+            'bellevue'           => 'content/media/quartier-bellevue.jpg',
+            'malakoff'           => 'content/media/quartier-malakoff.jpg',
+            'dervallieres'       => 'content/media/quartier-dervallieres.jpg',
+            'clos-toreau'        => 'content/media/quartier-clos-toreau.jpg',
+            'bottiere-pin-sec'   => 'content/media/quartier-bottiere-pin-sec.jpg',
+            'breil'              => 'content/media/quartier-breil.jpg',
+            'bout-des-landes'    => 'content/media/quartier-bout-des-landes.jpg',
+            'port-boyer'         => 'content/media/quartier-port-boyer-bg.jpg',
+            'halveque'           => 'content/media/quartier-halveque-bg.jpg',
+            'ranzay'             => 'content/media/quartier-ranzay-bg.jpg',
+            'pilotiere'          => 'content/media/quartier-pilotiere-bg.jpg',
+        );
+
+        $primary = isset( $front['primary_category'] ) ? sanitize_title( (string) $front['primary_category'] ) : '';
+        $fallback = null;
+
+        // 1. primary_category exacte
+        if ( $primary && isset( $fallback_map[ $primary ] ) ) {
+            $fallback = $fallback_map[ $primary ];
+        }
+
+        // 2. Sinon, parcourir les categories pour trouver un match
+        if ( ! $fallback && ! empty( $front['category'] ) ) {
+            $cats = is_array( $front['category'] ) ? $front['category'] : array( $front['category'] );
+            foreach ( $cats as $cat ) {
+                $slug = sanitize_title( (string) $cat );
+                if ( isset( $fallback_map[ $slug ] ) ) {
+                    $fallback = $fallback_map[ $slug ];
+                    break;
+                }
+            }
+        }
+
+        // 3. Fallback ultime : 1er mai (image militante générique)
+        if ( ! $fallback ) {
+            $fallback = 'content/media/1er-mai-2026.jpg';
+        }
+
+        $front['featured_image'] = $fallback;
+        // Aussi utiliser comme bq_background si pas déjà défini
+        if ( empty( $front['bq_background'] ) ) {
+            $front['bq_background'] = $fallback;
+        }
+    }
+
     $thumb_id = 0;
     if ( ! empty( $front['featured_image_url'] ) ) {
         // URL complète (ex: https://quartierlibre.org/wp-content/uploads/.../image.jpg)

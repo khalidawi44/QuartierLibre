@@ -19,6 +19,8 @@ tags:
   - regularisation
   - expulsion
 excerpt: "Deux ans après la loi Darmanin du 26 janvier 2024 et un an après la circulaire Retailleau du 23 janvier 2025, le bilan est documenté par les associations : 120 000 OQTF/an, des parents d'enfants français expulsés, des enfants de France renvoyés. Douze organisations ont publié une tribune commune en janvier 2026. Ce qui s'y dit, et pourquoi."
+featured_image: "content/media/loi-immigration-2026.jpg"
+bq_background: "content/media/loi-immigration-2026.jpg"
 status: "draft"
 force_status: "draft"
 date: "2026-04-20 09:30:00"
