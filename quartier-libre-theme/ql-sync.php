@@ -793,21 +793,35 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
     // principale. Évite les articles sans illustration (rendu moche en
     // grille + SEO/partage sociaux sans image).
     if ( empty( $front['featured_image'] ) && empty( $front['featured_image_url'] ) ) {
+        // Images libres de droits piochées dans la base éditoriale QL
+        // (content/media/) + images thème importées de contre-attaque.net
+        // (source militante alliée, images des articles récents 2025-2026).
         $fallback_map = array(
-            // Transversaux
+            // Transversaux International
             'genocide'       => 'content/media/soudan-guerre-oubliee.jpg',
             'famine'         => 'content/media/soudan-guerre-oubliee.jpg',
             'guerre'         => 'content/media/soudan-guerre-oubliee.jpg',
             'resistance'     => 'content/media/soudan-guerre-oubliee.jpg',
-            'international'  => 'content/media/soudan-guerre-oubliee.jpg',
+            'international'  => 'content/media/theme-international.jpg',
+            // Politique / France
             'politique'      => 'content/media/loi-immigration-2026.jpg',
             'france'         => 'content/media/loi-immigration-2026.jpg',
+            'justice'        => 'content/media/theme-medias.jpg',
+            'fait-divers'    => 'content/media/theme-medias.jpg',
+            'economie'       => 'content/media/theme-economie.jpg',
+            'societe'        => 'content/media/theme-ecologie.jpg',
+            // Luttes
             'mobilisations'  => 'content/media/1er-mai-2026.jpg',
-            'repression'     => 'content/media/nantes-videosurveillance.jpg',
+            'repression'     => 'content/media/theme-etat-policier.jpg',
             'solidarite'     => 'content/media/1er-mai-2026.jpg',
             'logement'       => 'content/media/quartier-clos-toreau.jpg',
             'luttes'         => 'content/media/1er-mai-2026.jpg',
+            // Infos locale
             'infos-locale'   => 'content/media/1er-mai-2026.jpg',
+            'transports'     => 'content/media/theme-economie.jpg',
+            'autres-villes'  => 'content/media/1er-mai-2026.jpg',
+            // Histoire (nouveau)
+            'histoire'       => 'content/media/theme-histoire.jpg',
             // Quartiers (peuvent aussi être primary_category)
             'bellevue'           => 'content/media/quartier-bellevue.jpg',
             'malakoff'           => 'content/media/quartier-malakoff.jpg',
