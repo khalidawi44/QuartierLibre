@@ -1286,47 +1286,208 @@ function ql_render_sources_metabox( $post ) {
     $sources_md = get_post_meta( $post->ID, '_ql_sources_md', true );
 
     if ( empty( $sources_md ) ) {
-        echo '<div style="padding:16px;background:#fff1ef;border-left:4px solid #e63312;border-radius:3px;">';
-        echo '<p style="margin:0 0 8px;font-weight:700;color:#7a2010;">⚠ Aucune fiche source pour cet article</p>';
+        echo '<div style="padding:20px;background:#fff1ef;border:2px solid #e63312;border-radius:6px;text-align:center;">';
+        echo '<p style="margin:0 0 10px;font-weight:800;color:#7a2010;font-size:1.1em;">⚠ AUCUNE FICHE SOURCE</p>';
         echo '<p style="margin:0;color:#5a5a5a;">';
-        echo 'Créez un fichier <code>content/sources/' . esc_html( $post->post_name ) . '.md</code> ';
-        echo 'dans le repo GitHub, puis lancez <em>Sync QL → Synchroniser les articles</em> pour le charger ici.';
-        echo '</p>';
-        echo '<p style="margin:8px 0 0;color:#5a5a5a;font-size:.88rem;">';
-        echo 'La fiche doit tracer chaque affirmation factuelle avec statut (🟢 vérifié / 🟡 scénario / 🔴 fiction) et lien source public.';
+        echo 'Cet article n\'a pas de fiche <code>content/sources/' . esc_html( $post->post_name ) . '.md</code>.';
+        echo '<br>Chaque article publié doit avoir une fiche sources pour traçabilité éditoriale.';
         echo '</p>';
         echo '</div>';
         return;
     }
 
-    // Conversion markdown minimale pour affichage lisible.
-    // On garde les liens cliquables et une typo simple.
-    $html = ql_render_sources_md_to_html( $sources_md );
+    // Parse les sections ✓ / ⚠ / ✗ pour faire le résumé chiffré
+    $parsed = ql_parse_sources_sections( $sources_md );
+    $v = count( $parsed['verified'] );
+    $i = count( $parsed['imprecise'] );
+    $m = count( $parsed['missing'] );
+    $total = $v + $i + $m;
 
     echo '<style>
-        .ql-sources-box { max-height: 600px; overflow-y: auto; padding: 1.2rem 1.4rem; background: #fafaf7; border: 1px solid #e8e5db; border-radius: 4px; font-size: .94em; line-height: 1.55; }
-        .ql-sources-box h1, .ql-sources-box h2, .ql-sources-box h3 { margin-top: 1.4em; margin-bottom: .5em; line-height: 1.2; color: #0f0f0f; }
-        .ql-sources-box h1 { font-size: 1.25em; border-bottom: 2px solid #e63312; padding-bottom: .3em; }
-        .ql-sources-box h2 { font-size: 1.1em; }
-        .ql-sources-box h3 { font-size: 1em; color: #7a2010; }
-        .ql-sources-box ul { margin: .6em 0 1em 1.2em; padding: 0; }
-        .ql-sources-box li { margin-bottom: .35em; }
-        .ql-sources-box a { color: #e63312; font-weight: 600; }
-        .ql-sources-box code { background: #f1efe8; padding: 1px 4px; border-radius: 2px; font-size: .92em; }
-        .ql-sources-box table { border-collapse: collapse; margin: 1em 0; font-size: .9em; }
-        .ql-sources-box th, .ql-sources-box td { border: 1px solid #d5d0c4; padding: 6px 10px; text-align: left; vertical-align: top; }
-        .ql-sources-box th { background: #f1efe8; font-weight: 700; }
-        .ql-sources-box p { margin: .5em 0; }
-        .ql-sources-box blockquote { border-left: 3px solid #e63312; margin: .8em 0; padding: .2em 0 .2em .8em; color: #5a5a5a; font-style: italic; }
-        .ql-sources-box hr { border: 0; border-top: 1px solid #d5d0c4; margin: 1.5em 0; }
+        .ql-src-dash { margin: 0 0 1em; }
+        .ql-src-dash__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1.2em; }
+        .ql-src-card { padding: 14px 16px; border-radius: 6px; text-align: center; border: 2px solid; }
+        .ql-src-card--ok { background: #e8f5e8; border-color: #2a8a2a; color: #1a5f1a; }
+        .ql-src-card--warn { background: #fff8e1; border-color: #f2a000; color: #7a5c00; }
+        .ql-src-card--missing { background: #fff1ef; border-color: #e63312; color: #7a2010; }
+        .ql-src-card__num { font-size: 2em; font-weight: 900; line-height: 1; font-family: serif; }
+        .ql-src-card__lbl { font-size: .82em; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-top: 4px; }
+        .ql-src-card__desc { font-size: .78em; margin-top: 2px; opacity: .8; }
+
+        .ql-src-section { margin: 0 0 1em; border-radius: 6px; overflow: hidden; }
+        .ql-src-section--ok { border: 1px solid #b0d6b0; }
+        .ql-src-section--warn { border: 1px solid #f2c94c; }
+        .ql-src-section--missing { border: 1px solid #e63312; }
+        .ql-src-section summary { padding: 10px 14px; font-weight: 700; cursor: pointer; user-select: none; }
+        .ql-src-section--ok > summary { background: #e8f5e8; color: #1a5f1a; }
+        .ql-src-section--warn > summary { background: #fff8e1; color: #7a5c00; }
+        .ql-src-section--missing > summary { background: #fff1ef; color: #7a2010; }
+        .ql-src-section ul { margin: 0; padding: 10px 14px 14px 36px; background: #fff; }
+        .ql-src-section li { margin: 0 0 .5em; line-height: 1.5; }
+        .ql-src-section li:last-child { margin-bottom: 0; }
+        .ql-src-section li a { color: #e63312; font-weight: 600; word-break: break-word; }
+        .ql-src-section li strong { background: #fff1ef; padding: 1px 5px; border-radius: 2px; color: #7a2010; font-size: .9em; }
+
+        .ql-src-raw { margin-top: 1em; }
+        .ql-src-raw summary { color: #5a5a5a; font-size: .88em; cursor: pointer; padding: 6px 0; }
+        .ql-src-raw pre { background: #fafaf7; border: 1px solid #e8e5db; padding: 12px; border-radius: 4px; font-size: .82em; max-height: 400px; overflow: auto; white-space: pre-wrap; }
+
+        .ql-src-foot { color: #5a5a5a; font-size: .85em; margin: 1em 0 0; padding-top: .8em; border-top: 1px solid #e8e5db; }
+        .ql-src-foot code { background: #f1efe8; padding: 1px 4px; border-radius: 2px; }
     </style>';
 
-    echo '<div class="ql-sources-box">' . $html . '</div>';
+    echo '<div class="ql-src-dash">';
 
-    echo '<p style="margin-top:10px;color:#5a5a5a;font-size:.88rem;">';
-    echo 'Fiche sourcée depuis <code>content/sources/' . esc_html( $post->post_name ) . '.md</code> (GitHub). ';
-    echo 'Pour modifier, éditez le fichier dans le repo puis re-sync les articles.';
+    // 3 cases de résumé
+    echo '<div class="ql-src-dash__cards">';
+    echo '<div class="ql-src-card ql-src-card--ok">';
+    echo '<div class="ql-src-card__num">' . (int) $v . '</div>';
+    echo '<div class="ql-src-card__lbl">✓ Vérifié</div>';
+    echo '<div class="ql-src-card__desc">sources avec URL précise</div>';
+    echo '</div>';
+
+    echo '<div class="ql-src-card ql-src-card--warn">';
+    echo '<div class="ql-src-card__num">' . (int) $i . '</div>';
+    echo '<div class="ql-src-card__lbl">⚠ Imprécis</div>';
+    echo '<div class="ql-src-card__desc">landing page au lieu de source exacte</div>';
+    echo '</div>';
+
+    echo '<div class="ql-src-card ql-src-card--missing">';
+    echo '<div class="ql-src-card__num">' . (int) $m . '</div>';
+    echo '<div class="ql-src-card__lbl">✗ Manquant</div>';
+    echo '<div class="ql-src-card__desc">aucune source / à retirer</div>';
+    echo '</div>';
+    echo '</div>';
+
+    // Section VÉRIFIÉES (fermée par défaut)
+    if ( $v > 0 ) {
+        echo '<details class="ql-src-section ql-src-section--ok">';
+        echo '<summary>✓ ' . (int) $v . ' affirmation' . ( $v > 1 ? 's' : '' ) . ' vérifiée' . ( $v > 1 ? 's' : '' ) . ' (clic pour détail)</summary>';
+        echo '<ul>';
+        foreach ( $parsed['verified'] as $item ) {
+            echo '<li>' . $item . '</li>';
+        }
+        echo '</ul>';
+        echo '</details>';
+    }
+
+    // Section IMPRÉCISES (ouverte par défaut si contenu)
+    if ( $i > 0 ) {
+        echo '<details class="ql-src-section ql-src-section--warn" open>';
+        echo '<summary>⚠ ' . (int) $i . ' source' . ( $i > 1 ? 's' : '' ) . ' imprécise' . ( $i > 1 ? 's' : '' ) . ' — à corriger</summary>';
+        echo '<ul>';
+        foreach ( $parsed['imprecise'] as $item ) {
+            echo '<li>' . $item . '</li>';
+        }
+        echo '</ul>';
+        echo '</details>';
+    }
+
+    // Section MANQUANTES (ouverte par défaut si contenu)
+    if ( $m > 0 ) {
+        echo '<details class="ql-src-section ql-src-section--missing" open>';
+        echo '<summary>✗ ' . (int) $m . ' affirmation' . ( $m > 1 ? 's' : '' ) . ' sans source — décision requise</summary>';
+        echo '<ul>';
+        foreach ( $parsed['missing'] as $item ) {
+            echo '<li>' . $item . '</li>';
+        }
+        echo '</ul>';
+        echo '</details>';
+    }
+
+    // Si fiche existe mais aucune section standard trouvée → fallback affichage markdown brut
+    if ( $total === 0 ) {
+        echo '<div style="padding:14px;background:#fff8e1;border-left:4px solid #f2a000;border-radius:4px;margin:0 0 1em;">';
+        echo '<p style="margin:0;color:#7a5c00;font-size:.92em;">';
+        echo '<strong>⚠ Format ancien</strong> — cette fiche source n\'utilise pas encore la structure standard à 3 sections (✓ / ⚠ / ✗). Voir le rendu complet ci-dessous.';
+        echo '</p></div>';
+        echo '<div style="max-height:400px;overflow-y:auto;padding:1rem;background:#fafaf7;border:1px solid #e8e5db;border-radius:4px;font-size:.9em;">';
+        echo ql_render_sources_md_to_html( $sources_md );
+        echo '</div>';
+    }
+
+    // Détail brut expandable
+    echo '<details class="ql-src-raw">';
+    echo '<summary>📄 Voir le markdown brut de la fiche complète</summary>';
+    echo '<pre>' . esc_html( $sources_md ) . '</pre>';
+    echo '</details>';
+
+    echo '<p class="ql-src-foot">';
+    echo 'Fiche <code>content/sources/' . esc_html( $post->post_name ) . '.md</code> — pour modifier : édite le fichier sur GitHub puis <em>Sync QL → Synchroniser les articles</em>.';
     echo '</p>';
+
+    echo '</div>'; // /.ql-src-dash
+}
+
+/**
+ * Parse une fiche source pour en extraire les 3 sections :
+ * ✓ Vérifiées, ⚠ Imprécises, ✗ Manquantes.
+ *
+ * Format attendu (structure standard inscrite dans CLAUDE.md) :
+ *   ## ✓ Sources vérifiées
+ *   - [Claim] → [Titre](url)
+ *   ## ⚠ Sources imprécises
+ *   - [Claim] — ...
+ *   ## ✗ Affirmations sans source
+ *   - [Claim] — ...
+ *
+ * Retourne un array : ['verified' => [...], 'imprecise' => [...], 'missing' => [...]]
+ * Chaque item est le HTML rendu de la ligne (liens cliquables).
+ */
+function ql_parse_sources_sections( $md ) {
+    $result = array( 'verified' => array(), 'imprecise' => array(), 'missing' => array() );
+    if ( ! $md ) return $result;
+
+    $md = str_replace( "\r\n", "\n", $md );
+    $lines = explode( "\n", $md );
+
+    $current = null;  // 'verified' | 'imprecise' | 'missing' | null
+    foreach ( $lines as $line ) {
+        $trimmed = trim( $line );
+
+        // Détection des titres de section ## ... (h2 ou h3)
+        if ( preg_match( '/^#{2,3}\s+(.+)$/', $trimmed, $m ) ) {
+            $title = strtolower( $m[1] );
+            if ( strpos( $title, '✓' ) !== false
+              || strpos( $title, 'vérifi' ) !== false
+              || strpos( $title, 'sourcé' ) !== false ) {
+                $current = 'verified';
+            } elseif ( strpos( $title, '⚠' ) !== false
+                    || strpos( $title, 'imprécis' ) !== false
+                    || strpos( $title, 'impreci' ) !== false
+                    || strpos( $title, 'à vérifier' ) !== false
+                    || strpos( $title, 'scénario' ) !== false
+                    || strpos( $title, 'flagger' ) !== false ) {
+                $current = 'imprecise';
+            } elseif ( strpos( $title, '✗' ) !== false
+                    || strpos( $title, 'manquant' ) !== false
+                    || strpos( $title, 'sans source' ) !== false
+                    || strpos( $title, 'inventé' ) !== false
+                    || strpos( $title, 'fiction' ) !== false
+                    || strpos( $title, 'à retirer' ) !== false
+                    || strpos( $title, 'retirée' ) !== false ) {
+                $current = 'missing';
+            } else {
+                // Section autre (ex. « Où vérifier » → on arrête le collect)
+                $current = null;
+            }
+            continue;
+        }
+
+        // Collecte des items de liste
+        if ( $current && preg_match( '/^[-*]\s+(.+)$/', $trimmed, $m ) ) {
+            // Rendu inline basique : [text](url) → <a>, **bold**, `code`
+            $item = $m[1];
+            $item = preg_replace_callback( '/\[([^\]]+)\]\(([^\)]+)\)/', function ( $x ) {
+                return '<a href="' . esc_url( $x[2] ) . '" target="_blank" rel="noopener">' . esc_html( $x[1] ) . '</a>';
+            }, $item );
+            $item = preg_replace( '/\*\*([^\*]+)\*\*/', '<strong>$1</strong>', $item );
+            $item = preg_replace( '/`([^`]+)`/', '<code>$1</code>', $item );
+            $result[ $current ][] = $item;
+        }
+    }
+
+    return $result;
 }
 
 // Rendu markdown simple pour les fiches sources — supporte titres,
