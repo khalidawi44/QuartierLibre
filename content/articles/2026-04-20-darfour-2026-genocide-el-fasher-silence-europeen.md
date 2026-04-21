@@ -31,9 +31,9 @@ author: "rachida-ben-arfa"
 
 ## Le mot « génocide » est tombé — officiellement
 
-Le **24 février 2026**, la **Mission d'enquête internationale indépendante des Nations unies sur le Soudan** (Independent International Fact-Finding Mission for the Sudan, *FFM*) a publié des conclusions sans ambiguïté : les **Rapid Support Forces** (RSF, milice de Mohamed Hamdan Dagalo dit « Hemedti ») ont commis au Darfour des actes qui portent *« les marques caractéristiques d'un génocide »* (« hallmarks of genocide »).
+Le **19 février 2026**, la **Mission d'enquête internationale indépendante des Nations unies sur le Soudan** ([Independent International Fact-Finding Mission for the Sudan](https://www.ohchr.org/en/hr-bodies/hrc/ffm-sudan/index)) a publié des conclusions sans ambiguïté : les **Rapid Support Forces** (RSF, milice de Mohamed Hamdan Dagalo dit « Hemedti ») ont commis au Darfour des actes qui portent *« les marques caractéristiques d'un génocide »* (« hallmarks of genocide »).
 
-La conclusion est reprise par [Human Rights Watch](https://www.hrw.org/africa/sudan) ([communiqué du 24 février 2026](https://www.hrw.org/news/2026/02/24/un-body-finds-hallmarks-of-genocide-in-darfur)) et détaillée dans les rapports publiés sur la [page Soudan de l'OHCHR](https://www.ohchr.org/en/countries/sudan). Laetitia Bader, directrice de la Horn of Africa Division chez HRW, en est la principale voix publique.
+Le communiqué officiel est en ligne sur OHCHR : [« Sudan: Evidence in El-Fasher reveals genocidal campaign, targeting non-Arab communities »](https://www.ohchr.org/en/press-releases/2026/02/sudan-evidence-el-fasher-reveals-genocidal-campaign-targeting-non-arab). L'analyse est reprise par [UN News](https://news.un.org/en/story/2026/02/1166997) et par [Human Rights Watch dans son communiqué du 24 février 2026](https://www.hrw.org/news/2026/02/24/un-body-finds-hallmarks-of-genocide-in-darfur). Laetitia Bader, directrice de la Horn of Africa Division chez HRW, en est la principale voix publique.
 
 Les États-Unis avaient déjà officiellement qualifié de **génocide** les actes des RSF au Darfour dès **janvier 2025** (déclaration Blinken avant la transition Trump), en accompagnant la qualification de sanctions contre Hemedti personnellement.
 
@@ -66,9 +66,9 @@ Les chiffres sont compilés par des sources ouvertes croisées ([référence Wik
 
 ### Le massacre de Zamzam (11-13 avril 2025) — exactement un an
 
-Un an avant la chute d'El-Fasher, les RSF avaient déjà attaqué le **plus grand camp de déplacés du monde**, Zamzam, qui hébergeait **environ 500 000 personnes**. [Médecins Sans Frontières](https://www.msf.org/sudan) a dû y suspendre ses activités ; le détail de la crise est sur la [page réponse Soudan de MSF](https://www.doctorswithoutborders.org/latest/sudan-crisis-response).
+Un an avant la chute d'El-Fasher, les RSF avaient déjà attaqué le **plus grand camp de déplacés du monde**, Zamzam, qui hébergeait **environ 500 000 personnes**. Médecins Sans Frontières a dû suspendre ses activités au camp dès **février 2025** face aux attaques : [communiqué officiel MSF « Sudan: MSF forced to halt our activities as violence engulfs Zamzam camp in North Darfur »](https://www.msf.org/sudan-msf-forced-halt-our-activities-violence-engulfs-zamzam-camp-north-darfur).
 
-Bilan officiel ONU publié fin 2025 sur la [page Soudan de l'OHCHR](https://www.ohchr.org/en/countries/sudan) :
+Bilan officiel ONU dans le rapport [« Three days of terror with no safe refuge »](https://www.ohchr.org/en/documents/country-reports/report-ohchr-sudan-country-office-offensive-rapid-support-forces-zamzam) du Bureau du Haut-Commissariat aux droits de l'homme (OHCHR), publié fin 2025 :
 
 - **1 013 civils tués** en trois jours
 - **319 exécutés sommairement** dans le camp ou sur les routes de fuite
@@ -76,7 +76,7 @@ Bilan officiel ONU publié fin 2025 sur la [page Soudan de l'OHCHR](https://www.
 - **104 survivants documentés** de violences sexuelles (75 femmes, 26 filles, 3 garçons) — majoritairement d'ethnie Zaghawa, signature ethnique du nettoyage en cours
 - **9 humanitaires** de Relief International tués dans une clinique du camp
 
-Les rapports [Amnesty International](https://www.amnesty.org/en/location/africa/east-africa-the-horn-and-great-lakes/sudan/) et OHCHR confirment un **ciblage ethnique** systématique (**Massalit, Zaghawa, Four**) — les trois groupes non-arabophones historiquement dominants au Darfour. Amnesty a consolidé ses enquêtes sur sa [page projet Soudan](https://www.amnesty.org/en/projects/sudan-conflict/).
+Les rapports Amnesty et OHCHR confirment un **ciblage ethnique** systématique (**Massalit, Zaghawa, Four**) — les trois groupes non-arabophones historiquement dominants au Darfour. Le rapport Amnesty détaillé est [« A Refuge Destroyed »](https://www.amnesty.org/en/documents/afr54/0509/2025/en/) et le communiqué de suivi [« RSF's ruthless attack on Zamzam camp should be investigated for war crimes » (décembre 2025)](https://www.amnesty.org/en/latest/news/2025/12/sudan-rapid-support-forces-ruthless-attack-on-zamzam-camp-should-be-investigated-for-war-crimes/).
 
 ## Le soutien extérieur aux RSF — celui qu'on ne nomme pas
 
@@ -103,11 +103,11 @@ Analyses complémentaires du rôle des EAU :
 
 ## La position de la France — asymétrie troublante
 
-Le **30 mars 2026**, le ministre français des Affaires étrangères **Jean-Noël Barrot** a publié un communiqué condamnant une frappe sur l'**hôpital d'El-Dein** qui aurait été, selon le communiqué, **perpétrée par les Forces armées soudanaises (SAF)** — l'armée régulière, rivale des RSF.
+Le **20 mars 2026** (veille de l'Aïd), l'**hôpital universitaire d'El-Daein** au Darfour-Est a été frappé par une attaque armée. Bilan : **64 morts** dont 13 enfants, 7 femmes (2 personnels médicaux) et 44 hommes incluant un médecin, 98 blessés ([Tchadinfos 23 mars 2026](https://tchadinfos.com/2026/03/23/soudan-lhopital-universitaire-del-daein-hors-service-apres-une-attaque-armee/), [ONU Info](https://news.un.org/fr/story/2026/03/1158599)). L'hôpital, vital pour **2 millions de personnes**, a dû fermer ([Nouvel Hay 24 mars 2026](https://www.nouvelhay.com/fr/2026/03/lhopital-universitaire-au-soudan-del-daein-vital-pour-2-millions-de-personnes-ferme-ses-portes-ce-mardi-24-mars-2026/)).
 
-Plusieurs dizaines de morts dans ce bombardement, dont des enfants et des médecins, selon le communiqué du Quai d'Orsay ([contexte sur ambafrance Soudan](https://sd.ambafrance.org/)).
+La France a condamné cette frappe attribuée aux **Forces armées soudanaises (SAF)** — l'armée régulière, rivale des RSF. La position française globale sur le conflit est documentée sur la page [« Guerre au Soudan : la France aux côtés des populations civiles »](https://www.diplomatie.gouv.fr/fr/le-ministere-en-action/agir-pour-la-paix-et-le-respect-des-droits-de-l-homme/agir-pour-la-securite-le-desarmement-et-la-non-proliferation/crises-et-conflits/la-france-aux-cotes-du-soudan) du Ministère de l'Europe et des Affaires étrangères.
 
-Mais sur les **RSF** ? Sur les **Émirats arabes unis** qui les arment ? Sur la **confirmation ONU du génocide** en février 2026 ? Silence diplomatique.
+Mais sur les **RSF** ? Sur les **Émirats arabes unis** qui les arment ? Sur la **confirmation ONU du génocide** en février 2026 ? Silence diplomatique officiel.
 
 Les [Radicaux de Gauche](https://www.lesradicauxdegauche-lrdg.fr/) ont publié, dès le 12 novembre 2025, [un appel à l'action immédiate de la France et de l'Europe face au risque de génocide](https://www.lesradicauxdegauche-lrdg.fr/actualites/20251112-3794-soudan-face-au-risque-de-genocide-la-france-et-leurope-doivent-agir-immediatement). Aucune mesure substantielle contre les EAU n'a suivi.
 

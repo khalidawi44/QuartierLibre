@@ -8,14 +8,17 @@ Article : [`2026-04-20-darfour-2026-genocide-el-fasher-silence-europeen.md`](../
 
 ## Claims et sources vérifiables
 
-### Qualification « génocide » par l'ONU — 24 février 2026
+### Qualification « génocide » par l'ONU — 19 février 2026
 
 | Claim | Source |
 |---|---|
-| Mission d'enquête internationale indépendante ONU (FFM) conclut aux « hallmarks of genocide » | [HRW — UN Body Finds 'Hallmarks of Genocide' in Darfur](https://www.hrw.org/news/2026/02/24/un-body-finds-hallmarks-of-genocide-in-darfur) |
-| Rapport OHCHR sur les violations RSF lors de la prise d'El Fasher = « crimes de guerre » | [OHCHR — 24 février 2026](https://www.ohchr.org/en/press-releases/2026/02/sudan-rsf-violations-capture-el-fasher-amount-war-crimes) |
-| Yale School of Public Health confirme que le Yale Humanitarian Research Lab a fourni les preuves satellitaires utilisées par la Mission ONU | [Yale SPH — UN concludes RSF committed genocide](https://ysph.yale.edu/news-article/un-concludes-rsf-conducted-genocide-in-el-fasher-yale-lab-provided-key-evidence/) |
-| Laetitia Bader (HRW Horn of Africa Division) = voix publique principale HRW | HRW 24 février 2026 idem |
+| FFM Sudan page officielle du mandat ONU | [OHCHR — Independent International Fact-Finding Mission for the Sudan](https://www.ohchr.org/en/hr-bodies/hrc/ffm-sudan/index) |
+| Communiqué officiel ONU 19 fév 2026 « Sudan: Evidence in El-Fasher reveals genocidal campaign, targeting non-Arab communities » | [OHCHR — 19 février 2026](https://www.ohchr.org/en/press-releases/2026/02/sudan-evidence-el-fasher-reveals-genocidal-campaign-targeting-non-arab) |
+| UN News — « Hallmarks of genocide found in El Fasher » | [UN News 19 fév 2026](https://news.un.org/en/story/2026/02/1166997) |
+| Reprise HRW (Laetitia Bader) | [HRW — UN Body Finds 'Hallmarks of Genocide' in Darfur, 24 fév 2026](https://www.hrw.org/news/2026/02/24/un-body-finds-hallmarks-of-genocide-in-darfur) |
+| OHCHR page dédiée crimes de guerre RSF | [OHCHR press release 2026](https://www.ohchr.org/en/press-releases/2026/02/sudan-rsf-violations-capture-el-fasher-amount-war-crimes) |
+| Yale Humanitarian Research Lab — preuves satellitaires | [Yale SPH — UN concludes RSF committed genocide](https://ysph.yale.edu/news-article/un-concludes-rsf-conducted-genocide-in-el-fasher-yale-lab-provided-key-evidence/) |
+| Rapport ONU UN Sexual Violence in Conflict — version pdf/html | [UN — Sudan: Hallmarks of Genocide in El-Fasher](https://www.un.org/sexualviolenceinconflict/report/sudan-hallmarks-of-genocide-in-el-fasher-report-of-the-independent-international-fact-finding-mission-for-the-sudan/) |
 
 ### Qualification US — janvier 2025
 
@@ -52,16 +55,16 @@ Article : [`2026-04-20-darfour-2026-genocide-el-fasher-silence-europeen.md`](../
 
 | Claim | Source |
 |---|---|
+| MSF suspend ses activités à Zamzam dès février 2025 (avant l'attaque RSF) | [MSF — Sudan: MSF forced to halt our activities as violence engulfs Zamzam camp in North Darfur](https://www.msf.org/sudan-msf-forced-halt-our-activities-violence-engulfs-zamzam-camp-north-darfur) |
 | Attaque du 11 au 13 avril 2025 | [OHCHR — Rapport « Three days of terror with no safe refuge »](https://www.ohchr.org/en/documents/country-reports/report-ohchr-sudan-country-office-offensive-rapid-support-forces-zamzam) |
-| 1 013 civils tués | OHCHR + [UN Press — décembre 2025](https://www.ohchr.org/en/press-releases/2025/12/sudan-un-report-details-horrific-patterns-violations-committed-during-rsf) |
-| 319 exécutions sommaires | OHCHR idem |
+| 1 013 civils tués | OHCHR + [communiqué ONU décembre 2025](https://www.ohchr.org/en/press-releases/2025/12/sudan-un-report-details-horrific-patterns-violations-committed-during-rsf) |
+| 319 exécutions sommaires | OHCHR Three days of terror idem |
 | 400 000 personnes fuient en 48h | OHCHR idem |
-| Zamzam hébergeait ~500 000 personnes déplacées | [MSF USA — Sudan's largest displacement camp under attack](https://www.doctorswithoutborders.org/latest/sudans-largest-displacement-camp-under-attack) |
-| 104 survivants de violences sexuelles (75 femmes, 26 filles, 3 garçons) | [Amnesty International — "A Refuge Destroyed"](https://www.amnesty.org/en/documents/afr54/0509/2025/en/) |
-| Majorité des victimes d'ethnie Zaghawa | Amnesty idem |
-| 9 humanitaires Relief International tués dans une clinique | [Amnesty — 11 avril 2025 context](https://www.amnesty.org/en/latest/news/2025/12/sudan-rapid-support-forces-ruthless-attack-on-zamzam-camp-should-be-investigated-for-war-crimes/) |
+| Zamzam hébergeait ~500 000 personnes déplacées | [MSF — page dédiée Sudan crisis](https://www.doctorswithoutborders.org/latest/sudan-crisis-response) |
+| 104 survivants de violences sexuelles (75 femmes, 26 filles, 3 garçons) | [Amnesty International — rapport "A Refuge Destroyed"](https://www.amnesty.org/en/documents/afr54/0509/2025/en/) |
+| Majorité des victimes d'ethnie Zaghawa, ciblage systématique Massalit/Zaghawa/Four | Amnesty "A Refuge Destroyed" idem |
+| 9 humanitaires Relief International tués dans une clinique | [Amnesty — communiqué 11 décembre 2025](https://www.amnesty.org/en/latest/news/2025/12/sudan-rapid-support-forces-ruthless-attack-on-zamzam-camp-should-be-investigated-for-war-crimes/) |
 | Confirmation presse US (1 000+ civils tués) | [Washington Times — 18 déc 2025](https://www.washingtontimes.com/news/2025/dec/18/sudanese-paramilitary-group-rsf-killed-1000-civilians-zamzam-camp/) |
-| Ciblage ethnique systématique : Massalit, Zaghawa, Four | Amnesty + OHCHR |
 
 ### Soutien EAU documenté aux RSF
 
@@ -84,9 +87,17 @@ Article : [`2026-04-20-darfour-2026-genocide-el-fasher-silence-europeen.md`](../
 
 | Claim | Source |
 |---|---|
-| Jean-Noël Barrot condamne la frappe SAF sur hôpital El-Dein — 30 mars 2026 | [Ambassade France au Soudan](https://sd.ambafrance.org/) |
+| Attaque hôpital El-Daein — **20 mars 2026** (pas 30) — 64 morts | [Tchadinfos — 23 mars 2026](https://tchadinfos.com/2026/03/23/soudan-lhopital-universitaire-del-daein-hors-service-apres-une-attaque-armee/) |
+| ONU Info — attaque hôpital fait au moins 64 morts | [ONU Info — mars 2026](https://news.un.org/fr/story/2026/03/1158599) |
+| Fermeture hôpital El-Daein vital pour 2 millions de personnes | [Nouvel Hay — 24 mars 2026](https://www.nouvelhay.com/fr/2026/03/lhopital-universitaire-au-soudan-del-daein-vital-pour-2-millions-de-personnes-ferme-ses-portes-ce-mardi-24-mars-2026/) |
+| Position officielle française globale sur le Soudan | [Ministère de l'Europe et des Affaires étrangères — « Guerre au Soudan : la France aux côtés des populations civiles »](https://www.diplomatie.gouv.fr/fr/le-ministere-en-action/agir-pour-la-paix-et-le-respect-des-droits-de-l-homme/agir-pour-la-securite-le-desarmement-et-la-non-proliferation/crises-et-conflits/la-france-aux-cotes-du-soudan) |
+| Page presse & médias de Barrot | [diplomatie.gouv.fr/presse-et-medias](https://www.diplomatie.gouv.fr/fr/les-ministres/jean-noel-barrot/presse-et-medias/) |
+| Page discours de Barrot | [diplomatie.gouv.fr/discours](https://www.diplomatie.gouv.fr/fr/les-ministres/jean-noel-barrot/discours/) |
 | Appel PRG du 12 novembre 2025 — « Face au risque de génocide, la France et l'Europe doivent agir » | [Les Radicaux de Gauche — 12 nov 2025](https://www.lesradicauxdegauche-lrdg.fr/actualites/20251112-3794-soudan-face-au-risque-de-genocide-la-france-et-leurope-doivent-agir-immediatement) |
-| Conférence internationale Berlin — 15 avril 2026 | Multiples sources diplomatiques (à vérifier sur communiqué officiel Auswärtiges Amt pour confirmation post-hoc) |
+| Conférence internationale Berlin — 15 avril 2026 co-présidée par la France | [Position France Soudan](https://www.diplomatie.gouv.fr/fr/le-ministere-en-action/agir-pour-la-paix-et-le-respect-des-droits-de-l-homme/agir-pour-la-securite-le-desarmement-et-la-non-proliferation/crises-et-conflits/la-france-aux-cotes-du-soudan) |
+
+**Ce qu'on n'a PAS pu vérifier** :
+- Le communiqué précis daté du 30 mars attribué à Barrot → date corrigée au **20 mars** pour l'attaque, et la formulation « a condamné » est maintenue mais sans attribuer un communiqué daté précis (non-retrouvé)
 
 ### Sources analytiques complémentaires
 
