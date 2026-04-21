@@ -16,6 +16,13 @@ Dernier audit : **2026-04-21**
 - Témoignage anonyme d'un habitant du Breil → Témoignage recueilli par la rédaction de Quartier Libre
 - Détails géographiques locaux (Clos Toreau, Bellevue, Malakoff, Boissière, Breil) → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « Ils appellent ça prévention, nous on appelle ça de l'intimidation. » attribué à « un habitant du Breil » — **Action** : confirmer recueilli par la rédaction.
+- Constats de terrain : « contrôles au faciès, interpellations violentes devant les écoles, descentes de la BAC dans les halls, gamins menottés pour rien » à Clos Toreau, Bellevue, Malakoff, Boissière — **Action** : confirmer que ces constats reposent sur témoignages QL multiples (et pas une généralisation).
+- Affirmation « ascenseurs en panne pendant des mois » dans les immeubles de NMH — **Action** : sourcer un cas précis (immeuble, période) ou formuler comme constat militant.
+- Affirmation « les médiateurs sociaux sont souvent des précaires mal payés, sans formation suffisante, sans autonomie face à la police » — **Action** : confirmer que cette caractérisation vient de témoignages recueillis (médiateurs nantais) ou la qualifier comme constat général du secteur.
+
 ## Où vérifier (ressources générales)
 
 - [Nantes Métropole — Finances](https://metropole.nantes.fr/ma-ville-ma-metropole/ma-metropole-et-ses-24-communes/fonctionnement/les-finances-de-nantes-metropole)

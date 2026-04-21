@@ -15,6 +15,14 @@ Dernier audit : **2026-04-21**
 - Témoignages anonymes recueillis (habitant square Jean-Jaurès, mère de famille, habitante boulevard Boucher) → Témoignages recueillis par la rédaction de Quartier Libre
 - Détails géographiques locaux (square Jean-Jaurès, boulevard Boucher, école Ampère) → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « On dirait qu'ils attendent qu'on s'en aille tous pour fermer définitivement. » attribué à « un habitant du square Jean-Jaurès » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « Mon grand a commencé ici à 3 ans… » attribué à « une mère de famille » des Dervallières — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « Ma mère a 82 ans. Elle a galéré trois mois pour renouveler sa carte de transport… » attribué à « une habitante du boulevard Boucher » — **Action** : confirmer recueilli par la rédaction.
+- Détails géographiques : « square Jean-Jaurès », « boulevard Boucher », « école Ampère » cités aux Dervallières — **Action** : vérifier que ces adresses existent bien dans le périmètre des Dervallières.
+- Mention « grands établissements privés sous contrat du reste de la ville (comme Saint-Stanislas) affichent complet » — **Action** : vérifier que Saint-Stanislas est bien l'exemple le plus pertinent (ou choisir un établissement privé plus proche de la comparaison QPV/établissements aisés).
+
 ## Où vérifier (ressources générales)
 
 - [Nantes Métropole — Quartier Dervallières](https://metropole.nantes.fr/)

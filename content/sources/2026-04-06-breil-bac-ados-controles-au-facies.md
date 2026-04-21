@@ -17,6 +17,15 @@ Dernier audit : **2026-04-21**
 - Témoignages anonymes recueillis auprès d'habitant·es du Breil (éducateur, grande sœur d'un ado de 14 ans) → Témoignages recueillis par la rédaction de Quartier Libre
 - Détails géographiques locaux (Breil, collèges et écoles du quartier) → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « Ils arrivent vite, ils descendent à trois ou quatre, ils plaquent les plus jeunes contre la grille… » attribué à « un éducateur du quartier » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « Mon petit frère a 14 ans. Il m'a dit : "à quoi ça sert que j'aille à l'école, de toute façon pour eux je serai toujours un voyou". » attribué à « une grande sœur du Breil » — **Action** : confirmer recueilli par la rédaction.
+- Affirmation « Les ados blancs du Breil ne sont quasiment jamais contrôlés. Les ados noirs ou maghrébins du Breil le sont systématiquement. » — **Action** : relire, c'est une affirmation forte ; confirmer qu'elle s'appuie sur témoignages multiples recueillis par la rédaction, pas seulement une généralisation.
+- Chiffre « 1 éducateur pour 1 000 jeunes au Breil » — **Action** : retrouver la source de ce ratio ou retirer/qualifier comme estimation.
+- Attribution « Bassem Asseh, adjoint à la sécurité de Johanna Rolland » — **Action** : vérifier que Bassem Asseh détient bien cette délégation à la date de publication.
+- Affirmation « La BAC y débarque plusieurs fois par semaine, dans des voitures banalisées, à 17h, à 21h » — **Action** : confirmer que ces créneaux viennent de témoignages QL directs et pas d'une dramatisation.
+
 ## Où vérifier (ressources générales)
 
 - [Défenseur des droits](https://www.defenseurdesdroits.fr/)

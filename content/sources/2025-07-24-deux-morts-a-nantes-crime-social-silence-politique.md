@@ -18,6 +18,12 @@ Dernier audit : **2026-04-21**
 - Rapports annuels sur l'état du mal-logement en France → [Fondation Abbé Pierre — L'état du mal-logement](https://www.fondation-abbe-pierre.fr/nos-publications-et-positions/nos-publications/letat-du-mal-logement)
 - Témoignages anonymes de maraudes et collectifs de solidarité nantais sur les deux décès de juillet 2025 → Témoignages recueillis par la rédaction de Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Affirmation « Deux hommes sans domicile fixe retrouvés morts à Nantes en juillet 2025, à quelques heures d'intervalle » — **Action CRITIQUE** : confirmer que ces deux décès ont été effectivement documentés par les maraudes / collectifs de solidarité nantais consultés par la rédaction ; si oui, préciser a minima la ou les maraudes source. Sans cette vérification, retirer les détails précis (« espace abrité proche de la gare », « tente en périphérie »).
+- Témoignages maraudes anonymes : identifier les collectifs (Médecins du Monde, Samu social, maraude paroissiale, DAL, etc.) — **Action** : confirmer que la rédaction a bien recueilli des témoignages directs (pas seulement relayé une info de presse).
+- Formulation « dans un espace abrité proche de la gare » / « tente installée en périphérie » — **Action** : si les lieux précis ne sont pas confirmés par une source publique (presse, communiqué), rester dans le générique pour protéger l'anonymat sans inventer.
+
 ## Où vérifier (ressources générales)
 
 - [Collectif Les Morts de la Rue](https://www.mortsdelarue.org/)

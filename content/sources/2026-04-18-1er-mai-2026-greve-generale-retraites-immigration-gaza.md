@@ -18,6 +18,13 @@ Dernier audit : **2026-04-21**
 - Annuaire du Barreau de Nantes pour trouver la permanence pénale → [Barreau de Nantes](https://www.barreaunantes.fr/)
 - Mobilisation étudiante et associative récente autour de Gaza en France → [AFPS — Association France Palestine Solidarité](https://www.france-palestine.org/)
 
+## 👤 À valider par la rédaction
+
+- Point éditorial : article en attente de l'appel intersyndical national définitif pour le 1er mai 2026 (mots d'ordre, signataires) — **Action** : mettre à jour la liste des organisations et les revendications exactes dès la publication de l'appel CGT-Solidaires-FSU national.
+- Point éditorial : le départ annoncé dans l'excerpt « 10h place du Bouffay » — **Action** : confirmer le lieu et l'heure définitifs quand l'intersyndicale nantaise publie ; supprimer ou corriger l'excerpt si le départ est ailleurs (Miroir d'eau, Cours des 50 Otages, etc.).
+- Sous-cortèges annoncés (syndical, logement, sans-papiers, Palestine, étudiant) — **Action** : confirmer que ces cortèges se constituent réellement à Nantes le 1er mai 2026 (et pas seulement une projection sur tradition passée).
+- Référence à « mouvement des retraites 2023, journée du 10 septembre 2025 » — **Action** : vérifier que l'article interne « Nantes sous les gaz » couvre bien ces deux journées.
+
 ## Où vérifier (ressources générales)
 
 - [CGT](https://www.cgt.fr/) · [CGT 44](https://lacgt44.fr/)

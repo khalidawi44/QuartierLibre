@@ -17,6 +17,13 @@ Dernier audit : **2026-04-21**
 - Circulaire Retailleau du 23 janvier 2025 sur l'admission exceptionnelle au séjour (7 ans de présence) → [GISTI — Circulaire Retailleau](https://www.gisti.org/spip.php?article7447)
 - Polybe, *Histoires*, livre VI — théorie de l'anacyclose (succession et corruption des régimes politiques) → [Encyclopédie Universalis — Polybe](https://www.universalis.fr/encyclopedie/polybe/) · [Wikisource — Histoires, livre VI](https://fr.wikisource.org/wiki/Histoire_g%C3%A9n%C3%A9rale_(Polybe)/Livre_VI)
 
+## 👤 À valider par la rédaction
+
+- Disclaimer satirique en tête du « Saint Gouvernement Lecornu II » : « allégorie satirique qui renvoie à des figures politiques françaises associées aux grandes mesures des dernières années » — **Action** : relire pour s'assurer que le ton reste lisible comme satire/allégorie et pas comme composition officielle du gouvernement (risque que des lecteurs croient que Borne/Le Maire/Retailleau/Dupond-Moretti/Véran/Colonna/Béchu/Valls sont tous dans Lecornu II).
+- Surnoms satiriques « Louis-Macron XVI », « moine-soldat », « templiers », « châteaux à défendre » — **Action** : valider que la charge satirique est clairement assumée et que le bandeau « allégorie » suffit à protéger QL juridiquement.
+- Appel final « Dégagez ! » et « L'ordonnance du peuple » — **Action** : relire, s'assurer que l'appel reste de l'ordre du registre militant et pas appel à la violence.
+- Phrase « Pendant ce temps, le peuple attend dehors, spectateur impuissant. Mais ceux qui vivent au jour le jour, pour qui chaque hiver signifie des morts dans les rues : eux, Macron ne les compte jamais. » — **Action** : relire pour s'assurer qu'elle reste dans le registre éditorial (référence sourçable aux 735 morts à la rue 2023 via article QL dédié).
+
 ## Où vérifier (ressources générales)
 
 - [Légifrance](https://www.legifrance.gouv.fr/)

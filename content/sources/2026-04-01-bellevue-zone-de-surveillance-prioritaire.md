@@ -15,6 +15,14 @@ Dernier audit : **2026-04-21**
 - Témoignages anonymes d'habitant·es de Bellevue recueillis par la rédaction (mère de famille rue Jean-Jaurès, père du Grand Bellevue, locataire du Bois Hue) → Témoignages recueillis par la rédaction de Quartier Libre
 - Détails géographiques locaux (rue Jean-Jaurès, Bois Hue, arrêt de tram Mendès-France-Bellevue) validés par la connaissance terrain de la rédaction → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « Chez nous, l'État ne vient jamais. Sauf quand il y a la BAC. » attribué à « un habitant du Grand Bellevue » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « Mon fils de 15 ans s'est fait contrôler trois fois la semaine dernière… » attribué à « une mère de famille, rue Jean-Jaurès » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « Quand ils détruisent, c'est pas pour nous… » attribué à « un locataire du Bois Hue » — **Action** : confirmer recueilli par la rédaction.
+- Détails géographiques : « rue Jean-Jaurès », « Bois Hue », « arrêt de tram Mendès-France-Bellevue » — **Action** : vérifier que ces adresses correspondent bien à Bellevue côté Nantes / Saint-Herblain et à la réalité terrain.
+- Affirmation « la BAC débarque à 7h du matin dans les cages d'escalier, descentes musclées dans les halls, contrôles au faciès devant l'arrêt de tram Mendès-France-Bellevue » — **Action** : confirmer que c'est corroboré par des témoignages QL directs (pas juste généralisation).
+
 ## Où vérifier (ressources générales)
 
 - [Nantes Métropole — Quartier Grand Bellevue](https://contrat-ville-agglonantaise.fr/les-quartiers/grand-bellevue/)

@@ -16,6 +16,14 @@ Dernier audit : **2026-04-21**
 - Témoignages anonymes d'habitant·es et bénévoles de la Pilotière (habitante militante, bénéficiaire du frigo partagé) → Témoignages recueillis par la rédaction de Quartier Libre
 - Détails géographiques locaux et initiatives d'auto-organisation observées → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « Personne ne viendra nous sauver. On l'a compris. Alors on fait nous-mêmes. » attribué à « une habitante militante » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « J'avais honte au début de prendre. Maintenant je dépose aussi, quand je peux. Ça libère. » attribué à « un bénéficiaire du frigo partagé » — **Action** : confirmer recueilli par la rédaction.
+- Initiatives concrètes décrites (aide aux devoirs depuis 2019, 6 à 10 bénévoles, lundis mardis jeudis 17h-19h ; frigo partagé depuis 2022 après 3 ans de négociations ; 8 mamans en garde collective ; 6 bacs de culture installés en 2023, 15 familles) — **Action CRITIQUE** : confirmer que ces collectifs existent bel et bien à la Pilotière et que les chiffres/dates sont exacts ; sinon, ces éléments sont une invention et doivent être retirés ou reformulés.
+- Affirmation « 2 300 habitants » à la Pilotière — **Action** : vérifier sur données INSEE/ville.
+- Affirmation « plusieurs collectifs d'habitants se sont organisés depuis une dizaine d'années » — **Action** : nommer au moins un collectif identifiable ou nuancer la formule.
+
 ## Où vérifier (ressources générales)
 
 - [Les Frigos Solidaires](https://www.lesfrigossolidaires.com/)

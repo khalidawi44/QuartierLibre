@@ -18,6 +18,13 @@ Dernier audit : **2026-04-21**
 - Valeur tutélaire d'une année de vie — estimation utilisée en économie de la santé → [France Stratégie — Évaluation socio-économique des projets publics](https://www.strategie.gouv.fr/sites/strategie.gouv.fr/files/atoms/files/2013-09-12_guide_de_levaluation_socio-economique_hcnfp_finale.pdf)
 - Témoignages anonymes recueillis à Clos Toreau, Malakoff, Bellevue → Témoignages recueillis par la rédaction de Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Cas « résidence autonomie de la rue du Croissant » : 12 appartements sur 51 infestés depuis plus de 8 mois — **Action** : confirmer que ces chiffres sont à jour / correspondent bien à l'état signalé par France Bleu 2019 ou à une mise à jour plus récente (l'article France Bleu cité est de 2019 ; la formulation de l'article QL laisse entendre une situation actuelle).
+- Affirmation « interventions engagées par le CCAS : localisation avec chien spécialisé, traitements chimiques et mécaniques, mise en chauffe, congélation des vêtements » — **Action** : confirmer que ces détails proviennent d'une source documentée (article de presse, communiqué CCAS) ou d'un témoignage recueilli.
+- Estimation préjudice moral « entre 1 000 et 15 000 € » et méthode valeur tutélaire (158 000 €) — **Action** : relire, formulation juridique présentée comme méthode recevable ; s'assurer qu'elle correspond à la pratique contentieuse réelle (sinon encadrer en « ordres de grandeur indicatifs »).
+- Témoignages anonymes évoqués à Clos Toreau, Malakoff, Bellevue — **Action** : confirmer que la rédaction dispose bien de ces témoignages (pas juste une mention générique).
+
 ## Où vérifier (ressources générales)
 
 - [Anses](https://www.anses.fr/)

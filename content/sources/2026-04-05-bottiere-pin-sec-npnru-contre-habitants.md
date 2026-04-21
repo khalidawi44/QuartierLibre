@@ -16,6 +16,14 @@ Dernier audit : **2026-04-21**
 - Témoignages anonymes d'habitant·es (Pin Sec, rue du Pin Sec, habitante 74 ans) → Témoignages recueillis par la rédaction de Quartier Libre
 - Détails géographiques locaux (rue du Pin Sec, secteur Bottière-Basinerie-Souillarderie) → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « Ils appellent ça un plan de quartier. Nous on appelle ça un plan d'expulsion. » attribué à « un habitant du Pin Sec » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « J'ai vécu 38 ans dans cet immeuble. Mes enfants y sont nés. Mon mari y est mort… » attribué à « une habitante de la rue du Pin Sec, 74 ans » — **Action** : confirmer recueilli par la rédaction (y compris âge et adresse).
+- Détails géographiques : « rue du Pin Sec », « secteur Bottière-Basinerie-Souillarderie » — **Action** : vérifier que ces noms de rues/secteurs correspondent au périmètre NPNRU réel.
+- Affirmation « entre l'étape 5 et l'étape 7, il peut se passer 5 à 8 ans » (délai relogement/reconstruction) — **Action** : relire, sourcer si possible ou indiquer qu'il s'agit d'une estimation militante.
+- Comparaison « Monselet, Mellinet, Procé » comme quartiers riches n'accueillant pas de HLM massifs — **Action** : vérifier que la comparaison est juste (et pas d'opération HLM récente dans ces secteurs).
+
 ## Où vérifier (ressources générales)
 
 - [Nantes Métropole — Bottière Pin Sec](https://metropole.nantes.fr/)

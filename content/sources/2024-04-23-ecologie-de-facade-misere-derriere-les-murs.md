@@ -17,6 +17,13 @@ Dernier audit : **2026-04-21**
 - Témoignage anonyme d'un habitant de Bottière → Témoignage recueilli par la rédaction de Quartier Libre
 - Détails géographiques locaux (Bellevue, Bottière, Dervallières, Clos Toreau) → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « Ils ont mis un banc neuf sous ma tour. Mais j'ai de la moisissure dans la cuisine et ma fille dort avec des punaises. J'ai appelé 8 fois le bailleur. Aucune réponse. L'écologie, c'est que pour les gens du centre-ville ? » attribué à un·e habitant·e de Bottière — **Action** : confirmer recueilli par la rédaction.
+- Citation « On plante des fleurs, mais on laisse mourir les gens dans leur salon » — **Action** : confirmer si c'est un témoignage recueilli ou une formule éditoriale (auquel cas : retirer les guillemets ou attribuer clairement à QL).
+- Citation « Une écologie qui ignore les pauvres est une imposture » — **Action** : confirmer si c'est une citation d'auteur ou une formule QL ; si QL, retirer guillemets de citation ou mettre en encadré éditorial.
+- Affirmation « Les bailleurs prétendent "ne pas être responsables" des punaises de lit » — **Action** : confirmer que c'est une position documentée de NMH/bailleurs nantais (courrier, mail, déclaration) ou reformuler.
+
 ## Où vérifier (ressources générales)
 
 - [ANRU](https://www.anru.fr/)

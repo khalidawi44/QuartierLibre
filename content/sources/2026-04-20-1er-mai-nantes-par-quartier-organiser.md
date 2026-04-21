@@ -18,6 +18,15 @@ Dernier audit : **2026-04-21**
 - Recommandations sérum physiologique / protection lacrymogène — consensus militant documenté par Amnesty et le Syndicat des avocats de France → [SAF — Manifestants, vos droits](https://lesaf.org/)
 - Conseils juridiques en cas de garde à vue (silence, demander un avocat, demander un médecin) → [Service-public.fr — Garde à vue](https://www.service-public.fr/particuliers/vosdroits/F14837)
 
+## 👤 À valider par la rédaction
+
+- Lieu « Maison de quartier de la Bourderie » annoncé pour l'AG Bellevue — **Action** : confirmer que cette maison de quartier accueille bien l'AG préparatoire du 1er mai à Bellevue (date et horaire définitifs).
+- Référence au « Collectif habitants Bellevue » — **Action** : vérifier que ce collectif existe sous ce nom exact et qu'il est actif en 2026.
+- Lieu « centre socioculturel des Dervallières » comme point de retrouvailles des collectifs — **Action** : confirmer que cette pratique a lieu pour le 1er mai 2026 (et pas juste une tradition ancienne).
+- Indication « rassemblement de départ historiquement Place du Bouffay ou Miroir d'eau » — **Action** : confirmer le lieu et l'heure exacts dès publication de l'appel nantais (intersyndicale CGT 44 / FSU 44 / Solidaires 44).
+- Annonce « le Bureau des plaintes ouvrira un canal dédié le soir du 1er mai » — **Action** : confirmer que ce canal sera effectivement ouvert côté QL, et préparer les moyens techniques avant publication.
+- Appels matériels (collage d'affiches, impression de tracts, préparation sandwiches) — **Action** : confirmer que la rédaction est en capacité de mettre en lien les lecteur·ices qui répondront via le Bureau des plaintes.
+
 ## Où vérifier (ressources générales)
 
 - [CGT](https://www.cgt.fr/) · [CGT Loire-Atlantique](https://lacgt44.fr/)

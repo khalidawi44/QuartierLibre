@@ -15,6 +15,13 @@ Dernier audit : **2026-04-21**
 - Témoignages anonymes d'habitant·es et bénévoles de la Halvêque (bénévole du centre socioculturel, habitant) → Témoignages recueillis par la rédaction de Quartier Libre
 - Connaissance de terrain des tissus associatifs et initiatives du quartier → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « Ma cousine habite Nantes-Nord. Dès que les gens apprennent où elle vit, ils ont une réaction… » attribué à « un habitant de la Halvêque » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « Quand j'ai organisé le festival du quartier l'an dernier, j'ai appelé cinq médias locaux. Aucun n'est venu. Deux semaines plus tard, il y a eu une bagarre : ils étaient tous là. » attribué à « une bénévole du centre socioculturel » — **Action** : confirmer recueilli par la rédaction (et vérifier que le festival évoqué a bien eu lieu).
+- Affirmation « Presse Océan écrit 200 fois en 10 ans que la Halvêque est sensible » — **Action** : vérifier l'ordre de grandeur (recherche mots-clés sur archive Presse Océan) ou qualifier comme estimation.
+- Grille comparative Halvêque vs Beaulieu/Île de Nantes (titres, photos, contexte, sources) — **Action** : relire, c'est une synthèse éditoriale ; confirmer qu'elle s'appuie sur un échantillon réel d'articles étudiés par la rédaction.
+
 ## Où vérifier (ressources générales)
 
 - [Acrimed — Critique des médias](https://www.acrimed.org/)

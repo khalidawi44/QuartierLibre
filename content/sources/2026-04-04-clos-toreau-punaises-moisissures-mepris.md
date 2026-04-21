@@ -16,6 +16,14 @@ Dernier audit : **2026-04-21**
 - Témoignages anonymes de locataires du Clos Toreau (moisissures chambre d'enfant, punaises rue de Castellane) → Témoignages recueillis par la rédaction de Quartier Libre
 - Détails géographiques locaux (rue de Castellane, résidences du Clos Toreau) → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « J'ai appelé NMH vingt fois pour les moisissures dans la chambre de mon fils… » attribué à « une locataire du Clos Toreau » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « On a tout jeté. Matelas, canapé, armoires… » attribué à « un locataire de la rue de Castellane » — **Action** : confirmer recueilli par la rédaction.
+- Détails géographiques : « rue de Castellane » citée comme adresse d'une résidence HLM infestée au Clos Toreau — **Action** : vérifier que cette rue est bien dans le périmètre Clos Toreau et correspond au cas décrit.
+- Attribution de responsabilités : Thomas Quéro (président NMH), Johanna Rolland (maire), Bassem Asseh (adjoint) — **Action** : vérifier que Bassem Asseh détient toujours la délégation mentionnée à la date de publication de l'article.
+- Affirmation « Depuis 2020, plusieurs résidences du Clos Toreau connaissent des vagues d'infestation » — **Action** : confirmer que la rédaction dispose de témoignages/documents couvrant cette période (pas seulement un cas unique).
+
 ## Où vérifier (ressources générales)
 
 - [Nantes Métropole Habitat](https://nmh.fr/)

@@ -17,6 +17,14 @@ Dernier audit : **2026-04-21**
 - Travaux de Jean-Pierre Garnier sur la relégation urbaine et le capitalisme → [La Vie des Idées — Jean-Pierre Garnier](https://www.laviedesidees.fr/_Garnier-Jean-Pierre_.html)
 - Travaux d'Étienne Balibar sur l'hégémonie et la domination → [Cairn — Publications Balibar](https://www.cairn.info/publications-de-Balibar-%C3%89tienne--1571.htm)
 
+## 👤 À valider par la rédaction
+
+- Citation « Le tyran est seul, mais il enchaîne des millions, parce que des millions acceptent de lui obéir. » attribuée à La Boétie (1576) — **Action** : cette formule est une paraphrase couramment diffusée, pas un extrait littéral du *Discours de la servitude volontaire*. Relire et soit la mettre en italique comme synthèse de la pensée de La Boétie, soit la remplacer par une citation exacte (« Soyez résolus à ne plus servir, et vous voilà libres »).
+- Synthèse des travaux de Jean-Pierre Garnier sur la « relégation urbaine et scolaire des classes populaires [comme] mode de fonctionnement du capitalisme contemporain » — **Action** : valider que cette reformulation rend fidèlement la pensée de Garnier (pas une citation directe mais une synthèse).
+- Synthèse des travaux d'Étienne Balibar sur « l'hégémonie et la domination » — **Action** : valider que la référence Balibar est fidèlement utilisée (concept d'hégémonie plus associé à Gramsci qu'à Balibar — ajuster si besoin).
+- Citation « Ils ne sont grands que parce que nous sommes à genoux. » attribuée à La Boétie — **Action** : cette formule est généralement attribuée à La Boétie mais ne figure pas telle quelle dans le *Discours*. Vérifier l'attribution exacte ou reformuler en paraphrase.
+- Parallèle « réforme du statut des agents de la SNCF aujourd'hui » avec les « réformes radicales » d'Henri II — **Action** : relire, choix éditorial de rapprochement historique à valider.
+
 ## Où vérifier (ressources générales)
 
 - [BnF / Gallica](https://gallica.bnf.fr/)

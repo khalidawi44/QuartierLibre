@@ -18,6 +18,13 @@ Dernier audit : **2026-04-21**
 - Témoignages anonymes d'habitant·es relogé·es ou concerné·es (habitante relogée à Doulon, ancien locataire Square Vincent-Gâche) → Témoignages recueillis par la rédaction de Quartier Libre
 - Détails géographiques locaux (Square Vincent-Gâche, quartier Doulon, etc.) → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « Ils m'ont relogée à Doulon. Je mettais 10 minutes à pied à l'école, maintenant je mets 40 minutes en bus… » attribué à « une habitante relogée en 2023 » — **Action** : confirmer recueilli par la rédaction (y compris la date de relogement).
+- Témoignage « Ils appellent ça mixité. Nous on appelle ça expropriation. » attribué à « un ancien locataire du Square Vincent-Gâche » — **Action** : confirmer recueilli par la rédaction.
+- Détails géographiques : « Square Vincent-Gâche » cité comme adresse d'un ancien locataire de Malakoff — **Action** : vérifier que cette adresse existe bien dans le périmètre Malakoff / Pré-Gauchet.
+- Comparaison « on ne construit pas de HLM à l'Île de Nantes rive neuve, ni au Jardin des Plantes, ni aux Hauts-Pavés » — **Action** : relire pour s'assurer que la formulation reste défendable (accession existe à l'Île de Nantes, mais pas de programme HLM massif ; ajuster si besoin).
+
 ## Où vérifier (ressources générales)
 
 - [Agence Nationale pour la Rénovation Urbaine (ANRU)](https://www.anru.fr/)

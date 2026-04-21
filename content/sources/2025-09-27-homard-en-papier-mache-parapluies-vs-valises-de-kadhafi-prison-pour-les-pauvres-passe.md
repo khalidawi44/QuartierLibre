@@ -19,6 +19,12 @@ Dernier audit : **2026-04-21**
 - Citation Jean de La Fontaine, fable *Les Animaux malades de la peste* (1678) → [Lafontaine — Les Animaux malades de la peste (Livre VII, fable 1)](https://www.la-fontaine-ch-thierry.net/animmalad.htm)
 - Témoignages du militant nantais (Paris 2019, interdiction de séjour à Nantes pendant la loi Travail 2016) → Témoignage recueilli par la rédaction de Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage militant nantais : arrestation à Paris en mars 2019 en marge d'une manif Gilets Jaunes, 48 h GAV, comparution immédiate en pleine nuit, 2 mois ferme, interdiction de séjour à Paris — **Action** : confirmer que ce récit a bien été recueilli par la rédaction (militant identifiable, même si anonymisé dans l'article).
+- Témoignage militant nantais : interdiction de séjour à Nantes sous la loi Travail 2016, justifiée par un incident de plus de 20 ans déjà jugé, recours devant juge administratif rejeté — **Action** : confirmer recueilli par la rédaction (et que l'interdiction administrative est documentée : copie d'arrêté, décision JA).
+- Anonymisation de ce militant nantais — **Action** : valider qu'il est d'accord pour que son parcours soit publié (même anonymisé), et que les dates/durées mentionnées sont exactes.
+
 ## Où vérifier (ressources générales)
 
 - [Anticor](https://www.anticor.org/)

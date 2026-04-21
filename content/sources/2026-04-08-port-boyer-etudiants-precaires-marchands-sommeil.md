@@ -17,6 +17,14 @@ Dernier audit : **2026-04-21**
 - Témoignages anonymes d'étudiants et habitants (étudiant en licence en coloc 35 m², étudiante 2e année, chambre 450 €/mois sans chauffage) → Témoignages recueillis par la rédaction de Quartier Libre
 - Détails géographiques locaux (immeubles, écoles, commerces du quartier) → Connaissance de terrain Quartier Libre
 
+## 👤 À valider par la rédaction
+
+- Témoignage « Dans ma cage d'escalier, on est trois étudiants colocs dans 35m². En face, une famille de cinq dans un T2… » attribué à « un étudiant en licence » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « J'ai payé 450 € par mois pendant 8 mois pour une chambre sans chauffage… » attribué à « une étudiante en 2e année » — **Action** : confirmer recueilli par la rédaction (montant et durée).
+- Nom de bailleur local « CIL » cité comme bailleur privé à mission sociale de Port Boyer — **Action** : vérifier qu'il existe bien sous ce nom et qu'il opère à Port Boyer (confusion possible avec Action Logement / 1 % Logement, ex-CIL).
+- Affirmation « plusieurs immeubles sont concernés » par les marchands de sommeil à Port Boyer — **Action** : confirmer que la rédaction a identifié ces immeubles via témoignages / travail de terrain.
+- Propositions chiffrées (« 3 000 logements étudiants supplémentaires sous 5 ans », « cellule dédiée avec inspecteurs et juristes ») — **Action** : relire, c'est du registre revendicatif ; s'assurer que les ordres de grandeur sont défendables.
+
 ## Où vérifier (ressources générales)
 
 - [CROUS Nantes](https://www.crous-nantes.fr/)

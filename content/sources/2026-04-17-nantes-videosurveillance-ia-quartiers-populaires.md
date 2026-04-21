@@ -23,6 +23,14 @@ Dernier audit : **2026-04-21**
 - Témoignages anonymes recueillis à Bellevue, Breil, Clos Toreau → Témoignages anonymes recueillis par la rédaction de Quartier Libre
 - Open data des délibérations de Nantes Métropole (ressource pour la transparence évoquée dans l'article) → [Open Data Nantes Métropole — Délibérations](https://data.nantesmetropole.fr/explore/dataset/244400404_deliberations-instances-metropole-nantes/)
 
+## 👤 À valider par la rédaction
+
+- Témoignage « On nous met des caméras partout pour notre sécurité… J'ai été agressée sur le Mail, j'ai appelé les flics — ils sont venus 40 minutes après… » attribué à « Une habitante, Bellevue » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « Mon fils a 16 ans. Il traîne avec ses potes devant l'immeuble. Pas de drogue, rien. Juste discuter… » attribué à « Un père de famille, Breil » — **Action** : confirmer recueilli par la rédaction.
+- Témoignage « La mairie nous explique que c'est pour lutter contre les trafics. Mais les dealers, eux, ils savent où sont les caméras… » attribué à « Une commerçante, Clos Toreau » — **Action** : confirmer recueilli par la rédaction.
+- Affirmation « À ce stade, aucune délibération publiée ne confirme l'installation de VSA par la mairie [de Nantes] » — **Action** : relire à date de publication (si une délibération Nantes Métropole sur VSA sort d'ici là, adapter).
+- Mention « collectif Nantes sous surveillance » — **Action** : confirmer que ce collectif existe sous ce nom, est actif, et qu'il recense effectivement les caméras.
+
 ## Où vérifier (ressources générales)
 
 - [Maison de la tranquillité publique Nantes — Vidéoprotection](https://maisontranquillite.nantes.fr/home/securite-tranquillite-publique/tranquillite-publique/la-videoprotection.html)
