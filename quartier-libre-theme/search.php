@@ -18,7 +18,7 @@ get_header(); ?>
             echo $n === 0 ? 'Aucun résultat.' : ( $n . ' résultat' . ( $n > 1 ? 's' : '' ) );
             ?>
         </p>
-        <div class="ql-archive-header__search"><?php get_search_form(); ?></div>
+        <div style="max-width:480px;margin:1rem auto 0;"><?php get_search_form(); ?></div>
     </header>
 
     <?php if ( have_posts() ) : ?>

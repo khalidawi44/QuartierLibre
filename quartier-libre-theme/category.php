@@ -29,9 +29,9 @@ if ( have_posts() ) {
     </header>
 
     <?php
-    // Sur la rubrique "Info locale" : afficher la mosaïque des quartiers HLM
+    // Sur la rubrique "Infos Locale" : afficher la mosaïque des quartiers HLM
     $cat_slug = $term ? $term->slug : '';
-    if ( 'infos-locale' === $cat_slug ) {
+    if ( in_array( $cat_slug, array( 'infos-locale', 'info-locale', 'local', 'nantes' ), true ) ) {
         get_template_part( 'template-parts/quartiers' );
     }
     ?>

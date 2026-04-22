@@ -8,16 +8,16 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 get_header(); ?>
 
-<div class="ql-container ql-container--wide">
+<div class="ql-container" style="max-width:1100px;">
     <?php while ( have_posts() ) : the_post(); ?>
-        <article <?php post_class( 'ql-page ql-page--wide' ); ?>>
+        <article <?php post_class( 'ql-article' ); ?> style="max-width:none;">
             <?php if ( get_the_title() ) : ?>
-                <header class="ql-page__header ql-page__header--centered">
-                    <h1 class="ql-page__title"><?php the_title(); ?></h1>
+                <header class="ql-article__header" style="text-align:center;">
+                    <h1 class="ql-article__title"><?php the_title(); ?></h1>
                 </header>
             <?php endif; ?>
 
-            <div class="ql-page__body">
+            <div class="ql-article__body">
                 <?php the_content(); ?>
                 <?php wp_link_pages(); ?>
             </div>

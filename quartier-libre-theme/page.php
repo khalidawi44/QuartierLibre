@@ -8,18 +8,18 @@ get_header(); ?>
 
 <div class="ql-container">
     <?php while ( have_posts() ) : the_post(); ?>
-        <article <?php post_class( 'ql-page' ); ?>>
-            <header class="ql-page__header">
-                <h1 class="ql-page__title"><?php the_title(); ?></h1>
+        <article <?php post_class( 'ql-article' ); ?>>
+            <header class="ql-article__header">
+                <h1 class="ql-article__title"><?php the_title(); ?></h1>
             </header>
 
             <?php if ( has_post_thumbnail() ) : ?>
-                <figure class="ql-page__hero-media">
+                <figure class="ql-article__hero-media">
                     <?php the_post_thumbnail( 'ql-hero', array( 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
                 </figure>
             <?php endif; ?>
 
-            <div class="ql-page__body">
+            <div class="ql-article__body">
                 <?php the_content(); ?>
                 <?php wp_link_pages(); ?>
             </div>

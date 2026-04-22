@@ -24,7 +24,7 @@ $cat = ql_primary_category();
 
     <div class="ql-card__body">
         <?php if ( $cat && $compact ) : ?>
-            <a class="ql-card__cat ql-card__cat--inline" href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( $cat->name ); ?></a>
+            <a class="ql-card__cat ql-card__cat--inline" href="<?php echo esc_url( get_term_link( $cat ) ); ?>" style="position:static;display:inline-block;margin-bottom:.4rem;"><?php echo esc_html( $cat->name ); ?></a>
         <?php endif; ?>
 
         <h3 class="ql-card__title">
