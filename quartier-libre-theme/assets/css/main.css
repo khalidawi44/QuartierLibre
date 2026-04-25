@@ -254,22 +254,14 @@ p  { margin: 0 0 1em; }
 }
 
 @media (max-width: 999px) {
-  .ql-header__bar { position: relative; }
-  .ql-header__inner { padding-right: 56px; }
-  .ql-burger {
-    display: inline-flex;
-    position: absolute;
-    top: 50%; right: 1rem;
-    transform: translateY(-50%);
-    z-index: 10;
-    background: var(--ql-paper);
-  }
-  .ql-brand { flex: 1 1 auto; min-width: 0; max-width: 100%; overflow: hidden; }
+  .ql-burger { display: inline-flex; order: 3; flex: 0 0 44px; position: relative; z-index: 2; }
+  .ql-brand { flex: 1 1 auto; min-width: 0; max-width: calc(100% - 64px); overflow: hidden; }
   .ql-brand img,
   .ql-brand .custom-logo,
   .ql-brand__logo { max-height: 44px; max-width: 100%; object-fit: contain; }
   .ql-brand__wordmark { font-size: 1.1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .ql-brand__tag { display: none; }
+  .ql-header__bar { position: relative; }
   .ql-nav {
     position: absolute; top: 100%; left: 0; right: 0;
     background: var(--ql-paper); border-bottom: 1px solid var(--ql-line);
