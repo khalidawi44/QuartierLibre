@@ -250,7 +250,9 @@ p  { margin: 0 0 1em; }
 }
 
 @media (max-width: 999px) {
-  .ql-burger { display: inline-flex; order: 3; }
+  .ql-header__inner { flex-wrap: wrap; justify-content: center; row-gap: .5rem; }
+  .ql-brand { flex: 1 1 100%; justify-content: center; }
+  .ql-burger { display: inline-flex; order: 3; flex: 0 0 auto; }
   .ql-brand__tag { display: none; }
   .ql-nav {
     position: absolute; top: 100%; left: 0; right: 0;
