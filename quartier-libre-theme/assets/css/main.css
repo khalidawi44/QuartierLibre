@@ -315,6 +315,33 @@ p  { margin: 0 0 1em; }
 .ql-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .ql-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Burger row : bandeau dédié sous le marquee, mobile uniquement */
+.ql-burger-row { display: none; }
+.ql-burger--solo {
+  width: auto !important; height: auto !important;
+  padding: .65rem 1.3rem !important;
+  flex-direction: row !important;
+  gap: .65rem !important;
+  border: 1px solid var(--ql-line) !important;
+  border-radius: var(--ql-radius);
+  background: #fff !important;
+  cursor: pointer;
+}
+.ql-burger--solo .ql-burger__icon {
+  display: inline-flex; flex-direction: column; gap: 5px; width: 22px;
+}
+.ql-burger--solo .ql-burger__icon span {
+  display: block; width: 22px; height: 2px;
+  background: var(--ql-ink); transition: all var(--ql-t);
+}
+.ql-burger--solo[aria-expanded="true"] .ql-burger__icon span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.ql-burger--solo[aria-expanded="true"] .ql-burger__icon span:nth-child(2) { opacity: 0; }
+.ql-burger--solo[aria-expanded="true"] .ql-burger__icon span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.ql-burger__label {
+  font-weight: 800; font-size: .85rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--ql-ink);
+}
+
 /* Search panel */
 .ql-search-panel {
   border-top: 1px solid var(--ql-line);
@@ -328,7 +355,17 @@ p  { margin: 0 0 1em; }
 }
 
 @media (max-width: 999px) {
-  .ql-burger { display: inline-flex; order: 3; }
+  .ql-burger--inbar { display: none !important; }
+  .ql-burger-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    background: var(--ql-paper);
+    border-top: 1px solid var(--ql-line);
+    border-bottom: 1px solid var(--ql-line);
+    padding: .6rem 1rem;
+  }
+  .ql-burger--solo { display: inline-flex !important; }
   .ql-brand__tag { display: none; }
   .ql-nav {
     position: absolute; top: 100%; left: 0; right: 0;

@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                 ?>
             </a>
 
-            <button class="ql-burger" type="button" aria-expanded="false" aria-controls="ql-menu-primary" aria-label="Ouvrir le menu">
+            <button class="ql-burger ql-burger--inbar" type="button" aria-expanded="false" aria-controls="ql-menu-primary" aria-label="Ouvrir le menu">
                 <span></span><span></span><span></span>
             </button>
 
@@ -148,6 +148,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
     </div>
 
     <?php get_template_part( 'template-parts/marquee' ); ?>
+
+    <div class="ql-burger-row">
+        <button class="ql-burger ql-burger--solo" type="button" aria-expanded="false" aria-controls="ql-menu-primary" aria-label="Ouvrir le menu">
+            <span class="ql-burger__icon"><span></span><span></span><span></span></span>
+            <span class="ql-burger__label">Menu</span>
+        </button>
+    </div>
 </header>
 
 <main id="content" class="ql-main" role="main">
