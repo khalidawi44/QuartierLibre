@@ -135,8 +135,12 @@ p  { margin: 0 0 1em; }
 .ql-brand {
   display: inline-flex; align-items: center; gap: .75rem;
   text-decoration: none; flex: 0 0 auto;
+  min-width: 0;
 }
-.ql-brand__logo { max-height: 56px; width: auto; display: block; }
+.ql-brand img,
+.ql-brand .custom-logo,
+.ql-brand__logo { max-height: 56px; width: auto; max-width: 100%; height: auto; display: block; object-fit: contain; }
+.ql-brand .custom-logo-link { display: inline-flex; line-height: 0; }
 .ql-brand__wordmark {
   font-family: var(--ql-font-serif); font-weight: 900;
   font-size: clamp(1.35rem, 2.4vw, 1.75rem);
@@ -251,9 +255,11 @@ p  { margin: 0 0 1em; }
 
 @media (max-width: 999px) {
   .ql-burger { display: inline-flex; order: 3; flex: 0 0 44px; position: relative; z-index: 2; }
-  .ql-brand { flex: 1 1 auto; min-width: 0; max-width: calc(100% - 60px); }
+  .ql-brand { flex: 1 1 auto; min-width: 0; max-width: calc(100% - 64px); overflow: hidden; }
+  .ql-brand img,
+  .ql-brand .custom-logo,
   .ql-brand__logo { max-height: 44px; max-width: 100%; object-fit: contain; }
-  .ql-brand__wordmark { font-size: 1.1rem; overflow: hidden; text-overflow: ellipsis; }
+  .ql-brand__wordmark { font-size: 1.1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .ql-brand__tag { display: none; }
   .ql-header__bar { position: relative; }
   .ql-nav {
