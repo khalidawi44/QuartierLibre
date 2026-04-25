@@ -99,7 +99,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
     <div class="ql-burger-row">
         <button class="ql-burger ql-burger--solo" type="button" aria-expanded="false" aria-controls="ql-menu-primary" aria-label="Ouvrir le menu">
-            <span></span><span></span><span></span>
+            <span class="ql-burger__icon"><span></span><span></span><span></span></span>
             <span class="ql-burger__label">Menu</span>
         </button>
     </div>
