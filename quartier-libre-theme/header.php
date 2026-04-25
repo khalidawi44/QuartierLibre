@@ -10,14 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0f0f0f">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <style id="ql-burger-fallback">
-    @media (max-width:999px){
-        .ql-header__inner{flex-wrap:wrap!important;justify-content:center!important;row-gap:.5rem!important}
-        .ql-brand{flex:1 1 100%!important;justify-content:center!important;max-width:100%!important}
-        .ql-brand img,.ql-brand .custom-logo,.ql-brand__logo{max-height:48px!important;max-width:100%!important;height:auto!important;width:auto!important;object-fit:contain!important}
-        .ql-burger{display:inline-flex!important;order:3!important;flex:0 0 auto!important;width:44px!important;height:44px!important}
-    }
-    </style>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -56,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                 ?>
             </a>
 
-            <button class="ql-burger" type="button" aria-expanded="false" aria-controls="ql-menu-primary" aria-label="Ouvrir le menu">
+            <button class="ql-burger ql-burger--inbar" type="button" aria-expanded="false" aria-controls="ql-menu-primary" aria-label="Ouvrir le menu">
                 <span></span><span></span><span></span>
             </button>
 
@@ -104,6 +96,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
     </div>
 
     <?php get_template_part( 'template-parts/marquee' ); ?>
+
+    <div class="ql-burger-row">
+        <button class="ql-burger ql-burger--solo" type="button" aria-expanded="false" aria-controls="ql-menu-primary" aria-label="Ouvrir le menu">
+            <span></span><span></span><span></span>
+            <span class="ql-burger__label">Menu</span>
+        </button>
+    </div>
 </header>
 
 <main id="content" class="ql-main" role="main">

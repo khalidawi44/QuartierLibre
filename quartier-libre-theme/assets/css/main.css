@@ -249,10 +249,20 @@ p  { margin: 0 0 1em; }
   font: inherit; background: #fff;
 }
 
+/* Burger row : bandeau dédié sur mobile, sous le marquee */
+.ql-burger-row { display: none; }
+.ql-burger--solo { width: auto; padding: .5rem 1rem; gap: 8px; flex-direction: row; }
+.ql-burger--solo span:not(.ql-burger__label) { width: 22px; }
+.ql-burger__label { font-weight: 800; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ql-ink); margin-left: .4rem; }
+
 @media (max-width: 999px) {
-  .ql-header__inner { flex-wrap: wrap !important; justify-content: center; row-gap: .5rem; }
-  .ql-brand { flex: 1 1 100% !important; justify-content: center; }
-  .ql-burger { display: inline-flex !important; order: 3; flex: 0 0 auto; }
+  .ql-burger--inbar { display: none !important; }
+  .ql-burger-row {
+    display: flex; justify-content: center; align-items: center;
+    background: var(--ql-paper); border-top: 1px solid var(--ql-line); border-bottom: 1px solid var(--ql-line);
+    padding: .5rem 1rem;
+  }
+  .ql-burger--solo { display: inline-flex !important; }
   .ql-brand__tag { display: none; }
   .ql-nav {
     position: absolute; top: 100%; left: 0; right: 0;
