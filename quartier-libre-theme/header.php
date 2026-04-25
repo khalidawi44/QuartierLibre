@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                     ) );
                 } else {
                     echo '<ul class="ql-nav__list">';
-                    $cats = array( 'local' => 'Info locale', 'france' => 'France', 'international' => 'International', 'luttes' => 'Luttes' );
+                    $cats = array( 'infos-locale' => 'Info locale', 'france' => 'France', 'international' => 'International', 'luttes' => 'Luttes' );
                     foreach ( $cats as $slug => $label ) {
                         $term = get_term_by( 'slug', $slug, 'category' );
                         if ( $term ) {
