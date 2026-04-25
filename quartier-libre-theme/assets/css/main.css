@@ -250,12 +250,8 @@ p  { margin: 0 0 1em; }
 }
 
 @media (max-width: 999px) {
-  .ql-burger { display: inline-flex; order: 3; flex: 0 0 44px; position: relative; z-index: 2; }
-  .ql-brand { flex: 1 1 auto; min-width: 0; max-width: calc(100% - 60px); }
-  .ql-brand__logo { max-height: 44px; max-width: 100%; object-fit: contain; }
-  .ql-brand__wordmark { font-size: 1.1rem; overflow: hidden; text-overflow: ellipsis; }
+  .ql-burger { display: inline-flex; order: 3; }
   .ql-brand__tag { display: none; }
-  .ql-header__bar { position: relative; }
   .ql-nav {
     position: absolute; top: 100%; left: 0; right: 0;
     background: var(--ql-paper); border-bottom: 1px solid var(--ql-line);
@@ -263,7 +259,6 @@ p  { margin: 0 0 1em; }
     padding: 1rem; max-height: 0; overflow: hidden;
     transition: max-height var(--ql-t);
     box-shadow: var(--ql-shadow-md);
-    z-index: 1;
   }
   .ql-nav.is-open { max-height: 85vh; overflow: auto; }
   .ql-nav__list { flex-direction: column; gap: 0; }
