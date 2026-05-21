@@ -54,6 +54,27 @@ function ql_sync_render() {
         ql_do_content_sync();
     }
 
+    // Action : activer / désactiver la synchro automatique
+    if ( isset( $_POST['ql_toggle_auto'] ) && check_admin_referer( 'ql_auto_nonce' ) ) {
+        $new = get_option( 'ql_auto_sync_enabled', '1' ) === '1' ? '0' : '1';
+        update_option( 'ql_auto_sync_enabled', $new, false );
+        $ts = wp_next_scheduled( 'ql_auto_sync_cron' );
+        if ( $new === '1' && ! $ts ) {
+            wp_schedule_event( time() + 30, 'ql_5min', 'ql_auto_sync_cron' );
+        } elseif ( $new === '0' && $ts ) {
+            wp_unschedule_event( $ts, 'ql_auto_sync_cron' );
+        }
+        echo '<div class="notice notice-success"><p>Synchronisation automatique <strong>'
+            . ( $new === '1' ? 'activée' : 'désactivée' ) . '</strong>.</p></div>';
+    }
+
+    // Action : forcer une auto-sync maintenant (test)
+    if ( isset( $_POST['ql_force_auto'] ) && check_admin_referer( 'ql_auto_nonce' ) ) {
+        $r = ql_run_auto_sync( true );
+        $label = array( 'synced' => 'Mise à jour effectuée.', 'unchanged' => 'Déjà à jour.', 'error' => 'Erreur (voir le journal).' );
+        echo '<div class="notice notice-info"><p>Test auto-sync : <strong>' . esc_html( $label[ $r ] ?? $r ) . '</strong></p></div>';
+    }
+
     // Action : supprimer les catégories vides
     if ( isset( $_POST['ql_clean_empty_cats'] ) && check_admin_referer( 'ql_clean_empty_cats_nonce' ) ) {
         ql_do_clean_empty_categories();
@@ -194,6 +215,51 @@ function ql_sync_render() {
     </div>
 
     <?php
+    // ── Carte : synchronisation automatique ──────────────────────
+    $auto_on    = get_option( 'ql_auto_sync_enabled', '1' ) === '1';
+    $last_auto  = (int) get_option( 'ql_last_auto_sync', 0 );
+    $synced_sha = (string) get_option( 'ql_synced_sha', '' );
+    $next_cron  = wp_next_scheduled( 'ql_auto_sync_cron' );
+    ?>
+    <div class="ql-sync-card" style="border-color:<?php echo $auto_on ? '#1a7f37' : '#999'; ?>;">
+        <h2><?php echo $auto_on ? '🟢' : '⚪'; ?> Synchronisation automatique</h2>
+        <p>
+            Quand elle est activée, le site vérifie GitHub <strong>toutes les 5 minutes</strong>
+            et se met à jour tout seul dès qu'un nouveau commit est poussé —
+            <strong>aucun clic nécessaire</strong>. Les caches (NitroPack, OPcache…) sont
+            purgés automatiquement après chaque mise à jour.
+        </p>
+
+        <form method="post" style="display:inline-block;">
+            <?php wp_nonce_field( 'ql_auto_nonce' ); ?>
+            <input type="submit" name="ql_toggle_auto"
+                   class="button button-hero ql-sync-btn"
+                   style="background:<?php echo $auto_on ? '#999' : '#1a7f37'; ?> !important;border-color:<?php echo $auto_on ? '#999' : '#1a7f37'; ?> !important;"
+                   value="<?php echo $auto_on ? 'Désactiver l\'auto-sync' : 'Activer l\'auto-sync'; ?>">
+            <button type="submit" name="ql_force_auto" class="button" style="margin-left:10px;padding:10px 16px;height:auto;">Tester maintenant</button>
+        </form>
+
+        <div class="ql-sync-meta">
+            <p>État : <strong><?php echo $auto_on ? 'ACTIVÉE' : 'désactivée'; ?></strong></p>
+            <?php if ( $auto_on ) : ?>
+                <p>Prochaine vérification :
+                    <strong><?php echo $next_cron ? esc_html( human_time_diff( time(), $next_cron ) ) : '—'; ?></strong>
+                    <?php echo $next_cron ? '' : ' <em>(en attente de planification — visitez le site)</em>'; ?>
+                </p>
+            <?php endif; ?>
+            <?php if ( $last_auto ) : ?>
+                <p>Dernière auto-sync : <strong><?php echo esc_html( date_i18n( 'd/m/Y H:i', $last_auto ) ); ?></strong>
+                   (<?php echo esc_html( human_time_diff( $last_auto ) ); ?>)</p>
+            <?php endif; ?>
+            <?php if ( $synced_sha ) : ?>
+                <p>Version synchronisée : <code><?php echo esc_html( substr( $synced_sha, 0, 7 ) ); ?></code></p>
+            <?php endif; ?>
+            <p style="color:#777;"><em>Note : WP-Cron se déclenche au passage de visiteurs. Sur un site
+            sans trafic, la vérification peut être légèrement retardée.</em></p>
+        </div>
+    </div>
+
+    <?php
     // Journal
     $logs = get_option( 'ql_sync_log', array() );
     if ( ! empty( $logs ) ) {
@@ -329,12 +395,10 @@ function ql_gh_raw( $url ) {
 
 // ── Sync principal ──────────────────────────────────────────────
 function ql_do_github_sync() {
-    $theme_dir = get_stylesheet_directory();
+    $result = ql_sync_pull_theme_files();
 
-    // 1. Lister les fichiers via API GitHub
-    $files = ql_gh_list_files();
-    if ( ! is_array( $files ) || empty( $files ) ) {
-        $detail = ql_gh_last_error();
+    if ( $result === false ) {
+        $detail = function_exists( 'ql_gh_last_error' ) ? ql_gh_last_error() : '';
         echo '<div class="notice notice-error"><p><strong>Impossible de lister les fichiers</strong> depuis GitHub.</p>';
         if ( $detail ) {
             echo '<p><strong>Cause :</strong> ' . esc_html( $detail ) . '</p>';
@@ -344,8 +408,27 @@ function ql_do_github_sync() {
             echo '<p><em>Astuce :</em> configurez un <strong>Personal Access Token GitHub</strong> dans le cadre ci-dessous pour passer de 60 à 5000 req/h (crée le sur <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">github.com/settings/tokens</a>, scope : <code>public_repo</code> suffit).</p>';
         }
         echo '</div>';
-        ql_log_msg( 'ERREUR: liste GitHub KO — ' . ( $detail ?: 'motif inconnu' ) );
         return;
+    }
+
+    if ( $result['fail'] === 0 ) {
+        echo '<div class="notice notice-success"><p><strong>Synchronisation terminée.</strong> ' . esc_html( $result['msg'] ) . '</p></div>';
+    } else {
+        echo '<div class="notice notice-warning"><p><strong>Synchronisation partielle.</strong> ' . esc_html( $result['msg'] ) . '</p></div>';
+    }
+}
+
+// ── Cœur du sync (silencieux : utilisable en cron / webhook) ──
+// Retourne array('ok','fail','skipped','msg') ou false si échec listing.
+function ql_sync_pull_theme_files() {
+    $theme_dir = get_stylesheet_directory();
+
+    // 1. Lister les fichiers via API GitHub
+    $files = ql_gh_list_files();
+    if ( ! is_array( $files ) || empty( $files ) ) {
+        $detail = function_exists( 'ql_gh_last_error' ) ? ql_gh_last_error() : '';
+        ql_log_msg( 'ERREUR: liste GitHub KO — ' . ( $detail ?: 'motif inconnu' ) );
+        return false;
     }
 
     $ok = 0; $fail = 0; $skipped = 0;
@@ -400,21 +483,85 @@ function ql_do_github_sync() {
         $fail, $fail > 1 ? 's' : '',
         $skipped, $skipped > 1 ? 's' : ''
     );
-
-    if ( $fail === 0 ) {
-        echo '<div class="notice notice-success"><p><strong>Synchronisation terminée.</strong> ' . esc_html( $msg ) . '</p></div>';
-    } else {
-        echo '<div class="notice notice-warning"><p><strong>Synchronisation partielle.</strong> ' . esc_html( $msg ) . '</p></div>';
-    }
-
     ql_log_msg( $msg );
 
-    // 5. Invalider caches OPcache / objets
-    if ( function_exists( 'opcache_reset' ) ) {
-        @opcache_reset();
-        ql_log_msg( 'OPcache vidé' );
+    // 5. Invalider tous les caches (OPcache, NitroPack, objets…)
+    ql_purge_all_caches();
+
+    return array( 'ok' => $ok, 'fail' => $fail, 'skipped' => $skipped, 'msg' => $msg );
+}
+
+// ── Récupère le SHA du dernier commit de la branche suivie ────
+function ql_get_remote_head_sha() {
+    $url = sprintf(
+        'https://api.github.com/repos/%s/%s/commits/%s',
+        QL_GH_OWNER, QL_GH_REPO, QL_GH_BRANCH
+    );
+    $headers = array(
+        'Accept'     => 'application/vnd.github+json',
+        'User-Agent' => 'QuartierLibre-Sync/1.0',
+    );
+    $token = trim( (string) get_option( 'ql_github_token', '' ) );
+    if ( $token !== '' ) {
+        $headers['Authorization'] = 'Bearer ' . $token;
     }
+    $resp = wp_remote_get( $url, array(
+        'timeout'   => 15,
+        'sslverify' => true,
+        'headers'   => $headers,
+    ) );
+    if ( is_wp_error( $resp ) ) return false;
+    if ( wp_remote_retrieve_response_code( $resp ) !== 200 ) return false;
+    $data = json_decode( wp_remote_retrieve_body( $resp ), true );
+    return ( is_array( $data ) && ! empty( $data['sha'] ) ) ? $data['sha'] : false;
+}
+
+// ── Purge défensive de tous les caches connus ─────────────────
+function ql_purge_all_caches() {
+    // OPcache (bytecode PHP)
+    if ( function_exists( 'opcache_reset' ) ) { @opcache_reset(); }
+
+    // NitroPack (plusieurs versions / intégrations)
+    if ( function_exists( 'nitropack_sdk_purge' ) )       { @nitropack_sdk_purge( null, null, 'QL auto-sync' ); }
+    if ( function_exists( 'nitropack_sdk_purge_local' ) ) { @nitropack_sdk_purge_local( null ); }
+    if ( function_exists( 'nitropack_integration_purge_all' ) ) { @nitropack_integration_purge_all(); }
+    do_action( 'nitropack_integration_purge_all' );
+
+    // Autres caches répandus
+    if ( function_exists( 'rocket_clean_domain' ) )  { @rocket_clean_domain(); }     // WP Rocket
+    if ( function_exists( 'w3tc_flush_all' ) )       { @w3tc_flush_all(); }          // W3 Total Cache
+    if ( function_exists( 'wp_cache_clear_cache' ) ) { @wp_cache_clear_cache(); }    // WP Super Cache
+    do_action( 'litespeed_purge_all' );                                              // LiteSpeed
+
+    // Cache objet WordPress
     wp_cache_flush();
+}
+
+// ── Auto-sync : ne tire que si le commit distant a changé ─────
+// $force = true → resynchronise même sans changement de commit.
+// Retourne : 'synced' | 'unchanged' | 'error'.
+function ql_run_auto_sync( $force = false ) {
+    $remote_sha = ql_get_remote_head_sha();
+    if ( $remote_sha === false ) {
+        ql_log_msg( 'AUTO: échec lecture commit distant (API GitHub indisponible ou quota atteint)' );
+        return 'error';
+    }
+
+    $local_sha = get_option( 'ql_synced_sha', '' );
+    if ( ! $force && $remote_sha === $local_sha ) {
+        return 'unchanged';
+    }
+
+    $result = ql_sync_pull_theme_files();
+    if ( $result === false ) {
+        ql_log_msg( 'AUTO: échec de la synchronisation' );
+        return 'error';
+    }
+
+    update_option( 'ql_synced_sha', $remote_sha, false );
+    update_option( 'ql_last_auto_sync', time(), false );
+    ql_log_msg( 'AUTO: sync OK (' . substr( $remote_sha, 0, 7 ) . ') — ' . $result['msg'] );
+    return 'synced';
 }
 
 // ════════════════════════════════════════════════════════════════
