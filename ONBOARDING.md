@@ -236,7 +236,7 @@ Décisions persistées dans post_meta `_ql_item_decisions`. Reset auto si la fic
 | Liens externes | main.js | sur mobile/tablette → capture d'écran (WordPress mShots) au lieu de quitter le site ; desktop → popup |
 | Blockquotes témoignages | markdown `>!` | `>! texte` = encart pleine largeur fond image ; `>` = citation inline normale (politicien/média) |
 | Images par défaut | ql-sync.php `$fallback_map` | si pas de featured_image → image thématique selon primary_category |
-| Réseaux sociaux | sidebar-home.php | Facebook (profile.php?id=61578685711984), Instagram (@quartierlibre44), Snapchat (t.snapchat.com/2lbKw2lU), Telegram (t.me/nantesrevoltee/1577 — afficher "Telegram" pas le handle), RSS |
+| Réseaux sociaux | sidebar-home.php | Facebook (profile.php?id=61578685711984), Instagram (@quartierlibre44), Snapchat (t.snapchat.com/2lbKw2lU), Telegram (suit le canal réglé dans *Telegram QL* via `ql_telegram_public_url()`), RSS |
 | Profil utilisateur | page-mon-profil.php | upload photo custom, change infos/mdp. wp-admin BLOQUÉ pour non-éditeurs (redirect /mon-profil/) |
 | Connexion | page-connexion.php | email/mdp + boutons Google/Facebook/Apple (compatibles plugin Nextend Social Login à installer) |
 | Bureau des plaintes | plainte-popup.php + plainte-variants.php | modal flottante, variantes par sujet (immigration/police/logement/etc.) |
@@ -278,10 +278,12 @@ et la zone reste vide. Suspect n°1 : **NitroPack** (delay/defer JS, optimisatio
 - Sans rapport avec Telegram : régler le canal = *Réglages → Telegram QL* (OK), articles
   auto = *Quartier Libre → Tableau de bord* (robot de veille), publication auto = telegram.php.
 
-### ⚠️ Lien Telegram du widget « Nous suivre »
-Le widget social (sidebar) pointe par défaut vers `t.me/nantesrevoltee/1577` (compte
-**Nantes Révoltée**, pas le canal QL). À confirmer : si c'est volontaire (relai allié) on
-garde ; sinon mettre le **canal QL** via `wp option update ql_social_telegram "https://t.me/<canal_QL>"`.
+### Lien Telegram du widget « Nous suivre »
+L'ancien canal `t.me/nantesrevoltee` (Nantes Révoltée) a été remplacé par le **canal QL**.
+Le widget suit désormais automatiquement le canal réglé dans *Réglages → Telegram QL*
+(`ql_telegram_public_url()` : « Lien public du canal » sinon dérivé du `@nom`). Plus aucune
+URL codée en dur. Pour un canal **privé** (ID numérique `-100…`), remplir le champ
+« Lien public du canal » dans Telegram QL.
 
 ---
 

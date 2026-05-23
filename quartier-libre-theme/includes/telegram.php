@@ -129,6 +129,21 @@ function ql_telegram_channel_url() {
 }
 
 /**
+ * Meilleure URL publique du canal pour les liens du site (widget, bouton).
+ * Priorité : « Lien public du canal » → dérivé du @nom du canal → ''.
+ */
+function ql_telegram_public_url() {
+    $url = ql_telegram_channel_url();
+    if ( $url !== '' ) { return $url; }
+
+    $id = trim( (string) get_option( 'ql_telegram_channel_id', '' ) );
+    if ( $id !== '' && $id[0] === '@' ) {
+        return 'https://t.me/' . ltrim( $id, '@' );
+    }
+    return '';
+}
+
+/**
  * Renvoie le HTML du bouton, ou '' si aucune URL de canal n'est configurée.
  */
 function ql_telegram_button( $label = 'Rejoins-nous sur Telegram', $class = '' ) {
