@@ -1,0 +1,28 @@
+# Sources — Square Daviais, lycée Leloup-Bouhier (Nantes, 2018)
+
+Article : [`nantes-2018-daviais-leloup-bouhier.md`](../articles/2026-05-23-nantes-2018-daviais-leloup-bouhier.md)
+
+Dernier audit : **2026-05-23**
+
+## ✓ Sources vérifiées
+- En 2018, des centaines d'exilé·es déplacé·es de site en site à Nantes (ancienne école des Beaux-Arts, université, square Daviais) → [France Bleu Loire Océan — Rétro 2018 : l'errance de centaines de migrants à Nantes](https://www.francebleu.fr/infos/societe/retro-2018-l-errance-de-centaines-de-migrants-a-nantes-1545331417)
+- Évacuation du square Daviais le 18 juillet 2018, à la demande de la préfecture, sur décision de justice, au motif d'insalubrité, sans relogement digne → [Médecins du Monde — Expulsion du Square Daviais (19/07/2018)](https://www.medecinsdumonde.org/fr/actualites/migrants/2018/07/19/expulsion-du-square-daviais-nantes) ; [France 3 Pays de la Loire](https://france3-regions.franceinfo.fr/pays-de-la-loire/loire-atlantique/nantes/nantes-prefecture-pourrait-expulser-migrants-du-square-daviais-1513739.html)
+- 200 à 300 exilé·es occupent ensuite l'ancien lycée Leloup-Bouhier (propriété de la Ville de Nantes) → [France Bleu — Rétro 2018](https://www.francebleu.fr/infos/societe/retro-2018-l-errance-de-centaines-de-migrants-a-nantes-1545331417)
+- **La Ville de Nantes, propriétaire, a demandé au juge une expulsion en référé du lycée Leloup-Bouhier ; décision exécutée par la police (« commencé un peu après 8 h… une heure après tous les migrants sont partis… le site va être restitué à la Ville »), citation de Jean-Christophe Bertrand, directeur départemental de la sécurité publique** → [Ouest-France / maville — Nantes : les migrants évacués du lycée Leloup-Bouhier](https://rennes.maville.com/actu/actudet_-nantes.-les-migrants-evacues-du-lycee-leloup-bouhier_52716-3502201_actu.Htm)
+- Début septembre, le square Daviais se reconstitue (400 puis jusqu'à 500 personnes) ; la Ville et Nantes Métropole déposent une demande d'évacuation au tribunal administratif ; quatre associations saisissent la justice pour enjoindre l'État et le maire de trouver des solutions d'hébergement → [France Bleu — Rétro 2018](https://www.francebleu.fr/infos/societe/retro-2018-l-errance-de-centaines-de-migrants-a-nantes-1545331417)
+- Refuge dans le gymnase Jeanne-Bernard à Saint-Herblain (local inutilisé du diocèse de Nantes) : ~60 personnes en octobre puis ~200 (femmes et enfants compris) ; origines Soudan, Érythrée, Somalie, Éthiopie, Guinée, Tchad ; ni eau chaude ni chauffage, douches froides, deux toilettes, toit qui fuit, cas de gale et de tuberculose ; aide des collectifs Soutien Migrants Nantes et L'Autre Cantine ; le diocèse demande lui-même l'évacuation ; citations de François Prochasson et Xavier Brunier → [InfoMigrants — À Nantes, environ 200 migrants vivent dans un gymnase sans douche ni chauffage](https://www.infomigrants.net/fr/post/15110/a-nantes-environ-200-migrants-vivent-dans-un-gymnase-sans-douche-ni-chauffage)
+- Communiqué de la mairie de Nantes du 31 octobre 2018 : « sur 700 personnes » du square Daviais, « 187 ont été orientées […] vers des hébergements plus durables » → [InfoMigrants (post 15110)](https://www.infomigrants.net/fr/post/15110/a-nantes-environ-200-migrants-vivent-dans-un-gymnase-sans-douche-ni-chauffage)
+- Hébergement du diocèse menacé d'expulsion (demande du diocèse et du propriétaire) → [Europe 1 — Nantes : 250 migrants menacés par une demande d'expulsion](https://www.europe1.fr/societe/nantes-250-migrants-menaces-par-une-demande-dexpulsion-de-leur-hebergement-3869630) ; [Breizh-info — Accueil des migrants : le responsable diocésain s'explique (02/11/2018)](https://www.breizh-info.com/2018/11/02/105014/nantes-migrants-diocese-eveque/)
+
+## ⚠ Sources imprécises
+- Date exacte de l'expulsion du lycée Leloup-Bouhier : située « fin de l'été 2018 » dans l'article (la citation Bertrand donne l'heure, pas le jour). — **Action** : retrouver la date précise dans l'article Ouest-France/maville d'origine.
+- Motif « travaux de désamiantage » du lycée : repris des synthèses de presse. — **Action** : confirmer la formulation exacte dans la source d'origine.
+
+## 👤 À valider par la rédaction (témoignage, points sensibles)
+- Témoignage signé **« Khalid, témoin direct »** (présent à l'évacuation du square Daviais ; CRS et BAC ; mise à l'abri le jour même) — **Action** : Khalid confirme assumer ce témoignage à visage découvert (sinon « un témoin direct, militant solidaire »).
+- Formule de titre « Nantes a expulsé ses exilé·es » : raccourci militant assumé (jugement de valeur). Le fait précis et sourcé est : la **Ville a réclamé l'expulsion du lycée Leloup-Bouhier** dont elle était propriétaire. L'évacuation du square (18 juillet) relevait, elle, de la préfecture. — **Action** : OK en l'état (commentaire), à garder distinct des faits dans le corps.
+
+## Où vérifier (ressources générales)
+- [InfoMigrants](https://www.infomigrants.net/fr/)
+- [Médecins du Monde](https://www.medecinsdumonde.org/)
+- [Du LU au square Daviais — chronique des mobilisations pour l'hébergement des étrangers à Nantes (2012-2018), univ. Nantes](https://asmn.univ-nantes.fr/index.php?id=541)
