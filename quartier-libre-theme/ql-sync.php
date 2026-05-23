@@ -420,6 +420,26 @@ function ql_do_github_sync() {
 
 // ── Cœur du sync (silencieux : utilisable en cron / webhook) ──
 // Retourne array('ok','fail','skipped','msg') ou false si échec listing.
+/**
+ * Écriture atomique : on écrit dans un fichier temporaire puis on le renomme.
+ * Un renommage est atomique sur le même système de fichiers → le fichier en
+ * place n'est jamais laissé à moitié écrit (cause classique d'écran blanc).
+ */
+function ql_atomic_write( $path, $content ) {
+    $tmp = $path . '.qltmp';
+    if ( file_put_contents( $tmp, $content ) === false ) {
+        return false;
+    }
+    if ( @rename( $tmp, $path ) ) {
+        return true;
+    }
+    // rename indisponible (rare) : écriture directe en dernier recours,
+    // le contenu a déjà été validé en taille en amont.
+    $direct = file_put_contents( $path, $content );
+    @unlink( $tmp );
+    return $direct !== false;
+}
+
 function ql_sync_pull_theme_files() {
     $theme_dir = get_stylesheet_directory();
 
@@ -456,6 +476,15 @@ function ql_sync_pull_theme_files() {
             continue;
         }
 
+        // GARDE-FOU ANTI-ÉCRAN-BLANC : la taille téléchargée doit correspondre
+        // à celle annoncée par GitHub. Sinon = téléchargement tronqué → on
+        // n'écrase PAS le fichier en place (sinon un .php coupé casse tout le site).
+        if ( isset( $f['size'] ) && $f['size'] > 0 && strlen( $content ) !== (int) $f['size'] ) {
+            ql_log_msg( 'IGNORÉ (téléchargement incomplet, fichier en place préservé) : ' . $rel . ' — ' . strlen( $content ) . '/' . (int) $f['size'] . ' octets' );
+            $fail++;
+            continue;
+        }
+
         // ql-sync.php lui-même : on le met à jour en dernier (évite de couper la sync)
         if ( basename( $rel ) === $self_basename ) {
             $self_queued  = $local;
@@ -463,17 +492,16 @@ function ql_sync_pull_theme_files() {
             continue;
         }
 
-        if ( file_put_contents( $local, $content ) !== false ) {
+        if ( ql_atomic_write( $local, $content ) ) {
             $ok++;
         } else {
             $fail++;
         }
     }
 
-    // 3. Auto-update de ql-sync.php en dernier
+    // 3. Auto-update de ql-sync.php en dernier (écriture atomique, contenu déjà validé)
     if ( $self_queued && $self_content !== null ) {
-        file_put_contents( $self_queued, $self_content );
-        $ok++;
+        if ( ql_atomic_write( $self_queued, $self_content ) ) { $ok++; } else { $fail++; }
     }
 
     // 4. Résumé
