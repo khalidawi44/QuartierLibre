@@ -26,7 +26,7 @@ Dernier audit : **2026-05-23**
 - Présence de **CRS et BAC** lors de l'évacuation : rapportée par le témoin (cohérente avec une expulsion ordonnée par la préfecture). — **Action** : étayer si possible par une photo/vidéo datée ou un article nommant les unités.
 - Nationalités (Soudanais, Érythréens) : rapportées par le témoin direct. — **Action** : OK comme témoignage ; pour une affirmation en voix de presse, trouver une source presse.
 - **Non intégré au corps (et à NE PAS écrire en l'état)** : attribuer personnellement la **décision/l'ordre** (police, gravats, expulsions) à Aïcha Bassal ou Johanna Rolland. — **Action** : le témoin a vu les faits, pas l'ordre donné. Rester sur la **responsabilité politique de la majorité** (jugement de valeur, protégé) et ne pas écrire « Untel a ordonné » sans preuve directe. ⚠️ **Risque de diffamation.**
-- **Non intégré** : expulsion de réfugiés au site de l'ancien chantier naval (après Daviais). — **Action** : préciser date + lieu exact + une preuve (photo datée prise par toi, pas Street View), sinon garder hors publication.
+- ~~Épisode « chantier naval »~~ : **résolu** — pas un site distinct ; il s'agissait du **lycée Leloup-Bouhier** (que Khalid situe vers l'ancien chantier naval), désormais traité dans l'article dédié. Item retiré.
 
 ## Où vérifier (ressources générales)
 - [Nantes Métropole Habitat](https://nmh.fr/)

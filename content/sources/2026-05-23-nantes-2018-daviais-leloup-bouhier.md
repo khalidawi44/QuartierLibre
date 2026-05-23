@@ -1,10 +1,12 @@
-# Sources — Square Daviais, lycée Leloup-Bouhier (Nantes, 2018)
+# Sources — Aïcha Bassal (NMH) & les exilé·es de 2018
 
-Article : [`nantes-2018-daviais-leloup-bouhier.md`](../articles/2026-05-23-nantes-2018-daviais-leloup-bouhier.md)
+Article : [`aicha-bassal-nmh-locataires-exiles-2018`](../articles/2026-05-23-nantes-2018-daviais-leloup-bouhier.md)
 
 Dernier audit : **2026-05-23**
 
 ## ✓ Sources vérifiées
+- Aïcha Bassal élue présidente de NMH le 13 mai 2026, première femme à ce poste ; office logeant plus de 50 000 personnes ; citations « fierté » / « grande responsabilité » → [Le Journal des Entreprises](https://www.lejournaldesentreprises.com/breve/aicha-bassal-elue-presidente-du-bailleur-social-nantes-metropole-habitat-2143014) ; [Infos Média Nantes](https://infos-media-nantes.fr/aicha-bassal-nantes-metropole-habitat-presidente/) ; [Communiqué NMH](https://nmh.fr/actus/conseil-d-administration-aicha-bassal-elue-presidente-de-nantes-metropole-habitat)
+- 38 922 demandeurs de logement social à Nantes Métropole au 1ᵉʳ janvier 2025 ; délai « anormalement long » de 30 mois → [Nantes Métropole — marché de l'habitat tendu](https://metropole.nantes.fr/actualites/2024/logement-urbanisme/dossier-logement/marche-habitat-tension) ; [Nantes Métropole — DALO](https://metropole.nantes.fr/droit-logement-opposable)
 - En 2018, des centaines d'exilé·es déplacé·es de site en site à Nantes (ancienne école des Beaux-Arts, université, square Daviais) → [France Bleu Loire Océan — Rétro 2018 : l'errance de centaines de migrants à Nantes](https://www.francebleu.fr/infos/societe/retro-2018-l-errance-de-centaines-de-migrants-a-nantes-1545331417)
 - Évacuation du square Daviais le 18 juillet 2018, à la demande de la préfecture, sur décision de justice, au motif d'insalubrité, sans relogement digne → [Médecins du Monde — Expulsion du Square Daviais (19/07/2018)](https://www.medecinsdumonde.org/fr/actualites/migrants/2018/07/19/expulsion-du-square-daviais-nantes) ; [France 3 Pays de la Loire](https://france3-regions.franceinfo.fr/pays-de-la-loire/loire-atlantique/nantes/nantes-prefecture-pourrait-expulser-migrants-du-square-daviais-1513739.html)
 - 200 à 300 exilé·es occupent ensuite l'ancien lycée Leloup-Bouhier (propriété de la Ville de Nantes) → [France Bleu — Rétro 2018](https://www.francebleu.fr/infos/societe/retro-2018-l-errance-de-centaines-de-migrants-a-nantes-1545331417)
@@ -20,6 +22,7 @@ Dernier audit : **2026-05-23**
 
 ## 👤 À valider par la rédaction (témoignage, points sensibles)
 - Témoignage signé **« Khalid, témoin direct »** (présent à l'évacuation du square Daviais ; CRS et BAC ; mise à l'abri le jour même) — **Action** : Khalid confirme assumer ce témoignage à visage découvert (sinon « un témoin direct, militant solidaire »).
+- **Implication personnelle d'Aïcha Bassal dans les expulsions de 2018** : non établie. L'article l'écrit explicitement (« n'était pas, à notre connaissance, aux manettes ») et ne lui impute pas ces décisions. Le lien posé est **politique** (héritage d'une majorité) et **prospectif** (la question « gérera-t-elle… »). — **Action** : ne jamais transformer la question en affirmation (« elle a expulsé ») sans preuve directe.
 - Formule de titre « Nantes a expulsé ses exilé·es » : raccourci militant assumé (jugement de valeur). Le fait précis et sourcé est : la **Ville a réclamé l'expulsion du lycée Leloup-Bouhier** dont elle était propriétaire. L'évacuation du square (18 juillet) relevait, elle, de la préfecture. — **Action** : OK en l'état (commentaire), à garder distinct des faits dans le corps.
 
 ## Où vérifier (ressources générales)

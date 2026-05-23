@@ -1,6 +1,6 @@
 ---
-title: "Square Daviais, lycée Leloup-Bouhier : l'été 2018 où Nantes a expulsé ses exilé·es"
-slug: "nantes-2018-daviais-leloup-bouhier"
+title: "Aïcha Bassal présidente de NMH : gérera-t-elle les locataires comme Nantes a traité ses exilé·es ?"
+slug: "aicha-bassal-nmh-locataires-exiles-2018"
 category:
   - infos-locale
   - luttes
@@ -16,7 +16,7 @@ tags:
   - hebergement
   - johanna-rolland
   - diocese
-excerpt: "Été 2018 : des centaines d'exilé·es errent dans Nantes, d'un site à l'autre. Square Daviais évacué, lycée Leloup-Bouhier occupé puis vidé — à la demande de la Ville de Nantes elle-même, propriétaire des murs. Récit d'une inhospitalité organisée, et de la solidarité qui a tenu."
+excerpt: "Le 13 mai 2026, Aïcha Bassal devient présidente de Nantes Métropole Habitat. Mais en 2018, la Ville de Nantes — sa majorité — réclamait elle-même l'expulsion des exilé·es du lycée Leloup-Bouhier. Gérera-t-elle les 50 000 locataires comme elle a traité les réfugiés ? Retour sur un été d'inhospitalité."
 featured_image: "content/media/2026-05-23-nantes-2018-exiles.svg"
 bq_background: "content/media/theme-etat-policier.jpg"
 status: "draft"
@@ -25,6 +25,12 @@ author: "samir-toure"
 plainte_variant: "immigration"
 une: false
 ---
+
+## La nomination, et la question qui dérange
+
+Le **13 mai 2026**, **Aïcha Bassal** a été élue présidente de **Nantes Métropole Habitat** (NMH), l'office public qui loge **plus de 50 000 personnes**. Première femme à ce poste, élue de la majorité de Johanna Rolland, elle se présente en défenseuse du logement populaire — « fierté » et « grande responsabilité », a-t-elle déclaré.
+
+Mais derrière le symbole, une question s'impose : **la Ville qui, hier, réclamait l'expulsion des exilé·es, va-t-elle gérer ses 50 000 locataires avec plus d'humanité qu'elle n'en a montré aux plus précaires ?** Pour y répondre, il faut rouvrir le dossier de l'été 2018.
 
 ## Une errance organisée
 
@@ -67,13 +73,15 @@ Et même ce refuge-là finit menacé : le **diocèse lui-même** saisit la justi
 >! Ce qu'on a vécu cette année-là, c'est une course-poursuite. Un bâtiment, une expulsion. Un square, une expulsion. Un gymnase sans chauffage, encore une menace d'expulsion. Pendant ce temps, la Ville se disait "terre d'accueil". Les mots ne valent rien quand, dans les faits, on chasse les plus pauvres d'un trottoir à l'autre. »
 >! — Khalid, témoin direct, Quartier Libre
 
-## Sept ans plus tard, la mémoire et la vigilance
+## 2026 : la nomination, et la question concrète
 
-On nous expliquera que tout cela, c'est « compliqué », que l'hébergement d'urgence relève de l'État, que la Ville « fait ce qu'elle peut ». Mais les faits sont têtus : en 2018, c'est bien la **Ville de Nantes** qui a réclamé, devant le juge, l'expulsion des exilé·es du lycée Leloup-Bouhier. Pas l'État. La collectivité. Propriétaire.
+Aïcha Bassal n'était pas, à notre connaissance, aux manettes des expulsions de 2018 — elle prend la tête de NMH aujourd'hui. Mais elle hérite d'une **culture politique** : celle d'une majorité qui, propriétaire du lycée Leloup-Bouhier, a préféré saisir le juge plutôt que d'héberger.
 
-Aujourd'hui, la même majorité célèbre le « logement pour tous » et place une élue « issue du logement social » à la tête de [Nantes Métropole Habitat](/category/logement/). Le symbole est beau. La mémoire, elle, ne s'efface pas. **Une ville se juge à la manière dont elle traite les plus précaires** — pas à ses communiqués.
+La voilà responsable du logement de **plus de 50 000 personnes**, alors que **38 922 ménages** attendent un HLM dans la métropole, avec des délais qui dépassent deux ans et demi. La question n'est donc pas qu'un symbole, elle est très concrète : **gérera-t-elle les locataires, les demandeur·ses, les plus fragiles, comme la Ville a traité ses exilé·es — par le référé et la restitution des murs — ou autrement ?**
 
-À Nantes, ce sont les solidaires, les associations, les habitant·es qui ont tenu la ligne en 2018. Ce sont elles et eux qu'il faut soutenir, et dont il faut raconter l'histoire. **Pour que ça ne recommence pas dans le silence.**
+On nous dira que c'est « compliqué », que l'urgence relève de l'État. Mais les faits sont têtus : en 2018, c'est bien la **Ville de Nantes**, propriétaire, qui a réclamé devant le juge l'expulsion du lycée. Pas l'État. La collectivité.
+
+Quartier Libre jugera Aïcha Bassal **sur pièces, pas sur les communiqués**. Parce qu'une ville — et un office HLM — se mesurent à la manière dont ils traitent les plus précaires. À Nantes, en 2018, ce sont les solidaires et les associations qui ont tenu la ligne. **Qu'on s'en souvienne.**
 
 ---
 
