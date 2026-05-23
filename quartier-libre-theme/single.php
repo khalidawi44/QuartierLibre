@@ -36,7 +36,7 @@ get_header(); ?>
                         <?php if ( $cat ) : ?>
                             <a class="ql-post__cat" href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( $cat->name ); ?></a>
                         <?php endif; ?>
-                        <h1 class="ql-post__title ql-hero__title"><?php the_title(); ?></h1>
+                        <h1 class="ql-hero__title"><?php the_title(); ?></h1>
                     </div>
                 </figure>
                 <?php $cap = get_the_post_thumbnail_caption();
