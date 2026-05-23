@@ -22,6 +22,43 @@ if ( file_exists( $ql_sync_file ) ) {
     require_once $ql_sync_file;
 }
 
+// ── 0b. Synchronisation AUTOMATIQUE (cron) ──────────────────────
+// Toutes les ~5 min, WordPress vérifie si un nouveau commit a été
+// poussé sur GitHub. Si oui, il télécharge les fichiers et purge les
+// caches — sans aucune action manuelle. Activable/désactivable depuis
+// Outils → Sync QL (option ql_auto_sync_enabled, ON par défaut).
+add_filter( 'cron_schedules', function ( $schedules ) {
+    if ( ! isset( $schedules['ql_5min'] ) ) {
+        $schedules['ql_5min'] = array(
+            'interval' => 5 * MINUTE_IN_SECONDS,
+            'display'  => 'Toutes les 5 minutes (QL)',
+        );
+    }
+    return $schedules;
+} );
+
+add_action( 'init', function () {
+    $enabled   = get_option( 'ql_auto_sync_enabled', '1' ) === '1';
+    $scheduled = wp_next_scheduled( 'ql_auto_sync_cron' );
+    if ( $enabled && ! $scheduled ) {
+        wp_schedule_event( time() + 60, 'ql_5min', 'ql_auto_sync_cron' );
+    } elseif ( ! $enabled && $scheduled ) {
+        wp_unschedule_event( $scheduled, 'ql_auto_sync_cron' );
+    }
+} );
+
+add_action( 'ql_auto_sync_cron', function () {
+    if ( get_option( 'ql_auto_sync_enabled', '1' ) !== '1' ) { return; }
+    if ( function_exists( 'ql_run_auto_sync' ) ) {
+        ql_run_auto_sync();
+    }
+} );
+
+add_action( 'switch_theme', function () {
+    $ts = wp_next_scheduled( 'ql_auto_sync_cron' );
+    if ( $ts ) { wp_unschedule_event( $ts, 'ql_auto_sync_cron' ); }
+} );
+
 // Intégration HelloAsso API v5 (OAuth + checkout intents + endpoint AJAX)
 $ql_helloasso_file = QL_THEME_DIR . '/includes/helloasso.php';
 if ( file_exists( $ql_helloasso_file ) ) {
@@ -32,6 +69,24 @@ if ( file_exists( $ql_helloasso_file ) ) {
 $ql_plainte_variants_file = QL_THEME_DIR . '/includes/plainte-variants.php';
 if ( file_exists( $ql_plainte_variants_file ) ) {
     require_once $ql_plainte_variants_file;
+}
+
+// Intégration Telegram (publication auto, bouton, notif plaintes)
+$ql_telegram_file = QL_THEME_DIR . '/includes/telegram.php';
+if ( file_exists( $ql_telegram_file ) ) {
+    require_once $ql_telegram_file;
+}
+
+// Tableau de bord central (admin)
+$ql_dashboard_file = QL_THEME_DIR . '/includes/dashboard.php';
+if ( file_exists( $ql_dashboard_file ) ) {
+    require_once $ql_dashboard_file;
+}
+
+// Robot de veille (manifs, logement, sécurité, politique locale)
+$ql_veille_file = QL_THEME_DIR . '/includes/veille.php';
+if ( file_exists( $ql_veille_file ) ) {
+    require_once $ql_veille_file;
 }
 
 // ── 1. Enqueue styles & scripts ─────────────────────────────────
@@ -1509,6 +1564,15 @@ function ql_handle_plainte() {
     if ( $email ) { $headers[] = 'Reply-To: ' . $email; }
 
     wp_mail( $to, $subject, $body, $headers );
+
+    // Notifie la rédaction (Telegram, etc.)
+    do_action( 'ql_plainte_received', array(
+        'type'     => $type,
+        'quartier' => $quartier,
+        'nom'      => $nom,
+        'email'    => $email,
+        'message'  => $message,
+    ) );
 
     wp_safe_redirect( add_query_arg( 'plainte', 'envoye', wp_get_referer() ?: home_url() ) );
     exit;
