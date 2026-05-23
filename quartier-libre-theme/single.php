@@ -14,6 +14,10 @@ get_header(); ?>
     $share_url   = urlencode( get_permalink() );
     $share_title = urlencode( get_the_title() );
     $has_img     = has_post_thumbnail();
+    $thumb_url   = $has_img ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : '';
+    // Vraie photo (jpg/png…) vs visuel SVG déjà rouge/noir : on ne met le
+    // traitement duotone Contre-Attaque que sur les photos.
+    $is_photo    = $has_img && $thumb_url && ! preg_match( '/\.svg(\?|#|$)/i', $thumb_url );
 ?>
 
 <article class="ql-post">
@@ -27,7 +31,7 @@ get_header(); ?>
             <h1 class="ql-post__title"><?php the_title(); ?></h1>
 
             <?php if ( $has_img ) : ?>
-                <div class="ql-post__banner">
+                <div class="ql-post__banner<?php echo $is_photo ? ' ql-post__banner--photo' : ''; ?>">
                     <?php the_post_thumbnail( 'ql-hero', array(
                         'loading'       => 'eager',
                         'fetchpriority' => 'high',

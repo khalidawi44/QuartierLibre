@@ -17,7 +17,6 @@ tags:
   - johanna-rolland
   - diocese
 excerpt: "Le 13 mai 2026, Aïcha Bassal devient présidente de Nantes Métropole Habitat. Mais en 2018, la Ville de Nantes — sa majorité — réclamait elle-même l'expulsion des exilé·es du lycée Leloup-Bouhier. Gérera-t-elle les 50 000 locataires comme elle a traité les réfugiés ? Retour sur un été d'inhospitalité."
-featured_image: "content/media/2026-05-23-nantes-2018-exiles.svg"
 bq_background: "content/media/theme-etat-policier.jpg"
 status: "draft"
 date: "2026-05-23 10:00:00"

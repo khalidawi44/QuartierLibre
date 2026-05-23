@@ -967,7 +967,10 @@ function ql_upsert_article( $front, $body_md, &$images_count ) {
     // une image thématique dans content/media/ basée sur sa catégorie
     // principale. Évite les articles sans illustration (rendu moche en
     // grille + SEO/partage sociaux sans image).
-    if ( empty( $front['featured_image'] ) && empty( $front['featured_image_url'] ) ) {
+    // EXCEPTION : si l'article existe déjà avec une image à la une posée
+    // manuellement dans WordPress, on NE l'écrase PAS (respecte l'upload admin).
+    $has_manual_thumb = ! empty( $existing ) && has_post_thumbnail( $existing[0]->ID );
+    if ( empty( $front['featured_image'] ) && empty( $front['featured_image_url'] ) && ! $has_manual_thumb ) {
         // Images libres de droits piochées dans la base éditoriale QL
         // (content/media/) + images thème importées de contre-attaque.net
         // (source militante alliée, images des articles récents 2025-2026).

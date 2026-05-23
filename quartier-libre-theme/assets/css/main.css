@@ -1035,6 +1035,21 @@ p  { margin: 0 0 1em; }
   font-style: italic; text-align: center;
 }
 
+/* ─── Traitement « affiche militante » (Contre-Attaque / Nantes Révoltée) ───
+   Appliqué UNIQUEMENT aux vraies photos (classe --photo posée par single.php),
+   jamais aux visuels SVG déjà en rouge/noir. Duotone rouge/noir + accent. */
+.ql-post__banner--photo .ql-post__banner-img {
+  filter: grayscale(1) sepia(1) hue-rotate(315deg) saturate(5) contrast(1.08) brightness(0.9) !important;
+  border-radius: 0 !important;
+  border-left: 6px solid #e2001a !important;
+}
+.ql-post__banner--photo .ql-post__banner-caption {
+  color: #111; font-weight: 600; font-style: normal;
+  border-left: 6px solid #e2001a; max-width: none;
+  background: #f4f4f4; text-align: left;
+  margin-top: .35rem;
+}
+
 /* ─── Header (titre + meta) ─── */
 .ql-post__header {
   background: var(--ql-paper);
