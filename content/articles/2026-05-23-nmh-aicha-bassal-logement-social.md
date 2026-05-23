@@ -55,10 +55,15 @@ Il y a un sujet que la séquence de communication n'évoque pas : le sort des pe
 
 Sept ans plus tard, la question reste entière : une métropole peut-elle se présenter comme championne du logement social tout en laissant des familles exilées dormir dehors, déplacées de squat en squat ? La présidence de NMH ne réglera pas, à elle seule, l'hébergement d'urgence — qui relève largement de l'État. Mais elle engage la **responsabilité politique** d'une majorité qui revendique la solidarité.
 
-## Ce que disent celles et ceux qui étaient là
+Le jour de l'évacuation, selon des témoins présents, **CRS et BAC** ont dispersé exilé·es et militant·es solidaires venus s'interposer ; les personnes délogées ont été déplacées le jour même, sans hébergement pérenne pour beaucoup.
 
->! « Je les ai vus, les exilés du square Daviais, ballottés d'un trottoir à l'autre, d'un squat à une expulsion. Des gens qui avaient traversé l'enfer. À Nantes, on les a déplacés comme des cartons, sans jamais les reloger pour de bon. Alors quand j'entends la majorité célébrer "le logement pour tous", j'ai un goût amer dans la bouche. »
->! — Un habitant et militant solidaire, Nantes sud
+Autre signe d'une ville qui referme ses interstices : sous le **pont du boulevard des Martyrs-Nantais-de-la-Résistance** (secteur Malakoff–Pirmil), des **amas de gravats** ont été déposés à l'endroit même où des personnes sans abri pouvaient s'installer. Ils étaient encore en place en **août 2022**, puis en **mai 2023** (images Google Street View). Déposer pierres ou gravats sous un pont pour empêcher d'y dormir : ce **« mobilier anti-installation »** a déjà été dénoncé ailleurs en France, notamment à Paris en 2017.
+
+## Témoignage — « J'y étais »
+
+>! « Le jour où ils ont vidé le square Daviais, j'étais là. Les CRS et la BAC chassaient les réfugiés et les militants qui tentaient de les protéger. Le jour même, on a aidé à mettre des gens à l'abri ailleurs : des Soudanais, des Érythréens, qui avaient déjà tout fui.
+>! Ce que j'ai vu ensuite, je ne l'oublie pas : sous le pont, on a déposé des tas de pierres pour qu'aucun corps ne puisse plus s'y allonger. Elles y sont encore. Pendant ce temps, la même majorité célèbre "le logement pour tous". Ça, ce n'est pas de la solidarité : c'est une ville qu'on rend, méthodiquement, inhabitable pour les plus pauvres. »
+>! — Khalid, témoin direct, Quartier Libre
 
 ## Ce qu'on surveillera
 
