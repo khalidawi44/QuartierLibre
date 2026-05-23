@@ -89,16 +89,13 @@ add_action( 'transition_post_status', function ( $new_status, $old_status, $post
     if ( $new_status !== 'publish' || $old_status === 'publish' ) { return; }
     if ( ! $post || $post->post_type !== 'post' ) { return; }
 
-    // Ne pas spammer le canal pendant un import en masse (sync GitHub)
-    if ( defined( 'QL_IMPORTING' ) && QL_IMPORTING ) { return; }
-
     if ( get_option( 'ql_telegram_autopost', '1' ) !== '1' ) { return; }
     if ( ql_telegram_token() === '' ) { return; }
 
     $channel = trim( (string) get_option( 'ql_telegram_channel_id', '' ) );
     if ( $channel === '' ) { return; }
 
-    // Jamais deux fois le même article
+    // Jamais deux fois le même article (filet anti-doublon)
     if ( get_post_meta( $post->ID, '_ql_telegram_sent', true ) ) { return; }
 
     $title   = get_the_title( $post );

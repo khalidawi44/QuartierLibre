@@ -722,10 +722,6 @@ function ql_ensure_categories() {
 }
 
 function ql_do_content_sync() {
-    // Import en masse : empêche la publication auto sur Telegram pour
-    // chaque article importé (sinon le canal serait spammé).
-    if ( ! defined( 'QL_IMPORTING' ) ) { define( 'QL_IMPORTING', true ); }
-
     // Crée/met à jour l'arborescence des catégories
     $cats_created = ql_ensure_categories();
     if ( $cats_created > 0 ) {
