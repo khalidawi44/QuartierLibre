@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Nantes, été 2018 : l'errance des exilé·es. Beaux-Arts, université, square Daviais, lycée Leloup-Bouhier. Le lycée : expulsion réclamée par la Ville de Nantes, propriétaire.">
-  <title>Nantes 2018 — l'errance des exilé·es</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Aïcha Bassal prend le logement social. En 2018, la même Ville faisait expulser les exilé·es. Gérera-t-elle les locataires autrement ? 50 000 locataires, 38 922 ménages en attente. Square Daviais et lycée Leloup-Bouhier, été 2018.">
+  <title>Aïcha Bassal / logement social / exilé·es 2018 — Quartier Libre</title>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#161616"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#121212"/>
       <stop offset="1" stop-color="#000000"/>
     </linearGradient>
   </defs>
 
   <rect width="1600" height="900" fill="url(#bg)"/>
-  <rect x="0" y="0" width="26" height="900" fill="#c0392b"/>
+  <rect x="0" y="0" width="22" height="900" fill="#e2001a"/>
 
   <!-- marque -->
-  <rect x="90" y="84" width="430" height="50" fill="#c0392b"/>
-  <text x="112" y="120" font-family="Arial, sans-serif" font-size="29" font-weight="800" letter-spacing="3" fill="#ffffff">QUARTIER LIBRE</text>
-
-  <!-- surtitre -->
-  <text x="90" y="210" font-family="Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="6" fill="#c0392b">NANTES · ÉTÉ 2018</text>
+  <rect x="70" y="64" width="356" height="50" fill="#e2001a"/>
+  <text x="90" y="100" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900" letter-spacing="3" fill="#ffffff">QUARTIER LIBRE</text>
+  <text x="448" y="100" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="4" fill="#8a8a8a">NANTES</text>
 
   <!-- titre -->
-  <text x="86" y="320" font-family="Arial, sans-serif" font-size="92" font-weight="900" fill="#ffffff">L'ERRANCE</text>
-  <text x="86" y="410" font-family="Arial, sans-serif" font-size="92" font-weight="900" fill="#ffffff">DES EXILÉ·ES</text>
+  <text x="66" y="232" font-family="Arial Black, Arial, sans-serif" font-size="118" font-weight="900" letter-spacing="-3" fill="#ffffff">AÏCHA BASSAL</text>
+  <text x="70" y="298" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="800" letter-spacing="1" fill="#ffffff">PREND LE LOGEMENT SOCIAL</text>
 
-  <!-- timeline -->
-  <text x="92" y="500" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#b8b8b8">DE SITE EN SITE, D'EXPULSION EN EXPULSION :</text>
-  <text x="92" y="552" font-family="Arial, sans-serif" font-size="33" font-weight="800" fill="#ffffff">Beaux-Arts → Université → Square Daviais</text>
-  <text x="92" y="600" font-family="Arial, sans-serif" font-size="33" font-weight="800" fill="#ffffff">→ Lycée Leloup-Bouhier → retour au square</text>
+  <!-- bandeau rouge : le punch sourcé -->
+  <rect x="70" y="352" width="1460" height="150" fill="#e2001a"/>
+  <text x="96" y="416" font-family="Arial Black, Arial, sans-serif" font-size="46" font-weight="900" letter-spacing="-1" fill="#ffffff">EN 2018, LA MÊME VILLE</text>
+  <text x="96" y="472" font-family="Arial Black, Arial, sans-serif" font-size="46" font-weight="900" letter-spacing="-1" fill="#ffffff">FAISAIT EXPULSER LES EXILÉ·ES</text>
 
-  <!-- chiffre -->
-  <text x="92" y="680" font-family="Arial, sans-serif" font-size="34" font-weight="400" fill="#b8b8b8">jusqu'à <tspan font-weight="900" fill="#c0392b" font-size="44">500</tspan> personnes sans toit · square évacué le 18 juillet</text>
+  <!-- question -->
+  <text x="70" y="592" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#ffffff">Gérera-t-elle les locataires <tspan fill="#e2001a">autrement</tspan> ?</text>
 
   <!-- séparateur -->
-  <rect x="90" y="730" width="1420" height="3" fill="#c0392b"/>
+  <rect x="70" y="700" width="1460" height="4" fill="#e2001a"/>
 
-  <!-- punch -->
-  <text x="90" y="792" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#ffffff">Le lycée Leloup-Bouhier ?</text>
-  <text x="90" y="840" font-family="Arial, sans-serif" font-size="32" font-weight="400" fill="#e8e8e8">Expulsion réclamée par la <tspan font-weight="800" fill="#c0392b">Ville de Nantes</tspan>, propriétaire des murs.</text>
+  <!-- chiffres / faits -->
+  <text x="70" y="762" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" fill="#ffffff">50 000 <tspan font-weight="400" fill="#b8b8b8" font-size="32">locataires</tspan>　·　38 922 <tspan font-weight="400" fill="#b8b8b8" font-size="32">ménages en attente d'un HLM</tspan></text>
+  <text x="70" y="812" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#8a8a8a">Square Daviais &amp; lycée Leloup-Bouhier — été 2018</text>
 </svg>
