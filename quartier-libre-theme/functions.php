@@ -89,12 +89,6 @@ if ( file_exists( $ql_dashboard_file ) ) {
     require_once $ql_dashboard_file;
 }
 
-// Rédaction assistée par IA (Claude) — utilisée par le robot de veille
-$ql_ia_file = QL_THEME_DIR . '/includes/redaction-ia.php';
-if ( file_exists( $ql_ia_file ) ) {
-    require_once $ql_ia_file;
-}
-
 // Robot de veille (manifs, logement, sécurité, politique locale)
 $ql_veille_file = QL_THEME_DIR . '/includes/veille.php';
 if ( file_exists( $ql_veille_file ) ) {
