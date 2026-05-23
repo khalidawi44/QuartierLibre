@@ -54,6 +54,19 @@ function ql_sync_render() {
         ql_do_content_sync();
     }
 
+    // Action : TOUT synchroniser en un clic (thème + articles + purge cache)
+    if ( isset( $_POST['ql_go_all'] ) && check_admin_referer( 'ql_all_nonce' ) ) {
+        if ( $last && ( time() - $last ) < 60 ) {
+            echo '<div class="notice notice-error"><p>Patientez 1 minute entre deux synchros complètes.</p></div>';
+        } else {
+            ql_do_github_sync();   // thème (purge déjà le cache à la fin)
+            ql_do_content_sync();  // articles (.md)
+            ql_purge_all_caches(); // purge finale : NitroPack, OPcache, objets…
+            update_option( 'ql_last_sync', time() );
+            echo '<div class="notice notice-success"><p>✅ <strong>Tout est synchronisé</strong> : thème + articles + caches purgés (NitroPack inclus). Rien d\'autre à faire.</p></div>';
+        }
+    }
+
     // Action : activer / désactiver la synchro automatique
     if ( isset( $_POST['ql_toggle_auto'] ) && check_admin_referer( 'ql_auto_nonce' ) ) {
         $new = get_option( 'ql_auto_sync_enabled', '1' ) === '1' ? '0' : '1';
@@ -130,13 +143,21 @@ function ql_sync_render() {
     </style>
 
     <div class="ql-sync-card">
-        <h2>Synchroniser le thème depuis GitHub</h2>
+        <h2>Tout synchroniser en un clic</h2>
         <p>
-            Télécharge <strong>tous les fichiers</strong> du thème Quartier Libre depuis
-            le dépôt GitHub et les écrit sur le serveur. Utile quand vous avez
-            modifié le thème en local et poussé sur GitHub : un clic ici et c'est
-            en ligne, pas besoin d'FTP.
+            Le bouton vert fait <strong>tout d'un coup</strong> : il synchronise le
+            thème, puis les articles (.md), puis <strong>purge tous les caches</strong>
+            (NitroPack, OPcache…). Plus besoin d'enchaîner trois actions.
         </p>
+
+        <form method="post" style="display:block;margin-bottom:18px;">
+            <?php wp_nonce_field( 'ql_all_nonce' ); ?>
+            <input type="submit" name="ql_go_all" class="button button-primary button-hero ql-sync-btn"
+                   style="background:#1a7f37 !important;border-color:#1a7f37 !important;font-size:18px !important;padding:16px 40px !important;"
+                   value="⚡ Tout synchroniser (thème + articles + purge cache)">
+        </form>
+
+        <p style="margin-top:0;color:#666;font-size:.92em;">Ou une action à la fois :</p>
 
         <form method="post" style="display:inline-block;">
             <?php wp_nonce_field( 'ql_sync_nonce' ); ?>
