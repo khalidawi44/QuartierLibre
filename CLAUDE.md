@@ -1,7 +1,7 @@
 # CLAUDE.md — Quartier Libre (mémoire projet)
 
 > Lu automatiquement par Claude Code à l'ouverture du repo.
-> **2 conversations Claude travaillent en parallèle sur ce site** — toute info/paramètre doit être écrit ICI ou dans `ONBOARDING.md`, jamais gardé en tête local. Avant d'agir : `git pull`. Après : commit + push, et préviens dans ta réponse.
+> **Le projet est désormais suivi dans une seule conversation (ce fil).** Toute info/paramètre doit rester écrit ICI ou dans `ONBOARDING.md`, jamais gardé en tête local. Avant d'agir : `git pull` (Khalid peut pousser depuis son repo Windows). Après : commit + push, et préviens dans ta réponse.
 > Détail complet du projet : **lire `ONBOARDING.md`** à la racine.
 
 ---
@@ -84,8 +84,10 @@ Tokens dans les options WP : `ql_github_token`, `ql_telegram_bot_token`, `ql_hel
 
 - ✅ 35 articles audités, fiches sources au format ✓/⚠/✗/👤, ~98 points 👤 à valider
 - ✅ Système validation + publication dans WP (cases à cocher + bouton Valider & Publier + actions auto Supprimer/Modifier)
-- ✅ Modules Telegram + veille + dashboard ajoutés (conversation parallèle)
+- ✅ Modules Telegram + veille + dashboard
+- ✅ Pont Telegram (groupe → plaintes) + registre des plaintes (CPT `ql_plainte`) en place. Reste à activer côté admin (Réglages → Telegram QL → Activer le pont)
+- ✅ Veille = **100 % gratuite** : intégration IA payante (Claude API) retirée le 2026-05-23. Flux retenu : robot trouve les sujets → Khalid colle le matériel ici → l'assistant rédige l'article + le visuel → Khalid relit et publie
 - ⏳ Alertes à lever avant publication : Pilotière (initiatives à vérifier), Deux morts Nantes juillet 2025, Port Boyer « CIL », satire Louis-Macron XVI
 - ⏳ Doublons d'articles à nettoyer dans WP (anciens slugs en draft)
 
-> **Mets à jour cette section** quand tu termines un chantier, pour que l'autre conversation sache où on en est.
+> **Mets à jour cette section** quand tu termines un chantier (fil unique = ce doc est la mémoire).
