@@ -66,9 +66,14 @@ Contactée, la **mairie de Nantes se défend**. Dans un communiqué du **31 octo
 
 Et même ce refuge-là finit menacé : le **diocèse lui-même** saisit la justice pour faire évacuer le gymnase, faute de moyens. « La situation n'est plus possible », plaide Xavier Brunier, responsable de la solidarité au diocèse, qui réclame une mise à l'abri « dans des conditions dignes ». Quand les lieux de solidarité religieuse en sont réduits à demander une expulsion, c'est toute la **défaillance des pouvoirs publics** — État *et* collectivités — qui éclate au grand jour.
 
+## Charité chrétienne, logique immobilière
+
+La suite dit tout du système. Le site de ce gymnase de la solidarité fait aujourd'hui l'objet d'un **projet immobilier**, au point que les riverain·es sont « aux aguets », rapporte *Ouest-France*. Le lieu qui avait, un hiver, abrité les plus démuni·es est rattrapé par la **logique du foncier** : on saisit le juge, on récupère les murs, on valorise le terrain. Même la charité chrétienne n'a pas fait le poids face aux assurances et à la promotion immobilière.
+
 ## Témoignage — « J'y étais »
 
 >! « Le jour où ils ont vidé le square Daviais, j'étais là. Les CRS et la BAC chassaient les réfugiés et les militants qui tentaient de les protéger. Le jour même, on a aidé à mettre des gens à l'abri ailleurs : des Soudanais, des Érythréens, qui avaient déjà tout fui.
+>! Au gymnase Jeanne-Bernard, le local appartenait au diocèse. J'ai demandé **moi-même à l'évêque** de ne pas lancer l'expulsion. Il m'a répondu : « Je suis obligé, pour les assurances, de porter plainte et de demander l'expulsion. » Même les murs de la solidarité finissaient par se refermer.
 >! Ce qu'on a vécu cette année-là, c'est une course-poursuite. Un bâtiment, une expulsion. Un square, une expulsion. Un gymnase sans chauffage, encore une menace d'expulsion. Pendant ce temps, la Ville se disait "terre d'accueil". Les mots ne valent rien quand, dans les faits, on chasse les plus pauvres d'un trottoir à l'autre. »
 >! — Khalid, témoin direct, Quartier Libre
 
