@@ -26,7 +26,7 @@ get_header(); ?>
         <div class="ql-post__header-inner">
             <?php if ( $is_photo ) : // ── Hero style affiche militante : titre SUR la photo ── ?>
                 <figure class="ql-hero">
-                    <?php the_post_thumbnail( 'ql-hero', array(
+                    <?php the_post_thumbnail( 'full', array(
                         'loading'       => 'eager',
                         'fetchpriority' => 'high',
                         'decoding'      => 'async',

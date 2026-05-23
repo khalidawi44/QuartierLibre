@@ -1052,14 +1052,17 @@ p  { margin: 0 0 1em; }
 
 /* ─── Hero « affiche militante » : titre EN GROS sur la photo (style Contre-Attaque) ─── */
 .ql-post__header--photo { padding-top: 0 !important; }
+/* En-tête photo : on élargit pour une grande image (le texte reste lisible) */
+.ql-post__header--photo .ql-post__header-inner { max-width: 1180px; }
+.ql-post__header--photo .ql-post__lede,
+.ql-post__header--photo .ql-post__meta { max-width: 760px; margin-left: auto; margin-right: auto; }
 .ql-hero {
-  position: relative; margin: 0 auto 1.25rem; max-width: 1000px;
+  position: relative; margin: 0 auto 1.25rem; max-width: 100%;
   border-radius: var(--ql-radius); overflow: hidden; background: #000;
   line-height: 0;
 }
 .ql-hero__img {
-  display: block; width: 100%; height: auto; max-height: 600px;
-  object-fit: cover;
+  display: block; width: 100%; height: auto; /* image ENTIÈRE, pas de rognage */
   filter: grayscale(1) brightness(0.96) contrast(1.05) sepia(0.55) hue-rotate(315deg) saturate(2.3);
 }
 .ql-hero__overlay {
