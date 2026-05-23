@@ -27,6 +27,11 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
             }
             ?>
             <p class="ql-footer__tag">Par nous, pour nous. Les quartiers prennent la parole.</p>
+            <?php
+            if ( function_exists( 'ql_telegram_button' ) ) {
+                echo ql_telegram_button( 'Rejoins-nous sur Telegram' );
+            }
+            ?>
         </div>
 
         <div class="ql-footer__col">

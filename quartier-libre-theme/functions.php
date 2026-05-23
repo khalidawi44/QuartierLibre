@@ -71,6 +71,12 @@ if ( file_exists( $ql_plainte_variants_file ) ) {
     require_once $ql_plainte_variants_file;
 }
 
+// Intégration Telegram (publication auto, bouton, notif plaintes)
+$ql_telegram_file = QL_THEME_DIR . '/includes/telegram.php';
+if ( file_exists( $ql_telegram_file ) ) {
+    require_once $ql_telegram_file;
+}
+
 // ── 1. Enqueue styles & scripts ─────────────────────────────────
 add_action( 'wp_enqueue_scripts', function () {
 
@@ -1546,6 +1552,15 @@ function ql_handle_plainte() {
     if ( $email ) { $headers[] = 'Reply-To: ' . $email; }
 
     wp_mail( $to, $subject, $body, $headers );
+
+    // Notifie la rédaction (Telegram, etc.)
+    do_action( 'ql_plainte_received', array(
+        'type'     => $type,
+        'quartier' => $quartier,
+        'nom'      => $nom,
+        'email'    => $email,
+        'message'  => $message,
+    ) );
 
     wp_safe_redirect( add_query_arg( 'plainte', 'envoye', wp_get_referer() ?: home_url() ) );
     exit;

@@ -4815,3 +4815,17 @@ body.tag-mairie-ps .ql-archive-header {
     scroll-behavior: auto !important;
   }
 }
+
+/* ── Bouton Telegram (footer / autres emplacements) ─────────── */
+.ql-tg-btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  margin-top: 1rem;
+  padding: .6rem 1.1rem;
+  background: #229ED9; color: #fff;
+  border-radius: var(--ql-radius, 6px);
+  font-weight: 700; font-size: .9rem;
+  text-decoration: none;
+  transition: background var(--ql-t, .16s ease), transform var(--ql-t, .16s ease);
+}
+.ql-tg-btn:hover { background: #1b87bb; color: #fff; transform: translateY(-1px); }
+.ql-tg-btn svg { flex: 0 0 auto; }
