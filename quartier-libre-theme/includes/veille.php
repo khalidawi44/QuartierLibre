@@ -18,10 +18,30 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 // ── Requêtes par défaut (modifiables dans l'admin) ─────────────
 function ql_veille_default_queries() {
     return array(
+        // Mobilisations / luttes
         'manifestation OR rassemblement OR grève Nantes',
-        'logement social OR HLM OR expulsion Nantes',
-        'police OR contrôle au faciès OR sécurité quartiers Nantes',
-        'mairie OR métropole OR transports OR Keolis Nantes',
+        'syndicat OR CGT OR Solidaires OR intersyndicale Nantes',
+        'blocage OR occupation OR piquet de grève Nantes',
+        // Logement / bailleurs
+        'logement social OR HLM OR bailleur Nantes',
+        'expulsion locative OR mal-logement OR squat Nantes',
+        'rénovation urbaine OR ANRU OR relogement Nantes',
+        // Police / répression / surveillance
+        'violences policières OR bavure OR IGPN Nantes',
+        'contrôle au faciès OR racisme OR discrimination Nantes',
+        'surveillance OR vidéosurveillance OR fichage Nantes',
+        // Quartiers populaires (par nom)
+        'Bellevue OR Malakoff OR Dervallières Nantes',
+        '"Clos Toreau" OR "Bottière" OR "Pin Sec" OR Breil Nantes',
+        '"Bout des Landes" OR "Port Boyer" OR Halvêque OR Ranzay Nantes',
+        // Services publics / social
+        'hôpital OR école OR services publics quartiers Nantes',
+        'sans-papiers OR migrants OR CRA OR préfecture Nantes',
+        'transports OR Keolis OR Tan OR métropole Nantes',
+        // National / international (lignes QL)
+        'loi immigration OR Darmanin OR Retailleau',
+        'Gaza OR Palestine OR solidarité Nantes',
+        'extrême droite OR antifascisme Nantes',
     );
 }
 
@@ -69,7 +89,7 @@ function ql_veille_run() {
         $feed = fetch_feed( $url );
         if ( is_wp_error( $feed ) ) { continue; }
 
-        $max  = $feed->get_item_quantity( 8 );
+        $max  = $feed->get_item_quantity( 20 );
         $list = $feed->get_items( 0, $max );
         foreach ( $list as $item ) {
             $title = trim( wp_strip_all_tags( (string) $item->get_title() ) );
@@ -87,28 +107,133 @@ function ql_veille_run() {
             }
             $date = $item->get_date( 'U' );
 
+            // Extrait de la source (sert d'amorce à la rédaction IA)
+            $summary = trim( wp_strip_all_tags( (string) $item->get_description() ) );
+            if ( mb_strlen( $summary ) > 1200 ) { $summary = mb_substr( $summary, 0, 1200 ); }
+
             $items[] = array(
-                'key'    => $key,
-                'title'  => $title,
-                'link'   => $link,
-                'source' => $source,
-                'query'  => $query,
-                'date'   => $date ? (int) $date : time(),
-                'found'  => time(),
-                'used'   => 0,
+                'key'     => $key,
+                'title'   => $title,
+                'link'    => $link,
+                'source'  => $source,
+                'summary' => $summary,
+                'query'   => $query,
+                'date'    => $date ? (int) $date : time(),
+                'found'   => time(),
+                'used'    => 0,
             );
             $known[ $key ] = true;
             $added++;
         }
     }
 
-    // Tri par date décroissante, plafond à 60 entrées
+    // Tri par date décroissante, plafond à 250 entrées
     usort( $items, function ( $a, $b ) { return $b['date'] <=> $a['date']; } );
-    if ( count( $items ) > 60 ) { $items = array_slice( $items, 0, 60 ); }
+    if ( count( $items ) > 250 ) { $items = array_slice( $items, 0, 250 ); }
 
     update_option( 'ql_veille_items', $items, false );
     update_option( 'ql_veille_last_run', time(), false );
+
+    // Rédaction IA automatique des sujets récents (si activée + clé présente)
+    if ( function_exists( 'ql_ia_enabled' ) && ql_ia_enabled() ) {
+        ql_veille_autoredac();
+    }
+
     return $added;
+}
+
+/**
+ * Crée un brouillon à partir d'un sujet de veille. Tente la rédaction IA
+ * (à partir de la vraie source) ; sinon, repli sur un brouillon simple.
+ * Retourne l'ID du post ou WP_Error.
+ */
+function ql_veille_make_draft( $found, $author_id = 0 ) {
+    if ( ! $author_id ) { $author_id = get_current_user_id(); }
+    if ( ! $author_id ) {
+        $admins = get_users( array( 'role' => 'administrator', 'number' => 1, 'fields' => 'ID' ) );
+        $author_id = ! empty( $admins ) ? (int) $admins[0] : 0;
+    }
+
+    $ai = null;
+    if ( function_exists( 'ql_ia_generate_from_item' ) && function_exists( 'ql_ia_api_key' ) && ql_ia_api_key() !== '' ) {
+        $ai = ql_ia_generate_from_item( $found );
+    }
+
+    // ── Cas 1 : rédaction IA réussie ──
+    if ( is_array( $ai ) ) {
+        $note = "<p><em>[Brouillon rédigé par l'IA à partir de la source — à RELIRE, "
+              . "vérifier les faits et traiter les points 👤 avant publication.]</em></p>\n";
+        $body = wp_kses_post( $note . $ai['body_html'] );
+
+        $post_id = wp_insert_post( array(
+            'post_title'   => wp_strip_all_tags( $ai['title'] ),
+            'post_content' => $body,
+            'post_excerpt' => isset( $ai['excerpt'] ) ? wp_strip_all_tags( $ai['excerpt'] ) : '',
+            'post_status'  => 'draft',
+            'post_type'    => 'post',
+            'post_author'  => $author_id,
+        ), true );
+
+        if ( ! is_wp_error( $post_id ) && $post_id ) {
+            if ( ! empty( $ai['sources_md'] ) ) {
+                update_post_meta( $post_id, '_ql_sources_md', sanitize_textarea_field( $ai['sources_md'] ) );
+            }
+            if ( ! empty( $ai['primary_category'] ) ) {
+                $term = get_term_by( 'slug', sanitize_title( $ai['primary_category'] ), 'category' );
+                if ( $term ) { wp_set_post_categories( $post_id, array( (int) $term->term_id ) ); }
+            }
+            return $post_id;
+        }
+    }
+
+    // ── Cas 2 : repli brouillon simple (source maigre / IA indispo) ──
+    $reason = is_wp_error( $ai ) ? $ai->get_error_message() : '';
+    $body  = "<p><em>[Brouillon généré par la veille — à vérifier, réécrire et sourcer avant publication.]</em></p>\n";
+    if ( $reason ) {
+        $body .= '<p><em>(Rédaction IA non effectuée : ' . esc_html( $reason ) . ' — à rédiger à la main.)</em></p>' . "\n";
+    }
+    $body .= '<p><strong>Source repérée :</strong> <a href="' . esc_url( $found['link'] ) . '" target="_blank" rel="noopener">'
+           . esc_html( $found['title'] . ( $found['source'] ? ' — ' . $found['source'] : '' ) ) . "</a></p>\n";
+    $body .= "<p>⚠️ Vérifie les faits, recoupe les sources, écris avec l'angle Quartier Libre, "
+           . "puis remplis la fiche sources et ajoute une image à la une.</p>\n";
+
+    return wp_insert_post( array(
+        'post_title'   => $found['title'],
+        'post_content' => $body,
+        'post_status'  => 'draft',
+        'post_type'    => 'post',
+        'post_author'  => $author_id,
+    ), true );
+}
+
+/**
+ * Rédige automatiquement les N sujets non traités les plus récents.
+ * Plafond réglable (coût). Retourne le nombre de brouillons créés.
+ */
+function ql_veille_autoredac() {
+    $max = (int) get_option( 'ql_ia_max_per_run', 2 );
+    if ( $max < 1 ) { $max = 1; }
+
+    $items = get_option( 'ql_veille_items', array() );
+    if ( ! is_array( $items ) ) { return 0; }
+
+    $admins = get_users( array( 'role' => 'administrator', 'number' => 1, 'fields' => 'ID' ) );
+    $author = ! empty( $admins ) ? (int) $admins[0] : 0;
+
+    $done = 0;
+    foreach ( $items as &$it ) {
+        if ( $done >= $max ) { break; }
+        if ( ! empty( $it['used'] ) ) { continue; }
+
+        $post_id = ql_veille_make_draft( $it, $author );
+        $it['used'] = time();
+        if ( ! is_wp_error( $post_id ) && $post_id ) { $it['post_id'] = (int) $post_id; }
+        $done++;
+    }
+    unset( $it );
+
+    update_option( 'ql_veille_items', $items, false );
+    return $done;
 }
 
 // ── Liste des suggestions non encore utilisées ─────────────────
@@ -133,19 +258,7 @@ add_action( 'admin_post_ql_veille_draft', function () {
     unset( $it );
     if ( ! $found ) { wp_safe_redirect( admin_url( 'admin.php?page=ql-dashboard' ) ); exit; }
 
-    $body  = "<p><em>[Brouillon généré par la veille — à vérifier, réécrire et sourcer avant publication.]</em></p>\n";
-    $body .= '<p><strong>Source repérée :</strong> <a href="' . esc_url( $found['link'] ) . '" target="_blank" rel="noopener">'
-           . esc_html( $found['title'] . ( $found['source'] ? ' — ' . $found['source'] : '' ) ) . "</a></p>\n";
-    $body .= "<p>⚠️ Vérifie les faits, recoupe les sources, écris avec l'angle Quartier Libre (par nous, pour nous), "
-           . "puis remplis la fiche sources et ajoute une image à la une.</p>\n";
-
-    $post_id = wp_insert_post( array(
-        'post_title'   => $found['title'],
-        'post_content' => $body,
-        'post_status'  => 'draft',
-        'post_type'    => 'post',
-        'post_author'  => get_current_user_id(),
-    ), true );
+    $post_id = ql_veille_make_draft( $found, get_current_user_id() );
 
     update_option( 'ql_veille_items', $items, false );
 
@@ -190,6 +303,11 @@ function ql_veille_settings_render() {
     if ( isset( $_POST['ql_veille_save'] ) && check_admin_referer( 'ql_veille_nonce' ) ) {
         update_option( 'ql_veille_enabled', isset( $_POST['ql_veille_enabled'] ) ? '1' : '0', false );
         update_option( 'ql_veille_queries', sanitize_textarea_field( wp_unslash( $_POST['ql_veille_queries'] ?? '' ) ), false );
+        // Réglages rédaction IA (Claude)
+        update_option( 'ql_ia_anthropic_key', trim( wp_unslash( $_POST['ql_ia_anthropic_key'] ?? '' ) ), false );
+        update_option( 'ql_ia_model', sanitize_text_field( wp_unslash( $_POST['ql_ia_model'] ?? '' ) ), false );
+        update_option( 'ql_ia_autoredac', isset( $_POST['ql_ia_autoredac'] ) ? '1' : '0', false );
+        update_option( 'ql_ia_max_per_run', max( 1, (int) ( $_POST['ql_ia_max_per_run'] ?? 2 ) ), false );
         echo '<div class="notice notice-success"><p>Réglages de la veille enregistrés.</p></div>';
     }
 
@@ -198,10 +316,36 @@ function ql_veille_settings_render() {
         echo '<div class="notice notice-info"><p>Veille lancée : <strong>' . (int) $n . '</strong> nouveau(x) sujet(s) trouvé(s).</p></div>';
     }
 
+    // Test de connexion à l'IA (sauve d'abord clé + modèle saisis)
+    if ( isset( $_POST['ql_ia_test'] ) && check_admin_referer( 'ql_veille_nonce' ) ) {
+        if ( isset( $_POST['ql_ia_anthropic_key'] ) ) {
+            update_option( 'ql_ia_anthropic_key', trim( wp_unslash( $_POST['ql_ia_anthropic_key'] ) ), false );
+        }
+        if ( isset( $_POST['ql_ia_model'] ) ) {
+            update_option( 'ql_ia_model', sanitize_text_field( wp_unslash( $_POST['ql_ia_model'] ) ), false );
+        }
+        if ( function_exists( 'ql_ia_call_claude' ) ) {
+            $r = ql_ia_call_claude( 'Réponds en un seul mot.', 'Réponds exactement : OK', 20 );
+            if ( is_wp_error( $r ) ) {
+                echo '<div class="notice notice-error"><p>IA : ' . esc_html( $r->get_error_message() ) . '</p></div>';
+            } else {
+                echo '<div class="notice notice-success"><p>IA Claude connectée ✔ (réponse : ' . esc_html( wp_trim_words( $r, 6 ) ) . ')</p></div>';
+            }
+        } else {
+            echo '<div class="notice notice-error"><p>Module IA non chargé (includes/redaction-ia.php).</p></div>';
+        }
+    }
+
     $enabled  = get_option( 'ql_veille_enabled', '1' ) === '1';
     $queries  = get_option( 'ql_veille_queries', '' );
     if ( $queries === '' ) { $queries = implode( "\n", ql_veille_default_queries() ); }
     $last_run = (int) get_option( 'ql_veille_last_run', 0 );
+
+    $ia_key   = (string) get_option( 'ql_ia_anthropic_key', '' );
+    $ia_model = (string) get_option( 'ql_ia_model', '' );
+    if ( $ia_model === '' ) { $ia_model = 'claude-sonnet-4-6'; }
+    $ia_auto  = get_option( 'ql_ia_autoredac', '1' ) === '1';
+    $ia_max   = (int) get_option( 'ql_ia_max_per_run', 2 );
     ?>
     <div class="wrap">
         <h1>🤖 Robot de veille — manifs & faits divers</h1>
@@ -227,9 +371,53 @@ function ql_veille_settings_render() {
                     </td>
                 </tr>
             </table>
+
+            <h2 style="margin-top:1.6em;">✍️ Rédaction automatique par IA (Claude)</h2>
+            <p style="max-width:760px;color:#555;">
+                Si activée, le robot rédige un <strong>brouillon complet à partir de la vraie source</strong>
+                (faits, date, analyse au ton QL). <strong>Jamais publié automatiquement</strong> : les points
+                à confirmer sont marqués 👤, et la publication reste bloquée tant que tu n'as pas relu.
+                ⚠️ Clé API <strong>payante à l'usage</strong>.
+            </p>
+            <table class="form-table" role="presentation">
+                <tr>
+                    <th scope="row"><label for="ql_ia_anthropic_key">Clé API Anthropic</label></th>
+                    <td>
+                        <input type="password" id="ql_ia_anthropic_key" name="ql_ia_anthropic_key"
+                               value="<?php echo esc_attr( $ia_key ); ?>" class="regular-text" autocomplete="off"
+                               style="width:420px;max-width:100%;" placeholder="sk-ant-...">
+                        <p class="description">Crée-la sur <code>console.anthropic.com</code> → API Keys. Rien ne tourne tant qu'elle est vide.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ql_ia_model">Modèle</label></th>
+                    <td>
+                        <input type="text" id="ql_ia_model" name="ql_ia_model"
+                               value="<?php echo esc_attr( $ia_model ); ?>" class="regular-text">
+                        <p class="description"><code>claude-sonnet-4-6</code> (bon équilibre) · <code>claude-haiku-4-5-20251001</code> (moins cher) · <code>claude-opus-4-7</code> (meilleure qualité, plus cher).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Rédaction auto</th>
+                    <td>
+                        <label><input type="checkbox" name="ql_ia_autoredac" <?php checked( $ia_auto ); ?>>
+                            Rédiger automatiquement les nouveaux sujets trouvés (en brouillon)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ql_ia_max_per_run">Max par passage</label></th>
+                    <td>
+                        <input type="number" id="ql_ia_max_per_run" name="ql_ia_max_per_run" min="1" max="20"
+                               value="<?php echo esc_attr( $ia_max ); ?>" class="small-text">
+                        <p class="description">Nombre de brouillons rédigés à chaque passage du robot (contrôle le coût). La veille tourne 2×/jour.</p>
+                    </td>
+                </tr>
+            </table>
+
             <p>
                 <button type="submit" name="ql_veille_save" class="button button-primary">Enregistrer</button>
                 <button type="submit" name="ql_veille_runnow" class="button" style="margin-left:8px;">Lancer la veille maintenant</button>
+                <button type="submit" name="ql_ia_test" class="button">Tester l'IA</button>
             </p>
         </form>
 
@@ -243,7 +431,7 @@ function ql_veille_settings_render() {
 
 // ── Rendu du panneau de suggestions (utilisé par le dashboard) ─
 function ql_veille_render_panel() {
-    $pending = ql_veille_pending( 12 );
+    $pending = ql_veille_pending( 40 );
     ?>
     <div style="background:#fffdf0;border:1px solid #e6d56a;border-radius:8px;padding:22px;margin-top:24px;">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">

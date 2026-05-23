@@ -80,8 +80,11 @@ QuartierLibre/
 │   │   │                             formulaire du site + messages groupe Telegram
 │   │   ├── dashboard.php           ← Tableau de bord central "Quartier Libre"
 │   │   │                             (chiffres, priorités, abonnés Telegram, outils)
+│   │   ├── redaction-ia.php        ← Rédaction assistée par IA (API Claude) :
+│   │   │                             lit la vraie source → brouillon complet
 │   │   └── veille.php              ← Robot de veille Google Actualités → brouillons
-│   │                                 (menu sous le Tableau de bord)
+│   │                                 (auto-rédigés par IA si activé, menu sous
+│   │                                  le Tableau de bord)
 │   ├── assets/css/main.css         ← TOUT le CSS (~4000+ lignes)
 │   ├── assets/js/main.js           ← TOUT le JS (burger, carrousel, modals,
 │   │                                 screenshots liens externes, back-to-top, etc.)
@@ -248,7 +251,8 @@ Décisions persistées dans post_meta `_ql_item_decisions`. Reset auto si la fic
 | Bouton retour haut | main.js | bas-gauche, après 400px scroll |
 | **Telegram** | includes/telegram.php | Page *Réglages → Telegram QL* (token bot + ID canal + lien public + ID rédaction). Publie auto chaque **nouvel** article sur le canal (`transition_post_status`, anti-doublon via meta `_ql_telegram_sent`). Notifie la rédaction des plaintes. Prérequis : bot @BotFather **admin du canal** |
 | **Tableau de bord** | includes/dashboard.php | Menu « Quartier Libre » : chiffres clés (articles/brouillons/commentaires/**abonnés Telegram**), priorités « chef de rédaction », liens outils |
-| **Robot de veille** | includes/veille.php | Interroge Google Actualités 2×/jour (cron) → suggestions dans le tableau de bord → **brouillons** en 1 clic (jamais de publication auto). Sous-menu du Tableau de bord |
+| **Robot de veille** | includes/veille.php | Interroge Google Actualités 2×/jour (cron, ~18 requêtes × 20 résultats) → suggestions dans le tableau de bord → **brouillons** en 1 clic. Sous-menu du Tableau de bord |
+| **Rédaction IA** | includes/redaction-ia.php | API Claude. Si activée (clé + case dans *Robot de veille*), le robot rédige un **brouillon complet à partir de la vraie source** (anti-invention : source maigre → pas de rédaction ; points incertains → 👤). **Jamais publié auto** : la vérif des sources bloque la publication. Plafond `ql_ia_max_per_run` (coût). Test : bouton « Tester l'IA » |
 
 ---
 
