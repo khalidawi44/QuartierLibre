@@ -80,8 +80,11 @@ QuartierLibre/
 │   │   │                             formulaire du site + messages groupe Telegram
 │   │   ├── dashboard.php           ← Tableau de bord central "Quartier Libre"
 │   │   │                             (chiffres, priorités, abonnés Telegram, outils)
-│   │   └── veille.php              ← Robot de veille Google Actualités → brouillons
-│   │                                 amorce (menu sous le Tableau de bord)
+│   │   ├── veille.php              ← Robot de veille Google Actualités → brouillons
+│   │   │                             amorce (menu sous le Tableau de bord)
+│   │   └── atelier.php             ← Atelier de rédaction : matière collée par sujet
+│   │                                 → bouton « Copier le brief pour l'assistant »
+│   │                                 → l'assistant rédige (gratuit). Statut par dossier
 │   ├── assets/css/main.css         ← TOUT le CSS (~4000+ lignes)
 │   ├── assets/js/main.js           ← TOUT le JS (burger, carrousel, modals,
 │   │                                 screenshots liens externes, back-to-top, etc.)
@@ -249,6 +252,7 @@ Décisions persistées dans post_meta `_ql_item_decisions`. Reset auto si la fic
 | **Telegram** | includes/telegram.php | Page *Réglages → Telegram QL* (token bot + ID canal + lien public + ID rédaction). Publie auto chaque **nouvel** article sur le canal (`transition_post_status`, anti-doublon via meta `_ql_telegram_sent`). Notifie la rédaction des plaintes. Prérequis : bot @BotFather **admin du canal** |
 | **Tableau de bord** | includes/dashboard.php | Menu « Quartier Libre » : chiffres clés (articles/brouillons/commentaires/**abonnés Telegram**), priorités « chef de rédaction », liens outils |
 | **Robot de veille** | includes/veille.php | Interroge Google Actualités 2×/jour (cron, ~18 requêtes × 20 résultats) → suggestions dans le tableau de bord → **brouillon amorce** (titre + lien source) en 1 clic. La rédaction complète (analyse + visuel) se fait à la main / via l'assistant. **Pas d'IA payante** (choix assumé : outils gratuits uniquement). Sous-menu du Tableau de bord |
+| **Atelier de rédaction** | includes/atelier.php | Menu *Quartier Libre → ✍️ Atelier de rédaction*. Reprend les sujets du robot ; pour chacun : zone **« matière à coller »** + **statut** (nouveau/matière prête/rédigé/publié) + bouton **« Copier le brief pour l'assistant »** (assemble sujet + lien + matière + consignes éditoriales + format de sortie). Khalid colle le brief dans la conversation Claude → l'assistant rend l'article + fiche sources + visuel → push GitHub. **100 % gratuit, aucune API.** Dossiers stockés dans l'option `ql_atelier_dossiers` (survivent à l'élagage de la veille) |
 
 ---
 
@@ -275,6 +279,14 @@ Décisions persistées dans post_meta `_ql_item_decisions`. Reset auto si la fic
 - Chiffres clés (articles, brouillons, commentaires, abonnés Telegram)
 - « Chef de rédaction » : priorités calculées sur l'état réel du site
 - Liens directs vers tous les outils du thème (Sync QL, Sources QL, Veille, Telegram…)
+
+### `includes/atelier.php` — Atelier de rédaction (flux article gratuit)
+- Menu **« Quartier Libre → ✍️ Atelier de rédaction »**
+- Reprend les sujets du robot de veille. Deux blocs : **Dossiers en cours** (ceux où tu as déjà collé de la matière) et **Nouveaux sujets du robot**
+- Par sujet : zone **« matière à coller »** (texte/dates/chiffres/citations/liens) + **statut** + bouton **« Copier le brief pour l'assistant »**
+- Le brief (presse-papier) contient : sujet, lien source, matière collée, consignes éditoriales QL, format de sortie attendu (article .md + fiche sources + visuel) et la règle « ne rien inventer ». Khalid le colle dans la conversation Claude → l'assistant rédige et pousse sur GitHub
+- **Aucune IA payante, aucune clé** : WordPress ne fait qu'organiser et fabriquer le brief
+- **Option WP** : `ql_atelier_dossiers` (matière + statut par sujet, indépendant de `ql_veille_items`)
 
 ---
 

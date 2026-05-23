@@ -70,6 +70,7 @@ Dernier audit : **YYYY-MM-DD**
 - `quartier-libre-theme/ql-sync.php` — moteur sync GitHub→WP + parser markdown + page Sync QL + taxonomie `ql_categories_tree()`
 - `quartier-libre-theme/includes/telegram.php` — autopost articles + bouton + notif plaintes (Réglages → Telegram QL)
 - `quartier-libre-theme/includes/veille.php` — robot veille Google News RSS → brouillons (cron 2×/jour)
+- `quartier-libre-theme/includes/atelier.php` — Atelier de rédaction : matière collée par sujet → bouton « Copier le brief pour l'assistant » → l'assistant rédige (gratuit, option `ql_atelier_dossiers`)
 - `quartier-libre-theme/includes/dashboard.php` — page admin centrale « Quartier Libre »
 - `quartier-libre-theme/includes/helloasso.php` — dons HelloAsso API v5
 - `quartier-libre-theme/template-parts/sidebar-home.php` — sidebar (recherche/rubriques/cagnotte/RDV/socials)

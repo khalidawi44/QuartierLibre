@@ -95,6 +95,12 @@ if ( file_exists( $ql_veille_file ) ) {
     require_once $ql_veille_file;
 }
 
+// Atelier de rédaction (matière collée → brief assistant → article)
+$ql_atelier_file = QL_THEME_DIR . '/includes/atelier.php';
+if ( file_exists( $ql_atelier_file ) ) {
+    require_once $ql_atelier_file;
+}
+
 // ── 1. Enqueue styles & scripts ─────────────────────────────────
 add_action( 'wp_enqueue_scripts', function () {
 

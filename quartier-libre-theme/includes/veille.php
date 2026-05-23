@@ -289,7 +289,10 @@ function ql_veille_render_panel() {
     <div style="background:#fffdf0;border:1px solid #e6d56a;border-radius:8px;padding:22px;margin-top:24px;">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
             <h2 style="margin:0;">🤖 Robot de veille — sujets repérés</h2>
-            <a class="button button-small" href="<?php echo esc_url( admin_url( 'admin.php?page=ql-veille' ) ); ?>">Réglages</a>
+            <span>
+                <a class="button button-primary button-small" href="<?php echo esc_url( admin_url( 'admin.php?page=ql-atelier' ) ); ?>">✍️ Atelier de rédaction</a>
+                <a class="button button-small" href="<?php echo esc_url( admin_url( 'admin.php?page=ql-veille' ) ); ?>">Réglages</a>
+            </span>
         </div>
         <?php if ( empty( $pending ) ) : ?>
             <p style="margin:.8em 0 0;color:#665c00;">
