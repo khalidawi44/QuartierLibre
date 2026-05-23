@@ -185,14 +185,12 @@ function ql_dashboard_render() {
 
         </div>
 
-        <!-- ROBOT DE VEILLE (à venir) -->
-        <div style="background:#fffdf0;border:1px dashed #d4b800;border-radius:8px;padding:22px;margin-top:24px;">
-            <h2 style="margin-top:0;">🤖 Robot de veille — manifs & faits divers</h2>
-            <p style="margin:0;color:#665c00;">
-                Bientôt ici : un agent qui surveille des sources locales (agendas de manifs, presse de Nantes)
-                et te propose des sujets d'articles prêts à valider. En cours de configuration avec toi.
-            </p>
-        </div>
+        <!-- ROBOT DE VEILLE -->
+        <?php
+        if ( function_exists( 'ql_veille_render_panel' ) ) {
+            ql_veille_render_panel();
+        }
+        ?>
 
     </div>
     <?php

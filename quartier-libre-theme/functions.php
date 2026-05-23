@@ -83,6 +83,12 @@ if ( file_exists( $ql_dashboard_file ) ) {
     require_once $ql_dashboard_file;
 }
 
+// Robot de veille (manifs, logement, sécurité, politique locale)
+$ql_veille_file = QL_THEME_DIR . '/includes/veille.php';
+if ( file_exists( $ql_veille_file ) ) {
+    require_once $ql_veille_file;
+}
+
 // ── 1. Enqueue styles & scripts ─────────────────────────────────
 add_action( 'wp_enqueue_scripts', function () {
 
