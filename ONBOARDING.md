@@ -1,0 +1,288 @@
+# Quartier Libre — Document de passation (handoff)
+
+> Pour toute IA / dev qui reprend le projet. Lis ce fichier en entier avant d'agir.
+> Dernière mise à jour : 2026-04-21.
+
+---
+
+## 1. C'est quoi le projet
+
+**quartierlibre.org** = média militant **réel** sur les quartiers populaires de Nantes (Bellevue, Malakoff, Clos Toreau, Dervallières, Bottière-Pin Sec, Breil, Bout des Landes, Port Boyer, Halvêque, Ranzay, Pilotière). Sujets : logement social / bailleurs, violences policières, surveillance, services publics, luttes locales, + national (politique française) et international (Gaza, Soudan).
+
+**Porteur** : Khalid (44 ans, habitant du Clos Toreau, Nantes sud). Journaliste militant.
+
+**Ton éditorial** : inspiré de Contre-Attaque (contre-attaque.net) — rouge/noir, percutant, militant.
+
+---
+
+## 2. Architecture technique
+
+### Stack
+- **WordPress** hébergé chez Hostinger, sur `quartierlibre.org`
+- **Thème custom** « Quartier Libre » (autonome, zéro page builder)
+- **Optimisation** : NitroPack (cache agressif — penser à le purger après chaque sync)
+- **Contenu** versionné sur **GitHub** : `khalidawi44/QuartierLibre`, branche `main`
+- **Repo local** : `C:\Users\Utilisateur\Documents\GitHub\QuartierLibre`
+
+### Flux de travail
+1. On édite les fichiers en local (thème + articles markdown)
+2. On commit + push sur GitHub
+3. Dans WP admin : **Outils → Sync QL** → 2 boutons :
+   - **Synchroniser le thème** (récupère `quartier-libre-theme/` depuis GitHub et écrit sur le serveur)
+   - **Synchroniser les articles (.md)** (importe `content/articles/*.md` comme articles WP + `content/sources/*.md` comme méta de vérification)
+4. Purger le cache NitroPack
+
+> ⚠️ Le sync GitHub a besoin d'un **token** (Personal Access Token) sinon rate limit à 60 req/h. Stocké dans l'option WP `ql_github_token`, configurable depuis la page Sync QL (cadre 🔑 Token GitHub).
+
+---
+
+## 3. Arborescence des fichiers
+
+```
+QuartierLibre/
+├── ONBOARDING.md                  ← ce fichier
+├── quartier-libre-theme/          ← LE THÈME WORDPRESS
+│   ├── functions.php              ← cœur : logo, sources métabox, social icons,
+│   │                                 profil utilisateur, blocage wp-admin,
+│   │                                 validation/publication, fallback images
+│   ├── ql-sync.php                ← moteur sync GitHub→WP + page admin "Sync QL"
+│   │                                 + parser markdown→HTML + upload images
+│   ├── header.php                 ← header pleine largeur, logo gauche, menu, user-menu
+│   ├── footer.php                 ← footer + logo + plainte-popup
+│   ├── front-page.php             ← homepage layout 70/30 (contenu + sidebar droite)
+│   ├── single.php                 ← article : sidebar gauche 30% + contenu 70%
+│   ├── page.php                   ← pages standard : sidebar gauche
+│   ├── archive.php / category.php / search.php  ← listes avec sidebar gauche
+│   ├── templates/
+│   │   ├── page-a-propos.php       ← À propos (Khalid + rédaction, SANS sidebar)
+│   │   ├── page-rubriques.php      ← /rubriques/ gros titres colorés (SANS sidebar)
+│   │   ├── page-tous-articles.php  ← /tous-les-articles/ filtres + pagination
+│   │   ├── page-soutenir.php       ← /soutenir/ dons PayPal+HelloAsso + FAQ
+│   │   ├── page-connexion.php      ← /connexion/ login+inscription + boutons sociaux
+│   │   ├── page-mon-profil.php     ← /mon-profil/ espace user custom (remplace wp-admin)
+│   │   └── page-bureau-plaintes.php
+│   ├── template-parts/
+│   │   ├── hero-carousel.php       ← carrousel une homepage
+│   │   ├── sidebar-home.php        ← LA sidebar (recherche/rubriques/cagnotte/RDV/socials)
+│   │   ├── card-article.php        ← carte article (ratio image 3/2)
+│   │   ├── section-category.php    ← bloc section par catégorie
+│   │   ├── soutenir.php            ← encart dons inline (homepage)
+│   │   ├── plainte-popup.php       ← Bureau des plaintes (modal flottante)
+│   │   └── ...
+│   ├── includes/
+│   │   ├── helloasso.php           ← intégration HelloAsso API v5
+│   │   └── plainte-variants.php    ← variantes Bureau des plaintes par contexte
+│   ├── assets/css/main.css         ← TOUT le CSS (~4000+ lignes)
+│   ├── assets/js/main.js           ← TOUT le JS (burger, carrousel, modals,
+│   │                                 screenshots liens externes, back-to-top, etc.)
+│   └── assets/images/              ← logo.svg/png fallback thème
+├── content/
+│   ├── articles/                  ← 35 articles en markdown + frontmatter YAML
+│   │   └── YYYY-MM-DD-slug.md
+│   ├── sources/                   ← 1 fiche source par article (MÊME basename)
+│   │   └── YYYY-MM-DD-slug.md
+│   └── media/                     ← images (jpg/svg) + README.md (mapping fallback)
+```
+
+**RÈGLE CRUCIALE** : le fichier source `content/sources/X.md` doit avoir **exactement le même basename** que l'article `content/articles/X.md` (préfixe date YYYY-MM-DD compris), sinon le sync ne les associe pas.
+
+---
+
+## 4. Format d'un article (frontmatter YAML)
+
+```yaml
+---
+title: "Titre de l'article"
+slug: "slug-url"
+category:                    # array — toutes les catégories pertinentes
+  - infos-locale
+  - bellevue
+  - luttes
+  - repression
+primary_category: repression # badge principal affiché (override le choix auto)
+tags:
+  - tag1
+  - tag2
+excerpt: "Résumé court (meta description + chapô)"
+featured_image: "content/media/x.jpg"        # OU featured_image_url (URL WP)
+bq_background: "content/media/x.jpg"          # fond des blockquotes témoignages
+event_date: "2026-05-01"     # SI rendez-vous → apparaît dans widget agenda
+status: "draft"              # draft | publish | pending
+force_status: "draft"        # force le passage en draft même si déjà publié
+date: "2026-04-20 09:00:00"
+author: "karima-benali"      # login d'un des 13 auteurs (voir §6)
+une: true                    # featured sur la home
+plainte_variant: "logement"  # variante du Bureau des plaintes
+---
+```
+
+### Mécanismes spéciaux du frontmatter
+- `force_status: "draft"` → rétrograde un article publié (pour corriger une erreur depuis le repo)
+- `trash: true` → met l'article à la corbeille via sync
+- `event_date: YYYY-MM-DD` → l'article apparaît dans le widget « Rendez-vous » de la sidebar (si date future)
+- `primary_category: slug` → force le badge affiché (sinon auto : multi-quartiers → thème transversal)
+
+### Taxonomie (catégories valides)
+- **infos-locale** → bellevue, malakoff, dervallieres, clos-toreau, bottiere-pin-sec, breil, bout-des-landes, port-boyer, halveque, ranzay, pilotiere, transports, autres-villes
+- **france** → politique, justice, fait-divers, economie, societe
+- **international** → guerre, genocide, famine, resistance
+- **luttes** → mobilisations, repression, solidarite, logement
+- **histoire** (pas de sous-cat)
+
+Source unique : fonction `ql_categories_tree()` dans `ql-sync.php`.
+
+---
+
+## 5. RÈGLE ÉDITORIALE ABSOLUE (la plus importante)
+
+**NE JAMAIS RIEN INVENTER.** C'est un média réel, lu comme info factuelle.
+
+Interdits sans demande explicite :
+- Personne inventée (même pseudonyme/initiales composites)
+- Date d'événement inventée (manif, AG, procès)
+- Chiffre inventé (morts, budgets, %)
+- Citation inventée (politicien, fonctionnaire, habitant)
+- Rapport/communiqué daté sans source vérifiable
+- Adresse, numéro de téléphone, URL inventés
+
+**Pour chaque article → une fiche `content/sources/<slug>.md`** qui liste chaque affirmation factuelle avec sa source (URL **précise**, pas la page d'accueil de l'orga).
+
+### Format standard d'une fiche source
+```markdown
+# Sources — [Titre]
+
+Article : [`<slug>.md`](../articles/<slug>.md)
+
+Dernier audit : **YYYY-MM-DD**
+
+## ✓ Sources vérifiées
+- [Claim paraphrasée] → [Titre source](URL précise)
+
+## ⚠ Sources imprécises          (n'apparaît que s'il y en a)
+- [Claim] — lien trop général — **Action** : trouver la page précise
+
+## ✗ Affirmations sans source     (n'apparaît que s'il y en a)
+- [Claim] — **Action** : retirer ou sourcer
+
+## 👤 À valider par la rédaction  (témoignages, détails locaux, points politiques)
+- [Témoignage anonyme] — **Action** : confirmer recueilli par Khalid
+
+## Où vérifier (ressources générales)
+- [Organisation](url landing)   ← SEUL endroit où les landing pages sont OK
+```
+
+**URL précise obligatoire** : si on cite un rapport MSF, lier la page du rapport (`msf.org/sudan-msf-forced-halt-...`), PAS `msf.org/sudan`.
+
+Si pas de source trouvée après recherche web → retirer la claim ou la marquer 👤.
+
+Ces règles sont aussi dans la mémoire globale de Claude : `C:\Users\Utilisateur\.claude\CLAUDE.md`.
+
+---
+
+## 6. La rédaction (13 auteurs fictionnels)
+
+Définis dans `ql_authors_roster()` (ql-sync.php). **Affichage = PRÉNOM SEUL** (pas de nom de famille). Logins :
+- `aissata-diallo` (Bellevue), `younes-boukhris` (Malakoff), `karima-benali` (Dervallières), `soraya-messaoudi` (Clos Toreau), `mehdi-haddad` (Bottière-Pin Sec), `fatou-traore` (Breil), `samir-toure` (Bout des Landes), `lea-marchand` (Port Boyer), `naima-ouedraogo` (Halvêque), `amadou-kone` (Ranzay), `sofia-bensalem` (Pilotière)
+- Correspondants : `rachida-ben-arfa` (international), `julien-moreau` (national)
+- Khalid = compte admin réel WordPress (pas dans le roster)
+
+---
+
+## 7. Système de vérification des sources (dans WP admin)
+
+C'est le gros chantier des dernières sessions. Tout dans `functions.php`.
+
+### Méta-box dans l'éditeur d'article
+Affiche 4 cases chiffrées : **✓ vérifié · ⚠ imprécis · ✗ manquant · 👤 à valider**.
+- Lit le post_meta `_ql_sources_md` (contenu de la fiche source, injecté au sync)
+- Parser : `ql_parse_sources_sections()` (détecte les sections par emoji/mots-clés)
+
+### Page « Outils → Sources QL »
+- Dashboard 4 cases filtrables (Total / 100% vérifié / À corriger / Problème)
+- Tableau verdict par article (vert/orange/rouge/gris)
+- Vue « 📝 Tout ce qui reste à faire » : liste consolidée des ⚠/✗/👤 de tous les articles
+
+### Workflow de validation + publication
+Pour chaque point **👤**, 3 boutons :
+- **✓ Valider tel quel** — marque OK
+- **✎ Modifier** — saisir une correction → **remplace auto le passage dans l'article** (post_content)
+- **✗ Supprimer** — **retire auto le passage de l'article** (avec confirmation)
+
+Le bouton **« Valider & Publier maintenant »** (vert) s'active SEULEMENT quand : 0 ⚠ + 0 ✗ + tous les 👤 traités + article pas déjà publié.
+
+Décisions persistées dans post_meta `_ql_item_decisions`. Reset auto si la fiche change (hash MD5).
+
+> ⚠️ Les modifs auto (✎/✗) agissent sur le **post_content WordPress**, PAS sur le `.md` GitHub. Pour rendre permanent : reporter le changement dans le `.md` puis re-sync. Sinon le prochain sync réécrase.
+
+---
+
+## 8. Fonctionnalités du thème (récap)
+
+| Feature | Où | Note |
+|---|---|---|
+| Sync GitHub→WP | ql-sync.php | + token, gestion rate-limit, messages d'erreur détaillés |
+| Logo | functions.php `ql_resolve_logo_url()` | cascade : option ql_logo_url → custom_logo → recherche média "logo" → fichier thème. Actuel : logo_home.png, 72px, collé à gauche 14px |
+| Homepage 70/30 | front-page.php | contenu gauche 70% + sidebar DROITE 30% |
+| Sidebar | template-parts/sidebar-home.php | 5 widgets : recherche, rubriques, cagnotte (dons), rendez-vous (event_date), réseaux sociaux. Sticky, scrollbar masquée |
+| Articles/pages | single/page/archive/category/search.php | sidebar GAUCHE 30% + contenu 70% |
+| Dons | sidebar + page-soutenir | PayPal SDK (client_id en option) + HelloAsso API v5. PAS de mention "déductible" (QL pas reconnu d'intérêt général) |
+| Liens externes | main.js | sur mobile/tablette → capture d'écran (WordPress mShots) au lieu de quitter le site ; desktop → popup |
+| Blockquotes témoignages | markdown `>!` | `>! texte` = encart pleine largeur fond image ; `>` = citation inline normale (politicien/média) |
+| Images par défaut | ql-sync.php `$fallback_map` | si pas de featured_image → image thématique selon primary_category |
+| Réseaux sociaux | sidebar-home.php | Facebook (profile.php?id=61578685711984), Instagram (@quartierlibre44), Snapchat (t.snapchat.com/2lbKw2lU), Telegram (t.me/nantesrevoltee/1577 — afficher "Telegram" pas le handle), RSS |
+| Profil utilisateur | page-mon-profil.php | upload photo custom, change infos/mdp. wp-admin BLOQUÉ pour non-éditeurs (redirect /mon-profil/) |
+| Connexion | page-connexion.php | email/mdp + boutons Google/Facebook/Apple (compatibles plugin Nextend Social Login à installer) |
+| Bureau des plaintes | plainte-popup.php + plainte-variants.php | modal flottante, variantes par sujet (immigration/police/logement/etc.) |
+| Bouton retour haut | main.js | bas-gauche, après 400px scroll |
+
+---
+
+## 9. État actuel & tâches en cours
+
+### Fait
+- 35 articles audités, fiches sources au format standard (✓/⚠/✗/👤)
+- Toutes les fiches renommées pour matcher les basenames d'articles
+- ~98 points 👤 ajoutés (témoignages + détails locaux à confirmer)
+- Système validation/publication en place dans WP
+
+### À surveiller (alertes de l'audit)
+1. **Pilotière** : initiatives d'auto-organisation (aide aux devoirs 2019, frigo 2022...) à vérifier — possiblement inventées
+2. **Deux morts à Nantes juillet 2025** : les 2 décès précis à confirmer par maraudes réelles
+3. **Port Boyer « CIL »** : probable confusion avec Action Logement
+4. **Louis-Macron XVI** : gouvernement satirique — vérifier que le ton reste lisible
+5. Plusieurs articles ont `force_status: draft` (Darfour, délit solidarité, 1er mai) → restent en brouillon tant que Khalid n'a pas validé
+
+### Doublons à nettoyer dans WP
+Certains articles ont été réécrits avec un nouveau slug → anciens doublons en draft à mettre à la corbeille manuellement (ex : ancien "Darfour 2026" vs nouveau "Darfour : l'ONU confirme").
+
+---
+
+## 10. Comptes & secrets (NE PAS committer)
+
+- **GitHub** : repo `khalidawi44/QuartierLibre`. Token PAT à mettre dans l'option WP `ql_github_token` (jamais dans le code).
+- **PayPal** : client_id public dans le code (normal, c'est du frontend).
+- **HelloAsso** : client_id + secret dans options WP (`ql_helloasso_*`), slug `union-des-quartiers-libres`. Compte à activer côté HelloAsso pour les paiements API.
+- **Réseaux** : voir §8.
+
+> Si Khalid partage un token/secret en clair dans un chat → le considérer comme compromis, lui dire de le révoquer.
+
+---
+
+## 11. Préférences de travail de Khalid
+
+- Répondre en **français**
+- **Ne jamais utiliser TodoWrite** (perçu comme du bruit)
+- Commits/push autorisés sans redemander quand un changement est fini (sauf destructif)
+- Veut des **sources vérifiables** pour tout, déteste les fake news
+- Bosse sur Windows 11, repo local Windows (`C:\Users\Utilisateur\...`)
+
+---
+
+## 12. Comment reprendre (checklist)
+
+1. Lire ce fichier + `C:\Users\Utilisateur\.claude\CLAUDE.md` (règles éditoriales)
+2. `git pull` pour avoir le dernier état
+3. Pour écrire un article : recherche web → recouper → rédiger → créer la fiche source avec URLs précises → status draft
+4. Jamais d'invention. Si pas de source → 👤 ou retirer
+5. Commit + push → dire à Khalid de sync dans WP
+6. Pour le code thème : éditer dans `quartier-libre-theme/`, commit, push, sync thème
