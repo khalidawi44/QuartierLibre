@@ -18,10 +18,30 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 // ── Requêtes par défaut (modifiables dans l'admin) ─────────────
 function ql_veille_default_queries() {
     return array(
+        // Mobilisations / luttes
         'manifestation OR rassemblement OR grève Nantes',
-        'logement social OR HLM OR expulsion Nantes',
-        'police OR contrôle au faciès OR sécurité quartiers Nantes',
-        'mairie OR métropole OR transports OR Keolis Nantes',
+        'syndicat OR CGT OR Solidaires OR intersyndicale Nantes',
+        'blocage OR occupation OR piquet de grève Nantes',
+        // Logement / bailleurs
+        'logement social OR HLM OR bailleur Nantes',
+        'expulsion locative OR mal-logement OR squat Nantes',
+        'rénovation urbaine OR ANRU OR relogement Nantes',
+        // Police / répression / surveillance
+        'violences policières OR bavure OR IGPN Nantes',
+        'contrôle au faciès OR racisme OR discrimination Nantes',
+        'surveillance OR vidéosurveillance OR fichage Nantes',
+        // Quartiers populaires (par nom)
+        'Bellevue OR Malakoff OR Dervallières Nantes',
+        '"Clos Toreau" OR "Bottière" OR "Pin Sec" OR Breil Nantes',
+        '"Bout des Landes" OR "Port Boyer" OR Halvêque OR Ranzay Nantes',
+        // Services publics / social
+        'hôpital OR école OR services publics quartiers Nantes',
+        'sans-papiers OR migrants OR CRA OR préfecture Nantes',
+        'transports OR Keolis OR Tan OR métropole Nantes',
+        // National / international (lignes QL)
+        'loi immigration OR Darmanin OR Retailleau',
+        'Gaza OR Palestine OR solidarité Nantes',
+        'extrême droite OR antifascisme Nantes',
     );
 }
 
@@ -69,7 +89,7 @@ function ql_veille_run() {
         $feed = fetch_feed( $url );
         if ( is_wp_error( $feed ) ) { continue; }
 
-        $max  = $feed->get_item_quantity( 8 );
+        $max  = $feed->get_item_quantity( 20 );
         $list = $feed->get_items( 0, $max );
         foreach ( $list as $item ) {
             $title = trim( wp_strip_all_tags( (string) $item->get_title() ) );
@@ -87,28 +107,61 @@ function ql_veille_run() {
             }
             $date = $item->get_date( 'U' );
 
+            // Extrait de la source (sert d'amorce à la rédaction IA)
+            $summary = trim( wp_strip_all_tags( (string) $item->get_description() ) );
+            if ( mb_strlen( $summary ) > 1200 ) { $summary = mb_substr( $summary, 0, 1200 ); }
+
             $items[] = array(
-                'key'    => $key,
-                'title'  => $title,
-                'link'   => $link,
-                'source' => $source,
-                'query'  => $query,
-                'date'   => $date ? (int) $date : time(),
-                'found'  => time(),
-                'used'   => 0,
+                'key'     => $key,
+                'title'   => $title,
+                'link'    => $link,
+                'source'  => $source,
+                'summary' => $summary,
+                'query'   => $query,
+                'date'    => $date ? (int) $date : time(),
+                'found'   => time(),
+                'used'    => 0,
             );
             $known[ $key ] = true;
             $added++;
         }
     }
 
-    // Tri par date décroissante, plafond à 60 entrées
+    // Tri par date décroissante, plafond à 250 entrées
     usort( $items, function ( $a, $b ) { return $b['date'] <=> $a['date']; } );
-    if ( count( $items ) > 60 ) { $items = array_slice( $items, 0, 60 ); }
+    if ( count( $items ) > 250 ) { $items = array_slice( $items, 0, 250 ); }
 
     update_option( 'ql_veille_items', $items, false );
     update_option( 'ql_veille_last_run', time(), false );
     return $added;
+}
+
+/**
+ * Crée un brouillon « amorce » à partir d'un sujet de veille : titre + lien
+ * source + rappel de relecture. La rédaction complète (analyse + visuel) se
+ * fait ensuite à la main / via l'assistant, puis publication.
+ * Retourne l'ID du post ou WP_Error.
+ */
+function ql_veille_make_draft( $found, $author_id = 0 ) {
+    if ( ! $author_id ) { $author_id = get_current_user_id(); }
+    if ( ! $author_id ) {
+        $admins = get_users( array( 'role' => 'administrator', 'number' => 1, 'fields' => 'ID' ) );
+        $author_id = ! empty( $admins ) ? (int) $admins[0] : 0;
+    }
+
+    $body  = "<p><em>[Brouillon généré par la veille — à vérifier, réécrire et sourcer avant publication.]</em></p>\n";
+    $body .= '<p><strong>Source repérée :</strong> <a href="' . esc_url( $found['link'] ) . '" target="_blank" rel="noopener">'
+           . esc_html( $found['title'] . ( $found['source'] ? ' — ' . $found['source'] : '' ) ) . "</a></p>\n";
+    $body .= "<p>⚠️ Vérifie les faits, recoupe les sources, écris avec l'angle Quartier Libre, "
+           . "puis remplis la fiche sources et ajoute une image à la une.</p>\n";
+
+    return wp_insert_post( array(
+        'post_title'   => $found['title'],
+        'post_content' => $body,
+        'post_status'  => 'draft',
+        'post_type'    => 'post',
+        'post_author'  => $author_id,
+    ), true );
 }
 
 // ── Liste des suggestions non encore utilisées ─────────────────
@@ -133,19 +186,7 @@ add_action( 'admin_post_ql_veille_draft', function () {
     unset( $it );
     if ( ! $found ) { wp_safe_redirect( admin_url( 'admin.php?page=ql-dashboard' ) ); exit; }
 
-    $body  = "<p><em>[Brouillon généré par la veille — à vérifier, réécrire et sourcer avant publication.]</em></p>\n";
-    $body .= '<p><strong>Source repérée :</strong> <a href="' . esc_url( $found['link'] ) . '" target="_blank" rel="noopener">'
-           . esc_html( $found['title'] . ( $found['source'] ? ' — ' . $found['source'] : '' ) ) . "</a></p>\n";
-    $body .= "<p>⚠️ Vérifie les faits, recoupe les sources, écris avec l'angle Quartier Libre (par nous, pour nous), "
-           . "puis remplis la fiche sources et ajoute une image à la une.</p>\n";
-
-    $post_id = wp_insert_post( array(
-        'post_title'   => $found['title'],
-        'post_content' => $body,
-        'post_status'  => 'draft',
-        'post_type'    => 'post',
-        'post_author'  => get_current_user_id(),
-    ), true );
+    $post_id = ql_veille_make_draft( $found, get_current_user_id() );
 
     update_option( 'ql_veille_items', $items, false );
 
@@ -243,7 +284,7 @@ function ql_veille_settings_render() {
 
 // ── Rendu du panneau de suggestions (utilisé par le dashboard) ─
 function ql_veille_render_panel() {
-    $pending = ql_veille_pending( 12 );
+    $pending = ql_veille_pending( 40 );
     ?>
     <div style="background:#fffdf0;border:1px solid #e6d56a;border-radius:8px;padding:22px;margin-top:24px;">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">

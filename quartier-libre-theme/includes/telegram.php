@@ -80,6 +80,124 @@ function ql_telegram_subscriber_count( $force = false ) {
     return ( $cached !== false ) ? (int) $cached : null;
 }
 
+/**
+ * Liste les conversations récentes vues par le bot (via getUpdates), pour
+ * récupérer facilement l'ID d'un canal ou d'un groupe (ex. « Bureau des
+ * plaintes »). Le bot ne voit une conversation qu'après y avoir reçu un
+ * message (poste un message dans le groupe / fais /start, puis détecte).
+ * Retourne array de array( id, name, type ).
+ */
+function ql_telegram_recent_chats() {
+    $res = ql_telegram_api( 'getUpdates', array( 'limit' => 100 ) );
+    $chats = array();
+    if ( is_array( $res ) && ! empty( $res['ok'] ) && ! empty( $res['result'] ) ) {
+        foreach ( $res['result'] as $upd ) {
+            foreach ( array( 'message', 'edited_message', 'channel_post', 'my_chat_member' ) as $k ) {
+                if ( empty( $upd[ $k ]['chat'] ) ) { continue; }
+                $c  = $upd[ $k ]['chat'];
+                $id = isset( $c['id'] ) ? $c['id'] : null;
+                if ( $id === null ) { continue; }
+                $name = ! empty( $c['title'] )
+                    ? $c['title']
+                    : trim( ( $c['first_name'] ?? '' ) . ' ' . ( $c['last_name'] ?? '' ) );
+                if ( $name === '' ) { $name = $c['username'] ?? ( '#' . $id ); }
+                $chats[ (string) $id ] = array(
+                    'id'   => $id,
+                    'name' => $name,
+                    'type' => $c['type'] ?? '',
+                );
+            }
+        }
+    }
+    return array_values( $chats );
+}
+
+// ════════════════════════════════════════════════════════════════
+//  PONT TELEGRAM → SITE (webhook) : enregistre les messages du
+//  groupe « Bureau des plaintes » comme plaintes côté admin.
+// ════════════════════════════════════════════════════════════════
+
+function ql_telegram_webhook_secret() {
+    $s = (string) get_option( 'ql_telegram_webhook_secret', '' );
+    if ( $s === '' ) {
+        $s = wp_generate_password( 32, false );
+        update_option( 'ql_telegram_webhook_secret', $s, false );
+    }
+    return $s;
+}
+
+function ql_telegram_webhook_url() {
+    return rest_url( 'quartierlibre/v1/telegram-webhook' );
+}
+
+function ql_telegram_set_webhook() {
+    return ql_telegram_api( 'setWebhook', array(
+        'url'             => ql_telegram_webhook_url(),
+        'secret_token'    => ql_telegram_webhook_secret(),
+        'allowed_updates' => wp_json_encode( array( 'message', 'edited_message' ) ),
+    ) );
+}
+
+function ql_telegram_delete_webhook() {
+    return ql_telegram_api( 'deleteWebhook', array() );
+}
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'quartierlibre/v1', '/telegram-webhook', array(
+        'methods'             => 'POST',
+        'permission_callback' => '__return_true',
+        'callback'            => 'ql_telegram_webhook_handler',
+    ) );
+} );
+
+function ql_telegram_webhook_handler( WP_REST_Request $req ) {
+    // Vérifie le jeton secret envoyé par Telegram
+    $secret = (string) $req->get_header( 'x-telegram-bot-api-secret-token' );
+    if ( ! hash_equals( ql_telegram_webhook_secret(), $secret ) ) {
+        return new WP_REST_Response( array( 'ok' => false ), 403 );
+    }
+
+    if ( get_option( 'ql_telegram_log_group', '0' ) !== '1' ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
+    $upd = $req->get_json_params();
+    $msg = $upd['message'] ?? $upd['edited_message'] ?? null;
+    if ( ! is_array( $msg ) ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
+    // Ignore les messages du bot lui-même (évite la boucle avec nos notifs)
+    if ( ! empty( $msg['from']['is_bot'] ) ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
+    // Uniquement le groupe « plaintes » configuré
+    $group   = trim( (string) get_option( 'ql_telegram_admin_chat_id', '' ) );
+    $chat_id = isset( $msg['chat']['id'] ) ? (string) $msg['chat']['id'] : '';
+    if ( $group === '' || $chat_id === '' || $chat_id !== $group ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
+    $text = trim( (string) ( $msg['text'] ?? $msg['caption'] ?? '' ) );
+    if ( $text === '' ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
+    $from = trim( ( $msg['from']['first_name'] ?? '' ) . ' ' . ( $msg['from']['last_name'] ?? '' ) );
+    if ( $from === '' ) { $from = $msg['from']['username'] ?? 'Telegram'; }
+
+    if ( function_exists( 'ql_plainte_store_entry' ) ) {
+        ql_plainte_store_entry( array(
+            'source'  => 'telegram',
+            'message' => $text,
+            'tg_from' => $from,
+            'tg_chat' => $chat_id,
+        ) );
+    }
+    return new WP_REST_Response( array( 'ok' => true ), 200 );
+}
+
 // ════════════════════════════════════════════════════════════════
 //  1. PUBLICATION AUTO DES ARTICLES
 // ════════════════════════════════════════════════════════════════
@@ -126,6 +244,21 @@ add_action( 'transition_post_status', function ( $new_status, $old_status, $post
 
 function ql_telegram_channel_url() {
     return trim( (string) get_option( 'ql_telegram_channel_url', '' ) );
+}
+
+/**
+ * Meilleure URL publique du canal pour les liens du site (widget, bouton).
+ * Priorité : « Lien public du canal » → dérivé du @nom du canal → ''.
+ */
+function ql_telegram_public_url() {
+    $url = ql_telegram_channel_url();
+    if ( $url !== '' ) { return $url; }
+
+    $id = trim( (string) get_option( 'ql_telegram_channel_id', '' ) );
+    if ( $id !== '' && $id[0] === '@' ) {
+        return 'https://t.me/' . ltrim( $id, '@' );
+    }
+    return '';
 }
 
 /**
@@ -192,6 +325,26 @@ function ql_telegram_settings_render() {
         echo '<div class="notice notice-success"><p>Réglages Telegram enregistrés.</p></div>';
     }
 
+    // Pont Telegram → site : ACTIVER (pose le webhook)
+    if ( isset( $_POST['ql_tg_bridge_on'] ) && check_admin_referer( 'ql_tg_nonce' ) ) {
+        update_option( 'ql_telegram_log_group', '1', false );
+        $res = ql_telegram_set_webhook();
+        if ( is_array( $res ) && ! empty( $res['ok'] ) ) {
+            echo '<div class="notice notice-success"><p>Pont activé : les messages du groupe « plaintes » seront enregistrés sur le site. (La détection des conversations est désactivée tant que le pont est actif.)</p></div>';
+        } else {
+            update_option( 'ql_telegram_log_group', '0', false );
+            $d = is_array( $res ) && ! empty( $res['description'] ) ? $res['description'] : 'erreur inconnue (token ? site en HTTPS ?)';
+            echo '<div class="notice notice-error"><p>Échec de l\'activation du pont — ' . esc_html( $d ) . '</p></div>';
+        }
+    }
+
+    // Pont Telegram → site : DÉSACTIVER (retire le webhook)
+    if ( isset( $_POST['ql_tg_bridge_off'] ) && check_admin_referer( 'ql_tg_nonce' ) ) {
+        update_option( 'ql_telegram_log_group', '0', false );
+        ql_telegram_delete_webhook();
+        echo '<div class="notice notice-info"><p>Pont désactivé (webhook retiré). La détection des conversations refonctionne.</p></div>';
+    }
+
     // Test : envoyer un message au canal
     if ( isset( $_POST['ql_tg_test_channel'] ) && check_admin_referer( 'ql_tg_nonce' ) ) {
         $chan = trim( (string) get_option( 'ql_telegram_channel_id', '' ) );
@@ -206,12 +359,19 @@ function ql_telegram_settings_render() {
         ql_telegram_show_test_result( $res, 'rédaction' );
     }
 
+    // Détection des conversations (pour récupérer l'ID d'un canal / groupe)
+    $detected = null;
+    if ( isset( $_POST['ql_tg_detect'] ) && check_admin_referer( 'ql_tg_nonce' ) ) {
+        $detected = ql_telegram_recent_chats();
+    }
+
     $token       = (string) get_option( 'ql_telegram_bot_token', '' );
     $channel_id  = (string) get_option( 'ql_telegram_channel_id', '' );
     $channel_url = (string) get_option( 'ql_telegram_channel_url', '' );
     $admin_chat  = (string) get_option( 'ql_telegram_admin_chat_id', '' );
     $autopost    = get_option( 'ql_telegram_autopost', '1' ) === '1';
     $notify      = get_option( 'ql_telegram_notify_plaintes', '1' ) === '1';
+    $bridge_on   = get_option( 'ql_telegram_log_group', '0' ) === '1';
     ?>
     <div class="wrap">
         <h1>Telegram — Quartier Libre</h1>
@@ -222,9 +382,32 @@ function ql_telegram_settings_render() {
                 <li>Sur Telegram, ouvrez <strong>@BotFather</strong> → <code>/newbot</code> → suivez les étapes → copiez le <strong>token</strong> (ex : <code>123456:ABC-DEF...</code>).</li>
                 <li>Ajoutez ce bot comme <strong>administrateur de votre canal</strong> (paramètres du canal → Administrateurs → Ajouter).</li>
                 <li><strong>ID du canal</strong> : pour un canal public, mettez <code>@nomducanal</code>. Pour un canal privé, utilisez l'ID numérique (commence par <code>-100…</code>).</li>
-                <li><strong>ID rédaction</strong> : créez un groupe privé avec votre bot, envoyez-y un message, puis récupérez l'ID (ou écrivez à <strong>@userinfobot</strong> pour votre ID perso).</li>
+                <li><strong>ID rédaction</strong> : créez un groupe privé avec votre bot (« Bureau des plaintes »), postez-y un message, puis cliquez <strong>« Détecter les conversations »</strong> ci-dessous pour récupérer l'ID automatiquement.</li>
             </ol>
         </div>
+
+        <?php if ( is_array( $detected ) ) : ?>
+            <div style="background:#f6f7f7;border:1px solid #ccc;border-radius:6px;padding:16px 20px;margin:16px 0;max-width:780px;">
+                <h2 style="margin-top:0;">Conversations détectées</h2>
+                <?php if ( empty( $detected ) ) : ?>
+                    <p style="margin:0;">Aucune conversation vue par le bot. <strong>Poste d'abord un message</strong> dans ton groupe « Bureau des plaintes » (ou envoie <code>/start</code> au bot), puis reclique « Détecter ».</p>
+                <?php else : ?>
+                    <p style="margin:.2em 0 .8em;">Copie l'<strong>ID</strong> voulu dans le champ correspondant ci-dessous (canal = articles, groupe privé = plaintes), puis Enregistre.</p>
+                    <table class="widefat striped" style="max-width:100%;">
+                        <thead><tr><th>Nom</th><th>Type</th><th>ID (à copier)</th></tr></thead>
+                        <tbody>
+                        <?php foreach ( $detected as $c ) : ?>
+                            <tr>
+                                <td><?php echo esc_html( $c['name'] ); ?></td>
+                                <td><?php echo esc_html( $c['type'] ); ?></td>
+                                <td><code><?php echo esc_html( (string) $c['id'] ); ?></code></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
 
         <form method="post">
             <?php wp_nonce_field( 'ql_tg_nonce' ); ?>
@@ -280,7 +463,33 @@ function ql_telegram_settings_render() {
                 <button type="submit" name="ql_tg_save" class="button button-primary">Enregistrer</button>
                 <button type="submit" name="ql_tg_test_channel" class="button" style="margin-left:8px;">Tester le canal</button>
                 <button type="submit" name="ql_tg_test_admin" class="button">Tester la rédaction</button>
+                <button type="submit" name="ql_tg_detect" class="button" style="margin-left:8px;">Détecter les conversations (IDs)</button>
             </p>
+
+            <hr style="margin:24px 0;max-width:780px;">
+
+            <h2>Pont Telegram → site (plaintes)</h2>
+            <div style="background:#f6f7f7;border:1px solid #ccc;border-radius:6px;padding:16px 20px;max-width:780px;">
+                <p style="margin-top:0;">
+                    Quand le pont est <strong>activé</strong>, les messages écrits dans le groupe
+                    « <strong>ID rédaction</strong> » ci-dessus sont enregistrés dans
+                    <a href="<?php echo esc_url( admin_url( 'edit.php?post_type=ql_plainte' ) ); ?>">Quartier Libre → Bureau des plaintes</a>.
+                    Renseigne et enregistre d'abord l'ID rédaction (le groupe), puis active le pont.
+                </p>
+                <p style="margin:0;">
+                    État : <strong><?php echo $bridge_on ? '🟢 actif' : '⚪ inactif'; ?></strong>
+                    <?php if ( $bridge_on ) : ?>
+                        — <em>la détection des conversations est désactivée tant que le pont tourne.</em>
+                    <?php endif; ?>
+                </p>
+                <p style="margin:.8em 0 0;">
+                    <?php if ( $bridge_on ) : ?>
+                        <button type="submit" name="ql_tg_bridge_off" class="button">Désactiver le pont</button>
+                    <?php else : ?>
+                        <button type="submit" name="ql_tg_bridge_on" class="button button-primary">Activer le pont</button>
+                    <?php endif; ?>
+                </p>
+            </div>
         </form>
     </div>
     <?php

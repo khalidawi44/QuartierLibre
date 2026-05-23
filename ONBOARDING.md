@@ -1,7 +1,7 @@
 # Quartier Libre — Document de passation (handoff)
 
 > Pour toute IA / dev qui reprend le projet. Lis ce fichier en entier avant d'agir.
-> Dernière mise à jour : 2026-04-21.
+> Dernière mise à jour : 2026-05-23.
 
 ---
 
@@ -71,7 +71,17 @@ QuartierLibre/
 │   │   └── ...
 │   ├── includes/
 │   │   ├── helloasso.php           ← intégration HelloAsso API v5
-│   │   └── plainte-variants.php    ← variantes Bureau des plaintes par contexte
+│   │   ├── plainte-variants.php    ← variantes Bureau des plaintes par contexte
+│   │   ├── telegram.php            ← Telegram : publication auto des articles sur
+│   │   │                             le canal + notif rédaction (plaintes) + page
+│   │   │                             "Réglages → Telegram QL" + helper bouton +
+│   │   │                             webhook "pont" groupe Telegram → plaintes
+│   │   ├── plaintes.php            ← Registre des plaintes (CPT ql_plainte) :
+│   │   │                             formulaire du site + messages groupe Telegram
+│   │   ├── dashboard.php           ← Tableau de bord central "Quartier Libre"
+│   │   │                             (chiffres, priorités, abonnés Telegram, outils)
+│   │   └── veille.php              ← Robot de veille Google Actualités → brouillons
+│   │                                 amorce (menu sous le Tableau de bord)
 │   ├── assets/css/main.css         ← TOUT le CSS (~4000+ lignes)
 │   ├── assets/js/main.js           ← TOUT le JS (burger, carrousel, modals,
 │   │                                 screenshots liens externes, back-to-top, etc.)
@@ -229,11 +239,16 @@ Décisions persistées dans post_meta `_ql_item_decisions`. Reset auto si la fic
 | Liens externes | main.js | sur mobile/tablette → capture d'écran (WordPress mShots) au lieu de quitter le site ; desktop → popup |
 | Blockquotes témoignages | markdown `>!` | `>! texte` = encart pleine largeur fond image ; `>` = citation inline normale (politicien/média) |
 | Images par défaut | ql-sync.php `$fallback_map` | si pas de featured_image → image thématique selon primary_category |
-| Réseaux sociaux | sidebar-home.php | Facebook (profile.php?id=61578685711984), Instagram (@quartierlibre44), Snapchat (t.snapchat.com/2lbKw2lU), Telegram (t.me/nantesrevoltee/1577 — afficher "Telegram" pas le handle), RSS |
+| Réseaux sociaux | sidebar-home.php | Facebook (profile.php?id=61578685711984), Instagram (@quartierlibre44), Snapchat (t.snapchat.com/2lbKw2lU), Telegram (suit le canal réglé dans *Telegram QL* via `ql_telegram_public_url()`), RSS |
 | Profil utilisateur | page-mon-profil.php | upload photo custom, change infos/mdp. wp-admin BLOQUÉ pour non-éditeurs (redirect /mon-profil/) |
 | Connexion | page-connexion.php | email/mdp + boutons Google/Facebook/Apple (compatibles plugin Nextend Social Login à installer) |
 | Bureau des plaintes | plainte-popup.php + plainte-variants.php | modal flottante, variantes par sujet (immigration/police/logement/etc.) |
+| **Registre des plaintes** | includes/plaintes.php | CPT privé `ql_plainte` (menu *Quartier Libre → Bureau des plaintes*). Stocke les plaintes du formulaire site ET les messages du groupe Telegram. Colonnes : source (Site/Telegram), quartier, contact |
+| **Pont Telegram→site** | includes/telegram.php | Webhook REST `quartierlibre/v1/telegram-webhook` (jeton secret). Active via *Réglages → Telegram QL → Activer le pont* : les messages du groupe « ID rédaction » deviennent des plaintes. ⚠️ Tant que le webhook est actif, `getUpdates` (bouton « Détecter les conversations ») est désactivé par Telegram |
 | Bouton retour haut | main.js | bas-gauche, après 400px scroll |
+| **Telegram** | includes/telegram.php | Page *Réglages → Telegram QL* (token bot + ID canal + lien public + ID rédaction). Publie auto chaque **nouvel** article sur le canal (`transition_post_status`, anti-doublon via meta `_ql_telegram_sent`). Notifie la rédaction des plaintes. Prérequis : bot @BotFather **admin du canal** |
+| **Tableau de bord** | includes/dashboard.php | Menu « Quartier Libre » : chiffres clés (articles/brouillons/commentaires/**abonnés Telegram**), priorités « chef de rédaction », liens outils |
+| **Robot de veille** | includes/veille.php | Interroge Google Actualités 2×/jour (cron, ~18 requêtes × 20 résultats) → suggestions dans le tableau de bord → **brouillon amorce** (titre + lien source) en 1 clic. La rédaction complète (analyse + visuel) se fait à la main / via l'assistant. **Pas d'IA payante** (choix assumé : outils gratuits uniquement). Sous-menu du Tableau de bord |
 
 ---
 
@@ -280,6 +295,26 @@ Décisions persistées dans post_meta `_ql_item_decisions`. Reset auto si la fic
 
 ### Doublons à nettoyer dans WP
 Certains articles ont été réécrits avec un nouveau slug → anciens doublons en draft à mettre à la corbeille manuellement (ex : ancien "Darfour 2026" vs nouveau "Darfour : l'ONU confirme").
+
+### ⚠️ Page « Connecteurs » blanche/noire (HORS PROJET — ne pas chercher dans le repo)
+La page `wp-admin/options-connectors.php` (onglet « Connecteurs ») s'affiche **vide**.
+Vérifié : **aucune** trace de « connector / connecteur » dans le dépôt → ce n'est **pas**
+le thème, ni un module QL. C'est une page d'un **plugin** (ou de Hostinger).
+Cause : erreur **JavaScript** en console (`spécificateur « @wordpress/boot »… n'a pas été
+remappé`) → l'« import map » des modules WP est cassée/supprimée, donc le JS ne démarre pas
+et la zone reste vide. Suspect n°1 : **NitroPack** (delay/defer JS, optimisation HTML).
+- À faire côté WP (pas côté code) : purger NitroPack → si toujours vide, désactiver
+  NitroPack et recharger ; si ça remarche, exclure le wp-admin du delay/defer JS. Sinon
+  identifier le plugin qui crée ce menu (désactivation une par une).
+- Sans rapport avec Telegram : régler le canal = *Réglages → Telegram QL* (OK), articles
+  auto = *Quartier Libre → Tableau de bord* (robot de veille), publication auto = telegram.php.
+
+### Lien Telegram du widget « Nous suivre »
+L'ancien canal `t.me/nantesrevoltee` (Nantes Révoltée) a été remplacé par le **canal QL**.
+Le widget suit désormais automatiquement le canal réglé dans *Réglages → Telegram QL*
+(`ql_telegram_public_url()` : « Lien public du canal » sinon dérivé du `@nom`). Plus aucune
+URL codée en dur. Pour un canal **privé** (ID numérique `-100…`), remplir le champ
+« Lien public du canal » dans Telegram QL.
 
 ---
 

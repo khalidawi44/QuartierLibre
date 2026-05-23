@@ -25,7 +25,7 @@ $socials = array(
     'twitter'   => array( 'label' => 'X / Twitter','url' => get_option( 'ql_social_twitter',   '' ) ),
     'instagram' => array( 'label' => 'Instagram',  'url' => get_option( 'ql_social_instagram', 'https://www.instagram.com/quartierlibre44/' ) ),
     'facebook'  => array( 'label' => 'Facebook',   'url' => get_option( 'ql_social_facebook',  'https://www.facebook.com/profile.php?id=61578685711984' ) ),
-    'telegram'  => array( 'label' => 'Telegram',   'url' => get_option( 'ql_social_telegram',  'https://t.me/nantesrevoltee/1577' ) ),
+    'telegram'  => array( 'label' => 'Telegram',   'url' => ( function_exists( 'ql_telegram_public_url' ) && ql_telegram_public_url() !== '' ) ? ql_telegram_public_url() : get_option( 'ql_social_telegram', '' ) ),
     'snapchat'  => array( 'label' => 'Snapchat',   'url' => get_option( 'ql_social_snapchat',  'https://t.snapchat.com/2lbKw2lU' ) ),
     'rss'       => array( 'label' => 'Flux RSS',   'url' => get_feed_link() ),
 );
