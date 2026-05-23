@@ -675,7 +675,7 @@ add_filter( 'the_content', function ( $content ) {
         function ( $m ) use ( $home ) {
             $before = $m[1]; $href = $m[3]; $after = $m[4];
             // Ignore les ancres, mailto, tel:, javascript:
-            if ( preg_match( '#^(#|mailto:|tel:|javascript:)#i', $href ) ) return $m[0];
+            if ( preg_match( '~^(#|mailto:|tel:|javascript:)~i', $href ) ) return $m[0];
             // Relatif → interne, pas touché
             if ( ! preg_match( '#^https?://#i', $href ) ) return $m[0];
             $link_host = parse_url( $href, PHP_URL_HOST );
