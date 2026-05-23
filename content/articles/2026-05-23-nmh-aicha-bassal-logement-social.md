@@ -16,10 +16,9 @@ tags:
   - mal-logement
   - exiles
 excerpt: "Le 13 mai 2026, Aïcha Bassal a été élue à la tête de Nantes Métropole Habitat. Première femme à présider l'office HLM, issue du logement social : la communication est rodée. Derrière, 38 922 ménages attendent un logement et la question des exilé·es reste un angle mort."
-featured_image: "content/media/2026-05-23-nmh-aicha-bassal.svg"
+featured_image: "content/media/2026-05-23-nmh-aicha-bassal.png"
 bq_background: "content/media/quartier-clos-toreau.jpg"
-status: "draft"
-trash: true
+status: "publish"
 date: "2026-05-23 09:00:00"
 author: "soraya-messaoudi"
 plainte_variant: "logement"

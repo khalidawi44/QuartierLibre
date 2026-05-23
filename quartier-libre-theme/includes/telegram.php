@@ -211,6 +211,52 @@ function ql_telegram_is_raster_image( $url ) {
 }
 
 /**
+ * Convertit automatiquement un SVG (image à la une) en JPG partageable sur
+ * Telegram, mis en cache dans /uploads (régénéré seulement si le SVG change).
+ * Utilise Imagick si le serveur sait lire le SVG ; sinon renvoie '' (repli).
+ * Entièrement protégé : ne casse jamais, au pire renvoie ''.
+ */
+function ql_svg_to_raster_url( $svg_url ) {
+    if ( ! preg_match( '/\.svg(\?|#|$)/i', (string) $svg_url ) ) { return ''; }
+    if ( ! class_exists( 'Imagick' ) ) { return ''; }
+    try {
+        if ( ! Imagick::queryFormats( 'SVG' ) ) { return ''; }
+    } catch ( \Throwable $e ) { return ''; }
+
+    // URL /uploads → chemin disque
+    $uploads = wp_upload_dir();
+    $clean   = preg_replace( '/[?#].*$/', '', $svg_url );
+    if ( strpos( $clean, $uploads['baseurl'] ) !== 0 ) { return ''; }
+    $svg_path = $uploads['basedir'] . substr( $clean, strlen( $uploads['baseurl'] ) );
+    if ( ! is_readable( $svg_path ) ) { return ''; }
+
+    $jpg_path = preg_replace( '/\.svg$/i', '-tg.jpg', $svg_path );
+    $jpg_url  = preg_replace( '/\.svg$/i', '-tg.jpg', $clean );
+
+    // Cache valide si le JPG est plus récent que le SVG source
+    if ( file_exists( $jpg_path ) && filemtime( $jpg_path ) >= filemtime( $svg_path ) ) {
+        return $jpg_url;
+    }
+
+    try {
+        $im = new Imagick();
+        $im->setBackgroundColor( new ImagickPixel( '#111111' ) );
+        $im->readImage( $svg_path );
+        $im->setImageFormat( 'jpeg' );
+        $im->setImageCompressionQuality( 86 );
+        if ( $im->getImageWidth() > 1280 ) {
+            $im->resizeImage( 1280, 0, Imagick::FILTER_LANCZOS, 1 );
+        }
+        $im->writeImage( $jpg_path );
+        $im->clear();
+        $im->destroy();
+    } catch ( \Throwable $e ) {
+        return '';
+    }
+    return file_exists( $jpg_path ) ? $jpg_url : '';
+}
+
+/**
  * Meilleure image RASTER de l'article pour Telegram (qui ne gère pas le SVG).
  * Ordre : image à la une (si raster) → 1re image du contenu → 1re pièce
  * jointe image → '' (aucune → envoi en texte).
@@ -219,6 +265,11 @@ function ql_telegram_article_image_url( $post ) {
     // 1. Image à la une (grande taille pour la qualité)
     $thumb = get_the_post_thumbnail_url( $post, 'large' );
     if ( ql_telegram_is_raster_image( $thumb ) ) { return $thumb; }
+    // 1bis. Vignette SVG → conversion auto en JPG (Telegram ne gère pas le SVG)
+    if ( $thumb ) {
+        $raster = ql_svg_to_raster_url( $thumb );
+        if ( $raster !== '' ) { return $raster; }
+    }
 
     // 2. Première image raster dans le contenu
     if ( preg_match_all( '/<img[^>]+src=["\']([^"\']+)["\']/i', (string) $post->post_content, $m ) ) {
