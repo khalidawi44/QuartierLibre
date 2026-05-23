@@ -37,6 +37,8 @@ En 2018, Nantes a montré un visage que la communication municipale préfère ou
 
 Le **18 juillet 2018**, le square Daviais est évacué sur décision de justice, à la demande de la préfecture, au motif de l'« insalubrité ». *Médecins du Monde* dénonce alors une évacuation **sans solution de relogement** digne de ce nom. Les personnes délogées ne disparaissent pas : elles cherchent, encore, un abri.
 
+![Square Daviais, Nantes : des centaines d'exilé·es y ont vécu faute d'hébergement (2018). Photo Quartier Libre](https://quartierlibre.org/wp-content/uploads/2026/05/autre_voyage_a_nantes_square_daviais_retour.png)
+
 ## Le lycée Leloup-Bouhier : la Ville passe à l'offensive
 
 Quelques semaines plus tard, **200 à 300 exilé·es** s'installent dans l'**ancien lycée Leloup-Bouhier**, un bâtiment vide. Problème : ces murs appartiennent à la **Ville de Nantes**. Et c'est la municipalité elle-même qui va réclamer leur départ.
@@ -47,17 +49,23 @@ Le récit en est livré, sans détour, par le **directeur départemental de la s
 
 Tout est dit. Ce n'est pas l'État seul, ni la seule préfecture : c'est la **Ville de Nantes**, propriétaire, qui a saisi le juge en référé pour faire vider les lieux — officiellement au nom de travaux de désamiantage. Une heure d'intervention policière, et le bâtiment est « restitué » à la collectivité. Les exilé·es, eux, repartent à la rue.
 
+![L'ancien lycée Leloup-Bouhier, occupé par des exilé·es puis évacué à la demande de la Ville de Nantes, propriétaire. Photo Quartier Libre](https://quartierlibre.org/wp-content/uploads/2026/05/lycee-Leloup-Bouhier_exile.png)
+
 ## Daviais se reforme, la collectivité temporise
 
 L'expulsion ne règle rien : début septembre, le **square Daviais se reconstitue**, jusqu'à **400 puis 500 personnes**. La Ville de Nantes et Nantes Métropole déposent à leur tour une demande d'évacuation devant le **tribunal administratif**. En face, **quatre associations** saisissent la justice pour enjoindre à l'État et au maire de trouver des **solutions sanitaires et d'hébergement**.
 
 D'un côté, des recours pour expulser. De l'autre, des recours pour exiger un toit. Voilà, en miniature, toute la politique d'accueil de la métropole : on déplace, on saisit le juge, on attend que ça « se résorbe » — sauf que des êtres humains dorment dehors pendant ce temps.
 
+![Square Daviais : élus, préfecture et forces de l'ordre face aux exilé·es (Nantes, 2018). Photo Quartier Libre](https://quartierlibre.org/wp-content/uploads/2026/05/mairie_tan_prefet_daviais.png)
+
 ## Le refuge du diocèse, déjà précaire
 
 À l'automne, des « oubliés » du square Daviais et des primo-arrivants trouvent refuge dans le **gymnase Jeanne-Bernard**, à **Saint-Herblain** — un local inutilisé appartenant au **diocèse de Nantes**. D'une soixantaine de personnes en octobre, l'occupation grimpe à **environ 200**, dont des femmes et des enfants, originaires du Soudan, d'Érythrée, de Somalie, d'Éthiopie, de Guinée et du Tchad.
 
 Les conditions y sont indignes : **ni eau chaude ni chauffage**, des douches froides collectives, deux toilettes à l'intérieur, un **toit qui fuit**, et bientôt des cas de **gale et de tuberculose**. Ce sont les collectifs — *Soutien Migrants Nantes*, *L'Autre Cantine* — qui assurent repas, soins et quotidien.
+
+![Le gymnase Jeanne-Bernard, à Saint-Herblain, où environ 200 exilé·es ont trouvé refuge dans des conditions indignes. Photo Quartier Libre](https://quartierlibre.org/wp-content/uploads/2026/05/gymnase_jeanne_bernard_st_herblain_exile.png)
 
 > « On ne leur propose pas de mise à l'abri. La seule solution apportée par les autorités est le retour à la rue. »
 > — François Prochasson, collectif Soutien Migrants Nantes
