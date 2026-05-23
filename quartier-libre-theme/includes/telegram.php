@@ -172,6 +172,18 @@ function ql_telegram_webhook_handler( WP_REST_Request $req ) {
         return new WP_REST_Response( array( 'ok' => true ), 200 );
     }
 
+    // Ignore les ARTICLES recopiés automatiquement depuis le canal vers le
+    // groupe de discussion lié (sinon chaque article publié serait enregistré
+    // comme une « plainte »). On exclut : recopie auto du canal, message posté
+    // au nom d'un canal, message transféré depuis un canal, et le compte
+    // technique Telegram (777000).
+    if ( ! empty( $msg['is_automatic_forward'] )
+      || ! empty( $msg['sender_chat'] )
+      || ! empty( $msg['forward_from_chat'] )
+      || ( isset( $msg['from']['id'] ) && (int) $msg['from']['id'] === 777000 ) ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
     // Uniquement le groupe « plaintes » configuré
     $group   = trim( (string) get_option( 'ql_telegram_admin_chat_id', '' ) );
     $chat_id = isset( $msg['chat']['id'] ) ? (string) $msg['chat']['id'] : '';
