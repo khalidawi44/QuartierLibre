@@ -136,6 +136,13 @@ p  { margin: 0 0 1em; }
   position: sticky; top: 0; z-index: 50;
   background: var(--ql-paper);
   border-bottom: 1px solid var(--ql-line);
+  transition: transform .32s ease;
+  will-change: transform;
+}
+/* Masqué au scroll vers le bas, réaffiché au scroll vers le haut (voir main.js) */
+.ql-header.ql-header--hidden { transform: translateY(-100%); }
+@media (prefers-reduced-motion: reduce) {
+  .ql-header { transition: none; }
 }
 .ql-header__bar { padding: .9rem 0; }
 /* Header en pleine largeur (pas de max-width .ql-container) : le logo

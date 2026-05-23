@@ -78,6 +78,40 @@
     });
   }
 
+  // ── En-tête : cacher au scroll vers le bas, réafficher vers le haut ──
+  (function () {
+    var header = document.querySelector('.ql-header');
+    if (!header) return;
+    var navEl = document.getElementById('ql-menu-primary');
+    var lastY = window.scrollY || 0;
+    var ticking = false;
+    var DELTA = 6;         // ignore les micro-mouvements
+    var SHOW_AT_TOP = 90;  // toujours visible tout en haut
+
+    function update() {
+      ticking = false;
+      var y = window.scrollY || 0;
+
+      // Toujours visible près du haut de page
+      if (y <= SHOW_AT_TOP) { header.classList.remove('ql-header--hidden'); lastY = y; return; }
+      // Ne jamais cacher tant que le menu mobile est ouvert
+      if (navEl && navEl.classList.contains('is-open')) { header.classList.remove('ql-header--hidden'); lastY = y; return; }
+
+      if (Math.abs(y - lastY) < DELTA) return;
+
+      if (y > lastY) {
+        header.classList.add('ql-header--hidden');     // scroll bas → cacher
+      } else {
+        header.classList.remove('ql-header--hidden');  // scroll haut → montrer
+      }
+      lastY = y;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+  })();
+
   // ── Search panel ────────────────────────────────────────────
   var searchBtn   = document.querySelector('.ql-search-toggle');
   var searchPanel = document.getElementById('ql-search-panel');
