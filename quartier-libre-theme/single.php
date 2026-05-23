@@ -22,27 +22,48 @@ get_header(); ?>
 
 <article class="ql-post">
 
-    <header class="ql-post__header">
+    <header class="ql-post__header<?php echo $is_photo ? ' ql-post__header--photo' : ''; ?>">
         <div class="ql-post__header-inner">
-            <?php if ( $cat ) : ?>
-                <a class="ql-post__cat" href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( $cat->name ); ?></a>
-            <?php endif; ?>
-
-            <h1 class="ql-post__title"><?php the_title(); ?></h1>
-
-            <?php if ( $has_img ) : ?>
-                <div class="ql-post__banner<?php echo $is_photo ? ' ql-post__banner--photo' : ''; ?>">
+            <?php if ( $is_photo ) : // ── Hero style affiche militante : titre SUR la photo ── ?>
+                <figure class="ql-hero">
                     <?php the_post_thumbnail( 'ql-hero', array(
                         'loading'       => 'eager',
                         'fetchpriority' => 'high',
                         'decoding'      => 'async',
-                        'class'         => 'ql-post__banner-img',
+                        'class'         => 'ql-hero__img',
                     ) ); ?>
-                    <?php $cap = get_the_post_thumbnail_caption();
-                    if ( $cap ) : ?>
-                        <div class="ql-post__banner-caption"><?php echo esc_html( $cap ); ?></div>
-                    <?php endif; ?>
-                </div>
+                    <div class="ql-hero__overlay">
+                        <?php if ( $cat ) : ?>
+                            <a class="ql-post__cat" href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( $cat->name ); ?></a>
+                        <?php endif; ?>
+                        <h1 class="ql-post__title ql-hero__title"><?php the_title(); ?></h1>
+                    </div>
+                </figure>
+                <?php $cap = get_the_post_thumbnail_caption();
+                if ( $cap ) : ?>
+                    <div class="ql-post__banner-caption ql-post__banner-caption--photo"><?php echo esc_html( $cap ); ?></div>
+                <?php endif; ?>
+            <?php else : ?>
+                <?php if ( $cat ) : ?>
+                    <a class="ql-post__cat" href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( $cat->name ); ?></a>
+                <?php endif; ?>
+
+                <h1 class="ql-post__title"><?php the_title(); ?></h1>
+
+                <?php if ( $has_img ) : ?>
+                    <div class="ql-post__banner">
+                        <?php the_post_thumbnail( 'ql-hero', array(
+                            'loading'       => 'eager',
+                            'fetchpriority' => 'high',
+                            'decoding'      => 'async',
+                            'class'         => 'ql-post__banner-img',
+                        ) ); ?>
+                        <?php $cap = get_the_post_thumbnail_caption();
+                        if ( $cap ) : ?>
+                            <div class="ql-post__banner-caption"><?php echo esc_html( $cap ); ?></div>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
 
             <?php if ( has_excerpt() ) : ?>
