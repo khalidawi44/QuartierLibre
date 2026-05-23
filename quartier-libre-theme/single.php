@@ -15,14 +15,14 @@ get_header(); ?>
     $share_title = urlencode( get_the_title() );
     $has_img     = has_post_thumbnail();
     $thumb_url   = $has_img ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : '';
-    // Vraie photo (jpg/png…) vs visuel SVG déjà rouge/noir : on ne met le
-    // traitement duotone Contre-Attaque que sur les photos.
-    $is_photo    = $has_img && $thumb_url && ! preg_match( '/\.svg(\?|#|$)/i', $thumb_url );
+    // Affiche SVG composée (photo + texte intégrés) vs vraie photo brute.
+    $is_svg      = $has_img && $thumb_url && preg_match( '/\.svg(\?|#|$)/i', $thumb_url );
+    $is_photo    = $has_img && ! $is_svg;
 ?>
 
 <article class="ql-post">
 
-    <header class="ql-post__header<?php echo $is_photo ? ' ql-post__header--photo' : ''; ?>">
+    <header class="ql-post__header<?php echo ( $is_photo || $is_svg ) ? ' ql-post__header--photo' : ''; ?>">
         <div class="ql-post__header-inner">
             <?php if ( $is_photo ) : // ── Hero style affiche militante : titre SUR la photo ── ?>
                 <figure class="ql-hero">
@@ -38,6 +38,23 @@ get_header(); ?>
                         <?php endif; ?>
                         <h1 class="ql-hero__title"><?php the_title(); ?></h1>
                     </div>
+                </figure>
+                <?php $cap = get_the_post_thumbnail_caption();
+                if ( $cap ) : ?>
+                    <div class="ql-post__banner-caption ql-post__banner-caption--photo"><?php echo esc_html( $cap ); ?></div>
+                <?php endif; ?>
+            <?php elseif ( $is_svg ) : // ── Affiche SVG composée (photo + texte intégrés) : grand format ── ?>
+                <?php if ( $cat ) : ?>
+                    <a class="ql-post__cat" href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( $cat->name ); ?></a>
+                <?php endif; ?>
+                <h1 class="ql-post__title"><?php the_title(); ?></h1>
+                <figure class="ql-hero ql-hero--poster">
+                    <?php the_post_thumbnail( 'full', array(
+                        'loading'       => 'eager',
+                        'fetchpriority' => 'high',
+                        'decoding'      => 'async',
+                        'class'         => 'ql-hero__img',
+                    ) ); ?>
                 </figure>
                 <?php $cap = get_the_post_thumbnail_caption();
                 if ( $cap ) : ?>

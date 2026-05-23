@@ -1083,6 +1083,9 @@ p  { margin: 0 0 1em; }
   text-shadow: 0 2px 16px rgba(0,0,0,.75);
   padding: 0; background: none;
 }
+/* Affiche SVG composée (texte + photo déjà intégrés) : grand format, aucun filtre */
+.ql-hero--poster { background: transparent; line-height: 0; }
+.ql-hero--poster .ql-hero__img { filter: none !important; width: 100%; height: auto; }
 .ql-post__banner-caption--photo {
   max-width: 1000px; margin: -.6rem auto 1rem; text-align: left;
   border-left: 6px solid #e2001a; background: #f4f4f4;
