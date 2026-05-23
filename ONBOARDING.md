@@ -237,6 +237,32 @@ Décisions persistées dans post_meta `_ql_item_decisions`. Reset auto si la fic
 
 ---
 
+## 8bis. Modules d'automatisation (includes/) — ajoutés par la 2e conversation
+
+### `includes/telegram.php` — Intégration Telegram
+- **Autopost** : chaque article publié est envoyé sur le canal Telegram (titre + image + lien)
+- **Bouton** « Rejoins-nous sur Telegram » via `ql_telegram_button()`
+- **Notif rédaction** : quand un témoignage arrive (Bureau des plaintes), notification au chat admin
+- **Réglages** : WP admin → **Réglages → Telegram QL**
+- **Options WP** : `ql_telegram_bot_token`, `ql_telegram_channel_id`, `ql_telegram_channel_url`, `ql_telegram_admin_chat_id`, `ql_telegram_autopost` (1/0), `ql_telegram_notify_plaintes` (1/0)
+- **Prérequis** : créer un bot via @BotFather (token), l'ajouter admin du canal. Hook : `transition_post_status` (publish) + `ql_plainte_received`
+
+### `includes/veille.php` — Robot de veille (sans IA)
+- Surveille Google Actualités RSS (`news.google.com/rss/search`) sur des requêtes ciblées (manifs, logement/HLM, sécurité, politique locale Nantes)
+- Trouve des sujets récents → **propose de créer un brouillon** pré-rempli (titre + lien source + rappel relecture). **Pas de publication auto.**
+- Tourne **2×/jour en cron** (`ql_veille_cron`) + bouton « Lancer maintenant »
+- **Pas de clé API**
+- **Options WP** : `ql_veille_queries` (requêtes perso), `ql_veille_enabled` (1/0), `ql_veille_items` (résultats), `ql_veille_last_run`
+- Affiché dans le tableau de bord + page de réglages dédiée
+
+### `includes/dashboard.php` — Tableau de bord central
+- Menu WP **« Quartier Libre »** (tout en haut, icône mégaphone)
+- Chiffres clés (articles, brouillons, commentaires, abonnés Telegram)
+- « Chef de rédaction » : priorités calculées sur l'état réel du site
+- Liens directs vers tous les outils du thème (Sync QL, Sources QL, Veille, Telegram…)
+
+---
+
 ## 9. État actuel & tâches en cours
 
 ### Fait
