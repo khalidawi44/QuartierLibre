@@ -199,44 +199,196 @@ function ql_telegram_webhook_handler( WP_REST_Request $req ) {
 }
 
 // ════════════════════════════════════════════════════════════════
-//  1. PUBLICATION AUTO DES ARTICLES
+//  1. PUBLICATION AUTO DES ARTICLES (canal)
 // ════════════════════════════════════════════════════════════════
+
+/**
+ * Vrai si l'URL pointe vers une image que Telegram accepte comme photo.
+ * Telegram refuse les SVG : ils sont donc exclus.
+ */
+function ql_telegram_is_raster_image( $url ) {
+    return (bool) preg_match( '/\.(jpe?g|png|webp|gif)(\?|#|$)/i', (string) $url );
+}
+
+/**
+ * Meilleure image RASTER de l'article pour Telegram (qui ne gère pas le SVG).
+ * Ordre : image à la une (si raster) → 1re image du contenu → 1re pièce
+ * jointe image → '' (aucune → envoi en texte).
+ */
+function ql_telegram_article_image_url( $post ) {
+    // 1. Image à la une (grande taille pour la qualité)
+    $thumb = get_the_post_thumbnail_url( $post, 'large' );
+    if ( ql_telegram_is_raster_image( $thumb ) ) { return $thumb; }
+
+    // 2. Première image raster dans le contenu
+    if ( preg_match_all( '/<img[^>]+src=["\']([^"\']+)["\']/i', (string) $post->post_content, $m ) ) {
+        foreach ( $m[1] as $src ) {
+            if ( ql_telegram_is_raster_image( $src ) ) { return $src; }
+        }
+    }
+
+    // 3. Première pièce jointe image raster
+    foreach ( get_attached_media( 'image', $post->ID ) as $att ) {
+        $u = wp_get_attachment_url( $att->ID );
+        if ( ql_telegram_is_raster_image( $u ) ) { return $u; }
+    }
+    return '';
+}
+
+/**
+ * Construit le message Telegram d'un article : image + légende HTML + clavier.
+ * Le « bandeau » du bas = un bouton inline cliquable « Lire l'article ».
+ */
+function ql_telegram_build_article_payload( $post ) {
+    $title   = get_the_title( $post );
+    $url     = get_permalink( $post );
+    $excerpt = has_excerpt( $post )
+        ? get_the_excerpt( $post )
+        : wp_trim_words( wp_strip_all_tags( strip_shortcodes( $post->post_content ) ), 32, '…' );
+
+    $caption = '📰 <b>' . esc_html( $title ) . "</b>\n\n"
+             . esc_html( $excerpt ) . "\n\n"
+             . "➖➖➖➖➖➖➖➖➖➖\n"
+             . '🔴 <b>Quartier Libre</b> — média des quartiers populaires de Nantes';
+
+    // Bouton « bandeau » en gros, en bas du message
+    $rows = array(
+        array( array( 'text' => '📖 Lire l’article', 'url' => $url ) ),
+    );
+    $chan = ql_telegram_public_url();
+    if ( $chan !== '' ) {
+        $rows[] = array( array( 'text' => '📣 Rejoindre Quartier Libre', 'url' => $chan ) );
+    }
+
+    return array(
+        'image'   => ql_telegram_article_image_url( $post ),
+        'caption' => $caption,
+        'url'     => $url,
+        'markup'  => wp_json_encode( array( 'inline_keyboard' => $rows ) ),
+    );
+}
+
+/**
+ * Publie (ou republie) un article sur le canal Telegram.
+ * Photo + légende + bouton si une image raster existe ; sinon repli en
+ * message texte (avec aperçu du lien). Si Telegram refuse la photo, repli
+ * texte automatique. Retourne array('ok'=>bool, 'mode'=>…, 'error'=>…).
+ */
+function ql_telegram_post_article( $post, $force = false ) {
+    if ( ql_telegram_token() === '' ) {
+        return array( 'ok' => false, 'error' => 'token absent' );
+    }
+    $channel = trim( (string) get_option( 'ql_telegram_channel_id', '' ) );
+    if ( $channel === '' ) {
+        return array( 'ok' => false, 'error' => 'canal non configuré' );
+    }
+    if ( ! $force && get_post_meta( $post->ID, '_ql_telegram_sent', true ) ) {
+        return array( 'ok' => false, 'error' => 'déjà envoyé' );
+    }
+
+    $p    = ql_telegram_build_article_payload( $post );
+    $opts = array( 'reply_markup' => $p['markup'] );
+
+    if ( $p['image'] !== '' ) {
+        $res  = ql_telegram_send_photo( $channel, $p['image'], $p['caption'], $opts );
+        $mode = 'photo + bouton';
+        // Repli : Telegram a refusé l'image → on envoie en texte avec le lien
+        if ( ! ( is_array( $res ) && ! empty( $res['ok'] ) ) ) {
+            $res  = ql_telegram_send_message( $channel, $p['caption'] . "\n\n" . $p['url'], $opts );
+            $mode = 'texte (image refusée)';
+        }
+    } else {
+        $res  = ql_telegram_send_message( $channel, $p['caption'] . "\n\n" . $p['url'], $opts );
+        $mode = 'texte (pas d’image raster)';
+    }
+
+    if ( is_array( $res ) && ! empty( $res['ok'] ) ) {
+        update_post_meta( $post->ID, '_ql_telegram_sent', time() );
+        return array( 'ok' => true, 'mode' => $mode );
+    }
+    $desc = is_array( $res ) && ! empty( $res['description'] ) ? $res['description'] : 'erreur inconnue (token ? bot admin du canal ?)';
+    return array( 'ok' => false, 'error' => $desc, 'mode' => $mode );
+}
 
 add_action( 'transition_post_status', function ( $new_status, $old_status, $post ) {
     // Uniquement quand un article passe RÉELLEMENT en ligne
     if ( $new_status !== 'publish' || $old_status === 'publish' ) { return; }
     if ( ! $post || $post->post_type !== 'post' ) { return; }
-
     if ( get_option( 'ql_telegram_autopost', '1' ) !== '1' ) { return; }
-    if ( ql_telegram_token() === '' ) { return; }
-
-    $channel = trim( (string) get_option( 'ql_telegram_channel_id', '' ) );
-    if ( $channel === '' ) { return; }
-
-    // Jamais deux fois le même article (filet anti-doublon)
-    if ( get_post_meta( $post->ID, '_ql_telegram_sent', true ) ) { return; }
-
-    $title   = get_the_title( $post );
-    $url     = get_permalink( $post );
-    $excerpt = has_excerpt( $post )
-        ? get_the_excerpt( $post )
-        : wp_trim_words( wp_strip_all_tags( strip_shortcodes( $post->post_content ) ), 30, '…' );
-
-    $caption = '<b>' . esc_html( $title ) . "</b>\n\n"
-             . esc_html( $excerpt ) . "\n\n"
-             . $url;
-
-    $thumb = get_the_post_thumbnail_url( $post, 'ql-card' );
-    if ( $thumb ) {
-        $res = ql_telegram_send_photo( $channel, $thumb, $caption );
-    } else {
-        $res = ql_telegram_send_message( $channel, $caption );
-    }
-
-    if ( is_array( $res ) && ! empty( $res['ok'] ) ) {
-        update_post_meta( $post->ID, '_ql_telegram_sent', time() );
-    }
+    ql_telegram_post_article( $post );
 }, 20, 3 );
+
+// ── Metabox « Partage Telegram » sur l'écran d'édition d'un article ──
+add_action( 'add_meta_boxes', function () {
+    add_meta_box( 'ql_tg_share', '📣 Partage Telegram', 'ql_telegram_metabox_render', 'post', 'side', 'default' );
+} );
+
+function ql_telegram_metabox_render( $post ) {
+    $has_token   = ql_telegram_token() !== '';
+    $has_channel = trim( (string) get_option( 'ql_telegram_channel_id', '' ) ) !== '';
+    $autopost    = get_option( 'ql_telegram_autopost', '1' ) === '1';
+    $sent        = get_post_meta( $post->ID, '_ql_telegram_sent', true );
+    $thumb       = get_the_post_thumbnail_url( $post, 'large' );
+    $is_svg      = $thumb && preg_match( '/\.svg(\?|#|$)/i', $thumb );
+    $raster      = ql_telegram_article_image_url( $post );
+
+    echo '<div style="line-height:1.7;font-size:13px;">';
+
+    if ( ! $has_token || ! $has_channel ) {
+        echo '<p style="color:#b32d2e;"><strong>⚠ Non configuré.</strong> Renseigne le token + le canal dans <a href="'
+           . esc_url( admin_url( 'options-general.php?page=ql-telegram' ) ) . '">Réglages → Telegram QL</a>.</p>';
+    } else {
+        echo '<p>✅ Bot + canal configurés.</p>';
+        echo '<p>Partage auto à la publication : <strong>' . ( $autopost ? 'activé' : 'désactivé' ) . '</strong>.</p>';
+    }
+
+    echo $sent
+        ? '<p>🟢 Déjà partagé le <strong>' . esc_html( date_i18n( 'j M Y \à H:i', (int) $sent ) ) . '</strong>.</p>'
+        : '<p>⚪ Pas encore partagé.</p>';
+
+    if ( $is_svg ) {
+        echo '<p style="color:#996800;">ℹ Image à la une = <strong>SVG</strong> (refusé par Telegram). '
+           . ( $raster ? 'Une image raster sera utilisée pour la photo.' : '<strong>Aucune image raster trouvée</strong> → envoi en texte. Mets une image à la une .jpg/.png pour une vraie photo.' )
+           . '</p>';
+    }
+
+    if ( $has_token && $has_channel ) {
+        $nonce = wp_create_nonce( 'ql_tg_share_' . $post->ID );
+        $url   = admin_url( 'admin-post.php?action=ql_tg_share&post=' . $post->ID . '&_wpnonce=' . $nonce );
+        $label = $sent ? '↻ Renvoyer sur Telegram' : '📣 Partager sur Telegram';
+        echo '<p style="margin-top:12px;"><a href="' . esc_url( $url ) . '" class="button button-primary button-large" style="width:100%;text-align:center;">' . esc_html( $label ) . '</a></p>';
+        if ( $post->post_status !== 'publish' ) {
+            echo '<p style="color:#996800;">Publie l’article d’abord (lien public valide).</p>';
+        }
+    }
+    echo '</div>';
+}
+
+add_action( 'admin_post_ql_tg_share', function () {
+    $post_id = isset( $_GET['post'] ) ? (int) $_GET['post'] : 0;
+    if ( ! $post_id || ! current_user_can( 'edit_post', $post_id ) ) { wp_die( 'Non autorisé.' ); }
+    check_admin_referer( 'ql_tg_share_' . $post_id );
+
+    $post = get_post( $post_id );
+    $res  = $post ? ql_telegram_post_article( $post, true ) : array( 'ok' => false, 'error' => 'article introuvable' );
+
+    $back = add_query_arg( array(
+        'ql_tg_shared' => $res['ok'] ? '1' : '0',
+        'ql_tg_msg'    => rawurlencode( $res['ok'] ? ( $res['mode'] ?? '' ) : ( $res['error'] ?? '' ) ),
+    ), get_edit_post_link( $post_id, 'raw' ) );
+    wp_safe_redirect( $back );
+    exit;
+} );
+
+add_action( 'admin_notices', function () {
+    if ( ! isset( $_GET['ql_tg_shared'] ) ) { return; }
+    $msg = isset( $_GET['ql_tg_msg'] ) ? sanitize_text_field( wp_unslash( $_GET['ql_tg_msg'] ) ) : '';
+    if ( $_GET['ql_tg_shared'] === '1' ) {
+        echo '<div class="notice notice-success is-dismissible"><p>📣 Article partagé sur Telegram' . ( $msg ? ' (' . esc_html( $msg ) . ')' : '' ) . '.</p></div>';
+    } else {
+        echo '<div class="notice notice-error is-dismissible"><p>Échec du partage Telegram — ' . esc_html( $msg ?: 'erreur inconnue' ) . '</p></div>';
+    }
+} );
 
 // ════════════════════════════════════════════════════════════════
 //  2. BOUTON « REJOINS-NOUS SUR TELEGRAM »
