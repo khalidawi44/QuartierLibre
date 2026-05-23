@@ -19,6 +19,7 @@ excerpt: "Le 13 mai 2026, Aïcha Bassal a été élue à la tête de Nantes Mét
 featured_image: "content/media/2026-05-23-nmh-aicha-bassal.svg"
 bq_background: "content/media/quartier-clos-toreau.jpg"
 status: "draft"
+trash: true
 date: "2026-05-23 09:00:00"
 author: "soraya-messaoudi"
 plainte_variant: "logement"
