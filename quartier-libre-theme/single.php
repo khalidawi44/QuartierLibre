@@ -15,14 +15,16 @@ get_header(); ?>
     $share_title = urlencode( get_the_title() );
     $has_img     = has_post_thumbnail();
     $thumb_url   = $has_img ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : '';
-    // Affiche SVG composée (photo + texte intégrés) vs vraie photo brute.
-    $is_svg      = $has_img && $thumb_url && preg_match( '/\.svg(\?|#|$)/i', $thumb_url );
-    $is_photo    = $has_img && ! $is_svg;
+    // Affiche composée (photo + titre déjà intégrés : .svg OU fichier "…poster"/"…affiche")
+    // vs vraie photo brute. Une affiche composée NE doit PAS recevoir le titre
+    // superposé (sinon doublon avec le texte déjà présent dans l'image).
+    $is_poster   = $has_img && $thumb_url && preg_match( '/\.svg(\?|#|$)|poster|affiche/i', $thumb_url );
+    $is_photo    = $has_img && ! $is_poster;
 ?>
 
 <article class="ql-post">
 
-    <header class="ql-post__header<?php echo ( $is_photo || $is_svg ) ? ' ql-post__header--photo' : ''; ?>">
+    <header class="ql-post__header<?php echo ( $is_photo || $is_poster ) ? ' ql-post__header--photo' : ''; ?>">
         <div class="ql-post__header-inner">
             <?php if ( $is_photo ) : // ── Hero style affiche militante : titre SUR la photo ── ?>
                 <figure class="ql-hero">
@@ -43,7 +45,7 @@ get_header(); ?>
                 if ( $cap ) : ?>
                     <div class="ql-post__banner-caption ql-post__banner-caption--photo"><?php echo esc_html( $cap ); ?></div>
                 <?php endif; ?>
-            <?php elseif ( $is_svg ) : // ── Affiche SVG composée (photo + texte intégrés) : grand format ── ?>
+            <?php elseif ( $is_poster ) : // ── Affiche composée (SVG ou PNG, texte déjà intégré) : grand format, sans titre superposé ── ?>
                 <?php if ( $cat ) : ?>
                     <a class="ql-post__cat" href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( $cat->name ); ?></a>
                 <?php endif; ?>
