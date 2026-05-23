@@ -80,6 +80,38 @@ function ql_telegram_subscriber_count( $force = false ) {
     return ( $cached !== false ) ? (int) $cached : null;
 }
 
+/**
+ * Liste les conversations récentes vues par le bot (via getUpdates), pour
+ * récupérer facilement l'ID d'un canal ou d'un groupe (ex. « Bureau des
+ * plaintes »). Le bot ne voit une conversation qu'après y avoir reçu un
+ * message (poste un message dans le groupe / fais /start, puis détecte).
+ * Retourne array de array( id, name, type ).
+ */
+function ql_telegram_recent_chats() {
+    $res = ql_telegram_api( 'getUpdates', array( 'limit' => 100 ) );
+    $chats = array();
+    if ( is_array( $res ) && ! empty( $res['ok'] ) && ! empty( $res['result'] ) ) {
+        foreach ( $res['result'] as $upd ) {
+            foreach ( array( 'message', 'edited_message', 'channel_post', 'my_chat_member' ) as $k ) {
+                if ( empty( $upd[ $k ]['chat'] ) ) { continue; }
+                $c  = $upd[ $k ]['chat'];
+                $id = isset( $c['id'] ) ? $c['id'] : null;
+                if ( $id === null ) { continue; }
+                $name = ! empty( $c['title'] )
+                    ? $c['title']
+                    : trim( ( $c['first_name'] ?? '' ) . ' ' . ( $c['last_name'] ?? '' ) );
+                if ( $name === '' ) { $name = $c['username'] ?? ( '#' . $id ); }
+                $chats[ (string) $id ] = array(
+                    'id'   => $id,
+                    'name' => $name,
+                    'type' => $c['type'] ?? '',
+                );
+            }
+        }
+    }
+    return array_values( $chats );
+}
+
 // ════════════════════════════════════════════════════════════════
 //  1. PUBLICATION AUTO DES ARTICLES
 // ════════════════════════════════════════════════════════════════
@@ -221,6 +253,12 @@ function ql_telegram_settings_render() {
         ql_telegram_show_test_result( $res, 'rédaction' );
     }
 
+    // Détection des conversations (pour récupérer l'ID d'un canal / groupe)
+    $detected = null;
+    if ( isset( $_POST['ql_tg_detect'] ) && check_admin_referer( 'ql_tg_nonce' ) ) {
+        $detected = ql_telegram_recent_chats();
+    }
+
     $token       = (string) get_option( 'ql_telegram_bot_token', '' );
     $channel_id  = (string) get_option( 'ql_telegram_channel_id', '' );
     $channel_url = (string) get_option( 'ql_telegram_channel_url', '' );
@@ -237,9 +275,32 @@ function ql_telegram_settings_render() {
                 <li>Sur Telegram, ouvrez <strong>@BotFather</strong> → <code>/newbot</code> → suivez les étapes → copiez le <strong>token</strong> (ex : <code>123456:ABC-DEF...</code>).</li>
                 <li>Ajoutez ce bot comme <strong>administrateur de votre canal</strong> (paramètres du canal → Administrateurs → Ajouter).</li>
                 <li><strong>ID du canal</strong> : pour un canal public, mettez <code>@nomducanal</code>. Pour un canal privé, utilisez l'ID numérique (commence par <code>-100…</code>).</li>
-                <li><strong>ID rédaction</strong> : créez un groupe privé avec votre bot, envoyez-y un message, puis récupérez l'ID (ou écrivez à <strong>@userinfobot</strong> pour votre ID perso).</li>
+                <li><strong>ID rédaction</strong> : créez un groupe privé avec votre bot (« Bureau des plaintes »), postez-y un message, puis cliquez <strong>« Détecter les conversations »</strong> ci-dessous pour récupérer l'ID automatiquement.</li>
             </ol>
         </div>
+
+        <?php if ( is_array( $detected ) ) : ?>
+            <div style="background:#f6f7f7;border:1px solid #ccc;border-radius:6px;padding:16px 20px;margin:16px 0;max-width:780px;">
+                <h2 style="margin-top:0;">Conversations détectées</h2>
+                <?php if ( empty( $detected ) ) : ?>
+                    <p style="margin:0;">Aucune conversation vue par le bot. <strong>Poste d'abord un message</strong> dans ton groupe « Bureau des plaintes » (ou envoie <code>/start</code> au bot), puis reclique « Détecter ».</p>
+                <?php else : ?>
+                    <p style="margin:.2em 0 .8em;">Copie l'<strong>ID</strong> voulu dans le champ correspondant ci-dessous (canal = articles, groupe privé = plaintes), puis Enregistre.</p>
+                    <table class="widefat striped" style="max-width:100%;">
+                        <thead><tr><th>Nom</th><th>Type</th><th>ID (à copier)</th></tr></thead>
+                        <tbody>
+                        <?php foreach ( $detected as $c ) : ?>
+                            <tr>
+                                <td><?php echo esc_html( $c['name'] ); ?></td>
+                                <td><?php echo esc_html( $c['type'] ); ?></td>
+                                <td><code><?php echo esc_html( (string) $c['id'] ); ?></code></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
 
         <form method="post">
             <?php wp_nonce_field( 'ql_tg_nonce' ); ?>
@@ -295,6 +356,7 @@ function ql_telegram_settings_render() {
                 <button type="submit" name="ql_tg_save" class="button button-primary">Enregistrer</button>
                 <button type="submit" name="ql_tg_test_channel" class="button" style="margin-left:8px;">Tester le canal</button>
                 <button type="submit" name="ql_tg_test_admin" class="button">Tester la rédaction</button>
+                <button type="submit" name="ql_tg_detect" class="button" style="margin-left:8px;">Détecter les conversations (IDs)</button>
             </p>
         </form>
     </div>
