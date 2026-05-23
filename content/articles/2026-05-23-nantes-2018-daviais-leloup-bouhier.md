@@ -68,7 +68,9 @@ Et même ce refuge-là finit menacé : le **diocèse lui-même** saisit la justi
 
 ## Charité chrétienne, logique immobilière
 
-La suite dit tout du système. Le site de ce gymnase de la solidarité fait aujourd'hui l'objet d'un **projet immobilier**, au point que les riverain·es sont « aux aguets », rapporte *Ouest-France*. Le lieu qui avait, un hiver, abrité les plus démuni·es est rattrapé par la **logique du foncier** : on saisit le juge, on récupère les murs, on valorise le terrain. Même la charité chrétienne n'a pas fait le poids face aux assurances et à la promotion immobilière.
+La suite dit tout du système. Le gymnase Jeanne-Bernard, qui a abrité plusieurs centaines d'exilé·es de l'**automne 2018 au début 2020**, a été **démoli dès janvier 2021**. Sur cette parcelle de **12 700 m²**, propriété de la **Fondation de la Providence** (institution catholique), le promoteur **Bâti Nantes** monte un **programme de 89 logements** — une vingtaine de maisons et 69 appartements répartis en 14 bâtiments — pour un coût de **10,5 millions d'euros** (*Ouest-France*, septembre 2021).
+
+Le détail est éloquent : **76 % des logements en accession privée**, et **24 % seulement en logement social** (soit 22 logements, confiés au bailleur Habitat 44). Le terrain qui avait accueilli les plus pauvres devient, aux trois quarts, du **logement de marché**. La charité chrétienne vend, le promoteur achète, et la solidarité d'un hiver se mue en opération immobilière. Sur place, l'association **Saint-Benoît Labre** héberge encore des jeunes mineurs étrangers — « tant que les travaux ne sont pas lancés », glisse le promoteur. Voilà comment, du square Daviais à Saint-Herblain, une métropole « accueillante » règle, au fond, sa question des pauvres : par l'expulsion, puis par le béton.
 
 ## Témoignage — « J'y étais »
 
