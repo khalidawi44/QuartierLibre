@@ -113,6 +113,92 @@ function ql_telegram_recent_chats() {
 }
 
 // ════════════════════════════════════════════════════════════════
+//  PONT TELEGRAM → SITE (webhook) : enregistre les messages du
+//  groupe « Bureau des plaintes » comme plaintes côté admin.
+// ════════════════════════════════════════════════════════════════
+
+function ql_telegram_webhook_secret() {
+    $s = (string) get_option( 'ql_telegram_webhook_secret', '' );
+    if ( $s === '' ) {
+        $s = wp_generate_password( 32, false );
+        update_option( 'ql_telegram_webhook_secret', $s, false );
+    }
+    return $s;
+}
+
+function ql_telegram_webhook_url() {
+    return rest_url( 'quartierlibre/v1/telegram-webhook' );
+}
+
+function ql_telegram_set_webhook() {
+    return ql_telegram_api( 'setWebhook', array(
+        'url'             => ql_telegram_webhook_url(),
+        'secret_token'    => ql_telegram_webhook_secret(),
+        'allowed_updates' => wp_json_encode( array( 'message', 'edited_message' ) ),
+    ) );
+}
+
+function ql_telegram_delete_webhook() {
+    return ql_telegram_api( 'deleteWebhook', array() );
+}
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'quartierlibre/v1', '/telegram-webhook', array(
+        'methods'             => 'POST',
+        'permission_callback' => '__return_true',
+        'callback'            => 'ql_telegram_webhook_handler',
+    ) );
+} );
+
+function ql_telegram_webhook_handler( WP_REST_Request $req ) {
+    // Vérifie le jeton secret envoyé par Telegram
+    $secret = (string) $req->get_header( 'x-telegram-bot-api-secret-token' );
+    if ( ! hash_equals( ql_telegram_webhook_secret(), $secret ) ) {
+        return new WP_REST_Response( array( 'ok' => false ), 403 );
+    }
+
+    if ( get_option( 'ql_telegram_log_group', '0' ) !== '1' ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
+    $upd = $req->get_json_params();
+    $msg = $upd['message'] ?? $upd['edited_message'] ?? null;
+    if ( ! is_array( $msg ) ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
+    // Ignore les messages du bot lui-même (évite la boucle avec nos notifs)
+    if ( ! empty( $msg['from']['is_bot'] ) ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
+    // Uniquement le groupe « plaintes » configuré
+    $group   = trim( (string) get_option( 'ql_telegram_admin_chat_id', '' ) );
+    $chat_id = isset( $msg['chat']['id'] ) ? (string) $msg['chat']['id'] : '';
+    if ( $group === '' || $chat_id === '' || $chat_id !== $group ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
+    $text = trim( (string) ( $msg['text'] ?? $msg['caption'] ?? '' ) );
+    if ( $text === '' ) {
+        return new WP_REST_Response( array( 'ok' => true ), 200 );
+    }
+
+    $from = trim( ( $msg['from']['first_name'] ?? '' ) . ' ' . ( $msg['from']['last_name'] ?? '' ) );
+    if ( $from === '' ) { $from = $msg['from']['username'] ?? 'Telegram'; }
+
+    if ( function_exists( 'ql_plainte_store_entry' ) ) {
+        ql_plainte_store_entry( array(
+            'source'  => 'telegram',
+            'message' => $text,
+            'tg_from' => $from,
+            'tg_chat' => $chat_id,
+        ) );
+    }
+    return new WP_REST_Response( array( 'ok' => true ), 200 );
+}
+
+// ════════════════════════════════════════════════════════════════
 //  1. PUBLICATION AUTO DES ARTICLES
 // ════════════════════════════════════════════════════════════════
 
@@ -239,6 +325,26 @@ function ql_telegram_settings_render() {
         echo '<div class="notice notice-success"><p>Réglages Telegram enregistrés.</p></div>';
     }
 
+    // Pont Telegram → site : ACTIVER (pose le webhook)
+    if ( isset( $_POST['ql_tg_bridge_on'] ) && check_admin_referer( 'ql_tg_nonce' ) ) {
+        update_option( 'ql_telegram_log_group', '1', false );
+        $res = ql_telegram_set_webhook();
+        if ( is_array( $res ) && ! empty( $res['ok'] ) ) {
+            echo '<div class="notice notice-success"><p>Pont activé : les messages du groupe « plaintes » seront enregistrés sur le site. (La détection des conversations est désactivée tant que le pont est actif.)</p></div>';
+        } else {
+            update_option( 'ql_telegram_log_group', '0', false );
+            $d = is_array( $res ) && ! empty( $res['description'] ) ? $res['description'] : 'erreur inconnue (token ? site en HTTPS ?)';
+            echo '<div class="notice notice-error"><p>Échec de l\'activation du pont — ' . esc_html( $d ) . '</p></div>';
+        }
+    }
+
+    // Pont Telegram → site : DÉSACTIVER (retire le webhook)
+    if ( isset( $_POST['ql_tg_bridge_off'] ) && check_admin_referer( 'ql_tg_nonce' ) ) {
+        update_option( 'ql_telegram_log_group', '0', false );
+        ql_telegram_delete_webhook();
+        echo '<div class="notice notice-info"><p>Pont désactivé (webhook retiré). La détection des conversations refonctionne.</p></div>';
+    }
+
     // Test : envoyer un message au canal
     if ( isset( $_POST['ql_tg_test_channel'] ) && check_admin_referer( 'ql_tg_nonce' ) ) {
         $chan = trim( (string) get_option( 'ql_telegram_channel_id', '' ) );
@@ -265,6 +371,7 @@ function ql_telegram_settings_render() {
     $admin_chat  = (string) get_option( 'ql_telegram_admin_chat_id', '' );
     $autopost    = get_option( 'ql_telegram_autopost', '1' ) === '1';
     $notify      = get_option( 'ql_telegram_notify_plaintes', '1' ) === '1';
+    $bridge_on   = get_option( 'ql_telegram_log_group', '0' ) === '1';
     ?>
     <div class="wrap">
         <h1>Telegram — Quartier Libre</h1>
@@ -358,6 +465,31 @@ function ql_telegram_settings_render() {
                 <button type="submit" name="ql_tg_test_admin" class="button">Tester la rédaction</button>
                 <button type="submit" name="ql_tg_detect" class="button" style="margin-left:8px;">Détecter les conversations (IDs)</button>
             </p>
+
+            <hr style="margin:24px 0;max-width:780px;">
+
+            <h2>Pont Telegram → site (plaintes)</h2>
+            <div style="background:#f6f7f7;border:1px solid #ccc;border-radius:6px;padding:16px 20px;max-width:780px;">
+                <p style="margin-top:0;">
+                    Quand le pont est <strong>activé</strong>, les messages écrits dans le groupe
+                    « <strong>ID rédaction</strong> » ci-dessus sont enregistrés dans
+                    <a href="<?php echo esc_url( admin_url( 'edit.php?post_type=ql_plainte' ) ); ?>">Quartier Libre → Bureau des plaintes</a>.
+                    Renseigne et enregistre d'abord l'ID rédaction (le groupe), puis active le pont.
+                </p>
+                <p style="margin:0;">
+                    État : <strong><?php echo $bridge_on ? '🟢 actif' : '⚪ inactif'; ?></strong>
+                    <?php if ( $bridge_on ) : ?>
+                        — <em>la détection des conversations est désactivée tant que le pont tourne.</em>
+                    <?php endif; ?>
+                </p>
+                <p style="margin:.8em 0 0;">
+                    <?php if ( $bridge_on ) : ?>
+                        <button type="submit" name="ql_tg_bridge_off" class="button">Désactiver le pont</button>
+                    <?php else : ?>
+                        <button type="submit" name="ql_tg_bridge_on" class="button button-primary">Activer le pont</button>
+                    <?php endif; ?>
+                </p>
+            </div>
         </form>
     </div>
     <?php

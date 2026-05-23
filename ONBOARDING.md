@@ -74,7 +74,10 @@ QuartierLibre/
 │   │   ├── plainte-variants.php    ← variantes Bureau des plaintes par contexte
 │   │   ├── telegram.php            ← Telegram : publication auto des articles sur
 │   │   │                             le canal + notif rédaction (plaintes) + page
-│   │   │                             "Réglages → Telegram QL" + helper bouton
+│   │   │                             "Réglages → Telegram QL" + helper bouton +
+│   │   │                             webhook "pont" groupe Telegram → plaintes
+│   │   ├── plaintes.php            ← Registre des plaintes (CPT ql_plainte) :
+│   │   │                             formulaire du site + messages groupe Telegram
 │   │   ├── dashboard.php           ← Tableau de bord central "Quartier Libre"
 │   │   │                             (chiffres, priorités, abonnés Telegram, outils)
 │   │   └── veille.php              ← Robot de veille Google Actualités → brouillons
@@ -240,6 +243,8 @@ Décisions persistées dans post_meta `_ql_item_decisions`. Reset auto si la fic
 | Profil utilisateur | page-mon-profil.php | upload photo custom, change infos/mdp. wp-admin BLOQUÉ pour non-éditeurs (redirect /mon-profil/) |
 | Connexion | page-connexion.php | email/mdp + boutons Google/Facebook/Apple (compatibles plugin Nextend Social Login à installer) |
 | Bureau des plaintes | plainte-popup.php + plainte-variants.php | modal flottante, variantes par sujet (immigration/police/logement/etc.) |
+| **Registre des plaintes** | includes/plaintes.php | CPT privé `ql_plainte` (menu *Quartier Libre → Bureau des plaintes*). Stocke les plaintes du formulaire site ET les messages du groupe Telegram. Colonnes : source (Site/Telegram), quartier, contact |
+| **Pont Telegram→site** | includes/telegram.php | Webhook REST `quartierlibre/v1/telegram-webhook` (jeton secret). Active via *Réglages → Telegram QL → Activer le pont* : les messages du groupe « ID rédaction » deviennent des plaintes. ⚠️ Tant que le webhook est actif, `getUpdates` (bouton « Détecter les conversations ») est désactivé par Telegram |
 | Bouton retour haut | main.js | bas-gauche, après 400px scroll |
 | **Telegram** | includes/telegram.php | Page *Réglages → Telegram QL* (token bot + ID canal + lien public + ID rédaction). Publie auto chaque **nouvel** article sur le canal (`transition_post_status`, anti-doublon via meta `_ql_telegram_sent`). Notifie la rédaction des plaintes. Prérequis : bot @BotFather **admin du canal** |
 | **Tableau de bord** | includes/dashboard.php | Menu « Quartier Libre » : chiffres clés (articles/brouillons/commentaires/**abonnés Telegram**), priorités « chef de rédaction », liens outils |

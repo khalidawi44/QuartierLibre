@@ -77,6 +77,12 @@ if ( file_exists( $ql_telegram_file ) ) {
     require_once $ql_telegram_file;
 }
 
+// Registre des plaintes (formulaire site + groupe Telegram)
+$ql_plaintes_file = QL_THEME_DIR . '/includes/plaintes.php';
+if ( file_exists( $ql_plaintes_file ) ) {
+    require_once $ql_plaintes_file;
+}
+
 // Tableau de bord central (admin)
 $ql_dashboard_file = QL_THEME_DIR . '/includes/dashboard.php';
 if ( file_exists( $ql_dashboard_file ) ) {
