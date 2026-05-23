@@ -60,6 +60,26 @@ function ql_telegram_send_photo( $chat_id, $photo_url, $caption, $opts = array()
     return ql_telegram_api( 'sendPhoto', $params );
 }
 
+/**
+ * Nombre d'abonnés du canal (cache 1 h). Renvoie un int, ou null si
+ * indisponible (token/canal non configurés ou bot non admin).
+ */
+function ql_telegram_subscriber_count( $force = false ) {
+    $channel = trim( (string) get_option( 'ql_telegram_channel_id', '' ) );
+    if ( $channel === '' || ql_telegram_token() === '' ) { return null; }
+
+    $cached = get_transient( 'ql_tg_sub_count' );
+    if ( ! $force && $cached !== false ) { return (int) $cached; }
+
+    $res = ql_telegram_api( 'getChatMemberCount', array( 'chat_id' => $channel ) );
+    if ( is_array( $res ) && ! empty( $res['ok'] ) && isset( $res['result'] ) ) {
+        $n = (int) $res['result'];
+        set_transient( 'ql_tg_sub_count', $n, HOUR_IN_SECONDS );
+        return $n;
+    }
+    return ( $cached !== false ) ? (int) $cached : null;
+}
+
 // ════════════════════════════════════════════════════════════════
 //  1. PUBLICATION AUTO DES ARTICLES
 // ════════════════════════════════════════════════════════════════

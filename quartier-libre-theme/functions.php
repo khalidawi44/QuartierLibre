@@ -77,6 +77,12 @@ if ( file_exists( $ql_telegram_file ) ) {
     require_once $ql_telegram_file;
 }
 
+// Tableau de bord central (admin)
+$ql_dashboard_file = QL_THEME_DIR . '/includes/dashboard.php';
+if ( file_exists( $ql_dashboard_file ) ) {
+    require_once $ql_dashboard_file;
+}
+
 // ── 1. Enqueue styles & scripts ─────────────────────────────────
 add_action( 'wp_enqueue_scripts', function () {
 
