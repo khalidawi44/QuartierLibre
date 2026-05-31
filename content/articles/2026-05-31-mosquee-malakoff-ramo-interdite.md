@@ -18,7 +18,7 @@ tags:
   - malakoff
   - islamophobie-etat
 excerpt: "Le 22 mai 2026, à 24 heures de l'ouverture, le préfet de Loire-Atlantique interdit la 15ᵉ Rencontre annuelle des Musulmans de l'Ouest, prévue à la mosquée Assalam de Malakoff. Le tribunal administratif confirme en quelques heures. 2 000 personnes étaient attendues."
-featured_image: "content/media/quartier-malakoff.jpg"
+featured_image: "content/media/2026-05-31-malakoff-ramo-affiche.png"
 status: "draft"
 date: "2026-05-31 09:00:00"
 plainte_variant: "default"

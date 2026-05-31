@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="À Malakoff, la 15ᵉ Rencontre annuelle des musulmans de l'Ouest interdite par l'État à 24 heures de l'ouverture. Mosquée Assalam, 22-23 mai 2026. 2000 personnes attendues, tribunal administratif en 12 heures.">
+  <title>Mosquée Assalam Malakoff — RAMO interdite — Quartier Libre</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#121212"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="0" y="0" width="22" height="900" fill="#e2001a"/>
+
+  <!-- marque -->
+  <rect x="70" y="64" width="356" height="50" fill="#e2001a"/>
+  <text x="90" y="100" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900" letter-spacing="3" fill="#ffffff">QUARTIER LIBRE</text>
+  <text x="448" y="100" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="4" fill="#8a8a8a">MALAKOFF · NANTES</text>
+
+  <!-- titre -->
+  <text x="66" y="232" font-family="Arial Black, Arial, sans-serif" font-size="100" font-weight="900" letter-spacing="-2" fill="#ffffff">MOSQUÉE ASSALAM</text>
+  <text x="70" y="298" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="800" letter-spacing="1" fill="#ffffff">LA 15ᵉ RAMO INTERDITE PAR L'ÉTAT</text>
+
+  <!-- bandeau rouge : le punch -->
+  <rect x="70" y="352" width="1460" height="150" fill="#e2001a"/>
+  <text x="96" y="416" font-family="Arial Black, Arial, sans-serif" font-size="46" font-weight="900" letter-spacing="-1" fill="#ffffff">À 24 HEURES DE L'OUVERTURE,</text>
+  <text x="96" y="472" font-family="Arial Black, Arial, sans-serif" font-size="46" font-weight="900" letter-spacing="-1" fill="#ffffff">L'ÉTAT ANNULE LE RASSEMBLEMENT</text>
+
+  <!-- question -->
+  <text x="70" y="592" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" fill="#ffffff">15 ans d'existence. <tspan fill="#e2001a">Un arrêté.</tspan> Plus de rassemblement.</text>
+
+  <!-- séparateur -->
+  <rect x="70" y="700" width="1460" height="4" fill="#e2001a"/>
+
+  <!-- chiffres / faits -->
+  <text x="70" y="762" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" fill="#ffffff">2 000 <tspan font-weight="400" fill="#b8b8b8" font-size="32">personnes attendues</tspan>　·　15ᵉ <tspan font-weight="400" fill="#b8b8b8" font-size="32">édition · TA Nantes en 12 h</tspan></text>
+  <text x="70" y="812" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#8a8a8a">Mosquée Assalam, bd de Seattle — Malakoff, 22-23 mai 2026</text>
+</svg>
