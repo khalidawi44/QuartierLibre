@@ -322,7 +322,7 @@ et la zone reste vide. Suspect n°1 : **NitroPack** (delay/defer JS, optimisatio
   auto = *Quartier Libre → Tableau de bord* (robot de veille), publication auto = telegram.php.
 
 ### Lien Telegram du widget « Nous suivre »
-L'ancien canal `t.me/nantesrevoltee` (Nantes Révoltée) a été remplacé par le **canal QL**.
+L'ancien canal `t.me/nantesrevoltee` (Nantes Révoltée) a été remplacé par le **canal QL** : **<https://t.me/quartierlibre44>** (à régler dans *Réglages → Telegram QL → Lien public du canal*).
 Le widget suit désormais automatiquement le canal réglé dans *Réglages → Telegram QL*
 (`ql_telegram_public_url()` : « Lien public du canal » sinon dérivé du `@nom`). Plus aucune
 URL codée en dur. Pour un canal **privé** (ID numérique `-100…`), remplir le champ
