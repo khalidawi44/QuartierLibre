@@ -321,6 +321,21 @@ et la zone reste vide. Suspect n°1 : **NitroPack** (delay/defer JS, optimisatio
 - Sans rapport avec Telegram : régler le canal = *Réglages → Telegram QL* (OK), articles
   auto = *Quartier Libre → Tableau de bord* (robot de veille), publication auto = telegram.php.
 
+### Charte graphique affiches QL (style Contre-Attaque)
+Référence visuelle validée par Khalid = **Contre-Attaque** (contre-attaque.net + posts Facebook).
+Règles à appliquer pour CHAQUE affiche d'article :
+
+1. **Photo en fond plein cadre 1600×900** (16:9). Pas de bordure rouge, pas de badge encadré QL.
+2. **Photo bien visible** : voile sombre **léger** (gradient 0.20→0.55 max, jamais ≥0.85). Le lecteur doit voir l'image, le texte reste lisible grâce à la taille des polices + ombre éventuelle, PAS en noyant la photo sous du noir.
+3. **Tout le texte centré** (`text-anchor="middle"`, x=800). Pas d'alignement à gauche isolé.
+4. **Surtitre lieu** en **Lobster italique jaune** (`#f5c518`), taille ~86, **juste au-dessus** du titre principal (≤60px d'écart, pas en haut isolé). Ex : « À Nantes », « À Malakoff », « En Loire-Atlantique ».
+5. **Titre principal** en **Anton MAJUSCULES blanc gras**, taille 78-110 selon la longueur. Mots-clés / chiffres-choc surlignés : **fond jaune `#f5c518` + texte noir `#0a0a0a`**.
+6. **Sous-info** en Anton blanc plus petit (32-40), centré, sous le titre (la « signature politique » de l'article, ex : « ROLLAND-DARMANIN ONT SIGNÉ EN OCT. 2022 »).
+7. **Pied** en `monospace` 18, gris `#aaa`, centré (acteurs / contexte technique).
+8. **Pas de logo QL visible** dans l'image (la signature est dans la légende du post sur les réseaux).
+
+Le fichier doit être nommé avec **`affiche`** dans le nom (ex : `2026-06-28-cra-nantes-affiche.png`) pour que `single.php` le détecte comme affiche composée et ne superpose pas le titre WP par-dessus.
+
 ### Polices QL pour les affiches (Anton, Lobster, PinkBlue)
 Charte affiches QL = **Anton** (titre condensé bold), **Lobster** (surtitre italique cursive), **PinkBlue** (brush — provisoirement Permanent Marker en attendant le vrai .ttf). Les TTF Anton et Lobster sont versionnés dans `content/fonts/`. PinkBlue se reconstruit depuis Permanent Marker (Apache) en renommant la famille via fontTools.
 
