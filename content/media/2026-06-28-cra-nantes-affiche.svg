@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="CRA Nantes-Carquefou : 140 places d'enfermement pour personnes étrangères. 40 millions d'euros. Ouverture prévue 2027. Champ-de-Manœuvre, signé par Rolland et Darmanin en 2022.">
+  <title>CRA Champ-de-Manœuvre — Quartier Libre</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#121212"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="0" y="0" width="22" height="900" fill="#e2001a"/>
+
+  <!-- marque -->
+  <rect x="70" y="64" width="356" height="50" fill="#e2001a"/>
+  <text x="90" y="100" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900" letter-spacing="3" fill="#ffffff">QUARTIER LIBRE</text>
+  <text x="448" y="100" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="3" fill="#8a8a8a">NANTES · CARQUEFOU · CRA</text>
+
+  <!-- surtitre -->
+  <text x="70" y="232" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" letter-spacing="1" fill="#e8e8e8">CENTRE DE RÉTENTION ADMINISTRATIVE</text>
+
+  <!-- chiffre choc + sub -->
+  <text x="62" y="480" font-family="Arial Black, Arial, sans-serif" font-size="280" font-weight="900" fill="#e2001a">140</text>
+  <text x="510" y="468" font-family="Arial Black, Arial, sans-serif" font-size="92" font-weight="900" fill="#ffffff">PLACES</text>
+  <text x="510" y="536" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#e8e8e8">d'enfermement pour personnes étrangères</text>
+
+  <!-- bandeau rouge -->
+  <rect x="70" y="586" width="1460" height="120" fill="#e2001a"/>
+  <text x="96" y="635" font-family="Arial Black, Arial, sans-serif" font-size="40" font-weight="900" letter-spacing="-1" fill="#ffffff">40 MILLIONS €  ·  OUVERTURE 2027  ·  90 JOURS MAX</text>
+  <text x="96" y="685" font-family="Arial Black, Arial, sans-serif" font-size="40" font-weight="900" letter-spacing="-1" fill="#ffffff">ANNEXE JUDICIAIRE  ·  STAND DE TIR POLICE AUX FRONTIÈRES</text>
+
+  <!-- accusation -->
+  <text x="70" y="762" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="800" fill="#ffffff">Champ-de-Manœuvre, lisière Nantes-Carquefou. <tspan fill="#e2001a">Signé Rolland-Darmanin, oct. 2022.</tspan></text>
+
+  <!-- séparateur -->
+  <rect x="70" y="790" width="1460" height="3" fill="#e2001a"/>
+
+  <!-- stats -->
+  <text x="70" y="828" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Maîtrise d'œuvre : Léon Grosse · Consultation publique : ~700 contributions, majoritairement opposées · balayées</text>
+  <text x="70" y="862" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#f5c518">Collectif Colère Nantes (30 organisations) : recours juridiques en cours — colere-nantes.fr</text>
+</svg>
