@@ -44,6 +44,9 @@ Dernier audit : **2026-06-28**
 
 ## 👤 À valider par la rédaction
 
+- **LFI a interpellé Rolland sur le CRA dès le 1er conseil municipal du mandat 2026, Rolland a répondu de manière vide (ni oui ni non)** — info venant de Khalid (témoin direct / source rédaction QL). Cette claim est CENTRALE dans la section finale durcie de l'article. → **Action** : Khalid retrouve la date exacte du conseil municipal concerné + le compte-rendu officiel ou la prise de parole LFI (post X / communiqué groupe LFI Nantes / vidéo séance conseil). Idéalement on identifie la·le conseiller·e LFI qui a posé la question, et on cite sa formulation exacte. Sans ces précisions accessibles publiquement, on est dans la « zone témoignage rédaction » — légitime mais à étayer pour pouvoir résister à une contestation factuelle.
+
+
 - Ton dur assumé sur Rolland (« la maire qui a signé ne dit plus rien », « le silence signifie quoi ? ») : cohérent avec la séquence éditoriale ouverte (terrasses CDM, RAMO Malakoff). → **Action** : Khalid valide ou nuance.
 - Phrase « 90 jours, sans avoir commis d'autre infraction que celle d'exister sans les bons papiers » : formulation militante mais juridiquement exacte (la rétention administrative ≠ peine pénale). → **Action** : valider la formulation.
 - Caractérisation « *la maire socialiste de Nantes acte par sa signature l'installation du bras le plus dur de la politique migratoire française* » : affirmative, à confirmer comme acceptable dans la ligne QL.

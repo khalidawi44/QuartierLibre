@@ -82,13 +82,21 @@ Cette politique n'a pas baissé d'un degré entre les gouvernements Macron succe
 
 Dans cette course, **les collectivités locales ont un rôle qu'elles peuvent jouer ou refuser**. Donner un terrain. Faciliter les autorisations. Co-signer un communiqué. Se taire pendant la consultation. Acquiescer en silence quand la préfecture déclare l'intérêt général. Chacun de ces gestes compte.
 
-## À Nantes, la mairie regarde construire
+## Au conseil municipal, LFI a posé la question. La maire n'a pas répondu.
 
-Quatre ans après avoir signé avec Darmanin, **la mairie de Johanna Rolland n'a, à notre connaissance, organisé aucun débat public au conseil municipal sur le CRA**. Aucune motion. Aucune position formelle. La majorité socialiste rééélue en mars 2026 grâce à un accord technique avec La France insoumise n'a pas remis le sujet sur la table.
+Le silence n'est même pas un oubli — c'est un choix assumé. Dès le **premier conseil municipal** du nouveau mandat, **La France insoumise** — l'alliée technique qui a permis la réélection de Rolland au second tour de mars 2026 — a publiquement **exprimé son opposition au CRA** et a **demandé à la maire de s'expliquer** sur ce qu'elle comptait faire : motion ? saisine ? prise de position publique ? recours ? rien ?
 
-Pendant ce temps, l'**ouverture du CRA est prévue pour 2027**. Les marchés sont attribués. Les chantiers démarrent. Et le collectif Colère Nantes prépare ses recours, ses actions, son festival d'avril 2027.
+La réponse de Johanna Rolland : **rien**. Pas un mot d'engagement, pas une ligne de feuille de route. Une **réponse politicienne vide de fond**, qui ne confirme rien et n'infirme rien, et qui laisse l'État construire en silence. La maire n'a même pas eu, à l'égard de ses propres alliés au conseil, le minimum syndical du débat assumé.
 
-La question simple : **qu'est-ce que la maire de Nantes répond à celles et ceux qui l'ont fait gagner en mars** — les électrices et électeurs des quartiers populaires, dont beaucoup connaissent personnellement quelqu'un susceptible de finir derrière les murs du Champ-de-Manœuvre ? Pour l'instant, la réponse est le silence. À chacun et chacune de juger ce que ce silence signifie.
+C'est dire le mépris politique pour le sujet : quand **ta propre alliée d'investiture te demande publiquement de te positionner sur 140 places d'enfermement à dix kilomètres de l'hôtel de ville**, et que tu choisis le **ni oui ni non**, ce n'est plus du silence, c'est une **dérobade**.
+
+## L'État construit, la maire regarde
+
+Pendant que Rolland esquive, l'**ouverture du CRA reste prévue pour 2027**. Les marchés sont attribués. Les chantiers démarrent. Et le collectif Colère Nantes prépare ses recours, ses actions, son prochain festival.
+
+La question simple : **qu'est-ce que la maire de Nantes répond à celles et ceux qui l'ont fait gagner en mars** — les électrices et électeurs des quartiers populaires, dont beaucoup connaissent personnellement quelqu'un susceptible de finir derrière les murs du Champ-de-Manœuvre ? Pour l'instant, la réponse est le silence. Et un silence que LFI a forcée publiquement à briser — sans résultat.
+
+À chacun et chacune de juger ce que cette dérobade signifie.
 
 ---
 
