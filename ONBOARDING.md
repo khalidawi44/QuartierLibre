@@ -321,6 +321,21 @@ et la zone reste vide. Suspect n°1 : **NitroPack** (delay/defer JS, optimisatio
 - Sans rapport avec Telegram : régler le canal = *Réglages → Telegram QL* (OK), articles
   auto = *Quartier Libre → Tableau de bord* (robot de veille), publication auto = telegram.php.
 
+### Polices QL pour les affiches (Anton, Lobster, PinkBlue)
+Charte affiches QL = **Anton** (titre condensé bold), **Lobster** (surtitre italique cursive), **PinkBlue** (brush — provisoirement Permanent Marker en attendant le vrai .ttf). Les TTF Anton et Lobster sont versionnés dans `content/fonts/`. PinkBlue se reconstruit depuis Permanent Marker (Apache) en renommant la famille via fontTools.
+
+**⚠ Reset d'env = polices à réinstaller** (l'environnement de rendu est éphémère, `~/.fonts` est wipé). Procédure :
+```bash
+mkdir -p ~/.fonts
+cp content/fonts/Anton-Regular.ttf content/fonts/Lobster-Regular.ttf ~/.fonts/
+pip install --quiet fonttools
+curl -sL -o /tmp/PM.ttf "https://github.com/google/fonts/raw/main/apache/permanentmarker/PermanentMarker-Regular.ttf"
+python3 -c "from fontTools.ttLib import TTFont; f=TTFont('/tmp/PM.ttf'); n=f['name']; [setattr(r,'string','PinkBlue') for r in n.names if r.nameID in (1,4,6,16)]; [n.setName('PinkBlue',i,3,1,0x409) for i in (1,4,6)]; [n.setName('PinkBlue',i,1,0,0) for i in (1,4,6)]; f.save('/root/.fonts/PinkBlue-Regular.ttf')"
+fc-cache -f ~/.fonts
+fc-list | grep -iE "anton|lobster|pinkblue"   # doit lister les 3
+```
+Pour rendre un SVG fidèle aux polices QL avec cairosvg : utiliser **font-family="Anton" / "Lobster" / "PinkBlue"** (noms exacts, simples — pas de fallback list).
+
 ### Lien Telegram du widget « Nous suivre »
 L'ancien canal `t.me/nantesrevoltee` (Nantes Révoltée) a été remplacé par le **canal QL** : **<https://t.me/quartierlibre44>** (à régler dans *Réglages → Telegram QL → Lien public du canal*).
 Le widget suit désormais automatiquement le canal réglé dans *Réglages → Telegram QL*
