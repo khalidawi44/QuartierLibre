@@ -34,10 +34,29 @@ Dernier audit : **2026-07-13**
 - **Nantes Métropole Habitat** — site officiel du bailleur (organigramme, coordonnées, communication) → [nmh.fr](https://www.nmh.fr/).
 - **Aïcha Bassal** — élue à la présidence de Nantes Métropole Habitat le **13 mai 2026** (fait déjà audité dans l'article [`2026-05-23-nmh-aicha-bassal-logement-social`](2026-05-23-nmh-aicha-bassal-logement-social.md) et sa fiche sources associée).
 
-### Audit habitant exhaustif LFI Clos-Toreau + UQL (source primaire allié)
-- **Fait revendiqué** : LFI Nantes-Sud Clos-Toreau et l'Union des Quartiers Libres ont **déjà réalisé un audit exhaustif** du parc HLM du Clos-Toreau, porte à porte, sur la base des remontées locataires. Document existe, disponible pour discussion. **Offre de coopération** faite à Aïcha Bassal sur cette base.
-- Formulation politique reprise dans l'article : « Il n'y a pas besoin de cabinet parisien. Nous l'avons fait nous-mêmes, chez nous. Parce que nous sommes les habitants. Parce que nous nous sommes organisés entre nous. Annulons les commandes, et organisons une visite. »
-- → **Action** : Khalid fournit une copie ou un extrait de l'**audit habitant** (méthodologie, périmètre, résultats), et documente la **date d'envoi** de l'offre de coopération à NMH / Aïcha Bassal (courrier, mail, communiqué).
+### Audit habitant exhaustif LFI Clos-Toreau + UQL (source primaire allié — détail méthodo)
+- **Méthodologie** (précisée par Khalid) :
+  - **Porte à porte**, chaque locataire répondant à titre individuel dans son logement.
+  - **Questionnaire structuré** couvrant les points prédéfinis : état des joints, isolation, chauffage, plomberie, moisissures, nuisibles, sécurité incendie, coupures d'eau.
+  - Complété par une **zone d'expression libre** pour tout problème spécifique non prévu par la grille.
+- **Périmètre** : **le quartier HLM entier du Clos-Toreau**, **tous les immeubles visités**.
+- **Résultats** : **plus de 50 locataires** ayant répondu à ce jour → **cartographie globale des dysfonctionnements du quartier, immeuble par immeuble**.
+- **Offre de coopération** faite à Aïcha Bassal sur cette base : « Annulons les commandes, et organisons une visite. »
+- → **Action** : Khalid fournit à la rédaction une **copie ou un extrait de l'audit** (ne serait-ce que la grille de questionnaire + un tableau de synthèse anonymisé), et documente la **date d'envoi** de l'offre de coopération à NMH / Aïcha Bassal (courrier, mail ou communiqué public). Ces deux pièces solidifient la partie « méthodologie ».
+
+### Visite des élues LFI (Erika Cadersah et Irina Yahi) le lendemain de l'incendie
+- **Attestation directe rédaction QL (Khalid)** : les deux conseillères municipales LFI se sont déplacées **le 12 juillet 2026**, lendemain de l'incendie, au pied des immeubles du 2 au 14 rue Saint-Jean-de-Luz. Elles ont **vu la fumée**, **constaté la violence du sinistre**, et **parlé aux habitant·es du 4 rue de Saint-Jean-de-Luz** (bâtiment concerné) — sur leur palier, sans intermédiaire.
+- **Communiqué officiel à venir** : le groupe **LFI Nantes-Sud Clos-Toreau** et l'**Union des Quartiers Libres** annoncent la publication imminente d'un communiqué portant les prises de parole d'**Erika Cadersah**, d'**Irina Yahi**, de **Fabrice Doucet** et du groupe LFI Nantes-Sud Clos-Toreau, sur leurs réseaux sociaux respectifs. → **Action** : dès parution du communiqué, ajouter l'URL à la fiche sources et mettre l'article à jour avec les citations exactes.
+
+### Constat direct rédaction QL au 13 juillet 2026 (2 jours après)
+- **Attestation Khalid** (retour terrain, 13 juillet 2026, au 4 rue Saint-Jean-de-Luz) :
+  - Cage d'escalier encore **couverte de suie noire** (murs, rampes, paliers).
+  - Sol de la cage également noirci sur toute la hauteur.
+  - **Ascenseur en lambeaux cramés** — non démonté, non retiré, non bâché, tel quel à la vue de chaque personne qui rentre.
+  - **Aucun nettoyage engagé** par NMH constaté à cette date. Aucune équipe technique déployée. Aucun devis rendu public. Aucune information aux locataires sur la remise en état.
+  - Habitant·es témoignent de **logements encore enfumés**, avec **suie visible à l'intérieur** (meubles, vêtements, jouets d'enfant).
+- Section article « Deux jours après, dans la cage d'escalier : rien n'a été nettoyé » fondée sur ce constat visuel direct.
+- → **Action** : idéalement, photos du hall / cage / ascenseur au 13 juillet 2026, à archiver comme preuve datée. Sans photos, le constat tient par la description mais s'expose à une contestation de NMH.
 
 ### Élues LFI Nantes qui se sont rendues sur place
 - **Erika Cadersah** — militante antiraciste et décoloniale, **N°2 de la liste *La Nouvelle Nantes*** (LFI, tête de liste William Aucant) aux municipales de mars 2026 → [Infos Média Nantes — Municipales 2026 : LFI présente sa liste « La Nouvelle Nantes »](https://infos-media-nantes.fr/municipales-2026-nantes-lfi-nouvelle-nantes/). Désormais **conseillère municipale** de la Ville de Nantes.

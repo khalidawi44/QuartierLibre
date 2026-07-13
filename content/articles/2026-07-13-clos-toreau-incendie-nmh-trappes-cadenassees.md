@@ -113,6 +113,20 @@ Ce que révèle cet épisode dépasse le cas de la locataire testée. Il révèl
 
 Et ce n'est pas propre à un dossier. Dans ses courriers aux locataires du secteur, Monsieur Morineau — et NMH derrière lui — a pris pour habitude, quand un signalement est correctement documenté, de **nier les faits** ou de **rejeter la responsabilité sur les locataires eux-mêmes**. Les formulations sont connues : « **appelez votre assurance** ». « **Cela relève de vos réparations locatives** ». « **Ce n'est pas de notre ressort** ». Un logement social géré comme une location privée. Un bailleur **public** qui parle à ses locataires comme un propriétaire indélicat parlerait à des mauvais payeurs, tout en encaissant chaque mois un loyer que le locataire n'a même pas le choix de contester en changeant d'adresse. C'est un **mépris de classe**, écrit noir sur blanc dans des courriers d'agence, adressé à des familles dont beaucoup ont, pour tout recours, la persévérance des associations qui les accompagnent.
 
+## Deux jours après, dans la cage d'escalier : rien n'a été nettoyé
+
+Ce texte est bouclé le **13 juillet 2026**, deux jours pleins après l'incendie. La rédaction s'est rendue **au 4 rue de Saint-Jean-de-Luz** pour rendre compte de l'état des lieux à cette date. Voici ce qu'on y voit :
+
+- La **cage d'escalier** est encore **couverte de suie noire**. Les murs, les rampes, les paliers.
+- Le **sol** de la cage également, sur toute la hauteur.
+- L'**ascenseur** — le foyer du départ de feu — est **en lambeaux, cramé**. Il n'a pas été démonté, il n'a pas été retiré, il n'a pas été bâché. Il est là, tel quel, à la vue de chaque personne qui rentre chez elle.
+- Les habitant·es témoignent de **logements encore enfumés**, avec **suie visible à l'intérieur** des appartements — sur les meubles, sur les vêtements, sur les jouets des enfants.
+- **Aucun nettoyage** engagé par NMH n'a été constaté à cette date. Aucune équipe technique déployée. Aucun devis rendu public. Aucune information transmise aux locataires sur les modalités et le calendrier de la remise en état des parties communes.
+
+La question, alors, appelle à être posée sans détour : **que fait Nantes Métropole Habitat**, ces deux jours, pour l'immeuble du 4 rue de Saint-Jean-de-Luz ? Le bailleur qui **encaisse chaque mois un loyer** de chaque famille de la cage — ce qui, à l'échelle du 4 rue de Saint-Jean-de-Luz, représente plusieurs milliers d'euros — que fait-il en échange, pendant que les enfants du 5ᵉ montent et descendent dans une odeur de fumée sédimentée, pas à cause d'un fait divers, mais parce que le bailleur qu'ils paient n'a pas encore trouvé le temps d'y envoyer une équipe ?
+
+La question est ouverte. La réponse, à la date du bouclage, est le vide.
+
 ## Ce que demande le groupe LFI Nantes-Sud Clos-Toreau
 
 Dans un communiqué, le groupe presse instamment la direction de NMH de **renoncer aux audits Pouget + SETEC** et de **restituer cet argent aux locataires** sous forme de travaux directs. La formulation est claire :
@@ -123,13 +137,15 @@ Dans un communiqué, le groupe presse instamment la direction de NMH de **renonc
 
 ## Nous avons fait l'audit nous-mêmes. Voici notre offre à Madame Bassal.
 
-Au-delà du communiqué, le groupe rappelle un fait simple : le travail que NMH vient de commander à deux cabinets parisiens, **LFI Nantes-Sud Clos-Toreau et l'Union des Quartiers Libres l'ont déjà fait**. Un **audit exhaustif du parc HLM du Clos-Toreau** a été réalisé par les habitant·es et les militant·es, porte à porte, logement par logement, sur la base des remontées des locataires eux-mêmes. Ce document existe. Il est disponible pour discussion.
+Au-delà du communiqué, le groupe rappelle un fait simple : le travail que NMH vient de commander à deux cabinets parisiens, **LFI Nantes-Sud Clos-Toreau et l'Union des Quartiers Libres l'ont déjà fait**. La méthodologie est publique et reproductible : **porte à porte**, sur **l'ensemble du parc HLM du Clos-Toreau** — tous les immeubles ont été visités. Chaque locataire répondant remplit un **questionnaire structuré** (état des joints, isolation, chauffage, plomberie, moisissures, nuisibles, sécurité incendie, coupures d'eau…) complété par une **zone d'expression libre** pour tout problème spécifique non prévu par la grille. À ce jour, **plus de cinquante locataires** ont répondu. Le résultat est une **cartographie globale des dysfonctionnements du quartier, immeuble par immeuble**. Ce document existe. Il est disponible immédiatement.
 
 C'est sur cette base — et non sur celle d'un rapport de cabinet à rendre en septembre — que le groupe **propose une coopération à Aïcha Bassal**, présidente de Nantes Métropole Habitat. La formulation politique est nette :
 
 > « Il n'y a pas besoin de cabinet parisien. Nous l'avons fait nous-mêmes, chez nous. Parce que nous sommes les habitants. Parce que nous nous sommes organisés entre nous. Et nous savons ce qu'il y a à faire — les problèmes sont connus depuis des décennies. **Annulons les commandes, et organisons une visite.** »
 
-Cette proposition n'est pas portée par le seul groupe d'action de quartier. Elle est **appuyée politiquement par deux conseillères municipales La France insoumise de la Ville de Nantes**, **Erika Cadersah** — militante antiraciste et décoloniale, N°2 de la liste *La Nouvelle Nantes* aux municipales 2026 — et **Irina Yahi**, la plus jeune conseillère municipale nantaise, élue à 18 ans. Toutes deux se sont **rendues sur place**, dans les logements des immeubles concernés. Elles ont **constaté** par elles-mêmes. Elles ont **parlé aux habitant·es**. Elles les ont **rassuré·es**. Elles leur ont **demandé leur avis directement** — sans passer par un cabinet d'audit, sans intermédiaire, sur le palier. C'est cette méthode-là — l'**écoute directe** des locataires — qui doit être la **porte d'entrée** de tout diagnostic sérieux sur le parc du Clos-Toreau.
+Cette proposition n'est pas portée par le seul groupe d'action de quartier. Elle est **appuyée politiquement par deux conseillères municipales La France insoumise de la Ville de Nantes** : **Erika Cadersah** — militante antiraciste et décoloniale, N°2 de la liste *La Nouvelle Nantes* aux municipales 2026 — et **Irina Yahi**, la plus jeune conseillère municipale nantaise, élue à 18 ans. **Dès le lendemain de l'incendie**, le **12 juillet**, toutes deux se sont **rendues sur place**, au pied des immeubles du 2 au 14 rue Saint-Jean-de-Luz. Elles ont **vu la fumée**. Elles ont **constaté de leurs propres yeux la violence du sinistre**. Elles ont **parlé aux habitant·es du bâtiment concerné**, celles et ceux du 4 — sur leur palier, sans intermédiaire, sans cabinet, sans rendez-vous administratif. Question qui reste ouverte, à ce jour : **NMH — ou son bailleur Aïcha Bassal — a-t-il, à ce jour, envoyé un·e représentant·e parler avec les habitant·es du 4 rue de Saint-Jean-de-Luz** ? À la date de publication de cet article, aucune information en ce sens n'a été rendue publique.
+
+Un **communiqué officiel** du groupe d'action **LFI Nantes-Sud Clos-Toreau** et de l'**Union des Quartiers Libres** doit paraître dans les prochains jours, portant les prises de parole d'**Erika Cadersah**, d'**Irina Yahi**, de **Fabrice Doucet** (président de l'UQL) et du groupe LFI Nantes-Sud Clos-Toreau, sur leurs réseaux sociaux respectifs.
 
 Sur cette base, la revendication portée par les habitant·es, l'Union des Quartiers Libres, LFI 44 et LFI Nantes-Sud Clos-Toreau tient en six points :
 
