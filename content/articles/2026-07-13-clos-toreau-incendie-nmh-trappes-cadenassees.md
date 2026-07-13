@@ -85,6 +85,12 @@ Il faut remettre les dates dans l'ordre. Depuis **plusieurs mois**, un travail d
 
 Ce travail a fini par remonter jusqu'aux bureaux de NMH. Suffisamment loin pour que le bailleur se décide à réagir. C'est ce mouvement — la **pression exercée en porte-à-porte, dans le parc de logements sociaux de Nantes-Sud, par des militant·es et des habitant·es** — qui a produit la lettre du 7 juillet 2026. Pas un incendie, dont personne ne pouvait alors prédire la survenue quatre jours plus tard. Pas une décision technique du bailleur. **Une pression citoyenne** qui a obligé NMH à écrire.
 
+## Ce que les habitant·es savent, elles et eux, depuis des décennies
+
+Avant même de parler d'incendie, la vie quotidienne dans les immeubles du 2 au 14 rue de Saint-Jean-de-Luz raconte à qui veut l'entendre. **Des coupures d'eau incessantes**, un problème qui dure « depuis plusieurs décennies » selon les habitant·es organisé·es. **Des rats** qui remontent par les canalisations : **une locataire raconte s'être trouvée sous la douche quand un rat est sorti par le siphon**. Un autre habitant pointe du doigt un **trou dans le mur** de son logement, celui par lequel les rongeurs passent d'un appartement à l'autre. Des **joints de fenêtres** qui ne tiennent plus. Des **logements dont la rénovation intérieure** n'a pas été faite depuis longtemps. Une **isolation par l'extérieur** absente — dans un parc HLM des années 1970 où les factures énergétiques explosent chaque hiver.
+
+Ce ne sont pas des découvertes qui attendent un rapport de cabinet. Ce sont des faits **connus, nommés, documentés par les habitant·es** — et remontés à NMH depuis longtemps. La liste des travaux prioritaires, telle que la formulent les habitant·es et le groupe d'action LFI Nantes-Sud « Le Taureau », est claire : **isolation par l'extérieur, changement des joints et des fenêtres, rénovation des habitats à l'intérieur, refonte complète du réseau d'eau, obturation des passages de rongeurs**. On n'a pas besoin d'un cabinet parisien pour l'écrire — il suffit d'entrer dans un logement et d'écouter.
+
 ## La lettre du 7 juillet, quatre jours avant le feu
 
 Le **7 juillet 2026**, donc, la Direction Générale Adjointe Habitat et Patrimoine de NMH adresse aux « **Mesdames, Messieurs Les locataires** » du 2 au 14 rue Saint Jean de Luz un courrier signé par **Marc-Antoine ELIE**, responsable de la transition et maintenance du patrimoine (dossier suivi par Anne-Laure LEGEAY). L'objet est sans ambiguïté : « **Intervention du cabinet Pouget et de la société SETEC — Diagnostic des dysfonctionnements** ».
@@ -101,25 +107,47 @@ Autrement dit : **tous les logements ne seront pas visités**. NMH commande un d
 
 Quatre jours ont suffi pour que l'attente coûte.
 
+## Un audit biaisé : Pouget et SETEC ne sont pas des tiers
+
+Les cabinets choisis par NMH ne sont pas des observateurs neutres. **Pouget Consultants**, dont Nantes Métropole Habitat a arrêté le nom, est un bureau d'ingénierie qui, sur son propre site, se présente comme spécialisé dans **à la fois l'audit énergétique et l'Assistance à Maîtrise d'Ouvrage sur les projets de rénovation des bailleurs sociaux**, avec des interventions couvrant « toutes les phases » de projet — de l'audit initial aux marchés globaux de performance sur travaux. Ils décrochent régulièrement des marchés publics de rénovation chez des bailleurs sociaux comparables à NMH.
+
+Le groupe d'action **LFI Nantes-Sud « Le Taureau »** en tire une conclusion nette : **les mêmes prestataires qui diagnostiquent les dysfonctionnements peuvent ensuite candidater aux marchés de travaux qui découleront de leur propre diagnostic**. En termes simples : *celui qui écrit le devoir peut noter la copie et corriger la copie*. Ce n'est pas une entorse marginale à la déontologie de la commande publique — c'est un **conflit d'intérêts structurel**, dans un office qui gère, par son propre chiffre officiel, près de **100 millions d'euros de marchés publics par an** auprès d'environ 900 fournisseurs.
+
+À supposer même que la muraille interne des cabinets soit parfaitement étanche (elle l'est rarement dans les faits), il resterait une évidence : un diagnostic produit par un prestataire *aussi* candidat aux marchés qui en découlent tend **naturellement à recommander les travaux qu'il espère lui-même gagner**. Ce qui garantit le maintien du chiffre d'affaires du cabinet — pas nécessairement la solution la plus utile pour les locataires.
+
+C'est cette évidence qui rend, aux yeux du groupe d'action et des habitant·es, la démarche « diagnostic Pouget + SETEC » **doublement contestable** : trop tardive (le feu est passé), et **non désintéressée** (le prestataire a intérêt commercial à écrire des recommandations qu'il pourra ensuite candidater à réaliser).
+
 ## Depuis l'incendie : NMH n'a pas rouvert le dossier
 
 Ce qui devrait être un point de bascule pour un bailleur responsable — un feu, une évacuation, des habitants sous oxygène dans le hall même dont on vient d'annoncer un « diagnostic des dysfonctionnements » — ne semble pas en être un pour NMH. À la date de publication du présent article, **aucun nouveau courrier n'a été adressé aux locataires** pour prendre acte de l'incendie du 11-12 juillet. **Aucune modification du calendrier de visites** annoncée. **Aucune mesure d'urgence sur les cadenas des trappes d'évacuation**. Le rendez-vous du 22 juillet reste au programme, comme si la nuit du 2h30 n'avait pas eu lieu, comme si le feu n'était qu'un aléa parmi d'autres à consigner dans le rapport final que Pouget et SETEC rendront en septembre.
 
 Ce silence, après l'incendie, est **plus lourd encore** que l'omission du mot « incendie » dans la lettre du 7 juillet — parce que le 7 juillet, on pouvait plaider l'inconnu, l'avenir non écrit. Après le 12 juillet, on ne peut plus. **NMH connaît la conséquence directe de son inaction opérationnelle sur les cadenas, et n'a pas révisé sa réponse d'un iota.** Le processus tourne à son rythme, indifférent au fait qu'il a désormais du sang et de la suie sur les mains.
 
+## Le communiqué du Taureau : « économisez cet argent, parlez d'abord aux locataires »
+
+Face à cette double impasse — un audit tardif, un audit biaisé — le groupe d'action **LFI Nantes-Sud « Le Taureau »** presse instamment, dans un communiqué, la direction de Nantes Métropole Habitat de **renoncer à ces deux audits privés** et de **restituer cet argent aux locataires** sous forme de travaux directs. La formulation est nette :
+
+> « Comme à leur habitude, NMH ne parle pas avec les locataires qui vivent dans ces logements. Nous savons très bien ce qu'il y a à faire : isolation par l'extérieur, changement des joints, des fenêtres, rénovation des habitats à l'intérieur, refonte complète du réseau d'eau. Économisons cet argent, parlons d'abord aux habitant·es. »
+>
+> *— LFI Nantes-Sud « Le Taureau », communiqué, juillet 2026*
+
+Cette position rejoint celle de **[l'Union des Quartiers Libres](https://metropole.nantes.fr/mes-services-mon-quotidien/espace-associations-nantaises/annuaire-des-associations-nantaises/union-des-quartiers-libres)** et de **La France insoumise 44** : le diagnostic est fait. Il est fait par celles et ceux qui vivent dans le bâtiment, tous les jours, depuis des décennies. La liste des travaux prioritaires est **connue**. Il ne reste plus qu'à **décider**, et à **agir**.
+
 ## Ce que demandent les locataires
 
-La revendication portée par les habitant·es, l'Union des Quartiers Libres et les groupes d'action est simple :
+La revendication portée par les habitant·es, l'Union des Quartiers Libres, LFI 44 et LFI Nantes-Sud « Le Taureau » est claire :
 
-- **Les cadenas des dispositifs de désenfumage doivent être supprimés dans les 48 heures**, dans tous les immeubles NMH du secteur — pas seulement rue de Saint-Jean-de-Luz. Le désenfumage est une **question de vie ou de mort**, pas un enjeu de gestion patrimoniale. Ce point ne se négocie pas, il ne se diagnostique pas : il s'exécute.
-- **L'argent des cabinets Pouget et SETEC doit financer la rénovation, pas un rapport de plus.** Le coût estimé de deux prestataires diligentés sur toute la rue (parties communes + logements) est de l'ordre de **150 000 à 200 000 euros**. Cette somme, versée à la rénovation directe, changerait matériellement des logements dès cette année.
-- **Toutes les habitations doivent être visitées**, pas un échantillon. Un diagnostic partiel ne fera qu'entretenir l'idée que « ce n'est qu'un immeuble », alors que le parc HLM de Nantes-Sud dans son entier connaît des défaillances documentées par l'audit habitant.
-- **Le calendrier des visites doit être adapté à l'urgence** : après un feu, on ne fait pas la première visite quinze jours plus tard. On la fait maintenant. Et on prévoit des permanences physiques dans l'immeuble, ouvertes aux locataires, sans rendez-vous.
+- **Les cadenas des dispositifs de désenfumage doivent être supprimés dans les 48 heures**, dans tous les immeubles NMH du secteur — pas seulement rue de Saint-Jean-de-Luz. Le désenfumage est une **question de vie ou de mort**, pas un enjeu de gestion patrimoniale. Ce point ne se négocie pas, il ne se diagnostique pas : il s'**exécute**.
+- **Les marchés Pouget et SETEC doivent être annulés**, ou à défaut re-passés à des cabinets **sans lien commercial** avec NMH sur les marchés de travaux qui pourraient découler de leur propre diagnostic. La commande publique ne doit pas produire des expertises qui recommandent leurs propres devis.
+- **L'argent économisé (150 000 à 200 000 euros estimés) va directement aux travaux prioritaires identifiés par les habitant·es** : isolation par l'extérieur, joints, fenêtres, rénovation intérieure, refonte du réseau d'eau, obturation des passages de rongeurs.
+- **Le diagnostic commence par les habitant·es.** Toute démarche NMH sur l'état du bâtiment doit s'ouvrir par une **assemblée de locataires** convoquée par le bailleur, sur place, avec compte rendu écrit. Les habitant·es sont les experts premiers de leur logement — pas un bruit de fond à recouvrir par un rapport de cabinet.
+- **Toutes les habitations doivent être visitées**, pas un échantillon. Le parc HLM de Nantes-Sud dans son entier connaît des défaillances documentées par l'audit habitant.
 - **Un plan de suivi médical et de relogement d'urgence** doit être institué de plein droit après tout sinistre, avec réponse écrite du bailleur dans les 48 heures. Ce n'est pas une faveur, c'est un dû.
-- **La parole des habitant·es doit être reconnue** comme l'expertise première sur l'état du parc — pas comme un bruit de fond à recouvrir par des rapports de cabinet.
 
 ## Madame Bassal,
 
-Vous présidez, depuis le mois de mai, Nantes Métropole Habitat. Le **7 juillet**, votre office signait une lettre reconnaissant l'existence de **dysfonctionnements** dans le bâtiment du 2 au 14 rue de Saint-Jean-de-Luz. Le **11 juillet à 2 heures 30 du matin**, ces dysfonctionnements ont failli tuer les habitant·es de cet immeuble. La sécurité des Nantais·es, cette nuit-là, a été assurée par des jeunes du quartier armés de bouteilles d'eau, dans une cage d'escalier dont votre office avait **verrouillé par cadenas les trappes d'évacuation des fumées** — et cela **quatre jours après avoir écrit qu'il y avait un problème**.
+Vous présidez, depuis le mois de mai, Nantes Métropole Habitat. Vous héritez d'un office qui, par pratique, **parle à ses locataires par cabinets interposés**. Vous héritez d'une pratique qui consiste à mandater **150 000 à 200 000 euros** de prestataires — dont l'un est ouvertement positionné à la fois sur les diagnostics et sur les marchés de travaux qui en découlent — pour découvrir ce que les habitant·es décrivent depuis des décennies : rats au siphon, coupures d'eau, joints qui lâchent, isolation absente.
 
-Il n'est plus temps de diligenter des cabinets. Il est temps de faire tomber les cadenas. Les locataires n'attendent pas votre motion. Ils attendent votre clé.
+Le **7 juillet**, votre office signait une lettre reconnaissant explicitement l'existence de **dysfonctionnements**. Le **11 juillet à 2 heures 30 du matin**, ces dysfonctionnements ont failli tuer les habitant·es du 2 au 14 rue de Saint-Jean-de-Luz. La sécurité des Nantais·es, cette nuit-là, a été assurée par des jeunes du quartier armés de bouteilles d'eau, dans une cage d'escalier dont votre office avait **verrouillé par cadenas les trappes d'évacuation des fumées** — et cela **quatre jours après avoir écrit qu'il y avait un problème**.
+
+Il n'est plus temps de diligenter des cabinets. **Faites tomber les cadenas. Annulez les marchés d'audit. Écoutez les habitant·es.** Ce serait un vrai début.

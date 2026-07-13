@@ -37,7 +37,32 @@ Dernier audit : **2026-07-13**
 ### Alliés militants (cités dans le corps)
 - **La France insoumise 44** — fédération départementale LFI de Loire-Atlantique → [lafranceinsoumise.fr (national, avec relais départemental)](https://lafranceinsoumise.fr/).
 - **LFI Nantes-Sud « Le Taureau »** — groupe d'action local LFI référencé par ses membres sous ce nom (à ajouter URL exacte si compte X ou page dédiée).
-- **Union des Quartiers Libres** — association nommée par Khalid, à documenter (URL, statuts, périmètre).
+- **Union des Quartiers Libres** — association enregistrée à l'annuaire officiel Ville de Nantes (URL validée ci-dessus).
+
+### Communiqué LFI Nantes-Sud « Le Taureau » — juillet 2026
+- Position publique du groupe d'action : « **presse instamment** la direction de NMH de renoncer aux deux audits Pouget + SETEC et d'employer l'argent aux travaux directs » ; formulation reprise en article : « Économisons cet argent, parlons d'abord aux habitant·es. »
+- Argumentaire du communiqué :
+  1. NMH **ne parle pas** avec les locataires — pratique habituelle du bailleur.
+  2. Les habitant·es **savent** ce qu'il faut faire : ITE, joints, fenêtres, rénovation intérieure, refonte du réseau d'eau.
+  3. Les cabinets Pouget + SETEC **répondent aussi aux appels d'offres travaux de NMH** → audit **biaisé**, conflit d'intérêts structurel.
+- → **Action** : Khalid fournit l'URL exacte du communiqué (post X, page Facebook, ou fichier PDF) et la date précise. Confirme la formulation littérale reprise entre guillemets dans l'article (paraphrase actuelle basée sur transcription orale de Khalid).
+
+### Conflit d'intérêts Pouget Consultants (documenté)
+- **Pouget Consultants** se présente sur son propre site comme bureau d'ingénierie spécialisé **à la fois** en audit énergétique **et** en Assistance à Maîtrise d'Ouvrage sur les projets de rénovation des bailleurs sociaux, avec intervention couvrant « toutes les phases » de projet → [pouget-consultants.eu](https://www.pouget-consultants.eu/) · [Assistance à Maîtrise d'Ouvrage — Pouget](https://www.pouget-consultants.eu/metiers/assistance-maitrise-ouvrage/) · [Conseil et études énergétiques](https://www.pouget-consultants.eu/conseil-etudes-energetiques/).
+- Agence Nantes → [Pouget Consultants Nantes — Pages Jaunes](https://www.pagesjaunes.fr/pros/51656390).
+- **SETEC** — grand groupe d'ingénierie française (SETEC organisation, SETEC bâtiment, etc.). Confirmation formelle de sa présence sur marchés NMH travaux : à préciser via marchespublics.nmh.fr → [portail marchés publics NMH](https://marchespublics.nmh.fr/).
+- → **Action** : Khalid ou l'équipe LFI Le Taureau produit la trace concrète d'attribution des cabinets sur des marchés travaux NMH ou bailleurs comparables (numéros d'AO, noms des marchés attribués, dates).
+
+### NMH — commande publique (contexte)
+- NMH investit environ **100 millions d'euros par an dans l'économie régionale via ~900 fournisseurs** — chiffre officiel de l'office → [Loire-Atlantique — bailleur social NMH](https://www.loire-atlantique.fr/44/habitat-logement/bailleur-social-nantes-metropole-habitat/c_1210135).
+- Portail officiel des marchés publics NMH : [marchespublics.nmh.fr](https://marchespublics.nmh.fr/) · [Avis de publicité et dossiers de consultation NMH](https://www.nmh.fr/Espace-Entreprise/l-espace-marches-publics-de-nmh/Avis-de-publicite-et-Dossiers-de-consultation).
+- **Chambre régionale des comptes** a récemment alerté sur la gestion de NMH → [Cour des comptes — Nantes Métropole Habitat](https://www.ccomptes.fr/fr/publications/nantes-metropole-habitat-loire-atlantique) · [Informateur Judiciaire — la CRC alerte NMH sur sa gestion](https://www.informateurjudiciaire.fr/actualites/logement-social-la-chambre-regional-des-comptes-alerte-nantes-metropole-habitat-sur-sa-gestion/) — piste pour un article ultérieur.
+
+### Témoignages habitants (audit citoyen — recueillis par Union des Quartiers Libres + LFI 44 + Le Taureau)
+- **Coupures d'eau** au 2-14 rue Saint-Jean-de-Luz : « depuis plusieurs décennies ».
+- **Rats dans les canalisations** : une locataire témoigne s'être trouvée sous la douche quand un rat est sorti par le siphon ; un autre habitant montre un trou dans son mur, passage utilisé par les rongeurs.
+- **Joints de fenêtres** défaillants, **rénovation intérieure** ancienne, **isolation par l'extérieur** absente.
+- → **Action** : Khalid confirme la traçabilité des témoignages (dossier audit habitant, consentement à publication, éventuel dépôt de plainte pour insalubrité, saisines ADIL/ARS).
 
 ### Chronologie de bascule (confirmée par Khalid, témoin direct)
 - **Enquête habitante** menée par Union des Quartiers Libres + LFI 44 + LFI Nantes-Sud « Le Taureau » : **antérieure de plusieurs mois** à la lettre NMH. Date de démarrage exacte : à préciser (Khalid).
