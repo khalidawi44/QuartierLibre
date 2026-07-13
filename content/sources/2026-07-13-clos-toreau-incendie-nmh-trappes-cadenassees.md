@@ -48,6 +48,37 @@ Dernier audit : **2026-07-13**
 - **Attestation directe rédaction QL (Khalid)** : les deux conseillères municipales LFI se sont déplacées **le 12 juillet 2026**, lendemain de l'incendie, au pied des immeubles du 2 au 14 rue Saint-Jean-de-Luz. Elles ont **vu la fumée**, **constaté la violence du sinistre**, et **parlé aux habitant·es du 4 rue de Saint-Jean-de-Luz** (bâtiment concerné) — sur leur palier, sans intermédiaire.
 - **Communiqué officiel à venir** : le groupe **LFI Nantes-Sud Clos-Toreau** et l'**Union des Quartiers Libres** annoncent la publication imminente d'un communiqué portant les prises de parole d'**Erika Cadersah**, d'**Irina Yahi**, de **Fabrice Doucet** et du groupe LFI Nantes-Sud Clos-Toreau, sur leurs réseaux sociaux respectifs. → **Action** : dès parution du communiqué, ajouter l'URL à la fiche sources et mettre l'article à jour avec les citations exactes.
 
+### Témoignage Aliun Keita (locataire du 6ᵉ étage, 4 rue Saint-Jean-de-Luz)
+- **Aliun Keita** — père de famille, trois enfants dont un **bébé de sept mois**, avec sa femme. Locataire au **6ᵉ étage** du 4 rue de Saint-Jean-de-Luz. **A accepté de témoigner publiquement** (nom et prénom, contexte familial).
+- Éveillé la nuit du 11 au 12 juillet pour regarder **Argentine – Suisse** (Coupe du monde 2026, coup d'envoi 3h du matin).
+- Feu déclenché **entre 2h et 2h15**. Appartement rempli de fumée du sol au plafond.
+- A fait passer ses **3 enfants (dont bébé 7 mois)** par la fenêtre du 6ᵉ vers le voisin du 5ᵉ étage qui les récupérait par sa propre fenêtre.
+- **Femme évanouie** au cours de l'évacuation.
+- Famille évacuée par **nacelle** de la grande échelle télescopique par les pompiers.
+- **Aucun suivi psychologique** organisé. Aliun s'est rendu **par ses propres moyens au CHU** pour être examiné et faire examiner ses enfants.
+- **Constat visuel** de l'appartement le 13 juillet 2026 (rédaction QL / Khalid) : suie sédimentée jusqu'à ~1 m du sol, plafond épargné, matelas irrécupérables, vêtements et jouets imprégnés.
+- → **Action** : confirmer date/heure exacte du match Argentine-Suisse (Coupe du monde 2026 — plusieurs sources FIFA / L'Équipe). Recueillir photos horodatées de l'appartement Aliun (murs, matelas, cage d'escalier) pour blindage juridique.
+
+### Cellule de crise Ville de Nantes contactée
+- La rédaction QL a **contacté la cellule de crise de la Ville de Nantes** pour vérifier la mise en œuvre d'un dispositif de suivi psychologique post-sinistre pour les habitant·es du 4 rue de Saint-Jean-de-Luz. **Aucune information** ne confirme qu'un dispositif spécifique ait été activé pour ces familles.
+- → **Action** : documenter précisément le canal de contact (téléphone, mail), la date, l'interlocuteur et la teneur de la réponse (ou du silence). Si demande écrite, joindre le courrier envoyé + accusé de réception.
+
+### Cadre juridique : « appelez votre assurance » — position de NMH démolie en droit
+- **Article 1719 Code civil** (obligation du bailleur d'entretenir la chose louée et d'en faire jouir paisiblement le preneur).
+- **Article 1720 Code civil** (bailleur tenu de délivrer la chose en bon état de réparations, et de faire pendant le bail toutes les réparations autres que locatives).
+- **Article 1721 Code civil** (garantie due au preneur pour tous vices ou défauts empêchant l'usage ; bailleur tenu d'indemniser toute perte pour le preneur qui en résulterait).
+- **Article 6 loi n° 89-462 du 6 juillet 1989** (bail d'habitation) : bailleur obligé d'assurer jouissance paisible + de faire toutes réparations autres que locatives nécessaires au maintien en état.
+- **Décret n° 87-712 du 26 août 1987** : liste **limitative** des réparations à la charge du locataire — l'ascenseur et ses conséquences n'y figurent pas.
+- Jurisprudence Cour de cassation, 3ᵉ chambre civile, stable : le bailleur ne peut renvoyer le locataire à sa MRH pour un sinistre trouvant son origine dans les parties communes (ascenseur, gaines, colonnes).
+- L'ascenseur est **partie commune** relevant du bailleur ; l'assurance multirisque immeuble (MRI) prend en charge les dommages consécutifs aux logements privatifs ; le bailleur exerce le cas échéant un recours contre le prestataire de maintenance.
+- → **Action** : citer une ou deux décisions précises de Cass. 3ᵉ civ. pour blindage supplémentaire (si prise en compte par avocat conseil). Non indispensable, la doctrine générale suffit à tenir l'article, mais ça renforce.
+
+### Nettoyage : société mandatée par NMH, mais pas de prise en charge des biens
+- NMH a mandaté une société de nettoyage pour la cage d'escalier et les murs/sols des logements atteints.
+- **Le débarrassage** de l'appartement Aliun (sortie des meubles, rassemblement des affaires, tri) a été assuré par : **la rédaction QL, Fabrice Doucet (président UQL), Aliun Keita lui-même, et un proche présent la nuit du drame**. À la main, sans matériel, sans prise en charge.
+- **Aucun protocole d'indemnisation** pour les biens détruits (matelas, vêtements, jouets, meubles).
+- → **Action** : photos horodatées du travail de débarrassage. Éventuellement témoignages écrits de Fabrice Doucet + du proche ayant participé.
+
 ### Constat direct rédaction QL au 13 juillet 2026 (2 jours après)
 - **Attestation Khalid** (retour terrain, 13 juillet 2026, au 4 rue Saint-Jean-de-Luz) :
   - Cage d'escalier encore **couverte de suie noire** (murs, rampes, paliers).

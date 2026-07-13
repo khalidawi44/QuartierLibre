@@ -27,7 +27,12 @@ tags:
   - irina-yahi
   - audit-habitant
   - la-nouvelle-nantes
-excerpt: "Nuit du 11 au 12 juillet 2026, 2h30 du matin. Au 4 rue de Saint-Jean-de-Luz, au Clos-Toreau, un incendie prend dans l'ascenseur. Un locataire se retrouve suspendu à sa fenêtre du 7ᵉ étage pour respirer. Les trappes d'évacuation des fumées, verrouillées par cadenas par Nantes Métropole Habitat, restent inutilisables. Ce sont des jeunes du quartier — au premier rang Hano, un jeune homme d'origine soudanaise — qui, à bouteilles d'eau, éteignent le feu et évacuent l'immeuble. Quatre jours plus tôt, le 7 juillet, NMH avait écrit aux locataires de toute la rue une lettre officielle titrée « Diagnostic des dysfonctionnements ». NMH est présidé, depuis le 13 mai 2026, par Aïcha Bassal."
+  - aliun-keita
+  - responsabilite-bailleur
+  - code-civil-1719
+  - assurance-immeuble
+  - cellule-de-crise
+excerpt: "Nuit du 11 au 12 juillet 2026, 2h30 du matin. Au 4 rue de Saint-Jean-de-Luz, au Clos-Toreau, un incendie prend dans l'ascenseur. Au 6ᵉ étage, Aliun Keita fait passer ses trois enfants dont un bébé de 7 mois par la fenêtre, suspendus dans le vide, vers l'appartement du voisin du 5ᵉ. Les trappes d'évacuation des fumées, verrouillées par cadenas par Nantes Métropole Habitat, restent inutilisables. Ce sont des jeunes du quartier — au premier rang Hano, un jeune homme d'origine soudanaise — qui, à bouteilles d'eau, éteignent le feu et évacuent l'immeuble. Quatre jours plus tôt, le 7 juillet, NMH avait écrit aux locataires de toute la rue une lettre officielle titrée « Diagnostic des dysfonctionnements ». NMH est présidé, depuis le 13 mai 2026, par Aïcha Bassal."
 featured_image: "content/media/2026-07-13-clos-toreau-incendie-affiche.png"
 author: "soraya-messaoudi"
 status: "draft"
@@ -35,11 +40,23 @@ date: "2026-07-13 09:00:00"
 plainte_variant: "logement"
 ---
 
-**Nuit du 11 au 12 juillet 2026, 2 heures 30 du matin.** Au **4 rue de Saint-Jean-de-Luz**, en plein cœur du **Clos-Toreau** à Nantes-Sud, un incendie prend dans l'**ascenseur** de l'immeuble. La cage se remplit de fumée noire en quelques minutes. Un locataire du **7ᵉ étage**, en détresse respiratoire, se **suspend à sa fenêtre** pour respirer. Il survivra. Ce ne sera pas grâce à Nantes Métropole Habitat.
+**Nuit du 11 au 12 juillet 2026, 2 heures 30 du matin.** Au **4 rue de Saint-Jean-de-Luz**, en plein cœur du **Clos-Toreau** à Nantes-Sud, un incendie prend dans l'**ascenseur** de l'immeuble. La cage se remplit de fumée noire en quelques minutes. Au **6ᵉ étage**, un père de famille, **Aliun Keita**, fera passer ses **trois enfants — dont un bébé de sept mois — par la fenêtre**, suspendus dans le vide, jusqu'à l'appartement du voisin du 5ᵉ étage. Sa femme s'évanouira. Ils survivront tous. Ce ne sera pas grâce à Nantes Métropole Habitat.
 
 Cette nuit-là, ce sont **des jeunes du quartier** — de celles et ceux que la mairie et son bailleur appellent volontiers « les groupes qui se rassemblent devant les entrées » — qui ont **évacué l'immeuble**, **frappé aux portes** et **éteint le feu** à bouteilles d'eau, à mains nues, pendant que les habitant·es des étages hauts restaient prisonnier·es de la fumée. Au premier rang, **Hano** : jeune homme du quartier, d'origine soudanaise, livreur pour un grand groupe de livraison de colis. Il monte au 2ᵉ étage sortir sa sœur, puis frappe à toutes les portes du palier. D'autres jeunes rentrent dans le hall en feu. Ils éteignent le foyer **avant l'arrivée des pompiers**. Sans eux, il y aurait eu des morts.
 
 Quatre jours plus tôt, le 7 juillet, NMH avait écrit à tous les locataires de la rue — du 2 au 14 — une lettre officielle titrée « **Diagnostic des dysfonctionnements** ». Le bailleur reconnaissait, noir sur blanc, l'existence de défauts. Il annonçait la première visite pour le **22 juillet**. Nous étions le 7 juillet. Le feu est parti le 11, au 4. Personne n'a ouvert les cadenas.
+
+## Aliun Keita, 6ᵉ étage : la fenêtre, le bébé, la nacelle
+
+**Aliun Keita** est **père de trois enfants**, dont un **bébé de sept mois**. Il vit avec sa femme et ses enfants au **6ᵉ étage** de l'immeuble du 4 rue de Saint-Jean-de-Luz. C'est le locataire le plus lourdement touché par la nuit du 11 au 12 juillet. Il a accepté de témoigner. Ce qui suit est reconstitué à partir de son récit, recueilli par la rédaction et corroboré par le constat visuel de son appartement.
+
+**Cette nuit-là, Aliun ne dormait pas.** À 3 heures du matin, la **Coupe du monde 2026** programmait un **Argentine — Suisse** que d'importantes communautés du quartier voulaient suivre en direct. Aliun avait décidé de veiller pour le match. C'est ce détail — trivial dans la vie ordinaire — qui a **sauvé sa famille**.
+
+Le feu se déclenche entre **2 heures et 2 heures 15**. La fumée monte dans la cage, s'infiltre sous les portes palières, envahit les logements par les gaines. Au 6ᵉ étage, l'appartement d'Aliun se **remplit de fumée du sol au plafond**. La rédaction s'est rendue sur place ; elle a constaté par elle-même — au 13 juillet, deux jours après — les traces sédimentées. **Les murs sont noirs de suie**, avec une **densité maximale jusqu'à environ un mètre du sol** : la fumée, refroidissant en descendant, s'est **condensée par le bas**. Le plafond, lui, est relativement épargné. L'appartement dans son ensemble est resté enfumé — meubles, vêtements, jouets, poussettes, matelas — jusqu'à aujourd'hui.
+
+Aliun réveille sa femme et ses enfants. Il ne peut pas descendre par l'escalier : la cage est déjà impraticable. Il ne peut pas attendre : la fumée arrive vite. **Il choisit la fenêtre.** Il fait passer, à la main, **ses trois enfants — dont le bébé de sept mois — par la fenêtre du 6ᵉ étage**. En bas d'un mouvement de bras, à **une hauteur d'environ dix-huit mètres au-dessus du sol**, ils sont **récupérés par le voisin du 5ᵉ étage** qui les tire par sa propre fenêtre. La femme d'Aliun, encore consciente, l'aide dans la manœuvre — puis elle **s'évanouit**. Les pompiers, arrivés sur place, évacueront ensuite Aliun, sa femme et les enfants par la **nacelle de la grande échelle télescopique**.
+
+Ce qui frappe, dans ce récit, n'est pas seulement le geste. C'est ce qui n'a pas eu lieu **ensuite**. **Aucune cellule de crise psychologique** n'a été activée pour cette famille et pour les autres locataires exposés. La rédaction a **contacté la cellule de crise de la Ville de Nantes** pour vérifier : aucune information sur une mise en œuvre d'un dispositif spécifique pour les habitant·es du 4 rue de Saint-Jean-de-Luz. Aliun a dû **se rendre lui-même au CHU**, par ses propres moyens, pour être examiné et pour que ses enfants le soient — un père de famille qui vient de faire descendre son bébé de sept mois par la fenêtre à dix-huit mètres du sol, et qui, quelques heures plus tard, est renvoyé à ses propres démarches médicales, comme s'il avait glissé sur un trottoir mouillé.
 
 ## Ce qui a rendu ce feu presque mortel : les cadenas de NMH
 
@@ -113,17 +130,37 @@ Ce que révèle cet épisode dépasse le cas de la locataire testée. Il révèl
 
 Et ce n'est pas propre à un dossier. Dans ses courriers aux locataires du secteur, Monsieur Morineau — et NMH derrière lui — a pris pour habitude, quand un signalement est correctement documenté, de **nier les faits** ou de **rejeter la responsabilité sur les locataires eux-mêmes**. Les formulations sont connues : « **appelez votre assurance** ». « **Cela relève de vos réparations locatives** ». « **Ce n'est pas de notre ressort** ». Un logement social géré comme une location privée. Un bailleur **public** qui parle à ses locataires comme un propriétaire indélicat parlerait à des mauvais payeurs, tout en encaissant chaque mois un loyer que le locataire n'a même pas le choix de contester en changeant d'adresse. C'est un **mépris de classe**, écrit noir sur blanc dans des courriers d'agence, adressé à des familles dont beaucoup ont, pour tout recours, la persévérance des associations qui les accompagnent.
 
-## Deux jours après, dans la cage d'escalier : rien n'a été nettoyé
+## « Appelez votre assurance » : ce que dit vraiment la loi
 
-Ce texte est bouclé le **13 juillet 2026**, deux jours pleins après l'incendie. La rédaction s'est rendue **au 4 rue de Saint-Jean-de-Luz** pour rendre compte de l'état des lieux à cette date. Voici ce qu'on y voit :
+L'application concrète de cette méthode Morineau au cas Aliun Keita est édifiante. Après l'incendie, alors que sa famille venait d'être évacuée par nacelle et que son appartement était noirci de suie sur toute sa hauteur, la réponse initiale de NMH aux locataires du 4 rue de Saint-Jean-de-Luz sur les dégâts subis à l'intérieur des logements a été, en substance : « **voyez avec votre assurance à vous** ». Comme si un feu parti de l'**ascenseur** — c'est-à-dire d'une **partie commune de l'immeuble**, qui relève de la propriété et de l'entretien du bailleur — pouvait, en droit, être imputé à l'assurance multirisque habitation des locataires.
 
-- La **cage d'escalier** est encore **couverte de suie noire**. Les murs, les rampes, les paliers.
-- Le **sol** de la cage également, sur toute la hauteur.
-- L'**ascenseur** — le foyer du départ de feu — est **en lambeaux, cramé**. Il n'a pas été démonté, il n'a pas été retiré, il n'a pas été bâché. Il est là, tel quel, à la vue de chaque personne qui rentre chez elle.
-- Les habitant·es témoignent de **logements encore enfumés**, avec **suie visible à l'intérieur** des appartements — sur les meubles, sur les vêtements, sur les jouets des enfants.
-- **Aucun nettoyage** engagé par NMH n'a été constaté à cette date. Aucune équipe technique déployée. Aucun devis rendu public. Aucune information transmise aux locataires sur les modalités et le calendrier de la remise en état des parties communes.
+Or **ce n'est pas ce que dit la loi**. Le cadre est ancien, stable, sans équivoque :
 
-La question, alors, appelle à être posée sans détour : **que fait Nantes Métropole Habitat**, ces deux jours, pour l'immeuble du 4 rue de Saint-Jean-de-Luz ? Le bailleur qui **encaisse chaque mois un loyer** de chaque famille de la cage — ce qui, à l'échelle du 4 rue de Saint-Jean-de-Luz, représente plusieurs milliers d'euros — que fait-il en échange, pendant que les enfants du 5ᵉ montent et descendent dans une odeur de fumée sédimentée, pas à cause d'un fait divers, mais parce que le bailleur qu'ils paient n'a pas encore trouvé le temps d'y envoyer une équipe ?
+- **Article 1719 du Code civil** : le bailleur est obligé « **d'entretenir** [la chose louée] **en état de servir à l'usage** pour lequel elle a été louée » et « **d'en faire jouir paisiblement le preneur** ».
+- **Article 1720 du Code civil** : « Le bailleur est tenu de délivrer la chose en bon état de réparations de toute espèce. Il doit y faire, pendant la durée du bail, **toutes les réparations qui peuvent devenir nécessaires, autres que les locatives**. »
+- **Article 1721 du Code civil** : « Il est dû garantie au preneur pour tous les vices ou défauts de la chose louée qui en empêchent l'usage… **S'il résulte de ces vices ou défauts quelque perte pour le preneur, le bailleur est tenu de l'indemniser.** »
+- **Article 6 de la loi n° 89-462 du 6 juillet 1989** (bail d'habitation) : le bailleur est obligé « d'assurer au locataire **la jouissance paisible du logement** » et « de **faire toutes les réparations, autres que locatives**, nécessaires au maintien en état et à l'entretien normal des locaux loués ».
+- **Décret n° 87-712 du 26 août 1987** : liste **limitative** des réparations à la charge du locataire. Tout ce qui n'y figure pas est à la charge du bailleur.
+
+L'**ascenseur** est **une partie commune de l'immeuble**. Son entretien, sa sécurité et sa remise en état après sinistre relèvent, sans discussion, du **bailleur**. Quand un feu prend dans l'ascenseur et endommage les logements privatifs par la fumée qui remonte dans la cage, la logique juridique est la suivante : c'est l'**assurance multirisque immeuble (MRI)** du bailleur qui prend en charge les dommages consécutifs sur les logements ; c'est ensuite le bailleur — pas le locataire — qui exerce, s'il y a lieu, un recours contre le prestataire responsable (entreprise de maintenance de l'ascenseur, entreprise ayant réalisé des travaux…). La Cour de cassation le rappelle depuis des décennies : le bailleur, tenu d'une **obligation de délivrance et de jouissance paisible**, ne peut se dégager en renvoyant le locataire vers sa propre multirisque habitation pour un sinistre dont l'origine n'est pas dans le logement privatif.
+
+Autrement dit : **quand NMH répond « voyez avec votre assurance », NMH oppose au locataire une consigne qui n'a pas de fondement légal**. Ce n'est pas un désaccord de bonne foi sur une interprétation. C'est un **abandon de responsabilité contraire à des articles du Code civil, à la loi de 1989 et à une jurisprudence constante**.
+
+Aliun Keita — comme les autres locataires de l'immeuble — n'a pas à appeler la MAAF, la MACIF ou la Maison de l'Assurance. **C'est l'assurance de Nantes Métropole Habitat qui doit ouvrir un dossier, prendre en charge la remise en état intégrale du logement, et indemniser les biens détruits par la suie et la fumée.** Le silence de NMH sur ce point, dans les jours qui ont suivi le sinistre, est en soi une **faute**.
+
+## Deux jours après, dans la cage d'escalier et dans les appartements
+
+Ce texte est bouclé le **13 juillet 2026**, deux jours pleins après l'incendie. La rédaction s'est rendue **au 4 rue de Saint-Jean-de-Luz** pour rendre compte de l'état des lieux à cette date.
+
+Dans la **cage d'escalier** : encore **couverte de suie noire**. Les murs, les rampes, les paliers, le sol sur toute la hauteur. L'**ascenseur** — le foyer du départ de feu — est **en lambeaux, cramé**. Il n'a pas été démonté, il n'a pas été retiré, il n'a pas été bâché. Il est là, tel quel, à la vue de chaque personne qui rentre chez elle.
+
+Dans les **appartements** : suie sur les meubles, sur les vêtements, sur les jouets des enfants, sur la literie. Chez Aliun Keita au 6ᵉ étage, la fumée a **recouvert par le bas jusqu'à environ un mètre du sol** — plafond et hauts de mur relativement épargnés. **Les matelas sont morts, à jeter.** Les vêtements de la famille et les jouets des enfants sont **imprégnés de suie**, presque tous inutilisables.
+
+NMH a fini par **mandater une société** pour nettoyer les **parties communes** et les **murs et sols** des logements atteints. Il faut le noter — mais il faut noter aussi **ce que cela ne comprend pas**. Pour que les nettoyeurs puissent intervenir, encore fallait-il **débarrasser** chaque appartement : sortir les meubles, rassembler les affaires, isoler ce qui pouvait être sauvé. Ce travail-là, chez Aliun Keita, **c'est la rédaction, avec Fabrice Doucet (Union des Quartiers Libres), le locataire lui-même — encore en état de choc — et un proche qui était présent la nuit du drame, qui l'ont fait**. À la main. Sans équipe technique. Sans matériel de protection. Sans prise en charge. Un père de famille qui vient de faire descendre son bébé de sept mois par la fenêtre à dix-huit mètres du sol, qu'on laisse déblayer son propre salon deux jours plus tard, parce que le bailleur qui touche son loyer n'a pas prévu qu'un sinistre puisse laisser autre chose à nettoyer que des murs.
+
+Et **le reste** ? Les matelas irrécupérables, les vêtements imprégnés, les jouets détruits, les meubles fusillés par la fumée ? **Aucun protocole. Aucun devis. Aucun engagement écrit de NMH sur la prise en charge des biens détruits.** Renvoi implicite à ce qui a déjà été démonté en droit dans la section précédente : à l'assurance des locataires.
+
+La question, alors, appelle à être posée sans détour : **que fait Nantes Métropole Habitat pour les locataires qui ont subi ces dégâts**, quand aucun protocole d'indemnisation n'est en place, quand les biens des familles sont perdus, quand la loi elle-même dit clairement que la responsabilité relève de son assurance à lui ? Le bailleur qui **encaisse chaque mois un loyer** de chaque famille de la cage — ce qui, à l'échelle du 4 rue de Saint-Jean-de-Luz, représente plusieurs milliers d'euros — que fait-il en échange, pendant que les enfants du 5ᵉ montent et descendent dans une odeur de fumée sédimentée, et que ceux du 6ᵉ n'ont plus de matelas ?
 
 La question est ouverte. La réponse, à la date du bouclage, est le vide.
 
