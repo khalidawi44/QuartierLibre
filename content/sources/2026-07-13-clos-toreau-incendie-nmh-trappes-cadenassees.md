@@ -63,6 +63,25 @@ Dernier audit : **2026-07-13**
 - La rédaction QL a **contacté la cellule de crise de la Ville de Nantes** pour vérifier la mise en œuvre d'un dispositif de suivi psychologique post-sinistre pour les habitant·es du 4 rue de Saint-Jean-de-Luz. **Aucune information** ne confirme qu'un dispositif spécifique ait été activé pour ces familles.
 - → **Action** : documenter précisément le canal de contact (téléphone, mail), la date, l'interlocuteur et la teneur de la réponse (ou du silence). Si demande écrite, joindre le courrier envoyé + accusé de réception.
 
+### Contact du 13 juillet Fabrice Doucet ↔ Mme Besançon (Ville de Nantes) ↔ NMH — chronologie
+- **Fabrice Doucet**, président de l'Union des Quartiers Libres, contacte la **cellule de crise de la Ville de Nantes** dans la journée du 13 juillet 2026.
+- Interlocutrice : **Mme Besançon** (« comme la ville de Besançon » — mnémonique de Fabrice), **gestionnaire de crise**. → **Action** : confirmer orthographe exacte du nom, fonction précise (cellule de crise Ville de Nantes ou Nantes Métropole ?), et rattachement institutionnel.
+- Position officielle relayée par Mme Besançon : « **NMH gère selon son propre protocole**. Les locataires font marcher leur MRH ; leur assurance se retourne contre celle de NMH. »
+- Sur la cellule psychologique : Mme Besançon aurait dit textuellement (rapporté par Fabrice) : « **S'ils ne vont pas bien, ils doivent appeler le SAMU. C'est le protocole de NMH qui travaille avec le SAMU.** » → **Action** : cette formule est cruciale (elle démontre l'absence de mobilisation CUMP par les autorités). Idéalement Fabrice consigne par écrit (mail ou message) la retranscription intégrale de l'échange avec Mme Besançon, avec date et heure.
+- Fabrice demande à parler à **Monsieur Piquet**, chef d'astreinte de l'agence Goudy. → **Action critique** : **confirmer l'orthographe exacte du nom** (Piquet ? Pikett ? Piket ?). Un chef d'astreinte est un cadre NMH ; l'article le mentionne — l'orthographe doit être irréprochable.
+- **10 minutes plus tard**, réponse écrite (par email, SMS, ou retransmise oralement par Mme Besançon ?) de NMH. Texte quasi intégral rapporté par Fabrice : « NMH rencontre directement les locataires dont vous m'avez parlé. La situation est donc gérée et prise en charge directement par le bailleur. Si nécessaire, merci de contacter l'agence NMH. » → **Action critique** : Fabrice fournit la **capture d'écran / transcription** du message NMH, avec **date et heure** et **canal** (mail, SMS, oral relayé par Mme Besançon).
+- **Aliun Keita dément catégoriquement**. Aucune personne de NMH ne l'a rencontré ni contacté. → Preuve en **vidéo** (déclaration filmée d'Aliun) détenue par Fabrice Doucet. **Action critique** : conserver cette vidéo (sauvegarde multiple, horodatage), consigner date de tournage et lieu, obtenir le consentement écrit d'Aliun à sa diffusion éventuelle.
+
+### 14 juillet férié : agence NMH fermée
+- **Fait** : le 14 juillet 2026 est un jour férié national. L'agence Goudy à Pirmil est fermée. Aucun canal de contact d'urgence NMH connu de Fabrice Doucet à cette date.
+- → **Action** : si NMH dispose d'une astreinte téléphonique 24/7 (ce qu'un office public en charge de plus de 26 000 logements devrait avoir), Fabrice tente ce contact et documente la réponse (silence ou renvoi).
+
+### Situation Aliun Keita au 13 juillet : hôtel à sa charge, plus rien après le 17 juillet
+- **Aliun Keita** est actuellement en **hôtel jusqu'au jeudi 17 juillet 2026**, pris en charge par **sa propre assurance multirisque habitation** (démarche qu'il a lui-même effectuée). Position juridiquement erronée mais imposée de fait.
+- Le **17 juillet**, sa prise en charge assurance s'arrête. **Aucune solution NMH** connue à cette date.
+- Solution d'urgence proposée par **l'Union des Quartiers Libres et les habitants du Clos-Toreau** : hébergement de substitution assuré par le réseau associatif et de voisinage. Fabrice Doucet cité textuellement : « Concrètement, ce sont nous, les habitants, qui nous substituons à NMH. Nous sommes les vrais gestionnaires de crise. »
+- → **Action** : conserver la trace écrite (SMS, mail, PV réunion) de l'offre d'hébergement solidaire faite à Aliun, avec date. Si la solution matérialise après le 17 juillet, publier une mise à jour de l'article dénonçant la substitution.
+
 ### Cadre juridique : « appelez votre assurance » — position de NMH démolie en droit
 - **Article 1719 Code civil** (obligation du bailleur d'entretenir la chose louée et d'en faire jouir paisiblement le preneur).
 - **Article 1720 Code civil** (bailleur tenu de délivrer la chose en bon état de réparations, et de faire pendant le bail toutes les réparations autres que locatives).
