@@ -23,6 +23,10 @@ tags:
   - monsieur-morineau
   - agence-goudy-pirmil
   - dossier-pilote
+  - erika-cadersah
+  - irina-yahi
+  - audit-habitant
+  - la-nouvelle-nantes
 excerpt: "Nuit du 11 au 12 juillet 2026, 2h30 du matin. Au 4 rue de Saint-Jean-de-Luz, au Clos-Toreau, un incendie prend dans l'ascenseur. Un locataire se retrouve suspendu à sa fenêtre du 7ᵉ étage pour respirer. Les trappes d'évacuation des fumées, verrouillées par cadenas par Nantes Métropole Habitat, restent inutilisables. Ce sont des jeunes du quartier — au premier rang Hano, un jeune homme d'origine soudanaise — qui, à bouteilles d'eau, éteignent le feu et évacuent l'immeuble. Quatre jours plus tôt, le 7 juillet, NMH avait écrit aux locataires de toute la rue une lettre officielle titrée « Diagnostic des dysfonctionnements ». NMH est présidé, depuis le 13 mai 2026, par Aïcha Bassal."
 featured_image: "content/media/2026-07-13-clos-toreau-incendie-affiche.png"
 author: "soraya-messaoudi"
@@ -117,6 +121,16 @@ Dans un communiqué, le groupe presse instamment la direction de NMH de **renonc
 >
 > *— LFI Nantes-Sud Clos-Toreau, communiqué, juillet 2026.*
 
+## Nous avons fait l'audit nous-mêmes. Voici notre offre à Madame Bassal.
+
+Au-delà du communiqué, le groupe rappelle un fait simple : le travail que NMH vient de commander à deux cabinets parisiens, **LFI Nantes-Sud Clos-Toreau et l'Union des Quartiers Libres l'ont déjà fait**. Un **audit exhaustif du parc HLM du Clos-Toreau** a été réalisé par les habitant·es et les militant·es, porte à porte, logement par logement, sur la base des remontées des locataires eux-mêmes. Ce document existe. Il est disponible pour discussion.
+
+C'est sur cette base — et non sur celle d'un rapport de cabinet à rendre en septembre — que le groupe **propose une coopération à Aïcha Bassal**, présidente de Nantes Métropole Habitat. La formulation politique est nette :
+
+> « Il n'y a pas besoin de cabinet parisien. Nous l'avons fait nous-mêmes, chez nous. Parce que nous sommes les habitants. Parce que nous nous sommes organisés entre nous. Et nous savons ce qu'il y a à faire — les problèmes sont connus depuis des décennies. **Annulons les commandes, et organisons une visite.** »
+
+Cette proposition n'est pas portée par le seul groupe d'action de quartier. Elle est **appuyée politiquement par deux conseillères municipales La France insoumise de la Ville de Nantes**, **Erika Cadersah** — militante antiraciste et décoloniale, N°2 de la liste *La Nouvelle Nantes* aux municipales 2026 — et **Irina Yahi**, la plus jeune conseillère municipale nantaise, élue à 18 ans. Toutes deux se sont **rendues sur place**, dans les logements des immeubles concernés. Elles ont **constaté** par elles-mêmes. Elles ont **parlé aux habitant·es**. Elles les ont **rassuré·es**. Elles leur ont **demandé leur avis directement** — sans passer par un cabinet d'audit, sans intermédiaire, sur le palier. C'est cette méthode-là — l'**écoute directe** des locataires — qui doit être la **porte d'entrée** de tout diagnostic sérieux sur le parc du Clos-Toreau.
+
 Sur cette base, la revendication portée par les habitant·es, l'Union des Quartiers Libres, LFI 44 et LFI Nantes-Sud Clos-Toreau tient en six points :
 
 1. **Les cadenas des dispositifs de désenfumage doivent tomber dans les 48 heures**, sur **tous** les immeubles NMH du secteur — pas seulement rue de Saint-Jean-de-Luz. Le désenfumage est une question de vie ou de mort, pas un enjeu de gestion patrimoniale. Ce point ne se négocie pas, il ne se diagnostique pas : il s'**exécute**.
@@ -134,7 +148,9 @@ Le **7 juillet**, votre office signait une lettre reconnaissant l'existence de *
 
 En 2018, la Ville dont vous étiez élue faisait déloger, du square Daviais, des exilé·es dont beaucoup étaient soudanais·es. En 2026, un jeune Soudanais court dans un escalier en feu pour sauver les habitant·es d'un immeuble dont votre office a interdit l'accès aux trappes de désenfumage. Le motif est le même dans les deux cas : **préserver l'apparence** — la ville sans campement, la toiture sans intrus — au prix de la sécurité et de la dignité de celles et ceux qui vivent en bas.
 
-Il n'est plus temps de diligenter des cabinets. **Faites tomber les cadenas — sur tous les bâtiments NMH, pas seulement rue de Saint-Jean-de-Luz. Annulez les marchés d'audit. Écoutez les habitant·es.** Ce serait un vrai début.
+Il n'est plus temps de diligenter des cabinets. L'audit du parc HLM du Clos-Toreau existe — il a été fait par les habitant·es. Il est sur la table. Le groupe **LFI Nantes-Sud Clos-Toreau**, soutenu par deux conseillères municipales de votre conseil, **Erika Cadersah** et **Irina Yahi**, vous propose une **coopération directe** sur cette base. Ce serait un vrai début.
+
+**Faites tomber les cadenas — sur tous les bâtiments NMH, pas seulement rue de Saint-Jean-de-Luz. Annulez les marchés Pouget et SETEC. Recevez le groupe et l'Union des Quartiers Libres autour de leur audit. Écoutez les locataires — chez elles, chez eux.** La table est chez les habitant·es.
 
 ---
 

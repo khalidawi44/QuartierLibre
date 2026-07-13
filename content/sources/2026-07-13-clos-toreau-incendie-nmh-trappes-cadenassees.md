@@ -34,6 +34,16 @@ Dernier audit : **2026-07-13**
 - **Nantes Métropole Habitat** — site officiel du bailleur (organigramme, coordonnées, communication) → [nmh.fr](https://www.nmh.fr/).
 - **Aïcha Bassal** — élue à la présidence de Nantes Métropole Habitat le **13 mai 2026** (fait déjà audité dans l'article [`2026-05-23-nmh-aicha-bassal-logement-social`](2026-05-23-nmh-aicha-bassal-logement-social.md) et sa fiche sources associée).
 
+### Audit habitant exhaustif LFI Clos-Toreau + UQL (source primaire allié)
+- **Fait revendiqué** : LFI Nantes-Sud Clos-Toreau et l'Union des Quartiers Libres ont **déjà réalisé un audit exhaustif** du parc HLM du Clos-Toreau, porte à porte, sur la base des remontées locataires. Document existe, disponible pour discussion. **Offre de coopération** faite à Aïcha Bassal sur cette base.
+- Formulation politique reprise dans l'article : « Il n'y a pas besoin de cabinet parisien. Nous l'avons fait nous-mêmes, chez nous. Parce que nous sommes les habitants. Parce que nous nous sommes organisés entre nous. Annulons les commandes, et organisons une visite. »
+- → **Action** : Khalid fournit une copie ou un extrait de l'**audit habitant** (méthodologie, périmètre, résultats), et documente la **date d'envoi** de l'offre de coopération à NMH / Aïcha Bassal (courrier, mail, communiqué).
+
+### Élues LFI Nantes qui se sont rendues sur place
+- **Erika Cadersah** — militante antiraciste et décoloniale, **N°2 de la liste *La Nouvelle Nantes*** (LFI, tête de liste William Aucant) aux municipales de mars 2026 → [Infos Média Nantes — Municipales 2026 : LFI présente sa liste « La Nouvelle Nantes »](https://infos-media-nantes.fr/municipales-2026-nantes-lfi-nouvelle-nantes/). Désormais **conseillère municipale** de la Ville de Nantes.
+- **Irina Yahi** — **18 ans**, lycéenne au moment de la campagne, la **plus jeune conseillère municipale nantaise** ; a servi d'**assesseure** lors de l'installation du conseil municipal le **27 mars 2026** aux côtés de Gaspard Florin Camagna, comme représentante des deux plus jeunes membres du conseil → [Ville de Nantes — nouvelle composition du conseil municipal](https://metropole.nantes.fr/actualites/decouvrez-la-nouvelle-composition-du-conseil-municipal-de-nantes).
+- **Déplacement des deux élues** au 2-14 rue Saint-Jean-de-Luz : rencontre avec les habitant·es, écoute directe, sans intermédiaire cabinet. Fait rapporté par Khalid, à corroborer par photo/publication réseaux/communiqué du groupe. → **Action** : Khalid fournit une publication X ou Facebook des élues ou du groupe attestant du déplacement (date + photos + noms des présents).
+
 ### Alliés militants (cités dans le corps)
 - **La France insoumise 44** — fédération départementale LFI de Loire-Atlantique → [lafranceinsoumise.fr (national, avec relais départemental)](https://lafranceinsoumise.fr/).
 - **LFI Nantes-Sud Clos-Toreau** — groupe d'action local LFI référencé par ses membres sous ce nom (à ajouter URL exacte si compte X ou page dédiée).
