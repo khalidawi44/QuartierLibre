@@ -89,6 +89,8 @@ Ce travail a fini par remonter jusqu'aux bureaux de NMH. Suffisamment loin pour 
 
 Avant même de parler d'incendie, la vie quotidienne dans les immeubles du 2 au 14 rue de Saint-Jean-de-Luz raconte à qui veut l'entendre. **Des coupures d'eau incessantes**, un problème qui dure « depuis plusieurs décennies » selon les habitant·es organisé·es. **Des rats** qui remontent par les canalisations : **une locataire raconte s'être trouvée sous la douche quand un rat est sorti par le siphon**. Un autre habitant pointe du doigt un **trou dans le mur** de son logement, celui par lequel les rongeurs passent d'un appartement à l'autre. Des **joints de fenêtres** qui ne tiennent plus. Des **logements dont la rénovation intérieure** n'a pas été faite depuis longtemps. Une **isolation par l'extérieur** absente — dans un parc HLM des années 1970 où les factures énergétiques explosent chaque hiver.
 
+Ces conditions ne datent pas de cet été. Nous en documentions déjà l'ampleur, dans nos colonnes, en avril dernier — [*Clos Toreau : punaises, moisissures, mépris — le quotidien des locataires de NMH*](/clos-toreau-punaises-moisissures-mepris/) — où étaient déjà listés les rats, les moisissures noires sur les murs, les punaises de lit qui reviennent après chaque désinsectisation, et surtout la **réponse-type** de NMH à ses locataires : « *vous n'aérez pas assez* ». Trois mois plus tard, la même politique, les mêmes silences, et désormais un feu.
+
 Ce ne sont pas des découvertes qui attendent un rapport de cabinet. Ce sont des faits **connus, nommés, documentés par les habitant·es** — et remontés à NMH depuis longtemps. La liste des travaux prioritaires, telle que la formulent les habitant·es et le groupe d'action LFI Nantes-Sud « Le Taureau », est claire : **isolation par l'extérieur, changement des joints et des fenêtres, rénovation des habitats à l'intérieur, refonte complète du réseau d'eau, obturation des passages de rongeurs**. On n'a pas besoin d'un cabinet parisien pour l'écrire — il suffit d'entrer dans un logement et d'écouter.
 
 ## La lettre du 7 juillet, quatre jours avant le feu
@@ -151,3 +153,11 @@ Vous présidez, depuis le mois de mai, Nantes Métropole Habitat. Vous héritez 
 Le **7 juillet**, votre office signait une lettre reconnaissant explicitement l'existence de **dysfonctionnements**. Le **11 juillet à 2 heures 30 du matin**, ces dysfonctionnements ont failli tuer les habitant·es du 2 au 14 rue de Saint-Jean-de-Luz. La sécurité des Nantais·es, cette nuit-là, a été assurée par des jeunes du quartier armés de bouteilles d'eau, dans une cage d'escalier dont votre office avait **verrouillé par cadenas les trappes d'évacuation des fumées** — et cela **quatre jours après avoir écrit qu'il y avait un problème**.
 
 Il n'est plus temps de diligenter des cabinets. **Faites tomber les cadenas. Annulez les marchés d'audit. Écoutez les habitant·es.** Ce serait un vrai début.
+
+---
+
+**Sur le même dossier :** [*Clos Toreau : punaises, moisissures, mépris — le quotidien des locataires de NMH*](/clos-toreau-punaises-moisissures-mepris/) (avril 2026). Trois mois avant l'incendie, nous documentions déjà les rats, les moisissures noires, les punaises et la réponse-type de NMH à ses locataires. Rien n'avait bougé jusqu'à la nuit du 11 juillet.
+
+**Sur la présidente NMH :** [*Aïcha Bassal présidente de NMH — 38 922 ménages en attente d'un HLM*](/nmh-aicha-bassal-logement-social/) — élection du 13 mai 2026, portrait et enjeux.
+
+*Vous vivez au 2-14 rue de Saint-Jean-de-Luz ou ailleurs au Clos Toreau, dans un logement NMH avec des dysfonctionnements documentés ? Vous êtes un des jeunes qui sont intervenus la nuit du 11 juillet ? [Contactez la rédaction](/bureau-des-plaintes/), en confidentialité. La rédaction relaie, fait remonter, et peut vous aider à vous organiser collectivement.*

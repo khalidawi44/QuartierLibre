@@ -22,6 +22,8 @@ author: "soraya-messaoudi"
 plainte_variant: "logement"
 ---
 
+> **⚠ Mise à jour — 13 juillet 2026.** Trois mois après la publication de cette enquête, dans la **nuit du 11 au 12 juillet 2026 à 2 h 30 du matin**, un **incendie** a pris dans l'ascenseur d'un immeuble NMH du Clos Toreau, rue de Saint-Jean-de-Luz. Une locataire du 7ᵉ étage s'est retrouvée suspendue à sa fenêtre pour respirer. Les jeunes du quartier ont sauvé l'immeuble à mains nues, dans une cage d'escalier dont NMH avait cadenassé les trappes d'évacuation des fumées. Quatre jours plus tôt, le bailleur avait écrit aux locataires : « diagnostic des dysfonctionnements ». → Lire : [*Clos-Toreau, 2h30 du matin : les jeunes du quartier ont sauvé l'immeuble que NMH avait cadenassé*](/clos-toreau-incendie-nmh-trappes-cadenassees/).
+
 ## Un des plus petits quartiers HLM, une des plus grandes hontes
 
 Le Clos Toreau, au sud de Nantes, coincé entre le périphérique et la Loire, c'est à peine 3 000 habitants. Un petit quartier. Un quartier souvent oublié quand la mairie parle de « politique de la ville ». Un quartier pourtant **emblématique** de la **faillite de Nantes Métropole Habitat (NMH)** sur les questions d'insalubrité.
