@@ -18,7 +18,10 @@ tags:
   - securite-incendie
   - saint-jean-de-luz
   - lfi-nantes-sud
-  - le-taureau
+  - lfi-clos-toreau
+  - fabrice-doucet
+  - monsieur-moreno
+  - dossier-pilote
 excerpt: "Nuit du 11 au 12 juillet 2026, 2h30 du matin. Au 4 rue de Saint-Jean-de-Luz, en plein cœur du Clos-Toreau, un incendie prend dans l'ascenseur. Une locataire se retrouve suspendue à sa fenêtre du 7ᵉ étage pour respirer. Les trappes d'évacuation des fumées, verrouillées par cadenas de Nantes Métropole Habitat, restent inutilisables. Ce sont des jeunes du quartier, à mains nues et à coups de bouteilles d'eau, qui éteignent le feu et évacuent l'immeuble. Quatre jours plus tôt, le 7 juillet, NMH avait déjà écrit aux locataires de toute la rue (du 2 au 14) : une lettre officielle annonçant l'intervention des cabinets Pouget et SETEC pour un « diagnostic des dysfonctionnements ». NMH savait qu'il y avait des dysfonctionnements. Ils l'avaient noir sur blanc. Ils n'ont pas ouvert les cadenas. NMH est présidé par Aïcha Bassal."
 featured_image: "content/media/2026-07-13-clos-toreau-incendie-affiche.png"
 author: "soraya-messaoudi"
@@ -57,7 +60,7 @@ Autrement dit : Nantes Métropole Habitat a un dispositif de désenfumage aux no
 
 Un dispositif de sécurité incendie **cadenassé** est, en droit, un dispositif de sécurité incendie **inexistant**. NMH n'a pas oublié d'installer les trappes : il en a scellé l'accès. Ce n'est pas une négligence, c'est une **politique**.
 
-Et cette politique n'est **pas propre au 4 rue de Saint-Jean-de-Luz**. Les habitant·es et le groupe d'action LFI Nantes-Sud « Le Taureau » le documentent depuis leur audit citoyen : **tous les immeubles NMH du secteur** sont équipés du même dispositif conforme et de la même série de cadenas. Trappe d'évacuation cadenassée. **Manivelle absente**, dans tous les cas. **Échelle démontable cadenassée**, elle aussi. Ce n'est pas un oubli sur un bâtiment. C'est une **règle de gestion** appliquée à **tout le parc**.
+Et cette politique n'est **pas propre au 4 rue de Saint-Jean-de-Luz**. Les habitant·es et le groupe d'action LFI Nantes-Sud Clos-Toreau le documentent depuis leur audit citoyen : **tous les immeubles NMH du secteur** sont équipés du même dispositif conforme et de la même série de cadenas. Trappe d'évacuation cadenassée. **Manivelle absente**, dans tous les cas. **Échelle démontable cadenassée**, elle aussi. Ce n'est pas un oubli sur un bâtiment. C'est une **règle de gestion** appliquée à **tout le parc**.
 
 Interpellé sur cette question par les locataires, NMH a fini par livrer sa justification : les cadenas seraient posés « pour éviter que les gens ne montent sur le toit ». La réponse dit tout : le bailleur assume publiquement d'avoir mis un **cadenas sur un dispositif de survie** pour **protéger la toiture d'un usage non autorisé**. Le curseur, dans ce raisonnement, est explicite : le **patrimoine bâti** passe avant les **corps des locataires**. Une trappe qu'un adolescent pourrait ouvrir pour prendre l'air un soir d'été pèse, dans la comptabilité NMH, plus lourd que la fumée qui étouffe une famille au 7ᵉ étage à 2 h 30 du matin.
 
@@ -93,7 +96,7 @@ Et — la coïncidence est cruelle, mais elle est là — c'est **un jeune homme
 
 ## Ce que la lutte habitante a arraché — avant le feu
 
-Il faut remettre les dates dans l'ordre. Depuis **plusieurs mois**, un travail de fond est mené sur le quartier par les habitant·es eux-mêmes, en lien avec l'**[Union des Quartiers Libres](https://metropole.nantes.fr/mes-services-mon-quotidien/espace-associations-nantaises/annuaire-des-associations-nantaises/union-des-quartiers-libres)** — l'association enregistrée à l'annuaire officiel des associations nantaises, qui défend les habitant·es des quartiers populaires en matière de logement, de sécurité et de services publics —, **La France insoumise 44**, et le groupe d'action local **LFI Nantes-Sud « Le Taureau »**. Un **audit** des logements de tout le **parc HLM de Nantes-Sud** a été réalisé, sur la base des remontées des locataires : moisissures, punaises, chauffage défaillant, parties communes délabrées, sécurité incendie douteuse. Un travail que NMH aurait dû produire lui-même depuis des années.
+Il faut remettre les dates dans l'ordre. Depuis **plusieurs mois**, un travail de fond est mené sur le quartier par les habitant·es eux-mêmes, en lien avec l'**[Union des Quartiers Libres](https://metropole.nantes.fr/mes-services-mon-quotidien/espace-associations-nantaises/annuaire-des-associations-nantaises/union-des-quartiers-libres)** — l'association enregistrée à l'annuaire officiel des associations nantaises, qui défend les habitant·es des quartiers populaires en matière de logement, de sécurité et de services publics —, **La France insoumise 44**, et le groupe d'action local **LFI Nantes-Sud Clos-Toreau**. Un **audit** des logements de tout le **parc HLM de Nantes-Sud** a été réalisé, sur la base des remontées des locataires : moisissures, punaises, chauffage défaillant, parties communes délabrées, sécurité incendie douteuse. Un travail que NMH aurait dû produire lui-même depuis des années.
 
 Ce travail a fini par remonter jusqu'aux bureaux de NMH. Suffisamment haut pour que le bailleur se décide à réagir. C'est ce mouvement — la **pression exercée en porte-à-porte, dans le parc de logements sociaux de Nantes-Sud, par des militant·es et des habitant·es** — qui a produit la lettre du 7 juillet 2026. Pas un incendie, dont personne ne pouvait alors prédire la survenue quatre jours plus tard. Pas une décision technique du bailleur. **Une pression citoyenne** qui a obligé NMH à écrire.
 
@@ -103,7 +106,7 @@ Avant même de parler d'incendie, la vie quotidienne dans les immeubles du 2 au 
 
 Ces conditions ne datent pas de cet été. Nous en documentions déjà l'ampleur, dans nos colonnes, en avril dernier — [*Clos Toreau : punaises, moisissures, mépris — le quotidien des locataires de NMH*](/clos-toreau-punaises-moisissures-mepris/) — où étaient déjà listés les rats, les moisissures noires sur les murs, les punaises de lit qui reviennent après chaque désinsectisation, et surtout la **réponse-type** de NMH à ses locataires : « *vous n'aérez pas assez* ». Trois mois plus tard, la même politique, les mêmes silences, et désormais un feu.
 
-Ce ne sont pas des découvertes qui attendent un rapport de cabinet. Ce sont des faits **connus, nommés, documentés par les habitant·es** — et remontés à NMH depuis longtemps. La liste des travaux prioritaires, telle que la formulent les habitant·es et le groupe d'action LFI Nantes-Sud « Le Taureau », est claire : **isolation par l'extérieur, changement des joints et des fenêtres, rénovation des habitats à l'intérieur, refonte complète du réseau d'eau, obturation des passages de rongeurs**. On n'a pas besoin d'un cabinet parisien pour l'écrire — il suffit d'entrer dans un logement et d'écouter.
+Ce ne sont pas des découvertes qui attendent un rapport de cabinet. Ce sont des faits **connus, nommés, documentés par les habitant·es** — et remontés à NMH depuis longtemps. La liste des travaux prioritaires, telle que la formulent les habitant·es et le groupe d'action LFI Nantes-Sud Clos-Toreau, est claire : **isolation par l'extérieur, changement des joints et des fenêtres, rénovation des habitats à l'intérieur, refonte complète du réseau d'eau, obturation des passages de rongeurs**. On n'a pas besoin d'un cabinet parisien pour l'écrire — il suffit d'entrer dans un logement et d'écouter.
 
 ## La lettre du 7 juillet, quatre jours avant le feu
 
@@ -125,7 +128,7 @@ Quatre jours ont suffi pour que l'attente coûte.
 
 Les cabinets choisis par NMH ne sont pas des observateurs neutres. **Pouget Consultants**, sur lequel Nantes Métropole Habitat a arrêté son choix, est un bureau d'ingénierie qui, sur son propre site, se présente comme spécialisé **à la fois dans l'audit énergétique et dans l'Assistance à Maîtrise d'Ouvrage sur les projets de rénovation des bailleurs sociaux**, avec des interventions couvrant « toutes les phases » de projet — de l'audit initial aux marchés globaux de performance sur travaux. Ils décrochent régulièrement des marchés publics de rénovation chez des bailleurs sociaux comparables à NMH.
 
-Le groupe d'action **LFI Nantes-Sud « Le Taureau »** en tire une conclusion nette : **les mêmes prestataires qui diagnostiquent les dysfonctionnements peuvent ensuite candidater aux marchés de travaux qui découleront de leur propre diagnostic**. En termes simples : *celui qui écrit le devoir peut noter la copie et corriger la copie*. Ce n'est pas une entorse marginale à la déontologie de la commande publique — c'est un **conflit d'intérêts structurel**, dans un office qui gère, par son propre chiffre officiel, près de **100 millions d'euros de marchés publics par an** auprès d'environ 900 fournisseurs.
+Le groupe d'action **LFI Nantes-Sud Clos-Toreau** en tire une conclusion nette : **les mêmes prestataires qui diagnostiquent les dysfonctionnements peuvent ensuite candidater aux marchés de travaux qui découleront de leur propre diagnostic**. En termes simples : *celui qui écrit le devoir peut noter la copie et corriger la copie*. Ce n'est pas une entorse marginale à la déontologie de la commande publique — c'est un **conflit d'intérêts structurel**, dans un office qui gère, par son propre chiffre officiel, près de **100 millions d'euros de marchés publics par an** auprès d'environ 900 fournisseurs.
 
 À supposer même que la muraille interne des cabinets soit parfaitement étanche (elle l'est rarement dans les faits), il resterait une évidence : un diagnostic produit par un prestataire *aussi* candidat aux marchés qui en découlent tend **naturellement à recommander les travaux qu'il espère lui-même gagner**. Ce qui garantit le maintien du chiffre d'affaires du cabinet — pas nécessairement la solution la plus utile pour les locataires.
 
@@ -137,19 +140,43 @@ Ce qui devrait être un point de bascule pour un bailleur responsable — un feu
 
 Ce silence, après l'incendie, est **plus lourd encore** que l'omission du mot « incendie » dans la lettre du 7 juillet — parce que le 7 juillet, on pouvait plaider l'inconnu, l'avenir non écrit. Après le 12 juillet, on ne peut plus. **NMH connaît la conséquence directe de son inaction opérationnelle sur les cadenas, et n'a pas révisé sa réponse d'un iota.** Le processus tourne à son rythme, indifférent au fait qu'il a désormais du sang et de la suie sur les mains.
 
-## Le communiqué du Taureau : « économisez cet argent, parlez d'abord aux locataires »
+## Comment NMH répond quand on la teste : le dossier pilote et le courrier Moreno
 
-Face à cette double impasse — un audit tardif, un audit biaisé — le groupe d'action **LFI Nantes-Sud « Le Taureau »** presse instamment, dans un communiqué, la direction de Nantes Métropole Habitat de **renoncer à ces deux audits privés** et de **restituer cet argent aux locataires** sous forme de travaux directs. La formulation est nette :
+Le comportement de NMH face aux alertes citoyennes ne se limite pas à l'inaction. Il y a aussi la **manœuvre**. Le groupe **LFI Nantes-Sud Clos-Toreau**, en lien avec l'**Union des Quartiers Libres** — présidée par **Fabrice Doucet** —, en a fait la démonstration au cas par cas.
+
+Le groupe a envoyé à Nantes Métropole Habitat un **dossier pilote** : un dossier test, précis, entièrement documenté, sur une locataire du secteur suivie par l'association. Les faits en pièces jointes :
+
+- **Moisissures massives** sur les murs de son logement.
+- **Blattes** dans les pièces à vivre.
+- Sa **fille** présentait des **symptômes respiratoires** faisant l'objet d'un **traitement médical**, appuyé par une **ordonnance** dans laquelle le médecin écrivait explicitement que **l'humidité du logement était probablement en cause**.
+
+L'objet du test était clair : voir comment NMH répondrait à un signalement pleinement étayé, porté par une association identifiée. La réponse est venue en deux temps — et elle n'a pas porté sur le fond.
+
+**Temps 1.** **Deux jours** après réception du dossier, **Monsieur Moreno, chef d'agence NMH**, se rend en personne dans les immeubles concernés — pour parler, dit-il, des **coupures d'eau**. Le prétexte est transparent : NMH ne vient pas sur la moisissure signalée par écrit, il vient « pour autre chose ». On ne parle pas du dossier. On regarde qui parle à qui, on soupèse le degré de mobilisation des locataires. Sondage d'ambiance.
+
+**Temps 2.** Dans un **courrier écrit** transmis par la suite, Monsieur Moreno mentionne avoir **rencontré cette même locataire** — celle du dossier pilote — et écrit qu'**elle ne lui aurait pas fait part de problèmes de moisissure**. La formulation vise, très précisément, à **discréditer par écrit le dossier de l'association**, en suggérant que la principale intéressée ne confirmerait pas les faits allégués.
+
+Le problème est simple : **cette rencontre n'a jamais eu lieu**. Fabrice Doucet a lui-même rendu visite à la locataire concernée, chez elle. Il **a constaté par ses propres yeux les moisissures**. Quand il a évoqué avec elle la visite alléguée par Monsieur Moreno, la locataire a répondu clairement : **« Non non, personne n'est venu. »**
+
+Il ne peut y avoir que deux hypothèses. **Soit Monsieur Moreno a confondu la locataire du dossier pilote avec une autre habitante** — auquel cas, pour un chef d'agence qui signe un courrier officiel visant à neutraliser un signalement documenté par ordonnance médicale, c'est un manquement grave à la rigueur professionnelle. **Soit il a écrit sciemment une chose qui n'est pas vraie**. Aucune des deux hypothèses n'est acceptable pour un cadre d'un office public — a fortiori quand la santé respiratoire d'une enfant est en jeu.
+
+Ce que révèle cet épisode dépasse le cas de la locataire testée. Il révèle une **méthode**. Face à un signalement citoyen documenté, NMH ne répond pas sur le fond ; il envoie un chef d'agence sur le terrain **sous prétexte** ; puis il consigne **par écrit** une version des faits **contredite par les intéressé·es**. C'est un mode opératoire qui vise, à moyen terme, à assécher la lutte habitante par le doute — à faire dire, dans un dossier, que « finalement, la locataire n'a pas confirmé ». Face à cela, la traçabilité tenue par l'Union des Quartiers Libres et par LFI Nantes-Sud Clos-Toreau devient une **arme d'auto-défense**.
+
+C'est cette expérience qui permet aujourd'hui d'affirmer, sans autre précaution que celle des faits : le pilotage NMH sur les alertes des locataires du Clos-Toreau **n'est pas honnête**. Il n'est pas seulement lent. Il n'est pas seulement neutre. Il **manœuvre**.
+
+## Le communiqué du groupe LFI Clos-Toreau : « économisez cet argent, parlez d'abord aux locataires »
+
+Face à cette double impasse — un audit tardif, un audit biaisé — le groupe d'action **LFI Nantes-Sud Clos-Toreau** presse instamment, dans un communiqué, la direction de Nantes Métropole Habitat de **renoncer à ces deux audits privés** et de **restituer cet argent aux locataires** sous forme de travaux directs. La formulation est nette :
 
 > « Comme à leur habitude, NMH ne parle pas avec les locataires qui vivent dans ces logements. Nous savons très bien ce qu'il y a à faire : isolation par l'extérieur, changement des joints, des fenêtres, rénovation des habitats à l'intérieur, refonte complète du réseau d'eau. Économisons cet argent, parlons d'abord aux habitant·es. »
 >
-> *— LFI Nantes-Sud « Le Taureau », communiqué, juillet 2026*
+> *— LFI Nantes-Sud Clos-Toreau, communiqué, juillet 2026*
 
 Cette position rejoint celle de **[l'Union des Quartiers Libres](https://metropole.nantes.fr/mes-services-mon-quotidien/espace-associations-nantaises/annuaire-des-associations-nantaises/union-des-quartiers-libres)** et de **La France insoumise 44** : le diagnostic est fait. Il est fait par celles et ceux qui vivent dans le bâtiment, tous les jours, depuis des décennies. La liste des travaux prioritaires est **connue**. Il ne reste plus qu'à **décider**, et à **agir**.
 
 ## Ce que demandent les locataires
 
-La revendication portée par les habitant·es, l'Union des Quartiers Libres, LFI 44 et LFI Nantes-Sud « Le Taureau » est claire :
+La revendication portée par les habitant·es, l'Union des Quartiers Libres, LFI 44 et LFI Nantes-Sud Clos-Toreau est claire :
 
 - **Les cadenas des dispositifs de désenfumage doivent être supprimés dans les 48 heures**, dans tous les immeubles NMH du secteur — pas seulement rue de Saint-Jean-de-Luz. Le désenfumage est une **question de vie ou de mort**, pas un enjeu de gestion patrimoniale. Ce point ne se négocie pas, il ne se diagnostique pas : il s'**exécute**.
 - **Les marchés Pouget et SETEC doivent être annulés**, ou à défaut re-passés à des cabinets **sans lien commercial** avec NMH sur les marchés de travaux qui pourraient découler de leur propre diagnostic. La commande publique ne doit pas produire des expertises qui recommandent leurs propres devis.

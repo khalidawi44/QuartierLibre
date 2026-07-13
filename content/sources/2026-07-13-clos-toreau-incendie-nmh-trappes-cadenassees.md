@@ -3,7 +3,7 @@
 Article : [`2026-07-13-clos-toreau-incendie-nmh-trappes-cadenassees.md`](../articles/2026-07-13-clos-toreau-incendie-nmh-trappes-cadenassees.md)
 Dernier audit : **2026-07-13**
 
-> **Consigne rédactionnelle (interne).** Dans le corps de l'article, **aucun lien vers un média presse**. Liens autorisés dans le corps : mouvements militants alliés uniquement (LFI 44, Union des Quartiers Libres, groupe d'action LFI Nantes-Sud « Le Taureau »). Toutes les URLs institutionnelles et de référence technique ci-dessous sont pour audit interne / traçabilité uniquement.
+> **Consigne rédactionnelle (interne).** Dans le corps de l'article, **aucun lien vers un média presse**. Liens autorisés dans le corps : mouvements militants alliés uniquement (LFI 44, Union des Quartiers Libres, groupe d'action LFI Nantes-Sud Clos-Toreau). Toutes les URLs institutionnelles et de référence technique ci-dessous sont pour audit interne / traçabilité uniquement.
 
 ## ✓ Sources vérifiées
 
@@ -36,10 +36,10 @@ Dernier audit : **2026-07-13**
 
 ### Alliés militants (cités dans le corps)
 - **La France insoumise 44** — fédération départementale LFI de Loire-Atlantique → [lafranceinsoumise.fr (national, avec relais départemental)](https://lafranceinsoumise.fr/).
-- **LFI Nantes-Sud « Le Taureau »** — groupe d'action local LFI référencé par ses membres sous ce nom (à ajouter URL exacte si compte X ou page dédiée).
+- **LFI Nantes-Sud Clos-Toreau** — groupe d'action local LFI référencé par ses membres sous ce nom (à ajouter URL exacte si compte X ou page dédiée).
 - **Union des Quartiers Libres** — association enregistrée à l'annuaire officiel Ville de Nantes (URL validée ci-dessus).
 
-### Communiqué LFI Nantes-Sud « Le Taureau » — juillet 2026
+### Communiqué LFI Nantes-Sud Clos-Toreau — juillet 2026
 - Position publique du groupe d'action : « **presse instamment** la direction de NMH de renoncer aux deux audits Pouget + SETEC et d'employer l'argent aux travaux directs » ; formulation reprise en article : « Économisons cet argent, parlons d'abord aux habitant·es. »
 - Argumentaire du communiqué :
   1. NMH **ne parle pas** avec les locataires — pratique habituelle du bailleur.
@@ -51,25 +51,44 @@ Dernier audit : **2026-07-13**
 - **Pouget Consultants** se présente sur son propre site comme bureau d'ingénierie spécialisé **à la fois** en audit énergétique **et** en Assistance à Maîtrise d'Ouvrage sur les projets de rénovation des bailleurs sociaux, avec intervention couvrant « toutes les phases » de projet → [pouget-consultants.eu](https://www.pouget-consultants.eu/) · [Assistance à Maîtrise d'Ouvrage — Pouget](https://www.pouget-consultants.eu/metiers/assistance-maitrise-ouvrage/) · [Conseil et études énergétiques](https://www.pouget-consultants.eu/conseil-etudes-energetiques/).
 - Agence Nantes → [Pouget Consultants Nantes — Pages Jaunes](https://www.pagesjaunes.fr/pros/51656390).
 - **SETEC** — grand groupe d'ingénierie française (SETEC organisation, SETEC bâtiment, etc.). Confirmation formelle de sa présence sur marchés NMH travaux : à préciser via marchespublics.nmh.fr → [portail marchés publics NMH](https://marchespublics.nmh.fr/).
-- → **Action** : Khalid ou l'équipe LFI Le Taureau produit la trace concrète d'attribution des cabinets sur des marchés travaux NMH ou bailleurs comparables (numéros d'AO, noms des marchés attribués, dates).
+- → **Action** : Khalid ou l'équipe LFI LFI Clos-Toreau produit la trace concrète d'attribution des cabinets sur des marchés travaux NMH ou bailleurs comparables (numéros d'AO, noms des marchés attribués, dates).
 
 ### NMH — commande publique (contexte)
 - NMH investit environ **100 millions d'euros par an dans l'économie régionale via ~900 fournisseurs** — chiffre officiel de l'office → [Loire-Atlantique — bailleur social NMH](https://www.loire-atlantique.fr/44/habitat-logement/bailleur-social-nantes-metropole-habitat/c_1210135).
 - Portail officiel des marchés publics NMH : [marchespublics.nmh.fr](https://marchespublics.nmh.fr/) · [Avis de publicité et dossiers de consultation NMH](https://www.nmh.fr/Espace-Entreprise/l-espace-marches-publics-de-nmh/Avis-de-publicite-et-Dossiers-de-consultation).
 - **Chambre régionale des comptes** a récemment alerté sur la gestion de NMH → [Cour des comptes — Nantes Métropole Habitat](https://www.ccomptes.fr/fr/publications/nantes-metropole-habitat-loire-atlantique) · [Informateur Judiciaire — la CRC alerte NMH sur sa gestion](https://www.informateurjudiciaire.fr/actualites/logement-social-la-chambre-regional-des-comptes-alerte-nantes-metropole-habitat-sur-sa-gestion/) — piste pour un article ultérieur.
 
-### Caractère systémique du cadenassage (audit habitant Le Taureau)
-- Selon l'audit citoyen mené par Union des Quartiers Libres + LFI 44 + LFI Nantes-Sud « Le Taureau », **tous les immeubles NMH du secteur** — pas seulement le 4 rue Saint-Jean-de-Luz — présentent la même configuration : trappe d'évacuation des fumées cadenassée, **manivelle absente**, **échelle démontable cadenassée**. Pratique systémique, pas anomalie isolée. → **Action** : Khalid produit la liste des adresses auditées (ou renvoie vers un document Le Taureau / UQL) pour solidifier la claim « tous les bâtiments du secteur ».
+### Dossier pilote UQL + courrier Monsieur Moreno (NMH) — épisode critique à documenter avec traces
+
+**Épisode central de la section « Comment NMH répond quand on la teste ».** Faits rapportés par Khalid, à faire remonter à Fabrice Doucet et LFI Nantes-Sud Clos-Toreau pour blindage juridique complet avant publication.
+
+- **Fabrice Doucet** — président de l'**Union des Quartiers Libres**. Fonction confirmée par Khalid, à sourcer par publication officielle (statuts UQL, annuaire officiel des associations nantaises, mention presse). → **Action** : Khalid fournit une trace publique (site UQL, mention dans un compte rendu de mairie, mention dans une pétition) attestant du mandat de président.
+- **Monsieur Moreno** — **chef d'agence** Nantes Métropole Habitat pour le secteur Clos-Toreau (probablement rattaché à l'agence Goudy, qui couvre Clos-Toreau selon [nmh.fr/agence-goudy/CLOS-TOREAU-HLM](https://www.nmh.fr/NMH-L-office/Notre-patrimoine/Carte-des-logements/agence-goudy/CLOS-TOREAU-HLM)). → **Action critique** : Khalid confirme **orthographe exacte du nom + prénom** de Monsieur Moreno et sa **fonction précise** (chef d'agence Goudy ? chef de secteur ? autre ?). Cette précision est indispensable avant publication : nommer un cadre d'un office public dans un article qui questionne son honnêteté professionnelle exige une identification sans faute.
+- **Dossier pilote** transmis par LFI Nantes-Sud Clos-Toreau à NMH — dossier test sur une locataire du secteur suivie par l'UQL. Pièces au dossier :
+  1. Moisissures sur les murs (photos, dates).
+  2. Blattes dans les pièces à vivre.
+  3. Symptômes respiratoires de la fille de la locataire, traitement médical en cours.
+  4. **Ordonnance médicale** citant explicitement l'humidité du logement comme cause probable.
+  → **Action critique** : Khalid met à disposition, en interne rédaction, la **copie du dossier pilote envoyé à NMH** (accusé de réception ou preuve de dépôt) + copie de l'ordonnance médicale **anonymisée** (identité de la locataire et de sa fille masquée). Sans ces pièces sous la main, on ne tient pas en cas de recours en diffamation par NMH ou par Monsieur Moreno.
+- **Visite de Monsieur Moreno** sur le terrain, **2 jours** après l'envoi du dossier, sur le prétexte des **coupures d'eau**. → **Action** : Khalid documente la date exacte de la visite + la date d'envoi du dossier (chronologie contredit-elle la version NMH).
+- **Courrier écrit** de Monsieur Moreno évoquant avoir « rencontré » la locataire concernée qui aurait dit ne pas avoir de problème de moisissure. → **Action CRITIQUE** : Khalid met à disposition la **copie du courrier Moreno** (jpeg / scan). Sans ce document, le fait ne tient pas juridiquement. C'est le pivot de la section — sans papier, on retire ou on reformule au conditionnel généralisé.
+- **Contradiction établie par Fabrice Doucet** : il a personnellement rendu visite à la locataire, chez elle, constaté les moisissures, et la locataire lui a confirmé de vive voix : « **Non non, personne n'est venu.** » → **Action** : Khalid recueille de Doucet un **témoignage écrit et signé** (email, message signé) ou un enregistrement audio consenti, décrivant la chronologie de sa visite + la réaction de la locataire à l'évocation de la visite de Moreno. Sans traçabilité, la contradiction reste orale.
+- **Consentement de la locataire** à ce que son témoignage soit repris publiquement (sans nom) : → **Action** : accord écrit ou verbal enregistré de la locataire, y compris pour la mention du dossier médical de sa fille (avec anonymisation stricte de l'enfant).
+
+**Formulation retenue dans l'article** : les deux hypothèses (confusion ou mensonge) sont posées côte à côte, sans conclusion propre du média. Rédaction volontairement prudente pour tenir face à un recours éventuel — mais les faits qui doivent tenir juridiquement sont : (a) existence du dossier pilote transmis, (b) existence du courrier Moreno, (c) contradiction par Doucet + locataire. Sans (a), (b), (c) documentés, la section entière est à retirer.
+
+### Caractère systémique du cadenassage (audit habitant LFI Clos-Toreau)
+- Selon l'audit citoyen mené par Union des Quartiers Libres + LFI 44 + LFI Nantes-Sud Clos-Toreau, **tous les immeubles NMH du secteur** — pas seulement le 4 rue Saint-Jean-de-Luz — présentent la même configuration : trappe d'évacuation des fumées cadenassée, **manivelle absente**, **échelle démontable cadenassée**. Pratique systémique, pas anomalie isolée. → **Action** : Khalid produit la liste des adresses auditées (ou renvoie vers un document LFI Clos-Toreau / UQL) pour solidifier la claim « tous les bâtiments du secteur ».
 - **Justification NMH** : les cadenas seraient posés « **pour éviter que les gens ne montent sur le toit** ». Formulation recueillie oralement par les locataires lorsqu'ils ont interrogé le bailleur. → **Action** : Khalid retrouve, si possible, une trace écrite (courrier, mail, PV d'assemblée locataires) ou un témoignage de plusieurs locataires convergents sur cette formulation. Sans écrit, la citation reste solide par la convergence des témoignages, mais l'écrit blinderait juridiquement.
 
-### Témoignages habitants (audit citoyen — recueillis par Union des Quartiers Libres + LFI 44 + Le Taureau)
+### Témoignages habitants (audit citoyen — recueillis par Union des Quartiers Libres + LFI 44 + LFI Clos-Toreau)
 - **Coupures d'eau** au 2-14 rue Saint-Jean-de-Luz : « depuis plusieurs décennies ».
 - **Rats dans les canalisations** : une locataire témoigne s'être trouvée sous la douche quand un rat est sorti par le siphon ; un autre habitant montre un trou dans son mur, passage utilisé par les rongeurs.
 - **Joints de fenêtres** défaillants, **rénovation intérieure** ancienne, **isolation par l'extérieur** absente.
 - → **Action** : Khalid confirme la traçabilité des témoignages (dossier audit habitant, consentement à publication, éventuel dépôt de plainte pour insalubrité, saisines ADIL/ARS).
 
 ### Chronologie de bascule (confirmée par Khalid, témoin direct)
-- **Enquête habitante** menée par Union des Quartiers Libres + LFI 44 + LFI Nantes-Sud « Le Taureau » : **antérieure de plusieurs mois** à la lettre NMH. Date de démarrage exacte : à préciser (Khalid).
+- **Enquête habitante** menée par Union des Quartiers Libres + LFI 44 + LFI Nantes-Sud Clos-Toreau : **antérieure de plusieurs mois** à la lettre NMH. Date de démarrage exacte : à préciser (Khalid).
 - **Lettre NMH** du **7 juillet 2026** — reconnaissance implicite des dysfonctionnements et mandatement Pouget + SETEC.
 - **Incendie** : nuit du **11 au 12 juillet 2026**, à **2h30 du matin**, dans l'ascenseur du 2-14 rue Saint-Jean-de-Luz — **4 jours après** la lettre NMH.
 - **Article QL** : 13 juillet 2026.
@@ -81,7 +100,7 @@ Dernier audit : **2026-07-13**
 
 ## ⚠ Sources imprécises
 
-- **Date exacte de démarrage de l'enquête habitante** LFI 44 / Le Taureau / Union des Quartiers Libres : formulée « depuis plusieurs mois ». → **Action** : Khalid précise la date de démarrage pour resserrer le récit.
+- **Date exacte de démarrage de l'enquête habitante** LFI 44 / LFI Clos-Toreau / Union des Quartiers Libres : formulée « depuis plusieurs mois ». → **Action** : Khalid précise la date de démarrage pour resserrer le récit.
 - **Nombre de personnes évacuées, hospitalisées, mises sous oxygène** : mentions qualitatives (« état de choc », « détresse respiratoire », « mises sous oxygène ») sans chiffres. → **Action** : chiffrer si possible via témoignages complémentaires ou compte-rendu pompiers.
 - **Estimation du coût des cabinets Pouget + SETEC** : chiffre de « 150 000 à 200 000 € » venant de l'estimation de Khalid. Non certifiée par un devis officiel. → **Action** : demander à NMH la ventilation budgétaire par voie de conseil d'administration ou de question écrite.
 - **Historique des remontées habitantes sur le cadenassage** : mentionné (« question soulevée à plusieurs reprises ») sans date ni support écrit. → **Action** : rassembler les courriers antérieurs de locataires, PV d'assemblée de locataires, saisines de l'ADIL éventuelles.
