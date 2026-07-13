@@ -94,7 +94,10 @@ Dernier audit : **2026-07-13**
 
 ### Solidarité de quartier qui se substitue au bailleur (13 juillet)
 - **Gwen** — gestionnaire du **GR (groupe de résidence ?) au-dessus du Clos-Toreau**. Prend en charge la distribution de **vêtements et de nourriture** pour les femmes et les enfants sinistrés. → **Action** : Khalid précise le nom exact et la structure gérée par Gwen (GR = gestion résidentielle NMH ? centre socioculturel ? maison de quartier ? nom complet ?).
-- **Dame syrienne**, environ 60 ans, seule avec sa fille, réfugiée de guerre, employée de **France Horizon** (association nationale d'accompagnement des personnes réfugiées, [france-horizon.fr](https://www.france-horizon.fr/)). Rencontrée par la rédaction le 13 juillet au rez-de-chaussée du 4 rue Saint-Jean-de-Luz, en train d'**éponger seule le sol** gorgé d'eau des pompiers, sans matériel ni aide de NMH ni de la Ville de Nantes. → **Action** : consentement de la dame à être mentionnée (sans nom) ; confirmation qu'elle est bien employée de France Horizon (contrat, mission précise). Idéalement photo (avec accord) pour illustration.
+- **Deux femmes** épongeant seules le sol du hall (correction/précision Khalid) :
+  - **Dame d'environ 60 ans, employée de France Horizon** (association nationale d'accompagnement des personnes réfugiées, [france-horizon.fr](https://www.france-horizon.fr/)). Venue prêter main-forte à titre associatif. Nationalité non précisée.
+  - **Jeune femme d'une vingtaine d'années (20-30 ans), réfugiée de guerre syrienne, seule avec sa fille**, résidente de l'immeuble sinistré. Aidait au nettoyage sans matériel adéquat ni aide institutionnelle.
+  → **Action** : consentement des deux femmes à être mentionnées (sans nom) ; confirmation du statut de la dame de 60 ans (contrat France Horizon, mission précise). Idéalement photo (avec accord) pour illustration.
 
 ### Documents / témoignages en cours de production
 - **Vidéo témoignage de Hano** — sauveur, avec les jeunes qui ont éteint le foyer aux bouteilles d'eau. Prise en cours par la rédaction. → **Action** : consentement écrit de Hano à publier son témoignage (prénom + origine + profession déjà cités dans l'article, la vidéo appuie le récit).
