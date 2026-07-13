@@ -19,7 +19,7 @@ tags:
   - saint-jean-de-luz
   - lfi-nantes-sud
   - le-taureau
-excerpt: "En pleine nuit, dans l'immeuble du 2 au 14 rue de Saint-Jean-de-Luz au Clos-Toreau. Un incendie prend dans l'ascenseur, une locataire se retrouve suspendue à la fenêtre du 7ᵉ étage pour respirer. Les trappes d'évacuation des fumées, verrouillées par cadenas de Nantes Métropole Habitat, restent inutilisables. Ce sont des jeunes du quartier, à mains nues et à coups de bouteilles d'eau, qui éteignent le feu et frappent aux portes. À 5h30, les habitant·es sont réintégré·es dans leurs logements enfumés, sans protocole ni relogement. Quelques semaines plus tard, NMH mandate deux cabinets — Pouget et SETEC — pour un « diagnostic des dysfonctionnements ». La lettre du 7 juillet 2026 ne mentionne pas une seule fois l'incendie. NMH est présidé par Aïcha Bassal."
+excerpt: "Nuit du 11 au 12 juillet 2026, 2h30 du matin. Dans l'immeuble du 2 au 14 rue de Saint-Jean-de-Luz au Clos-Toreau, un incendie prend dans l'ascenseur. Une locataire se retrouve suspendue à sa fenêtre du 7ᵉ étage pour respirer. Les trappes d'évacuation des fumées, verrouillées par cadenas de Nantes Métropole Habitat, restent inutilisables. Ce sont des jeunes du quartier, à mains nues et à coups de bouteilles d'eau, qui éteignent le feu et évacuent l'immeuble. Quatre jours plus tôt, le 7 juillet, NMH avait déjà écrit aux locataires : une lettre officielle annonçant l'intervention des cabinets Pouget et SETEC pour un « diagnostic des dysfonctionnements ». NMH savait qu'il y avait des dysfonctionnements. Ils l'avaient noir sur blanc. Ils n'ont pas ouvert les cadenas. NMH est présidé par Aïcha Bassal."
 featured_image: "content/media/2026-07-13-clos-toreau-incendie-affiche.png"
 author: "soraya-messaoudi"
 status: "draft"
@@ -27,7 +27,9 @@ date: "2026-07-13 09:00:00"
 plainte_variant: "logement"
 ---
 
-**2 heures 30 du matin.** Dans l'immeuble du 2 au 14 rue de Saint-Jean-de-Luz, au cœur du **Clos-Toreau** à Nantes-Sud, un incendie prend dans l'**ascenseur**. La cage se remplit de fumée noire dans les minutes qui suivent, remonte étage par étage, atteint les portes palières. Une locataire du **7ᵉ étage**, en détresse respiratoire, doit se **suspendre à sa fenêtre** pour trouver un peu d'air. Elle survivra. Ce ne sera pas grâce à Nantes Métropole Habitat.
+**Nuit du 11 au 12 juillet 2026, 2 heures 30 du matin.** Dans l'immeuble du 2 au 14 rue de Saint-Jean-de-Luz, au cœur du **Clos-Toreau** à Nantes-Sud, un incendie prend dans l'**ascenseur**. La cage se remplit de fumée noire dans les minutes qui suivent, remonte étage par étage, atteint les portes palières. Une locataire du **7ᵉ étage**, en détresse respiratoire, doit se **suspendre à sa fenêtre** pour trouver un peu d'air. Elle survivra. Ce ne sera pas grâce à Nantes Métropole Habitat.
+
+**Quatre jours plus tôt**, le 7 juillet 2026, NMH avait écrit aux locataires du bâtiment. Une lettre officielle, signée par sa Direction de la Transition Patrimoniale et Énergétique. Objet : « **Diagnostic des dysfonctionnements** ». Dysfonctionnements, au pluriel. Le bailleur reconnaissait, noir sur blanc, l'existence de défauts sur le bâtiment. Il annonçait l'intervention des cabinets **Pouget** et **SETEC** à partir du **22 juillet**. Nous étions le 7 juillet. Le feu est parti le 11. Personne n'a ouvert les cadenas.
 
 Cette nuit-là, ce sont **des jeunes du quartier** — de ceux que la mairie et son bailleur appellent volontiers, en communiqué, « les groupes qui se rassemblent devant les entrées » — qui ont **évacué l'immeuble**, **frappé à toutes les portes**, et **éteint l'incendie** à mains nues et à bouteilles d'eau, pendant que les habitant·es des étages supérieurs restaient prisonnier·es de la fumée. Ce sera eux, les héros de la nuit. Pas les dispositifs de sécurité de NMH. Parce que les dispositifs de sécurité de NMH, ce soir-là comme les autres soirs, étaient **fermés par cadenas**.
 
@@ -77,15 +79,15 @@ Ce n'est pas un aléa. C'est un **choix de gestion** — celui d'un bailleur soc
 
 La communication institutionnelle de NMH aime les termes de « proximité », de « dialogue avec les locataires », de « politique de la ville ». La nuit du Clos-Toreau les traduit en langage clair : les locataires alertent, l'office n'agit pas, un feu se déclare, ce sont les habitant·es qui se sauvent eux-mêmes — et les jeunes que le récit municipal désigne comme un problème deviennent, cette nuit-là, la seule solution.
 
-## Les habitant·es ont audité. NMH a suivi.
+## Ce que la lutte habitante a arraché — avant le feu
 
-Depuis plusieurs mois, un travail de fond est mené sur le quartier par les habitant·es eux-mêmes, en lien avec l'**Union des Quartiers Libres**, **La France insoumise 44**, et le groupe d'action local **LFI Nantes-Sud « Le Taureau »**. Un **audit** des logements de tout le **parc HLM de Nantes-Sud** a été réalisé, sur la base des remontées des locataires : moisissures, punaises, chauffage défaillant, parties communes délabrées, sécurité incendie douteuse. Un travail que NMH aurait dû produire lui-même depuis des années.
+Il faut remettre les dates dans l'ordre. Depuis **plusieurs mois**, un travail de fond est mené sur le quartier par les habitant·es eux-mêmes, en lien avec l'**[Union des Quartiers Libres](https://metropole.nantes.fr/mes-services-mon-quotidien/espace-associations-nantaises/annuaire-des-associations-nantaises/union-des-quartiers-libres)** (l'association enregistrée à la Ville de Nantes qui défend les habitant·es des quartiers populaires en matière de logement, de sécurité et de services publics), **La France insoumise 44**, et le groupe d'action local **LFI Nantes-Sud « Le Taureau »**. Un **audit** des logements de tout le **parc HLM de Nantes-Sud** a été réalisé, sur la base des remontées des locataires : moisissures, punaises, chauffage défaillant, parties communes délabrées, sécurité incendie douteuse. Un travail que NMH aurait dû produire lui-même depuis des années.
 
-Preuve que la pression paie : dans le sillage de cet audit habitant, NMH a **mandaté deux prestataires privés** — le **cabinet Pouget** et la **société SETEC** — pour évaluer, à son tour, l'état et le fonctionnement des parties communes et des logements des immeubles du **2 au 14 rue de Saint-Jean-de-Luz**. La démarche a été notifiée aux locataires par courrier. Elle serait bienvenue à une condition : que le résultat serve à **rénover**, pas à **rédiger**.
+Ce travail a fini par remonter jusqu'aux bureaux de NMH. Suffisamment loin pour que le bailleur se décide à réagir. C'est ce mouvement — la **pression exercée en porte-à-porte, dans le parc de logements sociaux de Nantes-Sud, par des militant·es et des habitant·es** — qui a produit la lettre du 7 juillet 2026. Pas un incendie, dont personne ne pouvait alors prédire la survenue quatre jours plus tard. Pas une décision technique du bailleur. **Une pression citoyenne** qui a obligé NMH à écrire.
 
-## La lettre du 7 juillet : NMH écrit aux locataires, sans jamais dire « incendie »
+## La lettre du 7 juillet, quatre jours avant le feu
 
-Le **7 juillet 2026**, la Direction Générale Adjointe Habitat et Patrimoine de NMH adresse aux « **Mesdames, Messieurs Les locataires** » du 2 au 14 rue Saint Jean de Luz un courrier signé par **Marc-Antoine ELIE**, responsable de la transition et maintenance du patrimoine (dossier suivi par Anne-Laure LEGEAY). L'objet est sans ambiguïté : « **Intervention du cabinet Pouget et de la société SETEC — Diagnostic des dysfonctionnements** ».
+Le **7 juillet 2026**, donc, la Direction Générale Adjointe Habitat et Patrimoine de NMH adresse aux « **Mesdames, Messieurs Les locataires** » du 2 au 14 rue Saint Jean de Luz un courrier signé par **Marc-Antoine ELIE**, responsable de la transition et maintenance du patrimoine (dossier suivi par Anne-Laure LEGEAY). L'objet est sans ambiguïté : « **Intervention du cabinet Pouget et de la société SETEC — Diagnostic des dysfonctionnements** ».
 
 Deux mots, dans cet intitulé, méritent d'être arrêtés : « **dysfonctionnements** », au pluriel. C'est le bailleur lui-même qui, en couverture d'une lettre officielle, **reconnaît qu'il y a des dysfonctionnements** dans ses parties communes et ses logements. Toute la lecture qui suit — et toute la lecture que les habitant·es font depuis des mois — est **validée par cette formule**. Le problème existe. NMH l'écrit.
 
@@ -95,22 +97,29 @@ Le calendrier des visites est précisé : **22, 23 et 27 juillet 2026**, puis **
 
 Autrement dit : **tous les logements ne seront pas visités**. NMH commande un diagnostic **partiel**, sur un panel sélectionné — dont ni la taille, ni les critères de sélection, ni la méthodologie ne sont communiqués aux habitant·es dans ce courrier.
 
-**Et surtout — surtout — un mot manque à cette lettre. Un seul.**
+**Voilà ce que NMH savait, le 7 juillet 2026.** Que les parties communes présentaient des dysfonctionnements, au pluriel. Qu'il fallait deux cabinets extérieurs pour les évaluer. Que la première visite aurait lieu **le 22 juillet**. Que d'ici là, rien ne bougerait sur place.
 
-Le mot **incendie**. Il n'apparaît pas une fois. La démarche de diagnostic est présentée comme une initiative interne, une « démarche » de NMH sur son bâtiment, sans le moindre lien avec la nuit du 2 h 30 où des locataires ont failli mourir dans une cage d'escalier envahie de fumée toxique parce que les trappes de désenfumage étaient cadenassées. Comme si l'événement fondateur n'existait pas. Comme si la pression exercée par les habitant·es, LFI 44 et « Le Taureau » n'était pas la cause première du courrier.
+Quatre jours ont suffi pour que l'attente coûte.
 
-Cette **omission** est un choix rédactionnel. Elle a une fonction : réduire à une routine patrimoniale ce qui est, en réalité, une **réponse politique tardive à une défaillance mortelle**. Elle permet à NMH de gérer la suite sur son terrain — celui du diagnostic, des cabinets, des rapports intermédiaires, des calendriers de restitution — plutôt que sur le terrain des habitant·es, celui de la cage d'escalier noire, des enfants en oxygène, des cadenas au plafond.
+## Depuis l'incendie : NMH n'a pas rouvert le dossier
+
+Ce qui devrait être un point de bascule pour un bailleur responsable — un feu, une évacuation, des habitants sous oxygène dans le hall même dont on vient d'annoncer un « diagnostic des dysfonctionnements » — ne semble pas en être un pour NMH. À la date de publication du présent article, **aucun nouveau courrier n'a été adressé aux locataires** pour prendre acte de l'incendie du 11-12 juillet. **Aucune modification du calendrier de visites** annoncée. **Aucune mesure d'urgence sur les cadenas des trappes d'évacuation**. Le rendez-vous du 22 juillet reste au programme, comme si la nuit du 2h30 n'avait pas eu lieu, comme si le feu n'était qu'un aléa parmi d'autres à consigner dans le rapport final que Pouget et SETEC rendront en septembre.
+
+Ce silence, après l'incendie, est **plus lourd encore** que l'omission du mot « incendie » dans la lettre du 7 juillet — parce que le 7 juillet, on pouvait plaider l'inconnu, l'avenir non écrit. Après le 12 juillet, on ne peut plus. **NMH connaît la conséquence directe de son inaction opérationnelle sur les cadenas, et n'a pas révisé sa réponse d'un iota.** Le processus tourne à son rythme, indifférent au fait qu'il a désormais du sang et de la suie sur les mains.
 
 ## Ce que demandent les locataires
 
 La revendication portée par les habitant·es, l'Union des Quartiers Libres et les groupes d'action est simple :
 
+- **Les cadenas des dispositifs de désenfumage doivent être supprimés dans les 48 heures**, dans tous les immeubles NMH du secteur — pas seulement rue de Saint-Jean-de-Luz. Le désenfumage est une **question de vie ou de mort**, pas un enjeu de gestion patrimoniale. Ce point ne se négocie pas, il ne se diagnostique pas : il s'exécute.
 - **L'argent des cabinets Pouget et SETEC doit financer la rénovation, pas un rapport de plus.** Le coût estimé de deux prestataires diligentés sur toute la rue (parties communes + logements) est de l'ordre de **150 000 à 200 000 euros**. Cette somme, versée à la rénovation directe, changerait matériellement des logements dès cette année.
-- **Les cadenas des dispositifs de désenfumage doivent être supprimés immédiatement**, dans tous les immeubles NMH du secteur — pas seulement rue de Saint-Jean-de-Luz. Le désenfumage est une **question de vie ou de mort**, pas un enjeu de gestion patrimoniale.
 - **Toutes les habitations doivent être visitées**, pas un échantillon. Un diagnostic partiel ne fera qu'entretenir l'idée que « ce n'est qu'un immeuble », alors que le parc HLM de Nantes-Sud dans son entier connaît des défaillances documentées par l'audit habitant.
+- **Le calendrier des visites doit être adapté à l'urgence** : après un feu, on ne fait pas la première visite quinze jours plus tard. On la fait maintenant. Et on prévoit des permanences physiques dans l'immeuble, ouvertes aux locataires, sans rendez-vous.
 - **Un plan de suivi médical et de relogement d'urgence** doit être institué de plein droit après tout sinistre, avec réponse écrite du bailleur dans les 48 heures. Ce n'est pas une faveur, c'est un dû.
 - **La parole des habitant·es doit être reconnue** comme l'expertise première sur l'état du parc — pas comme un bruit de fond à recouvrir par des rapports de cabinet.
 
 ## Madame Bassal,
 
-Vous présidez, depuis le mois de mai, Nantes Métropole Habitat. Vous venez de prendre publiquement la parole sur la fermeté républicaine, sur l'ordre public dans les quartiers, sur la sécurité des Nantais·es. Nous vous rappelons ceci : la nuit du 2 h 30 rue de Saint-Jean-de-Luz, la sécurité des Nantais·es a été assurée par des jeunes du quartier armés de bouteilles d'eau, dans un immeuble dont votre office avait **verrouillé les trappes d'évacuation des fumées**. Les habitant·es n'attendent pas une motion. Ils attendent que les cadenas tombent. Ce serait un début.
+Vous présidez, depuis le mois de mai, Nantes Métropole Habitat. Le **7 juillet**, votre office signait une lettre reconnaissant l'existence de **dysfonctionnements** dans le bâtiment du 2 au 14 rue de Saint-Jean-de-Luz. Le **11 juillet à 2 heures 30 du matin**, ces dysfonctionnements ont failli tuer les habitant·es de cet immeuble. La sécurité des Nantais·es, cette nuit-là, a été assurée par des jeunes du quartier armés de bouteilles d'eau, dans une cage d'escalier dont votre office avait **verrouillé par cadenas les trappes d'évacuation des fumées** — et cela **quatre jours après avoir écrit qu'il y avait un problème**.
+
+Il n'est plus temps de diligenter des cabinets. Il est temps de faire tomber les cadenas. Les locataires n'attendent pas votre motion. Ils attendent votre clé.

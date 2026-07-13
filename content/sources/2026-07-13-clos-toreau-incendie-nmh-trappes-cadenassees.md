@@ -39,9 +39,20 @@ Dernier audit : **2026-07-13**
 - **LFI Nantes-Sud « Le Taureau »** — groupe d'action local LFI référencé par ses membres sous ce nom (à ajouter URL exacte si compte X ou page dédiée).
 - **Union des Quartiers Libres** — association nommée par Khalid, à documenter (URL, statuts, périmètre).
 
+### Chronologie de bascule (confirmée par Khalid, témoin direct)
+- **Enquête habitante** menée par Union des Quartiers Libres + LFI 44 + LFI Nantes-Sud « Le Taureau » : **antérieure de plusieurs mois** à la lettre NMH. Date de démarrage exacte : à préciser (Khalid).
+- **Lettre NMH** du **7 juillet 2026** — reconnaissance implicite des dysfonctionnements et mandatement Pouget + SETEC.
+- **Incendie** : nuit du **11 au 12 juillet 2026**, à **2h30 du matin**, dans l'ascenseur du 2-14 rue Saint-Jean-de-Luz — **4 jours après** la lettre NMH.
+- **Article QL** : 13 juillet 2026.
+- **Fait éditorial clé** : la lettre NMH est **antérieure** à l'incendie. Ce n'est donc PAS l'incendie qui a fait bouger NMH — c'est la pression de l'enquête habitante. Depuis l'incendie, NMH n'a rien recommuniqué (calendrier de visites Pouget/SETEC inchangé : 22 juillet → 7 septembre).
+
+### Union des Quartiers Libres — allié cité dans le corps (URL officielle validée)
+- Association enregistrée à l'annuaire officiel des associations nantaises de la Ville de Nantes → [Union Des Quartiers Libres — annuaire officiel metropole.nantes.fr](https://metropole.nantes.fr/mes-services-mon-quotidien/espace-associations-nantaises/annuaire-des-associations-nantaises/union-des-quartiers-libres)
+- Objet : « promeut la culture, les arts et les médias dans les quartiers populaires ; défend et représente les habitants des quartiers populaires en matière sociale, économique, environnementale, culturelle et civique, notamment protection des droits et intérêts en matière de logement, sécurité, services publics, santé, accès à la culture et qualité de vie » (annuaire officiel).
+
 ## ⚠ Sources imprécises
 
-- **Date exacte de l'incendie** : non précisée par Khalid dans le brief oral. La lettre NMH du 7 juillet 2026 est **postérieure** au sinistre, mais l'écart n'est pas quantifié dans l'article (formulé « quelques semaines plus tard »). → **Action** : Khalid confirme la date de l'incendie (jour + heure) pour la version publique.
+- **Date exacte de démarrage de l'enquête habitante** LFI 44 / Le Taureau / Union des Quartiers Libres : formulée « depuis plusieurs mois ». → **Action** : Khalid précise la date de démarrage pour resserrer le récit.
 - **Nombre de personnes évacuées, hospitalisées, mises sous oxygène** : mentions qualitatives (« état de choc », « détresse respiratoire », « mises sous oxygène ») sans chiffres. → **Action** : chiffrer si possible via témoignages complémentaires ou compte-rendu pompiers.
 - **Estimation du coût des cabinets Pouget + SETEC** : chiffre de « 150 000 à 200 000 € » venant de l'estimation de Khalid. Non certifiée par un devis officiel. → **Action** : demander à NMH la ventilation budgétaire par voie de conseil d'administration ou de question écrite.
 - **Historique des remontées habitantes sur le cadenassage** : mentionné (« question soulevée à plusieurs reprises ») sans date ni support écrit. → **Action** : rassembler les courriers antérieurs de locataires, PV d'assemblée de locataires, saisines de l'ADIL éventuelles.
