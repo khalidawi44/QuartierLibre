@@ -92,6 +92,16 @@ Dernier audit : **2026-07-13**
 - L'ascenseur est **partie commune** relevant du bailleur ; l'assurance multirisque immeuble (MRI) prend en charge les dommages consécutifs aux logements privatifs ; le bailleur exerce le cas échéant un recours contre le prestataire de maintenance.
 - → **Action** : citer une ou deux décisions précises de Cass. 3ᵉ civ. pour blindage supplémentaire (si prise en compte par avocat conseil). Non indispensable, la doctrine générale suffit à tenir l'article, mais ça renforce.
 
+### Solidarité de quartier qui se substitue au bailleur (13 juillet)
+- **Gwen** — gestionnaire du **GR (groupe de résidence ?) au-dessus du Clos-Toreau**. Prend en charge la distribution de **vêtements et de nourriture** pour les femmes et les enfants sinistrés. → **Action** : Khalid précise le nom exact et la structure gérée par Gwen (GR = gestion résidentielle NMH ? centre socioculturel ? maison de quartier ? nom complet ?).
+- **Dame syrienne**, environ 60 ans, seule avec sa fille, réfugiée de guerre, employée de **France Horizon** (association nationale d'accompagnement des personnes réfugiées, [france-horizon.fr](https://www.france-horizon.fr/)). Rencontrée par la rédaction le 13 juillet au rez-de-chaussée du 4 rue Saint-Jean-de-Luz, en train d'**éponger seule le sol** gorgé d'eau des pompiers, sans matériel ni aide de NMH ni de la Ville de Nantes. → **Action** : consentement de la dame à être mentionnée (sans nom) ; confirmation qu'elle est bien employée de France Horizon (contrat, mission précise). Idéalement photo (avec accord) pour illustration.
+
+### Documents / témoignages en cours de production
+- **Vidéo témoignage de Hano** — sauveur, avec les jeunes qui ont éteint le foyer aux bouteilles d'eau. Prise en cours par la rédaction. → **Action** : consentement écrit de Hano à publier son témoignage (prénom + origine + profession déjà cités dans l'article, la vidéo appuie le récit).
+- **Vidéo témoignage d'Aliun Keita** — récit de la nuit + démenti sur la « rencontre NMH » (déjà mentionnée plus haut, détenue par Fabrice).
+- **Communiqué officiel** LFI Nantes-Sud Clos-Toreau + UQL (Cadersah, Yahi, Doucet, groupe).
+- **Vidéo Instagram Irina Yahi** (à venir) — récap' PDF fourni à Irina pour construction du script.
+
 ### Nettoyage : société mandatée par NMH, mais pas de prise en charge des biens
 - NMH a mandaté une société de nettoyage pour la cage d'escalier et les murs/sols des logements atteints.
 - **Le débarrassage** de l'appartement Aliun (sortie des meubles, rassemblement des affaires, tri) a été assuré par : **la rédaction QL, Fabrice Doucet (président UQL), Aliun Keita lui-même, et un proche présent la nuit du drame**. À la main, sans matériel, sans prise en charge.
