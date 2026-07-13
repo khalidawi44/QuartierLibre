@@ -55,7 +55,9 @@ Dernier audit : **2026-07-13**
 - A fait passer ses **3 enfants (dont bébé 7 mois)** par la fenêtre du 6ᵉ vers le voisin du 5ᵉ étage qui les récupérait par sa propre fenêtre.
 - **Femme évanouie** au cours de l'évacuation.
 - Famille évacuée par **nacelle** de la grande échelle télescopique par les pompiers.
-- **Aucun suivi psychologique** organisé. Aliun s'est rendu **par ses propres moyens au CHU** pour être examiné et faire examiner ses enfants.
+- **Aliun, sa femme et leur bébé de 7 mois évacués par les sapeurs-pompiers vers le CHU, en véhicule d'intervention, sous oxygène** (intoxication à la fumée). — 👤 à confirmer par témoignage Aliun (moyen de transport exact, service d'accueil au CHU, durée d'observation).
+- **Aucun suivi psychologique** organisé côté institutions (Ville, préfecture, ARS). Pas de CUMP activée.
+- **NMH informé cette même nuit par le personnel hospitalier du CHU** — pas par sa propre initiative. NMH répond au personnel hospitalier que la prise en charge relève de l'**assurance multirisque habitation personnelle** d'Aliun. L'assurance MRH personnelle d'Aliun a ensuite relogé la famille **à Saint-Herblain**. **Aucun suivi NMH** depuis. — 👤 à sécuriser : nom/service du personnel hospitalier qui a téléphoné à NMH (si disponible), copie/enregistrement de la position NMH transmise, nom de la compagnie d'assurance de la MRH d'Aliun, adresse du relogement à Saint-Herblain (uniquement à titre interne QL, à ne pas publier).
 - **Constat visuel** de l'appartement le 13 juillet 2026 (rédaction QL / Khalid) : suie sédimentée jusqu'à ~1 m du sol, plafond épargné, matelas irrécupérables, vêtements et jouets imprégnés.
 - → **Action** : confirmer date/heure exacte du match Argentine-Suisse (Coupe du monde 2026 — plusieurs sources FIFA / L'Équipe). Recueillir photos horodatées de l'appartement Aliun (murs, matelas, cage d'escalier) pour blindage juridique.
 
