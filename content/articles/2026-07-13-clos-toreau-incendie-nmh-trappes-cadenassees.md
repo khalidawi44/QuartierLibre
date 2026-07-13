@@ -37,9 +37,9 @@ Cette nuit-là, ce sont **des jeunes du quartier** — de ceux que la mairie et 
 
 Le feu part de l'ascenseur. Personne ne sait encore ce qui l'a déclenché — l'enquête le dira, ou pas. Ce que l'on sait, c'est la vitesse à laquelle la cage d'escalier s'est remplie d'une **fumée dense et toxique** : en quelques minutes, les paliers du 3ᵉ étage et au-dessus deviennent **impraticables**. Impossible d'y respirer. Impossible d'y descendre.
 
-Anou, jeune du quartier, se trouve dehors quand il voit la fumée sortir de l'immeuble. Sa sœur habite au **2ᵉ étage**. Il monte, la sort. Puis il ne redescend pas : il **frappe à toutes les portes du palier**, dit aux gens d'évacuer, les fait sortir. Le 2ᵉ étage est vidé. Au-dessus, les habitant·es n'entendent pas ou ne peuvent pas passer. La fumée bloque tout. Les étages hauts restent en place, portes fermées, sans savoir.
+**Hano** — jeune du quartier, **d'origine soudanaise**, **livreur pour un grand groupe de livraison de colis** — se trouve dehors quand il voit la fumée sortir de l'immeuble. Sa sœur habite au **2ᵉ étage**. Il monte, la sort. Puis il ne redescend pas : il **frappe à toutes les portes du palier**, dit aux gens d'évacuer, les fait sortir. Le 2ᵉ étage est vidé. Au-dessus, les habitant·es n'entendent pas ou ne peuvent pas passer. La fumée bloque tout. Les étages hauts restent en place, portes fermées, sans savoir.
 
-Pendant qu'Anou évacue le bas, d'autres jeunes — ceux que la commune préfère habituellement disperser — sont **rentrés dans le hall en feu**. Avec **des bouteilles d'eau**. Pas des extincteurs, pas d'équipement, pas de formation. Des bouteilles d'eau. Ils ont **éteint le foyer** avant l'arrivée des pompiers. Sans eux, l'incendie aurait poursuivi sa course. Sans eux, il y aurait eu des morts.
+Pendant qu'Hano évacue le bas, d'autres jeunes — ceux que la commune préfère habituellement disperser — sont **rentrés dans le hall en feu**. Avec **des bouteilles d'eau**. Pas des extincteurs, pas d'équipement, pas de formation. Des bouteilles d'eau. Ils ont **éteint le foyer** avant l'arrivée des pompiers. Sans eux, l'incendie aurait poursuivi sa course. Sans eux, il y aurait eu des morts.
 
 La suite : camion des sapeurs-pompiers, grande échelle télescopique déployée, gyrophares bleus dans la nuit du Clos-Toreau, mise sous oxygène des personnes en **détresse respiratoire**, prise en charge d'habitants et d'habitantes en **état de choc**. Une locataire tirée à la grande échelle depuis sa fenêtre. Aucun mort. C'est un miracle relatif — un miracle produit par la ténacité de gamins que le quartier connaît par leurs prénoms, et que la municipalité prétend ne connaître qu'à travers ses statistiques.
 
@@ -56,6 +56,10 @@ Il n'a pas fonctionné cette nuit-là. Il ne pouvait pas fonctionner.
 Autrement dit : Nantes Métropole Habitat a un dispositif de désenfumage aux normes, entretenu, contrôlé — et **inaccessible aux locataires** au moment où sa fonction consiste précisément à leur sauver la vie. La fumée est restée piégée dans la cage. Elle a stagné, étage par étage, jusqu'à ce que les pompiers arrivent et fassent leur propre travail avec leurs propres moyens.
 
 Un dispositif de sécurité incendie **cadenassé** est, en droit, un dispositif de sécurité incendie **inexistant**. NMH n'a pas oublié d'installer les trappes : il en a scellé l'accès. Ce n'est pas une négligence, c'est une **politique**.
+
+Et cette politique n'est **pas propre au 4 rue de Saint-Jean-de-Luz**. Les habitant·es et le groupe d'action LFI Nantes-Sud « Le Taureau » le documentent depuis leur audit citoyen : **tous les immeubles NMH du secteur** sont équipés du même dispositif conforme et de la même série de cadenas. Trappe d'évacuation cadenassée. **Manivelle absente**, dans tous les cas. **Échelle démontable cadenassée**, elle aussi. Ce n'est pas un oubli sur un bâtiment. C'est une **règle de gestion** appliquée à **tout le parc**.
+
+Interpellé sur cette question par les locataires, NMH a fini par livrer sa justification : les cadenas seraient posés « pour éviter que les gens ne montent sur le toit ». La réponse dit tout : le bailleur assume publiquement d'avoir mis un **cadenas sur un dispositif de survie** pour **protéger la toiture d'un usage non autorisé**. Le curseur, dans ce raisonnement, est explicite : le **patrimoine bâti** passe avant les **corps des locataires**. Une trappe qu'un adolescent pourrait ouvrir pour prendre l'air un soir d'été pèse, dans la comptabilité NMH, plus lourd que la fumée qui étouffe une famille au 7ᵉ étage à 2 h 30 du matin.
 
 ## 5h30 du matin : réintégrés dans la fumée
 
@@ -78,6 +82,14 @@ Ce n'est pas un aléa. C'est un **choix de gestion** — celui d'un bailleur soc
 **Nantes Métropole Habitat est présidée, depuis le 13 mai 2026, par Aïcha Bassal.** Elle est aussi élue à la Ville de Nantes. C'est elle qui, désormais, porte politiquement la responsabilité de l'organisme qui gère plus de 26 000 logements sociaux dans la métropole, dont ceux de la rue de Saint-Jean-de-Luz. C'est elle qui aura à répondre publiquement du fait que, sous sa présidence, **un immeuble du parc a failli tuer ses habitant·es parce que les trappes de désenfumage étaient cadenassées**.
 
 La communication institutionnelle de NMH aime les termes de « proximité », de « dialogue avec les locataires », de « politique de la ville ». La nuit du Clos-Toreau les traduit en langage clair : les locataires alertent, l'office n'agit pas, un feu se déclare, ce sont les habitant·es qui se sauvent eux-mêmes — et les jeunes que le récit municipal désigne comme un problème deviennent, cette nuit-là, la seule solution.
+
+## L'apparence plutôt que la sécurité — la réponse Bassal
+
+En mai dernier, lorsque **Aïcha Bassal** a été élue à la tête de Nantes Métropole Habitat, nous nous étions posé une question dans nos colonnes : allait-elle gérer les 26 000 logements de l'office avec la même logique que celle qui avait présidé, en 2018, à l'**évacuation du square Daviais** — quand la Ville de Nantes, dont elle était alors élue, avait fait déloger plusieurs centaines de personnes exilé·es, dont **des Soudanais·es et des Érythréen·es**, au motif de l'« insalubrité » du campement ? *([Aïcha Bassal présidente de NMH — 38 922 ménages en attente d'un HLM](/nmh-aicha-bassal-logement-social/), mai 2026.)*
+
+La nuit du 4 rue de Saint-Jean-de-Luz apporte une part de réponse. La logique est **la même**. Ce qui compte, dans les deux séquences, c'est **l'apparence extérieure** — la façade présentable de la ville, l'absence de campement au bord de la Loire d'un côté ; la protection d'une toiture d'immeuble contre un usage non homologué de l'autre. Ce qui **ne compte pas**, dans les deux séquences, c'est **l'intérieur des corps** : ceux qu'on jette à la rue en 2018, ceux qu'on laisse enfumés en 2026.
+
+Et — la coïncidence est cruelle, mais elle est là — c'est **un jeune homme d'origine soudanaise, Hano**, qui a couru dans une cage d'escalier en feu, à 2 h 30 du matin, pour sauver les habitant·es d'un immeuble de l'office **dont la présidente avait, sept ans plus tôt, fait déloger d'autres Soudanais·es** d'un square nantais. Le récit ne se boucle pas de lui-même. Il est bouclé par les faits.
 
 ## Ce que la lutte habitante a arraché — avant le feu
 
@@ -150,9 +162,11 @@ La revendication portée par les habitant·es, l'Union des Quartiers Libres, LFI
 
 Vous présidez, depuis le mois de mai, Nantes Métropole Habitat. Vous héritez d'un office qui, par pratique, **parle à ses locataires par cabinets interposés**. Vous héritez d'une pratique qui consiste à mandater **150 000 à 200 000 euros** de prestataires — dont l'un est ouvertement positionné à la fois sur les diagnostics et sur les marchés de travaux qui en découlent — pour découvrir ce que les habitant·es décrivent depuis des décennies : rats au siphon, coupures d'eau, joints qui lâchent, isolation absente.
 
-Le **7 juillet**, votre office signait une lettre reconnaissant explicitement l'existence de **dysfonctionnements** sur les immeubles du 2 au 14 rue Saint-Jean-de-Luz. Le **11 juillet à 2 heures 30 du matin**, ces dysfonctionnements ont failli tuer les habitant·es du **4 rue de Saint-Jean-de-Luz** — l'un des numéros de cette rue que votre propre lettre visait explicitement. La sécurité des Nantais·es, cette nuit-là, a été assurée par des jeunes du quartier armés de bouteilles d'eau, dans une cage d'escalier dont votre office avait **verrouillé par cadenas les trappes d'évacuation des fumées** — et cela **quatre jours après avoir écrit qu'il y avait un problème**.
+Le **7 juillet**, votre office signait une lettre reconnaissant explicitement l'existence de **dysfonctionnements** sur les immeubles du 2 au 14 rue Saint-Jean-de-Luz. Le **11 juillet à 2 heures 30 du matin**, ces dysfonctionnements ont failli tuer les habitant·es du **4 rue de Saint-Jean-de-Luz** — l'un des numéros de cette rue que votre propre lettre visait explicitement. La sécurité des Nantais·es, cette nuit-là, a été assurée par des jeunes du quartier armés de bouteilles d'eau — au premier rang desquels **Hano, un jeune homme d'origine soudanaise** —, dans une cage d'escalier dont votre office avait **verrouillé par cadenas les trappes d'évacuation des fumées** au motif d'empêcher que « les gens montent sur le toit ». Et cela **quatre jours après avoir écrit qu'il y avait un problème**.
 
-Il n'est plus temps de diligenter des cabinets. **Faites tomber les cadenas. Annulez les marchés d'audit. Écoutez les habitant·es.** Ce serait un vrai début.
+Vous connaissez la cohérence de cette séquence. En 2018, la Ville dont vous étiez élue faisait déloger, du square Daviais, des exilé·es dont beaucoup étaient soudanais·es. En 2026, un jeune Soudanais court dans un escalier en feu pour sauver les habitant·es d'un immeuble dont votre office a interdit l'accès aux trappes de désenfumage. Le motif est le même dans les deux cas : **préserver l'apparence** — la ville sans campement, la toiture sans intrus — au prix de la sécurité et de la dignité de celles et ceux qui vivent en bas.
+
+Il n'est plus temps de diligenter des cabinets. **Faites tomber les cadenas — sur tous les bâtiments NMH, pas seulement rue de Saint-Jean-de-Luz. Annulez les marchés d'audit. Écoutez les habitant·es.** Ce serait un vrai début.
 
 ---
 
