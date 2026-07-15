@@ -63,16 +63,21 @@ Ce n'est pas une revendication démesurée. Ailleurs dans le monde, des dirigean
 
 La responsabilité politique est distincte de la responsabilité pénale. Elle s'exerce quand la confiance publique est rompue. À Nantes, elle l'est.
 
-## Ceux qui sont venus, ceux qui ne sont pas venus
+## Ceux qui sont venus — trois soutiens et une élue attendue aux actes
 
-Ce mercredi 15 juillet 2026, à l'invitation du **groupe d'action LFI Nantes-Sud Clos-Toreau**, quatre élu·es se sont déplacé·es au 4 rue de Saint-Jean-de-Luz pour rencontrer les sinistrés :
+Ce mercredi 15 juillet 2026, à l'invitation du **groupe d'action LFI Nantes-Sud Clos-Toreau**, quatre élu·es se sont déplacé·es au 4 rue de Saint-Jean-de-Luz pour rencontrer les sinistrés. Leur présence n'a pas la même portée politique ; il faut les distinguer.
 
-- **Marie Vitoux**, adjointe au maire de Nantes, en charge du quartier Nantes-Sud (dont relève le Clos-Toreau) et des délégations « résilience climatique », « risques et crises », « bâtiments ». Elle est **entrée dans l'appartement d'Aliun Keita**, a constaté l'état des lieux, a écouté les témoignages des habitant·es.
-- **Andy Kerbrat**, député de Loire-Atlantique.
-- **Julie Laernoës**, députée.
-- **Irina Yahi**, conseillère municipale de la Ville de Nantes du groupe La France insoumise, élue sur la liste *La Nouvelle Nantes*.
+### Nos allié·es venu·es en soutien
 
-Ils et elles ont vu, écouté, entendu directement les récits des habitant·es. Ils et elles sont désormais **témoins** de l'état matériel des logements et de l'absence de réponse institutionnelle. Nous saluons ces quatre déplacements. Nous en attendons la suite — des décisions concrètes, publiques, chiffrées.
+- **Andy Kerbrat**, député de Loire-Atlantique, du groupe La France insoumise à l'Assemblée nationale — **notre allié politique**. Sa présence au 4 rue de Saint-Jean-de-Luz est celle d'un allié de terrain qui accompagne un groupe d'action de sa propre famille politique dans un dossier local. Nous le remercions.
+- **Julie Laernoës**, députée écologiste **de la circonscription** dont relève le Clos-Toreau. Elle est venue **à notre demande, sans obligation politique de le faire**, et sur la seule base de son mandat de représentation. Elle avait une raison de se dérober : elle ne l'a pas fait. Elle est **venue directement**, sur place, dans les appartements. C'est la preuve, dans un dossier concret, d'une **députée non déconnectée des réalités de terrain** de sa circonscription. Nous la remercions et lui rendons hommage. Cela dit, nous ne nous en tiendrons pas à une visite : nous attendons d'elle qu'elle **porte politiquement le dossier** à l'Assemblée et auprès des acteurs institutionnels concernés — tant sur cet incendie que, plus largement, sur les conditions de logement au Clos-Toreau.
+- **Irina Yahi**, conseillère municipale de la Ville de Nantes du groupe La France insoumise, élue sur la liste *La Nouvelle Nantes*. Elle porte, avec sa collègue Erika Cadersah, la parole de LFI au conseil municipal de Nantes. Sa présence sur le terrain, avec le groupe d'action et les député·es, est cohérente et attendue.
+
+### L'élue municipale interpelée : Marie Vitoux
+
+- **Marie Vitoux**, adjointe au maire de Nantes, en charge du quartier Nantes-Sud (dont relève le Clos-Toreau) et des délégations « résilience climatique », « risques et crises », « bâtiments ». Elle est **entrée dans l'appartement d'Aliun Keita**, a constaté l'état des lieux, a écouté les témoignages des habitant·es. Nous prenons acte de sa visite. **Nous exigeons désormais des actes, pas une visite.** Aujourd'hui, à cinq jours du sinistre, les habitants du Clos-Toreau ne voient rien arriver — ni dans ce dossier d'incendie précis, ni dans le dossier plus large des conditions matérielles de logement dont son mandat lui confie la charge. La visite d'une élue municipale sur le terrain, en juillet, est une bonne chose. La responsabilité qui accompagne son mandat ne s'arrête pas à la visite ; elle commence à partir de là.
+
+## Ceux qui ne sont pas venus
 
 À l'inverse, **ne sont pas venu·es** au 4 rue de Saint-Jean-de-Luz, ce mercredi ni les jours précédents :
 
