@@ -1,5 +1,5 @@
 ---
-title: "Nous exigeons la démission d'Aïcha Bassal, présidente de Nantes Métropole Habitat"
+title: "LFI Nantes-Sud Clos-Toreau exige la démission d'Aïcha Bassal, présidente de Nantes Métropole Habitat"
 slug: "demission-aicha-bassal-nmh"
 category:
   - infos-locale
@@ -22,7 +22,7 @@ tags:
   - nycha
   - responsabilite-bailleur
   - code-civil-1719
-excerpt: "Le 13 mai 2026, Aïcha Bassal prenait la présidence de Nantes Métropole Habitat en annonçant : « Je veux que ma présidence soit collaborative, au service des ménages modestes et en soutien des plus fragiles. » Cinq jours après l'incendie qui a failli tuer une famille au 6ᵉ étage du 4 rue de Saint-Jean-de-Luz, Aliun Keita — locataire NMH, ménage modeste, plus fragile qu'un père d'un bébé de sept mois qui vient de le descendre par la fenêtre — n'a toujours reçu aucun contact direct du bailleur. Ailleurs dans le monde, des dirigeants de bailleurs sociaux ont démissionné pour moins que ça. Nous exigeons la démission d'Aïcha Bassal."
+excerpt: "Le 13 mai 2026, Aïcha Bassal prenait la présidence de Nantes Métropole Habitat en annonçant : « Je veux que ma présidence soit collaborative, au service des ménages modestes et en soutien des plus fragiles. » Cinq jours après l'incendie qui a failli tuer une famille au 6ᵉ étage du 4 rue de Saint-Jean-de-Luz, Aliun Keita — locataire NMH, ménage modeste, plus fragile qu'un père d'un bébé de sept mois qui vient de le descendre par la fenêtre — n'a toujours reçu aucun contact direct du bailleur. Ailleurs dans le monde, des dirigeants de bailleurs sociaux ont démissionné pour moins que ça. Le groupe d'action LFI Nantes-Sud Clos-Toreau exige la démission d'Aïcha Bassal."
 featured_image: "content/media/2026-07-15-clos-toreau-visuel-demission-bassal.png"
 author: "soraya-messaoudi"
 status: "draft"
@@ -34,7 +34,7 @@ Nuit du 11 au 12 juillet 2026. Au 4 rue de Saint-Jean-de-Luz, au Clos-Toreau, un
 
 Cinq jours plus tard, mercredi 15 juillet, la présidente de Nantes Métropole Habitat, **Aïcha Bassal**, n'a fait aucune déclaration publique sur la gestion de cette crise. Le locataire principal, **Aliun Keita**, n'a reçu **aucun contact direct de NMH**. *([La chronique de cinq jours de non-gestion, ici](/clos-toreau-nmh-silence-institutionnel/).)*
 
-Cet article est la revendication. Le groupe d'action **LFI Nantes-Sud Clos-Toreau** exige la **démission d'Aïcha Bassal** de la présidence de Nantes Métropole Habitat.
+Cet article rapporte une revendication politique. Le **groupe d'action LFI Nantes-Sud Clos-Toreau**, animé par le binôme **Fabrice Doucet** (également président de l'Union des Quartiers Libres) et **Gwenaëlle Gourdien**, exige publiquement la **démission d'Aïcha Bassal** de la présidence de Nantes Métropole Habitat.
 
 ## Ses mots contre ses actes — le 13 mai vs le 15 juillet
 
@@ -65,17 +65,17 @@ La responsabilité politique est distincte de la responsabilité pénale. Elle s
 
 ## Ceux qui sont venus — trois soutiens et une élue attendue aux actes
 
-Ce mercredi 15 juillet 2026, à l'invitation du **groupe d'action LFI Nantes-Sud Clos-Toreau**, quatre élu·es se sont déplacé·es au 4 rue de Saint-Jean-de-Luz pour rencontrer les sinistrés. Leur présence n'a pas la même portée politique ; il faut les distinguer.
+Ce mercredi 15 juillet 2026, à l'invitation du **groupe d'action LFI Nantes-Sud Clos-Toreau**, quatre élu·es se sont déplacé·es au 4 rue de Saint-Jean-de-Luz pour rencontrer les sinistrés. Leur présence n'a pas la même portée politique ; le groupe distingue quatre situations.
 
-### Nos allié·es venu·es en soutien
+### Trois allié·es venu·es en soutien
 
-- **Andy Kerbrat**, député de Loire-Atlantique, du groupe La France insoumise à l'Assemblée nationale — **notre allié politique**. Sa présence au 4 rue de Saint-Jean-de-Luz est celle d'un allié de terrain qui accompagne un groupe d'action de sa propre famille politique dans un dossier local. Nous le remercions.
-- **Julie Laernoës**, députée écologiste **de la circonscription** dont relève le Clos-Toreau. Elle est venue **à notre demande, sans obligation politique de le faire**, et sur la seule base de son mandat de représentation. Elle avait une raison de se dérober : elle ne l'a pas fait. Elle est **venue directement**, sur place, dans les appartements. C'est la preuve, dans un dossier concret, d'une **députée non déconnectée des réalités de terrain** de sa circonscription. Nous la remercions et lui rendons hommage. Cela dit, nous ne nous en tiendrons pas à une visite : nous attendons d'elle qu'elle **porte politiquement le dossier** à l'Assemblée et auprès des acteurs institutionnels concernés — tant sur cet incendie que, plus largement, sur les conditions de logement au Clos-Toreau.
-- **Irina Yahi**, conseillère municipale de la Ville de Nantes du groupe La France insoumise, élue sur la liste *La Nouvelle Nantes*. Elle est venue sur place, aux côtés du groupe d'action. Nous la remercions pour sa présence.
+- **Andy Kerbrat**, député de Loire-Atlantique, du groupe La France insoumise à l'Assemblée nationale — **allié politique du groupe local**. Sa présence au 4 rue de Saint-Jean-de-Luz est celle d'un allié de terrain qui accompagne un groupe d'action de sa propre famille politique dans un dossier local. Le groupe l'en remercie.
+- **Julie Laernoës**, députée écologiste **de la circonscription** dont relève le Clos-Toreau. Elle est venue **à la demande du groupe d'action, sans obligation politique de le faire**, et sur la seule base de son mandat de représentation. Elle avait une raison de se dérober : elle ne l'a pas fait. Elle est **venue directement**, sur place, dans les appartements. C'est la preuve, dans un dossier concret, d'une **députée non déconnectée des réalités de terrain** de sa circonscription. Le groupe la remercie et lui rend hommage. Cela dit, le groupe ne s'en tiendra pas à cette visite : il attend d'elle qu'elle **porte politiquement le dossier** à l'Assemblée et auprès des acteurs institutionnels concernés — tant sur cet incendie que, plus largement, sur les conditions de logement au Clos-Toreau.
+- **Irina Yahi**, conseillère municipale de la Ville de Nantes du groupe La France insoumise, élue sur la liste *La Nouvelle Nantes*. Elle est venue sur place, aux côtés du groupe d'action, qui la remercie pour sa présence.
 
 ### L'élue municipale interpelée : Marie Vitoux
 
-- **Marie Vitoux**, adjointe au maire de Nantes, en charge du quartier Nantes-Sud (dont relève le Clos-Toreau) et des délégations « résilience climatique », « risques et crises », « bâtiments ». Elle est **entrée dans l'appartement d'Aliun Keita**, a constaté l'état des lieux, a écouté les témoignages des habitant·es. Nous prenons acte de sa visite. **Nous exigeons désormais des actes, pas une visite.** Aujourd'hui, à cinq jours du sinistre, les habitants du Clos-Toreau ne voient rien arriver — ni dans ce dossier d'incendie précis, ni dans le dossier plus large des conditions matérielles de logement dont son mandat lui confie la charge. La visite d'une élue municipale sur le terrain, en juillet, est une bonne chose. La responsabilité qui accompagne son mandat ne s'arrête pas à la visite ; elle commence à partir de là.
+- **Marie Vitoux**, adjointe au maire de Nantes, en charge du quartier Nantes-Sud (dont relève le Clos-Toreau) et des délégations « résilience climatique », « risques et crises », « bâtiments ». Elle est **entrée dans l'appartement d'Aliun Keita**, a constaté l'état des lieux, a écouté les témoignages des habitant·es. Le groupe prend acte de sa visite. **Il exige désormais des actes, pas une visite.** Cinq jours après le sinistre, les habitants du Clos-Toreau ne voient rien arriver — ni dans ce dossier d'incendie précis, ni dans le dossier plus large des conditions matérielles de logement dont son mandat lui confie la charge. La visite d'une élue municipale sur le terrain, en juillet, est une bonne chose. La responsabilité qui accompagne son mandat ne s'arrête pas à la visite ; elle commence à partir de là.
 
 ## Ceux qui ne sont pas venus
 
@@ -88,13 +88,13 @@ Ce mercredi 15 juillet 2026, à l'invitation du **groupe d'action LFI Nantes-Sud
 
 ## Une question directe au procureur de la République de Nantes
 
-Nous, groupe LFI Nantes-Sud Clos-Toreau, présents sur les lieux dans la nuit du 11 au 12 juillet puis chaque jour depuis, constatons ce qui suit et souhaitons le poser publiquement à l'attention du parquet de Nantes.
+Le groupe LFI Nantes-Sud Clos-Toreau, présent sur les lieux dans la nuit du 11 au 12 juillet puis chaque jour depuis, constate ce qui suit et le pose publiquement à l'attention du parquet de Nantes.
 
-**Sur les forces de l'ordre présentes la nuit du sinistre :** la seule présence policière observée cette nuit-là a été **police-secours**. **Aucun officier de police judiciaire, aucun expert, aucun enquêteur** n'a été vu sur les lieux — ni cette nuit-là, ni depuis. À ce jour, **nous n'avons connaissance d'aucune enquête pénale ouverte publiquement** sur les causes de l'incendie ni sur l'inaccessibilité, par cadenas, de l'accès au toit.
+**Sur les forces de l'ordre présentes la nuit du sinistre :** la seule présence policière observée cette nuit-là a été **police-secours**. **Aucun officier de police judiciaire, aucun expert, aucun enquêteur** n'a été vu sur les lieux — ni cette nuit-là, ni depuis. À la date de rédaction, **aucune enquête pénale ouverte publiquement** n'est portée à la connaissance du groupe ni de la rédaction, ni sur les causes de l'incendie ni sur l'inaccessibilité, par cadenas, de l'accès au toit.
 
-**Sur la scène du sinistre :** à l'heure où nous rédigeons, le **rez-de-chaussée** du 4 rue de Saint-Jean-de-Luz — le **foyer même de l'incendie** — est en cours de **nettoyage par une entreprise privée mandatée par NMH**. Une fois la scène nettoyée, elle ne peut plus être expertisée.
+**Sur la scène du sinistre :** à la date de rédaction, le **rez-de-chaussée** du 4 rue de Saint-Jean-de-Luz — le **foyer même de l'incendie** — est en cours de **nettoyage par une entreprise privée mandatée par NMH**. Une fois la scène nettoyée, elle ne peut plus être expertisée.
 
-Nous demandons donc publiquement au procureur de la République de Nantes :
+Le groupe d'action demande donc publiquement au procureur de la République de Nantes :
 
 - Une **enquête pénale est-elle ouverte** sur les causes de l'incendie du 11-12 juillet 2026 au 4 rue de Saint-Jean-de-Luz ? À défaut, sera-t-elle ouverte, et dans quel délai ?
 - L'origine de l'incendie — accidentelle ou d'origine criminelle — a-t-elle été déterminée ?
@@ -102,11 +102,11 @@ Nous demandons donc publiquement au procureur de la République de Nantes :
 
 ## Question ouverte à Nantes Métropole Habitat
 
-Nous posons également, publiquement, une question à Nantes Métropole Habitat, bailleur des lieux et responsable du bâti :
+Le groupe pose également, publiquement, une question à Nantes Métropole Habitat, bailleur des lieux et responsable du bâti :
 
 > **Comment expliquez-vous cet incendie ? Quelle est votre version des faits ?**
 
-À ce jour, aucune communication publique de NMH n'a été portée à notre connaissance sur les causes du sinistre — ni sur son origine, ni sur les conditions techniques dans lesquelles il s'est propagé, ni sur les dispositifs de sécurité incendie de l'immeuble.
+À ce jour, aucune communication publique de NMH n'a été portée à la connaissance du groupe ni de la rédaction sur les causes du sinistre — ni sur son origine, ni sur les conditions techniques dans lesquelles il s'est propagé, ni sur les dispositifs de sécurité incendie de l'immeuble.
 
 ## Ce que dit la loi
 
@@ -120,9 +120,9 @@ Nous posons également, publiquement, une question à Nantes Métropole Habitat,
 
 **L'ascenseur est une partie commune.** Un feu qui prend dans l'ascenseur, ce sont les obligations du bailleur qui s'ouvrent. Un « protocole interne » d'un bailleur ne peut pas déroger à la loi.
 
-## Nos demandes concrètes
+## Les demandes concrètes du groupe d'action
 
-Nous, **Gwenaëlle Gourdien** et **Fabrice Doucet** — binôme qui anime le **groupe d'action LFI Nantes-Sud Clos-Toreau**, Fabrice également président de l'**Union des Quartiers Libres** — portons publiquement, avec l'ensemble du collectif, les demandes suivantes :
+Le **groupe d'action LFI Nantes-Sud Clos-Toreau**, sous la signature de son binôme animateur — **Gwenaëlle Gourdien** et **Fabrice Doucet**, ce dernier également président de l'**Union des Quartiers Libres** —, et avec l'ensemble du collectif, porte publiquement les demandes suivantes :
 
 1. **Démission d'Aïcha Bassal** de la présidence de Nantes Métropole Habitat.
 2. **Les cadenas sur les accès au toit doivent tomber dans les 48 heures**, sur tous les immeubles NMH du secteur.
@@ -137,9 +137,9 @@ Nous, **Gwenaëlle Gourdien** et **Fabrice Doucet** — binôme qui anime le **g
 11. **Activation d'une Cellule d'urgence médico-psychologique (CUMP)** par le préfet de Loire-Atlantique **Laurent Hottiaux**, en lien avec l'ARS et le SAMU.
 12. **Que le locataire décide, pas le bailleur.** NMH doit demander explicitement à Aliun Keita — et à toute famille du 4 — s'il souhaite réintégrer son logement après nettoyage, ou s'il demande un relogement définitif.
 
-## Signé
+## Signataires de la déclaration
 
-**Gwenaëlle Gourdien** et **Fabrice Doucet** — binôme animateur du **groupe d'action LFI Nantes-Sud Clos-Toreau** (Fabrice, par ailleurs, président de l'**Union des Quartiers Libres**) — et l'ensemble du collectif.
+Ces demandes sont signées par **Gwenaëlle Gourdien** et **Fabrice Doucet**, binôme animateur du **groupe d'action LFI Nantes-Sud Clos-Toreau** (Fabrice, par ailleurs, président de l'**Union des Quartiers Libres**), et par l'ensemble du collectif du groupe d'action.
 
 ---
 

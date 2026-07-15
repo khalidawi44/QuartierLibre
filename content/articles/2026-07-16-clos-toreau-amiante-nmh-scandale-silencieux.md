@@ -61,7 +61,7 @@ L'article **R. 1334-29-4 du Code de la santé publique** impose au propriétaire
 
 Ce DTA doit être tenu à disposition des occupants et de toute personne physique ou morale appelée à effectuer des travaux dans l'immeuble. **C'est un droit du locataire de le demander et de l'obtenir.** C'est une **obligation du bailleur** de l'établir et de le communiquer.
 
-Nous demandons publiquement à Nantes Métropole Habitat :
+Le groupe d'action LFI Nantes-Sud Clos-Toreau — animé par Fabrice Doucet et Gwenaëlle Gourdien — demande publiquement à Nantes Métropole Habitat :
 
 - **Publier le Dossier Technique Amiante** de l'immeuble du 4 rue de Saint-Jean-de-Luz et, plus largement, de l'ensemble du parc NMH du secteur du Clos-Toreau.
 - **Indiquer publiquement** le calendrier de désamiantage prévu, s'il existe, et son état d'avancement.
@@ -71,7 +71,7 @@ Nous demandons publiquement à Nantes Métropole Habitat :
 
 À elle seule, cette inaction — dix-sept ans de promesses non tenues, aucune publication du DTA, aucune réponse publique de NMH sur le sujet — mérite qu'on interroge la responsabilité de la présidence du bailleur.
 
-Nous exigeons la démission d'**Aïcha Bassal** de la présidence de Nantes Métropole Habitat *([le dossier de la démission, ici](/demission-aicha-bassal-nmh/))*. L'incendie du 4 rue de Saint-Jean-de-Luz est un élément déclencheur. Le mutisme d'Aïcha Bassal depuis cinq jours en est un autre. Mais l'amiante — cette réalité que personne à Nantes Métropole ne semble en état de nommer publiquement — dit quelque chose de plus profond. Dit que **la gestion du parc social nantais s'est habituée à ne pas dire ce qui abîme les corps de ses locataires**. Un bailleur social qui ne peut pas nommer l'amiante ne peut pas rendre habitables ses logements. Un bailleur social qui ne rend pas ses logements habitables n'est plus un bailleur social — c'est un percepteur de loyers.
+Le groupe d'action exige la démission d'**Aïcha Bassal** de la présidence de Nantes Métropole Habitat *([le dossier de la démission, ici](/demission-aicha-bassal-nmh/))*. L'incendie du 4 rue de Saint-Jean-de-Luz est un élément déclencheur. Le mutisme d'Aïcha Bassal depuis cinq jours en est un autre. Mais l'amiante — cette réalité que personne à Nantes Métropole ne semble en état de nommer publiquement — dit quelque chose de plus profond. Dit que **la gestion du parc social nantais s'est habituée à ne pas dire ce qui abîme les corps de ses locataires**. Un bailleur social qui ne peut pas nommer l'amiante ne peut pas rendre habitables ses logements. Un bailleur social qui ne rend pas ses logements habitables n'est plus un bailleur social — c'est un percepteur de loyers.
 
 ---
 
@@ -81,7 +81,7 @@ Ce texte est le quatrième volet d'un dossier en quatre parties sur la gestion d
 
 1. *[Au 4 rue Saint-Jean-de-Luz, 2h30 du matin : les jeunes du Clos-Toreau ont sauvé l'immeuble que NMH avait cadenassé](/clos-toreau-incendie-nmh-trappes-cadenassees/)* — le récit de la nuit du 11-12 juillet 2026.
 2. *[Cinq jours après l'incendie du Clos-Toreau, Nantes Métropole Habitat traite les sinistrés comme des dossiers d'assurance](/clos-toreau-nmh-silence-institutionnel/)* — la chronique de la non-gestion depuis le 12 juillet.
-3. *[Nous exigeons la démission d'Aïcha Bassal, présidente de Nantes Métropole Habitat](/demission-aicha-bassal-nmh/)* — la revendication politique, les précédents mondiaux et les 12 demandes concrètes.
+3. *[LFI Nantes-Sud Clos-Toreau exige la démission d'Aïcha Bassal, présidente de Nantes Métropole Habitat](/demission-aicha-bassal-nmh/)* — la revendication politique, les précédents mondiaux et les 12 demandes concrètes.
 4. **L'amiante** — cet article.
 
 ---

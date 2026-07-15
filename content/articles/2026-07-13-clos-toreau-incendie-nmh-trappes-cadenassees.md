@@ -35,7 +35,7 @@ Cette nuit-là, ce sont **des jeunes du quartier** — de celles et ceux que la 
 
 ![La façade de l'immeuble du 4 rue de Saint-Jean-de-Luz au moment de l'intervention des pompiers, dans la nuit du 11 au 12 juillet 2026. Nacelle télescopique déployée, gyrophares, habitant·es évacué·es dans la rue.](content/media/2026-07-13-clos-toreau-nuit-nacelle-facade.jpeg)
 
-Quatre jours plus tôt, le 7 juillet, NMH avait écrit à tous les locataires de la rue — du 2 au 14 — une lettre officielle titrée « **Diagnostic des dysfonctionnements** ». Le bailleur reconnaissait, noir sur blanc, l'existence de défauts. Il annonçait la première visite pour le **22 juillet**. Nous étions le 7 juillet. Le feu est parti le 11, au 4. Personne n'a ouvert les cadenas. Personne n'a modifié le calendrier.
+Quatre jours plus tôt, le 7 juillet, NMH avait écrit à tous les locataires de la rue — du 2 au 14 — une lettre officielle titrée « **Diagnostic des dysfonctionnements** ». Le bailleur reconnaissait, noir sur blanc, l'existence de défauts. Il annonçait la première visite pour le **22 juillet**. On était alors le 7 juillet. Le feu est parti le 11, au 4. Personne n'a ouvert les cadenas. Personne n'a modifié le calendrier.
 
 ## Les héros de cette nuit-là : les jeunes du quartier, un jeune Soudanais au premier rang
 
@@ -113,7 +113,7 @@ Ce récit est le premier volet d'un dossier en quatre parties sur l'incendie du 
 
 1. **Le récit de la nuit** — cet article.
 2. *[Cinq jours après l'incendie du Clos-Toreau, Nantes Métropole Habitat traite les sinistrés comme des dossiers d'assurance](/clos-toreau-nmh-silence-institutionnel/)* — la chronique de la non-gestion depuis le 12 juillet : mutisme d'Aïcha Bassal, renvoi de la famille Keita à son assurance MRH personnelle, gestion des travaux avec câbles électriques à l'air libre, NMH injoignable au 24h/24 sur le papier, mairie sans arrêté municipal.
-3. *[Nous exigeons la démission d'Aïcha Bassal, présidente de Nantes Métropole Habitat](/demission-aicha-bassal-nmh/)* — la revendication politique, les précédents mondiaux (Grenfell, NYCHA, Alexandria, Portland), les 12 demandes concrètes portées par LFI Nantes-Sud Clos-Toreau.
+3. *[LFI Nantes-Sud Clos-Toreau exige la démission d'Aïcha Bassal, présidente de Nantes Métropole Habitat](/demission-aicha-bassal-nmh/)* — la revendication politique, les précédents mondiaux (Grenfell, NYCHA, Alexandria, Portland), les 12 demandes concrètes portées par LFI Nantes-Sud Clos-Toreau.
 4. *[Clos-Toreau : l'amiante des logements, le scandale silencieux jamais évoqué](/clos-toreau-amiante-nmh-scandale-silencieux/)* — la colle à base d'amiante encore présente dans les logements, le témoignage d'un locataire depuis 2009, le Dossier Technique Amiante jamais publié par NMH.
 
 ---

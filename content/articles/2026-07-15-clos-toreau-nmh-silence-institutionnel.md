@@ -64,7 +64,7 @@ Deux jours après l'incendie, NMH a mandaté une société de nettoyage pour **p
 
 Aliun n'a exprimé, à ce jour, aucune volonté de réintégrer son appartement. Il n'a pas dit « non » explicitement — il ne s'est jamais vu poser la question. NMH en a **déduit unilatéralement** qu'il allait rentrer chez lui, sans le rencontrer, sans le consulter, sans envisager qu'un père qui vient de faire descendre son bébé de sept mois par la fenêtre à dix-huit mètres puisse ne pas être en état, matériellement ou psychologiquement, de reprendre possession du même logement quelques jours plus tard.
 
-## 13 juillet — ce que nous avons fait sur place, ce que NMH n'a pas fait
+## 13 juillet — ce que le groupe d'action a fait sur place, ce que NMH n'a pas fait
 
 Ce lundi 13 juillet, la présence auprès de la famille a été assurée **exclusivement** par ceux qui ne sont pas payés pour cela : **Fabrice**, et le **frère d'Aliun** — lui-même **rescapé de l'incendie**, profondément **traumatisé par le fait d'avoir failli mourir** dans la même nuit. Plusieurs heures passées, ce jour-là, à ses côtés, à l'intérieur de l'appartement enfumé.
 
@@ -82,7 +82,7 @@ Un cas parmi d'autres, symptomatique. **Gwenaëlle Gourdien** accompagne un coup
 
 C'est ce que fait le groupe d'action, immeuble par immeuble, palier par palier : la substitution militante à un service public qui ne se rend pas au chevet de ses locataires. **C'est aussi ce qui devrait, en droit, incomber à Nantes Métropole Habitat** — l'accompagnement des personnes vulnérables du parc, à plus forte raison après un sinistre. Là où le bailleur devrait déployer des travailleurs sociaux, des visites à domicile, des solutions temporaires de mobilité, **il n'y a rien**. Ce sont des militant·es du quartier qui portent les courses.
 
-Nous précisons ce fait pour deux raisons. La première, c'est que **le silence de Nantes Métropole Habitat n'est pas seulement le silence adressé à Aliun Keita** : c'est un silence adressé à **l'ensemble des familles du 4 rue de Saint-Jean-de-Luz**, y compris aux plus vulnérables. La seconde, c'est que **la mobilisation citoyenne ne remplacera pas indéfiniment le bailleur**. Nous ferons les courses tant qu'il le faudra. Mais ce n'est pas notre rôle. C'est le sien.
+Fabrice et Gwenaëlle rappellent ce fait pour deux raisons. La première, c'est que **le silence de Nantes Métropole Habitat n'est pas seulement le silence adressé à Aliun Keita** : c'est un silence adressé à **l'ensemble des familles du 4 rue de Saint-Jean-de-Luz**, y compris aux plus vulnérables. La seconde, c'est que **la mobilisation citoyenne ne remplacera pas indéfiniment le bailleur**. Ils feront les courses de ce couple tant qu'il le faudra, ils le disent clairement. Mais ce n'est pas leur rôle. C'est celui du bailleur.
 
 ## La gestion des travaux par NMH — câbles électriques à l'air libre
 
@@ -103,7 +103,7 @@ Sur son site officiel nmh.fr, Nantes Métropole Habitat indique publiquement deu
 
 ![Capture d'écran de nmh.fr — page « Nous contacter » indiquant le service d'astreinte 24h/24 et le week-end au 02 40 67 08 55.](content/media/2026-07-15-nmh-fr-nous-contacter-astreinte-24-24.png)
 
-Depuis le lundi 14 juillet, nous testons ces deux lignes de façon répétée. **Aucune réponse.** Aucun rappel. Aucune prise de contact. Ni pour Aliun Keita, ni pour son entourage, ni pour l'Union des Quartiers Libres qui accompagne les sinistrés.
+Depuis le lundi 14 juillet, le groupe d'action LFI Nantes-Sud Clos-Toreau et l'Union des Quartiers Libres testent ces deux lignes de façon répétée. **Aucune réponse.** Aucun rappel. Aucune prise de contact. Ni pour Aliun Keita, ni pour son entourage, ni pour l'Union des Quartiers Libres qui accompagne les sinistrés.
 
 La communication publique de NMH annonce donc une joignabilité continue. Dans la réalité, le silence est total — précisément au moment où l'urgence technique est concrète : un appartement enfumé dans lequel un locataire doit réintégrer sous vingt-quatre heures.
 
@@ -127,7 +127,7 @@ Ce texte est le deuxième volet d'un dossier en quatre parties sur l'incendie du
 
 1. *[Au 4 rue Saint-Jean-de-Luz, 2h30 du matin : les jeunes du Clos-Toreau ont sauvé l'immeuble que NMH avait cadenassé](/clos-toreau-incendie-nmh-trappes-cadenassees/)* — le récit de la nuit.
 2. **La gestion NMH depuis** — cet article.
-3. *[Nous exigeons la démission d'Aïcha Bassal, présidente de Nantes Métropole Habitat](/demission-aicha-bassal-nmh/)* — la revendication politique, les précédents mondiaux et les 12 demandes concrètes.
+3. *[LFI Nantes-Sud Clos-Toreau exige la démission d'Aïcha Bassal, présidente de Nantes Métropole Habitat](/demission-aicha-bassal-nmh/)* — la revendication politique, les précédents mondiaux et les 12 demandes concrètes.
 4. *[Clos-Toreau : l'amiante des logements, le scandale silencieux jamais évoqué](/clos-toreau-amiante-nmh-scandale-silencieux/)* — la colle à base d'amiante encore présente dans les logements, le témoignage d'un locataire depuis 2009, le Dossier Technique Amiante jamais publié par NMH.
 
 ---
