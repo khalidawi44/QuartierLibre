@@ -11,12 +11,20 @@ define( 'QL_THEME_DIR', get_stylesheet_directory() );
 define( 'QL_THEME_URI', get_stylesheet_directory_uri() );
 
 // ── 0z. Ne pas afficher les Notices PHP en front (fuite de chemin) ──
-// Certains plugins (MCP, ability meta keys deprecated) déclenchent des
-// Notices "deprecated" qui s'affichaient en haut de l'accueil.
-// On coupe leur affichage public ; les logs serveur restent OK.
-if ( ! is_admin() ) {
+// Certains plugins (dont MCP) déclenchent des Notices "deprecated" qui
+// s'affichaient en haut de l'accueil ET révélaient le chemin serveur.
+// On coupe leur affichage public de façon agressive ; les logs restent OK.
+if ( ! is_admin() && ! ( defined( 'WP_CLI' ) && WP_CLI ) && ! wp_doing_cron() ) {
     @ini_set( 'display_errors', '0' );
     @ini_set( 'display_startup_errors', '0' );
+    @ini_set( 'html_errors', '0' );
+    // Ne signaler QUE les erreurs vraiment fatales — pas les Notice/Deprecated/Warning.
+    @error_reporting( E_ERROR | E_PARSE | E_COMPILE_ERROR | E_CORE_ERROR );
+    // Filet de sécurité : capturer et jeter tout output d'erreur qui aurait
+    // fuité avant le rendu (buffer restauré par WP normalement).
+    if ( ! ob_get_level() ) {
+        @ob_start();
+    }
 }
 
 // ── 0. Sync GitHub + helpers (toujours chargé) ──────────────────
