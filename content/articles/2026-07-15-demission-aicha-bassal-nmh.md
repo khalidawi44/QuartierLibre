@@ -122,7 +122,7 @@ Nous posons également, publiquement, une question à Nantes Métropole Habitat,
 
 ## Nos demandes concrètes
 
-Nous, groupe d'action **LFI Nantes-Sud Clos-Toreau**, en coordination avec l'**Union des Quartiers Libres**, portons publiquement les demandes suivantes :
+Nous, **Gwenaël Gourdien**, **Fabrice Doucet** (Union des Quartiers Libres) et le **groupe d'action LFI Nantes-Sud Clos-Toreau**, portons publiquement les demandes suivantes :
 
 1. **Démission d'Aïcha Bassal** de la présidence de Nantes Métropole Habitat.
 2. **Les cadenas sur les accès au toit doivent tomber dans les 48 heures**, sur tous les immeubles NMH du secteur.
@@ -139,7 +139,7 @@ Nous, groupe d'action **LFI Nantes-Sud Clos-Toreau**, en coordination avec l'**U
 
 ## Signé
 
-**Groupe d'action LFI Nantes-Sud Clos-Toreau**, en coordination avec l'**Union des Quartiers Libres** (présidée par **Fabrice Doucet**).
+**Gwenaël Gourdien**, **Fabrice Doucet** (Union des Quartiers Libres) et le **groupe d'action LFI Nantes-Sud Clos-Toreau**.
 
 ---
 

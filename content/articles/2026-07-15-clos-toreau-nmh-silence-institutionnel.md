@@ -74,6 +74,16 @@ La suite est à peine croyable : **les nettoyeurs mandatés par NMH pour la cage
 
 **Ni Nantes Métropole Habitat, ni le préfet, ni Marie Vitoux, ni un·e élu·e de la Ville de Nantes n'ont été présents ce 13 juillet.** Aucun jour, en réalité, depuis la nuit du 11 au 12. Les personnes payées sur fonds publics pour gérer la crise et le patrimoine social **ne sont pas venues**. Ceux qui ont été là sont, encore une fois, les habitants du quartier eux-mêmes et les associations.
 
+## Le groupe d'action, mobilisé pour toutes les familles de l'immeuble
+
+Aliun Keita n'est pas le seul locataire du 4 rue de Saint-Jean-de-Luz. À chaque étage, dans chaque appartement, des familles vivent depuis cinq jours **avec la fumée, la suie, l'ascenseur hors service** et **aucun interlocuteur** chez leur bailleur. Le **groupe d'action LFI Nantes-Sud Clos-Toreau** — Gwenaël Gourdien, Fabrice Doucet, et l'ensemble du collectif — a pris la décision de faire du porte-à-porte, immeuble entier, pour recenser les besoins et accompagner chaque foyer, à défaut du bailleur.
+
+Un cas parmi d'autres, symptomatique. **Gwenaël Gourdien** accompagne un couple âgé de **71 ans**, locataires depuis longtemps du 4 rue de Saint-Jean-de-Luz. **L'ascenseur est en panne depuis l'incendie.** Le mari s'inquiète, à voix haute : *comment va-t-il monter et descendre son étage, ne serait-ce que pour prendre l'air quelques minutes en bas de chez lui ?* À 71 ans, avec un ascenseur hors service pour **au minimum six mois** — c'est le délai annoncé pour la reprise des travaux — la question n'est pas rhétorique. Elle est la vie quotidienne. **Gwenaël s'est engagé, sans qu'on le lui demande, à faire les courses de ce couple et à les accompagner au jour le jour** dans les gestes que l'ascenseur en panne rend impossibles.
+
+C'est ce que fait le groupe d'action, immeuble par immeuble, palier par palier : la substitution militante à un service public qui ne se rend pas au chevet de ses locataires. **C'est aussi ce qui devrait, en droit, incomber à Nantes Métropole Habitat** — l'accompagnement des personnes vulnérables du parc, à plus forte raison après un sinistre. Là où le bailleur devrait déployer des travailleurs sociaux, des visites à domicile, des solutions temporaires de mobilité, **il n'y a rien**. Ce sont des militant·es du quartier qui portent les courses.
+
+Nous précisons ce fait pour deux raisons. La première, c'est que **le silence de Nantes Métropole Habitat n'est pas seulement le silence adressé à Aliun Keita** : c'est un silence adressé à **l'ensemble des familles du 4 rue de Saint-Jean-de-Luz**, y compris aux plus vulnérables. La seconde, c'est que **la mobilisation citoyenne ne remplacera pas indéfiniment le bailleur**. Nous ferons les courses tant qu'il le faudra. Mais ce n'est pas notre rôle. C'est le sien.
+
 ## La gestion des travaux par NMH — câbles électriques à l'air libre
 
 ![Visuel — la gestion des travaux par NMH. Cage d'escalier du 4 rue de Saint-Jean-de-Luz. Câbles électriques dénudés à l'air libre. Boîtier de dérivation arraché. Murs entièrement noirs de suie.](content/media/2026-07-15-clos-toreau-visuel-gestion-travaux.png)
