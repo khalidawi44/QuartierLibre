@@ -153,9 +153,9 @@ Le personnel hospitalier a fait ce qu'on lui demandait de faire. L'assurance MRH
 
 Le 13 juillet, **Fabrice Doucet — président de l'Union des Quartiers Libres**, qui accompagne la famille Keita au jour le jour — a contacté la cellule de crise de la Ville de Nantes. Interlocutrice : Mme Besançon, gestionnaire de crise. Position officielle relayée : « *NMH gère selon son protocole. Les locataires font marcher leur multirisque habitation ; leur assurance se retourne ensuite contre NMH.* » Sur la prise en charge psychologique : « *s'ils ne vont pas bien, ils doivent appeler le SAMU.* »
 
-Fabrice Doucet a demandé à parler au responsable NMH connu de lui, **Monsieur Piquet**, chef d'astreinte de l'agence Goudy. Dix minutes plus tard, la réponse tombe, textuellement : « *NMH rencontre directement les locataires dont vous m'avez parlé. La situation est donc gérée et prise en charge directement par le bailleur.* »
+Fabrice a demandé à parler au responsable NMH connu de lui, **Monsieur Piquet**, chef d'astreinte de l'agence Goudy. Dix minutes plus tard, la réponse tombe, textuellement : « *NMH rencontre directement les locataires dont vous m'avez parlé. La situation est donc gérée et prise en charge directement par le bailleur.* »
 
-**Le problème est simple.** Aliun Keita, principal locataire concerné, affirme catégoriquement que **personne de NMH ne l'a rencontré ni contacté**. Fabrice Doucet en a la **preuve en vidéo**. Le contact du soir de l'incendie, rappelons-le, a été initié par le CHU — pas par NMH. Il ne peut y avoir que deux hypothèses : soit NMH a écrit une chose qui n'est pas vraie, soit ses services confondent un locataire avec un autre. Dans les deux cas, pour un office public en charge de plus de 26 000 logements, c'est un **manquement grave**.
+**Le problème est simple.** Aliun Keita, principal locataire concerné, affirme catégoriquement que **personne de NMH ne l'a rencontré ni contacté**. Fabrice en a la **preuve en vidéo**. Le contact du soir de l'incendie, rappelons-le, a été initié par le CHU — pas par NMH. Il ne peut y avoir que deux hypothèses : soit NMH a écrit une chose qui n'est pas vraie, soit ses services confondent un locataire avec un autre. Dans les deux cas, pour un office public en charge de plus de 26 000 logements, c'est un **manquement grave**.
 
 ## NMH veut la réintégration — sans consulter le locataire
 
@@ -165,9 +165,9 @@ Aliun n'a exprimé, à ce jour, aucune volonté de réintégrer son appartement.
 
 ## 13 juillet — ce que nous avons fait sur place, ce que NMH n'a pas fait
 
-Ce lundi 13 juillet, la présence auprès de la famille a été assurée **exclusivement** par ceux qui ne sont pas payés pour cela : **Fabrice Doucet**, président de l'Union des Quartiers Libres, et le **frère d'Aliun** — lui-même **rescapé de l'incendie**, profondément **traumatisé par le fait d'avoir failli mourir** dans la même nuit. Plusieurs heures passées, ce jour-là, à ses côtés, à l'intérieur de l'appartement enfumé.
+Ce lundi 13 juillet, la présence auprès de la famille a été assurée **exclusivement** par ceux qui ne sont pas payés pour cela : **Fabrice**, et le **frère d'Aliun** — lui-même **rescapé de l'incendie**, profondément **traumatisé par le fait d'avoir failli mourir** dans la même nuit. Plusieurs heures passées, ce jour-là, à ses côtés, à l'intérieur de l'appartement enfumé.
 
-Concrètement, ce que Fabrice Doucet et le frère d'Aliun ont dû faire : **rassembler à la main toutes les affaires de la famille dans le salon**, pièce après pièce, pour permettre aux nettoyeurs mandatés par NMH de travailler sur les autres pièces. Ce travail de manutention, dans un appartement encore imprégné de suie, un homme qui vient d'échapper à la mort par asphyxie ne devrait pas avoir à le faire ; son frère traumatisé encore moins ; il devrait être pris en charge, matériellement, par le bailleur.
+Concrètement, ce que Fabrice et le frère d'Aliun ont dû faire : **rassembler à la main toutes les affaires de la famille dans le salon**, pièce après pièce, pour permettre aux nettoyeurs mandatés par NMH de travailler sur les autres pièces. Ce travail de manutention, dans un appartement encore imprégné de suie, un homme qui vient d'échapper à la mort par asphyxie ne devrait pas avoir à le faire ; son frère traumatisé encore moins ; il devrait être pris en charge, matériellement, par le bailleur.
 
 La suite est à peine croyable : **les nettoyeurs mandatés par NMH pour la cage d'escalier sont montés d'eux-mêmes à l'étage d'Aliun**. Ils ont demandé, **eux-mêmes, avec courtoisie** — ce sont des travailleurs corrects — s'ils pouvaient également entrer dans l'appartement et le nettoyer. Ils avaient été instruits en ce sens par NMH, **sans que NMH n'ait posé la question à Aliun**. Aliun a dit oui, parce qu'il est **psychologiquement effondré** — ce n'est pas à un homme dans cet état de gérer des arbitrages administratifs sur son logement. C'est **précisément** ce qu'un bailleur social doit faire à sa place, et ce que Nantes Métropole Habitat n'a pas fait.
 
@@ -201,15 +201,15 @@ Nous posons également, publiquement, une question à **Nantes Métropole Habita
 
 Photo prise ce mercredi 15 juillet 2026 dans la cage d'escalier du 4 rue de Saint-Jean-de-Luz. **Câbles électriques dénudés à l'air libre**, à hauteur d'accès public. **Boîtier de dérivation arraché**. Murs entièrement noirs de **suie non nettoyée**. C'est ce que NMH appelle « gérer les travaux » quatre jours après un incendie qui a nécessité une évacuation par grande échelle télescopique.
 
-**Fabrice Doucet, président de l'Union des Quartiers Libres et locataire de longue date de Nantes Métropole Habitat**, résume : « *Voilà la gestion des travaux par NMH. P.S. Je ne les ai toujours pas vus, et je n'ai toujours pas pu leur parler.* »
+**Fabrice**, locataire de longue date de Nantes Métropole Habitat, résume : « *Voilà la gestion des travaux par NMH. P.S. Je ne les ai toujours pas vus, et je n'ai toujours pas pu leur parler.* »
 
 ## L'amiante dans les logements — signalée depuis des années, jamais évoquée
 
-![Visuel — amiante dans les logements du Clos-Toreau. Dalle vinyle arrachée avec colle noire à base d'amiante apparente. Témoignage signé Fabrice Doucet, locataire NMH depuis 2009.](content/media/2026-07-15-clos-toreau-visuel-amiante-preuve.png)
+![Visuel — amiante dans les logements du Clos-Toreau. Dalle vinyle arrachée avec colle noire à base d'amiante apparente. Témoignage signé Fabrice, locataire NMH depuis 2009.](content/media/2026-07-15-clos-toreau-visuel-amiante-preuve.png)
 
 Les logements du Clos-Toreau ont été construits **bien avant l'interdiction française de l'amiante en 1997**. La colle noire visible sous les dalles vinyle arrachées, dans de nombreux logements du quartier, est une **colle à base d'amiante** — utilisée dans les logements sociaux jusqu'à son interdiction.
 
-**Témoignage de Fabrice Doucet, locataire NMH depuis 2009 :** « *À mon emménagement, NMH m'annonce qu'ils vont refaire tout le sol. En 2026, rien n'a été fait. La colle est toujours là, 17 ans plus tard. J'ai constaté le même sol dans de nombreux logements du Clos-Toreau.* »
+**Témoignage de Fabrice, locataire NMH depuis 2009 :** « *À mon emménagement, NMH m'annonce qu'ils vont refaire tout le sol. En 2026, rien n'a été fait. La colle est toujours là, 17 ans plus tard. J'ai constaté le même sol dans de nombreux logements du Clos-Toreau.* »
 
 **NMH n'a jamais publié son Dossier Technique Amiante** — obligation légale du bailleur, prévue à l'**article R. 1334-29-4 du Code de la santé publique**. La charge de la preuve appartient au bailleur : s'il conteste la présence d'amiante, il doit publier son DTA. S'il ne le publie pas, l'alerte des habitants tient par défaut.
 
