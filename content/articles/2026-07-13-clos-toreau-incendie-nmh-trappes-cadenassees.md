@@ -40,6 +40,113 @@ date: "2026-07-13 09:00:00"
 plainte_variant: "logement"
 ---
 
+> **⚠ Mise à jour — mercredi 15 juillet 2026, 4 jours après l'incendie.** Aliun Keita n'a toujours pas été contacté par Nantes Métropole Habitat. Son hôtel — payé par sa propre assurance MRH personnelle — s'arrête jeudi matin : il doit réintégrer, seul, son appartement encore imprégné de suie et de fumée toxique. La mairie de Nantes n'a pris aucun arrêté municipal. Le groupe d'action **LFI Nantes-Sud Clos-Toreau** exige la **démission d'Aïcha Bassal**, présidente de NMH. La mise à jour complète est en tête d'article ci-dessous.
+
+## Mise à jour du 15 juillet 2026 — nous exigeons la démission d'Aïcha Bassal
+
+![Visuel — nous exigeons la démission d'Aïcha Bassal, présidente de Nantes Métropole Habitat. Précédents mondiaux : Londres 2017 Grenfell, New York 2018 NYCHA, Alexandria 2025, Portland 2026.](content/media/2026-07-15-clos-toreau-visuel-demission-bassal.png)
+
+Quatre jours après l'incendie du 11-12 juillet au 4 rue de Saint-Jean-de-Luz, la présidente de Nantes Métropole Habitat, **Aïcha Bassal**, n'a fait aucune déclaration publique sur la gestion de cette crise. Le locataire principal, **Aliun Keita**, n'a reçu **aucun contact direct de NMH**. Le groupe d'action **LFI Nantes-Sud Clos-Toreau** exige sa démission.
+
+Ce n'est pas une revendication démesurée. Ailleurs dans le monde, des dirigeants de bailleurs publics ont démissionné après une gestion de crise défaillante — sans qu'il ait été nécessaire d'attendre une condamnation pénale :
+
+- **Londres, juillet 2017 — Grenfell Tower.** Après l'incendie qui a tué 72 personnes, **Robert Black**, directeur général du KCTMO (l'organisme qui gérait le patrimoine pour le compte du conseil de Kensington-Chelsea), démissionne. Le leader du conseil, **Nicholas Paget-Brown**, démissionne aussi.
+- **New York, avril 2018 — NYCHA** (New York City Housing Authority, plus grand bailleur social des États-Unis). **Shola Olatoye**, présidente, démissionne après le scandale de la peinture au plomb (certifications d'inspections qui n'avaient pas eu lieu) et des milliers de résidents privés de chauffage l'hiver précédent.
+- **Alexandria (Virginie), octobre 2025.** L'ensemble du conseil d'administration de l'Alexandria Redevelopment and Housing Authority — les **9 commissaires** — démissionne en bloc, après scandale d'affectation de logement social au directeur général.
+- **Portland (Oregon), avril 2026 — Home Forward.** **Ivory Mathews**, directrice générale, démissionne après une enquête journalistique révélant plus de 100 000 dollars de fonds publics dépensés en voyages professionnels pendant que l'agence sombrait dans une crise financière.
+
+La responsabilité politique est distincte de la responsabilité pénale. Elle s'exerce quand la confiance publique est rompue. À Nantes, elle l'est.
+
+## Ses mots contre ses actes — le 13 mai vs le 15 juillet
+
+![Visuel — la citation officielle d'Aïcha Bassal du 13 mai 2026 face à la réalité d'Aliun Keita au 15 juillet 2026.](content/media/2026-07-15-clos-toreau-visuel-bassal-mots-vs-actes.png)
+
+Le **13 mai 2026**, dans sa déclaration publiée sur nmh.fr à l'occasion de son élection à la présidence de NMH, Aïcha Bassal écrit : « *Je veux que ma présidence soit collaborative (...) au service des ménages modestes et en soutien des plus fragiles.* »
+
+Le **15 juillet 2026**, la réalité :
+
+- Aliun Keita — locataire de NMH, père d'un bébé de sept mois, sinistré direct de l'incendie du 11-12 juillet — **n'a reçu aucun contact de NMH** quatre jours après un sinistre qui a failli tuer sa famille.
+- Il doit réintégrer demain matin, **seul**, son appartement encore imprégné de fumée toxique, avec des meubles couverts de suie qu'il devra jeter ou nettoyer à ses frais.
+- La ligne d'astreinte de NMH — annoncée officiellement **24h/24** sur nmh.fr — n'a répondu à aucun appel depuis le lundi 14 juillet.
+
+*Collaborative.* *Soutien des plus fragiles.* La démonstration est faite.
+
+## « Voilà la gestion des travaux par NMH » — câbles électriques à l'air libre
+
+![Visuel — la gestion des travaux par NMH. Cage d'escalier du 4 rue de Saint-Jean-de-Luz, câbles électriques à l'air libre, boîtier de dérivation arraché.](content/media/2026-07-15-clos-toreau-visuel-gestion-travaux.png)
+
+Photo prise ce mercredi 15 juillet 2026 dans la cage d'escalier du 4 rue de Saint-Jean-de-Luz. **Câbles électriques dénudés à l'air libre**, à hauteur d'accès public. **Boîtier de dérivation arraché**. Murs entièrement noirs de **suie non nettoyée**. C'est ce que NMH appelle « gérer les travaux » quatre jours après un incendie qui a nécessité une évacuation par grande échelle télescopique.
+
+**Fabrice Doucet, président de l'Union des Quartiers Libres et locataire de longue date de Nantes Métropole Habitat**, résume : « *Voilà la gestion des travaux par NMH. P.S. Je ne les ai toujours pas vus, et je n'ai toujours pas pu leur parler.* »
+
+## L'amiante dans les logements — signalée depuis des années, jamais évoquée
+
+![Visuel — amiante dans les logements du Clos-Toreau. Photo d'une dalle vinyle arrachée avec colle noire à base d'amiante apparente. Témoignage signé Fabrice Doucet, locataire NMH depuis 2009.](content/media/2026-07-15-clos-toreau-visuel-amiante-preuve.png)
+
+Les logements du Clos-Toreau ont été construits **bien avant l'interdiction française de l'amiante en 1997**. La colle noire visible sous les dalles vinyle arrachées, dans de nombreux logements du quartier, est une **colle à base d'amiante** — utilisée dans les logements sociaux jusqu'à son interdiction.
+
+**Témoignage de Fabrice Doucet, locataire NMH depuis 2009 :** « *À mon emménagement, NMH m'annonce qu'ils vont refaire tout le sol. En 2026, rien n'a été fait. La colle est toujours là, 17 ans plus tard. J'ai constaté le même sol dans de nombreux logements du Clos-Toreau.* »
+
+**NMH n'a jamais publié son Dossier Technique Amiante** — obligation légale du bailleur, prévue à l'**article R. 1334-29-4 du Code de la santé publique**. La charge de la preuve appartient au bailleur : s'il conteste la présence d'amiante, il doit publier son DTA. S'il ne le publie pas, l'alerte des habitants tient par défaut.
+
+À elle seule, cette inaction — 17 ans de promesses non tenues, aucune publication du DTA — mérite la démission.
+
+## NMH injoignable — deux numéros affichés, aucune réponse
+
+![Visuel — 24h/24 sur le papier, zéro réponse dans la vraie vie. Extraits nmh.fr : « service d'astreinte la nuit 24h/24 et le week-end au 02 40 67 08 55 ». Aucune réponse aux appels depuis le 14 juillet.](content/media/2026-07-15-clos-toreau-visuel-24h24-papier.png)
+
+Sur son site officiel nmh.fr, Nantes Métropole Habitat indique publiquement deux numéros :
+
+- **02 40 67 07 37** — accueil clientèle, lundi-vendredi 8h30-17h, incluant les « demandes d'intervention technique ».
+- **02 40 67 08 55** — service d'astreinte « **la nuit 24h/24 et le week-end** », en cas d'urgence technique.
+
+![Capture d'écran de nmh.fr — page « Nous contacter » indiquant le service d'astreinte 24h/24 et le week-end au 02 40 67 08 55.](content/media/2026-07-15-nmh-fr-nous-contacter-astreinte-24-24.png)
+
+Depuis le lundi 14 juillet, nous testons ces deux lignes de façon répétée. **Aucune réponse.** Aucun rappel. Aucune prise de contact. Ni pour Aliun Keita, ni pour son entourage, ni pour l'Union des Quartiers Libres qui accompagne les sinistrés.
+
+La communication publique de NMH annonce donc une joignabilité continue. Dans la réalité, le silence est total — précisément au moment où l'urgence technique est concrète : un appartement enfumé dans lequel un locataire doit réintégrer sous 24 heures.
+
+## La mairie n'a pris aucun arrêté municipal — c'était pourtant sa compétence
+
+![Visuel — état des lieux du 15 juillet 2026, NMH n'a toujours rien fait, la mairie n'a pris aucun arrêté municipal.](content/media/2026-07-15-clos-toreau-visuel-etat-des-lieux.png)
+
+À notre connaissance, à ce jour, la **maire de Nantes Johanna Rolland n'a pris aucun arrêté de mise en sécurité ni d'insalubrité** sur l'immeuble du 4 rue de Saint-Jean-de-Luz. C'est pourtant sa compétence propre, prévue aux **articles L. 511-1 et suivants du Code de la construction et de l'habitation** (dispositions issues de l'ordonnance de 2020 unifiant police du péril et police de l'insalubrité).
+
+Un arrêté municipal de mise en sécurité aurait :
+
+- **Contraint NMH à assumer le relogement d'urgence** à ses frais, sans renvoi possible à l'assurance multirisque habitation personnelle du locataire.
+- **Interdit la réintégration prématurée** d'Aliun Keita dans un logement dont la remise en état n'est pas achevée.
+- Ouvert la voie à une **exécution d'office par la commune** en cas de défaillance persistante du bailleur, dépenses recouvrables ensuite auprès de NMH.
+
+L'inaction municipale est un choix, pas une fatalité. Ce choix laisse aujourd'hui Aliun Keita seul devant sa porte.
+
+## Ceux qui sont venus, ceux qui ne sont pas venus
+
+Ce mercredi 15 juillet 2026, à l'invitation du **groupe d'action LFI Nantes-Sud Clos-Toreau**, trois élu·es se sont déplacé·es au 4 rue de Saint-Jean-de-Luz pour rencontrer les sinistrés :
+
+- **Marie Vitoux**, adjointe au maire de Nantes, en charge du quartier Nantes-Sud (dont relève le Clos-Toreau) et des délégations « résilience climatique », « risques et crises », « bâtiments ». Elle est **entrée dans l'appartement d'Aliun Keita**, a constaté l'état des lieux, a écouté les témoignages des habitant·es.
+- **Andy Kerbrat**, député de Loire-Atlantique.
+- **Julie Laernoës**, députée écologiste.
+
+Ils ont vu, écouté, entendu directement les récits des habitant·es. Ils sont désormais **témoins** de l'état matériel des logements et de l'absence de réponse institutionnelle. Nous saluons ces trois déplacements. Nous en attendons la suite — des décisions concrètes, publiques, chiffrées.
+
+À l'inverse, **ne sont pas venu·es** au 4 rue de Saint-Jean-de-Luz, ce mercredi ni les jours précédents :
+
+- **Aïcha Bassal**, présidente de Nantes Métropole Habitat.
+- **Johanna Rolland**, maire de Nantes.
+- Aucun agent NMH n'a été rencontré par les locataires des **étages hauts** (6ᵉ, 7ᵉ), les plus lourdement touchés par la fumée. Aliun Keita le premier.
+- **Laurent Hottiaux**, préfet de Loire-Atlantique, muet à ce jour, sans mobilisation ORSEC ni activation d'une Cellule d'urgence médico-psychologique (CUMP).
+
+## Signé — Groupe d'action LFI Nantes-Sud Clos-Toreau
+
+Cette mise à jour, cette exigence de démission et ces demandes sont portées par le **groupe d'action LFI Nantes-Sud Clos-Toreau**, en coordination avec l'**Union des Quartiers Libres** (présidée par **Fabrice Doucet**) et les conseillères municipales **Erika Cadersah** et **Irina Yahi** de la liste *La Nouvelle Nantes*.
+
+---
+
+*Ci-dessous, le récit initial du sinistre publié le 13 juillet 2026 — inchangé.*
+
+---
+
 **Nuit du 11 au 12 juillet 2026, 2 heures 30 du matin.** Au **4 rue de Saint-Jean-de-Luz**, en plein cœur du **Clos-Toreau** à Nantes-Sud, un incendie prend dans l'**ascenseur** de l'immeuble. La cage se remplit de fumée noire en quelques minutes. Au **6ᵉ étage**, un père de famille, **Aliun Keita**, fera passer ses **trois enfants — dont un bébé de sept mois — par la fenêtre**, suspendus dans le vide, jusqu'à l'appartement du voisin du 5ᵉ étage. Sa femme s'évanouira. Ils survivront tous. Ce ne sera pas grâce à Nantes Métropole Habitat.
 
 Cette nuit-là, ce sont **des jeunes du quartier** — de celles et ceux que la mairie et son bailleur appellent volontiers « les groupes qui se rassemblent devant les entrées » — qui ont **évacué l'immeuble**, **frappé aux portes** et **éteint le feu** à bouteilles d'eau, à mains nues, pendant que les habitant·es des étages hauts restaient prisonnier·es de la fumée. Au premier rang, **Hano** : jeune homme du quartier, d'origine soudanaise, livreur pour un grand groupe de livraison de colis. Il monte au 2ᵉ étage sortir sa sœur, puis frappe à toutes les portes du palier. D'autres jeunes rentrent dans le hall en feu. Ils éteignent le foyer **avant l'arrivée des pompiers**. Sans eux, il y aurait eu des morts.

@@ -1,7 +1,58 @@
 # Sources — Clos-Toreau, 2h30 du matin : les jeunes du quartier ont sauvé l'immeuble que NMH avait cadenassé
 
 Article : [`2026-07-13-clos-toreau-incendie-nmh-trappes-cadenassees.md`](../articles/2026-07-13-clos-toreau-incendie-nmh-trappes-cadenassees.md)
-Dernier audit : **2026-07-13**
+Dernier audit : **2026-07-15** (mise à jour majeure — voir §MAJ 15 juillet ci-dessous)
+
+## §MAJ 15 juillet 2026 — sources ajoutées pour la mise à jour en tête d'article
+
+### ✓ Sources vérifiées ajoutées
+
+- **NMH — page « Nous contacter » de nmh.fr** : confirme les deux numéros et leurs plages :
+  - **02 40 67 07 37** — accueil clientèle, lundi-vendredi 8h30-17h.
+  - **02 40 67 08 55** — « service d'astreinte la nuit 24h/24 et le week-end ».
+  - **Copie écran** : [`content/media/2026-07-15-nmh-fr-nous-contacter-astreinte-24-24.png`](../media/2026-07-15-nmh-fr-nous-contacter-astreinte-24-24.png).
+- **NMH — déclaration d'intronisation d'Aïcha Bassal, 13 mai 2026, publiée sur nmh.fr** : contient la formule « *Je veux que ma présidence soit collaborative (...) au service des ménages modestes et en soutien des plus fragiles.* » — copie écran fournie par Khalid, à archiver en `content/media/2026-05-13-nmh-fr-bassal-declaration-intronisation.png` (à faire au prochain audit).
+- **Article R. 1334-29-4 du Code de la santé publique** — obligation du bailleur d'établir un Dossier Technique Amiante (DTA). Levier juridique utilisé dans la mise à jour, ne nécessite pas de source additionnelle (texte de loi public).
+- **Articles L. 511-1 et suivants du CCH** — pouvoir de police du maire en matière de mise en sécurité (ex-péril) et d'insalubrité. Levier juridique utilisé pour interpeller Johanna Rolland.
+- **Précédents mondiaux de démissions** — recherche web menée le 15 juillet 2026, sources archivées dans le doc [`Dossier_precedents_demissions_bailleurs_sociaux.pdf`](/tmp/Dossier_precedents_demissions_bailleurs_sociaux.pdf) :
+  - Londres 2017 — Grenfell : CBS News confirme démission de Robert Black (KCTMO) et Nicholas Paget-Brown.
+  - New York 2018 — NYCHA : NY1, Wikipedia, City & State New York confirment la démission de Shola Olatoye.
+  - Alexandria 2025 — WTOP News confirme la démission en bloc des 9 commissaires du Housing Authority.
+  - Portland 2026 — OPB, KGW, KOIN, Willamette Week confirment la démission d'Ivory Mathews.
+
+### ⚠ Sources imprécises ajoutées
+
+- **Colle à base d'amiante dans les logements du Clos-Toreau** — l'affirmation repose sur : (1) le contexte historique (bâtiments antérieurs à 1997, période d'usage courant de l'amiante), (2) la couleur noire caractéristique des colles bitumineuses à base d'amiante utilisées pour la pose des dalles vinyle des années 60-70, (3) le témoignage direct de **Fabrice Doucet** locataire depuis 2009. **Aucun test de laboratoire n'est en notre possession.** — **Action** : demander à un locataire d'obtenir de NMH la remise du **Dossier Technique Amiante** de l'immeuble (obligation légale — art. R. 1334-29-4 CSP) ; à défaut, envisager un test amiante indépendant sur un échantillon de colle prélevé légalement.
+- **Câbles électriques à l'air libre / boîtier arraché — cage d'escalier du 4 rue Saint-Jean-de-Luz** — photo prise par Fabrice Doucet le 15 juillet 2026, archivée en [`content/media/2026-07-15-clos-toreau-cage-escalier-cables-danger-suie.jpeg`](../media/2026-07-15-clos-toreau-cage-escalier-cables-danger-suie.jpeg). Constat visuel direct, non contesté. **Action** : documenter la date exacte de la prise de vue par métadonnées EXIF si besoin.
+
+### 👤 À valider par la rédaction
+
+- **Marie Vitoux entrée dans l'appartement d'Aliun Keita le 15 juillet 2026, avec Andy Kerbrat (député LFI Loire-Atlantique) et Julie Laernoës (députée écologiste)** — porté par Khalid depuis le terrain. **Action** : sécuriser une photo ou un tweet horodaté confirmant les trois présences le même jour. Vérifier le nom exact et la circonscription de la seconde parlementaire (« Ségolène Amiot » évoqué par Khalid vs « Julie Laernoës » retenu dans le texte — trancher).
+- **Aucun contact NMH avec Aliun Keita à 15h le 15 juillet 2026** — porté par Khalid et Fabrice Doucet. Contradiction avec les propos de M. Piquet (agence Goudy) rapportés le 13 juillet. **Action** : conserver la preuve vidéo mentionnée dans le corps de l'article (« Fabrice Doucet en a la preuve en vidéo »).
+- **Aucun locataire des étages 6ᵉ et 7ᵉ n'a rencontré un agent NMH** — porté par Khalid. **Action** : recueillir 2-3 témoignages écrits ou audio, par étage, pour blinder.
+- **Prise en charge hôtelière d'Aliun Keita par sa propre assurance MRH, expirée jeudi 16 juillet au matin** — porté par Khalid. **Action** : obtenir copie de l'attestation d'assurance / du contrat hôtelier (nom de la compagnie, dates).
+- **Absence d'arrêté municipal (mise en sécurité / insalubrité)** — formulé « à notre connaissance ». **Action** : vérifier au bureau des arrêtés de la mairie de Nantes (accueil place Saint-Pierre) ou par demande CADA.
+- **« Aide aux courses » évoquée par des habitants du 1er et 2ᵉ étage** — rapportée en ouï-dire dans le corps précédent (non repris dans la mise à jour du 15). **Action** : si repris ailleurs, blinder par témoignage nominatif.
+
+### Visuels produits par la rédaction QL pour la mise à jour du 15 juillet 2026
+
+Tous archivés dans `content/media/` :
+- `2026-07-15-clos-toreau-visuel-demission-bassal.png` — démission + précédents mondiaux.
+- `2026-07-15-clos-toreau-visuel-bassal-mots-vs-actes.png` — citation 13 mai vs réalité 15 juillet.
+- `2026-07-15-clos-toreau-visuel-amiante-preuve.png` — dalle vinyle + colle noire + témoignage Fabrice.
+- `2026-07-15-clos-toreau-visuel-gestion-travaux.png` — cage escalier câbles.
+- `2026-07-15-clos-toreau-visuel-etat-des-lieux.png` — état des lieux général du 15 juillet.
+- `2026-07-15-clos-toreau-visuel-24h24-papier.png` — 24h/24 sur le papier, zéro réponse.
+- `2026-07-15-clos-toreau-visuel-nmh-injoignable.png` — NMH injoignable depuis lundi 14 juillet.
+
+Photos brutes :
+- `2026-07-13-clos-toreau-ventilateur-suie-pales.jpeg`
+- `2026-07-15-nmh-fr-nous-contacter-astreinte-24-24.png`
+- `2026-07-15-clos-toreau-dalle-vinyle-colle-noire-amiante.jpeg`
+- `2026-07-15-clos-toreau-cage-escalier-cables-danger-suie.jpeg`
+
+---
+
 
 > **Consigne rédactionnelle (interne).** Dans le corps de l'article, **aucun lien vers un média presse**. Liens autorisés dans le corps : mouvements militants alliés uniquement (LFI 44, Union des Quartiers Libres, groupe d'action LFI Nantes-Sud Clos-Toreau). Toutes les URLs institutionnelles et de référence technique ci-dessous sont pour audit interne / traçabilité uniquement.
 
