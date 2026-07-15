@@ -122,7 +122,7 @@ Nous posons également, publiquement, une question à Nantes Métropole Habitat,
 
 ## Nos demandes concrètes
 
-Nous, **Gwenaëlle Gordien** et **Fabrice Doucet** — binôme qui anime le **groupe d'action LFI Nantes-Sud Clos-Toreau**, Fabrice également président de l'**Union des Quartiers Libres** — portons publiquement, avec l'ensemble du collectif, les demandes suivantes :
+Nous, **Gwenaëlle Gourdien** et **Fabrice Doucet** — binôme qui anime le **groupe d'action LFI Nantes-Sud Clos-Toreau**, Fabrice également président de l'**Union des Quartiers Libres** — portons publiquement, avec l'ensemble du collectif, les demandes suivantes :
 
 1. **Démission d'Aïcha Bassal** de la présidence de Nantes Métropole Habitat.
 2. **Les cadenas sur les accès au toit doivent tomber dans les 48 heures**, sur tous les immeubles NMH du secteur.
@@ -139,7 +139,7 @@ Nous, **Gwenaëlle Gordien** et **Fabrice Doucet** — binôme qui anime le **gr
 
 ## Signé
 
-**Gwenaëlle Gordien** et **Fabrice Doucet** — binôme animateur du **groupe d'action LFI Nantes-Sud Clos-Toreau** (Fabrice, par ailleurs, président de l'**Union des Quartiers Libres**) — et l'ensemble du collectif.
+**Gwenaëlle Gourdien** et **Fabrice Doucet** — binôme animateur du **groupe d'action LFI Nantes-Sud Clos-Toreau** (Fabrice, par ailleurs, président de l'**Union des Quartiers Libres**) — et l'ensemble du collectif.
 
 ---
 
