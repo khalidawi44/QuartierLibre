@@ -10,6 +10,15 @@ define( 'QL_THEME_VERSION', '1.0.0' );
 define( 'QL_THEME_DIR', get_stylesheet_directory() );
 define( 'QL_THEME_URI', get_stylesheet_directory_uri() );
 
+// ── 0z. Ne pas afficher les Notices PHP en front (fuite de chemin) ──
+// Certains plugins (MCP, ability meta keys deprecated) déclenchent des
+// Notices "deprecated" qui s'affichaient en haut de l'accueil.
+// On coupe leur affichage public ; les logs serveur restent OK.
+if ( ! is_admin() ) {
+    @ini_set( 'display_errors', '0' );
+    @ini_set( 'display_startup_errors', '0' );
+}
+
 // ── 0. Sync GitHub + helpers (toujours chargé) ──────────────────
 // ql-sync.php contient :
 //   - La page admin « Outils → Sync QL » (guardée par add_action admin_menu)

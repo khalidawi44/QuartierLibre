@@ -32,7 +32,7 @@ tags:
   - code-civil-1719
   - assurance-immeuble
   - cellule-de-crise
-excerpt: "Nuit du 11 au 12 juillet 2026, 2h30 du matin. Au 4 rue de Saint-Jean-de-Luz, au Clos-Toreau, un incendie prend dans l'ascenseur. Au 6ᵉ étage, Aliun Keita fait passer ses trois enfants dont un bébé de 7 mois par la fenêtre, suspendus dans le vide, vers l'appartement du voisin du 5ᵉ. Les trappes d'évacuation des fumées, verrouillées par cadenas par Nantes Métropole Habitat, restent inutilisables. Ce sont des jeunes du quartier — au premier rang Hano, un jeune homme d'origine soudanaise — qui, à bouteilles d'eau, éteignent le feu et évacuent l'immeuble. Quatre jours plus tôt, le 7 juillet, NMH avait écrit aux locataires de toute la rue une lettre officielle titrée « Diagnostic des dysfonctionnements ». NMH est présidé, depuis le 13 mai 2026, par Aïcha Bassal."
+excerpt: "Nuit du 11 au 12 juillet 2026, 2h30 du matin. Au 4 rue de Saint-Jean-de-Luz, au Clos-Toreau, un incendie prend dans l'ascenseur. Au 6ᵉ étage, Aliun Keita fait passer ses trois enfants dont un bébé de 7 mois par la fenêtre, suspendus dans le vide, vers l'appartement du voisin du 5ᵉ. Le désenfumage — entièrement manuel, sans automatisation — n'a pas fonctionné : impossible pour un locataire de sortir sur un palier envahi de fumée pour actionner un levier. Nantes Métropole Habitat avait, de plus, cadenassé l'accès au toit — dernier refuge possible pour des locataires piégés. Ce sont des jeunes du quartier — au premier rang Hano, un jeune homme d'origine soudanaise — qui, à bouteilles d'eau, éteignent le feu et évacuent l'immeuble. Quatre jours plus tôt, le 7 juillet, NMH avait écrit aux locataires de toute la rue une lettre officielle titrée « Diagnostic des dysfonctionnements ». NMH est présidé, depuis le 13 mai 2026, par Aïcha Bassal."
 featured_image: "content/media/2026-07-13-clos-toreau-incendie-affiche.png"
 author: "soraya-messaoudi"
 status: "draft"
@@ -165,29 +165,37 @@ Aliun réveille sa femme et ses enfants. Il ne peut pas descendre par l'escalier
 
 Ce qui frappe, dans ce récit, n'est pas seulement le geste. C'est ce qui n'a pas eu lieu **ensuite**. **Aucune cellule de crise psychologique** n'a été activée pour cette famille et pour les autres locataires exposés. La rédaction a **contacté la cellule de crise de la Ville de Nantes** pour vérifier : aucune information sur une mise en œuvre d'un dispositif spécifique pour les habitant·es du 4 rue de Saint-Jean-de-Luz. Aliun a été **évacué par les sapeurs-pompiers vers le CHU, dans un véhicule d'intervention, sous oxygène — avec son bébé de sept mois et sa femme**. Ce n'est donc pas depuis chez lui ni par lui-même qu'il rejoint l'hôpital ; c'est en position de patient d'urgence, respiratoire, transporté par les secours au titre de l'intoxication à la fumée. Un père de famille qui vient de faire descendre son bébé de sept mois par la fenêtre à dix-huit mètres du sol, et à qui, quelques heures plus tard, l'institution ne proposera rien — ni suivi psychologique, ni cellule d'urgence, ni contact du bailleur — comme s'il avait glissé sur un trottoir mouillé.
 
-## Ce qui a rendu ce feu presque mortel : les cadenas de NMH
+## Ce qui a rendu ce feu presque mortel : un désenfumage seulement manuel, et un toit cadenassé
 
-L'immeuble est équipé, comme la loi l'y oblige, d'un **système de désenfumage** conforme : une **trappe d'exutoire** dans le plafond de la cage d'escalier (norme NF S 61-937), une échelle démontable pour l'atteindre, et un **boîtier de commande manuel** MADICOB au mur — le fameux boîtier rouge marqué « **EN CAS D'INCENDIE ABAISSER LE LEVIER** », vérifié tous les ans (vignettes 2024 et 2025 apposées).
+L'immeuble est équipé, comme la loi l'y oblige, d'un **système de désenfumage** conforme dans son principe : une **trappe d'exutoire** dans le plafond de la cage d'escalier (norme NF S 61-937), une échelle démontable pour l'atteindre, et un **boîtier de commande manuel** MADICOB au mur — le fameux boîtier rouge marqué « **EN CAS D'INCENDIE ABAISSER LE LEVIER** », vérifié tous les ans (vignettes 2024 et 2025 apposées).
 
 ![Dispositif de commande manuel MADICOB « Sécurité incendie – Évacuation des fumées » installé dans la cage d'escalier de l'immeuble. Le levier existe. Les vignettes 2024 et 2025 attestent d'un contrôle annuel. La manivelle nécessaire à la manœuvre manuelle en cas de défaillance : introuvable.](content/media/2026-07-13-clos-toreau-dispositif-madicob-sans-manivelle.jpeg)
 
-Le dispositif *existe*. Il est *contrôlé*. Il n'a pas fonctionné cette nuit-là. Il ne pouvait pas fonctionner :
+Le mot important est **manuel**. Il n'existe, dans cet immeuble, **aucune automatisation** : aucun détecteur de fumée relié à la trappe, aucun mécanisme qui l'ouvrirait automatiquement en cas d'incendie. Pour évacuer la fumée par le haut, il faut qu'un être humain **descende sur le palier au moment du sinistre** et abaisse le levier — ou monte à l'échelle démontable pour manœuvrer manuellement la trappe.
 
-- La **trappe** au plafond est **fermée par cadenas**. Personne dans l'immeuble n'en a la clé.
-- La **manivelle** qui permet de l'ouvrir manuellement en cas de défaillance du levier : **personne ne l'a**.
+**Or c'est précisément ce qu'un incendie réel rend impossible.** À 2 h 30 du matin, dans une cage d'escalier envahie d'une fumée noire qui monte à plusieurs centaines de degrés, personne ne descend au bon étage pour actionner un levier. Personne ne monte à une échelle démontable pour manœuvrer une trappe au plafond. Le seul dispositif de désenfumage prévu est aussi le seul dispositif que la fumée elle-même met hors d'atteinte. Un désenfumage **exclusivement manuel** dans un immeuble d'habitation de sept étages est une fiction réglementaire — cochée au diagnostic, inopérante dans la vie réelle.
+
+**Ce qu'il faudrait, dans un immeuble comme celui-là, c'est un désenfumage automatique** : détecteur incendie qui ouvre lui-même la trappe dès que la fumée atteint un seuil. C'est la seule configuration qui fonctionne réellement dans un sinistre nocturne. Ce n'est pas ce que Nantes Métropole Habitat a installé.
+
+**Et — sur ce dispositif déjà fragile — NMH a ajouté un choix aggravant : le toit est cadenassé.** L'accès au toit, seul refuge à l'air libre pour des locataires piégés dans une cage enfumée, est verrouillé :
+
+- La **trappe** au plafond de la cage d'escalier est **fermée par cadenas**. Personne dans l'immeuble n'en a la clé.
+- La **manivelle** qui permettrait de manœuvrer manuellement en cas de défaillance du levier : **personne ne l'a**.
 - L'**échelle démontable** posée sur le palier pour atteindre la trappe : elle aussi **verrouillée par cadenas**.
 
-![Échelle démontable en aluminium destinée à atteindre la trappe d'exutoire du plafond, verrouillée par cadenas sur son support de rangement. Sans échelle, aucune manœuvre manuelle possible.](content/media/2026-07-13-clos-toreau-echelle-cadenassee.jpeg)
+![Échelle démontable en aluminium destinée à atteindre la trappe d'exutoire du plafond, verrouillée par cadenas sur son support de rangement.](content/media/2026-07-13-clos-toreau-echelle-cadenassee.jpeg)
 
-![Cage métallique de rangement du dispositif complémentaire, fermée par cadenas massif. C'est le geste de gestion. La sécurité incendie devient un objet inaccessible.](content/media/2026-07-13-clos-toreau-cage-cadenassee.jpeg)
+![Cage métallique de rangement du dispositif complémentaire, fermée par cadenas massif. C'est le geste de gestion. L'accès au toit devient un objet inaccessible.](content/media/2026-07-13-clos-toreau-cage-cadenassee.jpeg)
 
-Autrement dit : Nantes Métropole Habitat a **cadenassé son propre dispositif de survie**. Un système de sécurité incendie cadenassé est, en droit, un système de sécurité incendie **inexistant**. NMH n'a pas oublié d'installer les trappes : il en a scellé l'accès.
+Autrement dit : Nantes Métropole Habitat a **cadenassé le seul refuge de dernier recours** dans un immeuble dont le désenfumage ne fonctionne, en pratique, jamais.
 
-![Trappe d'exutoire de fumée dans le plafond de la cage d'escalier — dispositif réglementaire de désenfumage naturel, normalement manœuvrable en cas d'incendie. Verrouillé au moment du sinistre.](content/media/2026-07-13-clos-toreau-trappe-evacuation-plafond.jpeg)
+![Trappe d'exutoire de fumée dans le plafond de la cage d'escalier — dispositif réglementaire de désenfumage naturel. Verrouillée au moment du sinistre.](content/media/2026-07-13-clos-toreau-trappe-evacuation-plafond.jpeg)
 
 Et cette politique **n'est pas propre au 4 rue de Saint-Jean-de-Luz**. Le groupe d'action **LFI Nantes-Sud Clos-Toreau** le documente depuis son audit citoyen : **tous les immeubles NMH du secteur** connaissent la même configuration. Trappe cadenassée. Manivelle absente. Échelle cadenassée. Ce n'est pas un oubli local, c'est une **règle de gestion** appliquée à tout le parc.
 
-Interrogé sur ce point par les locataires, NMH a livré sa justification : les cadenas seraient posés « **pour éviter que les gens ne montent sur le toit** ». La réponse dit tout. Le bailleur assume d'avoir mis un **cadenas sur un dispositif de survie** pour **protéger la toiture** d'un usage non autorisé. Le curseur est explicite : le **patrimoine bâti** passe avant les **corps des locataires**. Une trappe qu'un adolescent pourrait ouvrir pour prendre l'air un soir d'été pèse, dans la comptabilité NMH, plus lourd que la fumée qui étouffe une famille au 7ᵉ étage à 2 h 30 du matin.
+Interrogé sur ce point par les locataires, NMH a livré sa justification : les cadenas seraient posés « **pour éviter que les gens ne montent sur le toit** ». La réponse dit tout. Le bailleur assume d'avoir cadenassé le **seul refuge possible** pour un locataire piégé par la fumée — au motif de protéger la toiture d'un usage non autorisé. Le curseur est explicite : le **patrimoine bâti** passe avant les **corps des locataires**. Une trappe qu'un adolescent pourrait ouvrir pour prendre l'air un soir d'été pèse, dans la comptabilité NMH, plus lourd que l'accès à l'air libre d'une famille étouffée au 6ᵉ étage à 2 h 30 du matin.
+
+**Le problème est donc cumulatif** : un désenfumage seulement manuel, dans un immeuble de sept étages, où la manivelle est manquante **et** où le toit est cadenassé. Chacun de ces trois manquements pris isolément est déjà grave. Ensemble, ils rendent l'immeuble mortel en cas d'incendie nocturne. Il n'y a pas eu de mort cette nuit-là parce qu'un père veillait pour un match de football et parce que les jeunes du quartier sont montés éteindre le feu à mains nues — pas parce que le dispositif a fonctionné.
 
 ## 5h30 du matin : réintégrés dans la fumée
 
@@ -351,15 +359,16 @@ Un **communiqué officiel** du groupe d'action **LFI Nantes-Sud Clos-Toreau** et
 
 Sur cette base, la revendication portée par les habitant·es, l'Union des Quartiers Libres, LFI 44 et LFI Nantes-Sud Clos-Toreau tient en six points :
 
-1. **Les cadenas des dispositifs de désenfumage doivent tomber dans les 48 heures**, sur **tous** les immeubles NMH du secteur — pas seulement rue de Saint-Jean-de-Luz. Le désenfumage est une question de vie ou de mort, pas un enjeu de gestion patrimoniale. Ce point ne se négocie pas, il ne se diagnostique pas : il s'**exécute**.
-2. **Relogement d'urgence intégralement à la charge de NMH** pour toutes les familles du 4 rue de Saint-Jean-de-Luz, aussi longtemps que les logements ne sont pas remis en état — hôtel puis logement de substitution. **Aucune famille ne doit être renvoyée à sa propre multirisque habitation** pour se loger. C'est la loi.
-3. **Activation d'une cellule d'urgence médico-psychologique (CUMP)** par le **préfet de Loire-Atlantique Laurent Hottiaux**, en lien avec l'ARS et le SAMU, pour les familles sinistrées — pas un renvoi individuel au 15. La prise en charge du choc collectif est une **obligation d'organisation**, pas une démarche personnelle des victimes.
-4. **Prise de position publique et déplacement sur place de Marie Vitoux**, adjointe au maire de Nantes en charge du quartier Nantes-Sud, des risques et crises. Le silence d'une élue à qui son mandat impose la coordination de ces situations est incompréhensible.
-5. **Publication du "protocole NMH incendie"** invoqué par la cellule de crise de la Ville de Nantes. S'il existe, il doit être rendu public — et confronté aux dispositions du Code civil, de la loi de 1989 et du Code de la construction et de l'habitation.
-6. **Les marchés Pouget et SETEC doivent être annulés**, ou à défaut re-passés à des cabinets **sans lien commercial** avec NMH sur les marchés de travaux qui pourraient découler de leur propre diagnostic. La commande publique ne doit pas produire des expertises qui recommandent leurs propres devis.
-7. **L'argent économisé — de l'ordre de 150 000 à 200 000 euros — va directement aux travaux prioritaires identifiés par les habitant·es** : isolation par l'extérieur, joints, fenêtres, rénovation intérieure, refonte du réseau d'eau, obturation des passages de rongeurs.
-8. **Le diagnostic commence par les habitant·es.** Toute démarche NMH sur l'état du bâtiment doit s'ouvrir par une **assemblée de locataires**, sur place, avec compte rendu écrit. Les habitant·es sont les experts premiers de leur logement.
-9. **Toutes les habitations doivent être visitées**, pas un échantillon.
+1. **Les cadenas sur les accès au toit doivent tomber dans les 48 heures**, sur **tous** les immeubles NMH du secteur — pas seulement rue de Saint-Jean-de-Luz. Le toit est le seul refuge à l'air libre pour un locataire piégé par la fumée. Ce point ne se négocie pas, il ne se diagnostique pas : il s'**exécute**.
+2. **Installation d'un désenfumage automatique** (détecteur de fumée relié à la trappe) dans tous les immeubles NMH du secteur. Un désenfumage seulement manuel dans un immeuble de sept étages est inopérant en pratique : personne ne descend sur un palier envahi de fumée à 400°C pour actionner un levier. Cette mise à niveau doit être chiffrée et calendée publiquement par NMH avant la fin de l'année 2026.
+3. **Relogement d'urgence intégralement à la charge de NMH** pour toutes les familles du 4 rue de Saint-Jean-de-Luz, aussi longtemps que les logements ne sont pas remis en état — hôtel puis logement de substitution. **Aucune famille ne doit être renvoyée à sa propre multirisque habitation** pour se loger. C'est la loi.
+4. **Activation d'une cellule d'urgence médico-psychologique (CUMP)** par le **préfet de Loire-Atlantique Laurent Hottiaux**, en lien avec l'ARS et le SAMU, pour les familles sinistrées — pas un renvoi individuel au 15. La prise en charge du choc collectif est une **obligation d'organisation**, pas une démarche personnelle des victimes.
+5. **Prise de position publique et déplacement sur place de Marie Vitoux**, adjointe au maire de Nantes en charge du quartier Nantes-Sud, des risques et crises. Le silence d'une élue à qui son mandat impose la coordination de ces situations est incompréhensible.
+6. **Publication du "protocole NMH incendie"** invoqué par la cellule de crise de la Ville de Nantes. S'il existe, il doit être rendu public — et confronté aux dispositions du Code civil, de la loi de 1989 et du Code de la construction et de l'habitation.
+7. **Les marchés Pouget et SETEC doivent être annulés**, ou à défaut re-passés à des cabinets **sans lien commercial** avec NMH sur les marchés de travaux qui pourraient découler de leur propre diagnostic. La commande publique ne doit pas produire des expertises qui recommandent leurs propres devis.
+8. **L'argent économisé — de l'ordre de 150 000 à 200 000 euros — va directement aux travaux prioritaires identifiés par les habitant·es** : isolation par l'extérieur, joints, fenêtres, rénovation intérieure, refonte du réseau d'eau, obturation des passages de rongeurs.
+9. **Le diagnostic commence par les habitant·es.** Toute démarche NMH sur l'état du bâtiment doit s'ouvrir par une **assemblée de locataires**, sur place, avec compte rendu écrit. Les habitant·es sont les experts premiers de leur logement.
+10. **Toutes les habitations doivent être visitées**, pas un échantillon.
 
 ## Madame Bassal,
 
