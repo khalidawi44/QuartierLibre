@@ -26,7 +26,7 @@ plainte_variant: "logement"
 
 L'incendie de la nuit du 11 au 12 juillet 2026 au 4 rue de Saint-Jean-de-Luz, au Clos-Toreau, a mis en pleine lumière la façon dont Nantes Métropole Habitat gère son patrimoine — désenfumage exclusivement manuel, toit cadenassé, silence institutionnel de la présidente **Aïcha Bassal** depuis cinq jours *([voir le récit et le dossier complet](/clos-toreau-incendie-nmh-trappes-cadenassees/))*. Mais l'incendie est un événement ; le patrimoine, lui, est un stock. Et dans ce stock, il y a un sujet dont **on ne parle jamais publiquement** — ni dans les rapports NMH, ni au conseil de Nantes Métropole, ni dans la presse locale. **L'amiante.**
 
-![Visuel — amiante dans les logements du Clos-Toreau. Photo d'une dalle vinyle arrachée, colle noire à base d'amiante apparente. Témoignage signé Fabrice, locataire NMH depuis 2009.](content/media/2026-07-15-clos-toreau-visuel-amiante-preuve.png)
+![Visuel — amiante dans les logements du Clos-Toreau. Photo d'une dalle vinyle arrachée, colle noire à base d'amiante apparente. Témoignage d'un locataire NMH depuis 2009.](content/media/2026-07-15-clos-toreau-visuel-amiante-preuve.png)
 
 ## Un bâti antérieur à l'interdiction française de 1997
 
@@ -44,11 +44,11 @@ Le noir sous la dalle arrachée, en haut à gauche, est la **colle bitumineuse**
 
 ## Le témoignage : dix-sept ans de promesses non tenues
 
-**Fabrice Doucet**, président de l'Union des Quartiers Libres et locataire de Nantes Métropole Habitat au Clos-Toreau depuis 2009, témoigne :
+**Un locataire de Nantes Métropole Habitat au Clos-Toreau depuis 2009**, qui a demandé à ne pas être nommé, témoigne :
 
 > « À mon emménagement en 2009, NMH m'annonce qu'ils vont refaire tout le sol. En 2026, rien n'a été fait. La colle est toujours là, dix-sept ans plus tard. J'ai constaté le même sol dans de nombreux logements du Clos-Toreau. »
 
-Dix-sept ans. Un locataire dont NMH s'est engagé, à l'entrée dans les lieux, à refaire le sol — sur une colle vraisemblablement chargée d'amiante — et qui, deux mandats de présidence plus tard, vit toujours sur le même sol. Ce n'est pas un cas isolé. Fabrice, dans son rôle de représentant des locataires, en observe le motif à répétition : des habitant·es à qui la même promesse a été faite, à qui la même absence de suivi a été opposée.
+Dix-sept ans. Un locataire dont NMH s'est engagé, à l'entrée dans les lieux, à refaire le sol — sur une colle vraisemblablement chargée d'amiante — et qui, deux mandats de présidence plus tard, vit toujours sur le même sol. Ce n'est pas un cas isolé. Le même témoignage est recueilli à répétition auprès d'autres habitant·es du Clos-Toreau : la même promesse a été faite, la même absence de suivi opposée.
 
 ## Ce que dit la loi — et ce que NMH ne fait pas
 
@@ -65,7 +65,7 @@ Le groupe d'action LFI Nantes-Sud Clos-Toreau — animé par Fabrice Doucet et G
 
 - **Publier le Dossier Technique Amiante** de l'immeuble du 4 rue de Saint-Jean-de-Luz et, plus largement, de l'ensemble du parc NMH du secteur du Clos-Toreau.
 - **Indiquer publiquement** le calendrier de désamiantage prévu, s'il existe, et son état d'avancement.
-- **Prendre position sur le témoignage de Fabrice** — qui témoigne d'une promesse NMH datant de 2009 non tenue en 2026 : que compte faire le bailleur pour honorer cette promesse aujourd'hui ?
+- **Prendre position sur les témoignages recueillis** — locataires de longue date évoquant des promesses NMH de rénovation datant de 2009 et non tenues en 2026 : que compte faire le bailleur pour honorer ces promesses aujourd'hui ?
 
 ## Un scandale silencieux — et un argument de plus pour la démission
 
