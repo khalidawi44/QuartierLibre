@@ -71,7 +71,7 @@ Ce mercredi 15 juillet 2026, à l'invitation du **groupe d'action LFI Nantes-Sud
 
 - **Andy Kerbrat**, député de Loire-Atlantique, du groupe La France insoumise à l'Assemblée nationale — **notre allié politique**. Sa présence au 4 rue de Saint-Jean-de-Luz est celle d'un allié de terrain qui accompagne un groupe d'action de sa propre famille politique dans un dossier local. Nous le remercions.
 - **Julie Laernoës**, députée écologiste **de la circonscription** dont relève le Clos-Toreau. Elle est venue **à notre demande, sans obligation politique de le faire**, et sur la seule base de son mandat de représentation. Elle avait une raison de se dérober : elle ne l'a pas fait. Elle est **venue directement**, sur place, dans les appartements. C'est la preuve, dans un dossier concret, d'une **députée non déconnectée des réalités de terrain** de sa circonscription. Nous la remercions et lui rendons hommage. Cela dit, nous ne nous en tiendrons pas à une visite : nous attendons d'elle qu'elle **porte politiquement le dossier** à l'Assemblée et auprès des acteurs institutionnels concernés — tant sur cet incendie que, plus largement, sur les conditions de logement au Clos-Toreau.
-- **Irina Yahi**, conseillère municipale de la Ville de Nantes du groupe La France insoumise, élue sur la liste *La Nouvelle Nantes*. Avec sa collègue **Erika Cadersah**, elles portent la parole de LFI au conseil municipal de Nantes. Irina et Erika sont, pour nous, **plus que des alliées politiques** : **ce sont des amies** — du groupe, du quartier, du dossier. Leur présence sur le terrain, à chaque étape, n'est pas une position à prendre : c'est un choix personnel de proximité qui date d'avant les mandats.
+- **Irina Yahi**, conseillère municipale de la Ville de Nantes du groupe La France insoumise, élue sur la liste *La Nouvelle Nantes*. Elle est venue sur place, aux côtés du groupe d'action. Nous la remercions pour sa présence.
 
 ### L'élue municipale interpelée : Marie Vitoux
 
@@ -122,7 +122,7 @@ Nous posons également, publiquement, une question à Nantes Métropole Habitat,
 
 ## Nos demandes concrètes
 
-Nous, groupe d'action **LFI Nantes-Sud Clos-Toreau**, en coordination avec l'**Union des Quartiers Libres** et les conseillères municipales **Erika Cadersah** et **Irina Yahi** de la liste *La Nouvelle Nantes*, portons publiquement les demandes suivantes :
+Nous, groupe d'action **LFI Nantes-Sud Clos-Toreau**, en coordination avec l'**Union des Quartiers Libres**, portons publiquement les demandes suivantes :
 
 1. **Démission d'Aïcha Bassal** de la présidence de Nantes Métropole Habitat.
 2. **Les cadenas sur les accès au toit doivent tomber dans les 48 heures**, sur tous les immeubles NMH du secteur.
@@ -139,7 +139,7 @@ Nous, groupe d'action **LFI Nantes-Sud Clos-Toreau**, en coordination avec l'**U
 
 ## Signé
 
-**Groupe d'action LFI Nantes-Sud Clos-Toreau**, en coordination avec l'**Union des Quartiers Libres** (présidée par **Fabrice Doucet**) et les conseillères municipales **Erika Cadersah** et **Irina Yahi** de la liste *La Nouvelle Nantes*.
+**Groupe d'action LFI Nantes-Sud Clos-Toreau**, en coordination avec l'**Union des Quartiers Libres** (présidée par **Fabrice Doucet**).
 
 ---
 
